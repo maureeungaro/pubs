@@ -1,0 +1,77 @@
+% preambolo per doppia compilazione HTML/PDF
+\ifx\pdfoutput\undefined      % compilazione htlatex
+\documentclass{article}
+\DeclareGraphicsExtensions{.png, .gif, .jpg}
+\newcommand{\href}[2]{\Link[#1]{}{} #2 \EndLink}
+\newcommand{\hypertarget}[2]{\Link[]{}{#1} #2 \EndLink}
+\newcommand{\hyperlink}[2]{\Link[]{#1}{} #2 \EndLink}
+\else                         % compilazione pdflatex
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{wrapfig}
+\usepackage{multirow}
+\usepackage{lscape}
+\usepackage{amssymb,amsmath}
+\pdfpagewidth 8.5in
+\pdfpageheight 11in
+\setlength\textwidth{5.7in}
+\setlength\textheight{8.1in}
+\setlength\oddsidemargin{0in}
+\setlength\evensidemargin{0in}
+\setlength\topmargin{-0.6in}
+\setlength\footskip{0.6in}
+\setlength\headsep{0.6in}
+\usepackage[hyperindex]{hyperref}
+\newcommand{\percent}{\,^0\!/_0}
+ \hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=true,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=false,        % show Acrobat’s toolbar?
+    pdfmenubar=false,        % show Acrobat’s menu?
+    pdffitwindow=false,      % page fit to window when opened
+    pdfauthor={Maurizio},   % author
+    pdfsubject={Ungaro},    % subject of the document
+    pdfnewwindow=true,      % links in new window
+    colorlinks=true,        % false: boxed links; true: colored links
+    linkcolor=black,        % color of internal links
+    citecolor=blue,         % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=blue           % color of external links
+}
+\fi
+
+
+\begin{document}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\slshape \thesection\ #1}{}}
+\fancyhead[R]{\bf\rightmark} 
+\fancyhead[L]{e1-6 analysis}
+\fancyfoot[L]{ \sl JLAB/UCONN/UVA}
+
+\title{\large e1-6 Electron Identification}
+ \author{M. Ungaro, V. Burkert, K. Joo, C. Smith, P. Stoler}
+\maketitle
+
+\abstract{This chapter describes the electron identification for the e1-6 dataset.
+The candidate electrons are all the negative time-based tracks that passed the hardware trigger.
+The cuts are based on the candidate's reconstructed momentum and its signals on
+the Electromagnetic Calorimeter and the \v Cerenkov counter.
+When needed, the cuts are sector-dependent.}
+
+\tableofcontents
+
+\input{e16_e_id}
+\input{e16_e_id_gsim}
+\input{e16_e_id_bib}
+
+\end{document}
+
+
+
+
+
+
+
+

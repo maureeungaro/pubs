@@ -1,0 +1,21 @@
+#!/bin/zsh
+
+# collecting bibliographies
+
+base_dir=/opt/projects/pubs/pi0_resonance_regions
+#bibDirs=(pid/electron pid/proton vertex fiducial/electron pi0_selection)
+bibDirs=(pid/electron)
+
+rm pi0_bib.tex
+echo "\\\begin{thebibliography}{mybib}" > pi0_bib.tex
+for b in $bibDirs
+do
+  grep bibitem "$base_dir"/"$b"/*bib*.tex >>  pi0_bib.tex
+done
+echo "\\\end{thebibliography}" >> pi0_bib.tex
+
+
+scons -c
+scons
+
+

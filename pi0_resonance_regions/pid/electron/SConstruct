@@ -1,0 +1,10 @@
+import os
+from util import scanFiles
+env = Environment(ENV=os.environ)
+
+pdf  = env.PDF(target = 'electron_pid.pdf',  source = 'electron_pid.tex')
+
+#html = env.Command('electron_pid.html',  'electron_pid.tex', "go_htlatex $SOURCE");
+#Depends(html,  pdf)
+cleans = scanFiles('.', accept=["electron_pid*", "*.aux"], reject=[".tex"])
+Clean('electron_pid.html', cleans)
