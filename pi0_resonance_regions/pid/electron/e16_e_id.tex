@@ -13,33 +13,36 @@ the first entry in the EVNT bank). The track is also required to have
 hit matches in the CLAS \v Cerenkov (CC)\cite{bib:cc}, Drift Chambers (DC)\cite{bib:dc},
 Electromagnetic Calorimeter (EC)\cite{bib:ec} and Time of Flight (SC or TOF)\cite{bib:ftof},
 and to have time-based reconstruction (positive DC status word in DCPB).
-The following are the list of criteria defining a good electron
-starting from a candidate electron:
+
+Starting from a candidate electron, we use the following studies, detailed in the following sections,
+to defined good electron:
 
 \begin{itemize}
-	\item CC $\theta$, $\phi$ and time matching in the  detector.
+	\item CC $\theta$, $\phi$ and time matching in the  detector
 	\item EC Threshold 
 	\item EC Sampling Fraction 
 	\item Track Coordinates in the EC plane 
 	\item Minimum Ionizing Particles rejection in the EC
 	\item Electromagnetic Shower Shape in the EC
-	\item {\it Number of photo-electrons ($nphe$) in the CC.
+	\item {\it Number of photo-electrons ($nphe$) in the CC
               This cut is not used anymore for identification,
-              but the distributions will be shown. }
+              but the distributions will be shown for comparison with other analyses of e16 data }
 \end{itemize}
 
-Four scenarios are considered for each quantity above:
+For each individual cut we will show four histograms to illustrate its impact:
 
 \begin{itemize}  
-	\item[a.] No cut is applied.
-	\item[b.] All other cuts are applied: this helps defining cut under consideration.
-	      For example, when looking at the sampling fraction, applying all other
-	      cuts to helps clean up the plot and to better estimate the sampling fraction
-	      cut. We also refer as "calorimeter cuts" all cuts but the $nphe$ and EC threshold.
-	\item[c.] All other negative cuts are applied: these should be particles other electrons. This
-	      condition can help identifying possible contamination.
-	\item[d.] All cuts are applied: final result.
+	\item[a.] Variable distribution when no cut at all is applied.
+	\item[b.] Variable distribution when all other pid cuts but this one are applied:
+	          this helps refining cut parameters.
+	          For example, when looking at the sampling fraction, applying all other
+	          cuts to helps clean up the plot and to better estimate the sampling fraction
+	          cut. We also refer as "calorimeter cuts" all cuts but the $nphe$ and EC threshold.
+	\item[c.] Variable distribution all the pid cuts are reversed: these should be particles other than electrons.
+	          This condition can help identifying possible contamination.
+	\item[d.] Variable distribution when all cuts, including the one under study, are applied.
 \end{itemize}
+
 The statistics and effectiveness of each case is reported in the plots.
 Only the relevant plots are reported here. The complete set of plots and projection can
 be found on the web at: \href{https://userweb.jlab.org/~ungaro/mauripage/html/projects/pi0/analysis/epid.html}
@@ -47,14 +50,15 @@ be found on the web at: \href{https://userweb.jlab.org/~ungaro/mauripage/html/pr
 
 \clearpage\newpage
 \subsection{CC $\theta$ Matching}
+
 This, and the following CC $\phi$ and Time Matching procedures, are based on a study
 \cite{bib:ccmatch},\cite{bib:pc_fxpun}, \cite{bib:pc_osi} of the \v Cerenkov response function.
 
-The CC matching requires the track to have a matching
-signal in the CC. The CC segments (one pmt from the right and the corresponding from the left,
+The CC $\theta$ matching requires the candidate electrons tracks to match
+a signal in the CC. The CC segments (one pmt from the right and the corresponding from the left,
 constitute a segment) and mirrors are placed along the CLAS polar angle.
 Since the torus magnetic field bend the electrons toward the beamline, it's convenient
-not to use the $\theta$ angle at the vertex but the angle $\theta_{CC}$ of the point of
+not to use the track $\theta$ angle at the vertex but the angle $\theta_{CC}$ of the point of
 intersection of the track with the CC plane. These are the details of the  $\theta_{CC}$
 calculation:
 \begin{itemize}
