@@ -2,7 +2,7 @@
 \ifx\pdfoutput\undefined      % compilazione htlatex
 \documentclass{article}
 \DeclareGraphicsExtensions{.png, .gif, .jpg}
-\newcommand{\href}[2]{\Link[#1]{}{} #2 \EndLink}
+\renewcommand{\href}[2]{\Link[#1]{}{} #2 \EndLink}
 \newcommand{\hypertarget}[2]{\Link[]{}{#1} #2 \EndLink}
 \newcommand{\hyperlink}[2]{\Link[]{#1}{} #2 \EndLink}
 \else                         % compilazione pdflatex
@@ -46,9 +46,9 @@
 \begin{document}
 \pagestyle{fancy}
 \renewcommand{\sectionmark}[1]{\markright{\slshape \thesection\ #1}{}}
-\fancyhead[R]{\bf\rightmark} 
+\fancyhead[R]{\texbf\rightmark}
 \fancyhead[L]{e1-6 analysis}
-\fancyfoot[L]{ \sl JLAB/UCONN/UVA}
+\fancyfoot[L]{ \textsl JLAB/UCONN/UVA}
 
 \title{\large e1-6 Electron Identification}
  \author{M. Ungaro, V. Burkert, K. Joo, C. Smith, P. Stoler}
