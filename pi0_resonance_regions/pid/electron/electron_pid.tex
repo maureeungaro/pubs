@@ -2,7 +2,7 @@
 \ifx\pdfoutput\undefined      % compilazione htlatex
 \documentclass{article}
 \DeclareGraphicsExtensions{.png, .gif, .jpg}
-\renewcommand{\href}[2]{\Link[#1]{}{} #2 \EndLink}
+\newcommand{\href}[2]{\Link[#1]{}{} #2 \EndLink}
 \newcommand{\hypertarget}[2]{\Link[]{}{#1} #2 \EndLink}
 \newcommand{\hyperlink}[2]{\Link[]{#1}{} #2 \EndLink}
 \else                         % compilazione pdflatex
@@ -27,10 +27,10 @@
 \newcommand{\percent}{\,^0\!/_0}
  \hypersetup{
     bookmarks=true,         % show bookmarks bar?
-    unicode=true,          % non-Latin characters in Acrobat’s bookmarks
-    pdftoolbar=false,        % show Acrobat’s toolbar?
-    pdfmenubar=false,        % show Acrobat’s menu?
-    pdffitwindow=false,      % page fit to window when opened
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=true,      % page fit to window when opened
     pdfauthor={Maurizio},   % author
     pdfsubject={Ungaro},    % subject of the document
     pdfnewwindow=true,      % links in new window
@@ -46,10 +46,10 @@
 \begin{document}
 \pagestyle{fancy}
 \renewcommand{\sectionmark}[1]{\markright{\slshape \thesection\ #1}{}}
-\fancyhead[R]{\texbf\rightmark}
+\fancyhead[R]{\bf\rightmark} 
 \fancyhead[L]{e1-6 analysis}
-\fancyfoot[L]{ \textsl JLAB/UCONN/UVA}
-
+\fancyfoot[R]{ \sl M. Ungaro, K. Joo}
+\fancyfoot[L]{ \sl UCONN/JLAB}
 \title{\large e1-6 Electron Identification}
  \author{M. Ungaro, V. Burkert, K. Joo, C. Smith, P. Stoler}
 \maketitle
@@ -62,9 +62,7 @@ When needed, the cuts are sector-dependent.}
 
 \tableofcontents
 
-\input{e16_e_id}
-\input{e16_e_id_gsim}
-\input{e16_e_id_bib}
+\input{electron_pid_content}
 
 \end{document}
 

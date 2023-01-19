@@ -2,9 +2,12 @@ import os
 from util import scanFiles
 env = Environment(ENV=os.environ)
 
-pdf  = env.PDF(target = 'electron_pid.pdf',  source = 'electron_pid.tex')
+cp_imgs  = env.Command('electron_pid.aa', [], './copy_images.sh')
+form_tex = env.Command('dummy', [], 'cat ../../header.tex electron_pid_standalone.tex > electron_pid.tex')
+pdf      = env.PDF(target = 'electron_pid.pdf',  source = 'electron_pid.tex')
 
-#html = env.Command('electron_pid.html',  'electron_pid.tex', "go_htlatex $SOURCE");
-#Depends(html,  pdf)
+Depends(pdf, form_tex)
+Depends(form_tex, cp_imgs)
+
 cleans = scanFiles('.', accept=["electron_pid*", "*.aux"], reject=[".tex"])
 Clean('electron_pid.html', cleans)
