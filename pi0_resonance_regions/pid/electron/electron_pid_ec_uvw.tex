@@ -1,0 +1,220 @@
+\clearpage\newpage
+
+\subsection{Track Coordinates in the EC plane}
+The EC is designed for the electron to release all their energy in it.
+However electrons that shower near the edges of the calorimeter will not loose
+all their energy in the detector because the shower is not fully contained,
+thus their energy cannot be properly reconstructed. For this reason 
+a fiducial cut is introduced on the track coordinates $U,V,W$ 
+of the electrons at the EC plane. The $U,V,W$ coordinates are chosen for 
+convenience since they are parallel to the directions of the EC scintillators 
+(and to the EC edges). The cuts have been adjusted by looking at Fig.~\ref{fig:ccm_phi}
+and making sure the distribution is $\phi$-symmetric
+$$
+ 40\leq U\leq400, V\leq362, W\leq395
+$$
+The $U,V,W$ distributions are plotted in Fig.~\ref{fig:ECu},\ref{fig:ECv},\ref{fig:ECw},
+respectively. In average $80.9\%$ of all the events with an EC signal pass the U cut, $71.3\%$ the V cut
+and $69.4\%$ the W cut, for a combined pass/total ratio of $58\%$.  When all other cuts are applied
+the U,V,W keep $96.6\%$, $88.6\%$, $86.8\%$ events respectively, for a combined effective cut of $77.8\%$
+(the product of these numbers is  $74.2\%$ but the corners events are correlated).
+
+In Fig.~\ref{fig:ECyx} is plotted the Y versus X track coordinate in the EC plane before and after
+the $U,V,W$ cuts.
+
+
+
+\clearpage
+\begin{figure}[ht]
+  \centering
+		\includegraphics[width=0.7\textheight]{img/cut-06ECU_sector-all.png}
+		\caption{U track coordinate in the EC plane for all sectors. The cut is chosen to avoid
+              edge effects that truncate the electron shower.}
+ 		\label{fig:ECu}
+\end{figure}
+\clearpage
+
+\clearpage
+\begin{figure}[ht]
+  \centering
+		\includegraphics[width=0.7\textheight]{img/cut-07ECV_sector-all.png}
+		\caption{V track coordinate in the EC plane for all sectors. The cut is chosen to avoid
+              edge effects that truncate the electron shower.}
+ 		\label{fig:ECv}
+\end{figure}
+
+\clearpage
+\begin{figure}[ht]
+  \centering
+		\includegraphics[width=0.7\textheight]{img/cut-08ECW_sector-all.png}
+		\caption{W track coordinate in the EC plane for all sectors. The cut is chosen to avoid
+              edge effects that truncate the electron shower.}
+ 		\label{fig:ECw}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+		\includegraphics[width=0.98\textwidth]{img/cut-09uvw_sector-all.png}
+		\caption{Y versus X track coordinate in the EC plane before and after 
+					the $U,V,W$ cuts.}
+ 		\label{fig:ECyx}
+\end{figure}
+
+
+\clearpage
+\subsection{Minimum Ionizing Particles (MIP) rejection}
+The outer EC is $5/3$ times bigger than the inner EC. Therefore pions,
+which do not shower and are minimum ionizing particles in the momentum range 
+detected in CLAS, release a (small) quantity of energy in the outer and inner
+parts in the ratio $5:3$, independent on their momentum.
+
+In Fig.~\ref{fig:EoEi} the $E_{out}/p$ versus $E_{in}/p$ is shown for Sector 1.
+One can see the MIP signal along the $y=5/3x $ line.
+Panel b. shows the same quantity when all other cuts are applied. 
+One can see that the electron signal on the right.
+The cut is extrapolated by visually comparing panel a. and b. and trying to
+cut the most MIP as possible with a straight line $y = a + bx$. The line
+is sector dependent as shown in Fig.~\ref{fig:EoEi_all}.
+This cut also include a minimum EC outer energy requirement of $1MeV$.
+The cut values used in each sector and their effectiveness are summarized in 
+table\,\ref{tab:EoEi}.
+
+
+\begin{figure}[ht]
+  \centering
+		\includegraphics[width=0.93\textwidth]{img/cut-10EoVsEi_sector-1.png}
+		\caption{$E_{out}/p$ versus $E_{in}/p$ for Sector 1.}
+ 		\label{fig:EoEi}
+\end{figure}
+
+
+\clearpage\newpage
+\begin{figure}[ht]
+  \centering
+		\includegraphics[width=1.00\textwidth]{img/cut-10EoVsEi_sector-all.png}
+		\caption{$E_{out}/p$ versus $E_{in}/p$ for all sectors. In every sector
+					roughly $99\,^{\circ\!\!}/\!_\circ$ of events with all other cuts applied also pass this cut. }
+ 		\label{fig:EoEi_all}
+\end{figure}
+
+\begin{table}[ht]
+\label{tab:EoEi}
+	\begin{center}
+		\begin{tabular}{c | c | c | c}
+			\hline 
+			\multirow{2}{*}{Sector} 
+					& y = a + bx pars & MIP cut / All others \\
+					&   & \% & \% \\
+			\hline
+			1    & $a=0.32$, $b=-2.2$ & 98.7 \\
+			2    & $a=0.32$, $b=-2.2$ & 98.6 \\
+			3    & $a=0.34$, $b=-2.2$ & 98.5 \\
+			4    & $a=0.31$, $b=-2.1$ &  99.1 \\
+			5    & $a=0.30$, $b=-2.2$ &  98.5 \\
+			6    & $a=0.33$, $b=-2.1$ &  98.3 \\
+			\hline
+		\end{tabular}
+		\caption{The Minimum Ionizing cut values and effectiveness in each sector.
+					The last column refers to events with signal in EC that pass the MIP cut.}	
+	\end{center}
+\end{table}
+
+
+
+
+
+\subsection{Electromagnetic Shower Shape}
+Due to their shower shape, electrons release more energy in 
+the inner part of the calorimeter than in the outer part. In
+fact the energy released in the inner part constitutes a good
+fraction of the total energy in the calorimeter.
+We chose to keep the events with $$E_{in}/E_{TOT} \geq 0.25$$
+
+This cut is very loose since most of the MIP are already cut
+out with all the other cuts, ass seen in Fig.~\ref{fig:einetot}.
+This cut keeps more than $99\%$ of events in each sector.
+
+
+\begin{figure}[ht]
+  \centering
+		\includegraphics[width=0.95\textwidth]{img/cut-11EoOEtot_sector-1.png}
+		\caption{$E_{in}/E_{TOT}$ for Sector 1. All other cuts (panel b.)
+					almost completely rid of the MIP: $99.1\%$ of those events are kept (Panel d.). 
+					Panel c. shows all other negative cuts except the minimum $p$ cut.}
+ 		\label{fig:einetot}
+\end{figure}
+
+
+\clearpage\newpage
+\subsection{Number of photo-electrons in the \v Cerenkov detector}
+\label{sec:cc_cut}
+In the past a threshold for the signal in the \v Cerenkov detector was necessary to eliminate
+electronic noise and the fact that negative pions produce \v Cerenkov light when 
+their momentum is above $\sim 2.5$ GeV.
+
+The ADC signal from the CC is converted in 
+{\it number of photo-electrons} (nphe) and
+multiplied by 10. The number of photo-electrons detected in the \v Cerenkov
+Counter for electrons is typically between 5 and 20, or $10\times nphe_{el} \sim 50-200$.
+You can see from Fig.\,\ref{fig:cccut_alls} the $10\times nphe$
+distribution in each sector.
+
+The peak at $nphe \sim 1$ represents not only background and
+negative pions, but good electrons with low CC efficency hits. For this reason
+it's better to apply the CC $\theta$, $\phi$ and Timing match cuts.
+
+In average (see Fig.~\ref{fig:cccut_alls}) only $\sim 25\%$ of candidates pass the calorimeter cuts. 
+If applied, the nphe cut would keep $\sim 90\%$ of them.
+
+The $nphe$ cut is chosen visually to be at the minimum
+of the $nphe$ distribution between the background and electron signals peak.
+
+
+\begin{figure}[ht]
+  \centering
+		\includegraphics[width=0.85\textwidth ]{img/cut-12nphe_sector-all.png}
+		\caption{10 $\times$ Number of photo-electrons distribution integrated over all sectors.
+               In average, only $\sim 25 \,^{\circ\!\!}/\!_\circ$ pass the calorimeter cuts and of these, 
+               $\sim 90 \,^{\circ\!\!}/\!_\circ$ pass the $nphe$ cut.}
+ 		\label{fig:cccut_alls}
+\end{figure}
+		
+
+
+
+
+\subsection{Summary of Electron Identification }
+In Fig.~\ref{fig:epidsummary} a summary of the electron identifications cuts in all sectors is shown:
+
+\begin{itemize}
+	\item Individual cuts effect: this is the percentage of events that would be selected by each
+	individual cut if it was the only cut applied.
+	\item Effectiveness: this is the percentage of events that are selected by each individual cut when
+	all the other cuts are effective.
+	\item Cumulative: this is the percentage of events that are selected by each individual cut when
+	they are applied in the order show.
+\end{itemize}
+
+
+\begin{figure}[hb]
+  \centering
+		\includegraphics[width=1.05\textwidth]{img/epidsummary.png}
+		\caption{Electron Identification Summary. Top: effects of individual cuts.
+		         Middle: effectiveness of each cut.
+               Bottom: effects of accumulated (ordered) cuts.}
+ 		\label{fig:epidsummary}
+\end{figure}
+
+
+
+\clearpage\newpage
+
+
+
+
+
+
+
+
+
+
