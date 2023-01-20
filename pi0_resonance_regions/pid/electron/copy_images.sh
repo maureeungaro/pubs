@@ -8,8 +8,10 @@ orig_dir=/opt/projects/analysis/pid/electron # remove after copying to mauriplot
 
 
 cc_match_files=(cut-01-cc-theta-match-pars_sector-1
-                cut-01-cc-theta-match-cuts_sector-1
-                cut-02-cc-phi-match_sector-1)
+                cut-01-cc-theta-match-compare_sector-1
+                cut-02-cc-phi-match_sector-1
+                cut-03-cc-time-match-compare_sector-1
+                cut-04-ec-threshold_sector-1)
 
 cc_match_files_slices=(slice-06_cut-01-cc-theta-slice_sector-1
                        slice-14_cut-01-cc-theta-slice_sector-1

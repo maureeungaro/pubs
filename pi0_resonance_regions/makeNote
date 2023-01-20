@@ -4,13 +4,16 @@
 
 base_dir=/opt/projects/pubs/pi0_resonance_regions
 #bibDirs=(pid/electron pid/proton vertex fiducial/electron pi0_selection)
-bibDirs=(pid/electron)
+ana_dirs=(pid/electron)
 
-rm pi0_bib.tex
+rm -rf pi0.tex pi0_bib.tex img
+cat header.tex pi0_content.tex > pi0.tex
+
 echo "\\\begin{thebibliography}{mybib}" > pi0_bib.tex
-for b in $bibDirs
+for b in $ana_dirs
 do
   grep bibitem "$base_dir"/"$b"/*bib*.tex >>  pi0_bib.tex
+  ./$ana_dirs/copy_images.sh
 done
 echo "\\\end{thebibliography}" >> pi0_bib.tex
 
