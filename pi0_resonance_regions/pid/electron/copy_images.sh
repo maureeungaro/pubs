@@ -14,7 +14,11 @@ cc_match_files=(cut-01-cc-theta-match-pars_sector-1
                 cut-04-ec-threshold_sector-1
                 cut-05-sampling-f_sector-1
                 cut-05-sampling-f-compare_sector-1
-                cut-05-sampling-f_sector-all)
+                cut-05-sampling-f_sector-all
+                cut-06-ECU_sector-all
+                cut-07-ECV_sector-all
+                cut-08-ECW_sector-all
+                cut-09-uvw_sector-all)
 
 cc_match_files_slices=(slice-06_cut-01-cc-theta-slice_sector-1
                        slice-14_cut-01-cc-theta-slice_sector-1
