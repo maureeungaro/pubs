@@ -1,4 +1,5 @@
-\clearpage
+\clearpage\newpage
+
 \subsection{Minimum Ionizing Particles (MIP) rejection}
 The outer EC is $5/3$ times bigger than the inner EC. Therefore pions,
 which do not shower and are minimum ionizing particles in the momentum range 
@@ -19,7 +20,7 @@ table\,\ref{tab:EoEi}.
 
 \begin{figure}[ht]
   \centering
-		\includegraphics[width=0.93\textwidth]{img/cut-10EoVsEi_sector-1.png}
+		\includegraphics[width=0.93\textwidth]{img/cut-10-mip_sector-1.png}
 		\caption{$E_{out}/p$ versus $E_{in}/p$ for Sector 1.}
  		\label{fig:EoEi}
 \end{figure}
@@ -28,7 +29,7 @@ table\,\ref{tab:EoEi}.
 \clearpage\newpage
 \begin{figure}[ht]
   \centering
-		\includegraphics[width=1.00\textwidth]{img/cut-10EoVsEi_sector-all.png}
+		\includegraphics[width=1.00\textwidth]{img/cut-10-mip_sector-all.png}
 		\caption{$E_{out}/p$ versus $E_{in}/p$ for all sectors. In every sector
 					roughly $99\,^{\circ\!\!}/\!_\circ$ of events with all other cuts applied also pass this cut. }
  		\label{fig:EoEi_all}
@@ -55,102 +56,6 @@ table\,\ref{tab:EoEi}.
 					The last column refers to events with signal in EC that pass the MIP cut.}	
 	\end{center}
 \end{table}
-
-
-
-
-
-\subsection{Electromagnetic Shower Shape}
-Due to their shower shape, electrons release more energy in 
-the inner part of the calorimeter than in the outer part. In
-fact the energy released in the inner part constitutes a good
-fraction of the total energy in the calorimeter.
-We chose to keep the events with $$E_{in}/E_{TOT} \geq 0.25$$
-
-This cut is very loose since most of the MIP are already cut
-out with all the other cuts, ass seen in Fig.~\ref{fig:einetot}.
-This cut keeps more than $99\%$ of events in each sector.
-
-
-\begin{figure}[ht]
-  \centering
-		\includegraphics[width=0.95\textwidth]{img/cut-11EoOEtot_sector-1.png}
-		\caption{$E_{in}/E_{TOT}$ for Sector 1. All other cuts (panel b.)
-					almost completely rid of the MIP: $99.1\%$ of those events are kept (Panel d.). 
-					Panel c. shows all other negative cuts except the minimum $p$ cut.}
- 		\label{fig:einetot}
-\end{figure}
-
-
-\clearpage\newpage
-\subsection{Number of photo-electrons in the \v Cerenkov detector}
-\label{sec:cc_cut}
-In the past a threshold for the signal in the \v Cerenkov detector was necessary to eliminate
-electronic noise and the fact that negative pions produce \v Cerenkov light when 
-their momentum is above $\sim 2.5$ GeV.
-
-The ADC signal from the CC is converted in 
-{\it number of photo-electrons} (nphe) and
-multiplied by 10. The number of photo-electrons detected in the \v Cerenkov
-Counter for electrons is typically between 5 and 20, or $10\times nphe_{el} \sim 50-200$.
-You can see from Fig.\,\ref{fig:cccut_alls} the $10\times nphe$
-distribution in each sector.
-
-The peak at $nphe \sim 1$ represents not only background and
-negative pions, but good electrons with low CC efficency hits. For this reason
-it's better to apply the CC $\theta$, $\phi$ and Timing match cuts.
-
-In average (see Fig.~\ref{fig:cccut_alls}) only $\sim 25\%$ of candidates pass the calorimeter cuts. 
-If applied, the nphe cut would keep $\sim 90\%$ of them.
-
-The $nphe$ cut is chosen visually to be at the minimum
-of the $nphe$ distribution between the background and electron signals peak.
-
-
-\begin{figure}[ht]
-  \centering
-		\includegraphics[width=0.85\textwidth ]{img/cut-12nphe_sector-all.png}
-		\caption{10 $\times$ Number of photo-electrons distribution integrated over all sectors.
-               In average, only $\sim 25 \,^{\circ\!\!}/\!_\circ$ pass the calorimeter cuts and of these, 
-               $\sim 90 \,^{\circ\!\!}/\!_\circ$ pass the $nphe$ cut.}
- 		\label{fig:cccut_alls}
-\end{figure}
-		
-
-
-
-
-\subsection{Summary of Electron Identification }
-In Fig.~\ref{fig:epidsummary} a summary of the electron identifications cuts in all sectors is shown:
-
-\begin{itemize}
-	\item Individual cuts effect: this is the percentage of events that would be selected by each
-	individual cut if it was the only cut applied.
-	\item Effectiveness: this is the percentage of events that are selected by each individual cut when
-	all the other cuts are effective.
-	\item Cumulative: this is the percentage of events that are selected by each individual cut when
-	they are applied in the order show.
-\end{itemize}
-
-
-\begin{figure}[hb]
-  \centering
-		\includegraphics[width=1.05\textwidth]{img/epidsummary.png}
-		\caption{Electron Identification Summary. Top: effects of individual cuts.
-		         Middle: effectiveness of each cut.
-               Bottom: effects of accumulated (ordered) cuts.}
- 		\label{fig:epidsummary}
-\end{figure}
-
-
-
-
-
-
-
-
-
-
 
 
 
