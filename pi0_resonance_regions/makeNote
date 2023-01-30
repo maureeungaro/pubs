@@ -3,7 +3,7 @@
 # collecting bibliographies
 
 base_dir=/opt/projects/pubs/pi0_resonance_regions
-#bibDirs=(pid/electron pid/proton vertex fiducial/electron pi0_selection)
+#ana_dirs=(pid/proton vertex fiducial/electron pi0_selection)
 ana_dirs=(pid/electron)
 
 rm -rf pi0.tex pi0_bib.tex img
