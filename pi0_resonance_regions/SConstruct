@@ -1,6 +1,6 @@
 import os
 
-ana_dir = ['pid/electron']
+ana_dir = ['pid/electron', 'pid/proton', 'vertex']
 
 # get current directory
 cwd = os.getcwd()

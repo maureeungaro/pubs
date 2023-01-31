@@ -1,0 +1,79 @@
+% \errorstopmode %  stop on error
+\batchmode %  disable output generation
+% preambolo per doppia compilazione HTML/PDF
+\ifx\pdfoutput\undefined      % compilazione htlatex
+\documentclass{article}
+\DeclareGraphicsExtensions{.png, .gif, .jpg}
+
+\else                         % compilazione pdflatex
+\documentclass{article}
+
+% packages
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{wrapfig}
+\usepackage{multirow}
+\usepackage{lscape}
+\usepackage{amssymb,amsmath}
+\usepackage[hyperindex]{hyperref}
+
+% page setup
+\pdfpagewidth 8.5in
+\pdfpageheight 11in
+\setlength\textwidth{5.7in}
+\setlength\textheight{8.1in}
+\setlength\oddsidemargin{0in}
+\setlength\evensidemargin{0in}
+\setlength\topmargin{-0.6in}
+\setlength\footskip{0.6in}
+\setlength\headsep{0.6in}
+
+% custom commands
+\newcommand{\percent}{\,^0\!/_0}
+
+%\newcommand{\href}[2]{\Link[#1]{}{} #2 \EndLink}
+%\renewcommand{\hypertarget}[2]{\Link[]{}{#1} #2 \EndLink}
+%\renewcommand{\hyperlink}[2]{\Link[]{#1}{} #2 \EndLink}
+
+\hypersetup{
+    pdfnewwindow=true,      % links in new window
+    colorlinks=true,        % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links
+    citecolor=magenta,      % color of links to bibliography
+    urlcolor=blue           % color of external links
+}
+\fi
+
+
+\begin{document}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\slshape \thesection\ #1}{}}
+\fancyhead[R]{\bf\rightmark} 
+\fancyhead[L]{e1-6 analysis}
+\fancyfoot[L]{ \sl UCONN/JLAB}
+
+% author should reflect on the fancyfoot
+\author{M. Ungaro, K. Joo}
+\fancyfoot[R]{ \sl M. Ungaro, K. Joo}
+\title{\large e1-6 Vertex Correction, Selection}
+\maketitle
+
+\abstract{This document describes the track vertex correction and selection procedure.
+The track vertices of all particles are corrected. A selection on the electron and proton
+z-vertexes and their differences is applied.}
+
+\tableofcontents
+
+\include{vertex_content}
+\include{vertex_bib}
+
+\end{document}
+
+
+
+
+
+
+
+
