@@ -1,9 +1,13 @@
 #!/bin/zsh
 
-mkdir -p img
-
 orig_dir=/opt/projects/mauriplots/epid/
-orig_dir=/opt/projects/analysis/pid/electron # remove after copying to mauriplots
+
+hostname=`hostname -s`
+case "$hostname" in
+	jlabl4)
+    orig_dir=/userweb/ungaro/public_html/plots/epid
+		;;
+esac
 
 epid_imgs=(
   cut-01-cc-theta-match-pars_sector-1

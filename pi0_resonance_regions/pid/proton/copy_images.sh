@@ -1,9 +1,13 @@
 #!/bin/zsh
 
-mkdir -p img
+orig_dir=/opt/projects/mauriplots/ppid
 
-orig_dir=/opt/projects/mauriplots/ppid/
-orig_dir=/opt/projects/analysis/pid/proton # remove after copying to mauriplots
+hostname=`hostname -s`
+case "$hostname" in
+	jlabl4)
+    orig_dir=/userweb/ungaro/public_html/plots/ppid
+		;;
+esac
 
 ppid_imgs=(
   dist-dtfit_sector-1

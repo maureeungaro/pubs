@@ -4,9 +4,8 @@
 
 base_dir=/opt/projects/pubs/pi0_resonance_regions
 
-
 #ana_dirs=(   pi0_selection)
-ana_dirs=(pid/electron pid/proton vertex)
+ana_dirs=(pid/electron pid/proton)
 
 rm -rf pi0.tex pi0_bib.tex img
 cat header.tex pi0_content.tex > pi0.tex
