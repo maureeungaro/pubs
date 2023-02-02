@@ -3,6 +3,8 @@
 # collecting bibliographies
 
 base_dir=/opt/projects/pubs/pi0_resonance_regions
+
+
 #ana_dirs=(   pi0_selection)
 ana_dirs=(pid/electron pid/proton vertex)
 
