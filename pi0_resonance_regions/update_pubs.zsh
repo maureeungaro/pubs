@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+# TODO: RUN THE PDF MAKER ON GITHUB CI Instead
+
 # This script is meant to be run by a cronjob on jlabl4
 #
 # 1. Update the repos:
