@@ -6,8 +6,9 @@ cp_imgs  = env.Command('dummy1', [], './copy_images.sh')
 form_tex = env.Command('dummy2', [], 'cat ../../header.tex electron_pid_standalone.tex > electron_pid.tex')
 pdf      = env.PDF(target = 'electron_pid.pdf',  source = 'electron_pid.tex')
 
-#Depends(pdf, form_tex) # this dependency is not working. The result of form_tex is kept in the repo to avoid this problem
+Depends(pdf, form_tex) # this dependency is not working. The result of form_tex is kept in the repo to avoid this problem
 Depends(form_tex, cp_imgs)
+Depends(pdf, cp_imgs)
 
 cleans = scanFiles('.', accept=["electron_pid*", "*.aux"], reject=[".tex"])
 Clean('electron_pid.html', cleans)
