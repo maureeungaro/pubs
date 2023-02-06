@@ -9,7 +9,7 @@ case "$hostname" in
 		;;
 esac
 
-epid_imgs=(
+imgs=(
   cut-01-cc-theta-match-pars_sector-1
   cut-01-cc-theta-match-compare_sector-1
   cut-02-cc-phi-match_sector-1
@@ -29,7 +29,7 @@ epid_imgs=(
   epidsummary
 )
 
-epid_imgs_slices=(
+imgs_slices=(
   slice-06_cut-01-cc-theta-slice_sector-1
   slice-14_cut-01-cc-theta-slice_sector-1
   slice-03_cut-03-cc-time-match_sector-1
@@ -40,12 +40,12 @@ epid_imgs_slices=(
   slice-08_cut-05-sampling-f_sector-1
 )
 
-for cc in $epid_imgs; do
+for cc in $imgs; do
   echo $cc
   cp $orig_dir/img/$cc.png img
 done
 
-for cc in $epid_imgs_slices; do
+for cc in $imgs_slices; do
   echo $cc
   cp $orig_dir/img_slices/$cc.png img
 done

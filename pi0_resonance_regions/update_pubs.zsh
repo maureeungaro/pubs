@@ -17,8 +17,13 @@ plots=/userweb/ungaro/public_html/plots
 pubs=/userweb/ungaro/public_html/pubs
 docs=/userweb/ungaro/public_html/docs
 
-plots_r=(epid ppid)
 
+echo " > updating pubs"
+cd $pubs
+git pull
+
+# mauriPlots repos
+plots_r=(epid ppid vertex)
 for r in $plots_r; do
   echo " > updating $r"
   cd $plots/$r
@@ -26,13 +31,17 @@ for r in $plots_r; do
   cd -
 done
 
-echo " > updating pubs"
-cd $pubs
-git pull
+echo " > making pi0_resonance_regions"
+cd pi0_resonance_regions
+./makeNote
+mv pi0.pdf $docs
 
-#echo " > making pi0_resonance_regions"
-#cd pi0_resonance_regions
-#./makeNote
-#mv pi0.pdf $docs
-#cd -
 
+# compiling individual chapters and copy them to docs
+# for s in (pid/electron pid/proton vertex); do
+#   echo " > making $s"
+#   cd $s
+#   scons
+#   mv *.pdf $docs
+#   cd -
+# done

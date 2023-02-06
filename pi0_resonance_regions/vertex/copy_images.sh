@@ -2,21 +2,16 @@
 
 mkdir -p img
 
-orig_dir=/opt/projects/mauriplots/ppid/
-orig_dir=/opt/projects/analysis/vertex # remove after copying to mauriplots
+orig_dir=/opt/projects/mauriplots/vertex/
 
-exit 0
+imgs=(
+    vtx_2D_all_sector
+    vtx_all_sector
+)
 
-ppid_imgs=()
 
-ppid_imgs_slices=()
-
-for cc in $ppid_imgs; do
+for cc in $imgs; do
     echo $cc
-    cp $orig_dir/img/$cc.png img
+    cp $orig_dir/$cc.png img
 done
 
-for cc in $ppid_imgs_slices; do
-    echo $cc
-    cp $orig_dir/img_slices/$cc.png img
-done
