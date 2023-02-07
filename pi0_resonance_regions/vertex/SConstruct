@@ -1,5 +1,10 @@
+import sys
 import os
-from util import scanFiles
+
+sys.path.insert(0, '../..')
+
+from scanFiles import scan_files
+
 env = Environment(ENV=os.environ)
 
 cp_imgs  = env.Command('dummy1', [], './copy_images.sh')
@@ -9,5 +14,5 @@ pdf      = env.PDF(target = 'vertex.pdf',  source = 'vertex.tex')
 Depends(pdf, form_tex) # this dependency is not working. The result of form_tex is kept in the repo to avoid this problem
 Depends(form_tex, cp_imgs)
 
-cleans = scanFiles('.', accept=["vertex*", "*.aux"], reject=[".tex"])
+cleans = scan_files('.', accept=["vertex*", "*.aux"], reject=[".tex"])
 Clean('vertex.html', cleans)

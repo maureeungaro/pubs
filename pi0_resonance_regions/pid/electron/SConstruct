@@ -1,5 +1,10 @@
+import sys
 import os
-from util import scanFiles
+
+sys.path.insert(0, '../../..')
+
+from scanFiles import scan_files
+
 env = Environment(ENV=os.environ)
 
 cp_imgs  = env.Command('dummy1', [], './copy_images.sh')
@@ -10,5 +15,5 @@ Depends(pdf, form_tex) # this dependency is not working. The result of form_tex 
 Depends(form_tex, cp_imgs)
 Depends(pdf, cp_imgs)
 
-cleans = scanFiles('.', accept=["electron_pid*", "*.aux"], reject=[".tex"])
+cleans = scan_files('.', accept=["electron_pid*", "*.aux"], reject=[".tex"])
 Clean('electron_pid.html', cleans)

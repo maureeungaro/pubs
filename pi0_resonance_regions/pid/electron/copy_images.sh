@@ -1,13 +1,14 @@
 #!/bin/zsh
 
-orig_dir=/opt/projects/mauriplots/epid/
+local_dir=epid
 
-hostname=`hostname -s`
-case "$hostname" in
-	jlabl4)
-        orig_dir=/userweb/ungaro/public_html/plots/epid
-	;;
-esac
+orig_dir=/opt/projects/mauriplots/$local_dir
+
+# if on github ci, clone mauriplots and use that
+if [ -n "$GITHUB_WORKSPACE" ]; then
+  git clone https://github.com/MauriPlots/$local_dir
+  orig_dir=`pwd`/$local_dir
+fi
 
 imgs=(
   cut-01-tmp_sector-1

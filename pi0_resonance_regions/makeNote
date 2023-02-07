@@ -1,14 +1,11 @@
 #!/bin/zsh
 
-# collecting bibliographies
-
+# collecting bibliographies and copying images
 base_dir=/opt/projects/pubs/pi0_resonance_regions
-
-#ana_dirs=(   pi0_selection)
 ana_dirs=(pid/electron pid/proton vertex)
 
-rm -rf pi0.tex pi0_bib.tex img
-cat header.tex pi0_content.tex > pi0.tex
+rm -rf pi0_bib.tex img
+mkdir img
 
 echo "\\\begin{thebibliography}{mybib}" > pi0_bib.tex
 for b in $ana_dirs
@@ -19,6 +16,9 @@ do
 done
 echo "\\\end{thebibliography}" >> pi0_bib.tex
 
+# pi0 content
+rm -rf pi0.tex
+cat header.tex pi0_content.tex > pi0.tex
 
 scons -c
 scons
