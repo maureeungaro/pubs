@@ -52,6 +52,7 @@ DocDirNotExisting() {
 }
 
 cdir=$(pwd)
+echo Current dir: $cdir `pwd`
 
 [[ -v doc_to_make ]] && echo Making $doc_to_make || DocDirNotExisting
 cd $doc_to_make
@@ -73,7 +74,7 @@ if [ $? -ne 0 ]; then
 	exit 1
 fi
 
-pwd
+echo Current dir: `pwd`
 ls -lrt
 
 mv *.pdf $cdir/pdfs
@@ -89,6 +90,8 @@ git config --global --add safe.directory /__w/pubs/pubs
 
 
 cd $cdir
+echo Current dir: `pwd` or $cdir
+
 git remote -v
 ls -lrt pdfs/
 
