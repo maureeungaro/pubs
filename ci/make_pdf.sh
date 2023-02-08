@@ -86,4 +86,5 @@ fi
 scons -c
 
 cd $cdir
-git diff
+pwd
+ls -lrt
