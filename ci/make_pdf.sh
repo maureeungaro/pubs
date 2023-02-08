@@ -94,3 +94,6 @@ git config --global --add safe.directory /__w/pubs/pubs
 cd $cdir
 echo "Current dir $cdir content:"
 ls -lrt
+
+# refresh the pdfs that may have been changed by other actions
+git pull
