@@ -88,9 +88,11 @@ scons -c
 git config --global --add safe.directory /__w/pubs/pubs
 
 
-pwd
-git remote -v
-ls -lrt
 cd $cdir
 git remote -v
-ls -lrt
+ls -lrt pdfs/
+
+git diff pdfs/electron_pid.pdf
+git diff pdfs/proton_pid.pdf
+git diff pdfs/vertex.pdf
+git diff pdfs/pi0.pdf

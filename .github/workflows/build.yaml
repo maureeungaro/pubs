@@ -44,9 +44,6 @@ jobs:
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git diff pdfs/electron_pid.pdf
-          git diff pdfs/proton_pid.pdf
-          git diff pdfs/vertex.pdf
-          git diff pdfs/pi0.pdf
+
           #git commit -m 'new pdf' pdfs || echo "No changes to commit"
           #git push origin || echo "No changes to commit"
