@@ -77,7 +77,7 @@ fi
 echo Current dir: `pwd`
 ls -lrt
 
-mv *.pdf $cdir/pdfs
+mv *.pdf $cdir/pdfs/
 
 if [ $? -ne 0 ]; then
 	echo Moving pdf failed
@@ -93,7 +93,7 @@ cd $cdir
 echo Current dir: `pwd` or $cdir
 
 git remote -v
-ls -lrt pdfs/
+ls -lrt
 
 git diff pdfs/electron_pid.pdf
 git diff pdfs/proton_pid.pdf
