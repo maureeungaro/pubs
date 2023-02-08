@@ -85,7 +85,12 @@ fi
 
 scons -c
 
-#cd $cdir
+git config --global --add safe.directory /__w/pubs/pubs
+
+
 pwd
-git remote -v 
+git remote -v
+ls -lrt
+cd $cdir
+git remote -v
 ls -lrt
