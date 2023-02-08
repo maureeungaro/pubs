@@ -85,4 +85,5 @@ fi
 
 scons -c
 
-git config --global --add safe.directory /__w/pubs/pubs
+cd $cdir
+git diff
