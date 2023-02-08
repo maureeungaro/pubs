@@ -5,8 +5,7 @@
 
 # Container run:
 # docker run -it --rm maureeungaro/base:fedora36-latex sh
-# git clone http://github.com/maureeungaro/mauriPlots /root/plots
-# git clone http://github.com/maureeungaro/pubs       /root/pubs && cd /root/pubs
+# git clone https://github.com/maureeungaro/pubs       /root/pubs && cd /root/pubs
 # ./ci/make_pdf.sh -d pi0_resonance_regions/pid/electron
 # ./ci/make_pdf.sh -d pi0_resonance_regions
 
@@ -53,17 +52,16 @@ DocDirNotExisting() {
 }
 
 
-[[ -v doc_to_make ]] && echo Making $doc_to_make  || DocDirNotExisting
+[[ -v doc_to_make ]] && echo Making $doc_to_make || DocDirNotExisting
+cd $doc_to_make
 
 
-# if doc_to_make is pi0_resonance_regions, run  pi0_resonance_regions/makeNote
+# if doc_to_make is pi0_resonance_regions, run pi0_resonance_regions/makeNote
 case $doc_to_make in
     pi0_resonance_regions)
-        cd $doc_to_make
         ./makeNote
         ;;
     *)
-        cd $doc_to_make
         scons -c
         scons
         ;;

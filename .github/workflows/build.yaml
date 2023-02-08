@@ -1,4 +1,4 @@
-name: SCI-G Examples Tests
+name: Pubs pdf build
 
 # Controls when the workflow will run
 on:
