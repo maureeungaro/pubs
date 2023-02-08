@@ -73,5 +73,12 @@ if [ $? -ne 0 ]; then
 	exit 1
 fi
 
+pwd
+ls -lrt
+
 mv *.pdf $cdir/pdfs
 
+if [ $? -ne 0 ]; then
+	echo Moving pdf failed
+	exit 1
+fi

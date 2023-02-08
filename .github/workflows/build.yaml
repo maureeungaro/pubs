@@ -41,8 +41,5 @@ jobs:
       - name: Archive PDFs
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-        # Optional. Commit message for the created commit.
-        # Defaults to "Apply automatic changes"
-          commit_message: Automated Change
-          file_pattern: '*.pdf'
-          
+          commit_message: new pdfs
+          file_pattern: 'pdfs/*.pdf'
