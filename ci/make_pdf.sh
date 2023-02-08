@@ -85,6 +85,7 @@ fi
 
 scons -c
 
-cd $cdir
+#cd $cdir
 pwd
+git remote -v 
 ls -lrt
