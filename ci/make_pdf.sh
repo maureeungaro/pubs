@@ -82,3 +82,7 @@ if [ $? -ne 0 ]; then
 	echo Moving pdf failed
 	exit 1
 fi
+
+scons -c
+
+git config --global --add safe.directory /__w/pubs/pubs
