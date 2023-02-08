@@ -51,6 +51,7 @@ DocDirNotExisting() {
 	exit 3
 }
 
+cdir=$(pwd)
 
 [[ -v doc_to_make ]] && echo Making $doc_to_make || DocDirNotExisting
 cd $doc_to_make
@@ -71,4 +72,6 @@ if [ $? -ne 0 ]; then
 	echo Making $doc_to_make pdf failed
 	exit 1
 fi
+
+mv *.pdf $cdir/pdfs
 

@@ -37,4 +37,12 @@ jobs:
         uses: actions/checkout@main
       - name: ${{ matrix.doc }}
         run: |
-          ./ci/make_pdf.sh -d ${{ matrix.doc }} 
+          ./ci/make_pdf.sh -d ${{ matrix.doc }}
+      - name: Archive PDFs
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+        # Optional. Commit message for the created commit.
+        # Defaults to "Apply automatic changes"
+          commit_message: Automated Change
+          file_pattern: '*.pdf'
+          
