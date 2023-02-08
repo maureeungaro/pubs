@@ -40,22 +40,10 @@ jobs:
         run: |
           ./ci/make_pdf.sh -d ${{ matrix.doc }}
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: new pdfs
-
-      - name: "Run if changes have been detected"
-        if: steps.auto-commit-action.outputs.changes_detected == 'true'
-        run: echo "Changes!"
-
-      - name: "Run if no changes have been detected"
-        if: steps.auto-commit-action.outputs.changes_detected == 'false'
-        run: echo "No Changes!"
-
       - name: Commit PDFs
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           git diff --name-only
-          git commit -m 'new pdf' || echo "No changes to commit"
-          git push origin || echo "No changes to commit"
+          git commit -m 'new pdf' pdfs/*.pdf || echo "No changes to commit"
+          #git push origin || echo "No changes to commit"
