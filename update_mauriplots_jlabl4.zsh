@@ -8,21 +8,13 @@
 plots=/userweb/ungaro/public_html/plots
 plotsr=https://github.com/mauriPlots
 
+# the repos are reset every time
+# so git pull is enough
 plots_r=(epid ppid vertex efid)
 cd $plots
 for r in $plots_r; do
-  if [[ -d $r ]]; then
-    cd $r
-    git pull
-    echo "$r pulled"
-    cd ..
-  else
-    echo " > updating $r"
-    rm -rf $r
-    git clone $plotsr/$r
-    echo "$r cloned"
-  fi
-  echo
+  rm -rf $r
+  git clone $plotsr/$r
 done
 
 slides=/userweb/ungaro/public_html/slides
