@@ -31,6 +31,7 @@ jobs:
           - pi0_resonance_regions/vertex
           - pi0_resonance_regions/fiducial/electron
           - pi0_resonance_regions
+          - pi0_delta
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
