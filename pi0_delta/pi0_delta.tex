@@ -1,0 +1,37 @@
+\documentclass[chap]{pi0_delta}
+
+\usepackage[hang]{caption2}     
+\renewcommand{\captionfont}{\sffamily\small} 
+
+\include{macros}
+\usepackage{graphicx} 
+\usepackage{wrapfig}
+\usepackage{sidecap}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage{slashed}
+\usepackage{lscape}
+\usepackage{color}
+\usepackage{verbatim}
+\input epsf
+
+\begin{document}
+\pagestyle{fancy}
+\addtolength{\headheight}{\baselineskip}
+
+\rm
+\include{abstract}
+\tableofcontents
+\listoftables          % required if there are tables
+\listoffigures         % required if there are figures
+
+
+\include{data_reduction/datared}
+\include{acceptance/acc}
+\include{analysis/analysis}
+\include{systematics/systematics}
+
+\include{bib}
+\include{app}
+ 
+\end{document}

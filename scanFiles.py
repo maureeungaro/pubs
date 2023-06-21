@@ -21,5 +21,6 @@ def scan_files(a_dir, accept=None, reject=None):
         for pattern in accept:
             sources += glob.glob(path + "/" + pattern)
     for pattern in reject:
+        print(f'rejecting {pattern}')
         sources = filter((lambda a: a.rfind(pattern) == -1), sources)
     return list(unique(sources))

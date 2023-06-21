@@ -1,0 +1,327 @@
+
+
+\chapter{Summary of cuts used}
+\section{Electron particle id cuts}
+
+\subsection{\v Cerenkov signal cut}
+Denoting with nphe the ECPB variable, i.e. $10 \times $ number of photoelectrons:
+$$nphe > 25$$
+
+
+
+
+\subsection{ Total energy in calorimeter and lower momentum cut }\label{sec:ectotvsp}
+
+$$ Ymin \le E_{TOT}/p \le Ymax $$ 
+where
+$$
+\begin{array}{c}
+Ymax = 0.395332 - 0.044357 p + 0.0193197 p^2 - 0.00272412 p^3
+\\
+Ymin = 0.137908 + 0.084991 p - 0.0245721 p^2 + 0.00276102 p^3 
+\end{array}
+$$
+These cuts comes from \cite{bib:valeri1}. \\
+Furthermore
+$$ p >= 0.639 $$
+from \cite{bib:ecmin}.
+
+
+
+
+\subsection{Inner - Outer energy in calorimeter cut}
+$$
+E_{in}/p \ge 0.19 - E_{out}/p
+$$
+
+\subsection{Inner / Outer energy cut}
+$$
+E_{in}/E_{out} \ge 0.4
+$$
+
+\section{Proton particle id cuts}
+
+$$ 0.6 \le M\le 1.6 $$
+
+
+\subsection{Electron fiducial cuts}\label{app:fidu_e}
+$$
+\begin{array}{c c c}
+\\
+\Delta\phi   & = &  C_4 \left( \sin (\theta - \theta_{cut}) \right) ^{\,E} \\
+\\
+E        & = &  C_3\, p\, ^{C_5} \\
+\\
+\theta_{cut} & = &  C_1 + \Dfrac{C_2}{p + C_6}
+\end{array}
+$$
+
+\vspace{1cm}
+\begin{table}[h]
+ \begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline 
+   Sector & $C_1$ & $C_2$ & $C_3$ & $C_4$     & $C_5$ & $C_6$ \\
+    \hline  
+   1 &     12.0 &  20.0 &  0.32 &  32.0 &  0.416667 &  0.14 \\
+   2 &     //   &  20.7 &  0.36 &  34.0 &  //       &  // \\
+   3 &     //   &  20.2 &  0.32 &  32.0 &  //       &  // \\
+   4 &     //   &  20.5 &  0.32 &  32.0 &  //       &  // \\
+   5 &     //   &  20.5 &  0.29 &  32.0 &  //       &  // \\
+   6 &     //   &  20.0 &  0.32 &  32.0 &  //       &  // \\
+ \hline
+  \end{tabular}
+ \end{center} 
+\end{table}
+
+\subsection{Electron bad regions}
+In what follows $p$ is the electron momentum in units of $GeV$ and $\theta$ is the
+electron angle in units of degrees.
+
+{\bf Sector 2:}
+$$
+\begin{array}{c c c}
+34 -4\sqrt{p-1.5} & \le \theta \le  & 35.5 -4\sqrt{p-1.5} \\
+& \times & \\
+26.7 -4.8\sqrt{p-1.5} & \le \theta \le & 27.3 -4.8\sqrt{p-1.5} \\
+& \times & \\
+28.1 -4.8\sqrt{p-1.5} & \le \theta \le & 28.5 -4.8\sqrt{p-1.5} \\
+\end{array}
+$$
+
+{\bf Sector 5:}
+$$
+\begin{array}{c c c}
+21.3 -2.4\sqrt{p-2} & \le \theta \le & 21 \\
+& \times & \\
+26.3 -2.4\sqrt{p-1.9} & \le \theta \le & 26.3 + 2.4\sqrt{p-1.9} \\
+\end{array}
+$$
+
+{\bf Sector 6:}
+$$
+\begin{array}{c c c}
+29.5 -5.2\sqrt{p-1.5} & \le \theta \le  & 31 -5\sqrt{p-1.5} \\
+& \times & \\
+36 -3\sqrt{p-1.5} & \le \theta \le & 38 -3\sqrt{p-1.5} \\
+\end{array}
+$$
+
+\vspace{0.7cm}
+\subsection{Proton fiducial cuts}\label{app:fidu_p}
+
+In what follows $p$ is the proton momentum in units of $GeV$ and $\theta$ and $\phi$ are the
+proton angles in units of degrees.
+
+
+$$
+\begin{array}{c}
+a_i = c_0 + c_1 p + c_2 p^2 \\
+b_i = d_0 + d_1 p + d_2 p^2 
+\end{array}
+$$
+
+\vspace{0.5cm}
+
+
+{\bf Sector 1:}
+
+\begin{table}[h]
+\scriptsize
+ \begin{center}
+  \begin{tabular}{c|c|c|c|c|c|c}
+    \hline 
+    & $c_0$ & $d_0$ & $c_1$ & $d_1$     & $c_2$ & $d_2$ \\
+    \hline  
+   $a_0$, $b_0$ &   39.4471  & -1.42891 &  -4.28941  & -20.8695  & 0.0910672  & 4.85237  \\
+   $a_1$, $b_1$ &    -5.95718 &  -0.40323  & -0.0915413  & 4.15143  & 0.113486  & -0.873097  \\
+   $a_2$, $b_2$ &  0.233019  & 0.0877448  & 0.010272  & -0.206594 &  -0.00585689  & 0.0422065  \\  
+   $a_3$, $b_3$ &   -0.0043921  & -0.00209527  & -4.57015e-05  & 0.0038365  & 8.66512e-05  & -0.000787643  \\ 
+   $a_4$, $b_4$ &  3.22474e-05  & 1.40471e-05  & -1.63838e-06  & -2.40801e-05  & -2.99613e-07  & 5.06479e-06  \\
+ \hline
+  \end{tabular}
+ \end{center} 
+\end{table}
+\clearpage
+\vspace{0.5cm}
+
+{\bf Sector 2:}
+\begin{table}[h]
+\scriptsize
+ \begin{center}
+  \begin{tabular}{c|c|c|c|c|c|c}
+    \hline 
+    & $c_0$ & $d_0$ & $c_1$ & $d_1$     & $c_2$ & $d_2$ \\
+    \hline  
+   $a_0$, $b_0$ &  44.2525  &  4.94857  &  -8.53036  &  -20.3406  &  0.481749  &  4.03726   \\
+   $a_1$, $b_1$ &  -6.9053  &  -1.97407  &  0.769652  &  4.2043  &  0.00638363  &  -0.753544  \\
+   $a_2$, $b_2$ &  0.281855  &  0.184416  &  -0.0321893  &  -0.218929  &  -0.000844245  &  0.0372669  \\
+   $a_3$, $b_3$ &   -0.00536168  &  -0.0045072 &   0.000722783  &  0.00432631  &  1.03893e-05  &  -0.000703947  \\
+   $a_4$, $b_4$ &   3.88746e-05  &  3.6027e-05  &  -6.23593e-06  &  -3.06811e-05  &  1.41789e-08 &   4.85139e-06  \\
+ \hline
+  \end{tabular}
+ \end{center} 
+\end{table}
+
+\vspace{0.5cm}
+
+
+{\bf Sector 3:}
+\begin{table}[h]
+\scriptsize
+ \begin{center}
+  \begin{tabular}{c|c|c|c|c|c|c}
+    \hline 
+    & $c_0$ & $d_0$ & $c_1$ & $d_1$     & $c_2$ & $d_2$ \\
+    \hline  
+   $a_0$, $b_0$ &  48.8643  &  13.224  &  -13.6046  &  -22.7071  &  1.54434  &  3.47116   \\
+   $a_1$, $b_1$ &  -8.14818  &  -2.07311  &  1.59337  &  3.88685  &  -0.16267  &  -0.529604  \\ 
+   $a_2$, $b_2$ & 0.370884  &  0.177999  &  -0.0920444  &  -0.193177  &  0.01175  &  0.0225649  \\
+   $a_3$, $b_3$ &  -0.00764513  &  -0.00419906  &  0.00230433  &  0.00365751  &  -0.000322689  &  -0.000357837  \\
+   $a_4$, $b_4$ & 5.84148e-05  &  3.1048e-05  &  -2.01461e-05  &  -2.34094e-05  &  2.93282e-06  &  1.75395e-06  \\ 
+ \hline
+  \end{tabular}
+ \end{center} 
+\end{table}
+
+
+\vspace{0.5cm}
+
+
+{\bf Sector 4:}
+\begin{table}[h]
+\scriptsize
+ \begin{center}
+  \begin{tabular}{c|c|c|c|c|c|c}
+    \hline 
+    & $c_0$ & $d_0$ & $c_1$ & $d_1$     & $c_2$ & $d_2$ \\
+    \hline  
+   $a_0$, $b_0$ &   42.7907  &  -14.6804  &  0.557686  &  -4.28155  &  -1.93386  &  0.545166  \\
+   $a_1$, $b_1$ &   -7.06612  &  2.32197  &  -0.589287  &  0.811594  &  0.366981  &  -0.0287077  \\
+   $a_2$, $b_2$ & 0.301463  &  -0.0327651  &  0.0330414  &  -0.0501169  &  -0.0179363  &  -0.000611366  \\
+   $a_3$, $b_3$ &  -0.00580282  &  -0.000419906  &  -0.000743318  &  0.00126087  &  0.000384465  &  2.22975e-05 \\
+   $a_4$, $b_4$ &   4.16703e-05  &  8.18104e-06  &  5.97558e-06  &  -1.03781e-05  &  -3.01804e-06  &  -2.27518e-07  \\
+ \hline
+  \end{tabular}
+ \end{center} 
+\end{table}
+
+
+
+
+
+{\bf Sector 5:}
+\begin{table}[h]
+\scriptsize
+ \begin{center}
+  \begin{tabular}{c|c|c|c|c|c|c}
+    \hline 
+    & $c_0$ & $d_0$ & $c_1$ & $d_1$     & $c_2$ & $d_2$ \\
+    \hline  
+   $a_0$, $b_0$ &  52.0838  &  4.57043  &  -15.8603  &  -17.2084  &  1.38223  &  2.43805   \\
+   $a_1$, $b_1$ &  -8.31577  &  -0.143877  &  3.14067  &  2.7247  &  -0.389671  &  -0.325088  \\ 
+   $a_2$, $b_2$ & 0.393192  &  0.0654633  &  -0.22493  &  -0.1203  &  0.0333465  &  0.00937443  \\
+   $a_3$, $b_3$ & -0.00862513  &  -0.00157316  &  0.00610496  &  0.00175928  &  -0.000950539  &  1.01077e-05  \\ 
+   $a_4$, $b_4$ & 7.12059e-05  &  1.11448e-05  &  -5.65199e-05  &  -7.58069e-06  &  8.93644e-06  &  -1.50299e-06  \\ 
+ \hline
+  \end{tabular}
+ \end{center} 
+\end{table}
+
+
+\clearpage
+
+
+{\bf Sector 6:}
+\begin{table}[h]
+\scriptsize
+ \begin{center}
+  \begin{tabular}{c|c|c|c|c|c|c}
+    \hline 
+    & $c_0$ & $d_0$ & $c_1$ & $d_1$     & $c_2$ & $d_2$ \\
+    \hline  
+   $a_0$, $b_0$ &  66.7155  &  -4.17306  &  -22.5136  &  -17.1484  &  4.17892  &  3.71364  \\
+   $a_1$, $b_1$ &    -10.6179  &  -0.407384  &  4.06603  &  4.34246  &  -0.859252  &  -0.834831  \\
+   $a_2$, $b_2$ &  0.47953  &  0.122555  &  -0.249083  &  -0.258914 &   0.0558406  &  0.0479698  \\
+   $a_3$, $b_3$ &   -0.00970942  &  -0.00360644  &  0.00620864  &  0.00583929  &  -0.00141667  &  -0.00107312  \\
+   $a_4$, $b_4$ &   7.30481e-05  &  3.08354e-05  &  -5.37051e-05  &  -4.52976e-05  &  1.23011e-05  &  8.33686e-06  \\
+ \hline
+  \end{tabular}
+ \end{center} 
+\end{table}
+
+
+
+
+
+$$
+\begin{array}{c}
+ \phi_{MIN} = a_0 + a_1\theta + a_2\theta^2 + a_3\theta^3 + a_4\theta^4 \\
+ \phi_{MAX} = b_0 + b_1\theta + b_2\theta^2 + b_3\theta^3 + b_4\theta^4 \\ 
+\end{array}
+$$
+
+
+
+
+
+\subsection{Proton bad regions}
+
+In what follows $p$ is the proton momentum in units of $GeV$ and $\theta$ is the
+proton angle in units of degrees.
+
+\vspace{0.7cm}
+{\bf Sector 2:}
+$$
+\begin{array}{c c c}
+31 +8.7\sqrt{p-0.9} & \le \theta \le  & 33.4+8\sqrt{p-0.9} \\
+& \times & \\
+24.7 & \le \theta \le & 27.2 \\
+\end{array}
+$$
+
+{\bf Sector 3:}
+$$
+\begin{array}{c c c}
+31.5 +9.0\sqrt{p-0.9} & \le \theta \le  & 37.7+6\sqrt{p-0.9} \\
+\end{array}
+$$
+
+
+{\bf Sector 5:}
+$$
+\begin{array}{c c c}
+13.5 -0.38(p-4)^2 & \le \theta \le  & 12.2+3.5\sqrt{p-0.9} \\
+& \times & \\
+10.1 & \le \theta \le & 11.2 \\
+& \times & \\
+18 +\sqrt{p-0.9} & \le \theta \le  & 19+\sqrt{p-0.9} \\
+& \times & \\
+22.6 +1.3\sqrt{p-0.9} & \le \theta \le  & 24.6+1.3\sqrt{p-0.9} \\
+\end{array}
+$$
+
+
+{\bf Sector 6:}
+$$
+\begin{array}{c c c}
+26 -1.3(p-3.5)^2 & \le \theta \le  & 29.2 -1.9(p-3.2)^2 \\
+& \times & \\
+10 +14\sqrt{p-0.9} & \le \theta \le  & 29.2 -1.9(p-3.2)^2 \\
+& \times & \\
+30.7 +5.5\sqrt{p-0.9} & \le \theta \le  & 32.4+5\sqrt{p-0.9} \\
+& \times & \\
+6.5 +9\sqrt{p-0.9} & \le \theta \le  & 7.5+9\sqrt{p-0.9} \\
+\end{array}
+$$
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+#!/bin/csh	
+
+latex anote.tex
+latex anote.tex
+dvips anote.dvi
+ps2pdf anote.ps
+cp anote.pdf ../../maureepage/proj/pi0_Delta/docs/
+
+rm *.aux *.log *.lot *.toc *.lof *.dvi *.ps *.pdf *.gz
+
+tar cvf pi0_Delta_note.tar *
+gzip  pi0_Delta_note.tar
+cp pi0_Delta_note.tar.gz ../../maureepage/proj/pi0_Delta/docs/

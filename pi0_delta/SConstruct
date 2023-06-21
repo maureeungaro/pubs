@@ -1,0 +1,13 @@
+import sys
+import os
+
+sys.path.insert(0, '../')
+
+from scanFiles import scan_files
+
+env = Environment(ENV=os.environ)
+
+pdf      = env.PDF(target = 'pi0_delta.pdf',  source = 'pi0_delta.tex')
+
+cleans = scan_files('.', accept=["pi0_delta", ".aux"])
+Clean('pi0_delta.html', cleans)

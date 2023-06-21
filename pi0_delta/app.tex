@@ -1,0 +1,17 @@
+\appendix   
+\pagestyle{fancy}
+
+\markboth{\bfseries \slshape Appendix}{}
+\renewcommand{\sectionmark}[1]{\markright{\bfseries \slshape \thesection\ #1}{}}
+\fancyhead[R]{\rightmark}
+\fancyhead[L]{\leftmark}
+\fancyfoot[R]{\sl Maurizio Ungaro}
+\fancyfoot[L]{}
+
+
+\addtocontents{toc}{\parindent0pt\vskip12pt APPENDICES} %toc entry, no page #
+
+
+\input{appendix/kine.tex}
+\input{appendix/appendixcuts.tex}
+\input{appendix/cmplots.tex}
