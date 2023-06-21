@@ -79,6 +79,8 @@ fi
 echo "Current dir $cdir content:"
 ls -lrt
 
+# comment this to avoid pushing new pdf files
+exit 0
 
 mv *.pdf $cdir/pdfs/
 
