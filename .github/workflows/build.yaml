@@ -41,13 +41,13 @@ jobs:
 
       - name: ${{ matrix.doc }}
         run: |
-          ./ci/make_pdf.sh -d ${{ matrix.doc }}
+          ./ci/test_pdf.sh -d ${{ matrix.doc }}
 
       # https://github.com/stefanzweifel/git-auto-commit-action
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: Apply php-cs-fixer changes
-          file_pattern: 'pdfs/*.pdf'
+#      - uses: stefanzweifel/git-auto-commit-action@v4
+#        with:
+#          commit_message: Apply php-cs-fixer changes
+#          file_pattern: 'pdfs/*.pdf'
       - uses: gitboard-io/gitboard-action@main
         with:
           username: maureeungaro
