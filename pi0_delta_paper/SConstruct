@@ -1,0 +1,12 @@
+import sys
+import os
+
+sys.path.insert(0, '../')
+
+from scanFiles import scan_files
+
+env = Environment(ENV=os.environ)
+
+pdf      = env.PDF(target = 'e1_prl.pdf',  source = 'e1_prl.tex')
+
+cleans = scan_files('.', accept=["e1_prl", ".aux"])

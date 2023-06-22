@@ -60,9 +60,9 @@ ls -lrt
 cd $doc_to_make
 
 
-# if doc_to_make is pi0_resonance_regions, run pi0_resonance_regions/makeNote
+# if doc_to_make is pi0_resonance_regions_note, makeNote
 case $doc_to_make in
-    pi0_resonance_regions)
+    pi0_resonance_regions_note)
         ./makeNote
         ;;
     *)
