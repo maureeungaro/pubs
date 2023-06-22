@@ -1,9 +1,12 @@
 #!/bin/zsh
 
 # */30  *  *  *  * flock -n $HOME/.plots.lock $HOME/update_mauriplots_jlabl4.zsh >& $HOME/logs/plots.log   >/dev/null 2>&1
+# scp update_mauriplots_jlabl4.zsh ftp:
 
-# This script is meant to be run by a cronjob on jlabl4 to update
-# the mauriPlots and the slides repos on /userweb/ungaro/public_html
+# This script is meant to be run by a cronjob on jlabl4 to update on /userweb/ungaro/public_html:
+# - mauriPlots
+# - slides
+# - pubs
 
 plots=/userweb/ungaro/public_html/plots
 plotsr=https://github.com/mauriPlots
@@ -29,6 +32,16 @@ else
   echo slides cloned
 fi
 
-
+pubs=/userweb/ungaro/public_html/pubs
+pubsr=https://github.com/maureeungaro/pubs
+if [[ -d $pubs ]]; then
+  cd $pubs
+  git pull
+  echo pubs pulled
+else
+  cd /userweb/ungaro/public_html/
+  git clone $pubsr
+  echo pubs cloned
+fi
 
 
