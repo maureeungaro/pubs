@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-local_dir=fiducial
+local_dir=efid
 
 orig_dir=/opt/projects/mauriplots/$local_dir
 

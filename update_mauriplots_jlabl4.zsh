@@ -13,7 +13,7 @@ plotsr=https://github.com/mauriPlots
 
 # the repos are reset every time
 # so git pull is enough
-plots_r=(epid ppid vertex efid)
+plots_r=(pi0_delta_distributions epid ppid vertex efid)
 cd $plots
 for r in $plots_r; do
   rm -rf $r
