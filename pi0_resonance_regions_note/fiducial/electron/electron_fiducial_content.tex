@@ -27,8 +27,28 @@ and for comparison with the new approach.
 
 \subsection{Cuts on detectors coordinates}
 
+As the tracks swim through the detectors, they are subject to inefficiencies near the sector edges.
+This applies to the 3 regions of the drift chambers (DC1, DC2, DC3) and the time of flight detector plane (SC).
+An edge cut for the  calorimeter was already applied in the electron ID.
+
+The X vs Y distribution of the tracks in the DCs and the SC is shown in Fig.~\ref{fig:xy_all_planes_s1} for
+sector one.
+In each sector and each plane, 12 bins in X are defined; the Y distribution for each bin
+is fitted with a "tent" function $t(y)$ (described in appendix~\ref{sec:tent_function} ) to select the high efficiency edges.
 
 
 
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.4\textwidth ]{img/plane-DC1_intsector-1}
+    \includegraphics[width=0.4\textwidth ]{img/plane-DC2_intsector-1}
+    \includegraphics[width=0.4\textwidth ]{img/plane-DC3_intsector-1}
+    \includegraphics[width=0.4\textwidth ]{img/plane-SC_intsector-1}
+    \caption{The X vs Y distribution of the tracks in the drift chambers and the time
+    of flight detector plane (SC) for sector 1. The edges selection algoritm described in the text resulted
+    in the black lines, which are the fit of the Y distributions for each X bin.}
+    \label{fig:xy_all_planes_s1}
+\end{figure}
 
 
