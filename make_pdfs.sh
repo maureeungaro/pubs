@@ -17,7 +17,7 @@ do
   cd $cdir/$doc_to_make
   # if doc_to_make is pi0_resonance_regions_note, makeNote
   case $doc_to_make in
-    pi0_resonance_regions_note)
+    notes/pi0_resonance_regions)
       ./makeNote
       ;;
     *)
