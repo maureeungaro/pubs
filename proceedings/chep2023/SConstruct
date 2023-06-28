@@ -1,0 +1,12 @@
+import sys
+import os
+
+sys.path.insert(0, '../..')
+
+from scanFiles import scan_files
+
+env = Environment(ENV=os.environ)
+
+pdf      = env.PDF(target = 'ungaro_chep2023.pdf',  source = 'ungaro_chep2023.tex')
+
+cleans = scan_files('.', accept=["ungaro_chep2023*", "*.aux"], reject=[".tex"])
