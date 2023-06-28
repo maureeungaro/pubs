@@ -26,13 +26,13 @@ jobs:
       fail-fast: false
       matrix:
         doc:
-          - pi0_resonance_regions_note/pid/electron
-          - pi0_resonance_regions_note/pid/proton
-          - pi0_resonance_regions_note/vertex
-          - pi0_resonance_regions_note/fiducial/electron
-          - pi0_resonance_regions_note
-          - pi0_delta_note
-          - pi0_delta_paper
+          - notes/pi0_resonance_regions/pid/electron
+          - notes/pi0_resonance_regions/pid/proton
+          - notes/pi0_resonance_regions/vertex
+          - notes/pi0_resonance_regions/fiducial/electron
+          - notes/pi0_resonance_regions
+          - notes/pi0_delta
+          - papers/pi0_delta
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:

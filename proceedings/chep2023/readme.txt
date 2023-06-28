@@ -45,8 +45,10 @@ CONTENTS
   woc.bst          Bibliography style for BibTeX users
   template.tex     A fill-in-form for a standard article with usage comments
 
-  additional-styles.tar.gz For old LaTeX version, install these styles in
-  your local directory.
+  removed in the mauri pubs rep:
+  additional-styles.tar.gz For old LaTeX version, install these styles in your local directory
+  two_column_template
+
 
 INSTALLATION
 
