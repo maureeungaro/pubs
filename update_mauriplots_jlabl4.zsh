@@ -8,40 +8,40 @@
 # - slides
 # - pubs
 
-plots=/userweb/ungaro/public_html/plots
-plotsr=https://github.com/mauriPlots
+basedir=/userweb/ungaro/public_html
 
-# the repos are reset every time
-# so git pull is enough
+function pull_or_clone() {
+  project_name=$1
+  project_repo=$2
+  cd $basedir
+  # optional reset argument will remove and re-clone the repo
+  if [[ $# -eq 3 && $3 == "reset" ]]; then
+    rm -rf $project_name ; mkdir -p 3$project_name ; cd $project_name/..
+    git clone -s $project_repo
+    echo "$project_name reset and cloned"
+  else
+    if [[ -d $project_name ]]; then
+      cd $project_name
+      git pull
+      echo "$project_name pulled"
+    else
+      cd $basedir
+      git clone $project_repo
+      echo "$project_name cloned"
+    fi
+  fi
+}
+
+# the plots repos are reset every time
+# git pull is enough, removing and re-cloning repos
+repo=https://github.com/mauriPlots
 plots_r=(pi0_delta_distributions epid ppid vertex efid)
-cd $plots
 for r in $plots_r; do
-  rm -rf $r
-  git clone $plotsr/$r
+  pull_or_clone plots/$r $repo/$r reset
 done
 
-slides=/userweb/ungaro/public_html/slides
-slidesr=https://github.com/maureeungaro/slides
-if [[ -d $slides ]]; then
-  cd $slides
-  git pull
-  echo slides pulled
-else
-  cd /userweb/ungaro/public_html/
-  git clone $slidesr
-  echo slides cloned
-fi
+repo=https://github.com/maureeungaro/slides
+pull_or_clone slides $repo
 
-pubs=/userweb/ungaro/public_html/pubs
-pubsr=https://github.com/maureeungaro/pubs
-if [[ -d $pubs ]]; then
-  cd $pubs
-  git pull
-  echo pubs pulled
-else
-  cd /userweb/ungaro/public_html/
-  git clone $pubsr
-  echo pubs cloned
-fi
-
-
+repo=https://github.com/maureeungaro/pubs
+pull_or_clone pubs $repo
