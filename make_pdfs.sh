@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-
+# reads the yaml file to extract the PDF to make
 yaml_file=.github/workflows/build.yaml
 dirs_to_test=$(grep -A300 "doc:" $yaml_file | grep "          - " | awk '{print $2}')
 cdir=$(pwd)
