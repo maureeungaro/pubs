@@ -4,10 +4,10 @@
 # Make the requested pdf
 
 # Container run:
-# docker run -it --rm maureeungaro/base:fedora36-latex sh
+# docker_run_image maureeungaro/base:fedora36-latex sh
 # git clone https://github.com/maureeungaro/pubs       /root/pubs && cd /root/pubs
-# ./ci/make_pdf.sh -d notes/pi0_resonance_regions/pid/electron
-# ./ci/make_pdf.sh -d notes/pi0_resonance_regions
+# ./ci/test_pdf.sh -d notes/pi0_resonance_regions/pid/electron
+# ./ci/test_pdf.sh -d notes/pi0_resonance_regions
 
 
 Help()
