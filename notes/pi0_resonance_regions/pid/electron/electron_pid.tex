@@ -17,11 +17,15 @@
 \usepackage{lscape}
 \usepackage{amssymb,amsmath}
 \usepackage[hyperindex]{hyperref}
+\usepackage{caption}
+\captionsetup{width=.9\textwidth}
+% caption font smaller
+\captionsetup{font=small}
 
 % page setup
 \pdfpagewidth 8.5in
 \pdfpageheight 11in
-\setlength\textwidth{5.7in}
+\setlength\textwidth{6.0in}
 \setlength\textheight{8.1in}
 \setlength\oddsidemargin{0in}
 \setlength\evensidemargin{0in}
@@ -49,6 +53,9 @@
 \begin{document}
 \pagestyle{fancy}
 \renewcommand{\sectionmark}[1]{\markright{\slshape \thesection\ #1}{}}
+% limit caption width to 80% of text width
+\newcommand{\captionwidth}{5.7in}
+
 
 
 % author should reflect on the fancyfoot
