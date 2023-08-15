@@ -12,7 +12,6 @@ fi
 
 imgs=(
 cut-02-pm_sector-1
-cut-01-tmp_sector-1
 cut-01-tmc_sector-1
 cut-03-timc_sector-1
 cut-10-mip_sector-1

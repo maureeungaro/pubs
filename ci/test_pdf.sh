@@ -61,18 +61,22 @@ cd $doc_to_make
 
 
 # if doc_to_make is pi0_resonance_regions_note, makeNote
+exit_code=0
 case $doc_to_make in
     notes/pi0_resonance_regions)
         ./makeNote
+        exit_code=$?
         ;;
     *)
         scons -c
         scons
+        exit_code=$?
         ;;
 esac
 
-if [ $? -ne 0 ]; then
+if [ $exit_code -ne 0 ]; then
 	echo Making $doc_to_make pdf failed
+	cat *.log
 	exit 1
 fi
 
