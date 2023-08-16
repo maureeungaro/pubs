@@ -24,3 +24,11 @@ using the `copy_images.sh` script
 
 In turn, the `_standalone.tex` file loads the `_content.tex` file,
 containing the individual subsections, and the bibliography file.
+
+
+
+## Reminders
+
+- address all warning
+- check the PDFS for `??`
+- indent all tex

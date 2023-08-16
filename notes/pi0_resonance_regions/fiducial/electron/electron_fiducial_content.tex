@@ -7,16 +7,12 @@ where the CLAS response peaks at its maximum and remains rather smooth.
 Furthermore, some detector inefficiencies are not perfectly reproduced with GSIM and need to be
 removed with dedicated cuts.
 
-Traditionally, the fiducial regions are defined in the lab coordinates of the electron reconstructed $\phi, \theta, p$.
+The fiducial regions were traditionally defined in the lab coordinates of the electron reconstructed $\phi, \theta, p$.
 However, it is more natural to define the fiducial regions in the detector coordinates, because
 the inefficiencies are caused by tracks near their borders or hardware problems.
 
-Since the former approach has been used in several published CLAS papers, we will keep it both as a reference
-and for comparison with the new approach.
-
-
-
-
+Since the original approach has been used in several published CLAS papers, we will include it in this note
+as a reference.
 
 \input{electron_fiducial_traditional_cuts}
 
@@ -24,7 +20,7 @@ and for comparison with the new approach.
 
 As the electrons swim through the detectors, they are subject to inefficiencies near the sector edges.
 This applies to the 3 regions of the drift chambers (DC1, DC2, DC3) and the time of flight detector plane (SC).
-An edge cut for the calorimeter was already applied in the electron ID.
+An edge cut for the calorimeter was already applied in the electron ID\@.
 
 \newpage
 
@@ -45,7 +41,7 @@ This section describes the algorithm used to select thigh occupancy regions edge
 
 In each sector and each plane, 12 bins in X are defined; in each bin, the Y distribution
 is fitted with a ``tent'' function $t(y)$ (defined in appendix~\ref{sec:tent_function} ) to select the high efficiency edges.
-An example of such fit is show in Fig.~\ref{fig:y_slices_s1} for sector 1 in the DC3 plane, for 4 bins in X.
+An example of such fit is show in Fig.~\ref{fig:y_slices_s1} for sector 1 in the DC3 plane, for 4 bins in X\@.
 The fit cleanly identifies the steep rises and falls of the distributions and the relatively flat regions in between.
 
 \clearpage\newpage
@@ -58,11 +54,12 @@ The fit cleanly identifies the steep rises and falls of the distributions and th
     \includegraphics[width=0.48\textwidth ]{img/slice-08_sector-1_plane-DC3}
     \caption{Y distribution for 4 X bins in the DC3 plane for sector 1. The black lines are the tent fit of the Y distributions.
     The result of the first is the two points of intersection between the straight lines (steep rise) and the parabole fit (flat region).
-    The two points are then plotted in the XY plane and fitted with a parabola, see for example Fig.~\ref{fig:xy_all_planes_s1} and \ref{fig:xy_dc2_s5}.}
+    The two points are then plotted in the XY plane and fitted with a parabola, see for example Fig.~\ref{fig:xy_all_planes_s1}
+    or Fig.~\ref{fig:xy_dc12_s5}.}
     \label{fig:y_slices_s1}
 \end{figure}
 
-The results of the tent fit are the two points of intersection between the straight lines (steep rise) and the parabole fit (flat region).
+The results of the tent fit are the two points of intersection between the straight lines (steep rise) and the parabola fit (flat region).
 The two points are then plotted in the XY plane for all the X bins and fitted with a parabola, see for example Fig.~\ref{fig:xy_dc12_s5}.
 
 This procedure results in a fiducial cut function for each plane and each sector.
@@ -107,10 +104,10 @@ The comparison highlights the advantages of the new approach:
     \item no momentum dependence of the cuts
 \end{itemize}
 This comparison is shown as an example for sector 5 and a momentum bin in Fig.~\ref{fig:PnPvsTmom-3.8_sector-5_plot-phiVsTheta}.
-The before and after $\phi$ vs $\theta$ distributions in sector 5 for all the momentum bin are shown in Fig.~\ref{fphiTheta-before_sector-5}
-and \ref{fphiTheta-after_sector-5} respectively.
+The before and after $\phi$ vs $\theta$ distributions in sector 5 for all the momentum bin are shown in Fig.~\ref{fig:phiTheta-before_sector-5}
+and~\ref{fig:phiTheta-after_sector-5} respectively.
 
-The complete set of plots is available in appendix~\ref{sec:pi0_resonance_fiducial_electron}.
+The complete set of plots is available at ~\cite{bib:pi0_resonance_fiducial_electron}.
 
 \begin{figure}[ht]
     \centering
@@ -123,8 +120,6 @@ The complete set of plots is available in appendix~\ref{sec:pi0_resonance_fiduci
     using the traditional cuts.}
     \label{fig:PnPvsTmom-3.8_sector-5_plot-phiVsTheta}
 \end{figure}
-
-
 
 
 \begin{figure}[ht]

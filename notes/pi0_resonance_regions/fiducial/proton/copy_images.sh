@@ -1,10 +1,9 @@
 #!/bin/zsh
 
-local_dir=epid
+local_dir=pfid
 
 orig_dir=/opt/projects/mauriplots/$local_dir
 
-exit 0
 # if we are on the docker container set orig_dir to /root
 if [ -d /root ]; then
   orig_dir=/root/plots/$local_dir
@@ -12,7 +11,12 @@ if [ -d /root ]; then
 fi
 
 imgs=(
-
+plane-DC1_intsector-1
+plane-DC2_intsector-1
+plane-DC3_intsector-1
+plane-SC_intsector-1
+plane-DC1_intsector-5
+plane-DC2_intsector-5
 )
 
 imgs_slices=(

@@ -14,9 +14,9 @@ imgs=(
 plane-DC1_intsector-1
 plane-DC2_intsector-1
 plane-DC3_intsector-1
+plane-SC_intsector-1
 plane-DC1_intsector-5
 plane-DC2_intsector-5
-plane-SC_intsector-1
 phiTheta-after_sector-5
 phiTheta-before_sector-5
 PnPvsTmom-3.8_sector-5_plot-phiVsTheta
@@ -30,11 +30,11 @@ slice-08_sector-1_plane-DC3
 )
 
 for cc in $imgs; do
-  echo $cc
-  cp $orig_dir/img/$cc.png img
+  echo "$cc"
+  cp "$orig_dir/img/$cc.png" img
 done
 
 for cc in $imgs_slices; do
-  echo $cc
-  cp $orig_dir/img_slices/$cc.png img
+  echo "$cc"
+  cp "$orig_dir/img_slices/$cc.png" img
 done

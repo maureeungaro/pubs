@@ -2,53 +2,42 @@
 
 \subsection{Introduction}
 
-A fiducial cut on electrons is introduced to constrain regions of phase space
+Similarly to the electron case, a fiducial cut on protons is introduced to constrain regions of phase space
 where the CLAS response peaks at its maximum and remains rather smooth.
-Furthermore, some detector inefficiencies are not perfectly reproduced with GSIM and need to be
-removed with dedicated cuts.
+Detector inefficiencies not perfectly reproduced with GSIM are removed with dedicated cuts.
 
-Traditionally, the fiducial regions are defined in the lab coordinates of the electron reconstructed $\phi, \theta, p$.
-However, it is more natural to define the fiducial regions in the detector coordinates, because
-the inefficiencies are caused by tracks near their borders or hardware problems.
-
-Since the former approach has been used in several published CLAS papers, we will keep it both as a reference
-and for comparison with the new approach.
-
-
-
-
+The fiducial regions were traditionally defined in the lab coordinates of the proton reconstructed $\phi, \theta, p$.
+As for the electrons, it is more natural to define the fiducial regions in the detector coordinates, because
+the inefficiencies are caused by tracks near their borders or hardware problems. Since the original approach
+has been used in several published CLAS papers, we will include it in this note
+as a reference.
 
 \input{proton_fiducial_traditional_cuts}
 
 \subsection{Cuts on detectors coordinates}
 
-As the electrons swim through the detectors, they are subject to inefficiencies near the sector edges.
-This applies to the 3 regions of the drift chambers (DC1, DC2, DC3) and the time of flight detector plane (SC).
-An edge cut for the calorimeter was already applied in the electron ID.
-
-\newpage
-
-The X vs Y distributions of the electron tracks in the DCs and the SC planes in sector 1 are shown in Fig.~\ref{fig:xy_all_planes_s1}.
+The X vs Y distributions of the proton tracks in the DCs and the SC planes in sector 1 are shown in Fig.~\ref{fig:xy_all_planes_s1}.
 This section describes the algorithm used to select thigh occupancy regions edges.
 
 \begin{figure}[h]
     \centering
-%    \includegraphics[width=0.48\textwidth ]{img/plane-DC1_intsector-1}
-%    \includegraphics[width=0.48\textwidth ]{img/plane-DC2_intsector-1}
-%    \includegraphics[width=0.48\textwidth ]{img/plane-DC3_intsector-1}
-%    \includegraphics[width=0.48\textwidth ]{img/plane-SC_intsector-1}
+    \includegraphics[width=0.48\textwidth ]{img/plane-DC1_intsector-1}
+    \includegraphics[width=0.48\textwidth ]{img/plane-DC2_intsector-1}
+    \includegraphics[width=0.48\textwidth ]{img/plane-DC3_intsector-1}
+    \includegraphics[width=0.48\textwidth ]{img/plane-SC_intsector-1}
     \caption{The X vs Y distribution of the tracks in the drift chambers and the time
     of flight detector plane (SC) for sector 1. The edges selection algoritm described in the text resulted
     in the black lines, which are the fit of the Y distributions for each X bin.}
     \label{fig:xy_all_planes_s1}
 \end{figure}
 
+\clearpage\newpage
+
 In each sector and each plane, 12 bins in X are defined; in each bin, the Y distribution
-is fitted with a ``tent'' function $t(y)$ (defined in appendix~\ref{sec:tent_function} ) to select the high efficiency edges.
+is fitted with a ``tent'' function $t(y)$ (defined in appendix~\ref{sec:p_tent_function} ) to select the high efficiency edges.
 An example of such fit is show in Fig.~\ref{fig:y_slices_s1} for sector 1 in the DC3 plane, for 4 bins in X.
 The fit cleanly identifies the steep rises and falls of the distributions and the relatively flat regions in between.
 
-\clearpage\newpage
 
 \begin{figure}[h]
     \centering
@@ -58,11 +47,12 @@ The fit cleanly identifies the steep rises and falls of the distributions and th
 %    \includegraphics[width=0.48\textwidth ]{img/slice-08_sector-1_plane-DC3}
     \caption{Y distribution for 4 X bins in the DC3 plane for sector 1. The black lines are the tent fit of the Y distributions.
     The result of the first is the two points of intersection between the straight lines (steep rise) and the parabole fit (flat region).
-    The two points are then plotted in the XY plane and fitted with a parabola, see for example Fig.~\ref{fig:xy_all_planes_s1} and \ref{fig:xy_dc2_s5}.}
+    The two points are then plotted in the XY plane and fitted with a parabola, see for example Fig.~\ref{fig:xy_all_planes_s1}
+    or Fig.~\ref{fig:xy_dc12_s5}.}
     \label{fig:y_slices_s1}
 \end{figure}
 
-The results of the tent fit are the two points of intersection between the straight lines (steep rise) and the parabole fit (flat region).
+The results of the tent fit are the two points of intersection between the straight lines (steep rise) and the parabola fit (flat region).
 The two points are then plotted in the XY plane for all the X bins and fitted with a parabola, see for example Fig.~\ref{fig:xy_dc12_s5}.
 
 This procedure results in a fiducial cut function for each plane and each sector.
@@ -88,9 +78,9 @@ horizontal for the axial wires and $6^0$ tilted for the stereo wires.
 
 \begin{figure}[ht]
     \centering
-%    \includegraphics[width=0.48\textwidth ]{img/plane-DC2_intsector-5}
-%    \includegraphics[width=0.48\textwidth ]{img/plane-DC1_intsector-5}
-    \caption{The X vs Y distribution of the electron tracks intersection wiht the DC2 (left)
+    \includegraphics[width=0.48\textwidth ]{img/plane-DC2_intsector-5}
+    \includegraphics[width=0.48\textwidth ]{img/plane-DC1_intsector-5}
+    \caption{The X vs Y distribution of the proton tracks intersection wiht the DC2 (left)
         and DC1 (right) planes in sector 5. The left distributions shows one depletion for the stereo wires,
         while the right distribution shows two depletions for the axial wires.}
     \label{fig:xy_dc12_s5}
@@ -108,7 +98,7 @@ The comparison highlights the advantages of the new approach:
 \end{itemize}
 This comparison is shown as an example for sector 5 and a momentum bin in Fig.~\ref{fig:PnPvsTmom-3.8_sector-5_plot-phiVsTheta}.
 The before and after $\phi$ vs $\theta$ distributions in sector 5 for all the momentum bin are shown in Fig.~\ref{fphiTheta-before_sector-5}
-and \ref{fphiTheta-after_sector-5} respectively.
+and~\ref{fphiTheta-after_sector-5} respectively.
 
 The complete set of plots is available in appendix~\ref{sec:pi0_resonance_fiducial_electron}.
 
