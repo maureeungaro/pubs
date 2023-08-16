@@ -17,6 +17,9 @@ plane-DC3_intsector-1
 plane-SC_intsector-1
 plane-DC1_intsector-5
 plane-DC2_intsector-5
+PnPvsTmom-2.4_sector-2_plot-phiVsTheta
+phiTheta-after_sector-2
+phiTheta-before_sector-2
 )
 
 imgs_slices=(

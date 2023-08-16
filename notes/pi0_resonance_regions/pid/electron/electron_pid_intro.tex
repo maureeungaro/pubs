@@ -1,7 +1,7 @@
 \clearpage\newpage
 
 
-\section{Electron identification}
+\section{Electron identification}\label{sec:electron-identification}
 
 In CLAS electro-production experiments
 the scattered electron defines the timing of each event,
@@ -9,10 +9,11 @@ so it is particularly important to
 make sure that their identification is correct and that
 there is no contamination from particles such as $\pi^-$.
 
-We consider {\it candidate electrons} every negative track
+We consider {\textit candidate electrons} every negative track
 that produced a hardware trigger (this trigger condition is ensured by choosing
-the first entry in the EVNT bank). The track is also required to have
-hit matches in the CLAS \v Cerenkov (CC)\cite{bib:cc}, Drift Chambers (DC)\cite{bib:dc},
+the first entry in the EVNT bank).
+The track is also required to have hit matches in the CLAS \v Cerenkov (CC)\cite{bib:cc},
+Drift Chambers (DC)\cite{bib:dc},
 Electromagnetic Calorimeter (EC)\cite{bib:ec} and Time of Flight (SC or TOF)\cite{bib:ftof},
 and to have time-based reconstruction (positive DC status word in DCPB).
 
@@ -26,7 +27,7 @@ to defined good electron:
     \item Track Coordinates in the EC plane
     \item Minimum Ionizing Particles rejection in the EC
     \item Electromagnetic Shower Shape in the EC
-    \item {\it Number of photo-electrons ($nphe$) in the CC
+    \item {\textit Number of photo-electrons ($nphe$) in the CC
     This cut is not used anymore for identification,
         but the distributions will be shown for comparison with other analyses of e16 data }
 \end{itemize}
@@ -38,8 +39,8 @@ For each individual cut we will show four histograms to illustrate its impact:
     \item[b.] Variable distribution when all other pid cuts but this one are applied:
     this helps refining cut parameters.
     For example, when looking at the sampling fraction, applying all other
-    cuts to helps clean up the plot and to better estimate the sampling fraction
-    cut. We also refer as "calorimeter cuts" all cuts but the $nphe$ and EC threshold.
+    cuts to helps clean up the plot and to better estimate the sampling fraction cut.
+    We also refer as ``calorimeter cuts'' all cuts but the $nphe$ and EC threshold.
     \item[c.] Variable distribution all the pid cuts are reversed: these should be particles other than electrons.
     This condition can help identifying possible contamination.
     \item[d.] Variable distribution when all cuts, including the one under study, are applied.
@@ -47,4 +48,4 @@ For each individual cut we will show four histograms to illustrate its impact:
 
 The statistics and effectiveness of each case is reported in the plots.
 Only the relevant plots are reported here.
-The complete set of plots can be found on the web \cite{bib:pi0_resonance_id_electron}.
+The complete set of plots can be found on the web~\cite{bib:pi0_resonance_id_electron}.
