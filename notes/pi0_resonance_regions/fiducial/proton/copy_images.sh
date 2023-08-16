@@ -20,7 +20,10 @@ plane-DC2_intsector-5
 )
 
 imgs_slices=(
-
+slice-05_sector-1_plane-DC1
+slice-06_sector-1_plane-DC1
+slice-07_sector-1_plane-DC1
+slice-08_sector-1_plane-DC1
 )
 
 for cc in $imgs; do
