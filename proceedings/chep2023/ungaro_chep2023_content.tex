@@ -1,9 +1,13 @@
 \section{Introduction}
 \label{sec:intro}
 
+Writing a Geant4\cite{geant4} simulation that read volume definitions from a database is
+not difficult. Calls like \verb|G4Box(‘box’, 20, 30, 40)| maybe be replaced with
+\verb|G4Box(name, a, b, c)| where the parameters are read from a database.
+This is not particularly useful: users still write c++ and geant4 code to setup
+the volume organization, sensitivity, output.
+Users also have to define how to digitized hits collect and save the output.
 
-Your text comes here.
-Separate text sections with
 
 \section{Features}
 \label{sec:features}
