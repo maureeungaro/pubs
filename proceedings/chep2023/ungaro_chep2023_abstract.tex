@@ -1,19 +1,16 @@
 \abstract{
+    GEMC is a Monte-Carlo program that uses database to build
+    experimental setups.
+    The databases (MYSQL, CSQL, TEXT) define geometry,
+    materials, digitization algorithms, readout electronics
+    and output formats.
 
-    GEMC is a Monte-Carlo simulation program that uses a database-driven approach to build
-    all experiment parameters. This includes, but not limited to, the detector geometry,
-    materials, digitization, and readout electronics.
+    GEMC is written in C++ and uses Geant4 for the passage of particles through matter.
+    It includes a python API to builde detectors and populate the databases.
 
-    The framework is experiment independent: it allows to build any setup
-    from a database source (such as MYSQL, CSQL, TEXT) w/o the need of recompiling the code.
+    Real-life scenarios include geometry variations and run number
+    dependency of calibration constants and digitization parameters.
 
-    The engine is written in C++ and uses Geant4 for the passage of particles through matter.
-
-    It includes a python API to populate the databases and provides all geant4 functionality.
-    In addition, it handles real-life scenarios like geometry variations and run number
-    dependency of quantities like calibration constants and digitization parameters.
-
-    An overview of the software, and its usage will be shown, with examples on how to build geometry, handle geometry variations, and provide realistic electronic response.
-
-    The usage of GEMC at Jefferson Lab in the CLAS12 experimental program will be showcased.
+    An overview of the software and some examples are shown.
+    The usage of GEMC at Jefferson Lab in the CLAS12 experimental program is showcased.
 }
