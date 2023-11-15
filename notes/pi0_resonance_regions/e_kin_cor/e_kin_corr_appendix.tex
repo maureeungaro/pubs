@@ -1,0 +1,51 @@
+\subsection{Momentum Correction Parameters and function}\label{app:mom_corr_pars}
+
+Below are the parameters used to correct the electron momentum.
+
+\begin{verbatim}
+Sector 1:
+
+a:    4.68752 -1.85247 0.309905 -0.0287839 0.00164415
+      -6.01897e-05 1.41784e-06 -2.07918e-08 1.72727e-10 -6.20909e-13
+b:   -0.141375 0.0658297 -0.0124197 0.00125396 -7.61444e-05
+      2.9224e-06 -7.15019e-08 1.08187e-09 -9.22762e-12 3.39275e-14
+c:    0.325959 -0.104809 0.0146168 -0.00116222 5.81367e-05
+      -1.89952e-06 4.05847e-08 -5.47376e-10 4.23328e-12 -1.43176e-14
+d:   -0.011592 0.00376657 -0.000525382 4.14727e-05 -2.04875e-06
+      6.58696e-08 -1.38172e-09 1.82743e-11 -1.38541e-13 4.59477e-16
+
+
+\end{verbatim}
+
+
+The function used to correct the electron momentum is:
+
+\begin{verbatim}
+    V4 mom_corr::m_corr(V4 x) {
+    if (x.theta() / degree < 14 || x.theta() / degree > 30) return x;
+
+    V4 y;
+    double corr;
+    double a, b, c, d;
+    double theta = x.theta() / degree;
+    double phi = loc_phi(x) / degree;
+    int s = sector(x) - 1;
+
+    a = b = c = d = 0;
+
+    for (int p = 0; p < 10; p++) a = a + par_par_phi[s][0][p] * pow(theta, p);
+    for (int p = 0; p < 10; p++) b = b + par_par_phi[s][1][p] * pow(theta, p);
+    for (int p = 0; p < 10; p++) c = c + par_par_phi[s][2][p] * pow(theta, p);
+    for (int p = 0; p < 10; p++) d = d + par_par_phi[s][3][p] * pow(theta, p);
+
+    corr = (a + b * phi + c * phi * phi + d * phi * phi * phi) * GeV;
+
+    y.x = (x.mod() + corr) * sin(x.theta()) * cos(x.phi());
+    y.y = (x.mod() + corr) * sin(x.theta()) * sin(x.phi());
+    y.z = (x.mod() + corr) * cos(x.theta());
+    y.t = sqrt(y.mod() * y.mod() + electron_mass * electron_mass);
+
+    return y;
+}
+
+\end{verbatim}
