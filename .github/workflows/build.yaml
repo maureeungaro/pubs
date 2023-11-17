@@ -31,6 +31,7 @@ jobs:
           - notes/pi0_resonance_regions/vertex
           - notes/pi0_resonance_regions/fiducial/electron
           - notes/pi0_resonance_regions/fiducial/proton
+          - notes/pi0_resonance_regions/e_kin_cor
           - notes/pi0_resonance_regions
           - notes/pi0_delta
           - papers/pi0_delta
