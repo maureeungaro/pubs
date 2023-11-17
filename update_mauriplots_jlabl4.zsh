@@ -8,28 +8,42 @@
 # - slides
 # - pubs
 
-basedir=/userweb/ungaro/public_html
-
 function pull_or_clone() {
-  project_name=$1
-  project_repo=$2
-  cd $basedir
-  # optional reset argument will remove and re-clone the repo
-  if [[ $# -eq 3 && $3 == "reset" ]]; then
-    rm -rf $project_name ; mkdir -p 3$project_name ; cd $project_name/..
-    git clone -s $project_repo
-    echo "$project_name reset and cloned"
-  else
-    if [[ -d $project_name ]]; then
-      cd $project_name
-      git pull
-      echo "$project_name pulled"
-    else
-      cd $basedir
-      git clone $project_repo
-      echo "$project_name cloned"
-    fi
-  fi
+
+	# if 'plots/' is the prefix	of $project_name, the basedir is /userweb/ungaro/public_html/plots
+	if [[ $1 == plots/* ]]; then
+		basedir=/userweb/ungaro/public_html/plots
+	else
+		basedir=/userweb/ungaro/public_html
+	fi
+
+	project_name=${1:t}
+	project_repo=$2
+
+	echo basedir: $basedir
+	echo project_name: $project_name
+	echo project_repo: $project_repo
+
+
+	cd $basedir
+	# optional reset argument will remove and re-clone the repo
+	if [[ $# -eq 3 && $3 == "reset" ]]; then
+		rm -rf $project_name
+		mkdir -p $project_name
+		cd $project_name/..
+		git clone -s $project_repo
+		echo "$project_name reset and cloned"
+	else
+		if [[ -d $project_name ]]; then
+			cd $project_name
+			git pull
+			echo "$project_name pulled"
+		else
+			cd $basedir
+			git clone $project_repo
+			echo "$project_name cloned"
+		fi
+	fi
 }
 
 # the plots repos are reset every time
@@ -37,7 +51,7 @@ function pull_or_clone() {
 repo=https://github.com/mauriPlots
 plots_r=(pi0_delta_distributions epid ppid vertex efid pfid e_kin_cor)
 for r in $plots_r; do
-  pull_or_clone plots/$r $repo/$r reset
+	pull_or_clone plots/$r $repo/$r reset
 done
 
 repo=https://github.com/maureeungaro/slides
