@@ -35,7 +35,7 @@ function pull_or_clone() {
 # the plots repos are reset every time
 # git pull is enough, removing and re-cloning repos
 repo=https://github.com/mauriPlots
-plots_r=(pi0_delta_distributions epid ppid vertex efid pfid)
+plots_r=(pi0_delta_distributions epid ppid vertex efid pfid e_kin_cor)
 for r in $plots_r; do
   pull_or_clone plots/$r $repo/$r reset
 done

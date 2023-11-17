@@ -2,7 +2,7 @@
 
 # collecting bibliographies and copying images
 base_dir=/opt/projects/pubs/notes/pi0_resonance_regions
-ana_dirs=(pid/electron pid/proton vertex fiducial/electron)
+ana_dirs=(pid/electron pid/proton vertex fiducial/electron e_kin_cor)
 
 rm -rf pi0_bib.tex img
 mkdir img
