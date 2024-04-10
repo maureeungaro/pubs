@@ -13,7 +13,7 @@ function pull_or_clone() {
 	# if 'plots/' is the prefix	of $project_name, the basedir is /userweb/ungaro/public_html/plots
 	if [[ $1 == plots/* ]]; then
 		basedir=/userweb/ungaro/public_html/plots
-	elif [[ $1 == geant4-tutorial ]]; then
+	elif [[ $1 == geant4-tutorials ]]; then
 		basedir=/userweb/ungaro/public_html/slides
 	else
 		basedir=/userweb/ungaro/public_html
@@ -65,4 +65,4 @@ pull_or_clone pubs $repo
 
 # cloned inside /userweb/ungaro/public_html/slides
 repo=https://github.com/jeffersonlab/geant4-tutorials
-pull_or_clone geant4-tutorial $repo
+pull_or_clone geant4-tutorials $repo
