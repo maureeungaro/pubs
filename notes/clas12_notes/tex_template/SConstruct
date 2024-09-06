@@ -1,0 +1,10 @@
+import os
+from util import scanFiles
+env = Environment(ENV=os.environ)
+
+pdf  = env.PDF(target = 'template.pdf',  source = 'template.tex')
+
+#html = env.Command('template.html', 'template.tex', "go_htlatex $SOURCE");
+#Depends(html,  pdf)
+cleans = scanFiles('.', accept=["template*", "*.aux"], reject=[".tex"])
+Clean('template.html', cleans)
