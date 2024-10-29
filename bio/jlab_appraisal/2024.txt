@@ -1,0 +1,52 @@
+# CLAS12 Monte Carlo Framework:
+
+I have continued my involvement in assisting various working groups and task forces in their simulations. These include URWELL, BAND, RGC, RGH, SRO groups. In addition this year I coordinate with the:
+
+- RGE group the released the geometry for their double target
+- RICH  group to update geometry and digitization and introduce MIE scattering in GEMC
+- RGD group to add their geometries
+- ALERT group for geometry and digitization
+
+I also started a project with the engineering group to import relevant beamline geometry directly from their model, including alignments for various run periods. This will ensure our critical sources of background are modeled correctly.
+
+
+# GEMC for physics analysis:
+
+I have been responsible for maintaining the simulation and digitization code and releasing updated geometry information through the GitHub repository. Our efforts are accompanied by detailed online documentation for easy reference.
+
+The CLAS12 software is made accessible via Docker, and I am actively involved in maintaining documentation and providing examples for users. This ensures that the software is readily available and user-friendly.
+
+
+# LTCC software and calibration:
+
+I am continuing my collaboration with INFN to provide up-to-date calibrations for both past and present experiments, ensuring the accuracy and quality of data analysis.
+
+
+
+CLAS12 simulations on the Open Science Grid:
+
+
+I have been leading the Open Science Grid (OSG) and off-site farms simulation project, ensuring efficient resource allocation and use.
+
+Collaborators are able to submit simulation jobs through the CLAS12 portal, which has undergone upgrades to support software version choices and align simulations with data.
+
+We successfully deployed INFN-T1 (Italy, now 1800 cores) GRIDPP (Glasgow, now 1400 cores), GRIF (France, 400 cores), MIT (300 cores) and Lamar University (200 cores) CPU resources exclusively dedicated to CLAS12, and obtained high priority OSG usage for CLAS12 at SU (up to 10,000 cores), UCONN (up to 2000 cores) and Compute Canada (up to 2000 cores)
+
+In the last year CLAS12 has been the number one user of CPU resources in the OSG pool, utilizing 61 million hours. We actively support and maintain monitoring tools to measure resource usage and identify and resolve issues with specific sites or software.
+
+
+Geant4 validation and development:
+
+
+- Successfully created a framework for deploying new Geant4 tutorials from a GitHub repository, and making them available online for school consumption. The tutorials are also archived for future reference. Additionally I now provide Docker support for Geant4, enhancing accessibility for the tutorials and in general.
+
+- Maintenance of the last three Geant4 Versions across multiple operating systems—Fedora, Ubuntu, and AlmaLinux. This support is now available to Jefferson Lab users through CVMFS, ensuring a seamless experience and reliable access to critical resources.
+
+
+- Successfully deployed geant4.jlab.org, a dedicated site providing general instructions, documentation, and resources specific to Geant4 at Jefferson Lab. This platform serves as a central knowledge base. The site is deployed automatically using GitHub CI, ensuring the latest content is always up-to-date.
+
+
+- I supported the Jefferson Lab Geant4 tutorial course in March 2024 (https://indico.jlab.org/event/828/overview). Contributed four presentations and supporting materials.
+
+- I started the physics validation project, aimed at improving the Geant4 modeling of electrons beams at JLab's and EIC's energies.
+
