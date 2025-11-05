@@ -4,8 +4,8 @@
 # Make the requested pdf
 
 # Container run:
-# docker_run_image maureeungaro/base:fedora36-latex sh
-# git clone https://github.com/maureeungaro/pubs       /root/pubs && cd /root/pubs
+# docker_run_image maureeungaro/latex zsh
+# git clone https://github.com/maureeungaro/pubs /root/pubs && cd /root/pubs
 # ./ci/test_pdf.sh -d notes/pi0_resonance_regions/pid/electron
 # ./ci/test_pdf.sh -d notes/pi0_resonance_regions
 # ./ci/test_pdf.sh -d papers/pi0_delta
@@ -93,9 +93,5 @@ if [ $? -ne 0 ]; then
 fi
 scons -c
 
-# this was done in the ci, but it would produce a new pdf version for each commit
-#
-#git config --global --add safe.directory /__w/pubs/pubs
-#
-## refresh the pdfs that may have been changed by other actions
-#git pull
+git status -s
+

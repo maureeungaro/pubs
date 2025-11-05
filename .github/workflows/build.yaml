@@ -1,4 +1,4 @@
-name: Pubs pdf build
+name: Pubs pdfs build
 
 # Controls when the workflow will run
 on:
@@ -20,7 +20,7 @@ jobs:
   build_pdf:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    container: maureeungaro/base:fedora36-latex
+    container: maureeungaro/latex:latest
     name: PDF ${{ matrix.doc }}
     strategy:
       fail-fast: false
@@ -45,8 +45,3 @@ jobs:
       - name: ${{ matrix.doc }}
         run: |
           ./ci/test_pdf.sh -d ${{ matrix.doc }}
-
-      - uses: gitboard-io/gitboard-action@main
-        with:
-          username: maureeungaro
-          key: 3d8e9059-a164-4bea-9541-1cb8789d805b
