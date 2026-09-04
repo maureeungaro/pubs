@@ -10,9 +10,15 @@ tex_sources = files(
   note_name + '_bib.tex',
 )
 
+# One file per chapter, inputted through <note>_doc.tex.
+chapter_sources = files(
+  'chapters/01.tex',
+  'chapters/02.tex',
+)
+
 custom_target(
   note_name + '.pdf',
-  input: tex_sources,
+  input: [tex_sources, chapter_sources],
   output: [
     note_name + '.pdf',
     note_name + '.aux',
@@ -20,7 +26,6 @@ custom_target(
     note_name + '.fls',
     note_name + '.log',
     note_name + '.out',
-    note_name + '.toc',
   ],
   command: [
     latexmk,
@@ -35,7 +40,6 @@ custom_target(
   install: true,
   install_dir: [
     meson.current_source_dir(),
-    false,
     false,
     false,
     false,

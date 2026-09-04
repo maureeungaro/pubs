@@ -1,84 +1,10 @@
 % =============================================================================
-%  CLAS12 Technical Note --- body
+%  CLAS12 Technical Note --- body driver
 %
-%  Section order follows the CLAS12 note authoring guide (CLAUDE.md, section 2).
-%  Replace the bracketed [ ... ] guidance with the note content, and delete the
-%  sections that do not apply.  Standard simulation constants are pre-filled from
-%  the authoring guide (section 3); state any deviation explicitly.
+%  Keep one LaTeX file per chapter under chapters/ and list them here in order.
+%  Add a new chapter by creating chapters/NN.tex and adding an \input line below
+%  (and to tex_sources in meson.build so the build tracks it).
 % =============================================================================
 
-\section*{Overview}
-\addcontentsline{toc}{section}{Overview}
-[One paragraph stating the single question the note answers: the background rate,
-occupancy, PMT current, dose, or infrastructure change being studied, and why it
-matters. State the answer in the Conclusions.]
-
-\section{Experiment Configuration}
-[Measurement notes only. Beam current, magnet states (solenoid, torus), which
-detectors were on or off, and the run date. Reference a figure of the beam on
-target when available. Omit this section for pure simulation studies.]
-
-\section{Simulated Detector, Beam, and Target Configuration}
-GEMC starting configuration: [FTOn / FTOff]. The target, beamline, shielding,
-torus, and vacuum-beamline geometry are imported into Geant4 directly from the
-engineering CAD models~\cite{note:cad,note:moller,note:beamline,note:target}.
-
-A total of [124{,}000] electrons are propagated through the target within a
-[248.5]~ns time window, corresponding to the full nominal CLAS12 operating
-luminosity of $1\times10^{35}$~cm$^{-2}$\,s$^{-1}$ on a 5~cm liquid-hydrogen
-(LH$_2$) target. [State the pair actually used and any survey offset.]
-
-The beam energy is 10.6~GeV (results at 6.4~GeV agree to within ${\sim}10\%$).
-The solenoid and torus are at full current; both torus polarities are reported as
-in-bending and out-bending. Most rates show negligible (${<}{\sim}10\%$)
-polarity dependence.
-
-Software: GEMC [version] with Geant4 [version]. Physics lists: standard Geant4
-electromagnetic; hadronic FTFP\_BERT; optical processes [included / not included].
-[State the run-number scheme: legacy RUNNO=11 with \_mc CCDB variations, or a
-run-dependent SQLITE geometry database with the \texttt{default} variation.]
-
-\section{Results}
-Report one subsection per detector or per studied quantity. For each: the
-rate, occupancy, or current; the applied energy-deposition threshold; the
-field-polarity dependence; and the comparison to data when available.
-
-\subsection{[Detector] rates}
-[Rate / occupancy / current, the applied threshold, the field-polarity
-dependence, and the comparison to data if available. Report rates in kHz (MHz for
-the largest), currents in $\mu$A, energy in MeV, and doses in rad/h. State the
-threshold in every figure caption.]
-
-An example rate distribution is shown in Fig.~\ref{fig:example}, and representative
-values are collected in Table~\ref{tab:example}.
-
-\begin{figure}[htbp]
-  \centering
-  \framebox[0.62\textwidth][c]{\rule[-1.4cm]{0pt}{3cm}\itshape figure placeholder}
-  \caption{What is plotted, the configuration (FTOn/FTOff, in-bending/out-bending),
-  the applied energy-deposition threshold, and a note that it is at the full nominal
-  CLAS12 operating luminosity when applicable.}
-  \label{fig:example}
-\end{figure}
-
-\begin{table}[htbp]
-  \centering
-  \begin{tabular}{lrr}
-    \toprule
-    Detector & Rate at 0 threshold (MHz) & Rate at 1~MeV (kHz) \\
-    \midrule
-    CTOF & 5.0 & 150 \\
-    ECAL & 2.5 & 140 \\
-    FTOF (Panel-2) & 6.0 & 700 \\
-    \bottomrule
-  \end{tabular}
-  \caption{Example rate table. State the threshold for every quoted rate and the
-  field polarity; remind the reader how to obtain the total (e.g. CTOF: multiply
-  the per-counter rate by 48 counters).}
-  \label{tab:example}
-\end{table}
-
-\section{Conclusions}
-[The answer to the note's question, as numbered findings when there are several
-distinct conclusions. Acknowledge any simulation-versus-data discrepancy rather
-than hiding it.]
+\input{chapters/01}
+\input{chapters/02}

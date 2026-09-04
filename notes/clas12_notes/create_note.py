@@ -13,7 +13,6 @@ TEMPLATE_FILES = {
     'template_doc.tex': '{name}_doc.tex',
     'template_bib.tex': '{name}_bib.tex',
     'meson.build': 'meson.build',
-    'README.md': 'README.md',
 }
 
 
@@ -42,8 +41,6 @@ def render_template(source_name: str, text: str, note_name: str) -> str:
         )
     if source_name == 'meson.build':
         return text.replace("note_name = 'template'", f"note_name = '{note_name}'")
-    if source_name == 'README.md':
-        return text.replace('template.pdf', f'{note_name}.pdf')
     return text
 
 
@@ -70,6 +67,11 @@ def main() -> int:
             destination = note_dir / destination_pattern.format(name=args.name)
             text = render_template(source_name, source.read_text(), args.name)
             destination.write_text(text)
+
+        # Copy the per-chapter body files verbatim (they carry no note name).
+        chapters_src = template_dir / 'chapters'
+        if chapters_src.is_dir():
+            shutil.copytree(chapters_src, note_dir / 'chapters')
     except BaseException:
         shutil.rmtree(note_dir)
         raise

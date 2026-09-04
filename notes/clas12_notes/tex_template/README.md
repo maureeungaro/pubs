@@ -33,8 +33,11 @@ macros (`\notetitle`, `\noteauthor`, `\noteaffiliation`, `\notenumberdate`, `not
 - `template_preamble.tex` — everything before `\begin{document}`: document class, packages, and the
   house-style definitions (fonts, heading and caption styles, header/footer, front-matter macros). Edit the
   style here.
-- `template_doc.tex` — the note body: section skeleton and standard simulation constants (authoring guide
-  sections 2 and 3). Replace the bracketed `[ ... ]` guidance with content.
+- `template_doc.tex` — body driver: one `\input{chapters/NN}` per chapter, in order.
+- `chapters/01.tex`, `chapters/02.tex` — one file per chapter (the section skeleton and standard simulation
+  constants from authoring-guide sections 2 and 3). Replace the bracketed `[ ... ]` guidance with content;
+  add a chapter by creating `chapters/NN.tex`, adding an `\input` line to `template_doc.tex`, and listing it
+  in `tex_sources` in `meson.build`.
 - `template_bib.tex` — the recurring foundational CLAS12-note references (authoring guide section 7).
 
 ## Requirements
