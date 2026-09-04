@@ -1,0 +1,41 @@
+\section{Introduction}\label{ch:1}
+
+\subsection{Purpose and scope}
+
+This note documents simGrid, the CLAS12 simulation portal to the Open Science Grid, at the level of detail needed to operate, extend, and audit it. It answers a single question: \textit{how does a click in a web form become a validated, reconstructed CLAS12 simulation file on Jefferson Lab storage, and how is that work scheduled fairly across users on shared, opportunistic computing resources?} The note covers the portal front end, the submission database, the submission engine, the generated HTCondor and worker-node scripts, the two priority subsystems, and the monitoring, operations, testing, and security practices around them. It does not document the physics of the individual event generators, the GEMC detector geometry, or the CLAS12 reconstruction algorithms, which are covered elsewhere.
+
+\subsection{Motivation}
+
+CLAS12 analyses depend on large Monte-Carlo samples produced with the same software, geometry, and field configuration as the reconstructed data. Producing those samples by hand --- writing HTCondor submit files, staging generator output, chaining GEMC to reconstruction, and copying results back --- is error-prone and concentrates production in the hands of a few experts. simGrid democratizes this: any authenticated collaborator can request a self-consistent Monte-Carlo workflow from a browser, with the correct software versions, field maps, vertex handling, and background merging selected for them, and have it run at scale on the OSG without touching HTCondor directly. The portal is the single, reproducible path from a physics request to a DST.
+
+\subsection{The OSG execution model in one paragraph}
+
+The Open Science Grid is not a cluster with a login node; it is a federation of opportunistic resources reached through \textit{pilot} jobs (glideins). A pilot lands on a remote site, advertises the slot it has claimed back to a central pool, and the user's HTCondor job is matched onto it. From the portal's perspective this means jobs run on hardware it does not own, under a container it must carry with it (via CVMFS and Singularity/Apptainer), with input and output moved over a wide-area data federation (Pelican/OSDF) rather than a shared filesystem. Slots can vanish when the pilot is evicted; the portal's retry and hold policy (Chapter 8) is built around this reality.
+
+\subsection{Design goals and constraints}
+
+The system is shaped by four goals and one hard constraint:
+
+\begin{itemize}
+  \item \textbf{Self-service:} a collaborator with no grid expertise can submit a correct workflow from a form.
+  \item \textbf{Reproducibility:} every generated worker-node script is self-documenting and can be re-run verbatim.
+  \item \textbf{Fair sharing:} no single user can monopolize the shared allocation; waiting requests are ordered by a history-weighted, load-aware queue.
+  \item \textbf{Operability:} the submission pipeline is idempotent, single-writer, and recoverable from failure.
+\end{itemize}
+
+The constraint is that \textbf{all jobs run under one shared HTCondor owner, \texttt{gemc}.} OSG allocations and OAuth credentials are granted to that single identity, not to individual collaborators. Fair sharing therefore cannot be delegated to HTCondor's per-user accounting; the portal must implement it itself. This constraint is the reason the two priority systems (Chapters 10 and 11) exist and are kept separate.
+
+\subsection{Terminology and conventions}
+
+\begin{itemize}
+  \item \textbf{Submission / cluster / subjob.} A \textit{submission} (also \textit{user submission}, keyed by \texttt{user\_\allowbreak{}submission\_\allowbreak{}id}) is one portal request. When submitted it becomes one HTCondor \textit{cluster} (identified by a \texttt{ClusterId}, stored as \texttt{pool\_\allowbreak{}node}). A cluster contains many \textit{subjobs} (HTCondor processes, \texttt{\$(Process)}), one per event batch (type-1) or per LUND file (type-2).
+  \item \textbf{scard / gcard.} The \textit{scard} (steering card) is the key:value text the portal produces from the form and stores in the database; it drives all downstream generation. The \textit{gcard} is the GEMC geometry/option card referenced by the run at execution time.
+  \item \textbf{Type-1 vs. type-2.} A \textit{type-1} submission runs an event generator on the worker node to produce events; a \textit{type-2} submission consumes pre-generated LUND files from a \texttt{/\allowbreak{}volatile/\allowbreak{}clas12/\allowbreak{}} directory, one subjob per file. The type is inferred from the generator field (Chapter 4).
+  \item \textbf{Two priorities.} \texttt{submissions.\allowbreak{}priority} is the MySQL portal-queue position for \textit{waiting} requests (smaller runs sooner, 1 is next). HTCondor \texttt{JobPrio} is the runtime scheduling preference for \textit{already submitted} clusters (larger runs sooner). They are computed by different scripts, written to different stores, and must never be inferred from one another.
+\end{itemize}
+
+Rates and counts follow the CLAS12 conventions; times are given in the database time format \texttt{\%Y-\allowbreak{}\%m-\allowbreak{}\%d \%H:\allowbreak{}\%M:\allowbreak{}\%S}. Production paths use the shared owner \texttt{gemc} and the production container; development uses the \texttt{CLAS12TEST} database and the \texttt{devel} container.
+
+\subsection{Document roadmap}
+
+Chapter 2 gives the architecture and an end-to-end narrative. Chapters 3--6 describe the four persistent layers a submission passes through before it leaves the submit node: the portal (3), the scard (4), the database (5), and the state machine (6). Chapters 7--9 are the execution path: the submission engine (7), the generated HTCondor card (8), and the worker-node pipeline (9). Chapters 10--11 are the two priority systems, kept deliberately parallel. Chapter 12 is the HTCondor query layer they share; Chapter 13 is monitoring and completion. Chapters 14--16 cover operations, testing, and security; 17--18 close with limitations and conclusions.

@@ -1,0 +1,21 @@
+\section{HTCondor Integration Layer (\texttt{condor\_\allowbreak{}io/\allowbreak{}htcondor\_\allowbreak{}utils.\allowbreak{}py})}\label{ch:12}
+
+\subsection{Schedd querying and batch grouping}
+
+\texttt{htcondor\_\allowbreak{}utils.\allowbreak{}py} is the shared query layer for both priority systems and the monitor. It queries the schedd and groups jobs by \texttt{ClusterId} into per-batch records.
+
+\subsection{Job-status taxonomy and count derivation}
+
+For each batch it derives counts by state --- \texttt{RUN}, \texttt{IDLE}, \texttt{HOLD}, \texttt{OTHER} --- and infers \texttt{DONE} from \texttt{TotalSubmitProcs} minus the jobs still present. These counts feed capacity checks, balancing, and the monitor.
+
+\subsection{Submit-time and priority extraction}
+
+It extracts each batch's submit time (for oldest-cluster selection) and current \texttt{JobPrio}, flagging a batch whose jobs hold mixed priorities so the balancer can treat it as unset.
+
+\subsection{Capacity check}
+
+\texttt{is\_\allowbreak{}under\_\allowbreak{}job\_\allowbreak{}limit()} implements the engine's back-pressure test (running + idle vs. the configured maximum, Chapter 7.2).
+
+\subsection{Behavioral caveats}
+
+The schedd query sees only the live queue, not completed history; \texttt{DONE} is inferred, not read from history. Monitoring accounts for this by snapshotting (Chapter 13).

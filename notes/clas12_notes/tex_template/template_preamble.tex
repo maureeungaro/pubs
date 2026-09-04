@@ -1,0 +1,106 @@
+% =============================================================================
+%  CLAS12 Technical Note --- preamble
+%
+%  Document class, packages, and house-style definitions. This file is inputted
+%  by template.tex before \begin{document}. Editing the note's style (fonts,
+%  sizes, spacing, header/footer, front-matter macros) is done here.
+%
+%  The style mirrors the Pages template
+%  templates/CLAS12_technical_note_template.pages:
+%    * body        Times New Roman, 12 pt, ragged right, blank-line paragraphs
+%    * headings    Helvetica bold, 14 pt (section) / 12.5 pt (subsection)
+%    * title       Helvetica bold, 19 pt, centred
+%    * author      Helvetica bold, 14 pt, centred
+%    * affiliation Times New Roman italic, 12 pt, centred
+%    * captions    Times New Roman italic, 10.5 pt, grey
+%
+%  Build (from this directory):  meson setup build && meson compile -C build
+%  which runs latexmk + pdflatex.  See README.md.
+% =============================================================================
+
+\documentclass[12pt]{article}
+
+% --- Page geometry: US Letter, 1 inch margins (matches the Pages template) ---
+\usepackage[letterpaper,margin=1in]{geometry}
+
+% --- Encoding -----------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% --- Fonts --------------------------------------------------------------------
+%   mathptmx : Times-like serif for body text and maths (~ TimesNewRomanPSMT)
+%   helvet   : Helvetica-like sans for the title block and section headings
+%   courier  : Courier-like typewriter font for verbatim / code
+\usepackage{mathptmx}
+\usepackage[scaled=0.90]{helvet}
+\usepackage{courier}
+
+% --- Colours ------------------------------------------------------------------
+%   captiongrey matches the Pages caption colour {26000,26000,26000}/65535 ~ 0.40
+\usepackage{xcolor}
+\definecolor{captiongrey}{gray}{0.40}
+
+% --- Graphics, maths, tables, code -------------------------------------------
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small,columns=fullflexible,breaklines=true,
+        frame=single,rulecolor=\color{captiongrey}}
+
+% --- Section headings: Helvetica bold, left aligned, house-style sizes --------
+%   section    14   pt   (e.g. "1. Experiment Configuration")
+%   subsection 12.5 pt   (e.g. "3.1 ...")
+\usepackage{titlesec}
+\titleformat{\section}
+  {\sffamily\bfseries\fontsize{14}{17}\selectfont}{\thesection.}{0.5em}{}
+\titleformat{\subsection}
+  {\sffamily\bfseries\fontsize{12.5}{15}\selectfont}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}
+  {\sffamily\bfseries\fontsize{12}{14}\selectfont}{\thesubsubsection}{0.5em}{}
+\titlespacing*{\section}      {0pt}{16pt}{6pt}
+\titlespacing*{\subsection}   {0pt}{12pt}{4pt}
+\titlespacing*{\subsubsection}{0pt}{10pt}{4pt}
+
+% --- Figure / table captions: Times italic, 10.5 pt, grey, "Figure 1. ..." ---
+\usepackage{caption}
+\DeclareCaptionFont{clascaption}%
+  {\color{captiongrey}\itshape\fontsize{10.5}{12.5}\selectfont}
+\captionsetup{font=clascaption,labelfont=clascaption,labelsep=period}
+
+% --- Paragraph style: ragged right, blank-line separation, no indent ----------
+\usepackage[document]{ragged2e}
+\usepackage{parskip}
+
+% --- Running header / footer --------------------------------------------------
+\usepackage{fancyhdr}
+\setlength{\headheight}{14.5pt}
+\addtolength{\topmargin}{-2.5pt}
+
+% --- Hyperlinks (load last) ---------------------------------------------------
+\usepackage[hyperindex]{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=blue,
+  urlcolor=blue,
+  filecolor=magenta,
+  pdfauthor={M. Ungaro},
+  pdftitle={CLAS12 Technical Note}
+}
+
+% --- House-style front-matter helpers ----------------------------------------
+\newcommand{\notetitle}[1]%
+  {{\centering\sffamily\bfseries\fontsize{19}{23}\selectfont #1\par}}
+\newcommand{\noteauthor}[1]%
+  {{\centering\sffamily\bfseries\fontsize{14}{17}\selectfont #1\par}}
+\newcommand{\noteaffiliation}[1]%
+  {{\centering\itshape\fontsize{12}{15}\selectfont #1\par}}
+\newcommand{\notenumberdate}[1]%
+  {{\centering\normalfont\fontsize{11}{14}\selectfont #1\par}}
+\newenvironment{noteabstract}%
+  {\vspace{6pt}%
+   {\centering\sffamily\bfseries\fontsize{14}{17}\selectfont Abstract\par}%
+   \vspace{4pt}\begin{center}\begin{minipage}{0.86\textwidth}%
+   \centering\normalfont\normalsize}%
+  {\end{minipage}\end{center}\vspace{6pt}}

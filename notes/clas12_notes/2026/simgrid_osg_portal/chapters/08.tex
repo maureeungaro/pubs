@@ -1,0 +1,45 @@
+\section{HTCondor Submit-File Generation (\texttt{generators/\allowbreak{}condor/\allowbreak{}})}\label{ch:8}
+
+\subsection{Assembly model}
+
+\texttt{generate\_\allowbreak{}condor\_\allowbreak{}card()} calls one generator per section and joins their strings in a fixed order: header, retry policy, requirements, undesired sites, authentication, hardware, executable, file transfer, and queue (always last). Each generator is a pure function of the scard plus optional overrides, so a submission's card is fully determined by its scard and the call parameters. Adding a section means adding a function and one line to the assembly list.
+
+\subsection{Header}
+
+\texttt{create\_\allowbreak{}header()} sets \texttt{Universe =\allowbreak{} vanilla} (the only universe supported for OSG pilots), the CVMFS-hosted Singularity image (\texttt{clas12software:\allowbreak{}production}, or \texttt{:\allowbreak{}devel} when \texttt{devel=\allowbreak{}True}), \texttt{+SingularityBindCVMFS =\allowbreak{} True} to expose all of \texttt{/\allowbreak{}cvmfs} inside the container, and a \texttt{Rank} expression built from a site-preference table (\texttt{SITE\_\allowbreak{}RANKS}; e.g. Glasgow 300, CNAF 200, default 100, Syracuse deprioritized).
+
+\subsection{Retry / hold policy}
+
+\texttt{create\_\allowbreak{}retry\_\allowbreak{}policy()} encodes eviction tolerance: \texttt{on\_\allowbreak{}exit\_\allowbreak{}remove} removes only clean exits (no signal, code 0); \texttt{on\_\allowbreak{}exit\_\allowbreak{}hold} holds any signalled or non-zero exit; \texttt{periodic\_\allowbreak{}release} releases a held job back to idle only when it has been retried fewer than 5 times, has been held over an hour, and exited with one of the known transient OSG codes (202, 204--208, 210--213 --- CVMFS unavailable, pilot evicted, etc.). Anything else stays held for inspection. The exit-code taxonomy is in Appendix E.
+
+\subsection{Requirements}
+
+\texttt{create\_\allowbreak{}requirements()} guards against known infrastructure failures: \texttt{HAS\_\allowbreak{}SINGULARITY}, the OSG oasis CVMFS repository mounted, kernel $\geq$ 2.17, a sufficiently recent CVMFS oasis revision, and glidein version $\geq$ 534. \texttt{-\allowbreak{}-\allowbreak{}target-\allowbreak{}site} appends a \texttt{GLIDEIN\_\allowbreak{}Site =\allowbreak{}=\allowbreak{} "<SITE>"} clause to pin all subjobs to one site.
+
+\subsection{Undesired sites}
+
+\texttt{create\_\allowbreak{}undesired()} emits a \texttt{+UNDESIRED\_\allowbreak{}Sites} exclusion list, keeping jobs off sites known to fail for CLAS12 workloads.
+
+\subsection{Authentication}
+
+\texttt{create\_\allowbreak{}authentication()} emits \texttt{use\_\allowbreak{}oauth\_\allowbreak{}services =\allowbreak{} jlab\_\allowbreak{}clas12}. The submit node's CredMon obtains an OAuth2 bearer token for that service; HTCondor injects it as \texttt{BEARER\_\allowbreak{}TOKEN\_\allowbreak{}FILE} into the job environment, where Pelican/OSDF use it to read LUND input and write HIPO output. No long-lived secret ever reaches the node.
+
+\subsection{Hardware}
+
+\texttt{create\_\allowbreak{}hardware()} requests the GEMC resource profile: 1 CPU (GEMC is single-threaded), 2.256 GB memory (GEMC peak RSS $\approx$ 1.8 GB plus headroom), and 2 GB scratch disk. Overrides exist for heavier workloads.
+
+\subsection{Executable}
+
+\texttt{create\_\allowbreak{}executable()} names \texttt{nodescript.\allowbreak{}sh} as the executable, sets the per-subjob \texttt{log}/\texttt{out}/\texttt{err} paths under \texttt{log/\allowbreak{}}, and sets \texttt{+ProjectName} for OSG accounting.
+
+\subsection{File transfer}
+
+\texttt{create\_\allowbreak{}file\_\allowbreak{}transfer()} stages \texttt{nodescript.\allowbreak{}sh} and \texttt{functions.\allowbreak{}sh} in (\texttt{should\_\allowbreak{}transfer\_\allowbreak{}files =\allowbreak{} YES}, \texttt{when\_\allowbreak{}to\_\allowbreak{}transfer\_\allowbreak{}output =\allowbreak{} ON\_\allowbreak{}EXIT}) and retrieves only the \texttt{output/\allowbreak{}} subdirectory. Notably, type-2 LUND files are \textbf{not} staged through HTCondor: the worker node fetches each file on-node via Pelican, avoiding saturation of the submit node with large LUND directories.
+
+\subsection{Queue}
+
+\texttt{create\_\allowbreak{}queue()} is the final section. Type-1 emits \texttt{Arguments =\allowbreak{} \$(Process)} and \texttt{Queue N} (N = \texttt{njobs}). Type-2 uses itemdata: \texttt{Arguments =\allowbreak{} \$(Process) \$(lundFile)} and \texttt{queue lundFile from lund\_\allowbreak{}files}, expanding the staged \texttt{lund\_\allowbreak{}files} one line per subjob.
+
+\subsection{Extending the card}
+
+Because each section is an independent pure function joined in order, a new section (say, a new accounting attribute or a new requirement) is added by writing one generator and inserting one call in \texttt{generate\_\allowbreak{}condor\_\allowbreak{}card()} --- no template surgery. An annotated full card is in Appendix C.

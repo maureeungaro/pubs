@@ -1,75 +1,52 @@
-\ifx\pdfoutput\undefined      % compilazione htlatex
-\documentclass{article}
-\DeclareGraphicsExtensions{.png, .gif, .jpg}
-\newcommand{\href}[2]{\Link[#1]{}{} #2 \EndLink}
-\newcommand{\hypertarget}[2]{\Link[]{}{#1} #2 \EndLink}
-\newcommand{\hyperlink}[2]{\Link[]{#1}{} #2 \EndLink}
-\else                         % compilazione pdflatex
-\documentclass{article}
-\usepackage{graphicx}
-\usepackage{listings}
-\usepackage{fancyhdr}
-\usepackage{wrapfig}
-\usepackage{multirow}
-\usepackage{lscape}
-\usepackage{amssymb,amsmath}
-\pdfpagewidth 8.5in
-\pdfpageheight 11in
-\setlength\textwidth{6.5in}
-\setlength\textheight{8.1in}
-\setlength\oddsidemargin{0in}
-\setlength\evensidemargin{0in}
-\setlength\topmargin{-0.6in}
-\setlength\footskip{0.6in}
-\setlength\headsep{0.6in}
-\usepackage[hyperindex]{hyperref}
-\usepackage{qtree}
-\newcommand{\percent}{\,^0\!/_0}
- \hypersetup{
-    bookmarks=true,         % show bookmarks bar?
-    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
-    pdftoolbar=true,        % show Acrobat’s toolbar?
-    pdfmenubar=true,        % show Acrobat’s menu?
-    pdffitwindow=true,      % page fit to window when opened
-    pdfauthor={Maurizio},   % author
-    pdfsubject={Ungaro},    % subject of the document
-    pdfnewwindow=true,      % links in new window
-    colorlinks=true,        % false: boxed links; true: colored links
-    linkcolor=black,        % color of internal links
-    citecolor=blue,         % color of links to bibliography
-    filecolor=magenta,      % color of file links
-    urlcolor=blue           % color of external links
-}
-\fi
+% =============================================================================
+%  CLAS12 Technical Note --- main file
+%
+%  The preamble (document class, packages, and house-style definitions) lives in
+%  template_preamble.tex. This file holds only the document content: front
+%  matter, the body (template_doc.tex), and the references (template_bib.tex).
+% =============================================================================
 
+\input{template_preamble}
 
 \begin{document}
+
 \pagestyle{fancy}
-\renewcommand{\sectionmark}[1]{\markright{\slshape \thesection\ #1}{}}
-\fancyhead[R]{\bf\rightmark} 
-\fancyhead[L]{Common Environment for Software Packages}
-\fancyfoot[R]{ \sl M. Ungaro, Z. Zhao}
-\fancyfoot[L]{ \sl JLAB}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\fancyhead[L]{\small\slshape CLAS12 Technical Note}
+\fancyhead[R]{\small\slshape \rightmark}
+\fancyfoot[L]{\small\slshape Jefferson Lab}
+\fancyfoot[R]{\small\slshape M. Ungaro}
+\fancyfoot[C]{\small\thepage}
 
-\title{\large Common Environment for Software Packages}
- \author{M. Ungaro, Z. Zhao}
-\maketitle
+% ============================ FRONT MATTER ===================================
 
-\abstract{We present a model to organize software packages into releases. 
-Shell scripts define the environment variables needed to run and compile vs the packages.
-Users can switch between releases and can select different versions of individual packages.}
+\thispagestyle{plain}
+
+\notetitle{Title of the CLAS12 Technical Note}
+\vspace{18pt}
+\noteauthor{M. Ungaro}
+\vspace{8pt}
+\noteaffiliation{Jefferson Lab, 12,000 Jefferson Avenue, 23606 Newport News, VA, USA}
+\vspace{6pt}
+\notenumberdate{CLAS12-note 20XX-NNN \quad\textperiodcentered\quad \today}
+
+\begin{noteabstract}
+[3--6 sentences: the configuration studied, what has been measured or simulated, and the
+headline result. State the nominal luminosity
+($1\times10^{35}$~cm$^{-2}$\,s$^{-1}$, 75~nA on a 5~cm LH$_2$ target) and the beam
+energy when relevant.]
+\end{noteabstract}
 
 \tableofcontents
 
+% ============================ BODY ===========================================
+
 \input{template_doc}
-%\input{template_bib}
+
+% ============================ REFERENCES =====================================
+
+\input{template_bib}
 
 \end{document}
-
-
-
-
-
-
-
-

@@ -1,0 +1,17 @@
+\section{Security and Trust Model}\label{ch:16}
+
+\subsection{Authentication boundaries}
+
+Two identity domains meet in the portal. Users authenticate to the portal via the web server (\texttt{REMOTE\_\allowbreak{}USER}), which sets attribution and the output namespace. Jobs authenticate to OSDF via a single OAuth service (\texttt{jlab\_\allowbreak{}clas12}) under the shared owner \texttt{gemc}. The portal is the bridge and the only place per-user identity is enforced.
+
+\subsection{Input validation and injection surfaces}
+
+The main injection surfaces are the PHP $\rightarrow$ shell boundary (the \texttt{exec} of the uploader) and the scard parser. The portal escapes fields and quotes shell arguments (\texttt{escapeshellarg}), restricts the string identifier to a safe character class at input, and the scard parser treats unknown keys as inert data (\texttt{\_\allowbreak{}extra}) rather than executing them.
+
+\subsection{Path and namespace isolation}
+
+Type-2 inputs are constrained to \texttt{/\allowbreak{}volatile/\allowbreak{}clas12/\allowbreak{}} (enforced before any file operation), and outputs are written to a per-user OSDF namespace (\texttt{.\allowbreak{}.\allowbreak{}.\allowbreak{}/\allowbreak{}osg/\allowbreak{}<user>/\allowbreak{}<sub\_\allowbreak{}id>/\allowbreak{}}), so one user's request cannot read or overwrite another's area.
+
+\subsection{Token lifetime and least privilege}
+
+The CredMon mints short-lived bearer tokens per job; no long-lived credential is transferred to a worker node, so a compromised slot exposes at most a short-lived, narrowly-scoped token.

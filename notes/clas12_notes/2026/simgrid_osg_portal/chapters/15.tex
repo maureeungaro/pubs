@@ -1,0 +1,21 @@
+\section{Testing and Reproducibility}\label{ch:15}
+
+\subsection{Test mode}
+
+\texttt{-\allowbreak{}-\allowbreak{}test} decouples the engine from HTCondor and Pelican: it skips the capacity check, mocks LUND enumeration, performs no MySQL status change, and does not submit. With \texttt{-\allowbreak{}-\allowbreak{}print-\allowbreak{}nodescript} / \texttt{-\allowbreak{}-\allowbreak{}print-\allowbreak{}condor-\allowbreak{}card} it is the standard way to inspect what \textit{would} run for any submission.
+
+\subsection{Unit tests}
+
+\texttt{tests/\allowbreak{}} covers the load-bearing logic: \texttt{test\_\allowbreak{}priority\_\allowbreak{}submissions} (the scoring, ordering, and burst behavior), \texttt{test\_\allowbreak{}lund\_\allowbreak{}helper} (LUND enumeration and the \texttt{lund\_\allowbreak{}files} format), and \texttt{test\_\allowbreak{}mark\_\allowbreak{}completed\_\allowbreak{}submissions} (the absence-from-snapshot heuristic and dry-run default).
+
+\subsection{Reference submissions}
+
+The \texttt{CLAS12TEST} database carries reference submissions 783--787 spanning the pipeline: full workflow (783), GEMC-only with and without background merging (784, 785), and LUND input with and without merging (786, 787). Regenerating their nodescripts and comparing against the stored \texttt{runscript\_\allowbreak{}text} is the standard script-parity check.
+
+\subsection{Container-based verification}
+
+Changes are validated by mounting a work directory into \texttt{jeffersonlab/\allowbreak{}clas12software:\allowbreak{}production} (or \texttt{:\allowbreak{}devel}), copying in \texttt{nodescript.\allowbreak{}sh} and \texttt{functions.\allowbreak{}sh}, and confirming the generator/GEMC/reconstruction command lines are identical to the last known-good submission's stored scripts.
+
+\subsection{Reproducibility guarantees}
+
+The self-documenting nodescript (Chapter 9.1) is the reproducibility guarantee: because every step is an explicit, echoed \texttt{cmd=\allowbreak{}(.\allowbreak{}.\allowbreak{}.\allowbreak{})} array with pinned software versions, a user can copy any step out of a job's log and re-run it verbatim, and the stored \texttt{runscript\_\allowbreak{}text} records exactly what ran.

@@ -1,0 +1,37 @@
+\section{Monitoring, Display, and Completion}\label{ch:13}
+
+\subsection{Building the submissions view}
+
+\texttt{condor\_\allowbreak{}io/\allowbreak{}list\_\allowbreak{}owner\_\allowbreak{}submission.\allowbreak{}py} builds the portal's submissions table by joining live HTCondor batch counts (total/done/running/idle/held) to the newest matching MySQL row where \texttt{pool\_\allowbreak{}node =\allowbreak{} ClusterId}.
+
+\subsection{Extra rows and de-duplication}
+
+It adds MySQL rows that have not reached HTCondor --- \texttt{Not Submitted} requests and terminal pre-submission failures --- and de-duplicates so each submission appears once.
+
+\subsection{The priority-display substitution}
+
+For a matched submission the script reads the Condor \texttt{JobPrio} but then \textbf{replaces the displayed priority with the MySQL \texttt{submissions.\allowbreak{}priority}.} Consequently the portal table shows the portal-queue position, not the runtime \texttt{JobPrio}; inspect live \texttt{JobPrio} with \texttt{run\_\allowbreak{}priority\_\allowbreak{}map.\allowbreak{}py -\allowbreak{}p}.
+
+\subsection{Snapshotting and pruning}
+
+\texttt{-\allowbreak{}-\allowbreak{}store-\allowbreak{}db} writes the joined view as a JSON snapshot to \texttt{owner\_\allowbreak{}submission\_\allowbreak{}snapshots}, keeping only the newest N (\texttt{prune\_\allowbreak{}owner\_\allowbreak{}submission\_\allowbreak{}snapshots}). \texttt{-\allowbreak{}-\allowbreak{}from-\allowbreak{}db} reads the latest snapshot, decoupling the display from a live schedd query.
+
+\subsection{Progress history}
+
+Reading a window of snapshots yields per-submission progress over time (done-count deltas against the previous snapshot), the basis for the progress column and the estimated-time-remaining figure.
+
+\subsection{Completion detection}
+
+\texttt{db\_\allowbreak{}io/\allowbreak{}mark\_\allowbreak{}completed\_\allowbreak{}submissions.\allowbreak{}py} marks a submission \texttt{Completed} when its cluster has disappeared from the snapshots --- the absence-from-snapshot heuristic --- because the schedd does not retain completed clusters. It defaults to a dry run; writing requires an explicit flag.
+
+\subsection{Front-end rendering}
+
+\texttt{main.\allowbreak{}js} renders the snapshot JSON into the submissions and fair-share tables (\texttt{osgLogtoTable}, \texttt{fairshareToTable}) and computes the estimated time remaining from progress deltas and queue depth.
+
+\subsection{External monitoring links}
+
+The portal links to daily digest emails and the OSG dashboards for pool-level views beyond the portal's own tables.
+
+\subsection{Long-term statistics}
+
+\texttt{stats/\allowbreak{}nsubmission.\allowbreak{}py} and \texttt{stats/\allowbreak{}top\_\allowbreak{}users.\allowbreak{}py} produce long-term submission counts and per-user totals for reporting and capacity planning.

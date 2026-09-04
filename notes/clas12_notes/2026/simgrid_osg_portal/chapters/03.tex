@@ -1,0 +1,45 @@
+\section{The Web Portal (User-Facing Layer)}\label{ch:3}
+
+\subsection{Page map and navigation}
+
+The portal is a small set of PHP pages sharing a common header/footer (\texttt{header.\allowbreak{}php}, \texttt{head.\allowbreak{}php}): \texttt{index} (landing and links), \texttt{type1} (generator submission form), \texttt{type2} (LUND-file submission form), \texttt{monitor} (submissions table), \texttt{fairshare} (queue view), \texttt{osgStats} (OSG-level statistics), and \texttt{about} (documentation and generator-testing guidance). A maintenance variant (\texttt{indexMaintanance.\allowbreak{}php}) replaces the landing page during downtime.
+
+\subsection{Environment/mode detection}
+
+\texttt{common.\allowbreak{}php} centralizes environment detection so every page renders consistently in production or development. Development mode is recognized from the request URL and switches the database target, container tag, and operational banners. This keeps a single codebase serving both \texttt{CLAS12OCR}/production and \texttt{CLAS12TEST}/devel without per-page conditionals.
+
+\subsection{Submission form: Generator jobs (type-1)}
+
+\texttt{type1.\allowbreak{}php} presents the generator workflow (Figure --- portal screenshot to be added). Fields: configuration, software versions (\texttt{softwarev}), MC generator version (\texttt{mcgenv}), optional run selection, magnetic fields, vertex handling (z adjustment, beamspot smear, raster, generator-vertex mode), generator and its options, events per job (1--5000), number of jobs (0--10000), background merging, an optional string identifier, and output type (DST or GEMC-only). The event and job caps are enforced as HTML \texttt{min}/\texttt{max} attributes and re-checked in \texttt{main.\allowbreak{}js}.
+
+\subsection{Submission form: LUND-file jobs (type-2)}
+
+\texttt{type2.\allowbreak{}php} presents the pre-generated-input workflow. Instead of a generator, the user supplies a web location under \texttt{/\allowbreak{}volatile/\allowbreak{}clas12/\allowbreak{}} containing LUND files. The model is \textit{one subjob per file}: the number of jobs is determined by the number of files found, not entered by the user. All other configuration (fields, vertex, software, background merging, output type) mirrors type-1.
+
+\subsection{Client-side logic (\texttt{main.\allowbreak{}js})}
+
+\texttt{main.\allowbreak{}js} drives the dynamic form: it populates the configuration, software-version, and generator-version pickers; recomputes the total-events field from events-per-job $\times$ jobs; enforces the event/job caps; shows or hides the run-by-run UI; and formats the read-only vertex/beamspot/raster fields from the chosen configuration. It is the first line of input validation before anything is written server-side.
+
+\subsection{From form to scard}
+
+\texttt{submit\_\allowbreak{}type1.\allowbreak{}php} and \texttt{submit\_\allowbreak{}type2.\allowbreak{}php} receive the POST, sanitize the fields, and write the scard as key:value lines (Chapter 4). The scard is the only representation of the request that travels downstream; the PHP layer's job is to produce a correct, well-formed scard and hand it to the uploader.
+
+\subsection{Invoking the uploader}
+
+Each submit page then \texttt{exec}s \texttt{db\_\allowbreak{}io/\allowbreak{}upload\_\allowbreak{}submission.\allowbreak{}py} with the scard, writing a per-submission log file so that a failed upload can be diagnosed from the web tier. The uploader performs the database insert and the queue renumbering; the PHP page reports success or the captured error to the user.
+
+\subsection{Job summary, details modal, and progress display}
+
+After submission the portal shows a job summary. \texttt{get\_\allowbreak{}submission\_\allowbreak{}details.\allowbreak{}php} renders a details modal for a single submission --- its scard (aligned key:value lines), submission and processing timestamps, status, and priority. The \texttt{monitor} page renders the full table and a progress/estimated-time column derived from the monitoring snapshots (Chapter 13).
+
+\subsection{Authentication and identity}
+
+The portal identifies the user from the web-server-provided \texttt{REMOTE\_\allowbreak{}USER} and records \texttt{REMOTE\_\allowbreak{}ADDR}. The username determines the per-user output namespace on OSDF (\texttt{.\allowbreak{}.\allowbreak{}.\allowbreak{}/\allowbreak{}osg/\allowbreak{}<user>/\allowbreak{}<sub\_\allowbreak{}id>/\allowbreak{}}) and the user attribution used by the fair-share calculation. There is one shared grid identity (\texttt{gemc}) but many portal identities.
+
+\subsection{Maintenance mode and operational banners}
+
+During maintenance the landing page is swapped for \texttt{indexMaintanance.\allowbreak{}php}, and \texttt{common.\allowbreak{}php} banners signal development mode. These operational affordances prevent submissions during known-bad windows and make the active environment unambiguous to the user.
+
+\subsection{Input handling and security considerations}
+
+Because the PHP tier eventually hands strings to a shell (\texttt{exec} of the uploader) and to the scard parser, input handling matters: fields are escaped, shell arguments are quoted (\texttt{escapeshellarg}), and the string identifier is restricted at the input to an alphanumeric/hyphen character class. Filenames and paths are sanitized before use. Chapter 16 treats the trust model in full.

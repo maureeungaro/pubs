@@ -1,0 +1,17 @@
+\section{Discussion, Limitations, and Future Work}\label{ch:17}
+
+\subsection{Known limitations}
+
+Fair sharing is implemented on top of a single shared HTCondor owner, so it is only as good as the portal's own bookkeeping; queue-time estimates use a static per-job constant rather than measured throughput; and completion is a heuristic (absence from snapshots) rather than a definitive per-job signal.
+
+\subsection{Scalability considerations}
+
+The pending-queue recalculation and the snapshot joins scale with the number of active submissions and live clusters; the advisory lock serializes queue writes, which is correct but a single writer. At much larger scale the snapshot cadence and the schedd-query cost would be the first things to profile.
+
+\subsection{Possible improvements}
+
+Candidate improvements include per-user (rather than per-cluster) runtime balancing if OSG accounting ever distinguishes portal users, throughput-based rather than static queue estimates, and unifying the two priority telemetries into one view while preserving their strict separation of concerns.
+
+\subsection{Lessons learned}
+
+The design's most durable decision is the strict separation of the two priority systems: a pending queue that decides \textit{what to submit} and a runtime map that decides \textit{what to run}, each with a single writer and a single store. Keeping them apart --- in the code, the docs, and this note --- is what keeps the system's behavior predictable under a shared grid identity.

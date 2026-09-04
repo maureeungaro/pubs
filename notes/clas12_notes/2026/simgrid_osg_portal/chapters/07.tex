@@ -1,0 +1,56 @@
+\section{Job Submission Mechanism (\texttt{osg\_\allowbreak{}submit.\allowbreak{}py})}\label{ch:7}
+
+\subsection{Invocation model}
+
+\texttt{osg\_\allowbreak{}submit.\allowbreak{}py} is the submission engine, run from a cron wrapper on the submit node (one invocation processes one submission) or manually. Flags: \texttt{-\allowbreak{}-\allowbreak{}test} (skip the capacity check, mock Pelican), \texttt{-\allowbreak{}-\allowbreak{}devel} (use \texttt{CLAS12TEST} and the devel image), \texttt{-\allowbreak{}b ID} (target a specific submission), \texttt{-\allowbreak{}-\allowbreak{}target-\allowbreak{}site SITE} (pin all subjobs to one OSG site), and the \texttt{-\allowbreak{}-\allowbreak{}print-\allowbreak{}*} inspection flags.
+
+\subsection{Step 1 --- capacity / back-pressure check}
+
+The engine queries HTCondor for the running + idle jobs owned by \texttt{gemc}. If that exceeds \texttt{-\allowbreak{}-\allowbreak{}max-\allowbreak{}submitted-\allowbreak{}jobs} (default 80,000), the invocation exits without submitting. Back-pressure is a normal outcome, not an error: it simply defers work until the pool drains. \texttt{-\allowbreak{}-\allowbreak{}test} skips this check.
+
+\subsection{Step 2 --- fetching the next job}
+
+\texttt{return\_\allowbreak{}unsubmitted\_\allowbreak{}job()} selects the \texttt{Not Submitted} row with the smallest \textit{positive} priority; legacy priority-0 rows are treated as the tail of the queue rather than being ignored. With \texttt{-\allowbreak{}b ID} the engine targets that submission explicitly instead of choosing priority 1.
+
+\subsection{Step 3 --- parsing the scard and claiming the row}
+
+The \texttt{scard} is parsed into an \texttt{SConfiguration}, and the row is atomically claimed (\texttt{Not Submitted} $\rightarrow$ \texttt{Processing}, Chapter 6.4), after which the remaining pending priorities are compacted to \texttt{1.\allowbreak{}.\allowbreak{}N}.
+
+\subsection{Step 3b --- staging-directory layout}
+
+A per-submission staging directory is created:
+
+\begin{lstlisting}
+~/osgOutput/<username>/job_<user_submission_id>/
+    log/     <- HTCondor per-subjob .out / .err / .log
+\end{lstlisting}
+
+The generated \texttt{clas12.\allowbreak{}condor}, \texttt{nodescript.\allowbreak{}sh}, \texttt{functions.\allowbreak{}sh}, and (type-2) \texttt{lund\_\allowbreak{}files} are written here.
+
+\subsection{Step 4 --- type-2 LUND enumeration and validation}
+
+For type-2, the generator field must start with \texttt{/\allowbreak{}volatile/\allowbreak{}clas12/\allowbreak{}} --- enforced before any file operation. \texttt{pelican object ls} enumerates the LUND files (\texttt{.\allowbreak{}dat}, \texttt{.\allowbreak{}txt}, \texttt{.\allowbreak{}lund}) on the OSDF mirror; each URI is written as one line to \texttt{lund\_\allowbreak{}files}, and HTCondor creates one subjob per line. In \texttt{-\allowbreak{}-\allowbreak{}test} mode a three-file mock is used when Pelican is unavailable.
+
+\subsection{Step 4b --- run-by-run staging}
+
+For run-dependent requests, the run set (\texttt{runs.\allowbreak{}json} / \texttt{run\_\allowbreak{}list.\allowbreak{}txt}) is staged so the worker node can draw a weighted run per subjob (\texttt{select\_\allowbreak{}run.\allowbreak{}py}, Chapter 9.6.2). This spans both submission staging and runtime selection.
+
+\subsection{Step 5 --- generating the HTCondor submit file}
+
+\texttt{generate\_\allowbreak{}condor\_\allowbreak{}card()} assembles \texttt{clas12.\allowbreak{}condor} from nine section generators in fixed order (Chapter 8).
+
+\subsection{Step 6 --- generating the nodescript and staging scripts}
+
+\texttt{generate\_\allowbreak{}nodescript()} assembles \texttt{nodescript.\allowbreak{}sh}; it and \texttt{functions.\allowbreak{}sh} are staged into the directory, and both generated texts are persisted to the database (Chapter 5.5).
+
+\subsection{Step 7 --- \texttt{condor\_\allowbreak{}submit} and finalization}
+
+The engine runs \texttt{condor\_\allowbreak{}submit} in the staging directory, captures the returned \texttt{ClusterId}, and on success sets \texttt{run\_\allowbreak{}status =\allowbreak{} 'Submitted to OSG'}, records \texttt{server\_\allowbreak{}time} and \texttt{pool\_\allowbreak{}node =\allowbreak{} ClusterId}, clears the pending priority, and re-compacts the queue.
+
+\subsection{Failure / rollback semantics}
+
+A \texttt{finally} path restores a not-yet-submitted row to \texttt{Not Submitted} and re-compacts the queue, so a crash between claim and submit cannot strand a request in \texttt{Processing}. Terminal LUND failures instead set \texttt{Failed to Read Directory} (Chapter 6.5). Error artifacts are left in the staging directory for diagnosis.
+
+\subsection{Test-mode behavior and DB-write guards}
+
+\texttt{-\allowbreak{}-\allowbreak{}test} performs no MySQL status update and does not invoke \texttt{condor\_\allowbreak{}submit}; combined with \texttt{-\allowbreak{}-\allowbreak{}print-\allowbreak{}*} it is the standard way to inspect a generated card or nodescript for any submission without side effects.

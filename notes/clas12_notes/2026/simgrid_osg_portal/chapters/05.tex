@@ -1,0 +1,29 @@
+\section{Data Model and Database Layer}\label{ch:5}
+
+\subsection{The \texttt{submissions} table}
+
+\texttt{submissions} is the central table. Each row is one portal request keyed by \texttt{user\_\allowbreak{}submission\_\allowbreak{}id}. Its lifecycle fields are \texttt{run\_\allowbreak{}status} (Chapter 6), \texttt{client\_\allowbreak{}time} (upload time), \texttt{server\_\allowbreak{}time} (set when the engine serves the row), \texttt{pool\_\allowbreak{}node} (the HTCondor \texttt{ClusterId} once submitted), and \texttt{priority} (the pending queue position). The request itself is the \texttt{scard}; the generated artifacts \texttt{runscript\_\allowbreak{}text} and \texttt{clas12\_\allowbreak{}condor\_\allowbreak{}text} are stored back for reproducibility. The full DDL is in Appendix B.
+
+\subsection{The \texttt{users} table and provisioning}
+
+\texttt{ensure\_\allowbreak{}user()} guarantees a \texttt{users} row exists for a portal username before a submission is inserted, creating it on first use. This keeps user attribution --- used by the fair-share calculation and the output namespace --- consistent without a separate registration step.
+
+\subsection{Snapshot tables}
+
+\texttt{owner\_\allowbreak{}submission\_\allowbreak{}snapshots} stores periodic JSON snapshots of the joined submissions view (Chapter 13), each with a \texttt{snapshot\_\allowbreak{}id} and \texttt{update\_\allowbreak{}time}. Fair-share views are similarly snapshotted. Snapshots decouple the portal display from live HTCondor queries and provide the history used for progress and completion detection.
+
+\subsection{The \texttt{Database} wrapper}
+
+\texttt{db\_\allowbreak{}io/\allowbreak{}database.\allowbreak{}py} wraps all database access: connection and credential handling (credentials read from a connection file such as \texttt{msql\_\allowbreak{}conn.\allowbreak{}txt}), \texttt{query\_\allowbreak{}one}/query helpers, the insert and renumber operations, the advisory-lock context manager, and the snapshot read/write/prune operations. Callers never issue raw connection management; they use these helpers.
+
+\subsection{Stored generated artifacts}
+
+After the engine generates the worker-node and HTCondor scripts, it persists them to the row (\texttt{runscript\_\allowbreak{}text}, \texttt{clas12\_\allowbreak{}condor\_\allowbreak{}text}). This makes each submission self-describing: the exact scripts that ran can be recovered from the database and compared (the container-parity checks of Chapter 15 rely on this).
+
+\subsection{Concurrency control: the pending-priority advisory lock}
+
+All operations that read-modify-write the pending queue are serialized with a MySQL advisory lock (\texttt{GET\_\allowbreak{}LOCK}/\texttt{RELEASE\_\allowbreak{}LOCK}, name \texttt{simgrid\_\allowbreak{}pending\_\allowbreak{}priorities}), exposed as the \texttt{pending\_\allowbreak{}priority\_\allowbreak{}lock} context manager. This prevents two concurrent inserts or status transitions from producing duplicate or gapped priorities.
+
+\subsection{The contiguous \texttt{1.\allowbreak{}.\allowbreak{}N} invariant}
+
+Only \texttt{Not Submitted} rows carry a positive priority, and those priorities always form a contiguous \texttt{1.\allowbreak{}.\allowbreak{}N} sequence with 1 next to run. \texttt{build\_\allowbreak{}contiguous\_\allowbreak{}priority\_\allowbreak{}updates()} re-derives this sequence from the current queue order --- preserving existing order, placing legacy priority-0 rows at the tail --- and every insert or status transition re-compacts to \texttt{1.\allowbreak{}.\allowbreak{}N} under the lock. The invariant is what lets the engine simply ask for "priority 1" and lets the fair-share calculator overwrite positions wholesale.

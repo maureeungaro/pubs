@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="440" viewBox="0 0 1180 440" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .tier   { fill:#ffffff; stroke:#333333; stroke-width:1.6; rx:8; }
+    .title  { font-size:15px; font-weight:bold; fill:#111111; }
+    .sub    { font-size:11px; fill:#444444; }
+    .lbl    { font-size:11px; fill:#555555; }
+    .flow   { stroke:#1a5fb4; stroke-width:2.2; fill:none; marker-end:url(#arrow); }
+    .back   { stroke:#a5451f; stroke-width:2.0; fill:none; stroke-dasharray:5 4; marker-end:url(#arrowr); }
+    .zone   { font-size:11px; font-weight:bold; fill:#888888; letter-spacing:1px; }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+      <path d="M0,0 L8,3.2 L0,6.4 Z" fill="#1a5fb4"/>
+    </marker>
+    <marker id="arrowr" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+      <path d="M0,0 L8,3.2 L0,6.4 Z" fill="#a5451f"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="30" class="zone">USER TIER</text>
+  <text x="430" y="30" class="zone">SUBMIT NODE (owner: gemc)</text>
+  <text x="900" y="30" class="zone">OPEN SCIENCE GRID</text>
+
+  <!-- Tier boxes -->
+  <g>
+    <rect class="tier" x="20"  y="150" width="150" height="90" rx="8"/>
+    <text x="95"  y="185" text-anchor="middle" class="title">Browser</text>
+    <text x="95"  y="205" text-anchor="middle" class="sub">PHP portal</text>
+    <text x="95"  y="221" text-anchor="middle" class="sub">form → scard</text>
+
+    <rect class="tier" x="215" y="150" width="150" height="90" rx="8"/>
+    <text x="290" y="185" text-anchor="middle" class="title">MySQL</text>
+    <text x="290" y="205" text-anchor="middle" class="sub">submissions</text>
+    <text x="290" y="221" text-anchor="middle" class="sub">queue · snapshots</text>
+
+    <rect class="tier" x="410" y="150" width="170" height="90" rx="8"/>
+    <text x="495" y="181" text-anchor="middle" class="title">osg_submit.py</text>
+    <text x="495" y="201" text-anchor="middle" class="sub">claim · generate</text>
+    <text x="495" y="217" text-anchor="middle" class="sub">condor + node scripts</text>
+
+    <rect class="tier" x="625" y="150" width="150" height="90" rx="8"/>
+    <text x="700" y="185" text-anchor="middle" class="title">HTCondor</text>
+    <text x="700" y="205" text-anchor="middle" class="sub">cluster of</text>
+    <text x="700" y="221" text-anchor="middle" class="sub">subjobs</text>
+
+    <rect class="tier" x="820" y="150" width="160" height="90" rx="8"/>
+    <text x="900" y="181" text-anchor="middle" class="title">OSG sites</text>
+    <text x="900" y="201" text-anchor="middle" class="sub">pilots · Singularity</text>
+    <text x="900" y="217" text-anchor="middle" class="sub">CLAS12 container</text>
+
+    <rect class="tier" x="1025" y="150" width="140" height="90" rx="8"/>
+    <text x="1095" y="181" text-anchor="middle" class="title">OSDF</text>
+    <text x="1095" y="201" text-anchor="middle" class="sub">Pelican</text>
+    <text x="1095" y="217" text-anchor="middle" class="sub">volatile storage</text>
+  </g>
+
+  <!-- Forward flows -->
+  <line class="flow" x1="170" y1="195" x2="213" y2="195"/>
+  <line class="flow" x1="365" y1="195" x2="408" y2="195"/>
+  <line class="flow" x1="580" y1="195" x2="623" y2="195"/>
+  <line class="flow" x1="775" y1="195" x2="818" y2="195"/>
+  <line class="flow" x1="980" y1="195" x2="1023" y2="195"/>
+
+  <text x="192" y="140" text-anchor="middle" class="lbl">upload</text>
+  <text x="387" y="140" text-anchor="middle" class="lbl">claim prio 1</text>
+  <text x="602" y="140" text-anchor="middle" class="lbl">condor_submit</text>
+  <text x="797" y="140" text-anchor="middle" class="lbl">match slot</text>
+  <text x="1002" y="140" text-anchor="middle" class="lbl">run chain</text>
+
+  <!-- Monitoring back-join: OSDF/HTCondor back to MySQL and browser -->
+  <path class="back" d="M700,240 C700,320 290,320 290,242"/>
+  <text x="495" y="338" text-anchor="middle" class="lbl" fill="#a5451f">list_owner_submission.py: live cluster counts → MySQL (pool_node = ClusterId)</text>
+  <path class="back" d="M290,242 C290,300 95,300 95,242"/>
+  <text x="95" y="360" text-anchor="middle" class="lbl" fill="#a5451f">monitor page</text>
+
+</svg>
