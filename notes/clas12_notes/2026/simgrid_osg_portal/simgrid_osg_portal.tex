@@ -23,7 +23,6 @@
 % ============================ FRONT MATTER ===================================
 
 \thispagestyle{plain}
-
 \notetitle{The CLAS12 Simulation Portal to the\\ Open Science Grid (simGrid)}
 \vspace{18pt}
 \noteauthor{M. Ungaro}
@@ -31,44 +30,59 @@
 \noteaffiliation{Jefferson Lab, 12,000 Jefferson Avenue, 23606 Newport News, VA, USA}
 \vspace{6pt}
 
+% ============================ ABSTRACT ===========================================
+
 \begin{noteabstract}
-simGrid is the self-service web portal through which the CLAS12 collaboration submits GEMC
-Monte-Carlo simulation workflows to the Open Science Grid (OSG). A collaborator selects a detector
-configuration, an event generator or a directory of pre-generated LUND files, magnetic-field settings,
-and software versions; the portal turns that choice into a steering card, stages it through a MySQL
-database, and a submission engine converts it into an HTCondor cluster that executes on opportunistic
-OSG slots inside the CLAS12 Singularity container. Each worker node runs the full CLAS12 chain ---
-generator, GEMC, background merging, denoising, reconstruction, and DST creation --- and writes the
-result back to Jefferson Lab volatile storage through the OSDF/Pelican data federation. Because every
-job runs under a single shared HTCondor owner (\texttt{gemc}), the portal implements two deliberately
-separate fair-share mechanisms: a database-side pending queue that orders not-yet-submitted requests
-across users, and a runtime HTCondor \texttt{JobPrio} map that balances running jobs across
-already-submitted clusters. This note documents the architecture, the data and submission-state
-models, the generated HTCondor and worker-node scripts, both priority systems, and the operational,
-testing, and security practices that make the system reproducible and fair.
+
+The CLAS12 collaboration uses the Open Science Grid (OSG) to run Monte-Carlo simulations
+for its various experiments.
+
+The software framework that oversees the simulations workflow is \texttt{simGrid}.
+It has two main components: a web portal runs on a dedicated server, collects and indexes
+user requests in a dedicated MYSQL database; and a set of scripts on the HTCondor node that
+submit the queue to the OSG\@.
+
+Each worker node runs the full CLAS12 chain - generator, GEMC, background merging,
+denoising, reconstruction, and DST creation --- and writes the
+result back to Jefferson Lab volatile storage through the Pelican platform.
+
+\texttt{simGrid} implements two fair-share mechanisms: a database-side queue that orders
+requests across users, and algorithms to balance the running submissions.
+
 \end{noteabstract}
+
+% ============================ KEYWORDS ===========================================
+
+
+\begin{center}
+\begin{minipage}{0.86\textwidth}
+\small\textbf{Keywords:} CLAS12, GEMC, Open Science Grid (OSG), HTCondor, Pelican, fair-share
+scheduling, Monte-Carlo production.
+\end{minipage}
+\end{center}
+\vspace{6pt}
+
 
 % ---------------------------------------------------------------------------
 % Table of Contents --- optional. Uncomment \tableofcontents below to enable it.
 % Choose how much it lists with the tocdepth counter:
-%   \setcounter{tocdepth}{1}  % chapters only (the top-level \section entries)
+\setcounter{tocdepth}{1}  % chapters only (the top-level \section entries)
 %   \setcounter{tocdepth}{2}  % also include their sections (the \subsection entries)
 % ---------------------------------------------------------------------------
 % \setcounter{tocdepth}{2}
-% \tableofcontents
-
-\begin{center}
-\begin{minipage}{0.86\textwidth}
-\small\textbf{Keywords:} CLAS12, GEMC, Open Science Grid (OSG), HTCondor, Pelican/OSDF, fair-share
-scheduling, Monte-Carlo production.
-\end{minipage}
-\end{center}
-
-\vspace{6pt}
 \tableofcontents
 
 % ============================ BODY ===========================================
 
 \input{simgrid_osg_portal_doc}
 
+
+% ============================ REFERENCES =====================================
+
+\input{simgrid_osg_portal_bib}
+
+
+% ============================ ALL DONE =====================================
 \end{document}
+
+

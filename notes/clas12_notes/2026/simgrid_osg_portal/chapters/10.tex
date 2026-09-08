@@ -2,57 +2,96 @@
 
 \subsection{Problem statement}
 
-Waiting requests (\texttt{Not Submitted}) from many portal users share one HTCondor owner. Something must decide which waiting request the engine submits next. That is the job of the pending-submission priority, computed by \texttt{db\_\allowbreak{}io/\allowbreak{}priority\_\allowbreak{}submissions.\allowbreak{}py}.
+Waiting requests (\texttt{Not Submitted}) from many portal users share one HTCondor owner. Something must
+decide which waiting request the engine submits next. That is the job of the pending-submission priority,
+computed by \texttt{db\_\allowbreak{}io/\allowbreak{}priority\_\allowbreak{}submissions.\allowbreak{}py}.
 
 \subsection{Scope boundary}
 
-\textbf{This system writes only \texttt{submissions.\allowbreak{}priority}. It never writes HTCondor \texttt{JobPrio}.} It orders requests \textit{before} they are submitted; once a request is submitted it leaves this queue entirely.
+\textbf{This system writes only \texttt{submissions.\allowbreak{}priority}. It never writes HTCondor
+\texttt{JobPrio}.} It orders requests \textit{before} they are submitted; once a request is submitted it leaves
+this queue entirely.
 
 \subsection{Inputs}
 
-The calculator reads the submission users, IDs, timestamps (\texttt{client\_\allowbreak{}time}, \texttt{server\_\allowbreak{}time}), and statuses from MySQL, and queries live HTCondor for the running-job counts per user (mapping \texttt{ClusterId} $\rightarrow$ user through \texttt{pool\_\allowbreak{}node}). Current occupancy is thus an input, but the output goes only to the MySQL queue.
+The calculator reads the submission users, IDs, timestamps (\texttt{client\_\allowbreak{}time},
+\texttt{server\_\allowbreak{}time}), and statuses from MySQL, and queries live HTCondor for the running-job
+counts per user (mapping \texttt{ClusterId} $\rightarrow$ user through \texttt{pool\_\allowbreak{}node}).
+Current occupancy is thus an input, but the output goes only to the MySQL queue.
 
 \subsection{History-weighted load model}
 
-Each user's load in the scoring denominator is \texttt{history\_\allowbreak{}load\_\allowbreak{}submitted + history\_\allowbreak{}load\_\allowbreak{}pending}:
+Each user's load in the scoring denominator is \texttt{history\_\allowbreak{}load\_\allowbreak{}submitted +
+history\_\allowbreak{}load\_\allowbreak{}pending}:
 
 \begin{itemize}
-  \item \textbf{10.4.1 Decayed submitted history.} Each non-pending job contributes \texttt{2\textasciicircum{}(-\allowbreak{}age/\allowbreak{}T\_\allowbreak{}h)}, where age is measured from \texttt{server\_\allowbreak{}time} (when the portal served it; \texttt{client\_\allowbreak{}time} as fallback) and \texttt{T\_\allowbreak{}h} is \texttt{-\allowbreak{}-\allowbreak{}history-\allowbreak{}half-\allowbreak{}life-\allowbreak{}days}. A job served now weighs 1; one served \texttt{T\_\allowbreak{}h} days ago weighs 0.5. Missing timestamps are treated as brand-new (weight 1), conservatively.
-  \item \textbf{10.4.2 Raw pending load.} Each \texttt{Not Submitted} job contributes exactly 1, undecayed --- a queue penalty for having many requests waiting. \texttt{-\allowbreak{}-\allowbreak{}no-\allowbreak{}queue-\allowbreak{}penalty} forces this term to zero.
-  \item \textbf{10.4.3 Combined load and exponent.} The two terms sum to the per-user load, and \texttt{-\allowbreak{}-\allowbreak{}queue-\allowbreak{}penalty-\allowbreak{}exponent} raises it to a power in the score denominator (1.0 $\rightarrow$ 1/N, 0.5 $\rightarrow$ 1/$\surd$N, 2.0 strengthens the penalty).
+  \item \textbf{10.4.1 Decayed submitted history.} Each non-pending job contributes
+  \texttt{2\textasciicircum{}(-\allowbreak{}age/\allowbreak{}T\_\allowbreak{}h)}, where age is measured from
+  \texttt{server\_\allowbreak{}time} (when the portal served it; \texttt{client\_\allowbreak{}time} as
+  fallback) and \texttt{T\_\allowbreak{}h} is
+  \texttt{-\allowbreak{}-\allowbreak{}history-\allowbreak{}half-\allowbreak{}life-\allowbreak{}days}. A job
+  served now weighs 1; one served \texttt{T\_\allowbreak{}h} days ago weighs 0.5. Missing timestamps are
+  treated as brand-new (weight 1), conservatively.
+  \item \textbf{10.4.2 Raw pending load.} Each \texttt{Not Submitted} job contributes exactly 1, undecayed ---
+  a queue penalty for having many requests waiting.
+  \texttt{-\allowbreak{}-\allowbreak{}no-\allowbreak{}queue-\allowbreak{}penalty} forces this term to zero.
+  \item \textbf{10.4.3 Combined load and exponent.} The two terms sum to the per-user load, and
+  \texttt{-\allowbreak{}-\allowbreak{}queue-\allowbreak{}penalty-\allowbreak{}exponent} raises it to a power in
+  the score denominator (1.0 $\rightarrow$ 1/N, 0.5 $\rightarrow$ 1/$\surd$N, 2.0 strengthens the penalty).
 \end{itemize}
 
 \subsection{Primary ordering key}
 
-Before any history scoring, users are ordered by \textbf{ascending live running-job count}: a user already occupying more cores yields the next pending slot to a user occupying fewer. History/aging scores only break ties among users with equal runtime load. The primary key is \textit{not} softened by the penalty exponent.
+Before any history scoring, users are ordered by \textbf{ascending live running-job count}: a user already
+occupying more cores yields the next pending slot to a user occupying fewer. History/aging scores only break
+ties among users with equal runtime load. The primary key is \textit{not} softened by the penalty exponent.
 
 \subsection{Scoring algorithms}
 
 \begin{itemize}
-  \item \textbf{10.6.1 \texttt{inverse\_\allowbreak{}count}.} Score = \texttt{1 /\allowbreak{} load\textasciicircum{}exponent}. Users with a heavier weighted history rank lower even if few jobs are pending.
-  \item \textbf{10.6.2 \texttt{aging}.} Score = \texttt{2\textasciicircum{}(age\_\allowbreak{}days/\allowbreak{}half\_\allowbreak{}life\_\allowbreak{}days) /\allowbreak{} load\textasciicircum{}exponent}, so a request's score climbs the longer it waits (\texttt{-\allowbreak{}-\allowbreak{}half-\allowbreak{}life-\allowbreak{}days}), preventing starvation.
-  \item \textbf{10.6.3 \texttt{aging\_\allowbreak{}interleaved}.} Same score as \texttt{aging}, but priorities are assigned in rounds with at most \texttt{-\allowbreak{}-\allowbreak{}burst-\allowbreak{}per-\allowbreak{}user} rows taken per user per round, interleaving users instead of draining one user's queue at once. This is the production algorithm.
+  \item \textbf{10.6.1 \texttt{inverse\_\allowbreak{}count}.} Score = \texttt{1 /\allowbreak{}
+  load\textasciicircum{}exponent}. Users with a heavier weighted history rank lower even if few jobs are
+  pending.
+  \item \textbf{10.6.2 \texttt{aging}.} Score =
+  \texttt{2\textasciicircum{}(age\_\allowbreak{}days/\allowbreak{}half\_\allowbreak{}life\_\allowbreak{}days)
+  /\allowbreak{} load\textasciicircum{}exponent}, so a request's score climbs the longer it waits
+  (\texttt{-\allowbreak{}-\allowbreak{}half-\allowbreak{}life-\allowbreak{}days}), preventing starvation.
+  \item \textbf{10.6.3 \texttt{aging\_\allowbreak{}interleaved}.} Same score as \texttt{aging}, but priorities
+  are assigned in rounds with at most
+  \texttt{-\allowbreak{}-\allowbreak{}burst-\allowbreak{}per-\allowbreak{}user} rows taken per user per round,
+  interleaving users instead of draining one user's queue at once. This is the production algorithm.
 \end{itemize}
 
 \subsection{Burst-continuity across recalculations}
 
-Because the queue is recomputed frequently, \texttt{aging\_\allowbreak{}interleaved} reads the recent \texttt{server\_\allowbreak{}time} sequence (\texttt{get\_\allowbreak{}recent\_\allowbreak{}service\_\allowbreak{}streak}) to continue the last user's burst across recalculations rather than restarting it --- so a user's two-per-round burst is not reset every 60 seconds.
+Because the queue is recomputed frequently, \texttt{aging\_\allowbreak{}interleaved} reads the recent
+\texttt{server\_\allowbreak{}time} sequence
+(\texttt{get\_\allowbreak{}recent\_\allowbreak{}service\_\allowbreak{}streak}) to continue the last user's
+burst across recalculations rather than restarting it --- so a user's two-per-round burst is not reset every 60
+seconds.
 
 \subsection{Tie-breaking}
 
-Remaining ties break by ascending \texttt{client\_\allowbreak{}time}, then ascending \texttt{user\_\allowbreak{}submission\_\allowbreak{}id} --- oldest request first, then lowest id, so the ordering is fully deterministic.
+Remaining ties break by ascending \texttt{client\_\allowbreak{}time}, then ascending
+\texttt{user\_\allowbreak{}submission\_\allowbreak{}id} --- oldest request first, then lowest id, so the
+ordering is fully deterministic.
 
 \subsection{Assigning contiguous priorities and JSON output}
 
-Each \texttt{Not Submitted} row receives a unique \texttt{1.\allowbreak{}.\allowbreak{}N} priority, and the result is written to \texttt{submission\_\allowbreak{}priorities.\allowbreak{}json} in the working directory along with the algorithm and its parameters.
+Each \texttt{Not Submitted} row receives a unique \texttt{1.\allowbreak{}.\allowbreak{}N} priority, and the
+result is written to \texttt{submission\_\allowbreak{}priorities.\allowbreak{}json} in the working directory
+along with the algorithm and its parameters.
 
 \subsection{Writing to the database under lock}
 
-With \texttt{-\allowbreak{}-\allowbreak{}write-\allowbreak{}to-\allowbreak{}db}, one locked operation clears non-pending priorities, writes the computed queue, and compacts it to \texttt{1.\allowbreak{}.\allowbreak{}N} (Chapter 5.6--5.7) --- so a concurrent insert cannot interleave with a recalculation.
+With \texttt{-\allowbreak{}-\allowbreak{}write-\allowbreak{}to-\allowbreak{}db}, one locked operation clears
+non-pending priorities, writes the computed queue, and compacts it to \texttt{1.\allowbreak{}.\allowbreak{}N}
+(Chapter 5.6--5.7) --- so a concurrent insert cannot interleave with a recalculation.
 
 \subsection{Queue-time estimation}
 
-The calculator also reports queue-time estimates (a per-job hours constant $\times$ queue depth), surfaced in the portal's estimated-time column (Chapter 13.7).
+The calculator also reports queue-time estimates (a per-job hours constant $\times$ queue depth), surfaced in
+the portal's estimated-time column (Chapter 13.7).
 
 \subsection{Production parameterization}
 
@@ -65,12 +104,16 @@ priority_submissions.py -c msql_conn.txt -d 60 \
     --queue-penalty-exponent 2.0 --burst-per-user 2 --write-to-db
 \end{lstlisting}
 
-\texttt{-\allowbreak{}d 60} considers the last 60 days and aborts if an older pending row would be dropped (the safety guard, Chapter 10.14). A worked numerical example is in Appendix F.
+\texttt{-\allowbreak{}d 60} considers the last 60 days and aborts if an older pending row would be dropped (the
+safety guard, Chapter 10.14). A worked numerical example is in Appendix F.
 
 \subsection{Consumption}
 
-The engine simply asks for priority 1 (\texttt{return\_\allowbreak{}unsubmitted\_\allowbreak{}job()}), so all fair-share policy lives in this calculator and none in \texttt{osg\_\allowbreak{}submit.\allowbreak{}py}.
+The engine simply asks for priority 1 (\texttt{return\_\allowbreak{}unsubmitted\_\allowbreak{}job()}), so all
+fair-share policy lives in this calculator and none in \texttt{osg\_\allowbreak{}submit.\allowbreak{}py}.
 
 \subsection{Safety guard}
 
-If a pending row older than the \texttt{-\allowbreak{}d} window would be omitted from the calculation, the script aborts rather than silently reorder an incomplete queue --- an incomplete view must never overwrite the real queue.
+If a pending row older than the \texttt{-\allowbreak{}d} window would be omitted from the calculation, the
+script aborts rather than silently reorder an incomplete queue --- an incomplete view must never overwrite the
+real queue.

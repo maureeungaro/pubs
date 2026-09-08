@@ -2,24 +2,49 @@
 
 \subsection{Scard format and provenance}
 
-The scard is a plain-text list of \texttt{key:\allowbreak{} value} lines produced by the portal and stored verbatim in the \texttt{submissions.\allowbreak{}scard} column. It is the single, human-readable contract between the web tier and the submission engine; every generation step reads from it and nothing else.
+The scard is a plain-text list of \texttt{key:\allowbreak{} value} lines produced by the portal and stored
+verbatim in the \texttt{submissions.\allowbreak{}scard} column. It is the single, human-readable contract
+between the web tier and the submission engine; every generation step reads from it and nothing else.
 
 \subsection{The \texttt{SConfiguration} class}
 
-\texttt{SConfiguration} (in \texttt{SConfiguration.\allowbreak{}py}) parses the scard into typed attributes. It can be built from a file (\texttt{SConfiguration(path)}) or from a string fetched from the database (\texttt{SConfiguration.\allowbreak{}from\_\allowbreak{}string}). Parsing is forward-compatible: a \texttt{key:\allowbreak{} value} whose key matches a known attribute sets that attribute; any unknown key is preserved in an \texttt{\_\allowbreak{}extra} dictionary rather than raising, so new scard fields do not break older engine versions. The literal key \texttt{file} is ignored.
+\texttt{SConfiguration} (in \texttt{SConfiguration.\allowbreak{}py}) parses the scard into typed attributes. It
+can be built from a file (\texttt{SConfiguration(path)}) or from a string fetched from the database
+(\texttt{SConfiguration.\allowbreak{}from\_\allowbreak{}string}). Parsing is forward-compatible: a
+\texttt{key:\allowbreak{} value} whose key matches a known attribute sets that attribute; any unknown key is
+preserved in an \texttt{\_\allowbreak{}extra} dictionary rather than raising, so new scard fields do not break
+older engine versions. The literal key \texttt{file} is ignored.
 
 \subsection{Submission-type resolution}
 
-If the scard does not state a type, \texttt{\_\allowbreak{}resolve\_\allowbreak{}type()} infers it from the generator field: a value that starts with \texttt{/\allowbreak{}} or contains \texttt{:\allowbreak{}/\allowbreak{}/\allowbreak{}} is a path or URL to LUND files and yields \textbf{type 2}; anything else is a generator name and yields \textbf{type 1}. An explicit type in the scard is never overridden.
+If the scard does not state a type, \texttt{\_\allowbreak{}resolve\_\allowbreak{}type()} infers it from the
+generator field: a value that starts with \texttt{/\allowbreak{}} or contains
+\texttt{:\allowbreak{}/\allowbreak{}/\allowbreak{}} is a path or URL to LUND files and yields \textbf{type 2};
+anything else is a generator name and yields \textbf{type 1}. An explicit type in the scard is never
+overridden.
 
 \subsection{Software-version resolution}
 
-\texttt{\_\allowbreak{}resolve\_\allowbreak{}software\_\allowbreak{}versions()} unpacks the \texttt{softwarev} field --- a space-separated list of \texttt{name/\allowbreak{}version} tokens --- into \texttt{gemcv}, \texttt{coatjavav}, and \texttt{mcgenv} for \texttt{gemc}, \texttt{coatjava}, and \texttt{mcgen} respectively. It also derives \texttt{torus} and \texttt{solenoid} scale factors from a \texttt{fields} value of the form \texttt{tor<T>\_\allowbreak{}sol<S>} when they are not given directly. This lets the portal store one compact \texttt{fields} string while the engine sees explicit torus and solenoid values.
+\texttt{\_\allowbreak{}resolve\_\allowbreak{}software\_\allowbreak{}versions()} unpacks the \texttt{softwarev}
+field --- a space-separated list of \texttt{name/\allowbreak{}version} tokens --- into \texttt{gemcv},
+\texttt{coatjavav}, and \texttt{mcgenv} for \texttt{gemc}, \texttt{coatjava}, and \texttt{mcgen} respectively.
+It also derives \texttt{torus} and \texttt{solenoid} scale factors from a \texttt{fields} value of the form
+\texttt{tor<T>\_\allowbreak{}sol<S>} when they are not given directly. This lets the portal store one compact
+\texttt{fields} string while the engine sees explicit torus and solenoid values.
 
 \subsection{Field reference}
 
-The complete scard field reference --- every key, its meaning, default, and the components that consume it --- is given in Appendix A. The most consequential fields are \texttt{type}, \texttt{generator}, \texttt{configuration}, \texttt{softwarev}, \texttt{fields}, \texttt{nevents}/\texttt{njobs} (type-1), \texttt{bkmerging}, \texttt{output\_\allowbreak{}type}, \texttt{string\_\allowbreak{}id}, \texttt{vertex\_\allowbreak{}choice}/\texttt{zposition}/ \texttt{raster}, and the run-by-run \texttt{runs}/\texttt{run\_\allowbreak{}list}.
+The complete scard field reference --- every key, its meaning, default, and the components that consume it ---
+is given in Appendix A. The most consequential fields are \texttt{type}, \texttt{generator},
+\texttt{configuration}, \texttt{softwarev}, \texttt{fields}, \texttt{nevents}/\texttt{njobs} (type-1),
+\texttt{bkmerging}, \texttt{output\_\allowbreak{}type}, \texttt{string\_\allowbreak{}id},
+\texttt{vertex\_\allowbreak{}choice}/\texttt{zposition}/ \texttt{raster}, and the run-by-run
+\texttt{runs}/\texttt{run\_\allowbreak{}list}.
 
 \subsection{Output-type semantics}
 
-\texttt{output\_\allowbreak{}type =\allowbreak{} 1} selects the GEMC-only pipeline: the worker node runs the generator (or fetches LUND) and GEMC, optionally merges background, then uploads the GEMC output directly, skipping denoising, reconstruction, and DST creation. The default (\texttt{output\_\allowbreak{}type =\allowbreak{} 0}) runs the full chain to a DST. This single flag branches both the worker-node generator (Chapter 9) and the file chain.
+\texttt{output\_\allowbreak{}type =\allowbreak{} 1} selects the GEMC-only pipeline: the worker node runs the
+generator (or fetches LUND) and GEMC, optionally merges background, then uploads the GEMC output directly,
+skipping denoising, reconstruction, and DST creation. The default (\texttt{output\_\allowbreak{}type
+=\allowbreak{} 0}) runs the full chain to a DST. This single flag branches both the worker-node generator
+(Chapter 9) and the file chain.

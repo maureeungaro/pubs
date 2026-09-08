@@ -2,28 +2,51 @@
 
 \subsection{Submit-node layout and repository update}
 
-The submit node hosts the repository, the \texttt{\textasciitilde{}/\allowbreak{}venv/\allowbreak{}pymysql} Python environment, and the \texttt{\textasciitilde{}/\allowbreak{}osgOutput/\allowbreak{}} staging tree. \texttt{update\_\allowbreak{}simgrid.\allowbreak{}sh} \textbf{only pulls repository updates} --- it calculates neither priority value, a deliberate separation so a deployment never perturbs the queues.
+The submit node hosts the repository, the \texttt{\textasciitilde{}/\allowbreak{}venv/\allowbreak{}pymysql}
+Python environment, and the \texttt{\textasciitilde{}/\allowbreak{}osgOutput/\allowbreak{}} staging tree.
+\texttt{update\_\allowbreak{}simgrid.\allowbreak{}sh} \textbf{only pulls repository updates} --- it calculates
+neither priority value, a deliberate separation so a deployment never perturbs the queues.
 
 \subsection{Cron schedule inventory}
 
-Production cron drives the system: the submission engine (\texttt{osg\_\allowbreak{}submit.\allowbreak{}py}), the pending-priority calculation (\texttt{priority\_\allowbreak{}submissions.\allowbreak{}py -\allowbreak{}-\allowbreak{}write-\allowbreak{}to-\allowbreak{}db}), the runtime \texttt{JobPrio} calculation (\texttt{run\_\allowbreak{}priority\_\allowbreak{}map.\allowbreak{}py -\allowbreak{}p -\allowbreak{}a -\allowbreak{}m 20}, every 10 minutes), snapshotting (\texttt{list\_\allowbreak{}owner\_\allowbreak{}submission.\allowbreak{}py -\allowbreak{}-\allowbreak{}store-\allowbreak{}db}), and completion detection (\texttt{mark\_\allowbreak{}completed\_\allowbreak{}submissions.\allowbreak{}py}). The complete inventory is in Appendix G.
+Production cron drives the system: the submission engine (\texttt{osg\_\allowbreak{}submit.\allowbreak{}py}),
+the pending-priority calculation (\texttt{priority\_\allowbreak{}submissions.\allowbreak{}py
+-\allowbreak{}-\allowbreak{}write-\allowbreak{}to-\allowbreak{}db}), the runtime \texttt{JobPrio} calculation
+(\texttt{run\_\allowbreak{}priority\_\allowbreak{}map.\allowbreak{}py -\allowbreak{}p -\allowbreak{}a
+-\allowbreak{}m 20}, every 10 minutes), snapshotting
+(\texttt{list\_\allowbreak{}owner\_\allowbreak{}submission.\allowbreak{}py
+-\allowbreak{}-\allowbreak{}store-\allowbreak{}db}), and completion detection
+(\texttt{mark\_\allowbreak{}completed\_\allowbreak{}submissions.\allowbreak{}py}). The complete inventory is in
+Appendix G.
 
 \subsection{Locking and single-writer guarantees}
 
-\texttt{run\_\allowbreak{}with\_\allowbreak{}lock\_\allowbreak{}and\_\allowbreak{}log.\allowbreak{}zsh} wraps each cron job so only one instance runs at a time and its output is logged; the MySQL advisory lock (Chapter 5.6) serializes the queue writers. Together they give single-writer guarantees across independent cron jobs.
+\texttt{run\_\allowbreak{}with\_\allowbreak{}lock\_\allowbreak{}and\_\allowbreak{}log.\allowbreak{}zsh} wraps
+each cron job so only one instance runs at a time and its output is logged; the MySQL advisory lock (Chapter
+5.6) serializes the queue writers. Together they give single-writer guarantees across independent cron jobs.
 
 \subsection{Credentials and secrets}
 
-MySQL credentials live in a connection file (\texttt{msql\_\allowbreak{}conn.\allowbreak{}txt}) read by the \texttt{Database} wrapper; OSDF access uses short-lived OAuth bearer tokens minted by the CredMon. No long-lived grid secret is stored on a worker node.
+MySQL credentials live in a connection file (\texttt{msql\_\allowbreak{}conn.\allowbreak{}txt}) read by the
+\texttt{Database} wrapper; OSDF access uses short-lived OAuth bearer tokens minted by the CredMon. No
+long-lived grid secret is stored on a worker node.
 
 \subsection{Capacity limits and back-pressure tuning}
 
-The engine's \texttt{-\allowbreak{}-\allowbreak{}max-\allowbreak{}submitted-\allowbreak{}jobs} (default 80,000) bounds the running + idle footprint; production and devel use different maxima. Raising it increases throughput at the cost of a longer local queue.
+The engine's \texttt{-\allowbreak{}-\allowbreak{}max-\allowbreak{}submitted-\allowbreak{}jobs} (default 80,000)
+bounds the running + idle footprint; production and devel use different maxima. Raising it increases throughput
+at the cost of a longer local queue.
 
 \subsection{Logging and diagnostics}
 
-Every submission has a per-submission upload log (web tier) and a staging directory with the generated scripts and HTCondor logs; the generated scripts are also stored in the database. Failed submissions leave their staging artifacts for inspection.
+Every submission has a per-submission upload log (web tier) and a staging directory with the generated scripts
+and HTCondor logs; the generated scripts are also stored in the database. Failed submissions leave their
+staging artifacts for inspection.
 
 \subsection{Runbook}
 
-Common failure modes and recovery: a stuck \texttt{Processing} row (restored on the next engine run via the \texttt{finally} path); a type-2 request failing LUND enumeration (\texttt{Failed to Read Directory} --- check the \texttt{/\allowbreak{}volatile/\allowbreak{}clas12/\allowbreak{}} path); held jobs after 5 retries (inspect the exit code against Appendix E); and back-pressure (normal --- the pool is full). The runbook is expanded in Appendix G.
+Common failure modes and recovery: a stuck \texttt{Processing} row (restored on the next engine run via the
+\texttt{finally} path); a type-2 request failing LUND enumeration (\texttt{Failed to Read Directory} --- check
+the \texttt{/\allowbreak{}volatile/\allowbreak{}clas12/\allowbreak{}} path); held jobs after 5 retries (inspect
+the exit code against Appendix E); and back-pressure (normal --- the pool is full). The runbook is expanded in
+Appendix G.

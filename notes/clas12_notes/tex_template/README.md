@@ -14,7 +14,7 @@ The template reproduces the style of the Pages template
 | Author             | Helvetica bold           | 14 pt   | centred   | `\noteauthor{...}`                     |
 | Affiliation        | Times New Roman italic   | 12 pt   | centred   | `\noteaffiliation{...}`                |
 | Note number / date | Times New Roman          | 11 pt   | centred   | `\notenumberdate{...}`                 |
-| "Abstract" + body  | Helvetica bold / Times   | 14 / 12 | centred   | `noteabstract` environment             |
+| "Abstract" + body  | Helvetica bold / Times   | 14 / 12 | centred / justified | `noteabstract` environment   |
 | Section heading    | Helvetica bold           | 14 pt   | left      | `\section{...}`                        |
 | Sub-heading        | Helvetica bold           | 12.5 pt | left      | `\subsection{...}`                     |
 | Body               | Times New Roman          | 12 pt   | ragged r. | (default)                              |

@@ -1,35 +1,86 @@
-\section{Scard field reference}
+\section{Appendix}
 
-Complete list of scard keys parsed by \texttt{SConfiguration}, their meaning, defaults, and consumers. Fields: \texttt{project}, \texttt{type} (1/2, inferred if absent), \texttt{connection}, \texttt{version}, \texttt{username}, \texttt{configuration}, \texttt{generator} (name $\rightarrow$ type-1, path/URL $\rightarrow$ type-2), \texttt{genOptions}, \texttt{nevents}, \texttt{njobs}/\texttt{jobs}, \texttt{client\_\allowbreak{}ip}, \texttt{fields} (\texttt{tor<T>\_\allowbreak{}sol<S>}), \texttt{torus}, \texttt{solenoid}, \texttt{bkmerging}, \texttt{softwarev} (\texttt{gemc/\allowbreak{}\ldots{} coatjava/\allowbreak{}\ldots{} mcgen/\allowbreak{}\ldots{}}), \texttt{dstOUT}, \texttt{zposition}, \texttt{raster}, \texttt{beam}, \texttt{vertex\_\allowbreak{}choice}, \texttt{string\_\allowbreak{}id}/\texttt{user\_\allowbreak{}string}, \texttt{output\_\allowbreak{}type} (0 DST / 1 GEMC-only), \texttt{submission}, \texttt{runs}, \texttt{run\_\allowbreak{}list}, \texttt{gemcv}/\texttt{coatjavav}/\texttt{mcgenv} (derived), \texttt{genExecutable}. Unknown keys are retained in \texttt{\_\allowbreak{}extra}. \textit{(To be rendered as a full table in the Pages document.)}
+\subsection{Scard field reference}
 
-\section{Submission-database schema (DDL)}
+Complete list of scard keys parsed by \texttt{SConfiguration}, their meaning, defaults, and consumers. Fields:
+\texttt{project}, \texttt{type} (1/2, inferred if absent), \texttt{connection}, \texttt{version},
+\texttt{username}, \texttt{configuration}, \texttt{generator} (name $\rightarrow$ type-1, path/URL
+$\rightarrow$ type-2), \texttt{genOptions}, \texttt{nevents}, \texttt{njobs}/\texttt{jobs},
+\texttt{client\_\allowbreak{}ip}, \texttt{fields} (\texttt{tor<T>\_\allowbreak{}sol<S>}), \texttt{torus},
+\texttt{solenoid}, \texttt{bkmerging}, \texttt{softwarev} (\texttt{gemc/\allowbreak{}\ldots{}
+coatjava/\allowbreak{}\ldots{} mcgen/\allowbreak{}\ldots{}}), \texttt{dstOUT}, \texttt{zposition},
+\texttt{raster}, \texttt{beam}, \texttt{vertex\_\allowbreak{}choice},
+\texttt{string\_\allowbreak{}id}/\texttt{user\_\allowbreak{}string}, \texttt{output\_\allowbreak{}type} (0 DST
+/ 1 GEMC-only), \texttt{submission}, \texttt{runs}, \texttt{run\_\allowbreak{}list},
+\texttt{gemcv}/\texttt{coatjavav}/\texttt{mcgenv} (derived), \texttt{genExecutable}. Unknown keys are retained
+in \texttt{\_\allowbreak{}extra}. \textit{(To be rendered as a full table in the Pages document.)}
 
-DDL for \texttt{submissions} (columns \texttt{user\_\allowbreak{}submission\_\allowbreak{}id}, \texttt{user}, \texttt{client\_\allowbreak{}time}, \texttt{server\_\allowbreak{}time}, \texttt{pool\_\allowbreak{}node}, \texttt{scard}, \texttt{run\_\allowbreak{}status}, \texttt{priority}, \texttt{runscript\_\allowbreak{}text}, \texttt{clas12\_\allowbreak{}condor\_\allowbreak{}text}), \texttt{users}, and \texttt{owner\_\allowbreak{}submission\_\allowbreak{}snapshots} (\texttt{snapshot\_\allowbreak{}id}, \texttt{update\_\allowbreak{}time}, \texttt{database\_\allowbreak{}name}, \texttt{owner}, \texttt{payload\_\allowbreak{}json}). \textit{(Extract the authoritative DDL from the production schema before release.)}
+\subsection{Submission-database schema (DDL)}
 
-\section{Annotated HTCondor submit-file example}
+DDL for \texttt{submissions} (columns \texttt{user\_\allowbreak{}submission\_\allowbreak{}id}, \texttt{user},
+\texttt{client\_\allowbreak{}time}, \texttt{server\_\allowbreak{}time}, \texttt{pool\_\allowbreak{}node},
+\texttt{scard}, \texttt{run\_\allowbreak{}status}, \texttt{priority}, \texttt{runscript\_\allowbreak{}text},
+\texttt{clas12\_\allowbreak{}condor\_\allowbreak{}text}), \texttt{users}, and
+\texttt{owner\_\allowbreak{}submission\_\allowbreak{}snapshots} (\texttt{snapshot\_\allowbreak{}id},
+\texttt{update\_\allowbreak{}time}, \texttt{database\_\allowbreak{}name}, \texttt{owner},
+\texttt{payload\_\allowbreak{}json}). \textit{(Extract the authoritative DDL from the production schema before
+release.)}
 
-A full generated \texttt{clas12.\allowbreak{}condor} (type-1 and type-2), annotated section by section against Chapter 8. Generate with \texttt{osg\_\allowbreak{}submit.\allowbreak{}py -\allowbreak{}b <ID> -\allowbreak{}-\allowbreak{}test -\allowbreak{}-\allowbreak{}print-\allowbreak{}condor-\allowbreak{}card}.
+\subsection{Annotated HTCondor submit-file example}
 
-\section{Annotated \texttt{nodescript.\allowbreak{}sh} example}
+A full generated \texttt{clas12.\allowbreak{}condor} (type-1 and type-2), annotated section by section against
+Chapter 8. Generate with \texttt{osg\_\allowbreak{}submit.\allowbreak{}py -\allowbreak{}b <ID>
+-\allowbreak{}-\allowbreak{}test -\allowbreak{}-\allowbreak{}print-\allowbreak{}condor-\allowbreak{}card}.
 
-Full generated nodescripts for a full-DST type-1 job and a GEMC-only type-2 job, annotated against Chapter 9. Generate with \texttt{osg\_\allowbreak{}submit.\allowbreak{}py -\allowbreak{}b <ID> -\allowbreak{}-\allowbreak{}test -\allowbreak{}-\allowbreak{}print-\allowbreak{}nodescript [-\allowbreak{}-\allowbreak{}devel]}.
+\subsection{Annotated \texttt{nodescript.\allowbreak{}sh} example}
 
-\section{Exit-code catalogue and \texttt{periodic\_\allowbreak{}release} mapping}
+Full generated nodescripts for a full-DST type-1 job and a GEMC-only type-2 job, annotated against Chapter 9.
+Generate with \texttt{osg\_\allowbreak{}submit.\allowbreak{}py -\allowbreak{}b <ID>
+-\allowbreak{}-\allowbreak{}test -\allowbreak{}-\allowbreak{}print-\allowbreak{}nodescript
+[-\allowbreak{}-\allowbreak{}devel]}.
 
-The nodescript exit codes and which are treated as transient by the Condor card (202, 204--208, 210--213 $\rightarrow$ retried up to 5 times after a 1-hour hold; all others $\rightarrow$ held for inspection).
+\subsection{Exit-code catalogue and \texttt{periodic\_\allowbreak{}release} mapping}
 
-\section{Priority-algorithm parameter reference and worked example}
+The nodescript exit codes and which are treated as transient by the Condor card (202, 204--208, 210--213
+$\rightarrow$ retried up to 5 times after a 1-hour hold; all others $\rightarrow$ held for inspection).
 
-Reference for \texttt{-\allowbreak{}-\allowbreak{}priority-\allowbreak{}algorithm}, \texttt{-\allowbreak{}-\allowbreak{}half-\allowbreak{}life-\allowbreak{}days}, \texttt{-\allowbreak{}-\allowbreak{}history-\allowbreak{}half-\allowbreak{}life-\allowbreak{}days}, \texttt{-\allowbreak{}-\allowbreak{}queue-\allowbreak{}penalty-\allowbreak{}exponent}, \texttt{-\allowbreak{}-\allowbreak{}burst-\allowbreak{}per-\allowbreak{}user}, \texttt{-\allowbreak{}-\allowbreak{}no-\allowbreak{}queue-\allowbreak{}penalty}, \texttt{-\allowbreak{}d}, \texttt{-\allowbreak{}-\allowbreak{}condor-\allowbreak{}owner}, with a worked numerical example of \texttt{aging\_\allowbreak{}interleaved} ordering two users' pending rows given their running counts and histories.
+\subsection{Priority-algorithm parameter reference and worked example}
 
-\section{CLI reference}
+Reference for \texttt{-\allowbreak{}-\allowbreak{}priority-\allowbreak{}algorithm},
+\texttt{-\allowbreak{}-\allowbreak{}half-\allowbreak{}life-\allowbreak{}days},
+\texttt{-\allowbreak{}-\allowbreak{}history-\allowbreak{}half-\allowbreak{}life-\allowbreak{}days},
+\texttt{-\allowbreak{}-\allowbreak{}queue-\allowbreak{}penalty-\allowbreak{}exponent},
+\texttt{-\allowbreak{}-\allowbreak{}burst-\allowbreak{}per-\allowbreak{}user},
+\texttt{-\allowbreak{}-\allowbreak{}no-\allowbreak{}queue-\allowbreak{}penalty}, \texttt{-\allowbreak{}d},
+\texttt{-\allowbreak{}-\allowbreak{}condor-\allowbreak{}owner}, with a worked numerical example of
+\texttt{aging\_\allowbreak{}interleaved} ordering two users' pending rows given their running counts and
+histories.
 
-All scripts and flags: \texttt{osg\_\allowbreak{}submit.\allowbreak{}py}, \texttt{db\_\allowbreak{}io/\allowbreak{}upload\_\allowbreak{}submission.\allowbreak{}py}, \texttt{db\_\allowbreak{}io/\allowbreak{}priority\_\allowbreak{}submissions.\allowbreak{}py}, \texttt{condor\_\allowbreak{}io/\allowbreak{}run\_\allowbreak{}priority\_\allowbreak{}map.\allowbreak{}py}, \texttt{condor\_\allowbreak{}io/\allowbreak{}list\_\allowbreak{}owner\_\allowbreak{}submission.\allowbreak{}py}, \texttt{db\_\allowbreak{}io/\allowbreak{}mark\_\allowbreak{}completed\_\allowbreak{}submissions.\allowbreak{}py}, \texttt{db\_\allowbreak{}io/\allowbreak{}database.\allowbreak{}py -\allowbreak{}q}, and the \texttt{stats/\allowbreak{}} scripts, plus the production cron inventory.
+\subsection{CLI reference}
 
-\section{Glossary}
+All scripts and flags: \texttt{osg\_\allowbreak{}submit.\allowbreak{}py},
+\texttt{db\_\allowbreak{}io/\allowbreak{}upload\_\allowbreak{}submission.\allowbreak{}py},
+\texttt{db\_\allowbreak{}io/\allowbreak{}priority\_\allowbreak{}submissions.\allowbreak{}py},
+\texttt{condor\_\allowbreak{}io/\allowbreak{}run\_\allowbreak{}priority\_\allowbreak{}map.\allowbreak{}py},
+\texttt{condor\_\allowbreak{}io/\allowbreak{}list\_\allowbreak{}owner\_\allowbreak{}submission.\allowbreak{}%
+py},
+\texttt{db\_\allowbreak{}io/\allowbreak{}mark\_\allowbreak{}completed\_\allowbreak{}submissions.\allowbreak{}%
+py}, \texttt{db\_\allowbreak{}io/\allowbreak{}database.\allowbreak{}py -\allowbreak{}q}, and the
+\texttt{stats/\allowbreak{}} scripts, plus the production cron inventory.
 
-CLAS12, GEMC, OSG, HTCondor, glidein/pilot, CVMFS, Singularity/Apptainer, Pelican, OSDF, CredMon, scard, gcard, cluster, subjob, \texttt{ClusterId}, \texttt{JobPrio}, \texttt{pool\_\allowbreak{}node}, type-1, type-2, DST, LUND, RCDB.
+\subsection{Glossary}
 
-\section{File/module map}
+CLAS12, GEMC, OSG, HTCondor, glidein/pilot, CVMFS, Singularity/Apptainer, Pelican, OSDF, CredMon, scard, gcard,
+cluster, subjob, \texttt{ClusterId}, \texttt{JobPrio}, \texttt{pool\_\allowbreak{}node}, type-1, type-2, DST,
+LUND, RCDB.
 
-Repository layout mapped to responsibility: \texttt{osg\_\allowbreak{}submit.\allowbreak{}py}, \texttt{SConfiguration.\allowbreak{}py}, \texttt{statuses.\allowbreak{}py}, \texttt{db\_\allowbreak{}io/\allowbreak{}} (database, upload, priority, completion), \texttt{condor\_\allowbreak{}io/\allowbreak{}} (htcondor utils, priority map, listing), \texttt{generators/\allowbreak{}condor/\allowbreak{}} (nine card sections), \texttt{generators/\allowbreak{}bash/\allowbreak{}} (nodescript sections, run selection), \texttt{web\_\allowbreak{}portal/\allowbreak{}} (PHP pages, \texttt{main.\allowbreak{}js}), \texttt{stats/\allowbreak{}}, and \texttt{tests/\allowbreak{}}.
+\subsection{File/module map}
+
+Repository layout mapped to responsibility: \texttt{osg\_\allowbreak{}submit.\allowbreak{}py},
+\texttt{SConfiguration.\allowbreak{}py}, \texttt{statuses.\allowbreak{}py},
+\texttt{db\_\allowbreak{}io/\allowbreak{}} (database, upload, priority, completion),
+\texttt{condor\_\allowbreak{}io/\allowbreak{}} (htcondor utils, priority map, listing),
+\texttt{generators/\allowbreak{}condor/\allowbreak{}} (nine card sections),
+\texttt{generators/\allowbreak{}bash/\allowbreak{}} (nodescript sections, run selection),
+\texttt{web\_\allowbreak{}portal/\allowbreak{}} (PHP pages, \texttt{main.\allowbreak{}js}),
+\texttt{stats/\allowbreak{}}, and \texttt{tests/\allowbreak{}}.

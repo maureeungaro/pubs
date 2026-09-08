@@ -12,8 +12,8 @@ tex_sources = files(
 
 # One file per chapter, inputted through <note>_doc.tex.
 chapter_sources = files(
-  'chapters/01.tex', 'chapters/02.tex', 'chapters/03.tex', 'chapters/04.tex',
-  'chapters/05.tex', 'chapters/06.tex', 'chapters/07.tex', 'chapters/08.tex',
+  'chapters/overview.tex', 'chapters/portal.tex',
+  'chapters/06.tex', 'chapters/07.tex', 'chapters/08.tex',
   'chapters/09.tex', 'chapters/10.tex', 'chapters/11.tex', 'chapters/12.tex',
   'chapters/13.tex', 'chapters/14.tex', 'chapters/15.tex', 'chapters/16.tex',
   'chapters/17.tex', 'chapters/18.tex', 'chapters/19_appendices.tex',

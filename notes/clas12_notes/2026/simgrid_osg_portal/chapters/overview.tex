@@ -1,0 +1,49 @@
+\section{Overview}\label{ch:1}
+
+CLAS12 analyses depend on large Monte-Carlo statitics produced with the same software, geometry, and fields
+configuration as the reconstructed data.
+
+Running simulations by hand, on the OSG or the JLab farm, involves writing the submision configuration files
+that contain the generator, Monte-Carlo and reconstruction conditions, chaining the pipeline outputs,
+and copying results back. Given the growing number of experiments, configurations, geometry, field, and software versions,
+this is error-prone and not easily reproducible.
+
+simGrid solves this: any authenticated collaborator can request a self-consistent Monte-Carlo workflow from a browser,
+with the correct software versions, field maps, vertex handling, and background merging selected for them,
+and have it run at scale on the OSG without touching HTCondor directly.
+The portal is the single, reproducible path from a physics request to a DST.
+
+
+
+\subsection{Design goals and constraints}
+
+The system is shaped by three goals and one constraint:
+
+\begin{itemize}
+  \item \textbf{Self-service:} a user with no grid or software expertise can submit a correct workflow from a form.
+  \item \textbf{Operability:} the submission pipeline is self-documenting and reproducible.
+  \item \textbf{Fair sharing:} no single user can monopolize the shared allocation; waiting requests are
+  ordered by a history-weighted, load-aware queue.
+\end{itemize}
+
+The constraint is that \textbf{all jobs run under one shared HTCondor owner, \texttt{gemc}.} OSG allocations
+and OAuth credentials are granted to that single identity, not to individual collaborators. Fair sharing
+therefore cannot be delegated to HTCondor's per-user accounting; the portal must implement it itself. This
+constraint is the reason the two priority systems (Chapters 10 and 11) exist and are kept separate.
+
+
+
+\subsection{Terminology and conventions}
+
+\begin{itemize}
+  \item \textbf{Submission / cluster / subjob / job.} A \textit{submission} is a single portal request.
+  When submitted to OSG, it becomes a HTCondor \textit{cluster}. A cluster contains many \textit{subjobs}
+  (HTCondor processes, \texttt{\$(Process)}). Here we will use subjob and job interchangeably: a submission
+  can request to run 10,000 jobs; correspondigly, the created cluster will contain 10,000 subjobs.
+  \item \textbf{scard} The \textit{scard} (steering card) is the key:value dictionary the portal produces
+  from the user request and stores in the database; it drives all the downstream generation.
+  \item \textbf{Type-1 vs. type-2.} A \textit{type-1} submission runs an event generator on the worker node to
+  produce events; a \textit{type-2} submission consumes pre-generated LUND files from a
+  \texttt{/\allowbreak{}volatile/\allowbreak{}clas12/\allowbreak{}} directory, one subjob per file. The type is
+  inferred from the generator field (Chapter 4).
+\end{itemize}

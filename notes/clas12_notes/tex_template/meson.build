@@ -12,8 +12,8 @@ tex_sources = files(
 
 # One file per chapter, inputted through <note>_doc.tex.
 chapter_sources = files(
-  'chapters/01.tex',
-  'chapters/02.tex',
+  'chapters/overview.tex',
+  'chapters/results.tex',
 )
 
 custom_target(

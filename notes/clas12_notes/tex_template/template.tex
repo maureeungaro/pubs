@@ -23,7 +23,6 @@
 % ============================ FRONT MATTER ===================================
 
 \thispagestyle{plain}
-
 \notetitle{Title of the CLAS12 Technical Note}
 \vspace{18pt}
 \noteauthor{M. Ungaro}
@@ -31,12 +30,29 @@
 \noteaffiliation{Jefferson Lab, 12,000 Jefferson Avenue, 23606 Newport News, VA, USA}
 \vspace{6pt}
 
+
+% ============================ ABSTRACT ===========================================
+
 \begin{noteabstract}
 [3--6 sentences: the configuration studied, what has been measured or simulated, and the
 headline result. State the nominal luminosity
 ($1\times10^{35}$~cm$^{-2}$\,s$^{-1}$, 75~nA on a 5~cm LH$_2$ target) and the beam
 energy when relevant.]
 \end{noteabstract}
+
+
+% ============================ KEYWORDS ===========================================
+
+\begin{center}
+\begin{minipage}{0.86\textwidth}
+\small\textbf{Keywords:} CLAS12, GEMC, Open Science Grid (OSG), HTCondor, Pelican/OSDF, fair-share
+scheduling, Monte-Carlo production.
+\end{minipage}
+\end{center}
+\vspace{6pt}
+
+
+% ============================ OPTIONAL TOC ===========================================
 
 % ---------------------------------------------------------------------------
 % Table of Contents --- optional. Uncomment \tableofcontents below to enable it.
@@ -47,19 +63,18 @@ energy when relevant.]
 %\setcounter{tocdepth}{2}
 %\tableofcontents
 
-\begin{center}
-\begin{minipage}{0.86\textwidth}
-\small\textbf{Keywords:} CLAS12, GEMC, Open Science Grid (OSG), HTCondor, Pelican/OSDF, fair-share
-scheduling, Monte-Carlo production.
-\end{minipage}
-\end{center}
+
 
 % ============================ BODY ===========================================
 
 \input{template_doc}
 
+
 % ============================ REFERENCES =====================================
 
 \input{template_bib}
+
+
+% ============================ ALL DONE =====================================
 
 \end{document}
