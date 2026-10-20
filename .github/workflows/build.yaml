@@ -39,8 +39,14 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: Install Git LFS
+        run: dnf install -y git-lfs
+
       - name: Checkout
         uses: actions/checkout@main
+        with:
+          lfs: true
+
       - name: Fix Ownership
         run: |
           # recent versions of Git refuse to touch a repository whose on-disk owner 
