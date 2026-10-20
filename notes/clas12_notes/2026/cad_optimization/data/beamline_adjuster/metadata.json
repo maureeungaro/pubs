@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-13",
+  "platform": "macOS-26.7.1-arm64-arm-64bit",
+  "executable": "/opt/projects/gemc/src/build/bin/gemc",
+  "executable_sha256": "94e7955ab93a86505c17ec7993ecdab976bb1b58736fc094217214df1787f4f6",
+  "version": "\n\n*******************************************************************\n \u001b[32m\u001b[1mgemc\u001b[0m  version: \u001b[32mdev\u001b[0m\n Called from: \u001b[32m/opt/projects/gemc/src/build/bin\u001b[0m\n Install: \u001b[32m/opt/projects/gemc/src/build/bin\u001b[0m\n Released on: \u001b[32m2026-10-11\u001b[0m\n GEMC Reference: \u001b[32mNucl. Instrum. Meth. A, Volume 959, 163422 (2020)\u001b[0m\n GEMC Homepage: \u001b[32mhttps://gemc.github.io/home\u001b[0m\n Author: \u001b[32mMaurizio Ungaro, ungaro@jlab.org\u001b[0m\n\n*******************************************************************\n\n",
+  "arguments": {
+    "executable": "/opt/projects/gemc/src/build/bin/gemc",
+    "database": "/private/tmp/adjuster-study/full.sqlite",
+    "originals": "../clas12Tags/geometry_source/beamline/cad_original",
+    "pair": "adjuster",
+    "optimized": "/opt/projects/gemc/clas12-systems/geometry_src/beamline/stls",
+    "output": "/private/tmp/adjuster-study/benchmark-final",
+    "events": 200,
+    "repeats": 5,
+    "timeout": 1800
+  },
+  "card": "experiment: clas12\nrunno: 11\nnthreads: 1\nphys_list: FTFP_BERT\nsql: geometry.sqlite\ngsystem:\n  - name: beamline_cad\n    factory: sqlite\n",
+  "physics": "FTFP_BERT, no optical processes, no magnetic field",
+  "pair": "adjuster",
+  "primary_acceptance_deg": [
+    2.5,
+    3.3
+  ],
+  "momentum_GeV": 5,
+  "primary_azimuth_deg": [
+    -95,
+    -85
+  ],
+  "mesh_hashes": {
+    "original": {
+      "adjuster1.stl": "28c7569477c822552a7edb9b90676bb0250fca2a9f26189a264b96ccf6b0cd56",
+      "adjuster3.stl": "424deaf268a857b5202403b49cfe0517222f18b637556bcbd27c2abe2535e316",
+      "adjuster2.stl": "46d2f910acb1ea1e184fcc6c9f519613004fec94fdc14878d91c5b0b95fbc448"
+    },
+    "optimized": {
+      "ft_adjuster.stl": "fbe8429ddddd5548ba82501944f27f3ee0954080557ef7b32efd303f05f2be25"
+    }
+  }
+}

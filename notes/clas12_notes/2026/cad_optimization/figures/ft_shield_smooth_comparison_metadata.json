@@ -1,0 +1,15 @@
+{
+  "Previous": {
+    "sha256": "d1c41df5ec2977e7a831378024c443c99870c765fac9ca2ee2e3c3aa3a9b4286",
+    "triangles": 13500
+  },
+  "Smooth": {
+    "sha256": "0d770b71801eb4c9167c57d325314eb3ac11995431335532fe8828906b48a82a",
+    "triangles": 6500
+  },
+  "views": {
+    "flange_elevation": -65,
+    "flange_azimuth": 90,
+    "tube_section_z_mm": -100
+  }
+}

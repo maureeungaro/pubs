@@ -1,0 +1,166 @@
+\FloatBarrier
+\section{FT outer flange}
+
+The seventh beamline study renames outerFlange to FTOuterFlange in ten applicable source and runtime CAD
+variations and ten GEMC2 SQLite placement rows. The stainless-steel material, color, mother, and passive
+placement are retained, including the original 1272.77 mm z translation. That translation differs by 0.5 mm
+from the inner-shield and outer-mount placements and is not rounded to their common value.
+
+The original is a closed manifold annular plate with 2,132 triangles and genus 13. The authorized hole
+removal closes twelve bolt tunnels with pygemc's remove\_holes utility, leaving the central opening intact
+and reducing genus to 1. Flat annular faces are then retriangulated using every original inner and outer rim
+coordinate on both z faces. The inner radius is 95.25 mm, the outer radius 127 mm, and the original
+thickness approximately 19.049927 mm. Each face retains 97 inner rim vertices and 112 outer rim vertices.
+Saved coordinates are verified exactly against those engineering vertices; the original bounds are
+unchanged.
+
+Triangles fall to 836 (60.79\% fewer), and bytes fall from 106,684 to 41,884. The output remains one closed
+manifold surface with no detected self-intersections or zero-area faces. Closing the bolt holes changes
+volume from 389837.402125 to 422180.789284 mm$^3$, an increase of 8.296635\%. Retriangulation changes the
+hole-filled reference volume only at floating-point precision. Bidirectional vertex, edge, and surface
+sampling against that reference gives a maximum difference of 0.0000148 mm. This sampled difference
+describes retriangulation, not the deliberately closed holes, and is not a proven global error bound. The
+archived engineering mesh reproduces the optimized STL byte for byte.
+
+Table~\ref{tab:outer-flange-mesh} summarizes the original and hole-filled flange.
+
+\begin{table}[htbp]
+\centering
+\caption{Original and optimized FT outer flange.}
+\label{tab:outer-flange-mesh}
+\begin{tabular}{lrr}
+\toprule
+Quantity & Original & Optimized \\
+\midrule
+Triangles & 2,132 & 836 \\
+Bytes & 106,684 & 41,884 \\
+Genus & 13 & 1 \\
+Volume (mm$^3$) & 389837.402 & 422180.789 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The isolated tracking fixture contains only this stainless-steel flange in air. Both cases use the new name
+and identical material and placement attributes. Matched 5 GeV LUND primaries originate at the target,
+uniform in solid angle over 1.9--2.8 degrees and full azimuth. FTFP\_BERT runs without optical processes or
+magnetic field, with one thread, default production cuts, and no GUI or event output. Five alternating-order
+repetitions use seeds 12345--12349 and 200 events for each electron, proton, positive-pion, and neutron run.
+Separate zero-event runs measure startup; elapsed time since beamOn measures transport. A fixed executable
+snapshot is used for every run, with its hash checked afterward. Earlier runs interrupted by sandbox
+resource-timer restrictions or invalidated by a changing shared executable are excluded.
+
+Table~\ref{tab:outer-flange-timing} records the tracking measurements.
+
+\begin{table}[htbp]
+\centering
+\caption{Median transport wall seconds per 200 events over five repetitions.}
+\label{tab:outer-flange-timing}
+\begin{tabular}{lrrr}
+\toprule
+Particle & Original & Optimized & Original/optimized \\
+\midrule
+e- & 0.646804 & 0.668927 & 0.967 \\
+proton & 0.429432 & 0.425280 & 1.010 \\
+pi+ & 0.393231 & 0.377190 & 1.043 \\
+neutron & 0.221017 & 0.274356 & 0.806 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Median startup simulation wall time changes from 0.699890 to 0.693861 s; peak startup RSS changes from
+117.83 to 115.67 MiB. Median original/optimized transport ratios are 0.967, 1.010, 1.043, and 0.806 for
+electrons, protons, positive pions, and neutrons, respectively. A ratio above one means shorter optimized
+tracking time; a ratio below one means longer time. All 52 processes complete normally, and all forty
+transport runs report their 200 requested events. These short isolated workloads do not establish a
+universal tracking gain. The added stainless steel changes scattering and stochastic shower histories, so
+timing differences cannot be attributed solely to triangle reduction or treated as detector-response
+equivalence.
+
+Table~\ref{tab:outer-flange-warnings} records isolated-fixture exceptions across all 52 processes.
+
+\begin{table}[htbp]
+\centering
+\caption{Geant4 exception counts in the timed isolated flange fixtures.}
+\label{tab:outer-flange-warnings}
+\begin{tabular}{lrr}
+\toprule
+Diagnostic & Original & Optimized \\
+\midrule
+GeomSolids1001 & 0 & 0 \\
+GeomNav1002 & 0 & 0 \\
+GeomNav0003 & 0 & 0 \\
+GeomVol1002 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A separate twelve-volume assembly fixture includes the flange, unchanged inner shield and outer mount, and
+nine copper bolts. Both original and optimized fixtures use the new flange name and the same placements.
+Their 10,000-point Geant4 checks report 5 and 5 overlap warnings, respectively; both also retain one
+surface-hole import warning from the unchanged outer mount. The retained logs identify the volumes and
+micrometre-scale penetrations. Existing outer-mount/flange interference remains a limitation of the
+assembly, so no claim of complete overlap freedom is made. Full default construction completes without
+missing meshes, with 4 solid warnings and 9 overlap reports. All fifteen native geometry/material variations
+and fourteen CAD variations pass the semantic comparison against GEMC2. The earlier six beamline studies
+retain their independent timing tables, diagnostic results, and archives.
+
+The subsequent mount study resolves this earlier joint interference; see Section~\ref{sec:outer-mount}.
+
+\subsection{Tracking at fixed material volume}
+
+A follow-up control compares the hole-filled flange before and after retriangulation, removing the added
+material as a difference between the cases. The baseline has 2,084 triangles and 104,284 bytes; the
+simplified flange has 836 triangles and 41,884 bytes, a 59.88\% triangle reduction relative to this filled
+reference. Both have the same central opening, bounds, stainless-steel material, placement, and volume of
+422180.789284 cubic millimetres to the reported precision. Their sampled surface differences remain below
+0.0000148 mm. The fixture label original now denotes the unreduced hole-filled reference, not the drilled
+engineering mesh.
+
+The control uses the same fixed executable snapshot and physics settings as the earlier flange study, with 5
+GeV primaries uniform in solid angle over 1.9--2.8 degrees and full azimuth. Five alternating-order
+repetitions use seeds 12345--12349. Each particle run has 2,000 events, ten times the earlier sample; both
+cases have identical primary hashes and geometry/material database records. Separate startup samples retain
+the loading and peak-memory measurements. The larger control is reported independently, without pooling its
+absolute times or ratios with the earlier 200-event drilled-versus-filled results.
+
+Table~\ref{tab:outer-flange-control} gives median transport wall seconds per 2,000 events.
+
+\begin{table}[htbp]
+\centering
+\caption{Hole-filled reference versus simplified flange: medians over five repetitions.}
+\label{tab:outer-flange-control}
+\begin{tabular}{lrrr}
+\toprule
+Particle & Filled reference & Simplified & Reference/simplified \\
+\midrule
+e- & 7.40750 & 6.90088 & 1.073 \\
+proton & 4.63719 & 4.56330 & 1.016 \\
+pi+ & 4.19454 & 4.05502 & 1.034 \\
+neutron & 2.94839 & 2.91016 & 1.013 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Median baseline/simplified tracking wall-time ratios are 1.073 for electrons, 1.016 for protons, 1.034 for
+positive pions, and 1.013 for neutrons. A value above one means shorter tracking time for the simplified
+mesh. These measurements quantify retriangulation at fixed material volume. The simplified mesh is faster in
+all twenty particle/seed pairs; the individual paired ratios are retained in the control dataset. Matched
+primaries and seeds do not guarantee identical subsequent shower histories because tessellated boundary
+arithmetic can alter stochastic transport. Five repetitions do not establish a universal speedup or a
+precise causal decomposition of the earlier slowdown.
+
+Median startup simulation wall time changes from 0.704797 to 0.692080 s, with peak startup RSS changing from
+117.52 to 115.58 MiB. All 52 control processes complete normally, and all forty transport runs report the
+requested 2,000 events. Geant4 exception counts, paired seed ratios, fixture hashes, and raw timing reports
+are retained in a separate control dataset. Neither case records a Geant4 exception in the sampled control.
+
+\FloatBarrier
+Figure~\ref{fig:outer-flange-stl} compares the original and filled triangulations.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/outer_flange_stl_comparison.pdf}
+\caption{Original FT outer flange (left) and optimized flange with twelve bolt holes filled (right).
+Matched cameras and bounds use original STL coordinates; both retain the central opening and rim vertices.}
+\label{fig:outer-flange-stl}
+\end{figure}

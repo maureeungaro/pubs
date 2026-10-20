@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="620" viewBox="0 0 1080 620" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .step   { fill:#ffffff; stroke:#333333; stroke-width:1.5; }
+    .opt    { fill:#f7f4ef; stroke:#8a8a8a; stroke-width:1.4; stroke-dasharray:5 3; }
+    .fin    { fill:#eaf1f8; stroke:#1a5fb4; stroke-width:1.8; }
+    .fn     { font-size:13px; font-weight:bold; fill:#111111; }
+    .file   { font-size:11px; fill:#1a5fb4; font-family:Menlo, monospace; }
+    .rm     { font-size:10px; fill:#a5451f; }
+    .edge   { stroke:#333333; stroke-width:1.8; fill:none; marker-end:url(#a3); }
+    .skip   { stroke:#1a5fb4; stroke-width:1.8; fill:none; marker-end:url(#a3b); stroke-dasharray:6 4; }
+    .cap    { font-size:11px; fill:#555555; }
+    .note   { font-size:11px; font-weight:bold; fill:#8a8a8a; }
+  </style>
+  <defs>
+    <marker id="a3" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L8,3.2 L0,6.4 Z" fill="#333333"/></marker>
+    <marker id="a3b" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L8,3.2 L0,6.4 Z" fill="#1a5fb4"/></marker>
+  </defs>
+
+  <text x="30" y="34" class="fn">Worker-node file chain</text>
+  <text x="30" y="55" class="cap">Left column: the full-DST pipeline. Optional steps (dashed grey) run only when requested. The blue dashed arrow is the GEMC-only (output_type=1) short-circuit.</text>
+
+  <!-- Input -->
+  <rect class="step" x="330" y="75" width="420" height="42" rx="6"/>
+  <text x="345" y="101" class="fn">input</text>
+  <text x="470" y="101" class="file">lund.dat / &lt;generator&gt;.dat / (internal)</text>
+
+  <!-- run_generator -->
+  <rect class="step" x="330" y="140" width="420" height="42" rx="6"/>
+  <text x="345" y="166" class="fn">run_generator</text>
+  <text x="560" y="166" class="file">events ready for gemc</text>
+
+  <!-- run_gemc -->
+  <rect class="step" x="330" y="205" width="420" height="42" rx="6"/>
+  <text x="345" y="231" class="fn">run_gemc</text>
+  <text x="620" y="231" class="file">gemc.hipo</text>
+
+  <!-- fetch bg + merge (optional) -->
+  <rect class="opt" x="330" y="266" width="420" height="50" rx="6"/>
+  <text x="345" y="287" class="fn">fetch_background_file + merge_background</text>
+  <text x="345" y="306" class="file">gemc.merged.hipo</text>
+  <text x="500" y="306" class="rm">removes gemc.hipo + $BG_FILE · only if bkmerging</text>
+
+  <!-- denoiser (optional) -->
+  <rect class="opt" x="330" y="335" width="420" height="42" rx="6"/>
+  <text x="345" y="355" class="fn">run_denoiser</text>
+  <text x="560" y="355" class="file">gemc_denoised.hipo</text>
+  <text x="560" y="369" class="rm">coatjava &lt; 14 only</text>
+
+  <!-- reconstruction -->
+  <rect class="step" x="330" y="400" width="420" height="42" rx="6"/>
+  <text x="345" y="426" class="fn">run_reconstruction</text>
+  <text x="620" y="426" class="file">recon.hipo</text>
+
+  <!-- test -->
+  <rect class="step" x="330" y="465" width="420" height="34" rx="6"/>
+  <text x="345" y="487" class="fn">test_hipo_file</text>
+  <text x="520" y="487" class="file">integrity check on recon.hipo</text>
+
+  <!-- dst -->
+  <rect class="step" x="330" y="522" width="420" height="42" rx="6"/>
+  <text x="345" y="548" class="fn">create_dst</text>
+  <text x="600" y="548" class="file">$OUTPUT_FILE</text>
+
+  <!-- write -->
+  <rect class="fin" x="330" y="580" width="420" height="34" rx="6"/>
+  <text x="345" y="602" class="fn" fill="#1a5fb4">write_to_jlab</text>
+  <text x="530" y="602" class="file">osdf:///…/osg/&lt;user&gt;/&lt;sub_id&gt;/</text>
+
+  <!-- edges -->
+  <line class="edge" x1="540" y1="117" x2="540" y2="139"/>
+  <line class="edge" x1="540" y1="182" x2="540" y2="204"/>
+  <line class="edge" x1="540" y1="247" x2="540" y2="265"/>
+  <line class="edge" x1="540" y1="316" x2="540" y2="334"/>
+  <line class="edge" x1="540" y1="377" x2="540" y2="399"/>
+  <line class="edge" x1="540" y1="442" x2="540" y2="464"/>
+  <line class="edge" x1="540" y1="499" x2="540" y2="521"/>
+  <line class="edge" x1="540" y1="564" x2="540" y2="579"/>
+
+  <!-- GEMC-only short-circuit: from merge/gemc down to write_to_jlab -->
+  <path class="skip" d="M330,291 C120,300 120,590 328,597"/>
+  <text x="70" y="445" class="note" transform="rotate(-90 70,445)">output_type=1 · rename gemc file → $OUTPUT_FILE</text>
+
+  <text x="30" y="640" class="cap"></text>
+</svg>

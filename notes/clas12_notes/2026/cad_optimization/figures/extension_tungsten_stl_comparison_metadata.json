@@ -1,0 +1,26 @@
+{
+  "moller-cone-extension-tungsten-addon": {
+    "original": {
+      "sha256": "3e4378742de0f334b77d1f2bef8f2876f025118ea615706ceffa94dc1a980815",
+      "triangles": 27778
+    },
+    "optimized": {
+      "sha256": "c01cf671cbda10ad96eca519c1d42edfdf92b77fdf24a75b8f34c81a1e855ea8",
+      "triangles": 12000
+    },
+    "bounds_mm": [
+      [
+        -108.61265563964844,
+        -108.59506225585938,
+        -170.63296508789062
+      ],
+      [
+        108.61973571777344,
+        108.62193298339844,
+        113.69355773925781
+      ]
+    ],
+    "elevation": 18,
+    "azimuth": 120
+  }
+}

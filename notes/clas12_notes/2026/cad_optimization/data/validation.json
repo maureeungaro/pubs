@@ -1,0 +1,32 @@
+[
+  {
+    "run": 11,
+    "geometry_rows": 2377,
+    "cad_rows": 7
+  },
+  {
+    "run": 3029,
+    "geometry_rows": 1667,
+    "cad_rows": 7
+  },
+  {
+    "run": 4763,
+    "geometry_rows": 957,
+    "cad_rows": 7
+  },
+  {
+    "run": 6150,
+    "geometry_rows": 957,
+    "cad_rows": 7
+  },
+  {
+    "run": 11323,
+    "geometry_rows": 957,
+    "cad_rows": 7
+  },
+  {
+    "run": 15016,
+    "geometry_rows": 1667,
+    "cad_rows": 7
+  }
+]

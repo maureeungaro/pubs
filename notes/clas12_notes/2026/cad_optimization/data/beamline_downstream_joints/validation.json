@@ -1,0 +1,37 @@
+{
+  "previous": {
+    "completed": true,
+    "exit_code": 0,
+    "check_overlaps": 10000,
+    "exception_codes": {
+      "GeomVol1002": 8
+    },
+    "overlap_reports": [
+      "Overlap is detected for volume beamline_cad/Downstream_Beam_tube_Segment_1:0 (G4TessellatedSolid) with beamline_cad/Beamline_Adapter_1:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/Downstream_Beam_tube_Segment_2:0 (G4TessellatedSolid) with beamline_cad/Downstream_Beam_tube_Segment_1:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/Beamline_Adapter_1:0 (G4TessellatedSolid) with beamline_cad/Downstream_Beam_tube_Segment_1:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/Downstream_Beam_tube_Segment_1:0 (G4TessellatedSolid) with beamline_cad/Beamline_Adapter_1:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/Downstream_Beam_tube_Segment_2:0 (G4TessellatedSolid) with beamline_cad/Downstream_Beam_tube_Segment_1:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/Beamline_Adapter_1:0 (G4TessellatedSolid) with beamline_cad/Downstream_Beam_tube_Segment_1:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/Downstream_Beam_tube_Segment_1:0 (G4TessellatedSolid) with beamline_cad/Beamline_Adapter_1:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/Downstream_Beam_tube_Segment_2:0 (G4TessellatedSolid) with beamline_cad/Downstream_Beam_tube_Segment_1:0 (G4TessellatedSolid)"
+    ],
+    "log": "previous-construction.log"
+  },
+  "optimized": {
+    "completed": true,
+    "exit_code": 0,
+    "check_overlaps": 10000,
+    "exception_codes": {},
+    "overlap_reports": [],
+    "log": "optimized-construction.log"
+  },
+  "full": {
+    "completed": true,
+    "exit_code": 0,
+    "check_overlaps": 2,
+    "exception_codes": {},
+    "overlap_reports": [],
+    "log": "full-construction.log"
+  }
+}

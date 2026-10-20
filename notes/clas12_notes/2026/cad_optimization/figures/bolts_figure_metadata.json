@@ -1,0 +1,46 @@
+{
+  "FTInnerShieldAndFlange_Bolt1": {
+    "original": {
+      "sha256": "ce332a69411f308d3869d292ccd94b01c63f31ffeead099fb1c74aa55e5ef9b9",
+      "triangles": 1690
+    },
+    "optimized": {
+      "sha256": "9c7a5e205bd1ad1980db6f957762f3d06e0b571b09bdba1b04ec1045bfea46b3",
+      "triangles": 192
+    },
+    "coordinate_permutation": [
+      0,
+      1,
+      2
+    ],
+    "origin_mm": [
+      91.67812728881836,
+      0.0,
+      -1390.4125366210938
+    ],
+    "elevation": 20,
+    "azimuth": -55
+  },
+  "FTInnerShieldAndFlange_Bolt4": {
+    "original": {
+      "sha256": "0ace2425b0f0efcafafe22331f2127d14399fcc0cd73bd94200cefd7d3a1449c",
+      "triangles": 2224
+    },
+    "optimized": {
+      "sha256": "9cc71d5e231919f8c3930003765d7a7889735497d52c885b7c795a75f13e571c",
+      "triangles": 192
+    },
+    "coordinate_permutation": [
+      1,
+      0,
+      2
+    ],
+    "origin_mm": [
+      -25.40000057220459,
+      -88.50312423706055,
+      -1161.8125610351562
+    ],
+    "elevation": 20,
+    "azimuth": -55
+  }
+}

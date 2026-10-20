@@ -1,0 +1,431 @@
+Entering initializeRTPCConstants
+Connecting to sqlite:///opt/projects/gemc/clas12Tags/geometry_source/coatjava/etc/data/sqlite/ccdb.sqlite/calibration/rtpc
+RTPC:Getting drift parameters
+
+ >> Parsing check.gcard for options: 
+  > mysql Database set to: /opt/projects/gemc/clas12Tags/clas12.sqlite
+  > Run Number. Controls the geometry and calibration parameters set to: 11
+  > Choice of Physics List set to: STD + FTFP_BERT + Optical
+  > Magnetic Field of the Hall set to: no
+  > Type of output, output filename.  set to: no, output
+  > Radio-frequency signal set to: 4.008, 50, 0, 0, 0
+
+
+  > QT Gui set to: 0
+  > Number of events to be simulated set to: 0
+  > Checks Overlapping Volumes set to: 2
+  > Geometry Verbosity set to: 2
+
+
+  > Initializing GEant4 MonteCarlo:  gemc 6.2
+
+ >> gemc Init:  Initializing GEant4 MonteCarlo version gemc 6.2
+ >> gemc Init:  Initializing CLHEP Random Engine from local time 1.79244e+09, cpu clock 758620 and process id 31353.
+ >> gemc Init:  Seed initialized to: 1791650376
+ >> gemc Init:  Instantiating Run Manager...
+
+**************************************************************
+ Geant4 version Name: geant4-10-07-patch-04    (9-September-2022)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+ >> gemc Init:  Instantiating Run Conditions...
+
+ >> gemc Init:  Registering Detectors Factories...
+  > SQLITE Detector Factory: >>  Importing SQLITE Detector: htcc with <SQLITE> factory, variation "default", run number requested: 11,  sqlite run number used: 11
+
+ >> SQLITE CAD Factory: >>  Importing SQLITE CAD Detector: htcc_cad with <SQLITECAD> factory, variation "default", run number requested: 11,  sqlite run number used: 11
+ >> gemc Init:  Initializing Material Factories...
+
+ >> gemc Init:  Initializing Mirrors Factories...
+
+ >> gemc Init:  Registering Parameters Factories...
+  > gemc Init:  MYSQL Parameters Factory is Initialized 
+  > gemc Init:  TEXT Parameters Factory is Initialized 
+ >> gemc Init:  Building gemc Process Hit Factory...
+
+  >> Registering experiment "clas12" hit processes 
+
+ >> gemc Init:  Creating fields Map...
+ > Solenoid binary map name: /opt/projects/ceInstall/noarch/data/magfield/Full_transsolenoid_x161_y161_z321_March2021.dat
+ > Torus binary map name: /opt/projects/ceInstall/noarch/data/magfield/Full_torus_r251_phi181_z251_03March2020.dat
+ > Solenoid binary map name: /opt/projects/ceInstall/noarch/data/magfield/Full_transsolenoid_x161_y161_z321_March2021.dat
+ > Torus binary map name: /opt/projects/ceInstall/noarch/data/magfield/Full_torus_r251_phi181_z251_08May2018.dat
+ > Solenoid binary map name: /opt/projects/ceInstall/noarch/data/magfield/Full_transsolenoid_x161_y161_z321_March2021.dat
+ > Torus binary map name: /opt/projects/ceInstall/noarch/data/magfield/Full_torus_r251_phi181_z251_25Jan2021.dat
+ > Solenoid binary map name: /opt/projects/ceInstall/noarch/data/magfield/Full_transsolenoid_x161_y161_z321_March2021.dat
+ > Torus binary map name: /opt/projects/ceInstall/noarch/data/magfield/Symm_torus_r2501_phi16_z251_24Apr2018.dat
+ > Solenoid binary map name: /opt/projects/ceInstall/noarch/data/magfield/Full_transsolenoid_x321_y161_z321_April2024.dat
+ > Torus binary map name: /opt/projects/ceInstall/noarch/data/magfield/Full_torus_r251_phi181_z251_03March2020.dat
+ > Solenoid binary map name: /opt/projects/ceInstall/noarch/data/magfield/Full_transsolenoid_x321_y161_z321_April2024.dat
+ > Torus binary map name: /opt/projects/ceInstall/noarch/data/magfield/Full_torus_r251_phi181_z251_08May2018.dat
+ > Solenoid binary map name: /opt/projects/ceInstall/noarch/data/magfield/Full_transsolenoid_x321_y161_z321_April2024.dat
+ > Torus binary map name: /opt/projects/ceInstall/noarch/data/magfield/Full_torus_r251_phi181_z251_25Jan2021.dat
+ > Solenoid binary map name: /opt/projects/ceInstall/noarch/data/magfield/Full_transsolenoid_x321_y161_z321_April2024.dat
+ > Torus binary map name: /opt/projects/ceInstall/noarch/data/magfield/Symm_torus_r2501_phi16_z251_24Apr2018.dat
+ > Solenoid binary map name: /opt/projects/ceInstall/noarch/data/magfield/Symm_solenoid_r601_phi1_z1201_13June2018.dat
+ > Torus binary map name: /opt/projects/ceInstall/noarch/data/magfield/Full_torus_r251_phi181_z251_03March2020.dat
+ > Solenoid binary map name: /opt/projects/ceInstall/noarch/data/magfield/Symm_solenoid_r601_phi1_z1201_13June2018.dat
+ > Torus binary map name: /opt/projects/ceInstall/noarch/data/magfield/Full_torus_r251_phi181_z251_08May2018.dat
+ > Solenoid binary map name: /opt/projects/ceInstall/noarch/data/magfield/Symm_solenoid_r601_phi1_z1201_13June2018.dat
+ > Torus binary map name: /opt/projects/ceInstall/noarch/data/magfield/Full_torus_r251_phi181_z251_25Jan2021.dat
+ > Solenoid binary map name: /opt/projects/ceInstall/noarch/data/magfield/Symm_solenoid_r601_phi1_z1201_13June2018.dat
+ > Torus binary map name: /opt/projects/ceInstall/noarch/data/magfield/Symm_torus_r2501_phi16_z251_24Apr2018.dat
+ > Solenoid binary map name: /opt/projects/ceInstall/noarch/data/magfield/Symm_solenoid_r601_phi1_z1201_2008.dat
+ > Torus binary map name: /opt/projects/ceInstall/noarch/data/magfield/Full_torus_r251_phi181_z251_03March2020.dat
+ > Solenoid binary map name: /opt/projects/ceInstall/noarch/data/magfield/Symm_solenoid_r601_phi1_z1201_2008.dat
+ > Torus binary map name: /opt/projects/ceInstall/noarch/data/magfield/Full_torus_r251_phi181_z251_08May2018.dat
+ > Solenoid binary map name: /opt/projects/ceInstall/noarch/data/magfield/Symm_solenoid_r601_phi1_z1201_2008.dat
+ > Torus binary map name: /opt/projects/ceInstall/noarch/data/magfield/Full_torus_r251_phi181_z251_25Jan2021.dat
+ > Solenoid binary map name: /opt/projects/ceInstall/noarch/data/magfield/Symm_solenoid_r601_phi1_z1201_2008.dat
+ > Torus binary map name: /opt/projects/ceInstall/noarch/data/magfield/Symm_torus_r2501_phi16_z251_24Apr2018.dat
+ >> gemc Init:  Building Detector Map...
+ >> gemc Init:  Initializing Physics List STD + FTFP_BERT + Optical...
+ >> gemc Init:  Initializing User Actions...
+
+ Beam Settings >>  Beam Type: e-
+ Beam Settings >>  Beam Momentum: 11 GeV
+ Beam Settings >>  Beam Direction: (theta, phi) = (0, 0) deg
+ Beam Settings >>  Beam Vertex: (0, 0, 0) cm (radius, z-spread) = (0, 0) cm, flat spread
+ Beam Settings >>  Beam polarization: 100%
+ Beam Settings >>  Polarization Direction: (theta, phi) = (0, 0)
+ RF Setup: 
+    - Period: 4.008 ns
+    - Frequency: 0.249501 GHz
+    - Prescale: 50
+    - Offset1: 0 ns
+    - RF2 delay from RF1: 0 periods
+    - Offset2: 0 ns
+ >> gemc Init:  Initializing User Interface...
+ >> gemc Init:  Initializing Output Action...
+ >> gemc Init:  Initializing Run Manager...
+
+ >> Construction: Building Detector from Geometry STL Map...
+Checking overlaps for volume htcc (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume htccEntryWindow (G4Tubs) ... OK! 
+Checking overlaps for volume htccExitWindow (G4Tubs) ... OK! 
+Checking overlaps for volume mirror_1_sector1_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_1_sector1_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_1_sector2_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_1_sector2_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_1_sector3_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_1_sector3_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_1_sector4_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_1_sector4_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_1_sector5_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_1_sector5_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_1_sector6_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_1_sector6_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector1_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector1_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector2_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector2_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector3_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector3_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector4_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector4_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector5_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector5_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector6_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector6_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector1_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector1_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector2_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector2_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector3_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector3_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector4_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector4_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector5_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector5_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector6_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector6_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector1_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector1_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector2_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector2_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector3_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector3_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector4_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector4_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector5_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector5_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector6_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector6_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume pmt_1_sector1_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_1_sector1_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_1_sector2_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_1_sector2_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_1_sector3_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_1_sector3_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_1_sector4_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_1_sector4_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_1_sector5_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_1_sector5_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_1_sector6_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_1_sector6_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector1_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector1_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector2_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector2_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector3_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector3_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector4_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector4_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector5_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector5_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector6_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector6_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector1_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector1_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector2_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector2_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector3_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector3_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector4_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector4_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector5_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector5_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector6_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector6_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector1_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector1_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector2_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector2_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector3_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector3_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector4_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector4_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector5_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector5_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector6_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector6_2 (G4Tubs) ... OK! 
+Checking overlaps for volume wc_1_sector1_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_1_sector1_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_1_sector2_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_1_sector2_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_1_sector3_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_1_sector3_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_1_sector4_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_1_sector4_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_1_sector5_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_1_sector5_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_1_sector6_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_1_sector6_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector1_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector1_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector2_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector2_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector3_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector3_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector4_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector4_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector5_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector5_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector6_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector6_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector1_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector1_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector2_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector2_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector3_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector3_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector4_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector4_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector5_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector5_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector6_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector6_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector1_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector1_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector2_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector2_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector3_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector3_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector4_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector4_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector5_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector5_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector6_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector6_2 (G4SubtractionSolid) ... OK! 
+
+ hInelastic FTFP_BERT : threshold between BERT and FTFP is over the interval 
+ for pions :   3 to 6 GeV
+ for kaons :   3 to 6 GeV
+ for proton :  3 to 6 GeV
+ for neutron : 3 to 6 GeV
+
+### Birks coefficients used in run time
+   ScintillatorB     0.126 mm/MeV     0.0130032 g/cm^2/MeV  massFactor=  103.651 effCharge= 0.0299401
+ >> gemc Init:  Creating gemc Banks Map...
+ >> gemc Init:  Executing initial directives...
+
+Running geometry overlaps check...
+Checking overlaps for volume htccCone (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume htccCone:0 (G4TessellatedSolid)
+          with htccEntryWindow:1 (G4Tubs) volume's
+          local point (41.1382,274.754,0.0228881), overlapping by at least: 52.6119 um 
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+Checking overlaps for volume htccMollerCone (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume htccMollerConeExt (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume htcc (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume mirror_1_sector1_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_1_sector1_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_1_sector2_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_1_sector2_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_1_sector3_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_1_sector3_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_1_sector4_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_1_sector4_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_1_sector5_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_1_sector5_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_1_sector6_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_1_sector6_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector1_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector1_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector2_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector2_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector3_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector3_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector4_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector4_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector5_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector5_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector6_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_2_sector6_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector1_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector1_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector2_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector2_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector3_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector3_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector4_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector4_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector5_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector5_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector6_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_3_sector6_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector1_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector1_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector2_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector2_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector3_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector3_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector4_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector4_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector5_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector5_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector6_1 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume mirror_4_sector6_2 (G4IntersectionSolid) ... OK! 
+Checking overlaps for volume pmt_1_sector1_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_1_sector1_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_1_sector2_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_1_sector2_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_1_sector3_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_1_sector3_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_1_sector4_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_1_sector4_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_1_sector5_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_1_sector5_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_1_sector6_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_1_sector6_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector1_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector1_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector2_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector2_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector3_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector3_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector4_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector4_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector5_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector5_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector6_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_2_sector6_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector1_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector1_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector2_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector2_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector3_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector3_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector4_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector4_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector5_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector5_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector6_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_3_sector6_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector1_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector1_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector2_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector2_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector3_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector3_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector4_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector4_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector5_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector5_2 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector6_1 (G4Tubs) ... OK! 
+Checking overlaps for volume pmt_4_sector6_2 (G4Tubs) ... OK! 
+Checking overlaps for volume wc_1_sector1_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_1_sector1_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_1_sector2_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_1_sector2_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_1_sector3_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_1_sector3_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_1_sector4_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_1_sector4_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_1_sector5_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_1_sector5_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_1_sector6_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_1_sector6_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector1_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector1_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector2_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector2_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector3_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector3_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector4_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector4_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector5_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector5_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector6_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_2_sector6_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector1_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector1_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector2_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector2_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector3_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector3_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector4_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector4_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector5_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector5_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector6_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_3_sector6_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector1_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector1_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector2_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector2_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector3_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector3_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector4_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector4_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector5_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector5_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector6_1 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume wc_4_sector6_2 (G4SubtractionSolid) ... OK! 
+Checking overlaps for volume htccEntryWindow (G4Tubs) ... OK! 
+Checking overlaps for volume htccExitWindow (G4Tubs) ... OK! 
+Geometry overlaps check completed !
+ > Total gemc time: 45.1329 seconds.  Events only time: 3e-06 seconds. 
+ > Closing Stepping Action.

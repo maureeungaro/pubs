@@ -1,0 +1,74 @@
+{
+  "Beamline_Adapter_1": {
+    "original": {
+      "sha256": "e96604bedfb77a7f92bdecde1ff4e843c13004d61899d488d2acea2c8a593a5f",
+      "triangles": 528
+    },
+    "optimized": {
+      "sha256": "f389898b641878e7eae770a9d92848109bdd2cda2f5e4baf8e2a6f813ef197d1",
+      "triangles": 526
+    },
+    "bounds_mm": [
+      [
+        -63.24028778076172,
+        -63.24028778076172,
+        4922.04736328125
+      ],
+      [
+        63.24028778076172,
+        63.24028778076172,
+        5048.2763671875
+      ]
+    ],
+    "elevation": 22,
+    "azimuth": -65
+  },
+  "Torus_Exit_Shield_Casing": {
+    "original": {
+      "sha256": "ff322bed2e7180641558d5f916208c2c7779883f3f19380dfc34176c7397ca11",
+      "triangles": 1392
+    },
+    "optimized": {
+      "sha256": "313fe517ebf31f9f90ba4e7fa556165b42ad154254088936f8eb44083a0b0bcf",
+      "triangles": 1384
+    },
+    "bounds_mm": [
+      [
+        -215.89999389648438,
+        -215.89999389648438,
+        4915.30517578125
+      ],
+      [
+        215.89999389648438,
+        215.89999389648438,
+        5632.85498046875
+      ]
+    ],
+    "elevation": 22,
+    "azimuth": -65
+  },
+  "Torus_Exit_Shield_Lead_Fill": {
+    "original": {
+      "sha256": "580e9d1eaa0bf3b22e7d4600b9bc05fa90f9efa08f1562075aad644cf232dc23",
+      "triangles": 384
+    },
+    "optimized": {
+      "sha256": "580e9d1eaa0bf3b22e7d4600b9bc05fa90f9efa08f1562075aad644cf232dc23",
+      "triangles": 384
+    },
+    "bounds_mm": [
+      [
+        -171.39920043945312,
+        -171.39920043945312,
+        4959.83154296875
+      ],
+      [
+        171.39920043945312,
+        171.39920043945312,
+        5581.97900390625
+      ]
+    ],
+    "elevation": 22,
+    "azimuth": -65
+  }
+}

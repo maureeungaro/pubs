@@ -1,0 +1,54 @@
+{
+  "e-": {
+    "original_median_seconds": 4.14328,
+    "optimized_median_seconds": 3.93523,
+    "median_ratio": 1.0528685743908235,
+    "paired_ratios": [
+      1.0715845073094719,
+      1.0291749148080291,
+      1.0688867294494624,
+      1.0426860878887474,
+      1.1051804929295452
+    ],
+    "faster_pairs": 5
+  },
+  "proton": {
+    "original_median_seconds": 0.998174,
+    "optimized_median_seconds": 0.96193,
+    "median_ratio": 1.0376784173484557,
+    "paired_ratios": [
+      1.0376784173484557,
+      1.012364593134112,
+      1.0255660565683533,
+      1.000129554935611,
+      1.0018712569532755
+    ],
+    "faster_pairs": 5
+  },
+  "pi+": {
+    "original_median_seconds": 0.880467,
+    "optimized_median_seconds": 0.871883,
+    "median_ratio": 1.0098453576913418,
+    "paired_ratios": [
+      1.0031794186205951,
+      1.0307988172666476,
+      1.0127874455739179,
+      1.0143365694330877,
+      1.0098453576913418
+    ],
+    "faster_pairs": 5
+  },
+  "neutron": {
+    "original_median_seconds": 0.813399,
+    "optimized_median_seconds": 0.797589,
+    "median_ratio": 1.019822239273611,
+    "paired_ratios": [
+      0.9983058067264314,
+      0.9544056978921871,
+      0.9997433173727323,
+      1.019822239273611,
+      1.0162565918268842
+    ],
+    "faster_pairs": 2
+  }
+}

@@ -1,0 +1,33 @@
+\FloatBarrier
+\section{Beamline database run selection}
+\label{sec:beamline-run-selection}
+
+The beamline SQLite generator previously stored source labels such as \texttt{rgc\_summer2022} in the
+variation column. The steering card selected \texttt{default}, so requesting run 16000 matched no geometry
+rows and constructed only the world. The corrected generator publishes all beamline geometry and material
+banks under \texttt{default}, indexed by run number. Source labels remain authoring selectors and ASCII
+reference filenames; they are not additional SQLite variations.
+
+With the regenerated local database, the command
+\texttt{gemc beamline.yaml -gui -runno=16000} selects the summer-2022 configuration: ten native volumes
+and 22 CAD volumes. A matched headless construction changes from one Geant4 volume before the fix to 33
+afterward, including the world. The CLI and steering card need no variation override. Existing databases
+require regeneration.
+
+The three transverse CAD choices now use distinct run keys: 10000204 for \texttt{noWedges}, 10000206 for
+\texttt{forwardWedges}, and 10000207 for \texttt{midpointWedges}. Each uses \texttt{default} and has its own
+copies of the same two native pipe volumes and their materials. The dedicated transverse card selects the
+companion CAD system. Regeneration replaces only the beamline systems in the selected experiment and removes
+stale named banks; unrelated detector rows in an aggregate database are retained.
+
+All 17 configured beamline runs construct with the expected SQLite row counts. The semantic comparator
+passes all 15 native-geometry, 15 material, and 14 CAD comparisons against the GEMC2 source. A direct
+database comparison preserves all physical fields, allowing only the transverse run-key changes and
+the additional native copies. Repeated generation produces identical rows apart from database IDs,
+and an aggregate-database check preserves unrelated rows exactly.
+
+This is a database-selection repair. STL files, placements, material definitions, and the measured mesh
+optimizations are unchanged; no new tracking-speed measurement is attributed to it. The retained
+\texttt{data/beamline\_run\_selection/} evidence includes before/after database fixtures, the original
+command's construction logs, all-run construction and comparator logs, validation results, and provenance
+hashes. Historical benchmark archives retain their original inputs and source labels.

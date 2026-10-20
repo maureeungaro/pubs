@@ -1,0 +1,77 @@
+{
+  "validation_date": "2026-10-19",
+  "documentation_date": "2026-10-20",
+  "raw_triangles": 26798,
+  "cured_triangles": 13614,
+  "triangle_reduction_percent": 49.1977013209941,
+  "transport_events": 0,
+  "performance_benchmark": false,
+  "runs": [
+    {
+      "run": 11,
+      "variation": "default",
+      "factory": "text",
+      "completed": true,
+      "native_rows": 537,
+      "cad_rows": 3
+    },
+    {
+      "run": 11,
+      "variation": "default",
+      "factory": "sqlite",
+      "completed": true,
+      "native_rows": 537,
+      "cad_rows": 3
+    },
+    {
+      "run": 3029,
+      "variation": "rga_spring2018",
+      "factory": "text",
+      "completed": true,
+      "native_rows": 537,
+      "cad_rows": 3
+    },
+    {
+      "run": 3029,
+      "variation": "rga_spring2018",
+      "factory": "sqlite",
+      "completed": true,
+      "native_rows": 537,
+      "cad_rows": 3
+    },
+    {
+      "run": 4763,
+      "variation": "rga_fall2018",
+      "factory": "text",
+      "completed": true,
+      "native_rows": 537,
+      "cad_rows": 3
+    },
+    {
+      "run": 4763,
+      "variation": "rga_fall2018",
+      "factory": "sqlite",
+      "completed": true,
+      "native_rows": 537,
+      "cad_rows": 3
+    }
+  ],
+  "diagnostics": {
+    "full-default-overlap": {
+      "GeomVol1002_blocks": 1,
+      "reported_penetration_um": [
+        52.6119
+      ]
+    },
+    "entry-window-raw": {
+      "GeomVol1002_blocks": 0,
+      "reported_penetration_um": []
+    },
+    "entry-window-cured": {
+      "GeomVol1002_blocks": 1,
+      "reported_penetration_um": [
+        52.4771
+      ]
+    }
+  }
+}

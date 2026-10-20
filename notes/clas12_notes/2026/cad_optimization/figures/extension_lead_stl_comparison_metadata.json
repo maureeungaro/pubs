@@ -1,0 +1,26 @@
+{
+  "moller-cone-extension-lead-fill": {
+    "original": {
+      "sha256": "5613bed48c6fb696b98be86c734045af6460904b22ced514a5cde8ccf38bdb88",
+      "triangles": 10594
+    },
+    "optimized": {
+      "sha256": "ea95201f26dfeeeb6799418cff3dfec97def974fcff8b963d0aecff828ffccd2",
+      "triangles": 8000
+    },
+    "bounds_mm": [
+      [
+        -117.0625991821289,
+        -117.37489318847656,
+        -519.9929809570312
+      ],
+      [
+        117.37406158447266,
+        117.375,
+        -170.63296508789062
+      ]
+    ],
+    "elevation": 22,
+    "azimuth": 35
+  }
+}

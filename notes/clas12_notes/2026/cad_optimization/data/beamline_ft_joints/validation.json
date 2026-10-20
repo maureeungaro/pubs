@@ -1,0 +1,221 @@
+{
+  "affected_runs": [
+    11,
+    3029,
+    5874,
+    6150,
+    11620,
+    16000,
+    18304,
+    20000,
+    21000
+  ],
+  "meshes_changed": [
+    "moller-cone-extension-inner",
+    "moller-cone-extension-lead-case",
+    "moller-cone-extension-lead-fill",
+    "moller-cone-extension-tungsten-addon",
+    "moller_cone"
+  ],
+  "other_STL_hashes": "unchanged in all three runtime trees",
+  "placements_and_materials": "unchanged; GEMC2 all tables and GEMC3 physical rows match snapshots",
+  "SQLite_variation": "default",
+  "byte_reproduction": "pass",
+  "production_checks": {
+    "contacts": {
+      "moller-cone-extension-inner / FTInnerShield": 0,
+      "moller-cone-extension-inner / FTFlange": 0,
+      "moller-cone-extension-lead-case / FTFlange": 0,
+      "moller-cone-extension-lead-case / moller-cone-extension-lead-fill": 0,
+      "moller-cone-extension-lead-fill / moller-cone-extension-inner": 0,
+      "moller_cone / moller-cone-extension-inner": 0,
+      "moller_cone_tip / moller_cone": 0,
+      "moller-cone-extension-tungsten-addon / moller_cone": 0
+    },
+    "Geant4_checks": [
+      {
+        "seed": 12345,
+        "overlap_points": 20000,
+        "exceptions": {},
+        "log": "optimized-assembly-12345.log"
+      },
+      {
+        "seed": 12346,
+        "overlap_points": 20000,
+        "exceptions": {},
+        "log": "optimized-assembly-12346.log"
+      },
+      {
+        "seed": 12347,
+        "overlap_points": 20000,
+        "exceptions": {},
+        "log": "optimized-assembly-12347.log"
+      }
+    ],
+    "independent_containment_and_distances": {
+      "moller-cone-extension-inner / FTInnerShield": {
+        "contained_vertices": [
+          0,
+          0
+        ],
+        "minimum_vertex_surface_distance_mm": 0.06204466350448989
+      },
+      "moller-cone-extension-inner / FTFlange": {
+        "contained_vertices": [
+          0,
+          0
+        ],
+        "minimum_vertex_surface_distance_mm": 0.05364990234375
+      },
+      "moller-cone-extension-lead-case / FTFlange": {
+        "contained_vertices": [
+          0,
+          0
+        ],
+        "minimum_vertex_surface_distance_mm": 0.02001953125
+      },
+      "moller-cone-extension-lead-case / moller-cone-extension-lead-fill": {
+        "contained_vertices": [
+          0,
+          0
+        ],
+        "minimum_vertex_surface_distance_mm": 0.01995735366449004
+      },
+      "moller-cone-extension-lead-fill / moller-cone-extension-inner": {
+        "contained_vertices": [
+          0,
+          0
+        ],
+        "minimum_vertex_surface_distance_mm": 0.05350252514304399
+      },
+      "moller_cone / moller-cone-extension-inner": {
+        "contained_vertices": [
+          0,
+          0
+        ],
+        "minimum_vertex_surface_distance_mm": 0.054602514885729474
+      },
+      "moller_cone_tip / moller_cone": {
+        "contained_vertices": [
+          0,
+          0
+        ],
+        "minimum_vertex_surface_distance_mm": 0.052978515625
+      },
+      "moller-cone-extension-tungsten-addon / moller_cone": {
+        "contained_vertices": [
+          0,
+          0
+        ],
+        "minimum_vertex_surface_distance_mm": 0.09419840276601082
+      }
+    }
+  },
+  "full_construction": {
+    "original_11": {
+      "Geant4_volumes_with_world": 33,
+      "exceptions": {},
+      "log": "full-original-11.log"
+    },
+    "original_3029": {
+      "Geant4_volumes_with_world": 33,
+      "exceptions": {},
+      "log": "full-original-3029.log"
+    },
+    "original_5874": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {
+        "GeomVol1002": 21
+      },
+      "log": "full-original-5874.log"
+    },
+    "original_6150": {
+      "Geant4_volumes_with_world": 33,
+      "exceptions": {},
+      "log": "full-original-6150.log"
+    },
+    "original_11620": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {
+        "GeomVol1002": 21
+      },
+      "log": "full-original-11620.log"
+    },
+    "original_16000": {
+      "Geant4_volumes_with_world": 33,
+      "exceptions": {},
+      "log": "full-original-16000.log"
+    },
+    "original_18304": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {
+        "GeomVol1002": 21
+      },
+      "log": "full-original-18304.log"
+    },
+    "original_20000": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {
+        "GeomVol1002": 21
+      },
+      "log": "full-original-20000.log"
+    },
+    "original_21000": {
+      "Geant4_volumes_with_world": 33,
+      "exceptions": {},
+      "log": "full-original-21000.log"
+    },
+    "optimized_11": {
+      "Geant4_volumes_with_world": 33,
+      "exceptions": {},
+      "log": "full-optimized-11.log"
+    },
+    "optimized_3029": {
+      "Geant4_volumes_with_world": 33,
+      "exceptions": {},
+      "log": "full-optimized-3029.log"
+    },
+    "optimized_5874": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {},
+      "log": "full-optimized-5874.log"
+    },
+    "optimized_6150": {
+      "Geant4_volumes_with_world": 33,
+      "exceptions": {},
+      "log": "full-optimized-6150.log"
+    },
+    "optimized_11620": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {},
+      "log": "full-optimized-11620.log"
+    },
+    "optimized_16000": {
+      "Geant4_volumes_with_world": 33,
+      "exceptions": {},
+      "log": "full-optimized-16000.log"
+    },
+    "optimized_18304": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {},
+      "log": "full-optimized-18304.log"
+    },
+    "optimized_20000": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {},
+      "log": "full-optimized-20000.log"
+    },
+    "optimized_21000": {
+      "Geant4_volumes_with_world": 33,
+      "exceptions": {},
+      "log": "full-optimized-21000.log"
+    }
+  },
+  "constructed_runs": 17,
+  "semantic_comparator": {
+    "native_geometry": 15,
+    "materials": 15,
+    "CAD": 14,
+    "result": "pass"
+  }
+}

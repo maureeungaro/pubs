@@ -1,0 +1,171 @@
+\FloatBarrier
+\section{FT inner shield}
+\label{sec:ft-shield}
+
+The shield/cone interference recorded below is resolved by the subsequent cone revision in
+Section~\ref{sec:moller-cone}.
+
+The initial revision below is retained with its original measurements. The final smooth-flange configuration
+supersedes it; see Section~\ref{sec:ft-shield-smooth}.
+
+The ninth beamline study renames taggerInnerShield to FTInnerShield in all nine source and runtime CAD
+variations that contain it and in nine GEMC2 SQLite CAD rows. The tungsten-alloy material beamline\_W,
+color, mother, and original passive placement are retained: z = 1643.00 mm with a 180-degree y rotation.
+This downstream grooved tube is distinct from the previously optimized FTInnerShieldAndFlange at z = 1273.27
+mm.
+
+The original contains 44,122 triangles, 7,404 boundary edges, 67 surface components, 351 non-manifold
+vertices, and 1,750 faces selected by the intersection check. Its open and non-manifold surface has no
+defined solid volume. Routine welding and generic hole filling do not establish a sound surface. A
+deterministic reconstruction uses the measured tube cross-section, chamfers, flange fillets, and feature
+positions, without Poisson reconstruction. The central bore remains 60 mm in diameter, nominal tube outer
+diameter 80 mm, length 665 mm, and flange outer radius 100 mm. The flange occupies local z = -625 to -605
+mm.
+
+Two longitudinal grooves at local azimuths 45 and 135 degrees are retained after the flange. Each is 6 mm
+wide and 3 mm deep, extending from local z = -575 mm to the tube end at z = 0. A 6 mm axial end radius
+blends its floor into the tube. All 26 flange through-holes and the single radial tube hole are closed. The
+requested 0.5 mm recess threshold is applied to axial depth: eight 5.75 mm deep conical recesses, sixteen
+0.6 mm face chamfers, and two 10 mm deep counterbores remain as blind features. The conical mouths
+originally touch the flange outer rim exactly; reducing each mouth radius from 10.00 to 9.95 mm removes that
+tangency while retaining their depths and 4.25 mm bottom radii.
+
+The reference uses 128 angular segments for the main profile, sampled fillet/end curves, and Boolean cuts
+for the grooves and retained recesses. A 0.000001 mm weld removes near-coincident Boolean vertices and their
+sliver facets before saving the reference. Its 15,100 triangles define a closed manifold component of genus
+one with volume 1938424.030371 mm$^3$. Protected quadric simplification retains 9,404 groove, recess, and
+corner faces at their saved float32 coordinates and produces 13,500 triangles, a 69.40\% reduction from the
+engineering mesh. File size decreases from 2,206,184 to 675,084 bytes.
+
+The final mesh remains one closed manifold component of genus one, with no selected self-intersections or
+zero-area facets. Bounds remain [-100, -100, -665] to [100, 100, 0] mm apart from negligible source z
+rounding. Minimum triangle altitude is 0.000344255 mm. Bidirectional sampling against the rebuilt reference
+gives a maximum change of 0.023925 mm, below the 0.05 mm guard. Simplification changes reconstructed volume
+by -0.00058479\%. These are sampled checks, not proven global surface bounds or a comparison to a certified
+original mass.
+
+Independent VTK containment probes verify all 58 requested inside/outside results across groove floors,
+blind recesses, filled bolt shafts, the filled tube hole, and the central passage. Outside the removed
+drilling walls and flange drilling region, retained source profile vertices lie within 0.050719 mm of the
+reconstructed surface. One-way vertex, edge, and face sampling of the retained raw tube/rim subset gives a
+larger maximum 0.969091 mm: the reconstruction replaces coarse, disconnected raw facets with the measured
+nominal profile. This original-to-final difference is distinct from the much smaller subsequent decimation
+error. The original mass change and detector-response equivalence are not established. The builder
+reproduces the final STL and reconstructed reference byte for byte from the archived engineering input.
+
+\begin{table}[htbp]
+\centering
+\caption{Original and optimized downstream FT inner shield.}
+\label{tab:ft-shield-mesh}
+\begin{tabular}{lrr}
+\toprule
+Quantity & Original & Optimized \\
+\midrule
+Triangles & 44,122 & 13,500 \\
+Bytes & 2,206,184 & 675,084 \\
+Boundary edges & 7,404 & 0 \\
+Surface components & 67 & 1 \\
+Solid volume (mm$^3$) & Undefined & 1938412.695 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A two-volume assembly includes the unchanged main-cone at z = 1589.27 mm and the shield at its original
+placement. The 10,000-point Geant4 test reports five shield/cone overlaps in each case, confirming the
+pre-existing interference remains. Original construction has three solid warnings; optimized assembly
+construction has one warning from the unchanged cone. The isolated optimized shield loads with no Geant4
+exceptions. Full default beamline construction completes without missing meshes, with 1 solid warning and 9
+overlap reports involving the shield/cone and downstream/adapter geometry. The original placements are
+retained rather than adjusted in this study. All fifteen native geometry/material and fourteen CAD
+variations pass the semantic comparison against GEMC2.
+
+Two independent tracking comparisons isolate the shield in air. The first uses the defective engineering
+mesh as baseline; the second uses the hole-filled, grooved, unreduced reference to measure simplification
+after repair. Each uses the fixed GEMC3 executable snapshot from the flange study, matched 5 GeV
+target-origin primaries uniform in solid angle over 0.7--2.7 degrees and full azimuth, FTFP\_BERT without
+optics or magnetic field, one thread, default production cuts, and no GUI or event output. Five
+alternating-order repetitions use seeds 12345--12349 and 200 events per electron, proton, positive-pion, and
+neutron run. Each comparison contains 52 processes, including zero-event startup and isolated overlap
+checks. All 104 processes complete normally and all eighty transport runs report 200 events.
+
+Engineering-original/optimized median transport wall-time ratios are 0.923, 1.007, 0.992, 0.924 for
+electrons, protons, positive pions, and neutrons respectively. Ratios below one denote slower optimized
+tracking. The engineering surface carries solid and navigation warnings; repair and authorized hole closure
+change material boundaries, so this comparison does not attribute timing changes solely to triangle count.
+Original material volume is undefined.
+
+\begin{table}[htbp]
+\centering
+\caption{Median transport wall seconds per 200 events: engineering comparison.}
+\label{tab:ft-shield-engineering}
+\begin{tabular}{lrrr}
+\toprule
+Particle & Original & Optimized & Original/optimized \\
+\midrule
+e- & 22.46020 & 24.33720 & 0.923 \\
+proton & 2.23604 & 2.22142 & 1.007 \\
+pi+ & 2.96617 & 2.99009 & 0.992 \\
+neutron & 1.99370 & 2.15824 & 0.924 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Rebuilt-reference/optimized median ratios are 1.087, 1.075, 1.075, 1.049 in the same particle order. This
+comparison retains the same blind recesses, closed holes, grooves, and material, with the recorded small
+decimation volume difference. Both isolated reference and optimized fixtures have no Geant4 exceptions.
+These short workload results are reported separately from the repair comparison; small ratios are sensitive
+to timing variation and stochastic transport. They do not establish full CLAS12 speedup or response
+equivalence. The optimized mesh is faster in all 20 matched particle/seed pairs in the reference comparison.
+Median startup simulation time changes from 1.063410 to 0.770623 s, with peak startup RSS 199.94 to 136.06
+MiB.
+
+\begin{table}[htbp]
+\centering
+\caption{Median transport wall seconds per 200 events: reconstructed-reference comparison.}
+\label{tab:ft-shield-reference}
+\begin{tabular}{lrrr}
+\toprule
+Particle & Reference & Optimized & Reference/optimized \\
+\midrule
+e- & 26.31760 & 24.21180 & 1.087 \\
+proton & 2.37224 & 2.20600 & 1.075 \\
+pi+ & 3.16977 & 2.94966 & 1.075 \\
+neutron & 2.28295 & 2.17616 & 1.049 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Geant4 exception counts across each isolated 52-process comparison.}
+\label{tab:ft-shield-warnings}
+\begin{tabular}{lrrr}
+\toprule
+Diagnostic & Original & Optimized & Reference \\
+\midrule
+GeomSolids1001 & 52 & 0 & 0 \\
+GeomSolids1002 & 0 & 0 & 0 \\
+GeomNav1002 & 45 & 0 & 0 \\
+GeomNav0003 & 0 & 0 & 0 \\
+GeomVol1002 & 0 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/ft_shield_stl_comparison.pdf}
+\caption{Original FT inner shield (left) and rebuilt, simplified shield (right). Matched cameras and bounds
+use original coordinates; longitudinal grooves are retained.}
+\label{fig:ft-shield-stl-comparison}
+\end{figure}
+
+\FloatBarrier
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/ft_shield_details.pdf}
+\caption{Matched flange underside views and tube sections at local z = -100 mm. Flange recesses remain
+blind, and both longitudinal grooves remain after through-hole closure.}
+\label{fig:ft-shield-details}
+\end{figure}

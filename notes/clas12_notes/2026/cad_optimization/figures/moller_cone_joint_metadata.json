@@ -1,0 +1,9 @@
+{
+  "source_hashes": {
+    "main-cone.stl": "7340c0b4fe9d0640e95860dce5f3c702487ef43d1cb733ad6c0d9e499c64671e",
+    "moller_cone.stl": "6640a8179f48d30242da0fafcc7c4f4c1be97022a73c4d94e0291221dcae96e0",
+    "FTInnerShield.stl": "0d770b71801eb4c9167c57d325314eb3ac11995431335532fe8828906b48a82a"
+  },
+  "shield_offset_in_cone_mm": -53.73,
+  "method": "Actual triangulated intersections with y = 0 plane"
+}

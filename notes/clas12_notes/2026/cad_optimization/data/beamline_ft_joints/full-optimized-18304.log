@@ -1,0 +1,162 @@
+
+ Parsing check.yaml
+
+*******************************************************************
+ [32m[1mgemc[0m  version: [32mdev[0m
+ Called from: [32m/private/tmp/outer-flange-study/bin[0m
+ Install: [32m/private/tmp/outer-flange-study/bin[0m
+ Released on: [32m2026-10-11[0m
+ GEMC Reference: [32mNucl. Instrum. Meth. A, Volume 959, 163422 (2020)[0m
+ GEMC Homepage: [32mhttps://gemc.github.io/home[0m
+ Author: [32mMaurizio Ungaro, ungaro@jlab.org[0m
+
+*******************************************************************
+
+ Saving options to gemc.saved_configuration.yaml
+
+ [ gemc - 1 ] INFO L0: Using 1 threads out of 12 available cores.
+ [ gemc - 2 ] INFO L0: Starting random engine RanluxEngine with seed 12345
+
+**************************************************************
+ Geant4 version Name: geant4-11-04-patch-03 [MT]   (01-October-2026)
+  << in Multi-threaded mode >> 
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+G4PhysListRegistry::GetModularPhysicsList <FTFP_BERT>, as "FTFP_BERT" with extensions ""
+<<< Geant4 Physics List simulation engine: FTFP_BERT
+
+<<< Reference Physics List FTFP_BERT is built
+
+ [ gemc - 3 ] INFO L0: Running /geometry/test/run with 50 points.
+[33m [ gsystem - 1 ] [1m[33mWarning: [0m[0m[33mAdding ROOT volume using <G4Box 15*m 15*m 15*m G4_AIR> to gvolumesMap.[0m
+Checking overlaps for volume beamline/airPipe2:0 (G4Tubs) ... OK! 
+Checking overlaps for volume beamline/airPipe:0 (G4Polycone) ... OK! 
+Checking overlaps for volume beamline/al_window_vacuum_entrance:0 (G4Tubs) ... OK! 
+Checking overlaps for volume beamline/beam_vacuum:0 (G4Polycone) ... OK! 
+Checking overlaps for volume beamline/vacuumInPipe1:0 (G4Tubs) ... OK! 
+Checking overlaps for volume beamline/vacuumInPipe2:0 (G4Tubs) ... OK! 
+Checking overlaps for volume beamline/vacuumInPipe3:0 (G4Tubs) ... OK! 
+Checking overlaps for volume beamline/vacuumPipe1:0 (G4Tubs) ... OK! 
+Checking overlaps for volume beamline/vacuumPipe2:0 (G4Tubs) ... OK! 
+Checking overlaps for volume beamline/vacuumPipe3:0 (G4Tubs) ... OK! 
+Checking overlaps for volume beamline_cad/Apex_Shield_Hub:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/Apex_Shield_Lead_Fill:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/Beamline_Adapter_1:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/Downstream_Beam_tube_Segment_1:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/Downstream_Beam_tube_Segment_2:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTFlange:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTInnerShield:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt1:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt2:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt3:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt4:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt5:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt6:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt7:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt8:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt9:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTOuterFlange:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTOuterMount:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/Torus_Exit_Shield_Casing:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/Torus_Exit_Shield_Lead_Fill:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/ft_adjuster:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/moller-cone-extension-lead-case:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/moller-cone-extension-lead-fill:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/moller-cone-extension-tungsten-addon:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/moller_cone:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/moller_cone_tip:0 (G4TessellatedSolid) ... OK! 
+ [ gdetector - 1 ] INFO L0: Tally summary: 
+ - 2 volumes
+ - 39 geant4 built volumes
+ - 0 sensitive detectors
+
+### Adding tracking cuts for neutron  TimeCut(ns)= 10000  KinEnergyCut(MeV)= 0
+G4WT0 > Running geometry overlaps check...
+G4WT0 > Checking overlaps for volume beamline/airPipe:0 (G4Polycone) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/airPipe2:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/al_window_vacuum_entrance:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/beam_vacuum:0 (G4Polycone) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumInPipe3:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumPipe1:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumInPipe1:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumPipe2:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumInPipe2:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumPipe3:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Apex_Shield_Hub:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Apex_Shield_Lead_Fill:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Beamline_Adapter_1:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Downstream_Beam_tube_Segment_1:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Downstream_Beam_tube_Segment_2:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTFlange:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShield:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt1:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt2:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt3:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt4:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt5:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt6:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt7:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt8:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt9:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTOuterFlange:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTOuterMount:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Torus_Exit_Shield_Casing:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Torus_Exit_Shield_Lead_Fill:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/ft_adjuster:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/moller-cone-extension-lead-case:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/moller-cone-extension-lead-fill:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/moller-cone-extension-tungsten-addon:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/moller_cone:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/moller_cone_tip:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Geometry overlaps check completed !
+G4WT0 > Running geometry overlaps check...
+G4WT0 > Checking overlaps for volume beamline/airPipe:0 (G4Polycone) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/airPipe2:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/al_window_vacuum_entrance:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/beam_vacuum:0 (G4Polycone) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumInPipe3:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumPipe1:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumInPipe1:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumPipe2:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumInPipe2:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumPipe3:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Apex_Shield_Hub:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Apex_Shield_Lead_Fill:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Beamline_Adapter_1:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Downstream_Beam_tube_Segment_1:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Downstream_Beam_tube_Segment_2:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTFlange:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShield:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt1:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt2:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt3:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt4:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt5:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt6:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt7:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt8:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt9:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTOuterFlange:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTOuterMount:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Torus_Exit_Shield_Casing:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Torus_Exit_Shield_Lead_Fill:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/ft_adjuster:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/moller-cone-extension-lead-case:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/moller-cone-extension-lead-fill:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/moller-cone-extension-tungsten-addon:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/moller_cone:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/moller_cone_tip:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Geometry overlaps check completed !
+ [ gemc - 4 ] INFO L0: Timing summary: total simulation time 1.81382 seconds.
+ [ gemc - 5 ] INFO L0: Simulation completed, arrivederci! 

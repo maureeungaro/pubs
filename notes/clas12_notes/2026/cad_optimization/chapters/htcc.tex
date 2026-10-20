@@ -1,0 +1,66 @@
+\FloatBarrier
+
+\section{HTCC CAD cone transfer and validation}
+\label{sec:htcc}
+
+The October 19 HTCC update transfers three cured GEMC3 meshes into the GEMC2 clas12Tags repository. These are
+the HTCC entry cone, Moller cone, and Moller-cone extension; they are separate from the beamline Moller-cone
+studies above. The active source and runtime copies match the GEMC3 assets byte for byte, and the unmodified
+GEMC2 engineering inputs are archived separately. Names, Rohacell material, passive 180-degree y rotations,
+and all run-dependent placements remain unchanged. The variations default, rga\_spring2018, and rga\_fall2018
+use runs 11, 3029, and 4763, respectively; the extension retains its additional 1 mm z shift.
+
+Curing merges vertices, closes mesh boundaries, and repairs orientation. The entry cone is simplified to 6,000
+triangles; the Moller cone additionally uses self-intersection removal and finishes at 5,866 triangles. The
+already-light extension retains 1,748 triangles. No additional engineering-hole filling or Poisson
+reconstruction is applied. Total stored triangles fall from 26,798 to 13,614, a 49.20\% reduction.
+Table~\ref{tab:htcc-mesh} lists the topology counts from the same PyMeshLab inspection.
+
+
+\begin{table}[htbp]
+\centering
+\caption{HTCC cone topology before and after the transferred curing and simplification.}
+\label{tab:htcc-mesh}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{llrrr}
+\toprule
+Mesh & Input & Triangles & Boundary edges & Non-manifold edges \\
+\midrule
+\texttt{htccCone} & Raw & 18,818 & 144 & 0 \\
+\texttt{htccCone} & Cured & 6,000 & 0 & 0 \\
+\texttt{htccMollerCone} & Raw & 6,232 & 0 & 45 \\
+\texttt{htccMollerCone} & Cured & 5,866 & 0 & 24 \\
+\texttt{htccMollerConeExt} & Raw & 1,748 & 0 & 0 \\
+\texttt{htccMollerConeExt} & Cured & 1,748 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All three cured meshes have zero boundary edges. The entry cone and extension have no non-manifold edges,
+while the Moller cone retains 24, reduced from 45 in the raw input. These edge counts depend on the mesh
+import and vertex-merging convention and should not be equated to affected-face counts. The largest change
+among the six axis-aligned entry-cone bounds is 0.737915 mm. The Moller cone and extension retain their
+original bounds exactly. Bounds agreement and zero boundary edges do not establish material-volume or surface
+equivalence, and the remaining non-manifold Moller-cone edges are an unresolved topology limitation.
+
+Validation uses GEMC 6.2 with Geant4 10.7.4, a local CCDB SQLite database, no magnetic field, no GUI, no event
+output, and zero transported events. Native-plus-CAD initialization uses STD + FTFP\_BERT + Optical. All three
+variations complete through both TEXT/CAD and SQLite/CAD, giving six successful initializations. For each
+variation, the 537 native TEXT rows match the effective SQLite geometry rows field by field; the three GXML
+CAD placements match their effective SQLite CAD rows. Native geometry and materials, CAD placements, and the
+SQLite database were retained by the transfer.
+
+The full default SQLite overlap check reports entry-cone contact with htccEntryWindow. An isolated cone/window
+fixture uses STD + FTFP\_BERT, CHECK\_OVERLAPS=1000, RANDOM=12345, and the unchanged window geometry and cone
+placement. The cured cone produces one GeomVol1002 exception block, with reported penetration of at least
+52.4771 micrometres; the matched raw-cone check produces none. The full default check reports at least 52.6119
+micrometres for the same pair, approximately 0.053 mm. The two Moller cones report no overlap in that default
+assembly check. The entry-window overlap remains unresolved in the transferred mesh; successful construction
+does not certify an overlap-free assembly. Sampled penetration reports are not exact overlap depths or
+volumes.
+
+The retained zero-event logs verify construction and provide geometry diagnostics. They are not repeated
+loading or tracking benchmarks, so no CPU, wall-time, memory, or transport-speed gain is assigned to the
+49.20\% triangle reduction. Photon yield, material budget, detector response, and particle navigation
+equivalence require separate studies. The HTCC archive retains raw and cured STLs, input fixtures, scripts,
+topology hashes, validation logs, and database-row snapshots.

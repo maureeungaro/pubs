@@ -1,0 +1,178 @@
+{
+  "placements": {
+    "default": {
+      "triangle_contacts": 0,
+      "contained_vertices": [
+        0,
+        0
+      ],
+      "minimum_vertex_to_surface_distance_mm": 0.19993810714054552,
+      "radial_bound": {
+        "cone_minimum_surface_radius_mm": 40.187892106640135,
+        "shield_maximum_radius_bound_mm": 40.00000116129543,
+        "radial_separation_bound_mm": 0.18789094534470507
+      },
+      "shield_offset_in_cone_mm": [
+        -0.0,
+        0.0,
+        -53.73000000000002
+      ],
+      "common_z_interval_mm": [
+        -170.63296508789062,
+        -53.72999954223633
+      ]
+    },
+    "rga_spring2018": {
+      "triangle_contacts": 0,
+      "contained_vertices": [
+        0,
+        0
+      ],
+      "minimum_vertex_to_surface_distance_mm": 0.19993810714054552,
+      "radial_bound": {
+        "cone_minimum_surface_radius_mm": 40.187892106640135,
+        "shield_maximum_radius_bound_mm": 40.00000116129543,
+        "radial_separation_bound_mm": 0.18789094534470507
+      },
+      "shield_offset_in_cone_mm": [
+        -0.0,
+        0.0,
+        -53.73000000000002
+      ],
+      "common_z_interval_mm": [
+        -170.63296508789062,
+        -53.72999954223633
+      ]
+    },
+    "rgb_spring2019": {
+      "triangle_contacts": 0,
+      "contained_vertices": [
+        0,
+        0
+      ],
+      "minimum_vertex_to_surface_distance_mm": 0.19993810714054552,
+      "radial_bound": {
+        "cone_minimum_surface_radius_mm": 40.187892106640135,
+        "shield_maximum_radius_bound_mm": 40.00000116129543,
+        "radial_separation_bound_mm": 0.18789094534470507
+      },
+      "shield_offset_in_cone_mm": [
+        -0.0,
+        0.0,
+        -53.73000000000002
+      ],
+      "common_z_interval_mm": [
+        -170.63296508789062,
+        -53.72999954223633
+      ]
+    },
+    "rgc_summer2022": {
+      "triangle_contacts": 0,
+      "contained_vertices": [
+        0,
+        0
+      ],
+      "minimum_vertex_to_surface_distance_mm": 0.19993810714054552,
+      "radial_bound": {
+        "cone_minimum_surface_radius_mm": 40.187892106640135,
+        "shield_maximum_radius_bound_mm": 40.00000116129543,
+        "radial_separation_bound_mm": 0.18789094534470507
+      },
+      "shield_offset_in_cone_mm": [
+        -0.0,
+        0.0,
+        -53.73000000000002
+      ],
+      "common_z_interval_mm": [
+        -170.63296508789062,
+        -53.72999954223633
+      ]
+    },
+    "rgd_fall2023": {
+      "triangle_contacts": 0,
+      "contained_vertices": [
+        0,
+        0
+      ],
+      "minimum_vertex_to_surface_distance_mm": 199.1091930715696,
+      "radial_bound": null,
+      "shield_offset_in_cone_mm": [
+        -0.0,
+        0.0,
+        -369.73
+      ],
+      "common_z_interval_mm": null
+    },
+    "rge_spring2024": {
+      "triangle_contacts": 0,
+      "contained_vertices": [
+        0,
+        0
+      ],
+      "minimum_vertex_to_surface_distance_mm": 199.1091930715696,
+      "radial_bound": null,
+      "shield_offset_in_cone_mm": [
+        -0.0,
+        0.0,
+        -369.73
+      ],
+      "common_z_interval_mm": null
+    },
+    "rgf_spring2020": {
+      "triangle_contacts": 0,
+      "contained_vertices": [
+        0,
+        0
+      ],
+      "minimum_vertex_to_surface_distance_mm": 199.1091930715696,
+      "radial_bound": null,
+      "shield_offset_in_cone_mm": [
+        -0.0,
+        0.0,
+        -369.73
+      ],
+      "common_z_interval_mm": null
+    },
+    "rgk_winter2018": {
+      "triangle_contacts": 0,
+      "contained_vertices": [
+        0,
+        0
+      ],
+      "minimum_vertex_to_surface_distance_mm": 199.1091930715696,
+      "radial_bound": null,
+      "shield_offset_in_cone_mm": [
+        -0.0,
+        0.0,
+        -369.73
+      ],
+      "common_z_interval_mm": null
+    },
+    "rgl_spring2025": {
+      "triangle_contacts": 0,
+      "contained_vertices": [
+        0,
+        0
+      ],
+      "minimum_vertex_to_surface_distance_mm": 0.19993810714054552,
+      "radial_bound": {
+        "cone_minimum_surface_radius_mm": 40.187892106640135,
+        "shield_maximum_radius_bound_mm": 40.00000116129543,
+        "radial_separation_bound_mm": 0.18789094534470507
+      },
+      "shield_offset_in_cone_mm": [
+        -0.0,
+        0.0,
+        -53.73000000000002
+      ],
+      "common_z_interval_mm": [
+        -170.63296508789062,
+        -53.72999954223633
+      ]
+    }
+  },
+  "vtk_version": "9.6.2",
+  "cone_sha256": "6640a8179f48d30242da0fafcc7c4f4c1be97022a73c4d94e0291221dcae96e0",
+  "shield_sha256": "0d770b71801eb4c9167c57d325314eb3ac11995431335532fe8828906b48a82a",
+  "method": "Collision/containment in both directions; clipped triangle polygons bound surface radii. Vertex-to-surface distances are sampled; the radial separation is a geometric bound."
+}

@@ -1,0 +1,98 @@
+\FloatBarrier
+\section{Downstream joint clearance revision}
+\label{sec:downstream-joints}
+
+A subsequent revision resolves the remaining contacts between Downstream\_Beam\_tube\_Segment\_1 and both
+Beamline\_Adapter\_1 and Downstream\_Beam\_tube\_Segment\_2. The nominal cylindrical gaps are 0.0508 and
+0.0127 mm, but the mating surfaces use 24-sided polygons with different angular alignments. Both alignments
+are present in the engineering inputs. The reported 0.0398313 and 0.0568888 mm Geant4 penetration samples
+are not global maxima. Polygon support planes give deficits of 0.342860 and 0.395184 mm at the respective
+joints. Independent triangle checks find 240 and 239 contacts in the previous meshes; positive
+vertex-distance samples alone would not establish clearance.
+
+Only Segment 1 is changed. Its entrance socket radius increases from 60.325 to 60.771702 mm through nominal
+z = 5048.376367 mm, followed by a 1 mm transition back to the original bore. Two additional 24-vertex rings
+replace one long wall band with three bands, adding 96 triangles. The downstream socket radius increases
+from 70.6628 to 71.162277 mm over its existing downstream wall interval. Both sockets retain their angular
+grids. The adapter, Segment 2, all outer bounds, materials, passive placements, and the open beam passage
+remain unchanged.
+
+The revised Segment 1 contains 5,096 triangles and 254,884 bytes, compared with 5,000 triangles and 250,084
+bytes before relief. It remains one closed manifold genus-one component with no detected self-intersections
+or zero-area triangles. Final volume is 6710837.897365 mm$^3$, removing 0.604764\% steel relative to the
+previous closed mesh. Volume change against the original annularly repaired reference is -0.620987\%. The
+original engineering surface remains open and has no valid mass. Maximum sampled distance from that source
+remains 0.745438 mm, within the existing 0.75 mm guard. The current builder reproduces the relieved STL byte
+for byte.
+
+Independent clipping of neighboring triangles to their shared axial intervals gives minimum clearance to all
+48 socket-wall triangle planes of 0.100019 mm at the adapter and 0.100022 mm at Segment 2. Triangle
+collisions and bidirectional vertex containment are zero for both pairs. All eleven source CAD
+configurations containing the three volumes use the same identity placements, so the same joint checks apply
+to each. The separate 10,000-point Geant4 assembly test gives eight overlap reports before relief and no
+exceptions afterward. Full default beamline construction now finishes without missing meshes, solid
+warnings, or overlap reports. These checks cover the tested configuration and do not certify every possible
+complete detector assembly.
+
+\begin{table}[htbp]
+\centering
+\caption{Segment 1 before and after socket relief.}
+\label{tab:downstream-joints-mesh}
+\setlength{\tabcolsep}{9pt}
+\begin{tabular}{lrrr}
+\toprule
+Quantity & Previous & Relieved & Change \\
+\midrule
+Triangles & 5,000 & 5,096 & +96 \\
+Bytes & 250,084 & 254,884 & +4,800 \\
+Boundary edges & 0 & 0 & 0 \\
+Volume (mm$^3$) & 6751669.593 & 6710837.897 & -0.604764\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A new tracking comparison includes the adapter and both downstream segments in air. Its baseline is the
+previous optimized closed meshes, not the original engineering inputs. The fixed GEMC3 executable,
+materials, identity placements, matched 5 GeV target-origin primaries over 0.1--1.3 degrees and full
+azimuth, FTFP\_BERT, no optics or field, one thread, default production cuts, and disabled GUI/event output
+are identical. Five alternating-order repetitions use seeds 12345--12349 and 200 events per electron,
+proton, positive-pion, and neutron run. All 52 processes finish normally and all forty transport runs report
+200 events.
+
+Previous/relieved median transport ratios are 0.981, 1.000, 1.008, 0.960 for electrons, protons, positive
+pions, and neutrons respectively. Ratios above one denote faster tracking. The previous assembly produces 18
+GeomNav1002, 4 GeomVol1002 exception blocks across the recorded processes; the relieved assembly produces 15
+GeomNav1002 blocks. The remaining navigation warnings occur in the unchanged bellows region rather than
+either relieved joint. Their z coordinates lie between 10177.906421 and 10281.864247 mm; all 1,741 triangles
+intersecting the combined before/after warning interval are identical. Clean overlap checks therefore do not
+establish warning-free tracking. These timings include overlap removal, local steel removal, and 96
+additional facets. They measure the repair workload rather than a pure decimation gain, and do not establish
+full CLAS12 performance or physics-response equivalence. The earlier study chapters and archives retain
+their historical measurements.
+
+\begin{table}[htbp]
+\centering
+\caption{Median transport wall seconds per 200 events: three-part downstream assembly.}
+\label{tab:downstream-joints-tracking}
+\setlength{\tabcolsep}{9pt}
+\begin{tabular}{lrrr}
+\toprule
+Particle & Previous & Relieved & Previous/relieved \\
+\midrule
+e- & 11.25010 & 11.46960 & 0.981 \\
+proton & 1.75729 & 1.75794 & 1.000 \\
+pi+ & 1.93580 & 1.92101 & 1.008 \\
+neutron & 1.09550 & 1.14060 & 0.960 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/downstream_joint_clearance.pdf}
+\caption{Actual socket and neighboring tube polygons projected onto the most restrictive socket face at each
+joint. The previous socket cuts into its neighbor; the relieved socket provides at least 0.1 mm face
+clearance while the neighboring tube remains unchanged.}
+\label{fig:downstream-joints}
+\end{figure}

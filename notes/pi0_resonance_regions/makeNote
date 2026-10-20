@@ -1,0 +1,26 @@
+#!/bin/zsh
+
+# collecting bibliographies and copying images
+base_dir=/opt/projects/pubs/notes/pi0_resonance_regions
+ana_dirs=(pid/electron pid/proton vertex fiducial/electron e_kin_cor)
+
+rm -rf pi0_bib.tex img
+mkdir img
+
+echo "\\\begin{thebibliography}{mybib}" > pi0_bib.tex
+for b in $ana_dirs
+do
+  echo " > processing bib and images in $b "
+  grep bibitem "$base_dir"/"$b"/*bib*.tex >>  pi0_bib.tex
+  ./$b/copy_images.sh
+done
+echo "\\\end{thebibliography}" >> pi0_bib.tex
+
+# pi0 content
+rm -rf pi0.tex
+cat header.tex pi0_content.tex > pi0.tex
+
+scons -c
+scons
+
+

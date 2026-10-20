@@ -1,0 +1,53 @@
+name: Pubs pdfs build
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on all pushes
+  push:
+  pull_request:
+    types:
+      # only run workflow when a commit is pushed to a PR branch
+      # instead of running for all other PR events
+      - synchronize
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+
+  # Build the geometry and plugins, runs jcard in tests directory
+  build_pdf:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: maureeungaro/latex:latest
+    name: PDF ${{ matrix.doc }}
+    strategy:
+      fail-fast: false
+      matrix:
+        doc:
+          - notes/pi0_resonance_regions/pid/electron
+          - notes/pi0_resonance_regions/pid/proton
+          - notes/pi0_resonance_regions/vertex
+          - notes/pi0_resonance_regions/fiducial/electron
+          - notes/pi0_resonance_regions/fiducial/proton
+          - notes/pi0_resonance_regions/e_kin_cor
+          - notes/pi0_resonance_regions
+          - notes/pi0_delta
+          - papers/pi0_delta
+          - proceedings/chep2023
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+      - name: Fix Ownership
+        run: |
+          # recent versions of Git refuse to touch a repository whose on-disk owner 
+          # doesn’t match the UID that is running the command
+          # mark the workspace (and any nested path) as safe
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: ${{ matrix.doc }}
+        run: |
+          ./ci/test_pdf.sh -d ${{ matrix.doc }}

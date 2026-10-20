@@ -1,0 +1,149 @@
+\FloatBarrier
+\section{FT and Moller-cone interface clearances}
+\label{sec:ft-joints}
+
+This October 16 revision corrects the remaining FT/Moller-cone interfaces after the individual mesh studies.
+Five meshes receive local material-removing operations: the inner extension, lead fill, lead case, main cone,
+and tungsten add-on. FTInnerShield, FTFlange, and the cone tip remain byte-identical. Placements, passive
+rotations, materials, names, and run keys are unchanged. All SQLite banks remain in \texttt{default}, indexed
+by run number.
+
+Several original engineering bores are coarse inscribed polygons. Their facets intrude into neighboring
+surfaces even when nominal vertex radii agree. The inner extension also has a small shoulder at the main-cone
+joint. The corrections use closed, polygonal cutters whose faces enclose the desired circular clearance
+profiles, together with a conservative convex envelope of the actual lead fill. Cutters are intermediate
+construction objects and are not additional detector volumes.
+
+The inner-extension bore clears the placed FT shield, which is offset -369.73 mm in the common cone frame. Its
+end is relieved around the unchanged flange bore. The lead-fill bore clears the inner extension. A scaled
+convex envelope of the pre-clearance lead fill supplies at least 0.02002 mm plane clearance before final
+casing simplification; a separate local cutter clears the unchanged flange. This envelope reduces casing
+material loss from 4.4702\% in a rejected circular-envelope trial to 1.2093\%. The main cone receives a short
+stepped relief around the inner-extension shoulder and a profiled opening around the cone tip. Its upper face
+moves from z=712.002991 to 711.950012 mm. The add-on bore clears the main cone by a nominal 0.10 mm radial
+profile margin. The health report retains every cutter profile and input hash.
+
+All five corrected meshes retain one closed manifold component and their previous genera, with no detected
+self-intersections or zero-area facets. The existing beam passages and radial ports remain open. A 0.0001 mm
+weld of the saved float32 meshes removes numerical fragments. The casing is simplified from its boolean
+reference to 16000 triangles with endpoint collapses and a maximum sampled deviation of 0.007648 mm; its
+volume changes by +0.00002023\% during this simplification. It contains more triangles than the earlier
+10000-triangle casing but remains below the engineering source. The eight-part total changes from 59540 to
+60100 triangles (+0.9405\%). The material changes in Table~\ref{tab:ft-joints-meshes} are intentional
+clearance removals, separate from the earlier decimation volume guards.
+
+An initial cut end face passed overlap checks but produced nine GeomNav1002 boundary-navigation warnings
+during tracking. Retriangulating that annular face as an angular strip retains its exact surface, boundary
+coordinates, triangle count, and material volume. The previously failing electron seed passes after this
+change. The initial benchmark is retained as an excluded trial and is not used in the final timing table.
+Canonical STL output changes facet order and cyclic starting vertices without changing geometry or winding;
+all eight outputs and the casing reference reproduce byte for byte.
+
+Independent placed-surface checks find zero triangle contacts and zero contained vertices in both directions
+at all eight corrected interfaces. Table~\ref{tab:ft-joints-gaps} gives minimum vertex-to-surface samples, not
+proven global distance bounds. Three seeds (12345--12347) with 20000-point Geant4 overlap checks produce no
+exceptions. The previous eight-part fixture produced 21 GeomVol1002 blocks. Matched meridian sections show the
+local changes in Figures~\ref{fig:ft-joints-1} and~\ref{fig:ft-joints-2}; the FT shield uses its actual
+placement offset.
+
+The isolated tracking comparison includes the corrected eight-part assembly in run 5874 with \texttt{default}.
+Matched 5 GeV electrons, protons, positive pions, and neutrons originate at the target, uniform in solid angle
+over 0.8--4.8 degrees and full azimuth. FTFP\_BERT uses one thread, default production cuts, no field or
+optical processes, and no GUI or event output. Five alternating-order repetitions use 200 events per particle
+and seeds 12345--12349. Executable and primary hashes are retained. Table~\ref{tab:ft-joints-tracking} reports
+median Geant4 beamOn wall times excluding initialization, before/corrected ratios, and paired ratio ranges.
+These timings include changed clearances and material, so they are not a measurement of decimation alone.
+
+Median tracking ratios are 0.8568, 0.8541, 0.8465, 0.8920 for electrons, protons, positive pions, and
+neutrons, respectively. The corrected median tracking times are 12.1--18.1\% longer than the pre-clearance
+baseline. Faster-pair counts are 0/5, 0/5, 0/5, 0/5 in the same order. All 52 final benchmark processes
+complete. The 26 corrected processes report no Geant4 exceptions. The baseline overlap diagnostic reports 21
+GeomVol1002 blocks. The raw per-seed results retain process CPU, wall time, initialization, and memory
+separately from transport.
+
+Loading process wall time changes from 1.279579 to 1.272204 s; CPU changes from 1.190 to 1.230 s. Startup peak
+RSS is 180.453 versus 180.188 MiB. The earlier individual-piece benchmarks remain historical measurements of
+their stated geometries.
+
+All 9 affected complete run configurations pass construction without Geant4 exceptions. All 17 beamline
+configurations pass volume-count construction checks, and the comparator passes 15 native geometry, 15
+material, and 14 CAD comparisons. Direct database checks preserve all GEMC2 tables and all GEMC3 physical
+rows; every other STL retains its previous hash in all three runtime trees. The historical add-on optimization
+remains reproducible using the archived main-cone dependency. These geometry and isolated timing checks do not
+establish detector-response equivalence or full CLAS12 performance.
+
+\begin{table}[htbp]
+\centering
+\caption{Triangle counts and volume changes relative to the previous optimized meshes.}
+\label{tab:ft-joints-meshes}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrr}
+\toprule
+Mesh & Before & Corrected & Volume change (\%) \\
+\midrule
+Inner extension & 12500 & 11200 & -0.689274 \\
+Lead case & 10000 & 16000 & -1.209323 \\
+Lead fill & 8000 & 3958 & -0.192478 \\
+Tungsten add-on & 12000 & 8356 & -0.374681 \\
+Main cone & 5000 & 8546 & -0.118539 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Placed interface checks; distances sample vertices against the other surface.}
+\label{tab:ft-joints-gaps}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrr}
+\toprule
+Interface & Sampled gap (mm) & Contacts \\
+\midrule
+Shield / inner extension & 0.062045 & 0 \\
+Flange / inner extension & 0.053650 & 0 \\
+Flange / case & 0.020020 & 0 \\
+Case / lead fill & 0.019957 & 0 \\
+Lead fill / inner extension & 0.053503 & 0 \\
+Main cone / inner extension & 0.054603 & 0 \\
+Cone tip / main cone & 0.052979 & 0 \\
+Add-on / main cone & 0.094198 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Eight-part tracking; five repetitions of 200 events per particle.}
+\label{tab:ft-joints-tracking}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrrr}
+\toprule
+Particle & Before (s) & After (s) & Ratio & Paired range \\
+\midrule
+Electron & 19.36220 & 22.59820 & 0.8568 & 0.8543--0.8773 \\
+Proton & 5.29483 & 6.19904 & 0.8541 & 0.8507--0.8899 \\
+Positive pion & 6.94979 & 8.21029 & 0.8465 & 0.8001--0.8923 \\
+Neutron & 5.55687 & 6.22962 & 0.8920 & 0.8433--0.9094 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+\begin{figure}[p]
+\centering
+\includegraphics[width=\linewidth,height=.80\textheight,keepaspectratio]{figures/ft_joint_sections_1.pdf}
+\caption{Matched meridian sections before and after the local clearance corrections. Blue and orange identify
+the two
+named parts. Coordinates use the common passive cone frame; the shield is translated by its actual offset.
+Solid outlines are sections of the stored STLs, with matched axes within each pair.}
+\label{fig:ft-joints-1}
+\end{figure}
+\begin{figure}[p]
+\centering
+\includegraphics[width=\linewidth,height=.80\textheight,keepaspectratio]{figures/ft_joint_sections_2.pdf}
+\caption{Matched meridian sections before and after the local clearance corrections. Blue and orange identify
+the two
+named parts. Coordinates use the common passive cone frame; the shield is translated by its actual offset.
+Solid outlines are sections of the stored STLs, with matched axes within each pair.}
+\label{fig:ft-joints-2}
+\end{figure}

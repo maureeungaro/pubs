@@ -1,0 +1,10 @@
+/private/tmp/check_joint_containment.py:10: PyVistaDeprecationWarning: This filter is deprecated. Use `select_interior_points` instead.
+  counts.append(int(pv.PolyData(source.points).select_enclosed_points(target,tolerance=1e-9,check_surface=True)['SelectedPoints'].sum()))
+moller-cone-extension-inner / FTInnerShield 0.06204466350448989
+moller-cone-extension-inner / FTFlange 0.05364990234375
+moller-cone-extension-lead-case / FTFlange 0.02001953125
+moller-cone-extension-lead-case / moller-cone-extension-lead-fill 0.01995735366449004
+moller-cone-extension-lead-fill / moller-cone-extension-inner 0.05350252514304399
+moller_cone / moller-cone-extension-inner 0.054602514885729474
+moller_cone_tip / moller_cone 0.052978515625
+moller-cone-extension-tungsten-addon / moller_cone 0.09419840276601082

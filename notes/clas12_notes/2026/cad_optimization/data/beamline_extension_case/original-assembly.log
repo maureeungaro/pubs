@@ -1,0 +1,150 @@
+
+ Parsing check.yaml
+
+*******************************************************************
+ [32m[1mgemc[0m  version: [32mdev[0m
+ Called from: [32m/private/tmp/outer-flange-study/bin[0m
+ Install: [32m/private/tmp/outer-flange-study/bin[0m
+ Released on: [32m2026-10-11[0m
+ GEMC Reference: [32mNucl. Instrum. Meth. A, Volume 959, 163422 (2020)[0m
+ GEMC Homepage: [32mhttps://gemc.github.io/home[0m
+ Author: [32mMaurizio Ungaro, ungaro@jlab.org[0m
+
+*******************************************************************
+
+ Saving options to gemc.saved_configuration.yaml
+
+ [ gemc - 1 ] INFO L0: Using 1 threads out of 12 available cores.
+ [ gemc - 2 ] INFO L0: Starting random engine RanluxEngine with seed 12345
+
+**************************************************************
+ Geant4 version Name: geant4-11-04-patch-03 [MT]   (01-October-2026)
+  << in Multi-threaded mode >> 
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+G4PhysListRegistry::GetModularPhysicsList <FTFP_BERT>, as "FTFP_BERT" with extensions ""
+<<< Geant4 Physics List simulation engine: FTFP_BERT
+
+<<< Reference Physics List FTFP_BERT is built
+
+ [ gemc - 3 ] INFO L0: Running /geometry/test/run with 10000 points.
+[33m [ gsystem - 1 ] [1m[33mWarning: [0m[0m[33mAdding ROOT volume using <G4Box 15*m 15*m 15*m G4_AIR> to gvolumesMap.[0m
+Checking overlaps for volume beamline_cad/FTFlange:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/moller-cone-extension-lead-case:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/moller-cone-extension-lead-fill:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume beamline_cad/moller-cone-extension-lead-fill:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)
+          overlap at local point (-45.7063,10.5358,-485.833) by 620.011 um  (max of 264 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+ [ gdetector - 1 ] INFO L0: Tally summary: 
+ - 1 volumes
+ - 5 geant4 built volumes
+ - 0 sensitive detectors
+
+### Adding tracking cuts for neutron  TimeCut(ns)= 10000  KinEnergyCut(MeV)= 0
+G4WT0 > Running geometry overlaps check...
+G4WT0 > Checking overlaps for volume beamline_cad/FTFlange:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume beamline_cad/FTFlange:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)
+          overlap at local point (-7.98008,-46.6944,-520.001) by 246.929 um  (max of 76 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)
+          overlap at local point (-8.68557,-46.8252,-520.188) by 195.305 um  (max of 3 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume beamline_cad/moller-cone-extension-lead-case:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume beamline_cad/moller-cone-extension-lead-case:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)
+          overlap at local point (26.7246,-114.059,-520.982) by 200.273 um  (max of 3 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume beamline_cad/moller-cone-extension-lead-fill:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume beamline_cad/moller-cone-extension-lead-fill:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)
+          overlap at local point (26.4301,38.8197,-471.047) by 656.209 um  (max of 2533 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Geometry overlaps check completed !
+G4WT0 > Running geometry overlaps check...
+G4WT0 > Checking overlaps for volume beamline_cad/FTFlange:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume beamline_cad/FTFlange:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)
+          overlap at local point (47.2237,-4.14584,-520.596) by 206.984 um  (max of 102 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)
+          overlap at local point (12.1476,-45.8506,-521.183) by 25.9034 um  (max of 3 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume beamline_cad/moller-cone-extension-lead-case:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume beamline_cad/moller-cone-extension-lead-case:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)
+          overlap at local point (-116.548,-10.4681,-522.24) by 280.933 um  (max of 3 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume beamline_cad/moller-cone-extension-lead-fill:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume beamline_cad/moller-cone-extension-lead-fill:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)
+          overlap at local point (-44.5516,14.7565,-486.91) by 688.649 um  (max of 2682 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Geometry overlaps check completed !
+ [ gemc - 4 ] INFO L0: Timing summary: total simulation time 1.36992 seconds.
+ [ gemc - 5 ] INFO L0: Simulation completed, arrivederci! 

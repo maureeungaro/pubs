@@ -1,0 +1,595 @@
+{
+  "retained_source_vertex_max_mm": 0.050718698650598526,
+  "point_checks": [
+    {
+      "label": "longitudinal groove",
+      "point_mm": [
+        26.870057685088806,
+        26.870057685088803,
+        -100.0
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "longitudinal groove",
+      "point_mm": [
+        25.455844122715714,
+        25.45584412271571,
+        -100.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "longitudinal groove",
+      "point_mm": [
+        -26.870057685088803,
+        26.870057685088806,
+        -100.0
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "longitudinal groove",
+      "point_mm": [
+        -25.45584412271571,
+        25.455844122715714,
+        -100.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "conical recess",
+      "point_mm": [
+        90.0,
+        0.0,
+        -622.0
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "filled large bolt shaft",
+      "point_mm": [
+        90.0,
+        0.0,
+        -610.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "conical recess",
+      "point_mm": [
+        63.63961030678928,
+        63.63961030678927,
+        -622.0
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "filled large bolt shaft",
+      "point_mm": [
+        63.63961030678928,
+        63.63961030678927,
+        -610.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "conical recess",
+      "point_mm": [
+        5.5109105961630896e-15,
+        90.0,
+        -622.0
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "filled large bolt shaft",
+      "point_mm": [
+        5.5109105961630896e-15,
+        90.0,
+        -610.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "conical recess",
+      "point_mm": [
+        -63.63961030678927,
+        63.63961030678928,
+        -622.0
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "filled large bolt shaft",
+      "point_mm": [
+        -63.63961030678927,
+        63.63961030678928,
+        -610.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "conical recess",
+      "point_mm": [
+        -90.0,
+        1.1021821192326179e-14,
+        -622.0
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "filled large bolt shaft",
+      "point_mm": [
+        -90.0,
+        1.1021821192326179e-14,
+        -610.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "conical recess",
+      "point_mm": [
+        -63.639610306789294,
+        -63.63961030678927,
+        -622.0
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "filled large bolt shaft",
+      "point_mm": [
+        -63.639610306789294,
+        -63.63961030678927,
+        -610.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "conical recess",
+      "point_mm": [
+        -1.6532731788489267e-14,
+        -90.0,
+        -622.0
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "filled large bolt shaft",
+      "point_mm": [
+        -1.6532731788489267e-14,
+        -90.0,
+        -610.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "conical recess",
+      "point_mm": [
+        63.63961030678926,
+        -63.639610306789294,
+        -622.0
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "filled large bolt shaft",
+      "point_mm": [
+        63.63961030678926,
+        -63.639610306789294,
+        -610.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "retained face chamfer",
+      "point_mm": [
+        74.17135683526166,
+        -50.97656109830093,
+        -624.7
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "retained face chamfer",
+      "point_mm": [
+        74.17135683526166,
+        -50.97656109830093,
+        -605.3
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "filled chamfered bolt shaft",
+      "point_mm": [
+        74.17135683526166,
+        -50.97656109830093,
+        -615.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "retained face chamfer",
+      "point_mm": [
+        74.17135683526169,
+        50.976561098300884,
+        -624.7
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "retained face chamfer",
+      "point_mm": [
+        74.17135683526169,
+        50.976561098300884,
+        -605.3
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "filled chamfered bolt shaft",
+      "point_mm": [
+        74.17135683526169,
+        50.976561098300884,
+        -615.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "retained face chamfer",
+      "point_mm": [
+        16.40119706439903,
+        88.49294143940203,
+        -624.7
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "retained face chamfer",
+      "point_mm": [
+        16.40119706439903,
+        88.49294143940203,
+        -605.3
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "filled chamfered bolt shaft",
+      "point_mm": [
+        16.40119706439903,
+        88.49294143940203,
+        -615.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "retained face chamfer",
+      "point_mm": [
+        -16.40119706439915,
+        88.49294143940203,
+        -624.7
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "retained face chamfer",
+      "point_mm": [
+        -16.40119706439915,
+        88.49294143940203,
+        -605.3
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "filled chamfered bolt shaft",
+      "point_mm": [
+        -16.40119706439915,
+        88.49294143940203,
+        -615.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "retained face chamfer",
+      "point_mm": [
+        -74.17135683526178,
+        -50.97656109830092,
+        -624.7
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "retained face chamfer",
+      "point_mm": [
+        -74.17135683526178,
+        -50.97656109830092,
+        -605.3
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "filled chamfered bolt shaft",
+      "point_mm": [
+        -74.17135683526178,
+        -50.97656109830092,
+        -615.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "retained face chamfer",
+      "point_mm": [
+        -16.40119706439929,
+        -88.49294143940203,
+        -624.7
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "retained face chamfer",
+      "point_mm": [
+        -16.40119706439929,
+        -88.49294143940203,
+        -605.3
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "filled chamfered bolt shaft",
+      "point_mm": [
+        -16.40119706439929,
+        -88.49294143940203,
+        -615.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "retained face chamfer",
+      "point_mm": [
+        16.40119706439908,
+        -88.49294143940203,
+        -624.7
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "retained face chamfer",
+      "point_mm": [
+        16.40119706439908,
+        -88.49294143940203,
+        -605.3
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "filled chamfered bolt shaft",
+      "point_mm": [
+        16.40119706439908,
+        -88.49294143940203,
+        -615.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "retained face chamfer",
+      "point_mm": [
+        -74.16799978392734,
+        52.8319998070622,
+        -624.7
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "retained face chamfer",
+      "point_mm": [
+        -74.16799978392734,
+        52.8319998070622,
+        -605.3
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "filled chamfered bolt shaft",
+      "point_mm": [
+        -74.16799978392734,
+        52.8319998070622,
+        -615.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "stepped counterbore",
+      "point_mm": [
+        88.25531,
+        -17.63515,
+        -620.0
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "filled stepped bolt shaft",
+      "point_mm": [
+        88.25531,
+        -17.63515,
+        -610.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "stepped counterbore",
+      "point_mm": [
+        -88.25531,
+        17.63515,
+        -620.0
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "label": "filled stepped bolt shaft",
+      "point_mm": [
+        -88.25531,
+        17.63515,
+        -610.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "filled plain bolt shaft",
+      "point_mm": [
+        83.1491579260158,
+        34.44150891285808,
+        -615.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "filled plain bolt shaft",
+      "point_mm": [
+        34.44150891285808,
+        83.1491579260158,
+        -615.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "filled plain bolt shaft",
+      "point_mm": [
+        -34.441508912858076,
+        83.1491579260158,
+        -615.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "filled plain bolt shaft",
+      "point_mm": [
+        -83.1491579260158,
+        34.44150891285809,
+        -615.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "filled plain bolt shaft",
+      "point_mm": [
+        -83.14915792601582,
+        -34.44150891285807,
+        -615.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "filled plain bolt shaft",
+      "point_mm": [
+        -34.441508912858055,
+        -83.14915792601582,
+        -615.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "filled plain bolt shaft",
+      "point_mm": [
+        34.4415089128581,
+        -83.1491579260158,
+        -615.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "filled plain bolt shaft",
+      "point_mm": [
+        83.14915792601582,
+        -34.44150891285806,
+        -615.0
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "filled tube hole",
+      "point_mm": [
+        35.0,
+        0.0,
+        -46.7
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "label": "central beam passage",
+      "point_mm": [
+        0.0,
+        0.0,
+        -100.0
+      ],
+      "expected_inside": false,
+      "inside": false
+    }
+  ],
+  "retained_tube_and_rim_source_to_final_sampled_mm": {
+    "RMS": 0.10181916505098343,
+    "diag_mesh_0": 722.6513671875,
+    "diag_mesh_1": 722.6513682267542,
+    "max": 0.9690911173820496,
+    "mean": 0.040316734462976456,
+    "min": 0.0,
+    "n_samples": 225352
+  },
+  "source_comparison_excludes": "Flange drilling/recesses and removed tube-hole walls; one-way sampled check"
+}

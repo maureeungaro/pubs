@@ -1,0 +1,141 @@
+\FloatBarrier
+
+\section{Warnings and geometry validation}
+
+Table~\ref{tab:4} separates construction diagnostics from transport warnings. GeomVol1002 denotes placement
+overlap or mother-containment reports; GeomSolids1001 records invalid-facet or surface-sampling warnings, and
+GeomSolids1002 records rejected facets. GeomNav1002 denotes a stuck track for which the navigator attempts a
+corrective push. GeomNav0003 denotes a stuck track abandoned with an event-abort request. Each exception header
+is counted once rather than counting repeated wording within the warning.
+
+\begin{table}[htbp]
+
+\caption{Construction warning counts and total navigation warnings across five transport runs.}
+
+\label{tab:4}
+
+\centering
+
+\small
+
+\setlength{\tabcolsep}{4pt}
+
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}Xrrr@{}}
+
+\toprule
+
+Diagnostic & Original & Cones only & Full port \\
+
+\midrule
+
+GeomVol1002 (construction) & 1505 & 1515 & 1420 \\
+
+GeomSolids1001 (construction) & 857 & 857 & 2 \\
+
+GeomSolids1002 (construction) & 857 & 857 & 0 \\
+
+All construction warning lines & 3219 & 3229 & 1422 \\
+
+Mother containment reports & 792 & 792 & 517 \\
+
+Sibling overlap reports & 713 & 723 & 903 \\
+
+Optical electrons navigation & 405 & 395 & 0 \\
+
+Electrons navigation & 3486 & 3562 & 0 \\
+
+Protons navigation & 1946 & 1959 & 0 \\
+
+Positive pions navigation & 1899 & 1923 & 0 \\
+
+Neutrons navigation & 1810 & 1852 & 1 \\
+
+GeomNav0003 (event-abort requests) & 0 & 2 & 0 \\
+
+GeomVol1002 (transport) & 0 & 4 & 0 \\
+
+HAD\_QGSPARTICIPANTS\_002 (transport) & 0 & 0 & 1 \\
+
+\bottomrule
+
+\end{tabularx}
+
+\end{table}
+
+The additional transport exception rows retain other diagnostics across all five workloads. The cone-only case
+requests one event abort in optical electron seed 12347 and one in nonoptical electron seed 12349, both
+following stuck tracks in the retained original frame geometry. Each reports that the track is abandoned after
+25 zero steps. These runs exit normally and print timing footers, but that does not mean every event completed
+its intended transport. Their timings are retained as measurements of this defective configuration, not
+equivalent completed-event throughput. No GeomNav0003 event-abort request appears in the Original or Full port
+cases. These mixed-workload totals are not event-normalized rates.
+
+Original construction produces 3219 warning lines, while Full port produces 1422. Its diagnostic CPU time
+changes from 237.66 to 257.80 s. Overlap-check timing is excluded from transport and initialization
+comparisons. The stochastic construction check provides evidence of improvement where counts fall, but
+remaining reports and unsampled intersections must be assessed separately.
+
+Without overlap checking, each complete original import emits 857 invalid-facet warnings (GeomSolids1001) and
+857 rejected-facet warnings (GeomSolids1002). The optimized import emits none of these warnings. Geant4
+therefore excludes malformed facets from the original imported solids; the triangle counts in Table~\ref{tab:1}
+describe the files rather than accepted Geant4 facets.
+
+An independent binary-STL check finds exactly 857 zero-area triangles in the original files: 452 in S1-LW, 396
+in S1-RW, six in Epoxy, and three in NFrame. The optimized active meshes contain no exact zero-area triangles.
+This check uses the cross product of the stored single-precision vertex differences and tests for an exactly
+zero vector; it does not establish that all meshes are watertight or free of near-degenerate facets.
+
+Mother-containment reports change from 792 to 517; sibling-overlap reports change from 713 to 903. The changed
+hierarchy alters what is tested, so these are counts of emitted reports rather than a one-to-one comparison of
+all physical intersections. Native mirror and PMT/light-guide reports remain, and the new walls and nose also
+appear in the diagnostic logs. Resolving the remaining geometry problems is separate from the performance port.
+
+The ported geometry generator reproduces the packaged TEXT data exactly for all six LTCC variations. The shared
+CI helpers select runs and variations; a missing mapping for run 4763 was corrected before comparison. For each
+run, SQLite geometry and CAD are selected at the latest default row with run less than or equal to RUNNO. Row
+counts are checked first, followed by the repository's row-by-row geometry comparison. All comparisons pass,
+all CAD mother and mesh references resolve, and the generation preserves all non-LTCC SQLite rows. One-event
+SQLite runtime smoke tests also complete for all six runs without G4Exception reports. Table~\ref{tab:5}
+records the effective configurations and their row counts.
+
+\begin{table}[htbp]
+
+\caption{Ported model: validated run-dependent TEXT/SQLite geometry and CAD row counts.}
+
+\label{tab:5}
+
+\centering
+
+\small
+
+\setlength{\tabcolsep}{4pt}
+
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}rXrr@{}}
+
+\toprule
+
+RUNNO & TEXT variation & Geometry & CAD \\
+
+\midrule
+
+11 & default & 2377 & 7 \\
+
+3029 & rga\_spring2018 & 1667 & 7 \\
+
+4763 & rga\_fall2018 & 957 & 7 \\
+
+6150 & rgb\_spring2019 & 957 & 7 \\
+
+11323 & rgb\_spring2020 & 957 & 7 \\
+
+15016 & rgm\_fall2021\_H & 1667 & 7 \\
+
+\bottomrule
+
+\end{tabularx}
+
+\end{table}

@@ -1,0 +1,131 @@
+\FloatBarrier
+\section{Beamline port and validation: October 12 progress}
+
+\subsection{Current port and validation status}
+
+The current GEMC3 port includes all fifteen native beamline geometry and material variations: ten
+standard run-mapped configurations and five detector-local configurations. It follows the active GEMC2
+beamline dispatch; historical builders and disabled HD-ice daughters are not activated. All published
+volumes use passive placement, and this passive system requires no sensitive digitization plugin or
+optical surface.
+
+Native geometry is published as beamline. The beamline\_cad companion contains the ten standard CAD
+configurations plus DDVCS, while beamline\_transverse\_cad provides noWedges, forwardWedges, and
+midpointWedges as separately selectable alternatives. Both native and CAD systems use the SQLite factory;
+mesh coordinates remain in millimetres at scale one. The runtime inventory contains 51 STL files: 30
+beamline meshes and seven meshes for each transverse alternative. The two apex meshes are optimized as
+described below; the remaining 49 retain the original tessellation.
+
+The semantic comparator passes all fifteen native geometry variations, fifteen material variations, and
+fourteen CAD placement variations against the GEMC2 TEXT/GXML references. The ten standard runs also
+match the named native and CAD entries in the GEMC2 SQLite reference. Seven identical duplicate CAD rows
+at run 20000 are represented once per volume name; the DDVCS configuration is also available at its
+detector-local run. This preserves the effective geometry without duplicating physical placements.
+
+Saved construction smoke logs show completion for all fifteen native configurations and all three
+transverse CAD alternatives with overlap checking enabled. These zero-event checks validate geometry
+construction and mesh resolution, not particle transport or detector response. A separate default
+beamline check after the apex optimization also exits normally with check\_overlaps=2, but records eight
+GeomSolids1001 and nineteen GeomVol1002 exception blocks. These counts describe reported solid defects
+and overlap/containment warnings, not unique defective meshes or overlapping pairs. The unchanged CAD
+meshes still include surface-hole and facet-orientation diagnostics.
+
+The current status is therefore a port with passing semantic comparisons and completed construction
+checks, with residual geometry diagnostics retained for follow-up. Full-beamline transport performance,
+overlap freedom, material-budget equivalence, magnetic-field operation, and full CLAS12 background
+response equivalence have not been established by these checks. The isolated apex measurements below are
+reported separately from this broader port validation.
+
+\subsection{Apex shielding optimization and isolated benchmark}
+
+The next optimization step covers two beamline apex shielding meshes. The lead fill is reduced from 2,880 to
+1,440 triangles; the hub is renamed from Apex\_Shield\_PCAL\_Hub to Apex\_Shield\_Hub and reduced from
+36,354 to 20,000 triangles. The two-file total falls from 39,234 to 21,440 triangles, a 45.4\% reduction.
+Stored bytes fall from 1,961,868 to 1,072,168. All other beamline meshes remain unchanged. Materials,
+coordinates, and passive placements are preserved in both repositories; all eleven CAD variations and eleven
+run-dependent GEMC2 hub rows use the new name.
+
+Topology-preserving quadric edge collapse keeps the lead opening and both hub components. Faces adjoining
+hub edges with dihedral angles above five degrees are protected; no holes are filled and no component is
+removed. Both originals and optimized meshes are closed and manifold, with no detected self-intersections or
+exact zero-area triangles. Bidirectional checks include every vertex and approximately 200,000 edge/surface
+samples in each direction. The largest sampled deviations are 0.0425 mm for the lead fill and 0.0209 mm for
+the hub; these are sampled measurements, not proven global Hausdorff bounds. The lead volume changes by
+-0.002287\%; the hub volume changes by -0.00000100\%. The original engineering meshes remain archived, and
+the builder reproduces the optimized STL files byte for byte.
+
+Table~\ref{tab:apex-meshes} summarizes the unchanged topology and reduced mesh inventory.
+
+\begin{table}[htbp]
+\centering
+\caption{Apex engineering and optimized triangle counts; topology is preserved.}
+\label{tab:apex-meshes}
+\begin{tabular}{lrrrr}
+\toprule
+Mesh & Original & Optimized & Components & Genus \\
+\midrule
+Lead fill & 2,880 & 1,440 & 1 & 1 \\
+Hub & 36,354 & 20,000 & 2 & 2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+This follow-on benchmark uses one GEMC3 development executable dated October 11, 2026 and Geant4 11.4.3 on
+macOS arm64. Its timings are independent of the GEMC2 LTCC measurements above and must not be compared
+across engines. Only the apex pair is loaded, in air, with its original lead and carbon-steel materials.
+Native beamline geometry and other CAD solids are omitted to isolate the substitution. Both cases use
+FTFP\_BERT without optical processes, zero magnetic field, one thread, identical default production cuts,
+and no GUI or event output. Fixed 5 GeV primaries originate at the target, uniform in solid angle from 0.25
+to 3.5 degrees and over full azimuth. This aperture illuminates the forward shielding rather than reusing
+the larger LTCC angular acceptance.
+
+There are five alternating-order repetitions per case, with seeds 12345--12349 and matching LUND files for
+each seed. Each electron, proton, positive-pion, and neutron run contains 200 events (1,000 events per
+particle per geometry). This first beamline sample is smaller than the LTCC sample: showers in the thick
+lead dominate its per-event cost. Tables report medians of the five runs. Initialization uses separate
+zero-event runs with overlap checking disabled. Transport uses GEMC3's elapsed wall time since beamOn;
+unlike the LTCC events-only CPU column, this is a wall-clock measure. Whole-process user plus system CPU
+time and peak resident memory are also retained in the dataset. The original/optimized transport ratios are
+ratios of medians, with no initialization subtraction.
+
+Table~\ref{tab:apex-timing} gives loading, peak memory, and particle-transport measurements.
+
+\begin{table}[htbp]
+\centering
+\caption{Median pair-only measurements over five repetitions. Transport entries are wall seconds
+per 200 events; the final column is a ratio of medians.}
+\label{tab:apex-timing}
+\begin{tabular}{lrrr}
+\toprule
+Quantity & Original & Optimized & Original/optimized \\
+\midrule
+Initialization wall seconds & 1.151 & 0.970 & 1.19 \\
+Loading peak RSS (MiB) & 186.09 & 153.64 & 1.21 \\
+e- & 36.801 & 18.311 & 2.01 \\
+proton & 9.329 & 5.174 & 1.80 \\
+pi+ & 12.877 & 6.747 & 1.91 \\
+neutron & 8.206 & 4.643 & 1.77 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Median zero-event simulation wall time decreases by 15.7\% and loading peak resident memory decreases by
+17.4\%. All 52 measured processes exit normally and print completion footers; all forty transport runs
+report their 200 requested events. No Geant4 exception blocks are recorded in the pair-only loading,
+transport, or separate check\_overlaps=2 construction samples. The semantic comparator passes all fifteen
+native geometry/material variations and all fourteen CAD variations after the rename. Full beamline
+construction checks are retained separately; remaining unoptimized meshes can still produce warnings. These
+measurements establish the performance of this isolated sample, not full CLAS12 speed, overlap freedom, or
+background-response equivalence. Stochastic shower histories may differ despite matched primaries and seeds.
+
+\FloatBarrier
+
+Figure~\ref{fig:apex-stl} compares the stored triangulations with matched cameras and bounds.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/apex_stl_comparison.pdf}
+\caption{Original (left) and optimized (right) apex lead-fill and hub STL surfaces. The views use
+identical cameras and millimetre coordinates within each pair; edges show the stored triangulations.}
+\label{fig:apex-stl}
+\end{figure}

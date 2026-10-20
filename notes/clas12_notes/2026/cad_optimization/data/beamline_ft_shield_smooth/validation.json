@@ -1,0 +1,76 @@
+{
+  "full": {
+    "completed": true,
+    "exit_code": 0,
+    "check_overlaps": 2,
+    "exception_codes": {
+      "GeomSolids1001": 1,
+      "GeomVol1002": 8
+    },
+    "overlap_reports": [
+      "Overlap is detected for volume beamline_cad/Downstream_Beam_tube_Segment_1:0 (G4TessellatedSolid) with beamline_cad/Beamline_Adapter_1:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/Downstream_Beam_tube_Segment_2:0 (G4TessellatedSolid) with beamline_cad/Downstream_Beam_tube_Segment_1:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/main-cone:0 (G4TessellatedSolid) with beamline_cad/FTInnerShield:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/Beamline_Adapter_1:0 (G4TessellatedSolid) with beamline_cad/Downstream_Beam_tube_Segment_1:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/FTInnerShield:0 (G4TessellatedSolid) with beamline_cad/main-cone:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/main-cone:0 (G4TessellatedSolid) with beamline_cad/FTInnerShield:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/Beamline_Adapter_1:0 (G4TessellatedSolid) with beamline_cad/Downstream_Beam_tube_Segment_1:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/main-cone:0 (G4TessellatedSolid) with beamline_cad/FTInnerShield:0 (G4TessellatedSolid)"
+    ],
+    "log": "full-construction.log",
+    "command": [
+      "/private/tmp/outer-flange-study/bin/gemc",
+      "smoke.yaml"
+    ]
+  },
+  "assembly_previous": {
+    "completed": true,
+    "exit_code": 0,
+    "check_overlaps": 10000,
+    "exception_codes": {
+      "GeomSolids1001": 1,
+      "GeomVol1002": 5
+    },
+    "overlap_reports": [
+      "Overlap is detected for volume beamline_cad/main-cone:0 (G4TessellatedSolid) with beamline_cad/FTInnerShield:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/FTInnerShield:0 (G4TessellatedSolid) with beamline_cad/main-cone:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/main-cone:0 (G4TessellatedSolid) with beamline_cad/FTInnerShield:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/FTInnerShield:0 (G4TessellatedSolid) with beamline_cad/main-cone:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/main-cone:0 (G4TessellatedSolid) with beamline_cad/FTInnerShield:0 (G4TessellatedSolid)"
+    ],
+    "log": "assembly_previous-construction.log",
+    "command": [
+      "/private/tmp/outer-flange-study/bin/gemc",
+      "smoke.yaml"
+    ]
+  },
+  "assembly_optimized": {
+    "completed": true,
+    "exit_code": 0,
+    "check_overlaps": 10000,
+    "exception_codes": {
+      "GeomSolids1001": 1,
+      "GeomVol1002": 5
+    },
+    "overlap_reports": [
+      "Overlap is detected for volume beamline_cad/main-cone:0 (G4TessellatedSolid) with beamline_cad/FTInnerShield:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/FTInnerShield:0 (G4TessellatedSolid) with beamline_cad/main-cone:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/main-cone:0 (G4TessellatedSolid) with beamline_cad/FTInnerShield:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/FTInnerShield:0 (G4TessellatedSolid) with beamline_cad/main-cone:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/main-cone:0 (G4TessellatedSolid) with beamline_cad/FTInnerShield:0 (G4TessellatedSolid)"
+    ],
+    "log": "assembly_optimized-construction.log",
+    "command": [
+      "/private/tmp/outer-flange-study/bin/gemc",
+      "smoke.yaml"
+    ]
+  },
+  "mesh_reproduction": "Optimized STL reproduced byte for byte from the archived engineering mesh",
+  "semantic_comparator": {
+    "native_geometry_variations": 15,
+    "material_variations": 15,
+    "CAD_variations": 14,
+    "result": "pass"
+  },
+  "GEMC2_database": "Nine existing FTInnerShield CAD rows and all other database rows retained unchanged"
+}

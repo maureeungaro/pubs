@@ -1,0 +1,54 @@
+{
+  "full": {
+    "completed": true,
+    "exit_code": 0,
+    "check_overlaps": 2,
+    "exception_codes": {
+      "GeomSolids1001": 4,
+      "GeomVol1002": 10
+    },
+    "overlap_reports": [
+      "Overlap is detected for volume beamline_cad/Downstream_Beam_tube_Segment_1:0 (G4TessellatedSolid) with beamline_cad/Beamline_Adapter_1:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/Downstream_Beam_tube_Segment_2:0 (G4TessellatedSolid) with beamline_cad/Downstream_Beam_tube_Segment_1:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/outerMount:0 (G4TessellatedSolid) with beamline_cad/outerFlange:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/taggerInnerShield:0 (G4TessellatedSolid) with beamline_cad/main-cone:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/Beamline_Adapter_1:0 (G4TessellatedSolid) with beamline_cad/Downstream_Beam_tube_Segment_1:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/main-cone:0 (G4TessellatedSolid) with beamline_cad/taggerInnerShield:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/taggerInnerShield:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/Beamline_Adapter_1:0 (G4TessellatedSolid) with beamline_cad/Downstream_Beam_tube_Segment_1:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/main-cone:0 (G4TessellatedSolid) with beamline_cad/taggerInnerShield:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/outerFlange:0 (G4TessellatedSolid) with beamline_cad/outerMount:0 (G4TessellatedSolid)"
+    ],
+    "command": [
+      "/opt/projects/gemc/src/build/bin/gemc",
+      "smoke.yaml"
+    ],
+    "log": "full-construction.log"
+  },
+  "shield_bolts": {
+    "completed": true,
+    "exit_code": 0,
+    "check_overlaps": 2,
+    "exception_codes": {},
+    "overlap_reports": [],
+    "command": [
+      "/opt/projects/gemc/src/build/bin/gemc",
+      "smoke.yaml"
+    ],
+    "log": "shield_bolts-construction.log"
+  },
+  "mesh_reproduction": "Nine optimized STLs reproduced byte for byte from archived originals",
+  "shield_bolts_10000": {
+    "completed": true,
+    "check_overlaps": 10000,
+    "exception_codes": {},
+    "log": "shield_bolts-clearance-10000.log"
+  },
+  "semantic_comparator": {
+    "native_geometry_variations": 15,
+    "material_variations": 15,
+    "CAD_variations": 14,
+    "result": "pass"
+  },
+  "GEMC2_database": "90 bolt CAD rows renamed; all other fields and CAD rows retained"
+}

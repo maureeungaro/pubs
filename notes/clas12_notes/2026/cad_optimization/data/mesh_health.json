@@ -1,0 +1,223 @@
+{
+  "old": [
+    {
+      "mesh": "S1-BB.stl",
+      "triangles": 3144,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "S1-BLB.stl",
+      "triangles": 15036,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "S1-BRB.stl",
+      "triangles": 14228,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "S1-TB.stl",
+      "triangles": 4647,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "S1-TLB.stl",
+      "triangles": 233,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "WC_S.stl",
+      "triangles": 4312,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "WC_M.stl",
+      "triangles": 3076,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "WC_L.stl",
+      "triangles": 2578,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "S1-BW.stl",
+      "triangles": 12,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "S1-LW.stl",
+      "triangles": 37230,
+      "exact_zero_area_triangles": 452
+    },
+    {
+      "mesh": "S1-RW.stl",
+      "triangles": 37902,
+      "exact_zero_area_triangles": 396
+    },
+    {
+      "mesh": "S1-TRB.stl",
+      "triangles": 208,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "NFrame.stl",
+      "triangles": 3698,
+      "exact_zero_area_triangles": 3
+    },
+    {
+      "mesh": "FrontPlate.stl",
+      "triangles": 1972,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "Mount.stl",
+      "triangles": 1168,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "Nose.stl",
+      "triangles": 2766,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "BottomPlate.stl",
+      "triangles": 692,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "Epoxy.stl",
+      "triangles": 1716,
+      "exact_zero_area_triangles": 6
+    }
+  ],
+  "cones_only": [
+    {
+      "mesh": "S1-BB.stl",
+      "triangles": 3144,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "S1-BLB.stl",
+      "triangles": 15036,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "S1-BRB.stl",
+      "triangles": 14228,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "S1-TB.stl",
+      "triangles": 4647,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "S1-TLB.stl",
+      "triangles": 233,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "WC_S.stl",
+      "triangles": 1500,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "WC_M.stl",
+      "triangles": 1500,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "WC_L.stl",
+      "triangles": 1500,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "S1-BW.stl",
+      "triangles": 12,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "S1-LW.stl",
+      "triangles": 37230,
+      "exact_zero_area_triangles": 452
+    },
+    {
+      "mesh": "S1-RW.stl",
+      "triangles": 37902,
+      "exact_zero_area_triangles": 396
+    },
+    {
+      "mesh": "S1-TRB.stl",
+      "triangles": 208,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "NFrame.stl",
+      "triangles": 3698,
+      "exact_zero_area_triangles": 3
+    },
+    {
+      "mesh": "FrontPlate.stl",
+      "triangles": 1972,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "Mount.stl",
+      "triangles": 1168,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "Nose.stl",
+      "triangles": 2766,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "BottomPlate.stl",
+      "triangles": 692,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "Epoxy.stl",
+      "triangles": 1716,
+      "exact_zero_area_triangles": 6
+    }
+  ],
+  "new": [
+    {
+      "mesh": "WC_S.stl",
+      "triangles": 1500,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "WC_M.stl",
+      "triangles": 1500,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "WC_L.stl",
+      "triangles": 1500,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "backwall.stl",
+      "triangles": 144,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "rightwall.stl",
+      "triangles": 704,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "leftwall.stl",
+      "triangles": 812,
+      "exact_zero_area_triangles": 0
+    },
+    {
+      "mesh": "nose.stl",
+      "triangles": 1986,
+      "exact_zero_area_triangles": 0
+    }
+  ]
+}

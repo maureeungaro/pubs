@@ -1,0 +1,46 @@
+{
+  "e-": {
+    "ratio_of_median_transport_wall_times": 1.6588534073272818,
+    "paired_ratios": [
+      1.665468879089814,
+      1.6588534073272818,
+      1.664551044607509,
+      1.6582710402023133,
+      1.6625563218390806
+    ],
+    "optimized_faster_pairs": 5
+  },
+  "proton": {
+    "ratio_of_median_transport_wall_times": 1.1331747261259268,
+    "paired_ratios": [
+      1.1331747261259268,
+      1.2110352200510779,
+      1.1681506980511485,
+      1.141334953914717,
+      1.164363500812099
+    ],
+    "optimized_faster_pairs": 5
+  },
+  "pi+": {
+    "ratio_of_median_transport_wall_times": 1.1767704911622086,
+    "paired_ratios": [
+      1.1767704911622086,
+      1.1729796906866077,
+      1.2037309708779733,
+      1.2362033371384158,
+      1.1956333495404137
+    ],
+    "optimized_faster_pairs": 5
+  },
+  "neutron": {
+    "ratio_of_median_transport_wall_times": 1.1586129211640739,
+    "paired_ratios": [
+      1.1848109153073128,
+      1.1586129211640739,
+      1.1987554626638801,
+      1.1978769486161907,
+      1.206537376586742
+    ],
+    "optimized_faster_pairs": 5
+  }
+}

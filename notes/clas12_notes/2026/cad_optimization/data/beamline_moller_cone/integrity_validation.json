@@ -1,0 +1,81 @@
+{
+  "final_sha256": "6640a8179f48d30242da0fafcc7c4f4c1be97022a73c4d94e0291221dcae96e0",
+  "shield_sha256": "0d770b71801eb4c9167c57d325314eb3ac11995431335532fe8828906b48a82a",
+  "installed_identical_copies": 3,
+  "placements": {
+    "cad_rgk_winter2018": {
+      "name": "moller_cone",
+      "color": "22ffff",
+      "position": "0*mm 0*mm 1273.27*mm",
+      "rotation": "0*deg 180*deg 0*deg",
+      "material": "beamline_W"
+    },
+    "cad_rgd_fall2023": {
+      "name": "moller_cone",
+      "color": "22ffff",
+      "position": "0*mm 0*mm 1273.27*mm",
+      "rotation": "0*deg 180*deg 0*deg",
+      "material": "beamline_W"
+    },
+    "cad_rga_spring2018": {
+      "name": "moller_cone",
+      "color": "22ffff",
+      "position": "0*mm 0*mm 1589.27*mm",
+      "rotation": "0*deg 180*deg 0*deg",
+      "material": "beamline_W"
+    },
+    "cad_rgf_spring2020": {
+      "name": "moller_cone",
+      "color": "22ffff",
+      "position": "0*mm 0*mm 1273.27*mm",
+      "rotation": "0*deg 180*deg 0*deg",
+      "material": "beamline_W"
+    },
+    "cad_rge_spring2024": {
+      "name": "moller_cone",
+      "color": "22ffff",
+      "position": "0*mm 0*mm 1273.27*mm",
+      "rotation": "0*deg 180*deg 0*deg",
+      "material": "beamline_W"
+    },
+    "cad_rgc_summer2022": {
+      "name": "moller_cone",
+      "color": "22ffff",
+      "position": "0*mm 0*mm 1589.27*mm",
+      "rotation": "0*deg 180*deg 0*deg",
+      "material": "beamline_W"
+    },
+    "cad_rgl_spring2025": {
+      "name": "moller_cone",
+      "color": "22ffff",
+      "position": "0*mm 0*mm 1589.27*mm",
+      "rotation": "0*deg 180*deg 0*deg",
+      "material": "beamline_W"
+    },
+    "cad_default": {
+      "name": "moller_cone",
+      "color": "22ffff",
+      "position": "0*mm 0*mm 1589.27*mm",
+      "rotation": "0*deg 180*deg 0*deg",
+      "material": "beamline_W"
+    },
+    "cad_rgb_spring2019": {
+      "name": "moller_cone",
+      "color": "22ffff",
+      "position": "0*mm 0*mm 1589.27*mm",
+      "rotation": "0*deg 180*deg 0*deg",
+      "material": "beamline_W"
+    }
+  },
+  "SQL_tables_verified": {
+    "geometry": 98542,
+    "materials": 1663,
+    "banks": 215,
+    "hits": 84,
+    "parameters": 1937,
+    "cad": 1966,
+    "mirrors": 99
+  },
+  "SQL_change": "Only nine cone CAD names differ from the pre-migration database",
+  "result": "pass"
+}

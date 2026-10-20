@@ -1,0 +1,94 @@
+{
+  "mesh_sha256": {
+    "before/FTInnerShield": "0d770b71801eb4c9167c57d325314eb3ac11995431335532fe8828906b48a82a",
+    "before/moller-cone-extension-inner": "2a84ad71756d5d2dcd2cba42958fb7719fba3c78746d9901007f4e1163bf9637",
+    "optimized/FTInnerShield": "0d770b71801eb4c9167c57d325314eb3ac11995431335532fe8828906b48a82a",
+    "optimized/moller-cone-extension-inner": "69500089a33801cc884032faab862578496a62bd98eccc2b368b6b8b17611353",
+    "before/moller-cone-extension-lead-fill": "ea95201f26dfeeeb6799418cff3dfec97def974fcff8b963d0aecff828ffccd2",
+    "optimized/moller-cone-extension-lead-fill": "117fa29cdbf33d6ce7ade1337ac9c07da55188c0ca8ef686a1c97658bd01ca87",
+    "before/FTFlange": "8682f9792b4c060a205c73716d281834b57c3b0107735e207e22fde25aa54c74",
+    "before/moller-cone-extension-lead-case": "6da8aaa2f4ef20cc5e6b25e3c97247044c7c21d6aaec53f5e6897fac4ad9cd11",
+    "optimized/FTFlange": "8682f9792b4c060a205c73716d281834b57c3b0107735e207e22fde25aa54c74",
+    "optimized/moller-cone-extension-lead-case": "89acc1332e994a6a170ebb5f5af6926cb79c3afd980a62fc73a0b88aa905d918",
+    "before/moller_cone": "6640a8179f48d30242da0fafcc7c4f4c1be97022a73c4d94e0291221dcae96e0",
+    "optimized/moller_cone": "665beab488b533b5d92d788918048162d3a7831d1dbb8da1672b5f675d91a203",
+    "before/moller_cone_tip": "67382ae73d760a7f2d8ca8a3c79b53710930540227e45ae9c492ecf59902483f",
+    "optimized/moller_cone_tip": "67382ae73d760a7f2d8ca8a3c79b53710930540227e45ae9c492ecf59902483f",
+    "before/moller-cone-extension-tungsten-addon": "c01cf671cbda10ad96eca519c1d42edfdf92b77fdf24a75b8f34c81a1e855ea8",
+    "optimized/moller-cone-extension-tungsten-addon": "16f7cbfc45684c433ea6887637321e5bb5a0a492bbe70cf509b3096cd8d6ab50"
+  },
+  "sections": [
+    {
+      "title": "Shield / inner extension",
+      "phi_degrees": 142,
+      "local_z_mm": [
+        -372,
+        -369.2
+      ],
+      "r_mm": [
+        35,
+        42
+      ]
+    },
+    {
+      "title": "Inner extension / lead fill",
+      "phi_degrees": 55.75,
+      "local_z_mm": [
+        -474,
+        -468
+      ],
+      "r_mm": [
+        46,
+        49
+      ]
+    },
+    {
+      "title": "FT flange / lead case",
+      "phi_degrees": 70.4,
+      "local_z_mm": [
+        -523.8,
+        -519.3
+      ],
+      "r_mm": [
+        116.8,
+        118.3
+      ]
+    },
+    {
+      "title": "Inner extension / main cone",
+      "phi_degrees": 37.7,
+      "local_z_mm": [
+        -171,
+        -169
+      ],
+      "r_mm": [
+        39.5,
+        48.2
+      ]
+    },
+    {
+      "title": "Main cone / cone tip",
+      "phi_degrees": -45.8,
+      "local_z_mm": [
+        711.35,
+        712.25
+      ],
+      "r_mm": [
+        34.4,
+        38.6
+      ]
+    },
+    {
+      "title": "Main cone / tungsten add-on",
+      "phi_degrees": -155.4,
+      "local_z_mm": [
+        -122,
+        -105
+      ],
+      "r_mm": [
+        72.4,
+        74.6
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+\input{cad_optimization_preamble}
+\begin{document}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\fancyhead[L]{\footnotesize\slshape CAD optimization}
+\fancyhead[R]{\footnotesize\slshape\rightmark}
+\fancyfoot[L]{\small\slshape Jefferson Lab}
+\fancyfoot[R]{\small\slshape M. Ungaro}
+\fancyfoot[C]{\small\thepage}
+\thispagestyle{plain}
+\notetitle{Performance and geometry validation of optimized CLAS12 CAD models}
+\vspace{18pt}
+\noteauthor{Maurizio Ungaro}
+\vspace{8pt}
+\noteaffiliation{Jefferson Lab, 12,000 Jefferson Avenue, 23606 Newport News, VA, USA}
+\vspace{6pt}
+\notenumberdate{October 20, 2026}
+\begin{noteabstract}
+This study compares LTCC CAD optimization and sixteen separate GEMC3 beamline mesh studies with original
+engineering STL files. The complete optimized LTCC model contains 93.9\% fewer triangles and bytes, with
+median initialization CPU time reduced by 63.5\% and startup peak memory by 56.8\%. Nonoptical LTCC electron
+transport is 1.29 times faster by CPU time, while hadron and optical workloads require 1.35--1.53 and 1.73
+times as much CPU time; material and hierarchy changes and more complete transport after defect repairs may
+contribute. The apex, downstream, and adapter/exit-shield studies reduce triangles by 45.4\%, 3.75\%, and
+0.434\%, respectively, with apex startup wall time and peak memory reduced by 15.7\% and 17.4\%. The FT
+adjuster consolidation reduces triangles by 98.74\% while matching an estimated reference union volume, and
+the FT inner shield and flange assembly is reduced by 36.14\% with its enclosed pocket retained exactly and
+sampled surface differences below 0.05 mm; the nine FT inner-shield bolts have 89.38\% fewer triangles,
+matched copper volumes, and explicit clearance from the shield; the FT outer flange retains its rims with
+60.79\% fewer triangles and twelve bolt holes filled; the repaired outer mount clears the flange with
+11.44\% fewer triangles. These independent workloads do not establish detector-response equivalence or
+complete overlap freedom, and remaining geometry and navigation diagnostics are reported explicitly. The
+downstream FT inner shield is rebuilt with closed through-holes and retained longitudinal grooves and fully
+smooth flange faces. The Moller cone has 68.32\% fewer triangles, filled surface holes, and a widened
+opening that clears the FT inner shield; repaired-reference tracking separates decimation from source
+defects. Subsequent socket relief resolves the remaining downstream tube contacts while preserving
+placements. The separate cone tip has 63.58\% fewer triangles with retained topology and sharp faces.
+The already-coarse FT flange permits a 2.17\% triangle reduction with unchanged tracking performance.
+The inner Moller-cone extension restores a missing port wall and reduces triangles by 30.77\%,
+with a separate repaired-reference tracking control.
+The extension lead fill and casing retain their interfaces with fewer triangles; repeated isolated tracking
+results are reported separately.
+The Moller-cone extension tungsten add-on restores a missing port wall and reduces triangles by 56.80\%,
+with a separate repaired-reference tracking control.
+Local FT/cone joint reliefs clear the observed interfaces; tracking is benchmarked separately.
+The separate HTCC transfer reduces three cone meshes by 49.20\% in triangles; six initialization checks pass,
+with remaining non-manifold edges and a 0.053 mm entry-window contact recorded.
+\end{noteabstract}
+\setcounter{tocdepth}{1}
+\tableofcontents
+\clearpage
+\input{cad_optimization_doc}
+\input{cad_optimization_bib}
+\end{document}

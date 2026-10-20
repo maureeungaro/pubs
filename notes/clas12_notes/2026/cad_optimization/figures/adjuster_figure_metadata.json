@@ -1,0 +1,35 @@
+{
+  "originals": {
+    "adjuster1": {
+      "sha256": "28c7569477c822552a7edb9b90676bb0250fca2a9f26189a264b96ccf6b0cd56",
+      "triangles": 1687
+    },
+    "adjuster2": {
+      "sha256": "46d2f910acb1ea1e184fcc6c9f519613004fec94fdc14878d91c5b0b95fbc448",
+      "triangles": 424
+    },
+    "adjuster3": {
+      "sha256": "424deaf268a857b5202403b49cfe0517222f18b637556bcbd27c2abe2535e316",
+      "triangles": 1689
+    }
+  },
+  "final": {
+    "sha256": "fbe8429ddddd5548ba82501944f27f3ee0954080557ef7b32efd303f05f2be25",
+    "triangles": 48
+  },
+  "bounds_mm": [
+    [
+      -12.318588256835938,
+      -125.23401641845703,
+      -1146.673828125
+    ],
+    [
+      12.318588256835938,
+      -103.23583984375,
+      -994.3010864257812
+    ]
+  ],
+  "elevation": 12,
+  "azimuth": -65,
+  "coordinate_frame": "Original STL coordinates; common CAD placement not baked into vertices"
+}

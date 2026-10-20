@@ -1,0 +1,50 @@
+{
+  "Downstream_Beam_tube_Segment_1": {
+    "original": {
+      "sha256": "c547bf0a7eaca7e106c9ed1a73e1eea88bd7ef4cc52e0f6c0a9d2bb83156ccbb",
+      "triangles": 5146
+    },
+    "optimized": {
+      "sha256": "29fa0f37e458b1308201b97de9f48ba45808c0aa44ca83bad559dc0f3dc13af2",
+      "triangles": 5000
+    },
+    "bounds_mm": [
+      [
+        -101.03950500488281,
+        -101.12613677978516,
+        4972.15234375
+      ],
+      [
+        101.15428924560547,
+        101.10633087158203,
+        10439.171875
+      ]
+    ],
+    "elevation": 12,
+    "azimuth": -65
+  },
+  "Downstream_Beam_tube_Segment_2": {
+    "original": {
+      "sha256": "642b186a0466bcb8993ca74fe2da4d83e62cc9b6ee1200e8b1c773d8cfa9ef49",
+      "triangles": 672
+    },
+    "optimized": {
+      "sha256": "3237c5f07ff6e6f0a93faea892848685591467f6e28179d15bbba6983afa0761",
+      "triangles": 600
+    },
+    "bounds_mm": [
+      [
+        -100.71903228759766,
+        -100.71903228759766,
+        10310.35546875
+      ],
+      [
+        100.71903228759766,
+        100.71903228759766,
+        13482.8662109375
+      ]
+    ],
+    "elevation": 12,
+    "azimuth": -65
+  }
+}

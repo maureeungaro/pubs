@@ -1,0 +1,141 @@
+\FloatBarrier
+\section{Moller-cone extension tungsten add-on}
+\label{sec:extension-tungsten}
+
+The sixteenth beamline mesh study renames \texttt{outer-\allowbreak{}cone} to
+\texttt{moller-\allowbreak{}cone-\allowbreak{}extension-\allowbreak{}tungsten-\allowbreak{}addon} in runs
+5874, 11620, 18304, and 20000. Both repositories, their CAD placements, and the GEMC2 CAD database use the new
+name. The \texttt{beamline\_W} material, passive 180-degree y rotation, and 1273.27 mm z translation remain
+unchanged. GEMC3 banks remain under \texttt{default}, indexed by run number. The original is archived, and all
+three optimized meshes have identical bytes.
+
+The original has 27,778 triangles and 68 boundary edges in two loops. These 33- and 35-vertex rims surround an
+inclined radial port whose connecting wall is missing. Fitting the rim coordinates indicates a 6.350052 mm
+radius and a 4.499946-degree inclination toward positive local z along positive local y. The builder orders
+the existing rim vertices around the nominal 4.5-degree axis; it imposes no new rim coordinates. Bridging them
+adds 68 wall triangles without moving any original vertex or removing any original face geometry. No beam
+passage or radial opening is capped; there is no surface reconstruction. The independent repair audit retains
+the original vertices and triangle coordinates exactly, allowing coherent face orientation.
+
+The repaired reference is a closed manifold component with genus five and 27,846 triangles. The open source
+has no valid solid volume; its reported genus four describes a surface with boundary, not the repaired solid.
+Protected quadric decimation retains 9,154 faces, including sharp features, port-adjacent faces, faces with a
+vertex within 0.25 mm of the main Moller cone, and faces adjoining the extension joint below local z = -169.5
+mm. The main-cone dependency is guarded by its mesh hash. The final mesh has 12,000 triangles, 56.80\% fewer
+than the raw source and 56.91\% fewer than the repaired reference. Its 600,084 bytes compare with 1,388,984
+raw and 1,392,384 repaired bytes. Bounds and all protected face coordinates are exact. The mesh is closed,
+manifold, and free of detected intersections and zero-area triangles. Table~\ref{tab:extension-tungsten-mesh}
+inventories the meshes; Figure~\ref{fig:extension-tungsten} compares their tessellation.
+
+Repaired tungsten volume is 3224441.660431 mm$^3$ and optimized volume is 3224441.511484 mm$^3$, a
+-0.0000046193\% decimation change. Maximum bidirectional vertex/edge/surface sampled deviation from the
+repaired reference is 0.012837 mm, below the 0.05 mm guard. This is a sampled measurement, not a proven global
+bound. Minimum triangle altitude is 0.000473 mm. More aggressive protected trials distort the shape and are
+rejected. Independent probes check 25 points along the beam passage, three along the inclined port, and four
+in adjacent tungsten. The passages remain empty and the surrounding material remains filled. Both the repaired
+and optimized STLs reproduce byte for byte.
+
+Two separate isolated benchmarks select run 5874 with \texttt{default}. Matched 5 GeV electron, proton,
+positive-pion, and neutron primaries originate at the target, uniform in solid angle over 2.7--5.0 degrees and
+full azimuth. Physics is FTFP\_BERT with no field or optical processes, one thread, default production cuts,
+and no GUI or event output. Each comparison uses five alternating-order repetitions of 200 events per
+particle, seeds 12345--12349, the same fixed executable as the recent beamline studies, and identical primary
+hashes within seed pairs.
+
+Table~\ref{tab:extension-tungsten-upgrade} compares raw input with the upgraded mesh.
+Table~\ref{tab:extension-tungsten-control} compares the closed, unreduced reference with the optimized mesh.
+Median Geant4 beamOn wall times exclude initialization; ratios are baseline/optimized, so values above one
+indicate faster tracking. Raw timings include the incomplete port wall and navigation defects and do not
+establish faster correct transport. The repaired-reference control measures decimation with the repaired shape
+and material volume preserved to the reported precision.
+
+Raw-upgrade tracking ratios are 1.754, 1.488, 1.634, 1.472 for electrons, protons, positive pions, and
+neutrons, respectively. Faster-pair counts are 5/5, 5/5, 5/5, 5/5 in the same order. Loading process wall time
+changes from 0.997174 to 0.890545 s; loading CPU time is 0.93 versus 0.81 s. Startup peak RSS is 156.969
+versus 131.500 MiB. Complete process CPU, memory, wall time, and seed-paired results are retained
+independently.
+
+Repaired-reference tracking ratios are 1.647, 1.548, 1.642, 1.535 for electrons, protons, positive pions, and
+neutrons, respectively. Faster-pair counts are 5/5, 5/5, 5/5, 5/5 in the same order. Loading process wall time
+changes from 0.951752 to 0.840506 s; loading CPU time is 0.90 versus 0.79 s. Startup peak RSS is 155.031
+versus 131.188 MiB. Complete process CPU, memory, wall time, and seed-paired results are retained
+independently.
+
+Across the valid raw-input benchmark processes, exception totals are 66 GeomNav1002, 26 GeomSolids1001. All
+optimized runs and both sides of the repaired-reference control have no Geant4 exceptions. These are
+process-level diagnostic counts, not unique physical overlaps or counts of affected events.
+
+A separate five-part 10,000-point assembly check includes the add-on, main cone, inner extension, lead fill,
+and lead case. Exception blocks are original: 1 GeomSolids1001, 12 GeomVol1002; reference: 12 GeomVol1002;
+optimized: 12 GeomVol1002. The restored wall removes the extension surface-hole warning; engineering overlaps
+remain. Independent surface collisions use the actual CAD transforms, with identical passive placements.
+Main-cone contact counts remain 3041 and lead-case counts remain 233 in all three fixtures; the inner
+extension and lead fill have zero surface contacts with the add-on. Collision counts depend on tessellation
+and are not overlap volumes or clearance proofs.
+
+All four complete affected configurations construct 39 Geant4 volumes including the world. Per-configuration
+exception blocks are original: 1 GeomSolids1001, 21 GeomVol1002; optimized: 21 GeomVol1002. All 17 beamline
+configurations pass volume-count construction checks. All 15 native geometry, 15 material, and 14 CAD semantic
+comparisons pass. Direct database checks allow only the four names and STL paths to change; every other mesh
+retains its prior hash. These checks do not establish complete overlap freedom, full CLAS12 speed gains, or
+detector-response equivalence.
+
+\begin{table}[htbp]
+\centering
+\caption{Tungsten add-on raw input, repaired reference, and optimized mesh.}
+\label{tab:extension-tungsten-mesh}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrr}
+\toprule
+Quantity & Raw & Repaired & Optimized \\
+\midrule
+Triangles & 27,778 & 27,846 & 12,000 \\
+Bytes & 1,388,984 & 1,392,384 & 600,084 \\
+Boundary edges & 68 & 0 & 0 \\
+Closed components / genus & undefined & 1 / 5 & 1 / 5 \\
+Volume (mm$^3$) & undefined & 3224441.660431 & 3224441.511484 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Raw versus optimized tungsten add-on; five repetitions of 200 events per particle.}
+\label{tab:extension-tungsten-upgrade}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrrr}
+\toprule
+Particle & Raw (s) & After (s) & Ratio & Paired range \\
+\midrule
+Electron & 26.35900 & 15.02950 & 1.754 & 1.735--1.781 \\
+Proton & 4.75147 & 3.19228 & 1.488 & 1.409--1.491 \\
+Positive pion & 7.16772 & 4.38598 & 1.634 & 1.523--1.634 \\
+Neutron & 4.33537 & 2.94566 & 1.472 & 1.472--1.508 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Repaired versus optimized tungsten add-on; five repetitions of 200 events per particle.}
+\label{tab:extension-tungsten-control}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrrr}
+\toprule
+Particle & Repaired (s) & After (s) & Ratio & Paired range \\
+\midrule
+Electron & 27.83340 & 16.90260 & 1.647 & 1.554--1.874 \\
+Proton & 5.06416 & 3.27214 & 1.548 & 1.496--1.564 \\
+Positive pion & 7.66426 & 4.66753 & 1.642 & 1.568--1.642 \\
+Neutron & 4.69515 & 3.05862 & 1.535 & 1.499--1.556 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=\linewidth]{figures/extension_tungsten_stl_comparison.pdf}
+\caption{Original and optimized Moller-cone extension tungsten add-on meshes with matched bounds and camera.
+The beam passage and radial ports remain open; the missing inclined port wall is restored.}
+\label{fig:extension-tungsten}
+\end{figure}

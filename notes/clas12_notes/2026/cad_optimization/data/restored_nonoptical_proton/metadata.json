@@ -1,0 +1,465 @@
+{
+  "baseline_ref": "ea3625f",
+  "executable": "/opt/projects/ceInstall/macosx26-clang21/clas12Tags/dev/bin/gemc",
+  "executable_sha256": "b58cc63fed71b127019445e5026be9bb2fa1018c3c19a6374f2088fafb419450",
+  "ccdb": "/opt/projects/gemc/clas12Tags/geometry_source/coatjava/etc/data/sqlite/ccdb.sqlite",
+  "card": "<gcard>\n    <detector name=\"ltcc\" factory=\"TEXT\"/>\n    <detector name=\"cad/\" factory=\"CAD\"/>\n    <option name=\"RUNNO\" value=\"11\"/>\n    <option name=\"BEAM_P\" value=\"proton, 5.0*GeV, 25*deg, 0*deg\"/>\n    <option name=\"SPREAD_P\" value=\"0*GeV, 10*deg, 180*deg\"/>\n    <option name=\"PHYSICS\" value=\"STD + FTFP_BERT\"/>\n    <option name=\"HALL_FIELD\" value=\"no\"/>\n    <option name=\"OUTPUT\" value=\"no, output\"/>\n    <option name=\"INPUT_GEN_FILE\" value=\"LUND, beam.lund\"/>\n</gcard>\n",
+  "inventory": {
+    "old": [
+      {
+        "name": "S1-BB",
+        "bytes": 157284,
+        "triangles": 3144,
+        "sha256": "dae6e359dab08b6882f6df4a1876831ef55eaf76d4eeb335b28fea9c7b56f2c5"
+      },
+      {
+        "name": "S1-BLB",
+        "bytes": 751884,
+        "triangles": 15036,
+        "sha256": "3e0308611d0bf64251fe7967986796483ec030189795448ee06880513b75658f"
+      },
+      {
+        "name": "S1-BRB",
+        "bytes": 711484,
+        "triangles": 14228,
+        "sha256": "2af1255a29f25e0c4b891e6de06821f829eb5f981013c22b49e11be96530374f"
+      },
+      {
+        "name": "S1-TB",
+        "bytes": 232434,
+        "triangles": 4647,
+        "sha256": "3d2c57d594d16277fd9e44a936f4536ebc4821e77bf037db696f1e4a975b2466"
+      },
+      {
+        "name": "S1-TLB",
+        "bytes": 11734,
+        "triangles": 233,
+        "sha256": "a17f62e300deda9a5ae03ba00c0e610a1da805dcb3de02106851a6b9daf5b6af"
+      },
+      {
+        "name": "WC_S",
+        "bytes": 215684,
+        "triangles": 4312,
+        "sha256": "6c608dfcb3fc92d7dde4df2b76a855e7e9f7737c579ec17036ee911699de2648"
+      },
+      {
+        "name": "WC_M",
+        "bytes": 153884,
+        "triangles": 3076,
+        "sha256": "90c75392ddc628b48562a663aade7a50d34ba1ce4a0edd98d32d458ae0fa2399"
+      },
+      {
+        "name": "WC_L",
+        "bytes": 128984,
+        "triangles": 2578,
+        "sha256": "88c15732d9f01c4154e539b80ad02b79175d3558c68f992fd31797c1743d2d5c"
+      },
+      {
+        "name": "S1-BW",
+        "bytes": 684,
+        "triangles": 12,
+        "sha256": "fbfa32d131603aefd1106a2428b34e6576c03137343e145e5473e86fa1966770"
+      },
+      {
+        "name": "S1-LW",
+        "bytes": 1861584,
+        "triangles": 37230,
+        "sha256": "e06112e61680ff45996cc98485e4e0a6ffe9b036d61f556532fdd78bddaf85ac"
+      },
+      {
+        "name": "S1-RW",
+        "bytes": 1895184,
+        "triangles": 37902,
+        "sha256": "781b1c745eb1cfa55a97ebd28c09c93126b8cc1a00db5091b672bda6d78bd710"
+      },
+      {
+        "name": "S1-TRB",
+        "bytes": 10484,
+        "triangles": 208,
+        "sha256": "327d82993de6d96b4ad7d8a87983c0f88bb8cee55852ef9e8acbe59e509f336d"
+      },
+      {
+        "name": "NFrame",
+        "bytes": 184984,
+        "triangles": 3698,
+        "sha256": "222f8e064a4bc9d744ea310662af85c0d539099259fc7bad3729180408ef7338"
+      },
+      {
+        "name": "FrontPlate",
+        "bytes": 98684,
+        "triangles": 1972,
+        "sha256": "e41c2cd19795b6b957e635797b7586083ec42ac93c09aa2afeea12db3e835375"
+      },
+      {
+        "name": "Mount",
+        "bytes": 58484,
+        "triangles": 1168,
+        "sha256": "89f33911e0f0a407234b10c180a96fb67234acc2b08084bdecdca8a1d6a81556"
+      },
+      {
+        "name": "Nose",
+        "bytes": 138384,
+        "triangles": 2766,
+        "sha256": "b0d278b1ba36960f09b8de94f0cb277cab100757485695246aac596c2a3d308a"
+      },
+      {
+        "name": "BottomPlate",
+        "bytes": 34684,
+        "triangles": 692,
+        "sha256": "63e15f85ff22f9ada1d2307148c25a7db66667dea4ca0442ed0640c5f4b5bfba"
+      },
+      {
+        "name": "Epoxy",
+        "bytes": 85884,
+        "triangles": 1716,
+        "sha256": "618c1df9d22d7dd507780e6f05fcdba8ce017caef52b05da6ef51cfee762da67"
+      }
+    ],
+    "cones_only": [
+      {
+        "name": "S1-BB",
+        "bytes": 157284,
+        "triangles": 3144,
+        "sha256": "dae6e359dab08b6882f6df4a1876831ef55eaf76d4eeb335b28fea9c7b56f2c5"
+      },
+      {
+        "name": "S1-BLB",
+        "bytes": 751884,
+        "triangles": 15036,
+        "sha256": "3e0308611d0bf64251fe7967986796483ec030189795448ee06880513b75658f"
+      },
+      {
+        "name": "S1-BRB",
+        "bytes": 711484,
+        "triangles": 14228,
+        "sha256": "2af1255a29f25e0c4b891e6de06821f829eb5f981013c22b49e11be96530374f"
+      },
+      {
+        "name": "S1-TB",
+        "bytes": 232434,
+        "triangles": 4647,
+        "sha256": "3d2c57d594d16277fd9e44a936f4536ebc4821e77bf037db696f1e4a975b2466"
+      },
+      {
+        "name": "S1-TLB",
+        "bytes": 11734,
+        "triangles": 233,
+        "sha256": "a17f62e300deda9a5ae03ba00c0e610a1da805dcb3de02106851a6b9daf5b6af"
+      },
+      {
+        "name": "WC_S",
+        "bytes": 75084,
+        "triangles": 1500,
+        "sha256": "7676f8e3a6ab91614b7a75115e507bc95d5a20d63c7c58c2a78320addc0f630c"
+      },
+      {
+        "name": "WC_M",
+        "bytes": 75084,
+        "triangles": 1500,
+        "sha256": "27eed3d53e72c1a4e30db1b93a6a3f058cb27c45f2afac4cb5f67e67e7671dac"
+      },
+      {
+        "name": "WC_L",
+        "bytes": 75084,
+        "triangles": 1500,
+        "sha256": "96fb901ce21037a98cfb2affe01302af2cced810c1b467eca3de13221a266c96"
+      },
+      {
+        "name": "S1-BW",
+        "bytes": 684,
+        "triangles": 12,
+        "sha256": "fbfa32d131603aefd1106a2428b34e6576c03137343e145e5473e86fa1966770"
+      },
+      {
+        "name": "S1-LW",
+        "bytes": 1861584,
+        "triangles": 37230,
+        "sha256": "e06112e61680ff45996cc98485e4e0a6ffe9b036d61f556532fdd78bddaf85ac"
+      },
+      {
+        "name": "S1-RW",
+        "bytes": 1895184,
+        "triangles": 37902,
+        "sha256": "781b1c745eb1cfa55a97ebd28c09c93126b8cc1a00db5091b672bda6d78bd710"
+      },
+      {
+        "name": "S1-TRB",
+        "bytes": 10484,
+        "triangles": 208,
+        "sha256": "327d82993de6d96b4ad7d8a87983c0f88bb8cee55852ef9e8acbe59e509f336d"
+      },
+      {
+        "name": "NFrame",
+        "bytes": 184984,
+        "triangles": 3698,
+        "sha256": "222f8e064a4bc9d744ea310662af85c0d539099259fc7bad3729180408ef7338"
+      },
+      {
+        "name": "FrontPlate",
+        "bytes": 98684,
+        "triangles": 1972,
+        "sha256": "e41c2cd19795b6b957e635797b7586083ec42ac93c09aa2afeea12db3e835375"
+      },
+      {
+        "name": "Mount",
+        "bytes": 58484,
+        "triangles": 1168,
+        "sha256": "89f33911e0f0a407234b10c180a96fb67234acc2b08084bdecdca8a1d6a81556"
+      },
+      {
+        "name": "Nose",
+        "bytes": 138384,
+        "triangles": 2766,
+        "sha256": "b0d278b1ba36960f09b8de94f0cb277cab100757485695246aac596c2a3d308a"
+      },
+      {
+        "name": "BottomPlate",
+        "bytes": 34684,
+        "triangles": 692,
+        "sha256": "63e15f85ff22f9ada1d2307148c25a7db66667dea4ca0442ed0640c5f4b5bfba"
+      },
+      {
+        "name": "Epoxy",
+        "bytes": 85884,
+        "triangles": 1716,
+        "sha256": "618c1df9d22d7dd507780e6f05fcdba8ce017caef52b05da6ef51cfee762da67"
+      }
+    ],
+    "new": [
+      {
+        "name": "WC_S",
+        "bytes": 75084,
+        "triangles": 1500,
+        "sha256": "7676f8e3a6ab91614b7a75115e507bc95d5a20d63c7c58c2a78320addc0f630c"
+      },
+      {
+        "name": "WC_M",
+        "bytes": 75084,
+        "triangles": 1500,
+        "sha256": "27eed3d53e72c1a4e30db1b93a6a3f058cb27c45f2afac4cb5f67e67e7671dac"
+      },
+      {
+        "name": "WC_L",
+        "bytes": 75084,
+        "triangles": 1500,
+        "sha256": "96fb901ce21037a98cfb2affe01302af2cced810c1b467eca3de13221a266c96"
+      },
+      {
+        "name": "backwall",
+        "bytes": 7284,
+        "triangles": 144,
+        "sha256": "facb18cb6fbf263d13edd899f4cc9a5973c47e92e375e1dec5e43689028d13c1"
+      },
+      {
+        "name": "rightwall",
+        "bytes": 35284,
+        "triangles": 704,
+        "sha256": "cf713920501e752948ee765ea9e078d9448bc17e5b182c1dcfe83883b85ee73e"
+      },
+      {
+        "name": "leftwall",
+        "bytes": 40684,
+        "triangles": 812,
+        "sha256": "3995f0bd913cf4037c6b7318c0fef03fa04e1bbeddc950dbe21bcd5b6aec69fa"
+      },
+      {
+        "name": "nose",
+        "bytes": 99384,
+        "triangles": 1986,
+        "sha256": "4dd401deb7e3c8bcf41e18bc75992ff0cf3dfaedd3ad42089c5d9adfdbfd55b5"
+      }
+    ]
+  },
+  "version": "Entering initializeRTPCConstants\nConnecting to sqlite:///opt/projects/gemc/clas12Tags/geometry_source/coatjava/etc/data/sqlite/ccdb.sqlite/calibration/rtpc\nRTPC:Getting drift parameters\n\n\n  > gemc version: gemc 6.2\n\n  > Environment:\n\n  > FIELD_DIR: /opt/projects/ceInstall/noarch/data/magfield\n  > GEMC_DATA_DIR: /opt/projects/ceInstall/macosx26-clang21/clas12Tags/dev\n  > G4DATA_DIR: /opt/projects/ceInstall/macosx26-clang21/geant4/10.7.4/data/Geant4-10.7.4/data\n  > G4_VERSION: 10.7.4\n  > G4INSTALL: /opt/projects/ceInstall/macosx26-clang21/geant4/10.7.4\n\n",
+  "platform": "Darwin enpungaro-m2n.jlab.org 25.6.0 Darwin Kernel Version 25.6.0: Tue Aug 18 17:50:45 PDT 2026; root:xnu-12377.161.15.700.19~2/RELEASE_ARM64_T6020 arm64\n",
+  "arguments": {
+    "baseline_ref": "ea3625f",
+    "ccdb": "geometry_source/coatjava/etc/data/sqlite/ccdb.sqlite",
+    "output": "/private/tmp/ltcc_cad_study/restored_nonoptical_proton",
+    "events": 10000,
+    "repeats": 5,
+    "timeout": 600,
+    "overlaps": false,
+    "particle": "proton",
+    "physics": "nonoptical",
+    "transport_only": true,
+    "fixed_primaries": true,
+    "cad_only_loading": false,
+    "restore_baseline_hardware": true,
+    "track_verbosity": 0
+  },
+  "data_sha256": {
+    "old": {
+      "benchmark.gcard": "32cbdd0ad76b83b3561a9cd3354da16ed580e176c96df3e5717bdfc9f25eab0b",
+      "cad/BottomPlate.stl": "63e15f85ff22f9ada1d2307148c25a7db66667dea4ca0442ed0640c5f4b5bfba",
+      "cad/Epoxy.stl": "618c1df9d22d7dd507780e6f05fcdba8ce017caef52b05da6ef51cfee762da67",
+      "cad/FrontPlate.stl": "e41c2cd19795b6b957e635797b7586083ec42ac93c09aa2afeea12db3e835375",
+      "cad/Mount.stl": "89f33911e0f0a407234b10c180a96fb67234acc2b08084bdecdca8a1d6a81556",
+      "cad/NFrame.stl": "222f8e064a4bc9d744ea310662af85c0d539099259fc7bad3729180408ef7338",
+      "cad/Nose.stl": "b0d278b1ba36960f09b8de94f0cb277cab100757485695246aac596c2a3d308a",
+      "cad/S1-BB.stl": "dae6e359dab08b6882f6df4a1876831ef55eaf76d4eeb335b28fea9c7b56f2c5",
+      "cad/S1-BLB.stl": "3e0308611d0bf64251fe7967986796483ec030189795448ee06880513b75658f",
+      "cad/S1-BRB.stl": "2af1255a29f25e0c4b891e6de06821f829eb5f981013c22b49e11be96530374f",
+      "cad/S1-BW.stl": "fbfa32d131603aefd1106a2428b34e6576c03137343e145e5473e86fa1966770",
+      "cad/S1-LW.stl": "e06112e61680ff45996cc98485e4e0a6ffe9b036d61f556532fdd78bddaf85ac",
+      "cad/S1-RW.stl": "781b1c745eb1cfa55a97ebd28c09c93126b8cc1a00db5091b672bda6d78bd710",
+      "cad/S1-TB.stl": "3d2c57d594d16277fd9e44a936f4536ebc4821e77bf037db696f1e4a975b2466",
+      "cad/S1-TLB.stl": "a17f62e300deda9a5ae03ba00c0e610a1da805dcb3de02106851a6b9daf5b6af",
+      "cad/S1-TRB.stl": "327d82993de6d96b4ad7d8a87983c0f88bb8cee55852ef9e8acbe59e509f336d",
+      "cad/WC_L.stl": "88c15732d9f01c4154e539b80ad02b79175d3558c68f992fd31797c1743d2d5c",
+      "cad/WC_M.stl": "90c75392ddc628b48562a663aade7a50d34ba1ce4a0edd98d32d458ae0fa2399",
+      "cad/WC_S.stl": "6c608dfcb3fc92d7dde4df2b76a855e7e9f7737c579ec17036ee911699de2648",
+      "cad/cad_default.gxml": "7fbc7abe55c571d52b60a93ef01e1e0a5153737c6bc0e84145eecf0ac87ccbf3",
+      "cad/cad_rga_fall2018.gxml": "1b80bf89dd133fbcbe0072573d729e1934683a7980faefb76821cf441ca44c61",
+      "cad/cad_rga_spring2018.gxml": "1b80bf89dd133fbcbe0072573d729e1934683a7980faefb76821cf441ca44c61",
+      "cad/cad_rgb_spring2019.gxml": "1b80bf89dd133fbcbe0072573d729e1934683a7980faefb76821cf441ca44c61",
+      "cad/cad_rgb_spring2020.gxml": "1b80bf89dd133fbcbe0072573d729e1934683a7980faefb76821cf441ca44c61",
+      "cad/cad_rgm_fall2021_H.gxml": "1b80bf89dd133fbcbe0072573d729e1934683a7980faefb76821cf441ca44c61",
+      "ltcc__bank.txt": "a733ab9ee120be16aaa75d09675b7a6d80ef85d7f82b0d2105fd9ec00a5b5ce7",
+      "ltcc__geometry_default.txt": "c2825cece6627af316101e6e9da54d577046a1a17bdc849f1fe4c506e6c0d3e7",
+      "ltcc__geometry_rga_fall2018.txt": "ecf498fdd6f7ad54e7b24f0eb369fd353bcc4a3ba0bd69ab54e32492ba0f4f0b",
+      "ltcc__geometry_rga_spring2018.txt": "a0e8b5625b29d3c98f935b0d49c6a57be0071418e9add73f44f0fd0793c85238",
+      "ltcc__geometry_rgb_spring2019.txt": "50c3640b85a94124b6e5eeddf4df08e503a3801b6cae871a28fa58063b21bbe9",
+      "ltcc__geometry_rgb_spring2020.txt": "50c3640b85a94124b6e5eeddf4df08e503a3801b6cae871a28fa58063b21bbe9",
+      "ltcc__geometry_rgm_fall2021_H.txt": "9d3273a467bb285e62793a34d01513d494b20741df3ee992407b6d9080013631",
+      "ltcc__hit_default.txt": "0d3d40fe872709ab52aa334e008385490080ba5db65ebeda7baddb985039b491",
+      "ltcc__hit_rga_fall2018.txt": "0d3d40fe872709ab52aa334e008385490080ba5db65ebeda7baddb985039b491",
+      "ltcc__hit_rga_spring2018.txt": "0d3d40fe872709ab52aa334e008385490080ba5db65ebeda7baddb985039b491",
+      "ltcc__hit_rgb_spring2019.txt": "0d3d40fe872709ab52aa334e008385490080ba5db65ebeda7baddb985039b491",
+      "ltcc__hit_rgb_spring2020.txt": "0d3d40fe872709ab52aa334e008385490080ba5db65ebeda7baddb985039b491",
+      "ltcc__hit_rgm_fall2021_H.txt": "0d3d40fe872709ab52aa334e008385490080ba5db65ebeda7baddb985039b491",
+      "ltcc__materials_default.txt": "4cdcd1d556abc4bc8c6a4e45ce90497e08e5474cee7a3bbc79131149907b21e2",
+      "ltcc__materials_rga_fall2018.txt": "4cdcd1d556abc4bc8c6a4e45ce90497e08e5474cee7a3bbc79131149907b21e2",
+      "ltcc__materials_rga_spring2018.txt": "4cdcd1d556abc4bc8c6a4e45ce90497e08e5474cee7a3bbc79131149907b21e2",
+      "ltcc__materials_rgb_spring2019.txt": "4cdcd1d556abc4bc8c6a4e45ce90497e08e5474cee7a3bbc79131149907b21e2",
+      "ltcc__materials_rgb_spring2020.txt": "4cdcd1d556abc4bc8c6a4e45ce90497e08e5474cee7a3bbc79131149907b21e2",
+      "ltcc__materials_rgm_fall2021_H.txt": "4cdcd1d556abc4bc8c6a4e45ce90497e08e5474cee7a3bbc79131149907b21e2",
+      "ltcc__mirrors_default.txt": "c68ddadfaea811cf81d856eb0aa95870977eb7a33cfc5a27e15627f060f1f02b",
+      "ltcc__mirrors_rga_fall2018.txt": "c68ddadfaea811cf81d856eb0aa95870977eb7a33cfc5a27e15627f060f1f02b",
+      "ltcc__mirrors_rga_spring2018.txt": "c68ddadfaea811cf81d856eb0aa95870977eb7a33cfc5a27e15627f060f1f02b",
+      "ltcc__mirrors_rgb_spring2019.txt": "c68ddadfaea811cf81d856eb0aa95870977eb7a33cfc5a27e15627f060f1f02b",
+      "ltcc__mirrors_rgb_spring2020.txt": "c68ddadfaea811cf81d856eb0aa95870977eb7a33cfc5a27e15627f060f1f02b",
+      "ltcc__mirrors_rgm_fall2021_H.txt": "c68ddadfaea811cf81d856eb0aa95870977eb7a33cfc5a27e15627f060f1f02b",
+      "ltcc__parameters_default.txt": "acc94ece54bfe4cb4eabba30ec117df45d60f9573c812d6822cb088d120269d5",
+      "ltcc_sqlite.gcard": "7c02dc5a71a5da4965c0b5b80d1a3749f95b3597e9c815bdf5dd415b062f7ba7",
+      "ltcc_text_default.gcard": "6b77752a68f2be356491a5e41e0cf6c56c03056f9721e57324c9961dae509bc0",
+      "ltcc_text_rga_fall2018.gcard": "8b31a03fdf3afa2e08b995da11fd3e23baf327275f931173ad331f978a657a6e",
+      "ltcc_text_rga_spring2018.gcard": "05b9100596bdabc6c8f122ba98b75259a5f5ba4b181687c8d52452f3aa39f27c",
+      "ltcc_text_rgb_spring2019.gcard": "a3dbeb2414c33e4f7a403c4fded2ffa0fa377decf56d4ee0d69495b0dcf5ed84",
+      "ltcc_text_rgb_spring2020.gcard": "7100008ad02d0a353270cc646fa1f11e7748ad660170f0dcc9d5c4458053866b",
+      "ltcc_text_rgm_fall2021_H.gcard": "34ff4252d534c8d1f535bad355667af8c2f33807da35cb920d6c071c93846080",
+      "pionYield.txt": "d422a094d5abd68b9e28190470705850a4320990da35310cf54f88a2b0f87970"
+    },
+    "cones_only": {
+      "benchmark.gcard": "32cbdd0ad76b83b3561a9cd3354da16ed580e176c96df3e5717bdfc9f25eab0b",
+      "cad/BottomPlate.stl": "63e15f85ff22f9ada1d2307148c25a7db66667dea4ca0442ed0640c5f4b5bfba",
+      "cad/Epoxy.stl": "618c1df9d22d7dd507780e6f05fcdba8ce017caef52b05da6ef51cfee762da67",
+      "cad/FrontPlate.stl": "e41c2cd19795b6b957e635797b7586083ec42ac93c09aa2afeea12db3e835375",
+      "cad/Mount.stl": "89f33911e0f0a407234b10c180a96fb67234acc2b08084bdecdca8a1d6a81556",
+      "cad/NFrame.stl": "222f8e064a4bc9d744ea310662af85c0d539099259fc7bad3729180408ef7338",
+      "cad/Nose.stl": "b0d278b1ba36960f09b8de94f0cb277cab100757485695246aac596c2a3d308a",
+      "cad/S1-BB.stl": "dae6e359dab08b6882f6df4a1876831ef55eaf76d4eeb335b28fea9c7b56f2c5",
+      "cad/S1-BLB.stl": "3e0308611d0bf64251fe7967986796483ec030189795448ee06880513b75658f",
+      "cad/S1-BRB.stl": "2af1255a29f25e0c4b891e6de06821f829eb5f981013c22b49e11be96530374f",
+      "cad/S1-BW.stl": "fbfa32d131603aefd1106a2428b34e6576c03137343e145e5473e86fa1966770",
+      "cad/S1-LW.stl": "e06112e61680ff45996cc98485e4e0a6ffe9b036d61f556532fdd78bddaf85ac",
+      "cad/S1-RW.stl": "781b1c745eb1cfa55a97ebd28c09c93126b8cc1a00db5091b672bda6d78bd710",
+      "cad/S1-TB.stl": "3d2c57d594d16277fd9e44a936f4536ebc4821e77bf037db696f1e4a975b2466",
+      "cad/S1-TLB.stl": "a17f62e300deda9a5ae03ba00c0e610a1da805dcb3de02106851a6b9daf5b6af",
+      "cad/S1-TRB.stl": "327d82993de6d96b4ad7d8a87983c0f88bb8cee55852ef9e8acbe59e509f336d",
+      "cad/WC_L.stl": "96fb901ce21037a98cfb2affe01302af2cced810c1b467eca3de13221a266c96",
+      "cad/WC_M.stl": "27eed3d53e72c1a4e30db1b93a6a3f058cb27c45f2afac4cb5f67e67e7671dac",
+      "cad/WC_S.stl": "7676f8e3a6ab91614b7a75115e507bc95d5a20d63c7c58c2a78320addc0f630c",
+      "cad/cad_default.gxml": "7fbc7abe55c571d52b60a93ef01e1e0a5153737c6bc0e84145eecf0ac87ccbf3",
+      "cad/cad_rga_fall2018.gxml": "1b80bf89dd133fbcbe0072573d729e1934683a7980faefb76821cf441ca44c61",
+      "cad/cad_rga_spring2018.gxml": "1b80bf89dd133fbcbe0072573d729e1934683a7980faefb76821cf441ca44c61",
+      "cad/cad_rgb_spring2019.gxml": "1b80bf89dd133fbcbe0072573d729e1934683a7980faefb76821cf441ca44c61",
+      "cad/cad_rgb_spring2020.gxml": "1b80bf89dd133fbcbe0072573d729e1934683a7980faefb76821cf441ca44c61",
+      "cad/cad_rgm_fall2021_H.gxml": "1b80bf89dd133fbcbe0072573d729e1934683a7980faefb76821cf441ca44c61",
+      "ltcc__bank.txt": "a733ab9ee120be16aaa75d09675b7a6d80ef85d7f82b0d2105fd9ec00a5b5ce7",
+      "ltcc__geometry_default.txt": "c2825cece6627af316101e6e9da54d577046a1a17bdc849f1fe4c506e6c0d3e7",
+      "ltcc__geometry_rga_fall2018.txt": "ecf498fdd6f7ad54e7b24f0eb369fd353bcc4a3ba0bd69ab54e32492ba0f4f0b",
+      "ltcc__geometry_rga_spring2018.txt": "a0e8b5625b29d3c98f935b0d49c6a57be0071418e9add73f44f0fd0793c85238",
+      "ltcc__geometry_rgb_spring2019.txt": "50c3640b85a94124b6e5eeddf4df08e503a3801b6cae871a28fa58063b21bbe9",
+      "ltcc__geometry_rgb_spring2020.txt": "50c3640b85a94124b6e5eeddf4df08e503a3801b6cae871a28fa58063b21bbe9",
+      "ltcc__geometry_rgm_fall2021_H.txt": "9d3273a467bb285e62793a34d01513d494b20741df3ee992407b6d9080013631",
+      "ltcc__hit_default.txt": "0d3d40fe872709ab52aa334e008385490080ba5db65ebeda7baddb985039b491",
+      "ltcc__hit_rga_fall2018.txt": "0d3d40fe872709ab52aa334e008385490080ba5db65ebeda7baddb985039b491",
+      "ltcc__hit_rga_spring2018.txt": "0d3d40fe872709ab52aa334e008385490080ba5db65ebeda7baddb985039b491",
+      "ltcc__hit_rgb_spring2019.txt": "0d3d40fe872709ab52aa334e008385490080ba5db65ebeda7baddb985039b491",
+      "ltcc__hit_rgb_spring2020.txt": "0d3d40fe872709ab52aa334e008385490080ba5db65ebeda7baddb985039b491",
+      "ltcc__hit_rgm_fall2021_H.txt": "0d3d40fe872709ab52aa334e008385490080ba5db65ebeda7baddb985039b491",
+      "ltcc__materials_default.txt": "4cdcd1d556abc4bc8c6a4e45ce90497e08e5474cee7a3bbc79131149907b21e2",
+      "ltcc__materials_rga_fall2018.txt": "4cdcd1d556abc4bc8c6a4e45ce90497e08e5474cee7a3bbc79131149907b21e2",
+      "ltcc__materials_rga_spring2018.txt": "4cdcd1d556abc4bc8c6a4e45ce90497e08e5474cee7a3bbc79131149907b21e2",
+      "ltcc__materials_rgb_spring2019.txt": "4cdcd1d556abc4bc8c6a4e45ce90497e08e5474cee7a3bbc79131149907b21e2",
+      "ltcc__materials_rgb_spring2020.txt": "4cdcd1d556abc4bc8c6a4e45ce90497e08e5474cee7a3bbc79131149907b21e2",
+      "ltcc__materials_rgm_fall2021_H.txt": "4cdcd1d556abc4bc8c6a4e45ce90497e08e5474cee7a3bbc79131149907b21e2",
+      "ltcc__mirrors_default.txt": "c68ddadfaea811cf81d856eb0aa95870977eb7a33cfc5a27e15627f060f1f02b",
+      "ltcc__mirrors_rga_fall2018.txt": "c68ddadfaea811cf81d856eb0aa95870977eb7a33cfc5a27e15627f060f1f02b",
+      "ltcc__mirrors_rga_spring2018.txt": "c68ddadfaea811cf81d856eb0aa95870977eb7a33cfc5a27e15627f060f1f02b",
+      "ltcc__mirrors_rgb_spring2019.txt": "c68ddadfaea811cf81d856eb0aa95870977eb7a33cfc5a27e15627f060f1f02b",
+      "ltcc__mirrors_rgb_spring2020.txt": "c68ddadfaea811cf81d856eb0aa95870977eb7a33cfc5a27e15627f060f1f02b",
+      "ltcc__mirrors_rgm_fall2021_H.txt": "c68ddadfaea811cf81d856eb0aa95870977eb7a33cfc5a27e15627f060f1f02b",
+      "ltcc__parameters_default.txt": "acc94ece54bfe4cb4eabba30ec117df45d60f9573c812d6822cb088d120269d5",
+      "ltcc_sqlite.gcard": "7c02dc5a71a5da4965c0b5b80d1a3749f95b3597e9c815bdf5dd415b062f7ba7",
+      "ltcc_text_default.gcard": "6b77752a68f2be356491a5e41e0cf6c56c03056f9721e57324c9961dae509bc0",
+      "ltcc_text_rga_fall2018.gcard": "8b31a03fdf3afa2e08b995da11fd3e23baf327275f931173ad331f978a657a6e",
+      "ltcc_text_rga_spring2018.gcard": "05b9100596bdabc6c8f122ba98b75259a5f5ba4b181687c8d52452f3aa39f27c",
+      "ltcc_text_rgb_spring2019.gcard": "a3dbeb2414c33e4f7a403c4fded2ffa0fa377decf56d4ee0d69495b0dcf5ed84",
+      "ltcc_text_rgb_spring2020.gcard": "7100008ad02d0a353270cc646fa1f11e7748ad660170f0dcc9d5c4458053866b",
+      "ltcc_text_rgm_fall2021_H.gcard": "34ff4252d534c8d1f535bad355667af8c2f33807da35cb920d6c071c93846080",
+      "pionYield.txt": "d422a094d5abd68b9e28190470705850a4320990da35310cf54f88a2b0f87970"
+    },
+    "new": {
+      "benchmark.gcard": "32cbdd0ad76b83b3561a9cd3354da16ed580e176c96df3e5717bdfc9f25eab0b",
+      "cad/WC_L.stl": "96fb901ce21037a98cfb2affe01302af2cced810c1b467eca3de13221a266c96",
+      "cad/WC_M.stl": "27eed3d53e72c1a4e30db1b93a6a3f058cb27c45f2afac4cb5f67e67e7671dac",
+      "cad/WC_S.stl": "7676f8e3a6ab91614b7a75115e507bc95d5a20d63c7c58c2a78320addc0f630c",
+      "cad/backwall.stl": "facb18cb6fbf263d13edd899f4cc9a5973c47e92e375e1dec5e43689028d13c1",
+      "cad/cad_default.gxml": "6ca1af7bc386d34575d45bf6cf540f570581afdede86c9ff3390c7b508965f6b",
+      "cad/cad_rga_fall2018.gxml": "6ca1af7bc386d34575d45bf6cf540f570581afdede86c9ff3390c7b508965f6b",
+      "cad/cad_rga_spring2018.gxml": "6ca1af7bc386d34575d45bf6cf540f570581afdede86c9ff3390c7b508965f6b",
+      "cad/cad_rgb_spring2019.gxml": "6ca1af7bc386d34575d45bf6cf540f570581afdede86c9ff3390c7b508965f6b",
+      "cad/cad_rgb_spring2020.gxml": "6ca1af7bc386d34575d45bf6cf540f570581afdede86c9ff3390c7b508965f6b",
+      "cad/cad_rgm_fall2021_H.gxml": "6ca1af7bc386d34575d45bf6cf540f570581afdede86c9ff3390c7b508965f6b",
+      "cad/leftwall.stl": "3995f0bd913cf4037c6b7318c0fef03fa04e1bbeddc950dbe21bcd5b6aec69fa",
+      "cad/nose.stl": "4dd401deb7e3c8bcf41e18bc75992ff0cf3dfaedd3ad42089c5d9adfdbfd55b5",
+      "cad/rightwall.stl": "cf713920501e752948ee765ea9e078d9448bc17e5b182c1dcfe83883b85ee73e",
+      "ltcc__bank.txt": "a733ab9ee120be16aaa75d09675b7a6d80ef85d7f82b0d2105fd9ec00a5b5ce7",
+      "ltcc__geometry_default.txt": "81fa9dbc4aca39142a262959fb1dbfd6097bbfb9dc0ae3a3ba03223d5efc14e5",
+      "ltcc__geometry_rga_fall2018.txt": "4f7edaf668db20cb61a8e1d944ea3187bf1ac37f71bf7322d55350491750341d",
+      "ltcc__geometry_rga_spring2018.txt": "6d16233309ab8c3c374c202e5a9707e9f482f349becb85171a8ed65f080bcb15",
+      "ltcc__geometry_rgb_spring2019.txt": "ae44cc0817343d831cd417db6062699478f591033b4f3e23b65341e824b9cb3f",
+      "ltcc__geometry_rgb_spring2020.txt": "ae44cc0817343d831cd417db6062699478f591033b4f3e23b65341e824b9cb3f",
+      "ltcc__geometry_rgm_fall2021_H.txt": "e9b9c0dce0d4ddb27932dca6b22e0e837c93aa1c51e5065842436748ff136e9f",
+      "ltcc__hit_default.txt": "0d3d40fe872709ab52aa334e008385490080ba5db65ebeda7baddb985039b491",
+      "ltcc__hit_rga_fall2018.txt": "0d3d40fe872709ab52aa334e008385490080ba5db65ebeda7baddb985039b491",
+      "ltcc__hit_rga_spring2018.txt": "0d3d40fe872709ab52aa334e008385490080ba5db65ebeda7baddb985039b491",
+      "ltcc__hit_rgb_spring2019.txt": "0d3d40fe872709ab52aa334e008385490080ba5db65ebeda7baddb985039b491",
+      "ltcc__hit_rgb_spring2020.txt": "0d3d40fe872709ab52aa334e008385490080ba5db65ebeda7baddb985039b491",
+      "ltcc__hit_rgm_fall2021_H.txt": "0d3d40fe872709ab52aa334e008385490080ba5db65ebeda7baddb985039b491",
+      "ltcc__materials_default.txt": "9922b8f7797f4448dc7f205e263b8685b5aabc778786948742a4e85807b12776",
+      "ltcc__materials_rga_fall2018.txt": "9922b8f7797f4448dc7f205e263b8685b5aabc778786948742a4e85807b12776",
+      "ltcc__materials_rga_spring2018.txt": "9922b8f7797f4448dc7f205e263b8685b5aabc778786948742a4e85807b12776",
+      "ltcc__materials_rgb_spring2019.txt": "9922b8f7797f4448dc7f205e263b8685b5aabc778786948742a4e85807b12776",
+      "ltcc__materials_rgb_spring2020.txt": "9922b8f7797f4448dc7f205e263b8685b5aabc778786948742a4e85807b12776",
+      "ltcc__materials_rgm_fall2021_H.txt": "9922b8f7797f4448dc7f205e263b8685b5aabc778786948742a4e85807b12776",
+      "ltcc__mirrors_default.txt": "c68ddadfaea811cf81d856eb0aa95870977eb7a33cfc5a27e15627f060f1f02b",
+      "ltcc__mirrors_rga_fall2018.txt": "c68ddadfaea811cf81d856eb0aa95870977eb7a33cfc5a27e15627f060f1f02b",
+      "ltcc__mirrors_rga_spring2018.txt": "c68ddadfaea811cf81d856eb0aa95870977eb7a33cfc5a27e15627f060f1f02b",
+      "ltcc__mirrors_rgb_spring2019.txt": "c68ddadfaea811cf81d856eb0aa95870977eb7a33cfc5a27e15627f060f1f02b",
+      "ltcc__mirrors_rgb_spring2020.txt": "c68ddadfaea811cf81d856eb0aa95870977eb7a33cfc5a27e15627f060f1f02b",
+      "ltcc__mirrors_rgm_fall2021_H.txt": "c68ddadfaea811cf81d856eb0aa95870977eb7a33cfc5a27e15627f060f1f02b",
+      "ltcc__parameters_default.txt": "acc94ece54bfe4cb4eabba30ec117df45d60f9573c812d6822cb088d120269d5",
+      "ltcc_sqlite.gcard": "0e69bc9f907eaff6dc66fa528eb37a2cc44e88839dd2401381b19700a3e49f91",
+      "ltcc_text_default.gcard": "37a6ce67edd3efb80a3bafbead3620e6013d44c2165bb0891761683d8f960477",
+      "ltcc_text_rga_fall2018.gcard": "de858490c2427b919371900f402ef5fe5d4136e4250a8cd343da5b1996e4d8e3",
+      "ltcc_text_rga_spring2018.gcard": "82c2a5f2cbd397055d582fd49ee8d35f026b2474a92d6bf7ec4c22aa2c8d3c0a",
+      "ltcc_text_rgb_spring2019.gcard": "b765cd893d0b44e51e6a0226f71b024326908d496911e3fc3c6f788f85d447be",
+      "ltcc_text_rgb_spring2020.gcard": "a12f598ed1b27fe86456bccc27ba62c77be3b858da7f831207f9b1560ef2b665",
+      "ltcc_text_rgm_fall2021_H.gcard": "37e9f0dd4297c48a21df814812c9efb9c6dc156eadf63db90b54854a1d98f0de",
+      "pionYield.txt": "d422a094d5abd68b9e28190470705850a4320990da35310cf54f88a2b0f87970"
+    }
+  }
+}

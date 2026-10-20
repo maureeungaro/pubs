@@ -1,0 +1,153 @@
+\FloatBarrier
+
+\section{Conclusions}
+
+\begin{enumerate}
+
+\item For LTCC, against the complete original hardware, the optimized CAD bundle contains 93.9\% fewer
+triangles and 93.9\% fewer bytes. CAD-only loading CPU time decreases by 92.6\%. This is direct evidence
+that the simplified files reduce loading work.
+
+\item Complete LTCC initialization CPU time falls by 63.5\% and startup peak memory falls by 56.8\%. These
+gains include both optimized files and the simplified native hierarchy.
+
+\item Nonoptical electron transport is 1.29 times faster; hadron workloads take 1.35--1.53 times as much CPU
+time. The separate cone-only measurements quantify the isolated Winston-cone substitution.
+
+\item Full-port optical electron transport requires 1.73 times as much median CPU time in this benchmark. The
+increased CPU use may reflect more complete transport after geometry defects are removed: the original model
+repeatedly requires corrective navigation pushes, while optimized diagnostic samples contain more tracks and
+steps. Lower original CPU time is therefore not sufficient evidence of faster correct transport. Revised
+materials and containment also contribute, so the separate causes remain unresolved.
+
+\item The optimized meshes remove 857 exact zero-area triangles and eliminate the 1,714 invalid/rejected-facet
+warnings per original import. Navigation reports across the tested workloads fall from 9,546 to 1. Overlap and
+containment reports remain, so these gains do not establish overlap-free geometry.
+
+\item Ported TEXT and SQLite geometries agree for all six run-dependent configurations. Warning counts are
+reported for the tested construction sample and transport workloads; they do not establish that the complete
+CLAS12 geometry is free of overlaps. Detector-response, material-budget, magnetic-field, and full-experiment
+comparisons remain outside this study.
+
+\item The separate beamline apex pair contains 45.4\% fewer triangles while preserving topology, sharp hub
+features, materials, and placements, with sampled shape differences below 0.05 mm. Its median loading wall
+time falls by 15.7\% and startup peak memory by 17.4\%. Transport wall time improves by 1.77--2.01 times in
+the first, smaller matched-primary sample. These gains describe the isolated GEMC3 pair and do not establish
+full-experiment performance or detector-response equivalence.
+
+\item The downstream tube pair is reduced by 3.75\% in triangles, and Segment 1 is closed by registering and
+bridging its missing annular joins while retaining the bore. Import surface-hole warnings are removed, but
+overlaps and navigation warnings remain. The measured transport ratios describe this limited workload and do
+not establish response equivalence or faster correct transport.
+
+\item The already-coarse adapter and torus exit-shield group permits only a 0.434\% triangle reduction with
+protected casing mating faces. The adapter is renamed consistently, and the lead fill is retained exactly.
+Its repeated benchmark does not establish substantial performance gains; shape preservation takes priority
+over a larger triangle reduction.
+
+\item The FT adjuster trio is replaced by one 48-triangle closed prism, reducing triangles by 98.74\% while
+matching the estimated sealed reference union volume within 0.00003\%. The material and common placement are
+retained, and internal overlaps disappear in the isolated check. The reference mass remains approximate
+because two original shells are open; deliberate material redistribution prevents a claim of
+detector-response equivalence.
+
+\item The renamed FT inner shield and flange contains 36.14\% fewer triangles with retained bounds, alloy
+material, placement, two closed components, and mounting/bore topology. Its small enclosed pocket is
+unchanged, sampled surface differences remain below 0.05 mm, and total signed volume changes by about
+-0.000044\%. The isolated benchmark quantifies loading, transport, and diagnostics without establishing
+full-experiment response equivalence.
+
+\item Nine renamed FT inner-shield bolts use smooth solid shafts and round heads, reducing triangles by 89.38\%
+while retaining each copper volume within 0.0001\%. Shortened tips leave 0.15 mm gaps at the blind-hole
+ends; independent collision, containment, and 10,000-point Geant4 checks find no shield interference.
+Electron, pion, and neutron transport timings improve in this isolated sample, while proton tracking is
+essentially unchanged. These results do not establish full-experiment speedup or response equivalence.
+
+\item The renamed FT outer flange closes twelve bolt tunnels and reduces triangles by 60.79\% while retaining
+the
+central opening, engineering rim coordinates, bounds, and placement. The authorized hole closure adds
+8.296635\% stainless-steel volume. Repeated tracking timings and residual assembly overlaps are recorded
+separately; added material prevents attributing timing differences solely to fewer triangles or inferring
+response equivalence.
+
+The separate control at fixed material volume gives median tracking speedups of 1.073, 1.016, 1.034, and
+1.013 for electrons, protons, positive pions, and neutrons, with the simplified mesh faster in every seed
+pair of this larger sample.
+
+\item The renamed FT outer mount repairs four triangular surface gaps and reduces triangles by 11.44\%,
+retaining
+its existing openings and placement. Protected radial relief removes about 0.24924\% material against the
+sealed reference and provides at least 0.03597 mm radial separation from the flange in their common axial
+interval. Surface checks and the 10,000-point assembly test find no joint overlap, resolving the earlier
+flange/mount interference. Repeated tracking results show modest electron, proton, and pion gains with
+slower neutron tracking; unrelated full-beamline diagnostics remain.
+
+\item The final downstream FT inner shield has smooth flange faces with every bolt recess filled, while
+retaining
+both longitudinal grooves and the central passage. It contains 6,500 triangles, 85.27\% fewer than the raw
+input and 51.85\% fewer than the first revision. Recess closure adds 0.436019\% tungsten volume relative to
+the prior closed mesh. Upgrade and smooth-reference tracking comparisons are reported separately with clean
+isolated transport; the subsequent Moller-cone revision resolves the shield/cone interference.
+
+\item The renamed Moller cone fills its surface openings, retains its beam passage and outer bounds, and
+reduces
+triangles by 68.32\%. A widened protected counterbore removes about 0.168806\% tungsten relative to the
+hole-filled reference and provides at least 0.187891 mm radial shield clearance. The cone/shield assembly
+passes the 10,000-point overlap check. Raw-input timing includes solid and navigation warnings; the clean
+clearance-reference control separately measures tessellation gains at effectively unchanged material volume.
+
+\item Local relief of both Segment 1 sockets resolves the remaining downstream adapter and tube contacts
+without
+changing placements or neighboring meshes. Segment 1 has 5,096 triangles, 0.604764\% less steel than its
+previous closed mesh, and at least 0.1 mm socket-face clearance. The three-part high-resolution overlap test
+and full default beamline construction pass without exceptions. Separate repeated tracking results include
+the repair and material change.
+
+\item The beamline runtime database now selects every configuration by run number under \texttt{default}.
+Run 16000 loads all 32 geometry volumes, and all 17 configured runs pass construction with unchanged
+physical geometry. This selection fix has no independently measured tracking-speed gain.
+
+\item The renamed Moller cone tip has 63.58\% fewer triangles with retained topology, sharp faces, bounds, and
+a -0.000486\% material-volume change. Isolated tracking is 1.659, 1.133, 1.177, and 1.159 times faster for
+electrons, protons, positive pions, and neutrons in this sample. Its pre-existing main-cone overlap remains in
+the four affected complete configurations and is reported separately.
+
+\item The renamed FT flange retains its opening, flat faces, bounds, and topology with 540 triangles, 2.17\%
+fewer than the already-coarse original. Steel volume changes by -0.000109\%, and sampled surface differences
+remain below 0.05 mm. Median tracking ratios remain within 0.18\% of one, providing no meaningful speed-gain
+evidence. Existing neighboring assembly defects remain and are reported separately.
+
+\item The renamed inner Moller-cone extension restores its missing radial-port wall and reduces triangles by
+30.77\% while retaining its passages, bounds, and protected faces. Decimation changes the repaired reference
+volume by +0.000009303\%, with sampled deviations below 0.016 mm. Repaired-reference tracking ratios are
+1.261, 1.086, 1.144, 1.095 for electrons, protons, positive pions, and neutrons. The original is open and
+produces navigation warnings; those raw timings are reported separately. Existing assembly overlaps remain.
+
+\item The moller-cone extension lead fill retains its mating surface and openings with 24.49\% fewer
+triangles. Median isolated tracking ratios are 1.0826, 1.0795, 1.1226, 1.0882 for electrons, protons, positive
+pions, and neutrons. Every paired measurement improves in this sample. Existing assembly overlaps remain.
+
+\item The moller-cone extension lead case retains its mating surface and openings with 42.40\% fewer
+triangles. Median isolated tracking ratios are 1.0529, 1.0377, 1.0098, 1.0198 for electrons, protons, positive
+pions, and neutrons. Some paired ranges include one; those particle samples do not establish a consistent
+gain. Existing assembly overlaps remain.
+
+\item The renamed Moller-cone extension tungsten add-on restores its missing radial-port wall and reduces
+triangles by 56.80\% while retaining its passages, bounds, and protected faces. Decimation changes the
+repaired reference volume by -0.0000046193\%, with sampled deviations below 0.013 mm. Repaired-reference
+tracking ratios are 1.647, 1.548, 1.642, 1.535 for electrons, protons, positive pions, and neutrons. The
+original is open and produces navigation warnings; those raw timings are reported separately. Existing
+assembly overlaps remain.
+
+\item Local FT/cone joint reliefs clear all eight checked interfaces while retaining the shield, flange, and
+cone tip. Five meshes lose 0.119--1.209\% material by volume. All affected complete configurations construct
+without exceptions, and final corrected tracking runs are clean. Isolated tracking ratios 0.8568, 0.8541,
+0.8465, 0.8920 describe the eight-part clearance revision; they are not pure decimation gains.
+
+\item The three HTCC cones have 49.20\% fewer triangles, and the entry cone's 144 boundary edges are closed.
+All six TEXT/CAD and SQLite/CAD initialization checks and the three native/CAD database comparisons pass. The
+Moller cone retains 24 non-manifold edges, and the cured entry cone introduces an observed contact of
+approximately 0.053 mm with the entry window. These unresolved defects preclude a claim of complete geometry
+validation; no performance or detector-response gain has been measured for this transfer.
+
+\end{enumerate}

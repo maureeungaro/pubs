@@ -1,0 +1,114 @@
+\FloatBarrier
+\section{Downstream beam tube optimization}
+
+The remaining downstream contacts recorded in this historical study are resolved by the subsequent socket
+revision in Section~\ref{sec:downstream-joints}.
+
+The next beamline step covers the two downstream tube segments. Their engineering tessellations are already
+coarse, so reductions are modest: 5,146 to 5,000 and 672 to 600 triangles. Together they decrease from 5,818
+to 5,600 triangles (3.75\%) and from 291,068 to 280,168 bytes. Names, stainless-steel materials, coordinate
+frames, and placements are retained in GEMC3 and GEMC2; no CAD database row is renamed or moved.
+
+Segment 1 originally contains seven disconnected surface components, 392 boundary edges, fourteen boundary
+loops, and 1,021 faces flagged by the mesh self-intersection filter. Generic hole closing caps the bore and
+is unsuitable. The repair registers the seven inner/outer boundary-ring pairs on matching angular grids
+while preserving their measured radii and axial positions, then adds 392 annular faces. All 392 seam
+vertices are protected during decimation. The output is a single closed, manifold tube of genus one; the
+passage remains open. Segment 2 retains its original single-component, genus-one topology. Neither output
+has detected self-intersections or exact zero-area triangles.
+
+Table~\ref{tab:downstream-meshes} summarizes the mesh inventory.
+
+\begin{table}[htbp]
+\centering
+\caption{Downstream triangle counts and surface-component changes.}
+\label{tab:downstream-meshes}
+\begin{tabular}{lrrrr}
+\toprule
+Mesh & Original & Optimized & Original components & Output components \\
+\midrule
+Segment 1 & 5,146 & 5,000 & 7 & 1 \\
+Segment 2 & 672 & 600 & 1 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The largest bidirectionally sampled surface differences are 0.7454 mm and 0.4574 mm, mainly around short
+connector and flange features. Bounds change by at most 0.011 mm. The 0.05 mm apex sampling limit does not
+apply to these tubes. Every original/output vertex and approximately 200,000 edge/surface samples per
+direction are checked; these sampled maxima are not proven global error bounds. Segment 1 has no
+well-defined original volume because its surface is open. Decimation changes its annularly repaired
+reference volume by -0.01632\%; this does not establish original-to-repaired mass equivalence. Segment 2
+changes by -0.00170\%. The builder reproduces both outputs byte for byte from archived originals.
+
+The pair-only benchmark uses the recorded GEMC3 executable and Geant4 stack, FTFP\_BERT without optical
+processes, air, zero magnetic field, one thread, and identical default production cuts. GUI and event output
+are disabled. Matched 5 GeV LUND primaries start at the target, uniform in solid angle from 0.1 to 1.3
+degrees and over full azimuth. The smaller forward aperture illuminates the downstream tubes. Five
+alternating-order repetitions use seeds 12345--12349 and 200 events per electron, proton, positive-pion, or
+neutron run. Separate zero-event runs measure startup without overlap checking; elapsed wall time since
+beamOn measures transport. CPU and peak RSS are retained separately. Absolute timings are not pooled with
+the apex or LTCC workloads.
+
+Table~\ref{tab:downstream-timing} gives the separate particle-transport measurements.
+
+\begin{table}[htbp]
+\centering
+\caption{Median transport wall seconds per 200 events over five repetitions.}
+\label{tab:downstream-timing}
+\begin{tabular}{lrrr}
+\toprule
+Particle & Original & Optimized & Original/optimized \\
+\midrule
+e- & 13.008 & 11.401 & 1.14 \\
+proton & 2.109 & 1.901 & 1.11 \\
+pi+ & 2.318 & 2.161 & 1.07 \\
+neutron & 1.340 & 1.204 & 1.11 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Median startup simulation wall time changes from 0.6924 to 0.6925 s; loading peak RSS changes from 123.27 to
+123.06 MiB. These small initialization differences should not be interpreted as a substantial startup or
+memory improvement. The original/optimized median transport wall-time ratios range from 1.07 to 1.14. All 52
+processes exit normally, and all forty transport runs report their 200 requested events. No event-abort
+exception is recorded.
+
+Table~\ref{tab:downstream-warnings} quantifies the retained geometry and navigation diagnostics.
+
+\begin{table}[htbp]
+\centering
+\caption{Downstream construction and transport warning counts.}
+\label{tab:downstream-warnings}
+\begin{tabular}{lrr}
+\toprule
+Diagnostic & Original & Optimized \\
+\midrule
+Surface-hole warnings, five loading runs & 5 & 0 \\
+e- stuck tracks, five runs & 10 & 14 \\
+proton stuck tracks, five runs & 0 & 0 \\
+pi+ stuck tracks, five runs & 0 & 4 \\
+neutron stuck tracks, five runs & 0 & 1 \\
+Placement reports, overlap sample & 1 & 3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The repair eliminates the original surface-hole import warning. Placement overlap reports and stuck-track
+diagnostics remain, as quantified below. A completion footer and requested event count do not prove that
+every track followed the intended geometry. The original mesh lacks closed surfaces, and the repaired model
+changes the represented material boundaries. Therefore transport timing differences cannot be assigned
+solely to triangle-count reduction or used as proof of faster correct transport. The unchanged engineering
+placement overlap and the thin, coarsely tessellated connector surfaces require further geometry/navigation
+work. Detector response and full-experiment performance are outside this study.
+
+\FloatBarrier
+Figure~\ref{fig:downstream-stl} compares the stored triangulations.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/downstream_stl_comparison.pdf}
+\caption{Original (left) and optimized (right) downstream tube segments in millimetre coordinates.
+Both models retain the through-bore; the paired views use the same camera and scale.}
+\label{fig:downstream-stl}
+\end{figure}

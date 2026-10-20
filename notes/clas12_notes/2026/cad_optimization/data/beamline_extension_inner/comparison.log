@@ -1,0 +1,103 @@
+
+
+  ❖ Variation switched to: rga_spring2018
+  ❖ Variation switched to: rga_spring2018
+  ❖ Variation switched to: rgk_winter2018
+  ❖ Variation switched to: rgk_winter2018
+  ❖ Variation switched to: rgb_spring2019
+  ❖ Variation switched to: rgb_spring2019
+  ❖ Variation switched to: rgf_spring2020
+  ❖ Variation switched to: rgf_spring2020
+  ❖ Variation switched to: rgc_summer2022
+  ❖ Variation switched to: rgc_summer2022
+  ❖ Variation switched to: rgd_fall2023
+  ❖ Variation switched to: rgd_fall2023
+  ❖ Variation switched to: rgl_spring2025
+  ❖ Variation switched to: rgl_spring2025
+  ❖ Variation switched to: rgc_fall2022
+  ❖ Variation switched to: rgc_fall2022
+  ❖ Variation switched to: rge_spring2024
+  ❖ Variation switched to: rge_spring2024
+  ❖ Variation switched to: ddvcs
+  ❖ Variation switched to: ddvcs
+  ❖ Variation switched to: rghFTOut
+  ❖ Variation switched to: rghFTOn
+  ❖ Variation switched to: TransverseUpstreamBeampipe
+  ❖ Variation switched to: elmo7
+
+  ❖ Variation switched to: forwardWedges
+  ❖ Variation switched to: midpointWedges
+
+  ❖  GConfiguration for experiment <[1mclas12[0m>,  system <[1mbeamline[0m> : 
+	▪︎ Factory: ascii          
+    	↦ Geometry File: beamline__geometry_elmo7.txt
+    	↦ Materials File: beamline__materials_elmo7.txt
+    	↦ Mirrors File: beamline__mirrors_elmo7.txt
+	▪︎ Variation / Run:
+	    Variation                     Run
+	    ------------------------ --------
+	    default                        11
+	    rga_spring2018               3029
+	    rgk_winter2018               5874
+	    rgb_spring2019               6150
+	    rgf_spring2020              11620
+	    rgc_summer2022              16000
+	    rgd_fall2023                18304
+	    rgl_spring2025              21000
+	    rgc_fall2022                16843
+	    rge_spring2024              20000
+	    ddvcs                    10000201
+	    rghFTOut                 10000202
+	    rghFTOn                  10000203
+	    TransverseUpstreamBeampipe 10000204
+	    elmo7                    10000205
+	▪︎ Number of volumes: 147
+	▪︎ Number of materials: 30
+
+Comparing systems: beamline
+Generated ASCII workdir: /private/tmp/inner-extension-study/comparison
+clas12Tags experiments/clas12 reference: /opt/projects/gemc/clas12Tags/experiments/clas12
+beamline/TransverseUpstreamBeampipe: ok (2 geometry rows)
+beamline/ddvcs: ok (9 geometry rows)
+beamline/default: ok (10 geometry rows)
+beamline/elmo7: ok (5 geometry rows)
+beamline/rga_spring2018: ok (10 geometry rows)
+beamline/rgb_spring2019: ok (10 geometry rows)
+beamline/rgc_fall2022: ok (14 geometry rows)
+beamline/rgc_summer2022: ok (10 geometry rows)
+beamline/rgd_fall2023: ok (10 geometry rows)
+beamline/rge_spring2024: ok (10 geometry rows)
+beamline/rgf_spring2020: ok (10 geometry rows)
+beamline/rghFTOn: ok (13 geometry rows)
+beamline/rghFTOut: ok (14 geometry rows)
+beamline/rgk_winter2018: ok (10 geometry rows)
+beamline/rgl_spring2025: ok (10 geometry rows)
+beamline/TransverseUpstreamBeampipe: ok (2 materials rows)
+beamline/ddvcs: ok (2 materials rows)
+beamline/default: ok (2 materials rows)
+beamline/elmo7: ok (2 materials rows)
+beamline/rga_spring2018: ok (2 materials rows)
+beamline/rgb_spring2019: ok (2 materials rows)
+beamline/rgc_fall2022: ok (2 materials rows)
+beamline/rgc_summer2022: ok (2 materials rows)
+beamline/rgd_fall2023: ok (2 materials rows)
+beamline/rge_spring2024: ok (2 materials rows)
+beamline/rgf_spring2020: ok (2 materials rows)
+beamline/rghFTOn: ok (2 materials rows)
+beamline/rghFTOut: ok (2 materials rows)
+beamline/rgk_winter2018: ok (2 materials rows)
+beamline/rgl_spring2025: ok (2 materials rows)
+beamline/cad_ddvcs: ok (7 CAD rows)
+beamline/cad_default: ok (22 CAD rows)
+beamline/cad_rga_spring2018: ok (22 CAD rows)
+beamline/cad_rgb_spring2019: ok (22 CAD rows)
+beamline/cad_rgc_fall2022: ok (19 CAD rows)
+beamline/cad_rgc_summer2022: ok (22 CAD rows)
+beamline/cad_rgd_fall2023: ok (28 CAD rows)
+beamline/cad_rge_spring2024: ok (28 CAD rows)
+beamline/cad_rgf_spring2020: ok (28 CAD rows)
+beamline/cad_rgk_winter2018: ok (28 CAD rows)
+beamline/cad_rgl_spring2025: ok (22 CAD rows)
+beamline/transverse_cad_forwardWedges: ok (7 CAD rows)
+beamline/transverse_cad_midpointWedges: ok (7 CAD rows)
+beamline/transverse_cad_noWedges: ok (7 CAD rows)

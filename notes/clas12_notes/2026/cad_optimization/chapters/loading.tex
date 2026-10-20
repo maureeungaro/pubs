@@ -1,0 +1,100 @@
+\FloatBarrier
+
+\section{Mesh size and loading performance}
+
+Table~\ref{tab:1} compares the active mesh inventory. Counts refer to unique STL source meshes selected by the
+CAD gxml, not to repeated physical placements. All ten previously disabled meshes are active in the original
+comparator. Nine frame meshes with 112,640 triangles become three meshes with 1,660 triangles (98.5\% fewer).
+Six nose meshes with 12,012 triangles become one mesh with 1,986 triangles (83.5\% fewer). The three Winston
+cones shrink from 9,966 to 4,500 triangles (54.8\% fewer), retaining three source meshes.
+
+\begin{table}[htbp]
+
+\caption{Active CAD inventory for default LTCC geometry.}
+
+\label{tab:1}
+
+\centering
+
+\small
+
+\setlength{\tabcolsep}{4pt}
+
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}Xrrr@{}}
+
+\toprule
+
+Quantity & Original & Cones only & Full port \\
+
+\midrule
+
+STL source meshes & 18 & 18 & 7 \\
+
+Frame triangles & 112,640 & 112,640 & 1,660 \\
+
+Nose triangles & 12,012 & 12,012 & 1,986 \\
+
+Winston-cone triangles & 9,966 & 4,500 & 4,500 \\
+
+All triangles & 134,618 & 129,152 & 8,146 \\
+
+STL bytes & 6,732,412 & 6,459,112 & 407,888 \\
+
+Frame/nose placements & 90 & 90 & 24 \\
+
+TEXT geometry rows & 2,438 & 2,438 & 2,377 \\
+
+Component rows & 668 & 668 & 662 \\
+
+\bottomrule
+
+\end{tabularx}
+
+\end{table}
+
+Table~\ref{tab:2} separates full-detector initialization from the artificial CAD-only loading test. LTCC
+initialization CPU time decreases from 1.874 to 0.684 s (63.5\%); startup memory decreases from 176.75 to 76.31
+MiB (56.8\%). CAD-only loading CPU time decreases by 92.6\%, demonstrating a loading benefit of the simplified
+mesh bundle independently of the native mother redesign.
+
+\begin{table}[htbp]
+
+\caption{Median initialization measurements over five N=0 runs; 1 MiB = 1,048,576 bytes.}
+
+\label{tab:2}
+
+\centering
+
+\small
+
+\setlength{\tabcolsep}{4pt}
+
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}Xrrr@{}}
+
+\toprule
+
+Measurement & Original & Cones only & Full port \\
+
+\midrule
+
+LTCC CPU time (s) & 1.874 & 1.816 & 0.684 \\
+
+LTCC wall time (s) & 2.592 & 2.530 & 1.388 \\
+
+LTCC peak RSS (MiB) & 176.75 & 175.53 & 76.31 \\
+
+CAD-only CPU time (s) & 1.321 & 1.271 & 0.098 \\
+
+CAD-only wall time (s) & 2.066 & 2.027 & 0.835 \\
+
+CAD-only peak RSS (MiB) & 165.97 & 162.89 & 66.22 \\
+
+\bottomrule
+
+\end{tabularx}
+
+\end{table}

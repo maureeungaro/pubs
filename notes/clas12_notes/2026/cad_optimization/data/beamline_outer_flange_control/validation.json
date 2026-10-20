@@ -1,0 +1,15 @@
+{
+  "reference_sha256": "4f236aacaa7a68bd13e4b0c83adf85f4b663feac2022cb92ec426548b6499686",
+  "optimized_sha256": "36421b77cfe31f9fd8b31f451feba7fee532bde662125500a3624d4e6d8f4777",
+  "geometry_and_material_rows_identical": true,
+  "baseline": "Hole-filled, unreduced flange",
+  "baseline_triangles": 2084,
+  "optimized_triangles": 836,
+  "baseline_volume_mm3": 422180.7892837955,
+  "optimized_volume_mm3": 422180.7892837958,
+  "processes_completed": 52,
+  "transport_runs_completed": 40,
+  "events_per_transport_run": 2000,
+  "paired_primary_hashes_match": true,
+  "executable_sha256": "fc8738df72b63d0cf1f43ddd34339c2a8cef965ec089fb8425fe866d23f9a156"
+}

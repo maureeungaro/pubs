@@ -1,0 +1,26 @@
+{
+  "moller-cone-extension-inner": {
+    "original": {
+      "sha256": "7b81f79279cbc2703989379688e6eefac5439dfaa3bdd5275d13bbe0505099c2",
+      "triangles": 18057
+    },
+    "optimized": {
+      "sha256": "2a84ad71756d5d2dcd2cba42958fb7719fba3c78746d9901007f4e1163bf9637",
+      "triangles": 12500
+    },
+    "bounds_mm": [
+      [
+        -47.53644943237305,
+        -47.625,
+        -526.3429565429688
+      ],
+      [
+        47.625,
+        47.625,
+        -55.33295822143555
+      ]
+    ],
+    "elevation": 12,
+    "azimuth": 0
+  }
+}

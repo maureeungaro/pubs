@@ -1,0 +1,38 @@
+{
+  "previous": {
+    "Beamline_Adapter_1": {
+      "triangle_contacts": 240,
+      "contained_vertices": [
+        0,
+        24
+      ],
+      "minimum_sampled_vertex_distance_mm": 0.076171875
+    },
+    "Downstream_Beam_tube_Segment_2": {
+      "triangle_contacts": 239,
+      "contained_vertices": [
+        0,
+        0
+      ],
+      "minimum_sampled_vertex_distance_mm": 0.42043898445409883
+    }
+  },
+  "candidate": {
+    "Beamline_Adapter_1": {
+      "triangle_contacts": 0,
+      "contained_vertices": [
+        0,
+        0
+      ],
+      "minimum_sampled_vertex_distance_mm": 0.076171875
+    },
+    "Downstream_Beam_tube_Segment_2": {
+      "triangle_contacts": 0,
+      "contained_vertices": [
+        0,
+        0
+      ],
+      "minimum_sampled_vertex_distance_mm": 0.9185284719412349
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-13",
+  "platform": "macOS-26.7.1-arm64-arm-64bit",
+  "executable": "/opt/projects/gemc/src/build/bin/gemc",
+  "executable_sha256": "a8a8cf4643b97190a1e2ca18c539f7fbfa292e94dc390cf0e49e2611d0b0a0fe",
+  "version": "\n\n*******************************************************************\n \u001b[32m\u001b[1mgemc\u001b[0m  version: \u001b[32mdev\u001b[0m\n Called from: \u001b[32m/opt/projects/gemc/src/build/bin\u001b[0m\n Install: \u001b[32m/opt/projects/gemc/src/build/bin\u001b[0m\n Released on: \u001b[32m2026-10-11\u001b[0m\n GEMC Reference: \u001b[32mNucl. Instrum. Meth. A, Volume 959, 163422 (2020)\u001b[0m\n GEMC Homepage: \u001b[32mhttps://gemc.github.io/home\u001b[0m\n Author: \u001b[32mMaurizio Ungaro, ungaro@jlab.org\u001b[0m\n\n*******************************************************************\n\n",
+  "arguments": {
+    "executable": "/opt/projects/gemc/src/build/bin/gemc",
+    "database": "/private/tmp/exit-study/full.sqlite",
+    "originals": "../clas12Tags/geometry_source/beamline/cad_original",
+    "pair": "exit",
+    "optimized": "/opt/projects/gemc/clas12-systems/geometry_src/beamline/stls",
+    "output": "/private/tmp/exit-study/benchmark-final",
+    "events": 200,
+    "repeats": 5,
+    "timeout": 1800
+  },
+  "card": "experiment: clas12\nrunno: 11\nnthreads: 1\nphys_list: FTFP_BERT\nsql: geometry.sqlite\ngsystem:\n  - name: beamline_cad\n    factory: sqlite\n",
+  "physics": "FTFP_BERT, no optical processes, no magnetic field",
+  "pair": "exit",
+  "primary_acceptance_deg": [
+    0.25,
+    2.6
+  ],
+  "momentum_GeV": 5,
+  "mesh_hashes": {
+    "original": {
+      "Beamline_Adapter_1.stl": "e96604bedfb77a7f92bdecde1ff4e843c13004d61899d488d2acea2c8a593a5f",
+      "Torus_Exit_Shield_Casing.stl": "ff322bed2e7180641558d5f916208c2c7779883f3f19380dfc34176c7397ca11",
+      "Torus_Exit_Shield_Lead_Fill.stl": "580e9d1eaa0bf3b22e7d4600b9bc05fa90f9efa08f1562075aad644cf232dc23"
+    },
+    "optimized": {
+      "Beamline_Adapter_1.stl": "f389898b641878e7eae770a9d92848109bdd2cda2f5e4baf8e2a6f813ef197d1",
+      "Torus_Exit_Shield_Casing.stl": "313fe517ebf31f9f90ba4e7fa556165b42ad154254088936f8eb44083a0b0bcf",
+      "Torus_Exit_Shield_Lead_Fill.stl": "580e9d1eaa0bf3b22e7d4600b9bc05fa90f9efa08f1562075aad644cf232dc23"
+    }
+  }
+}

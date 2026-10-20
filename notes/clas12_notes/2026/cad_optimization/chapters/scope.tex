@@ -1,0 +1,80 @@
+\FloatBarrier
+
+\section{Scope and geometry changes}
+
+The question is how much the optimized LTCC CAD implementation changes loading cost, memory use,
+particle-transport cost, and geometry diagnostics. This is a software and geometry study, not a background-rate
+prediction or a measurement of LTCC photon yield. No experimental data were collected.
+
+The original data are taken from main revision ea3625f. The port uses the LTCC CAD changes in meson revision
+4c7c6af. The later PMT absorption change in revision 3472ede is excluded, so PMT optical properties remain the
+same in the compared geometries. The unrelated Meson build-system changes are also excluded; the same installed
+executable runs every case. The source revisions are recorded in Refs.~\cite{baseline,optimized}.
+
+The primary comparison restores all ten files from main's cadTempRemoved directory: S1-BW, S1-LW, S1-RW,
+S1-TRB, NFrame, FrontPlate, Mount, Nose, BottomPlate, and Epoxy. Source volumes are placed in sector 3 and the
+disabled frame and six-part nose copies are enabled in the other five sectors. The benchmark preserves the
+legacy placement formulas and material assignments from ltcc\_frame.pl: source frame volumes are aluminum,
+copied frames are stainless steel, nose pieces are aluminum, and Epoxy is G4\_CR39. No STL facet is repaired or
+removed in the original baseline. This gives 90 frame/nose physical placements, compared with 24 in the
+consolidated implementation, excluding the Winston cones.
+
+The previous production configuration had this hardware disabled. Comparing it directly with the complete meson
+model changes the amount of simulated hardware and answers a different question. Those initial measurements are
+retained as supplementary context; the headline optimization results in this note compare the complete original
+and consolidated models.
+
+The consolidated implementation uses four hardware source volumes: backwall, rightwall, leftwall, and nose.
+Sector 3 contains the source volumes; enabled sectors reuse them through CopyOf placements inside their LTCC
+mothers. The port restores walls and nose hardware that were disabled in the original geometry, changes the
+frame hierarchy and some materials, and replaces the previous chain of mother-volume subtractions with a
+fitted, planar G4Trap intersection. The unmodified engineering drawings remain archived in the geometry source
+repository. The restored original baseline keeps the legacy mothers and hierarchy unchanged.
+
+The consolidated nose uses the implementation's effective material at density 3.86 g/cm\textsuperscript{3},
+with mass fractions 0.9464 stainless steel, 0.0408 carbon, 0.0043 hydrogen, and 0.0085 oxygen. This study does
+not establish material-budget or detector-response equivalence to the original model.
+
+Three cases separate part of the optimization: Original uses the old data; Cones only replaces only WC\_S,
+WC\_M, and WC\_L while retaining the restored original frame, mothers, and materials; Full port uses the new
+geometry and all its optimized meshes. Cones only is a diagnostic configuration, not an implementation proposed
+for deployment. Frame consolidation and mother changes remain combined in the Full port case and cannot be
+assigned independent transport speedups from this comparison.
+
+Figures~\ref{fig:stl-hardware}--\ref{fig:stl-cones} compare renderings of the original and optimized STL files
+directly. The original includes all restored CAD hardware. Paired panels use identical orthographic cameras,
+common bounds, and the same scale; no mesh repair, smoothing, or additional decimation is applied. The hardware
+view applies the sector-3 placements, including the sector mother transform for the optimized model. The
+resulting hardware transforms are checked against the restored original placements. Nose and cone close-ups use
+their stored STL coordinate systems. Colors identify functional hardware groups, not materials. The images
+expose simplification and changes in shape; they do not establish volume, material-budget, or detector-response
+equivalence.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/hardware_stl_comparison.pdf}
+\caption{Sector-3 STL frame and nose hardware: complete original on the left and optimized on the right. Upper
+panels show shaded front oblique views; lower panels show rear oblique views with triangle edges. The same
+camera and scale are used within each row. The 15 original meshes contain 124,652 triangles; the four optimized
+meshes contain 3,646. Winston cones, native LTCC mirrors, PMTs, mothers, and other sector copies are omitted.}
+\label{fig:stl-hardware}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=\textwidth]{figures/nose_stl_comparison.pdf}
+\caption{Nose consolidation in the stored engineering coordinates, with identical camera and scale: six
+original meshes and 12,012 triangles on the left; one optimized mesh and 1,986 triangles on the right. Triangle
+edges are shown; simplified details and differences in the rendered envelope are visible.}
+\label{fig:stl-nose}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=\textwidth]{figures/cones_stl_comparison.pdf}
+\caption{Winston-cone meshes with triangle edges: WC\_S, WC\_M, and WC\_L from top to bottom; original on the
+left and optimized on the right. The camera, bounds, and scale match within each row. Original triangle counts
+are 4,312, 3,076, and 2,578; each optimized mesh contains 1,500 triangles. These are individual source meshes,
+not all physical cone placements.}
+\label{fig:stl-cones}
+\end{figure}

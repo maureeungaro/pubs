@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="360" viewBox="0 0 1080 360" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .st    { fill:#ffffff; stroke:#333333; stroke-width:1.6; }
+    .term  { fill:#f4ece4; stroke:#a5451f; stroke-width:1.8; }
+    .name  { font-size:14px; font-weight:bold; fill:#111111; }
+    .prio  { font-size:11px; fill:#666666; }
+    .edge  { stroke:#1a5fb4; stroke-width:2; fill:none; marker-end:url(#a2); }
+    .edger { stroke:#a5451f; stroke-width:2; fill:none; marker-end:url(#a2r); stroke-dasharray:5 4; }
+    .elbl  { font-size:11px; fill:#333333; }
+    .cap   { font-size:11px; fill:#555555; }
+  </style>
+  <defs>
+    <marker id="a2" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L8,3.2 L0,6.4 Z" fill="#1a5fb4"/></marker>
+    <marker id="a2r" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L8,3.2 L0,6.4 Z" fill="#a5451f"/></marker>
+  </defs>
+
+  <!-- States -->
+  <rect class="st" x="30"  y="120" width="170" height="70" rx="10"/>
+  <text x="115" y="150" text-anchor="middle" class="name">Not Submitted</text>
+  <text x="115" y="170" text-anchor="middle" class="prio">priority 1..N</text>
+
+  <rect class="st" x="300" y="120" width="170" height="70" rx="10"/>
+  <text x="385" y="150" text-anchor="middle" class="name">Processing</text>
+  <text x="385" y="170" text-anchor="middle" class="prio">excluded from queue</text>
+
+  <rect class="st" x="570" y="120" width="180" height="70" rx="10"/>
+  <text x="660" y="150" text-anchor="middle" class="name">Submitted to OSG</text>
+  <text x="660" y="170" text-anchor="middle" class="prio">priority 0 · pool_node</text>
+
+  <rect class="st" x="850" y="120" width="180" height="70" rx="10"/>
+  <text x="940" y="150" text-anchor="middle" class="name">Completed</text>
+  <text x="940" y="170" text-anchor="middle" class="prio">terminal</text>
+
+  <rect class="term" x="300" y="270" width="290" height="60" rx="10"/>
+  <text x="445" y="298" text-anchor="middle" class="name" fill="#a5451f">Failed to Read Directory</text>
+  <text x="445" y="317" text-anchor="middle" class="prio">terminal · priority 0</text>
+
+  <!-- Transitions -->
+  <line class="edge" x1="200" y1="155" x2="298" y2="155"/>
+  <text x="249" y="145" text-anchor="middle" class="elbl">claim (atomic)</text>
+
+  <line class="edge" x1="470" y1="155" x2="568" y2="155"/>
+  <text x="519" y="145" text-anchor="middle" class="elbl">condor_submit ok</text>
+
+  <line class="edge" x1="750" y1="155" x2="848" y2="155"/>
+  <text x="799" y="140" text-anchor="middle" class="elbl">absent from</text>
+  <text x="799" y="153" text-anchor="middle" class="elbl">snapshot</text>
+
+  <!-- recoverable failure back to Not Submitted -->
+  <path class="edger" d="M300,185 C240,225 175,225 130,192"/>
+  <text x="230" y="235" text-anchor="middle" class="cap" fill="#a5451f">recoverable failure → restore + re-compact 1..N</text>
+
+  <!-- terminal LUND failure -->
+  <path class="edger" d="M385,190 L420,268"/>
+  <text x="470" y="240" text-anchor="middle" class="cap" fill="#a5451f">terminal LUND-dir failure</text>
+
+  <text x="30" y="40" class="name">Submission state machine</text>
+  <text x="30" y="62" class="cap">Blue: forward transitions. Orange dashed: failure transitions. Only Not Submitted rows carry a positive 1..N priority; every transition re-compacts the queue.</text>
+</svg>

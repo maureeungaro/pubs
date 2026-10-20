@@ -1,0 +1,12 @@
+{
+  "sealed_parts_sum_mm3": 25203.966821470352,
+  "pairwise_intersection_volumes_mm3": {
+    "adjuster1+adjuster2": 140.39113450391005,
+    "adjuster2+adjuster3": 141.00448457588337
+  },
+  "first_third_intersection": "none: disjoint z bounds",
+  "inclusion_exclusion_union_mm3": 24922.571202390558,
+  "reference_union_mm3": 24922.569617160825,
+  "difference_percent": 6.360619142498081e-06,
+  "reference_caveat": "Two inputs are open; small sealing patches have residual intersections. This defines an estimated union material budget, not a certified engineering mass."
+}

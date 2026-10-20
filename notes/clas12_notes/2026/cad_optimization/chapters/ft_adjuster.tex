@@ -1,0 +1,139 @@
+\FloatBarrier
+\section{FT adjuster material model}
+
+The fourth beamline study replaces adjuster1, adjuster2, and adjuster3 with one ft\_adjuster mesh. Here the
+intended optimization prioritizes the amount of stainless steel over detailed shape. All three source pieces
+share the same material, color, mother, position, and passive rotation; the replacement retains these
+physical attributes and merges the three placement rows into one in each of the nine applicable CAD
+variations. GEMC2's corresponding 27 SQLite CAD rows become nine rows, with every other CAD row retained.
+
+The originals contain 1,687, 424, and 1,689 triangles. The first and third meshes each lack a nine-edge
+surface patch, and the assembled pieces intersect. Their original material volume is therefore not
+well-defined directly from the raw shells. Small sealing patches define a reference, followed by Boolean
+union to avoid counting overlapping steel twice. These temporary reference meshes retain local
+intersections; none is published as runtime geometry. The reference defines an estimated material budget,
+not a certified engineering mass.
+
+The sealed parts sum to 25203.967 mm$^3$, and their reference union contains 24922.570 mm$^3$. Pairwise
+intersection volumes are 140.391 and 141.004 mm$^3$; the first and third pieces have disjoint longitudinal
+bounds. Independent inclusion-exclusion reproduces the union volume within 0.00001\%. This subtracts about
+1.12\% from the sum of overlapping parts. Preserving their unqualified sum would retain double-counted
+material.
+
+Table~\ref{tab:adjuster-material} gives the material-volume comparison.
+
+\begin{table}[htbp]
+\centering
+\caption{Adjuster material volumes in cubic millimetres.}
+\label{tab:adjuster-material}
+\begin{tabular}{lr}
+\toprule
+Reference or model & Volume \\
+\midrule
+Sealed parts sum & 25203.966821 \\
+Inclusion-exclusion union & 24922.571202 \\
+Reference Boolean union & 24922.569617 \\
+Final saved STL & 24922.562549 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The final model is a closed 12-sided prism with radius 7.383895 mm and length 152.370361 mm, centered on the
+reference union's centroid. It retains the longitudinal span and approximate off-axis material location. Its
+saved float32 STL volume is 24922.562549 mm$^3$, differing from the reference by -0.00002836\%. The
+unchanged stainless-steel material retains its density, so this relative volume match also matches the
+reference mass. The output has one closed manifold component of genus zero, with no detected
+self-intersections or zero-area faces, and reproduces byte for byte from archived originals. Shape detail,
+holes, threads, and the original material-path distribution are deliberately changed; detector-response
+equivalence is not established.
+
+The runtime model decreases from three files and 3,800 triangles to one file and 48 triangles (98.74\%
+fewer). STL bytes decrease from 190,252 to 2,484 (98.69\%). One placement replaces three. This is a
+material-volume substitution rather than a surface-tolerance decimation.
+
+Table~\ref{tab:adjuster-meshes} summarizes the consolidation.
+
+\begin{table}[htbp]
+\centering
+\caption{Original adjuster trio and simplified material model.}
+\label{tab:adjuster-meshes}
+\begin{tabular}{lrrr}
+\toprule
+Model & Files & Triangles & Bytes \\
+\midrule
+Original trio & 3 & 3,800 & 190,252 \\
+ft adjuster & 1 & 48 & 2,484 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The benchmark compares the original raw trio with the merged model in air using the recorded GEMC3
+executable and Geant4 stack, FTFP\_BERT without optical processes, zero magnetic field, one thread, default
+production cuts, and no GUI or event output. Fixed 5 GeV LUND primaries start at the target, uniform in
+solid angle over 2.5--3.3 degrees and azimuth -95-- -85 degrees. The narrow azimuth targets the off-axis
+adjuster instead of diluting the sample over full azimuth. Five alternating-order repetitions use seeds
+12345--12349 and 200 events for each particle. Zero-event runs measure startup without overlap checking;
+time since beamOn measures transport. Both fixtures share physical placement attributes, while the original
+contains three solids and the final contains one. The benchmark accepts a generated database from either
+geometry state.
+
+Table~\ref{tab:adjuster-timing} gives median transport wall seconds per 200 events.
+
+\begin{table}[htbp]
+\centering
+\caption{Median transport wall seconds over five repetitions.}
+\label{tab:adjuster-timing}
+\begin{tabular}{lrrr}
+\toprule
+Particle & Original & Final & Original/final \\
+\midrule
+e- & 4.871 & 3.124 & 1.559 \\
+proton & 0.882 & 0.784 & 1.126 \\
+pi+ & 0.903 & 0.805 & 1.121 \\
+neutron & 0.699 & 0.597 & 1.170 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Median startup simulation wall time changes from 0.6875 to 0.6803 s; peak loading RSS changes from 119.55 to
+114.31 MiB. The median original/optimized transport wall-time ratios range from 1.121 to 1.559. CPU time,
+process wall time, memory, and raw diagnostics are retained separately. All 52 processes exit normally and
+all forty transport runs report the 200 requested events.
+
+Table~\ref{tab:adjuster-warnings} gives Geant4 exception counts over all 52 processes.
+
+\begin{table}[htbp]
+\centering
+\caption{Geant4 exception counts for the isolated adjuster samples.}
+\label{tab:adjuster-warnings}
+\begin{tabular}{lrr}
+\toprule
+Diagnostic & Original & Final \\
+\midrule
+GeomSolids1001 & 52 & 0 \\
+GeomNav1002 & 40 & 0 \\
+GeomNav0003 & 0 & 0 \\
+GeomVol1002 & 8 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The repeated diagnostic counts are retained explicitly. Full default beamline construction completes with no
+missing mesh and 5 solid warnings and 10 overlap reports, compared with seven and twenty before this merge.
+These counts describe the check sample, not proof of complete overlap freedom. All fifteen native
+geometry/material variations and fourteen CAD variations pass the semantic comparison against GEMC2.
+Material redistribution, closure repairs, removal of internal overlaps, and fewer solids all affect
+transport; timing changes cannot be assigned solely to triangle count or taken as evidence of unchanged
+detector response. A normal completion footer does not certify every track in the original imperfect
+geometry.
+
+\FloatBarrier
+Figure~\ref{fig:adjuster-stl} shows the deliberate shape simplification.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/adjuster_stl_comparison.pdf}
+\caption{Engineering adjuster trio (left) and the volume-matched ft\_adjuster prism (right).
+Matched cameras and bounds use original STL coordinates; the common CAD transform is retained.}
+\label{fig:adjuster-stl}
+\end{figure}

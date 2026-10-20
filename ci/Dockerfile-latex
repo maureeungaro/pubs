@@ -1,0 +1,30 @@
+#--------------------------------------------------------------------------
+#
+# docker buildx build --platform linux/amd64 --progress=plain -t latex -f Dockerfile-latex .
+# docker tag latex maureeungaro/latex:latest
+# docker push maureeungaro/latex:latest
+#
+#--------------------------------------------------------------------------
+
+FROM fedora:40
+LABEL maintainer="Maurizio Ungaro <ungaro@jlab.org>"
+
+# run shell instead of sh
+SHELL ["/bin/bash", "-c"]
+
+ADD https://pki.jlab.org/JLabCA.crt /etc/pki/ca-trust/source/anchors/JLabCA.crt
+RUN update-ca-trust
+
+RUN dnf install -y \
+	python3-devel \
+    python3-scons \
+    bzip2 wget curl nano git which bash tcsh zsh hostname  \
+	psmisc procps mailcap net-tools \
+    texlive-scheme-basic texlive-wrapfig texlive-multirow texlive-sidecap texlive-fancyhdr texlive-everysel \
+    texlive-collection-fontsrecommended texlive-sauter texlive-revtex4 texlive-sttools \
+    texlive-pythontex texlive-fvextra \
+    && dnf -y update \
+	&& dnf -y check-update \
+	&& dnf clean packages \
+	&& dnf clean all \
+   	&& rm -rf /var/cache/yum

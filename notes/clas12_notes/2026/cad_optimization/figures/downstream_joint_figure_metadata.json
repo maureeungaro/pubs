@@ -1,0 +1,12 @@
+{
+  "Beamline_Adapter_1": {
+    "old_plane_gap_mm": -0.34286035661962444,
+    "new_radius_mm": 60.77170195553483,
+    "neighbor_sha256": "f389898b641878e7eae770a9d92848109bdd2cda2f5e4baf8e2a6f813ef197d1"
+  },
+  "Downstream_Beam_tube_Segment_2": {
+    "old_plane_gap_mm": -0.3951843799865742,
+    "new_radius_mm": 71.16227748273067,
+    "neighbor_sha256": "3237c5f07ff6e6f0a93faea892848685591467f6e28179d15bbba6983afa0761"
+  }
+}

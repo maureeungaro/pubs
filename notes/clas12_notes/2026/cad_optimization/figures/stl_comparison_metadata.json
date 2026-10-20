@@ -1,0 +1,626 @@
+{
+  "baseline_ref": "ea3625f",
+  "stl_files": {
+    "original": {
+      "S1-BB": {
+        "path": "geometry_source/ltcc/cad/S1-BB.stl",
+        "triangles": 3144,
+        "sha256": "dae6e359dab08b6882f6df4a1876831ef55eaf76d4eeb335b28fea9c7b56f2c5"
+      },
+      "S1-BLB": {
+        "path": "geometry_source/ltcc/cad/S1-BLB.stl",
+        "triangles": 15036,
+        "sha256": "3e0308611d0bf64251fe7967986796483ec030189795448ee06880513b75658f"
+      },
+      "S1-BRB": {
+        "path": "geometry_source/ltcc/cad/S1-BRB.stl",
+        "triangles": 14228,
+        "sha256": "2af1255a29f25e0c4b891e6de06821f829eb5f981013c22b49e11be96530374f"
+      },
+      "S1-BW": {
+        "path": "geometry_source/ltcc/cadTempRemoved/S1-BW.stl",
+        "triangles": 12,
+        "sha256": "fbfa32d131603aefd1106a2428b34e6576c03137343e145e5473e86fa1966770"
+      },
+      "S1-LW": {
+        "path": "geometry_source/ltcc/cadTempRemoved/S1-LW.stl",
+        "triangles": 37230,
+        "sha256": "e06112e61680ff45996cc98485e4e0a6ffe9b036d61f556532fdd78bddaf85ac"
+      },
+      "S1-RW": {
+        "path": "geometry_source/ltcc/cadTempRemoved/S1-RW.stl",
+        "triangles": 37902,
+        "sha256": "781b1c745eb1cfa55a97ebd28c09c93126b8cc1a00db5091b672bda6d78bd710"
+      },
+      "S1-TB": {
+        "path": "geometry_source/ltcc/cad/S1-TB.stl",
+        "triangles": 4647,
+        "sha256": "3d2c57d594d16277fd9e44a936f4536ebc4821e77bf037db696f1e4a975b2466"
+      },
+      "S1-TLB": {
+        "path": "geometry_source/ltcc/cad/S1-TLB.stl",
+        "triangles": 233,
+        "sha256": "a17f62e300deda9a5ae03ba00c0e610a1da805dcb3de02106851a6b9daf5b6af"
+      },
+      "S1-TRB": {
+        "path": "geometry_source/ltcc/cadTempRemoved/S1-TRB.stl",
+        "triangles": 208,
+        "sha256": "327d82993de6d96b4ad7d8a87983c0f88bb8cee55852ef9e8acbe59e509f336d"
+      },
+      "NFrame": {
+        "path": "geometry_source/ltcc/cadTempRemoved/NFrame.stl",
+        "triangles": 3698,
+        "sha256": "222f8e064a4bc9d744ea310662af85c0d539099259fc7bad3729180408ef7338"
+      },
+      "FrontPlate": {
+        "path": "geometry_source/ltcc/cadTempRemoved/FrontPlate.stl",
+        "triangles": 1972,
+        "sha256": "e41c2cd19795b6b957e635797b7586083ec42ac93c09aa2afeea12db3e835375"
+      },
+      "Mount": {
+        "path": "geometry_source/ltcc/cadTempRemoved/Mount.stl",
+        "triangles": 1168,
+        "sha256": "89f33911e0f0a407234b10c180a96fb67234acc2b08084bdecdca8a1d6a81556"
+      },
+      "Nose": {
+        "path": "geometry_source/ltcc/cadTempRemoved/Nose.stl",
+        "triangles": 2766,
+        "sha256": "b0d278b1ba36960f09b8de94f0cb277cab100757485695246aac596c2a3d308a"
+      },
+      "BottomPlate": {
+        "path": "geometry_source/ltcc/cadTempRemoved/BottomPlate.stl",
+        "triangles": 692,
+        "sha256": "63e15f85ff22f9ada1d2307148c25a7db66667dea4ca0442ed0640c5f4b5bfba"
+      },
+      "Epoxy": {
+        "path": "geometry_source/ltcc/cadTempRemoved/Epoxy.stl",
+        "triangles": 1716,
+        "sha256": "618c1df9d22d7dd507780e6f05fcdba8ce017caef52b05da6ef51cfee762da67"
+      },
+      "WC_S": {
+        "path": "geometry_source/ltcc/cad/WC_S.stl",
+        "triangles": 4312,
+        "sha256": "6c608dfcb3fc92d7dde4df2b76a855e7e9f7737c579ec17036ee911699de2648"
+      },
+      "WC_M": {
+        "path": "geometry_source/ltcc/cad/WC_M.stl",
+        "triangles": 3076,
+        "sha256": "90c75392ddc628b48562a663aade7a50d34ba1ce4a0edd98d32d458ae0fa2399"
+      },
+      "WC_L": {
+        "path": "geometry_source/ltcc/cad/WC_L.stl",
+        "triangles": 2578,
+        "sha256": "88c15732d9f01c4154e539b80ad02b79175d3558c68f992fd31797c1743d2d5c"
+      }
+    },
+    "optimized": {
+      "backwall": {
+        "path": "experiments/clas12/ltcc/cad/backwall.stl",
+        "triangles": 144,
+        "sha256": "facb18cb6fbf263d13edd899f4cc9a5973c47e92e375e1dec5e43689028d13c1"
+      },
+      "leftwall": {
+        "path": "experiments/clas12/ltcc/cad/leftwall.stl",
+        "triangles": 812,
+        "sha256": "3995f0bd913cf4037c6b7318c0fef03fa04e1bbeddc950dbe21bcd5b6aec69fa"
+      },
+      "rightwall": {
+        "path": "experiments/clas12/ltcc/cad/rightwall.stl",
+        "triangles": 704,
+        "sha256": "cf713920501e752948ee765ea9e078d9448bc17e5b182c1dcfe83883b85ee73e"
+      },
+      "nose": {
+        "path": "experiments/clas12/ltcc/cad/nose.stl",
+        "triangles": 1986,
+        "sha256": "4dd401deb7e3c8bcf41e18bc75992ff0cf3dfaedd3ad42089c5d9adfdbfd55b5"
+      },
+      "WC_S": {
+        "path": "experiments/clas12/ltcc/cad/WC_S.stl",
+        "triangles": 1500,
+        "sha256": "7676f8e3a6ab91614b7a75115e507bc95d5a20d63c7c58c2a78320addc0f630c"
+      },
+      "WC_M": {
+        "path": "experiments/clas12/ltcc/cad/WC_M.stl",
+        "triangles": 1500,
+        "sha256": "27eed3d53e72c1a4e30db1b93a6a3f058cb27c45f2afac4cb5f67e67e7671dac"
+      },
+      "WC_L": {
+        "path": "experiments/clas12/ltcc/cad/WC_L.stl",
+        "triangles": 1500,
+        "sha256": "96fb901ce21037a98cfb2affe01302af2cced810c1b467eca3de13221a266c96"
+      }
+    }
+  },
+  "hardware_transforms": {
+    "S1-BB": {
+      "rotation": [
+        [
+          0.5000000000000001,
+          0.8660254037844386,
+          0.0
+        ],
+        [
+          0.8660254037844386,
+          -0.5000000000000001,
+          1.2246467991473532e-16
+        ],
+        [
+          1.0605752387249068e-16,
+          -6.123233995736767e-17,
+          -1.0
+        ]
+      ],
+      "translation_mm": [
+        0.0,
+        0.0,
+        1273.7
+      ]
+    },
+    "S1-BLB": {
+      "rotation": [
+        [
+          0.5000000000000001,
+          0.8660254037844386,
+          0.0
+        ],
+        [
+          0.8660254037844386,
+          -0.5000000000000001,
+          1.2246467991473532e-16
+        ],
+        [
+          1.0605752387249068e-16,
+          -6.123233995736767e-17,
+          -1.0
+        ]
+      ],
+      "translation_mm": [
+        0.0,
+        0.0,
+        1273.7
+      ]
+    },
+    "S1-BRB": {
+      "rotation": [
+        [
+          0.5000000000000001,
+          0.8660254037844386,
+          0.0
+        ],
+        [
+          0.8660254037844386,
+          -0.5000000000000001,
+          1.2246467991473532e-16
+        ],
+        [
+          1.0605752387249068e-16,
+          -6.123233995736767e-17,
+          -1.0
+        ]
+      ],
+      "translation_mm": [
+        0.0,
+        0.0,
+        1273.7
+      ]
+    },
+    "S1-BW": {
+      "rotation": [
+        [
+          0.5000000000000001,
+          0.8660254037844386,
+          0.0
+        ],
+        [
+          0.8660254037844386,
+          -0.5000000000000001,
+          1.2246467991473532e-16
+        ],
+        [
+          1.0605752387249068e-16,
+          -6.123233995736767e-17,
+          -1.0
+        ]
+      ],
+      "translation_mm": [
+        0.0,
+        0.0,
+        1273.7
+      ]
+    },
+    "S1-LW": {
+      "rotation": [
+        [
+          0.5000000000000001,
+          0.8660254037844386,
+          0.0
+        ],
+        [
+          0.8660254037844386,
+          -0.5000000000000001,
+          1.2246467991473532e-16
+        ],
+        [
+          1.0605752387249068e-16,
+          -6.123233995736767e-17,
+          -1.0
+        ]
+      ],
+      "translation_mm": [
+        0.0,
+        0.0,
+        1273.7
+      ]
+    },
+    "S1-RW": {
+      "rotation": [
+        [
+          0.5000000000000001,
+          0.8660254037844386,
+          0.0
+        ],
+        [
+          0.8660254037844386,
+          -0.5000000000000001,
+          1.2246467991473532e-16
+        ],
+        [
+          1.0605752387249068e-16,
+          -6.123233995736767e-17,
+          -1.0
+        ]
+      ],
+      "translation_mm": [
+        0.0,
+        0.0,
+        1273.7
+      ]
+    },
+    "S1-TB": {
+      "rotation": [
+        [
+          0.5000000000000001,
+          0.8660254037844386,
+          0.0
+        ],
+        [
+          0.8660254037844386,
+          -0.5000000000000001,
+          1.2246467991473532e-16
+        ],
+        [
+          1.0605752387249068e-16,
+          -6.123233995736767e-17,
+          -1.0
+        ]
+      ],
+      "translation_mm": [
+        0.0,
+        0.0,
+        1273.7
+      ]
+    },
+    "S1-TLB": {
+      "rotation": [
+        [
+          0.5000000000000001,
+          0.8660254037844386,
+          0.0
+        ],
+        [
+          0.8660254037844386,
+          -0.5000000000000001,
+          1.2246467991473532e-16
+        ],
+        [
+          1.0605752387249068e-16,
+          -6.123233995736767e-17,
+          -1.0
+        ]
+      ],
+      "translation_mm": [
+        0.0,
+        0.0,
+        1273.7
+      ]
+    },
+    "S1-TRB": {
+      "rotation": [
+        [
+          0.5000000000000001,
+          0.8660254037844386,
+          0.0
+        ],
+        [
+          0.8660254037844386,
+          -0.5000000000000001,
+          1.2246467991473532e-16
+        ],
+        [
+          1.0605752387249068e-16,
+          -6.123233995736767e-17,
+          -1.0
+        ]
+      ],
+      "translation_mm": [
+        0.0,
+        0.0,
+        1273.7
+      ]
+    },
+    "NFrame": {
+      "rotation": [
+        [
+          -0.49999999999999983,
+          0.8660254037844387,
+          0.0
+        ],
+        [
+          0.8660254037844387,
+          0.49999999999999983,
+          1.2246467991473532e-16
+        ],
+        [
+          1.0605752387249069e-16,
+          6.123233995736764e-17,
+          -1.0
+        ]
+      ],
+      "translation_mm": [
+        0.0,
+        0.0,
+        1273.7
+      ]
+    },
+    "FrontPlate": {
+      "rotation": [
+        [
+          -0.49999999999999983,
+          0.8660254037844387,
+          0.0
+        ],
+        [
+          0.8660254037844387,
+          0.49999999999999983,
+          1.2246467991473532e-16
+        ],
+        [
+          1.0605752387249069e-16,
+          6.123233995736764e-17,
+          -1.0
+        ]
+      ],
+      "translation_mm": [
+        0.0,
+        0.0,
+        1273.7
+      ]
+    },
+    "Mount": {
+      "rotation": [
+        [
+          -0.49999999999999983,
+          0.8660254037844387,
+          0.0
+        ],
+        [
+          0.8660254037844387,
+          0.49999999999999983,
+          1.2246467991473532e-16
+        ],
+        [
+          1.0605752387249069e-16,
+          6.123233995736764e-17,
+          -1.0
+        ]
+      ],
+      "translation_mm": [
+        0.0,
+        0.0,
+        1273.7
+      ]
+    },
+    "Nose": {
+      "rotation": [
+        [
+          -0.49999999999999983,
+          0.8660254037844387,
+          0.0
+        ],
+        [
+          0.8660254037844387,
+          0.49999999999999983,
+          1.2246467991473532e-16
+        ],
+        [
+          1.0605752387249069e-16,
+          6.123233995736764e-17,
+          -1.0
+        ]
+      ],
+      "translation_mm": [
+        0.0,
+        0.0,
+        1273.7
+      ]
+    },
+    "BottomPlate": {
+      "rotation": [
+        [
+          -0.49999999999999983,
+          0.8660254037844387,
+          0.0
+        ],
+        [
+          0.8660254037844387,
+          0.49999999999999983,
+          1.2246467991473532e-16
+        ],
+        [
+          1.0605752387249069e-16,
+          6.123233995736764e-17,
+          -1.0
+        ]
+      ],
+      "translation_mm": [
+        0.0,
+        0.0,
+        1273.7
+      ]
+    },
+    "Epoxy": {
+      "rotation": [
+        [
+          -0.49999999999999983,
+          0.8660254037844387,
+          0.0
+        ],
+        [
+          0.8660254037844387,
+          0.49999999999999983,
+          1.2246467991473532e-16
+        ],
+        [
+          1.0605752387249069e-16,
+          6.123233995736764e-17,
+          -1.0
+        ]
+      ],
+      "translation_mm": [
+        0.0,
+        0.0,
+        1273.7
+      ]
+    },
+    "backwall": {
+      "rotation": [
+        [
+          0.5000000000000001,
+          0.8660254037844386,
+          -6.123233995736765e-17
+        ],
+        [
+          0.8660254037844386,
+          -0.5000000000000001,
+          1.0605752387249069e-16
+        ],
+        [
+          6.123233995736765e-17,
+          -1.0605752387249069e-16,
+          -1.0
+        ]
+      ],
+      "translation_mm": [
+        0.0,
+        0.0,
+        1273.7
+      ]
+    },
+    "leftwall": {
+      "rotation": [
+        [
+          0.5000000000000001,
+          0.8660254037844386,
+          -6.123233995736765e-17
+        ],
+        [
+          0.8660254037844386,
+          -0.5000000000000001,
+          1.0605752387249069e-16
+        ],
+        [
+          6.123233995736765e-17,
+          -1.0605752387249069e-16,
+          -1.0
+        ]
+      ],
+      "translation_mm": [
+        0.0,
+        0.0,
+        1273.7
+      ]
+    },
+    "rightwall": {
+      "rotation": [
+        [
+          0.5000000000000001,
+          0.8660254037844386,
+          -6.123233995736765e-17
+        ],
+        [
+          0.8660254037844386,
+          -0.5000000000000001,
+          1.0605752387249069e-16
+        ],
+        [
+          6.123233995736765e-17,
+          -1.0605752387249069e-16,
+          -1.0
+        ]
+      ],
+      "translation_mm": [
+        0.0,
+        0.0,
+        1273.7
+      ]
+    },
+    "nose": {
+      "rotation": [
+        [
+          -0.4999999999999999,
+          0.8660254037844387,
+          -6.123233995736765e-17
+        ],
+        [
+          0.8660254037844387,
+          0.4999999999999999,
+          1.0605752387249069e-16
+        ],
+        [
+          1.2246467991473532e-16,
+          -7.498798913309288e-33,
+          -1.0
+        ]
+      ],
+      "translation_mm": [
+        0.0,
+        0.0,
+        1273.7
+      ]
+    }
+  },
+  "hardware_bounds_m": [
+    [
+      -3.6540761549159337,
+      0.13770764146493936,
+      4.684772021484376
+    ],
+    [
+      -0.011676779515637295,
+      4.234203417784098,
+      7.10608916015625
+    ]
+  ],
+  "projection": "orthographic",
+  "hardware_cameras_elevation_azimuth_deg": [
+    [
+      18,
+      -68
+    ],
+    [
+      20,
+      112
+    ]
+  ],
+  "nose_camera": [
+    10,
+    -35
+  ],
+  "cone_camera": [
+    22,
+    -65
+  ],
+  "rendering": "Unmodified stored triangles; flat shading; no geometry repair or smoothing",
+  "numpy_version": "2.5.3",
+  "matplotlib_version": "3.11.2"
+}

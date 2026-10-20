@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-14",
+  "platform": "macOS-26.7.1-arm64-arm-64bit",
+  "executable": "/private/tmp/outer-flange-study/bin/gemc",
+  "executable_sha256": "fc8738df72b63d0cf1f43ddd34339c2a8cef965ec089fb8425fe866d23f9a156",
+  "version": "\n\n*******************************************************************\n \u001b[32m\u001b[1mgemc\u001b[0m  version: \u001b[32mdev\u001b[0m\n Called from: \u001b[32m/private/tmp/outer-flange-study/bin\u001b[0m\n Install: \u001b[32m/private/tmp/outer-flange-study/bin\u001b[0m\n Released on: \u001b[32m2026-10-11\u001b[0m\n GEMC Reference: \u001b[32mNucl. Instrum. Meth. A, Volume 959, 163422 (2020)\u001b[0m\n GEMC Homepage: \u001b[32mhttps://gemc.github.io/home\u001b[0m\n Author: \u001b[32mMaurizio Ungaro, ungaro@jlab.org\u001b[0m\n\n*******************************************************************\n\n",
+  "arguments": {
+    "executable": "/private/tmp/outer-flange-study/bin/gemc",
+    "database": "/private/tmp/bolts-study/full.sqlite",
+    "originals": "../clas12Tags/geometry_source/beamline/cad_original",
+    "pair": "outer_flange",
+    "optimized": "geometry_src/beamline/stls",
+    "output": "/private/tmp/outer-flange-study/benchmark-pinned-final",
+    "events": 200,
+    "repeats": 5,
+    "timeout": 1800
+  },
+  "card": "experiment: clas12\nrunno: 11\nnthreads: 1\nphys_list: FTFP_BERT\nsql: geometry.sqlite\ngsystem:\n  - name: beamline_cad\n    factory: sqlite\n",
+  "physics": "FTFP_BERT, no optical processes, no magnetic field",
+  "pair": "outer_flange",
+  "primary_acceptance_deg": [
+    1.9,
+    2.8
+  ],
+  "momentum_GeV": 5,
+  "primary_azimuth_deg": [
+    -180,
+    180
+  ],
+  "mesh_hashes": {
+    "original": {
+      "FTOuterFlange.stl": "ac444ff385c0175ed8c41463cdce499291e967dc8b8c66bc160018e5e10eb7bd"
+    },
+    "optimized": {
+      "FTOuterFlange.stl": "36421b77cfe31f9fd8b31f451feba7fee532bde662125500a3624d4e6d8f4777"
+    }
+  }
+}

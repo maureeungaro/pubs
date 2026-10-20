@@ -1,0 +1,40 @@
+{
+  "original": {
+    "loading": {
+      "GeomSolids1001": 5
+    },
+    "e-": {
+      "GeomSolids1001": 5,
+      "GeomNav1002": 10
+    },
+    "proton": {
+      "GeomSolids1001": 5
+    },
+    "pi+": {
+      "GeomSolids1001": 5
+    },
+    "neutron": {
+      "GeomSolids1001": 5
+    },
+    "overlaps": {
+      "GeomSolids1001": 1,
+      "GeomVol1002": 1
+    }
+  },
+  "optimized": {
+    "loading": {},
+    "e-": {
+      "GeomNav1002": 14
+    },
+    "proton": {},
+    "pi+": {
+      "GeomNav1002": 4
+    },
+    "neutron": {
+      "GeomNav1002": 1
+    },
+    "overlaps": {
+      "GeomVol1002": 3
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "captured": "2026-10-20",
+  "prior_archive_sha256": {
+    "beamline_exit_archive.zip": "1f12909bf3fa8caf0b556c7710a523ddaf83566bb45c85b295a7f97bf9a34afb",
+    "beamline_ft_flange_archive.zip": "b2c28288066b5216439957f6cd3268ba827dd99b93306a7590ee664f4aede506",
+    "beamline_ft_joints_archive.zip": "e1b7c658ca77bfd4dcdc2363020eb7407b1f8b7d5de6606c1e8d6b016816d1e0",
+    "beamline_bolts_archive.zip": "511157d966e8ea7eec4d415f41c8f337670feece3014b790ad52957303fcf7b0",
+    "beamline_downstream_joints_archive.zip": "850083fc51ed842e2ec4ffba004617dcab7882ec7a1312683bc17577e222189f",
+    "beamline_ft_shield_smooth_archive.zip": "974fb26b23c97f04d37ab0b8d16d6aa1cb50b538389f84333294370cdecde334",
+    "beamline_inner_shield_archive.zip": "cf05eae2a183f6a95b8a514edd15be30f1d143f2cbac367b690a6beab388d2c7",
+    "study_archive.zip": "cb2dcd8b1f5edaea44153228e9d0c6761db9d1bd7b49c136091ba703b387b306",
+    "beamline_extension_lead_archive.zip": "10f7350e2bed4c91dfbbd4cb99a96211aec90757e8356afc6a27882b3449d08a",
+    "beamline_extension_case_archive.zip": "97cd211a8f6d5613f8d805821e61afee1fe1c190ba4517c563f12a2aa75d7d1d",
+    "beamline_apex_archive.zip": "afedc7b309de84337a984943f16f613eaeede80cb21e083112aade691bda2a36",
+    "beamline_downstream_archive.zip": "1ad7f9dbf1d2dd9031deb46e879bc6b682d25eb69e509ba9f0aebd1243111857",
+    "beamline_outer_mount_archive.zip": "6a947558c7b335478d355a057c222a256d229dbde4e7132bc7542134627bb4d3",
+    "beamline_extension_tungsten_archive.zip": "5505b32626db99224ea6b4fd7460f314bf5a0e8cc0829b6615ab2f702b07b1f5",
+    "beamline_ft_shield_archive.zip": "e92de75f3b2e519831d61399da59eadb7b55f8c71dd709bfe5a5f98ae6f5e70f",
+    "beamline_extension_inner_archive.zip": "d4ec34a489ebb8348ff9bb97e07cbb04869a579b3bd58598d0a3d412eb20bfec",
+    "beamline_cone_tip_archive.zip": "0a657541b9127a55bdb2ffbd7d9878d0dc0e9ea30abd2b0a58b1d1d3346c9719",
+    "beamline_moller_cone_archive.zip": "b255ef0f705f46482d84c7a45902448f871ec95e60232a21f66d717ab704309b",
+    "beamline_outer_flange_archive.zip": "31eab1c56d19644cc7d0da2d2dd57a6fd6bbb513478a7e8ae991697224c78e27",
+    "beamline_adjuster_archive.zip": "a55294f577856e2fa7c26aeca6876b890effe612cfd7a03a3bef5523d2ab2cd1"
+  },
+  "current_executable_sha256": "0823131ce5b730aa36294c34175640dfccf434a0e0b5ca337abae89269de417d",
+  "executable_hash_scope": "Captured at documentation update, not during the original checks.",
+  "database_sha256": "5d89cbab7ab1ef0b0644830a575eb5ffbbf24b20c66262123711807d69bf7d24",
+  "pymeshlab_version_at_documentation": "2025.7.post1",
+  "input_sha256": {
+    "/opt/projects/gemc/clas12Tags/geometry_source/htcc/cad/cad_default.gxml": "70fe832c89c59b4e134b762479b7013fd94ed5489333db3e6172e930fb8b59a4",
+    "/opt/projects/gemc/clas12Tags/geometry_source/htcc/cad/cad_rga_fall2018.gxml": "5a3c00e9fd0928c16afd824f05b9d2cb78db973054eadb696719403b04a0c44b",
+    "/opt/projects/gemc/clas12Tags/geometry_source/htcc/cad/cad_rga_spring2018.gxml": "6521b9029323d6157d0a7eb20b987a302ee608614e6beade49331c5575a51373",
+    "/opt/projects/gemc/clas12Tags/geometry_source/htcc/cad/htccCone.stl": "77c799d408aa3a7ebf55ffc807abab745bb23e9bffc4335a9d512c8a53e8bac5",
+    "/opt/projects/gemc/clas12Tags/geometry_source/htcc/cad/htccMollerCone.stl": "31d95c7c0edf8069bb3cf2ffdac53487789906c9344c8507d55c6acfb620940f",
+    "/opt/projects/gemc/clas12Tags/geometry_source/htcc/cad/htccMollerConeExt.stl": "c6379b8870f81b9ad2f643d567633ba78be257851d73ad34cfb1da30e1308988"
+  }
+}

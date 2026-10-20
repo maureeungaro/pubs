@@ -1,0 +1,50 @@
+{
+  "Apex_Shield_Lead_Fill": {
+    "original": {
+      "sha256": "1dd10c58dffe8a5075c6697fdc0e7a356937bb813091cdb39fbd208abba00c85",
+      "triangles": 2880
+    },
+    "optimized": {
+      "sha256": "792548ee3ede090b4af293352b3648737a82f4ef98cc44462b8f97e01eefe5be",
+      "triangles": 1440
+    },
+    "bounds_mm": [
+      [
+        -189.9911651611328,
+        -189.99522399902344,
+        5370.91015625
+      ],
+      [
+        189.9961700439453,
+        190.01048278808594,
+        7420.94384765625
+      ]
+    ],
+    "elevation": 12,
+    "azimuth": -65
+  },
+  "Apex_Shield_Hub": {
+    "original": {
+      "sha256": "c7472dec10e43fd919cae67fe2db8e255e1ab9e77e337f02598213aaa7b1217c",
+      "triangles": 36354
+    },
+    "optimized": {
+      "sha256": "12064d5ab2d6d33958cdaae000c741b775f22f7d9645bebb50fc7024839ede5f",
+      "triangles": 20000
+    },
+    "bounds_mm": [
+      [
+        -304.7994384765625,
+        -304.7994384765625,
+        5364.0517578125
+      ],
+      [
+        304.7994384765625,
+        304.7994384765625,
+        9478.8515625
+      ]
+    ],
+    "elevation": 12,
+    "azimuth": -65
+  }
+}

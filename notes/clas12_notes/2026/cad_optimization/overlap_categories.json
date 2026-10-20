@@ -1,0 +1,14 @@
+{
+  "old": {
+    "mother_containment": 792,
+    "sibling_overlap": 713
+  },
+  "cones_only": {
+    "mother_containment": 792,
+    "sibling_overlap": 723
+  },
+  "new": {
+    "mother_containment": 517,
+    "sibling_overlap": 903
+  }
+}

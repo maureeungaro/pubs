@@ -1,0 +1,24 @@
+{
+  "semantic_comparator": {
+    "native_geometry_variations": 15,
+    "material_variations": 15,
+    "CAD_variations": 14,
+    "result": "pass"
+  },
+  "mesh_reproduction": "optimized STLs reproduced byte for byte",
+  "GEMC2_database": "10 inner-shield CAD rows renamed; all other fields and CAD rows retained",
+  "full_default_beamline_construction": {
+    "exit_code": 0,
+    "completed": true,
+    "check_overlaps": 2,
+    "exception_codes": {
+      "GeomSolids1001": 4,
+      "GeomVol1002": 11
+    },
+    "command": [
+      "/opt/projects/gemc/src/build/bin/gemc",
+      "smoke.yaml"
+    ],
+    "log": "full-beamline-construction.log"
+  }
+}

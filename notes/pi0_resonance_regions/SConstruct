@@ -1,0 +1,15 @@
+import os
+
+ana_dir = ['pid/electron', 'pid/proton', 'vertex', 'fiducial/electron', 'e_kin_cor']
+
+# get current directory
+cwd = os.getcwd()
+
+env = Environment(ENV=os.environ)
+env['ENV']['TEXINPUTS']='.:'
+
+# add all dirs in ana_dir to TEXINPUTS
+for dir in ana_dir:
+    env['ENV']['TEXINPUTS'] += cwd + '/' + dir + ':'
+
+pdf = env.PDF(target  = 'pi0.pdf',  source = 'pi0.tex')

@@ -1,0 +1,96 @@
+\FloatBarrier
+\section{FT flange}
+\label{sec:ft-flange}
+
+The twelfth beamline mesh study renames \texttt{flange-assembly} to \texttt{FTFlange} in four configurations:
+runs 5874, 11620, 18304, and 20000. The stainless-steel material, passive 180-degree y rotation, and 1273.27
+mm z translation remain unchanged. Both repositories and the GEMC2 CAD database use the new name. GEMC3 SQLite
+banks remain in \texttt{default}, selected by run number. The original is archived, and all three installed
+meshes are byte-identical.
+
+The original is already a clean closed annulus with only 552 triangles, one component, and genus one.
+Topology-preserving quadric decimation reduces it to 540 triangles (2.1739\% fewer); stored bytes fall from
+27,684 to 27,084 (2.1673\% fewer). No holes are filled or surfaces reconstructed. The central passage and
+overall bounds are retained. After edge collapse, vertices are restored to the two exact engineering face
+planes, local z = -526.342956543 and -519.992980957 mm. The resulting STL has no boundary edges, non-manifold
+elements, detected self-intersections, or zero-area triangles, and the builder reproduces it byte for byte.
+
+Steel volume changes from 229348.479344 to 229348.228841 mm$^3$ (-0.000109224\%). Bidirectional vertex, edge,
+and surface sampling gives a maximum deviation of 0.049822 mm, below the 0.05 mm guard. This sampled maximum
+is not a proven global error bound. A 536-triangle trial exceeds that guard; larger reductions are rejected.
+The small reduction reflects the already-coarse engineering tessellation. Table~\ref{tab:ft-flange-mesh}
+summarizes the mesh changes, and Figure~\ref{fig:ft-flange} compares the stored triangles with a matched
+camera.
+
+The isolated benchmark selects run 5874 with \texttt{default}, using matched 5 GeV electron, proton,
+positive-pion, and neutron primaries from the target, uniform in solid angle over 1.4--3.8 degrees and full
+azimuth. Physics is FTFP\_BERT with no field or optical processes, one thread, default production cuts, and no
+GUI or event output. Five alternating-order repetitions use 2,000 events per particle and seeds 12345--12349.
+The executable matches the recent beamline studies, and all primary hashes agree within seed pairs.
+Table~\ref{tab:ft-flange-tracking} reports median Geant4 beamOn wall times excluding initialization, with
+original/optimized ratios and the ranges of paired ratios.
+
+Tracking is effectively unchanged: median ratios are 1.0018 for electrons, 1.0001 for protons, 1.0003 for
+positive pions, and 0.9993 for neutrons. Every paired range includes one; only three or four of the five pairs
+are faster. These variations do not establish a tracking-speed gain. All 52 isolated processes complete
+without Geant4 exceptions. Median loading process wall time changes from 0.784696 to 0.791953 s, CPU time
+remains 0.72 s, and engine initialization wall time changes from 0.681824 to 0.672900 s. Startup peak RSS is
+115.391 versus 115.375 MiB, effectively unchanged. Complete process CPU, wall time, memory, and per-seed
+results are retained separately from the transport measurements.
+
+The neighboring inner and outer assemblies already contact or overlap the flange before this change.
+Independent triangle collision counts are 449 versus 449 for the inner assembly and 600 versus 583 for the
+outer assembly; those tessellation-dependent counts are not overlap volumes or clearance proofs. The unchanged
+inner assembly is not closed. A separate three-part 10,000-point Geant4 check reports one GeomSolids1001 and
+eight GeomVol1002 exception blocks both before and after optimization. Sampled penetration depths reach about
+0.249 mm. This mesh simplification retains the existing engineering interfaces; the assembly defects remain.
+
+All four complete affected configurations construct 39 Geant4 volumes including the world. Both versions
+produce two GeomSolids1001 and 21 GeomVol1002 blocks per complete construction. All 17 beamline configurations
+pass volume-count construction checks, and the comparator passes 15 native geometry, 15 material, and 14 CAD
+comparisons. Direct database checks allow only the four names and STL paths to change; every other mesh
+retains its previous hash. The clean isolated benchmark does not certify complete geometry or
+detector-response equivalence.
+
+\begin{table}[htbp]
+\centering
+\caption{FT flange before and after conservative decimation.}
+\label{tab:ft-flange-mesh}
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{lrr}
+\toprule
+Quantity & Original & Optimized \\
+\midrule
+Triangles & 552 & 540 \\
+Bytes & 27,684 & 27,084 \\
+Boundary edges & 0 & 0 \\
+Components / genus & 1 / 1 & 1 / 1 \\
+Volume (mm$^3$) & 229348.479344 & 229348.228841 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Isolated FT flange tracking; five repetitions of 2,000 events per particle.}
+\label{tab:ft-flange-tracking}
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{lrrrr}
+\toprule
+Particle & Original (s) & Optimized (s) & Ratio & Paired ratio range \\
+\midrule
+Electron & 2.68847 & 2.68375 & 1.0018 & 0.9998--1.0054 \\
+Proton & 3.61487 & 3.61435 & 1.0001 & 0.9957--1.0029 \\
+Positive pion & 3.06986 & 3.06909 & 1.0003 & 0.9994--1.0033 \\
+Neutron & 1.75223 & 1.75338 & 0.9993 & 0.9986--1.0051 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=\linewidth]{figures/ft_flange_stl_comparison.pdf}
+\caption{Original and optimized FT flange meshes with identical bounds and camera. The central passage, flat
+axial faces, and overall shape are retained; the already-coarse tessellation changes modestly.}
+\label{fig:ft-flange}
+\end{figure}

@@ -1,0 +1,58 @@
+{
+  "original": {
+    "neighbors": {
+      "inner-assembly": {
+        "triangle_contacts": 449,
+        "neighbor_closed_manifold": false,
+        "neighbor_sha256": "7b81f79279cbc2703989379688e6eefac5439dfaa3bdd5275d13bbe0505099c2"
+      },
+      "outer-assembly": {
+        "triangle_contacts": 600,
+        "neighbor_closed_manifold": true,
+        "neighbor_sha256": "c9dfc8a1cc843c22cff112f55b6d238cfb0f2cac6149bc6f1e1a90bbfbd4ab31"
+      }
+    },
+    "Geant4_exceptions": {
+      "GeomSolids1001": 1,
+      "GeomVol1002": 8
+    },
+    "overlap_reports": [
+      "Overlap is detected for volume beamline_cad/inner-assembly:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/outer-assembly:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/FTFlange:0 (G4TessellatedSolid) with beamline_cad/inner-assembly:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/inner-assembly:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/outer-assembly:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/FTFlange:0 (G4TessellatedSolid) with beamline_cad/inner-assembly:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/inner-assembly:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/outer-assembly:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)"
+    ]
+  },
+  "optimized": {
+    "neighbors": {
+      "inner-assembly": {
+        "triangle_contacts": 449,
+        "neighbor_closed_manifold": false,
+        "neighbor_sha256": "7b81f79279cbc2703989379688e6eefac5439dfaa3bdd5275d13bbe0505099c2"
+      },
+      "outer-assembly": {
+        "triangle_contacts": 583,
+        "neighbor_closed_manifold": true,
+        "neighbor_sha256": "c9dfc8a1cc843c22cff112f55b6d238cfb0f2cac6149bc6f1e1a90bbfbd4ab31"
+      }
+    },
+    "Geant4_exceptions": {
+      "GeomSolids1001": 1,
+      "GeomVol1002": 8
+    },
+    "overlap_reports": [
+      "Overlap is detected for volume beamline_cad/inner-assembly:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/outer-assembly:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/FTFlange:0 (G4TessellatedSolid) with beamline_cad/inner-assembly:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/inner-assembly:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/outer-assembly:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/FTFlange:0 (G4TessellatedSolid) with beamline_cad/inner-assembly:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/inner-assembly:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/outer-assembly:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)"
+    ]
+  }
+}

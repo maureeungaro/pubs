@@ -1,0 +1,69 @@
+%
+%%%\documentclass[option]{webofc}
+%%% "twocolumn" for typesetting an article in two columns format (default one column)
+%
+\documentclass{webofc}
+\usepackage[varg]{txfonts}   % Web of Conferences font
+\usepackage[hyperindex]{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% make figure caption font italic and slightly smaller
+\usepackage[font=it,size=small]{caption}
+
+
+\usepackage{pythontex}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+%
+% Put here some packages required or/and some personnal commands
+%
+%
+\begin{document}
+%
+    \title{Geant4 Monte-Carlo (GEMC)}
+    \subtitle{A database-driven simulation program} % subtitle is optionnal
+%
+    \author{\firstname{Maurizio} \lastname{Ungaro}\inst{1}\fnsep\thanks{\email{ungaro@jlab.org}}}
+%
+    \institute{Jefferson Laboratory}
+%
+    \input{ungaro_chep2023_abstract}
+%
+    \maketitle
+%
+
+%%%%%%%%%%%%%%%%%%%%%
+% Actual GEMC Content
+%%%%%%%%%%%%%%%%%%%%%
+
+    \input{ungaro_chep2023_content}
+    \input{ungaro_chep2023_bib}
+
+\end{document}
+
+

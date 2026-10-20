@@ -1,0 +1,109 @@
+{
+  "previous": {
+    "sha256": "d1c41df5ec2977e7a831378024c443c99870c765fac9ca2ee2e3c3aa3a9b4286",
+    "bytes": 675084,
+    "triangles": 13500,
+    "topology": {
+      "boundary_edges": 0,
+      "connected_components_number": 1,
+      "edges_number": 20250,
+      "faces_number": 13500,
+      "genus": 1,
+      "incident_faces_on_non_two_manifold_edges": 0,
+      "incident_faces_on_non_two_manifold_vertices": 0,
+      "is_mesh_two_manifold": true,
+      "non_two_manifold_edges": 0,
+      "non_two_manifold_vertices": 0,
+      "number_holes": 0,
+      "unreferenced_vertices": 0,
+      "vertices_number": 6750
+    },
+    "volume_mm3": 1938412.6947024274,
+    "bounds_mm": [
+      [
+        -100.0,
+        -100.0,
+        -665.0
+      ],
+      [
+        100.0,
+        100.0,
+        0.0
+      ]
+    ],
+    "zero_area_triangles": 0,
+    "self_intersecting_faces": 0
+  },
+  "current": {
+    "sha256": "0d770b71801eb4c9167c57d325314eb3ac11995431335532fe8828906b48a82a",
+    "bytes": 325084,
+    "triangles": 6500,
+    "topology": {
+      "boundary_edges": 0,
+      "connected_components_number": 1,
+      "edges_number": 9750,
+      "faces_number": 6500,
+      "genus": 1,
+      "incident_faces_on_non_two_manifold_edges": 0,
+      "incident_faces_on_non_two_manifold_vertices": 0,
+      "is_mesh_two_manifold": true,
+      "non_two_manifold_edges": 0,
+      "non_two_manifold_vertices": 0,
+      "number_holes": 0,
+      "unreferenced_vertices": 0,
+      "vertices_number": 3250
+    },
+    "volume_mm3": 1946864.5408157746,
+    "bounds_mm": [
+      [
+        -100.0,
+        -100.0,
+        -665.0
+      ],
+      [
+        100.0,
+        100.0,
+        0.0
+      ]
+    ],
+    "zero_area_triangles": 0,
+    "self_intersecting_faces": 0
+  },
+  "reference": {
+    "sha256": "623a2a25f7b96790a18895dfb825a977d87d43268fd59414b2d9aa9b741abd8c",
+    "bytes": 426884,
+    "triangles": 8536,
+    "topology": {
+      "boundary_edges": 0,
+      "connected_components_number": 1,
+      "edges_number": 12804,
+      "faces_number": 8536,
+      "genus": 1,
+      "incident_faces_on_non_two_manifold_edges": 0,
+      "incident_faces_on_non_two_manifold_vertices": 0,
+      "is_mesh_two_manifold": true,
+      "non_two_manifold_edges": 0,
+      "non_two_manifold_vertices": 0,
+      "number_holes": 0,
+      "unreferenced_vertices": 0,
+      "vertices_number": 4268
+    },
+    "volume_mm3": 1946881.0044615886,
+    "bounds_mm": [
+      [
+        -100.0,
+        -100.0,
+        -665.0
+      ],
+      [
+        100.0,
+        100.0,
+        0.0
+      ]
+    ],
+    "zero_area_triangles": 0,
+    "self_intersecting_faces": 0
+  },
+  "volume_change_vs_previous_percent": 0.436018920864778,
+  "triangles_removed_vs_previous": 7000
+}

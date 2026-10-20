@@ -1,0 +1,131 @@
+\FloatBarrier
+\section{FT outer mount}
+\label{sec:outer-mount}
+
+The eighth beamline study renames outerMount to FTOuterMount across ten source and runtime CAD variations
+and ten GEMC2 SQLite rows. The stainless-steel material, color, mother, and passive placement are retained.
+The mount remains at z = 1273.27 mm and the unchanged FTOuterFlange at z = 1272.77 mm, both with the
+original passive 180-degree y rotation. Their 0.5 mm relative translation is included in every clearance
+calculation.
+
+The original mount contains 3,094 triangles, twelve boundary edges forming four triangular surface gaps, and
+one manifold surface component. Its open surface has no defined solid volume. Closing these four missing
+faces gives a 3,098-triangle sealed reference of genus 11 and volume 3889831.731170 mm$^3$. The central
+passage and existing drilled openings are retained. This repaired reference defines the reported
+material-volume comparison; the original engineering solid mass is not independently certified.
+
+The original mount/flange check reports small interference at their nominal 95.25 mm radius because the two
+cylindrical surfaces have different polygonal sampling. The flange inner polygon has minimum inradius
+95.200045 mm. The mount lower outer rim is reduced to 95.150045 mm, approximately 0.100 mm of radial relief.
+Adjacent sidewall facets interpolate toward unchanged upper vertices. All 883 facets adjoining the relieved
+end are protected at their saved float32 coordinates during topology-preserving quadric simplification. The
+flange STL is unchanged, and no placement is shifted to conceal the interference.
+
+The final mount contains 2,740 triangles, 11.44\% fewer than the raw engineering mesh, and 137,084 bytes
+rather than 154,784. It is one closed manifold component of genus 11 with no detected self-intersections or
+zero-area triangles. Bidirectional sampling against the relieved reference gives a maximum difference of
+0.042078 mm, below the 0.05 mm guard. These are sampled differences rather than proven global error bounds.
+Volume changes by -0.249235\% against the sealed reference; simplification alone changes the relieved
+reference volume by 0.00011056\%. The axial bounds are retained, with at most about 0.00065 mm change in the
+transverse bounding coordinates. The builder reproduces the final STL byte for byte from the archived
+original.
+
+Table~\ref{tab:outer-mount-mesh} records the original and optimized mount inventory.
+
+\begin{table}[htbp]
+\centering
+\caption{Original and optimized FT outer mount.}
+\label{tab:outer-mount-mesh}
+\begin{tabular}{lrr}
+\toprule
+Quantity & Original & Optimized \\
+\midrule
+Triangles & 3,094 & 2,740 \\
+Bytes & 154,784 & 137,084 \\
+Boundary edges & 12 & 0 \\
+Surface components & 1 & 1 \\
+Solid volume (mm$^3$) & Undefined & 3880136.906 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Placed-mesh verification finds zero triangle contacts and no contained vertices in either direction between
+mount and flange. In mount coordinates, the flange is shifted by +0.5 mm along z. Each mount triangle is
+clipped to the flange z interval, and convexity of the radial norm bounds its radius by the clipped polygon
+vertices. The maximum is 95.164071 mm, giving at least 0.035974 mm radial separation from the flange inner
+polygon throughout their common axial interval. The minimum bidirectional vertex-to-surface distance is
+0.085929 mm; this latter value is sampled and is not presented as a global surface-clearance bound. All ten
+placement variants retain the same verified relative transform.
+
+A twelve-volume assembly fixture includes the mount, unchanged inner shield and flange, and nine copper
+bolts. With both original and optimized fixtures using the new mount name and identical placements, a
+10,000-point Geant4 test gives five flange/mount overlap reports and one surface-hole warning for the
+original mount. The optimized assembly completes with no Geant4 exceptions or overlap reports, resolving the
+joint interference documented in the preceding flange study. Full default beamline construction also
+completes without missing meshes or a mount/flange overlap. Its three solid warnings and eight overlap
+reports concern other geometry, so this study does not establish complete beamline overlap freedom. All
+fifteen native geometry/material variations and fourteen CAD variations pass the semantic comparison against
+GEMC2.
+
+The tracking benchmark isolates this one mount in air. Both cases use the new name, the same material and
+placement, and the unchanged fixed GEMC3 executable snapshot from the flange study. Matched 5 GeV LUND
+primaries begin at the target and sample solid angle uniformly over 1.5--2.4 degrees and full azimuth.
+FTFP\_BERT runs without optical processes or magnetic field, using one thread, default production cuts, and
+no GUI or event output. Five alternating-order repetitions use seeds 12345--12349 and 200 events per
+electron, proton, positive-pion, and neutron run. Elapsed time since beamOn measures transport; separate
+zero-event samples measure startup and peak RSS.
+
+Table~\ref{tab:outer-mount-timing} records median transport wall seconds per 200 events.
+
+\begin{table}[htbp]
+\centering
+\caption{Median transport wall seconds over five repetitions.}
+\label{tab:outer-mount-timing}
+\begin{tabular}{lrrr}
+\toprule
+Particle & Original & Optimized & Original/optimized \\
+\midrule
+e- & 15.97580 & 15.51250 & 1.030 \\
+proton & 2.13591 & 2.10357 & 1.015 \\
+pi+ & 2.93950 & 2.85889 & 1.028 \\
+neutron & 1.83088 & 1.93090 & 0.948 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Median original/optimized transport wall-time ratios are 1.030 for electrons, 1.015 for protons, 1.028 for
+positive pions, and 0.948 for neutrons. A ratio below one denotes longer optimized tracking time. All 52
+processes complete normally, and all forty transport runs report the requested 200 events. Startup
+simulation wall time changes from 0.705080 to 0.693238 s, and peak startup RSS changes from 120.12 to 119.38
+MiB. Closure repairs and relief change material boundaries, so these short workload timings are not
+attributed solely to triangle reduction. They do not establish detector-response equivalence or full CLAS12
+speedup. The preceding flange control at fixed material volume remains separately reported.
+
+Table~\ref{tab:outer-mount-warnings} gives isolated-fixture exceptions across all 52 processes.
+
+\begin{table}[htbp]
+\centering
+\caption{Geant4 exception counts in the isolated mount fixtures.}
+\label{tab:outer-mount-warnings}
+\begin{tabular}{lrr}
+\toprule
+Diagnostic & Original & Optimized \\
+\midrule
+GeomSolids1001 & 26 & 0 \\
+GeomNav1002 & 0 & 0 \\
+GeomNav0003 & 0 & 0 \\
+GeomVol1002 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+Figure~\ref{fig:outer-mount-stl} compares the stored mount triangulations.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/outer_mount_stl_comparison.pdf}
+\caption{Original FT outer mount (left) and repaired, relieved, and simplified mount (right).
+Matched cameras and bounds use original STL coordinates; existing drilled openings are retained.}
+\label{fig:outer-mount-stl}
+\end{figure}

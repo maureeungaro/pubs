@@ -1,0 +1,134 @@
+\FloatBarrier
+\section{Moller cone}
+\label{sec:moller-cone}
+
+The remaining downstream contacts recorded in this historical study are resolved by the subsequent socket
+revision in Section~\ref{sec:downstream-joints}.
+
+The tenth beamline study renames main-cone to moller\_cone in nine source and runtime GXML variations and
+nine GEMC2 SQLite CAD rows. The beamline\_W tungsten material, color, passive 180-degree y rotation, and
+run-dependent positions remain unchanged. Five placements use cone z = 1589.27 mm and overlap the
+FTInnerShield axial interval; four use z = 1273.27 mm and are already separated from the shield. The current
+smooth-flange FTInnerShield is unchanged. The raw engineering cone is archived before replacement.
+
+The original contains 15,782 triangles and 302 boundary edges in eight surface loops: five on the outer
+tapered wall and three on the inner cylindrical wall. Its open surface has no valid enclosed material
+volume. Filling those openings follows the measured outer cone and inner cylinder profiles, preserving every
+original face and vertex before clearance work. The closed hole-filled reference has 16,688 triangles. The
+large central beam passage remains open. A full nominal axisymmetric reconstruction is avoided because the
+engineering outer rings are coarsely tessellated; their existing bounds and facets provide the shape
+reference.
+
+The existing entrance counterbore, about 39.98595 mm radius, is widened with a protected 128-sided
+cylindrical cut of radius 40.200001 mm. The cut ends at local cone z = -53.53 mm, 0.2 mm beyond the
+overlapping shield tip at -53.73 mm. A 0.2 mm nominal radial allowance above the shield radius accounts for
+the polygonal opening. Independent clipped-triangle bounds give a minimum cone opening radius of 40.187892
+mm and maximum shield radius 40.000001 mm, proving at least 0.187891 mm radial separation throughout the
+shared axial interval. Collision checks and bidirectional vertex containment find no intersection in all
+nine placements; the nearest sampled vertex-to-surface distance is 0.199938 mm in the overlapping group and
+199.109193 mm in the axially separated group.
+
+The clearance reference has 11,616 triangles; protected simplification retains 1,964 joint, shoulder, and
+corner facets and produces 5,000 triangles, 68.32\% fewer than the engineering input. File size falls from
+789,184 to 250,084 bytes. The final mesh is one closed manifold component of genus one, with no detected
+self-intersections or zero-area facets and exactly unchanged outer bounds. Minimum triangle altitude is
+0.000380430 mm. Maximum sampled bidirectional displacement from the clearance reference is 0.020048 mm,
+below the 0.05 mm shape guard. The original input reproduces the final STL and both reference meshes byte
+for byte.
+
+Hole-filled reference volume is 5835559.232219 mm$^3$; final volume is 5825708.437762 mm$^3$. Counterbore
+relief and simplification remove 0.168806\% tungsten relative to the closed hole-filled reference.
+Simplification alone changes clearance-reference volume by -0.0000002660\%. No original mass difference is
+inferred from the defective open input. Fifty-five independent material probes test the filled opening
+centres and the retained central beam passage.
+
+\begin{table}[htbp]
+\centering
+\caption{Original, repaired clearance reference, and final Moller cone.}
+\label{tab:moller-mesh}
+\begin{tabular}{lrrr}
+\toprule
+Quantity & Original & Reference & Final \\
+\midrule
+Triangles & 15,782 & 11,616 & 5,000 \\
+Bytes & 789,184 & 580,884 & 250,084 \\
+Boundary edges & 302 & 0 & 0 \\
+Volume (mm$^3$) & undefined & 5825708.453 & 5825708.438 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two tracking comparisons isolate the cone in air: raw engineering input versus final mesh and repaired
+clearance reference versus final mesh. They use the same fixed GEMC3 binary, beamline\_W material, default
+placement, and matched target-origin 5 GeV primaries over 1.1--2.6 degrees and full azimuth. FTFP\_BERT runs
+without optics or field, with one thread, default production cuts, and no GUI or event output. Each
+comparison uses five alternating order repetitions, seeds 12345--12349, and 200 events per electron, proton,
+positive-pion, and neutron run. Each has 52 processes including startup and isolated overlap checks. All 104
+processes complete normally and all eighty transport runs report 200 events.
+
+Raw/final median transport ratios are 2.200, 1.739, 1.574, 1.552 for electrons, protons, positive pions, and
+neutrons respectively. The raw cone emits 26 GeomSolids1001 and 396 GeomNav1002 exception blocks across the
+recorded processes. Its stuck-track recovery and invalid solid prevent attributing these ratios solely to
+tessellation reduction. The final mesh emits no Geant4 exceptions. The clean repaired-reference/final
+comparison gives ratios 1.638, 1.313, 1.402, 1.301 in the same order, with no exceptions in either case.
+Ratios above one mean faster tracking. These isolated timings do not establish full CLAS12 speedup or
+physics-response equivalence. Median startup simulation time changes from 0.777853 to 0.744276 s; peak
+startup RSS changes from 137.08 to 122.14 MiB.
+
+\begin{table}[htbp]
+\centering
+\caption{Median transport wall seconds per 200 events: raw input versus final cone.}
+\label{tab:moller-upgrade}
+\begin{tabular}{lrrr}
+\toprule
+Particle & Original & Final & Original/final \\
+\midrule
+e- & 55.95160 & 25.43760 & 2.200 \\
+proton & 10.28140 & 5.91253 & 1.739 \\
+pi+ & 15.50770 & 9.85140 & 1.574 \\
+neutron & 11.84350 & 7.63252 & 1.552 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Median transport wall seconds per 200 events: repaired clearance-reference control.}
+\label{tab:moller-reference}
+\begin{tabular}{lrrr}
+\toprule
+Particle & Reference & Final & Reference/final \\
+\midrule
+e- & 28.23070 & 17.23620 & 1.638 \\
+proton & 5.43417 & 4.13941 & 1.313 \\
+pi+ & 8.36232 & 5.96464 & 1.402 \\
+neutron & 5.71081 & 4.39053 & 1.301 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A separate cone/shield assembly test uses 10,000-point Geant4 overlap checking. The original cone gives five
+overlap reports and one solid warning; the final assembly has no warnings or overlaps. Full default beamline
+construction completes with no missing meshes or solid warnings, retaining four overlap reports at the
+unrelated downstream tube/adapter joints. The earlier shield studies retain their historical overlap
+measurements; this cone revision resolves that interference. Semantic comparisons pass all fifteen native
+geometry and material variations and fourteen CAD variations against GEMC2.
+
+\FloatBarrier
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/moller_cone_stl_comparison.pdf}
+\caption{Original engineering cone (left) and optimized moller\_cone (right), with matched cameras and
+bounds. Surface openings are filled and the shield counterbore is widened; the central beam passage and
+outer envelope remain.}
+\label{fig:moller-cone}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/moller_cone_joint.pdf}
+\caption{Actual triangle sections at y = 0 through the original and final cone with the unchanged FT inner
+shield. The enlarged counterbore clears the shield tip; the right panel magnifies the former shoulder
+interference. The guaranteed radial gap includes polygon faceting.}
+\label{fig:moller-joint}
+\end{figure}

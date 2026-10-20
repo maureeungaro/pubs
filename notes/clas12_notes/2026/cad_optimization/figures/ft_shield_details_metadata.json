@@ -1,0 +1,15 @@
+{
+  "Original": {
+    "sha256": "29f15d29ac5e1a09adf2bc7fb0fa0cc4d539f3567f2fdd92c084b9f3be56fbe1",
+    "triangles": 44122
+  },
+  "Optimized": {
+    "sha256": "d1c41df5ec2977e7a831378024c443c99870c765fac9ca2ee2e3c3aa3a9b4286",
+    "triangles": 13500
+  },
+  "views": {
+    "flange_elevation": -65,
+    "flange_azimuth": 90,
+    "tube_section_z_mm": -100
+  }
+}

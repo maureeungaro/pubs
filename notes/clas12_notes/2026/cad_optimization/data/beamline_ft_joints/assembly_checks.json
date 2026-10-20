@@ -1,0 +1,54 @@
+{
+  "before": {
+    "contacts": {
+      "moller-cone-extension-inner / FTInnerShield": 7332,
+      "moller-cone-extension-inner / FTFlange": 447,
+      "moller-cone-extension-lead-case / FTFlange": 583,
+      "moller-cone-extension-lead-case / moller-cone-extension-lead-fill": 10990,
+      "moller-cone-extension-lead-fill / moller-cone-extension-inner": 10273,
+      "moller_cone / moller-cone-extension-inner": 1466,
+      "moller_cone_tip / moller_cone": 2924,
+      "moller-cone-extension-tungsten-addon / moller_cone": 3041
+    },
+    "exceptions": {
+      "GeomVol1002": 21
+    },
+    "overlap_reports": [
+      "Overlap is detected for volume beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid) with beamline_cad/FTInnerShield:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller-cone-extension-lead-case:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller-cone-extension-lead-fill:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller_cone:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller_cone_tip:0 (G4TessellatedSolid) with beamline_cad/moller_cone:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/FTFlange:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/FTInnerShield:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller-cone-extension-lead-case:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller-cone-extension-lead-fill:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller-cone-extension-tungsten-addon:0 (G4TessellatedSolid) with beamline_cad/moller_cone:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller_cone:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller_cone_tip:0 (G4TessellatedSolid) with beamline_cad/moller_cone:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/FTFlange:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/FTInnerShield:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller-cone-extension-lead-case:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller-cone-extension-lead-fill:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller-cone-extension-tungsten-addon:0 (G4TessellatedSolid) with beamline_cad/moller_cone:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller_cone:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller_cone_tip:0 (G4TessellatedSolid) with beamline_cad/moller_cone:0 (G4TessellatedSolid)"
+    ]
+  },
+  "candidate": {
+    "contacts": {
+      "moller-cone-extension-inner / FTInnerShield": 0,
+      "moller-cone-extension-inner / FTFlange": 0,
+      "moller-cone-extension-lead-case / FTFlange": 0,
+      "moller-cone-extension-lead-case / moller-cone-extension-lead-fill": 0,
+      "moller-cone-extension-lead-fill / moller-cone-extension-inner": 0,
+      "moller_cone / moller-cone-extension-inner": 0,
+      "moller_cone_tip / moller_cone": 0,
+      "moller-cone-extension-tungsten-addon / moller_cone": 0
+    },
+    "exceptions": {},
+    "overlap_reports": []
+  }
+}

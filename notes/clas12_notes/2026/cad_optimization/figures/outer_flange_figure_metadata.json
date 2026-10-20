@@ -1,0 +1,26 @@
+{
+  "FTOuterFlange": {
+    "original": {
+      "sha256": "ac444ff385c0175ed8c41463cdce499291e967dc8b8c66bc160018e5e10eb7bd",
+      "triangles": 2132
+    },
+    "optimized": {
+      "sha256": "36421b77cfe31f9fd8b31f451feba7fee532bde662125500a3624d4e6d8f4777",
+      "triangles": 836
+    },
+    "bounds_mm": [
+      [
+        -127.0,
+        -127.0,
+        -1480.897216796875
+      ],
+      [
+        127.0,
+        127.0,
+        -1461.8472900390625
+      ]
+    ],
+    "elevation": 55,
+    "azimuth": -65
+  }
+}

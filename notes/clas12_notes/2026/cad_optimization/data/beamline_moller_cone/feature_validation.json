@@ -1,0 +1,557 @@
+{
+  "mesh_sha256": "6640a8179f48d30242da0fafcc7c4f4c1be97022a73c4d94e0291221dcae96e0",
+  "vtk_version": "9.6.2",
+  "point_checks": [
+    {
+      "feature": "filled_surface_loop_1",
+      "point_mm": [
+        51.324479085608004,
+        51.290290956031996,
+        -102.18959000327371
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "filled_surface_loop_1",
+      "point_mm": [
+        51.324479085608004,
+        51.290290956031996,
+        -101.88959000327371
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "filled_surface_loop_1",
+      "point_mm": [
+        51.324479085608004,
+        51.290290956031996,
+        -101.58959000327371
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "filled_surface_loop_2",
+      "point_mm": [
+        72.55820818851026,
+        -0.16926389442992204,
+        -102.16204674130394
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "filled_surface_loop_2",
+      "point_mm": [
+        72.55820818851026,
+        -0.16926389442992204,
+        -101.86204674130394
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "filled_surface_loop_2",
+      "point_mm": [
+        72.55820818851026,
+        -0.16926389442992204,
+        -101.56204674130394
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "filled_surface_loop_3",
+      "point_mm": [
+        -51.3868310139163,
+        -51.21478925155505,
+        -101.97809235422234
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "filled_surface_loop_3",
+      "point_mm": [
+        -51.3868310139163,
+        -51.21478925155505,
+        -101.67809235422234
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "filled_surface_loop_3",
+      "point_mm": [
+        -51.3868310139163,
+        -51.21478925155505,
+        -101.37809235422235
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "filled_surface_loop_4",
+      "point_mm": [
+        40.69995293360943,
+        -0.06265565758133115,
+        -102.23229457310268
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "filled_surface_loop_4",
+      "point_mm": [
+        40.69995293360943,
+        -0.06265565758133115,
+        -101.93229457310268
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "filled_surface_loop_4",
+      "point_mm": [
+        40.69995293360943,
+        -0.06265565758133115,
+        -101.63229457310268
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "filled_surface_loop_5",
+      "point_mm": [
+        35.47393222844471,
+        -0.2752403526226995,
+        649.4217163085938
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "filled_surface_loop_5",
+      "point_mm": [
+        35.47393222844471,
+        -0.2752403526226995,
+        649.7217163085937
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "filled_surface_loop_5",
+      "point_mm": [
+        35.47393222844471,
+        -0.2752403526226995,
+        650.0217163085937
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "filled_surface_loop_6",
+      "point_mm": [
+        0.16987342258071497,
+        35.47459327491015,
+        132.0547889513847
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "filled_surface_loop_6",
+      "point_mm": [
+        0.16987342258071497,
+        35.47459327491015,
+        132.3547889513847
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "filled_surface_loop_6",
+      "point_mm": [
+        0.16987342258071497,
+        35.47459327491015,
+        132.65478895138472
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "filled_surface_loop_7",
+      "point_mm": [
+        -0.34044091741706844,
+        62.467494182627114,
+        132.56656869424356
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "filled_surface_loop_7",
+      "point_mm": [
+        -0.34044091741706844,
+        62.467494182627114,
+        132.86656869424357
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "filled_surface_loop_7",
+      "point_mm": [
+        -0.34044091741706844,
+        62.467494182627114,
+        133.16656869424358
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "filled_surface_loop_8",
+      "point_mm": [
+        40.29798198906138,
+        -0.05875003406817525,
+        649.8649837493897
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "filled_surface_loop_8",
+      "point_mm": [
+        40.29798198906138,
+        -0.05875003406817525,
+        650.1649837493896
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "filled_surface_loop_8",
+      "point_mm": [
+        40.29798198906138,
+        -0.05875003406817525,
+        650.4649837493896
+      ],
+      "expected_inside": true,
+      "inside": true
+    },
+    {
+      "feature": "central_passage",
+      "point_mm": [
+        0,
+        0,
+        -170
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "central_passage",
+      "point_mm": [
+        0,
+        0,
+        -100
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "central_passage",
+      "point_mm": [
+        0,
+        0,
+        -54
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "central_passage",
+      "point_mm": [
+        0,
+        0,
+        0
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "central_passage",
+      "point_mm": [
+        0,
+        0,
+        132
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "central_passage",
+      "point_mm": [
+        0,
+        0,
+        650
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "central_passage",
+      "point_mm": [
+        0,
+        0,
+        710
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        40.1,
+        0.0,
+        -170
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        28.35498192558056,
+        28.354981925580553,
+        -170
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        2.455416832290443e-15,
+        40.1,
+        -170
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        -28.354981925580553,
+        28.35498192558056,
+        -170
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        -40.1,
+        4.910833664580886e-15,
+        -170
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        -28.354981925580564,
+        -28.354981925580553,
+        -170
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        -7.36625049687133e-15,
+        -40.1,
+        -170
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        28.35498192558055,
+        -28.354981925580564,
+        -170
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        40.1,
+        0.0,
+        -100
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        28.35498192558056,
+        28.354981925580553,
+        -100
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        2.455416832290443e-15,
+        40.1,
+        -100
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        -28.354981925580553,
+        28.35498192558056,
+        -100
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        -40.1,
+        4.910833664580886e-15,
+        -100
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        -28.354981925580564,
+        -28.354981925580553,
+        -100
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        -7.36625049687133e-15,
+        -40.1,
+        -100
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        28.35498192558055,
+        -28.354981925580564,
+        -100
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        40.1,
+        0.0,
+        -54
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        28.35498192558056,
+        28.354981925580553,
+        -54
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        2.455416832290443e-15,
+        40.1,
+        -54
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        -28.354981925580553,
+        28.35498192558056,
+        -54
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        -40.1,
+        4.910833664580886e-15,
+        -54
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        -28.354981925580564,
+        -28.354981925580553,
+        -54
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        -7.36625049687133e-15,
+        -40.1,
+        -54
+      ],
+      "expected_inside": false,
+      "inside": false
+    },
+    {
+      "feature": "enlarged_counterbore",
+      "point_mm": [
+        28.35498192558055,
+        -28.354981925580564,
+        -54
+      ],
+      "expected_inside": false,
+      "inside": false
+    }
+  ],
+  "result": "pass"
+}

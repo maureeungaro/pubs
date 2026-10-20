@@ -1,0 +1,26 @@
+{
+  "FTOuterMount": {
+    "original": {
+      "sha256": "12413bd780a2a8a6408e157c756259c155efb4bed1cb6e68d6cd9542f89828e3",
+      "triangles": 3094
+    },
+    "optimized": {
+      "sha256": "99024fec3ad474b38fce01df86cc6eb80356266a7dc18b76f72e4ea8208806f4",
+      "triangles": 2740
+    },
+    "bounds_mm": [
+      [
+        -95.25,
+        -95.25064849853516,
+        -1471.3721923828125
+      ],
+      [
+        95.25,
+        95.25,
+        -1087.197265625
+      ]
+    ],
+    "elevation": 12,
+    "azimuth": -65
+  }
+}

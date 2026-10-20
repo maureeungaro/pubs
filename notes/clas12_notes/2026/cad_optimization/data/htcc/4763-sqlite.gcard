@@ -1,0 +1,9 @@
+<gcard>
+<detector name="htcc" factory="SQLITE"/><detector name="htcc_cad" factory="SQLITECAD"/>
+<option name="DATABASE" value="/opt/projects/gemc/clas12Tags/clas12.sqlite"/>
+<option name="RUNNO" value="4763"/>
+<option name="PHYSICS" value="STD + FTFP_BERT + Optical"/>
+<option name="HALL_FIELD" value="no"/>
+<option name="OUTPUT" value="no, output"/>
+<option name="RFSETUP" value="4.008, 50, 0, 0, 0"/>
+</gcard>

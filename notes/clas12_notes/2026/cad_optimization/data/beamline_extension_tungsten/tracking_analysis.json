@@ -1,0 +1,125 @@
+{
+  "comparisons": {
+    "upgrade": {
+      "e-": {
+        "original_median_seconds": 26.359,
+        "optimized_median_seconds": 15.0295,
+        "median_ratio": 1.7538174922652119,
+        "paired_ratios": [
+          1.7812844297544157,
+          1.7538174922652119,
+          1.7631158931740942,
+          1.7527460035985476,
+          1.7353242798098139
+        ],
+        "faster_pairs": 5
+      },
+      "proton": {
+        "original_median_seconds": 4.75147,
+        "optimized_median_seconds": 3.19228,
+        "median_ratio": 1.4884252007969228,
+        "paired_ratios": [
+          1.4912228637785878,
+          1.4884252007969228,
+          1.4705918621224925,
+          1.4583423972155753,
+          1.4088213419203162
+        ],
+        "faster_pairs": 5
+      },
+      "pi+": {
+        "original_median_seconds": 7.16772,
+        "optimized_median_seconds": 4.38598,
+        "median_ratio": 1.6342345382331884,
+        "paired_ratios": [
+          1.5230757962327721,
+          1.6342345382331884,
+          1.5534531882158529,
+          1.585671617024807,
+          1.5440265108529319
+        ],
+        "faster_pairs": 5
+      },
+      "neutron": {
+        "original_median_seconds": 4.33537,
+        "optimized_median_seconds": 2.94566,
+        "median_ratio": 1.4717822151911626,
+        "paired_ratios": [
+          1.4939008447129614,
+          1.4717822151911626,
+          1.5075683234384964,
+          1.4906506117464715,
+          1.5054794135819805
+        ],
+        "faster_pairs": 5
+      }
+    },
+    "control": {
+      "e-": {
+        "original_median_seconds": 27.8334,
+        "optimized_median_seconds": 16.9026,
+        "median_ratio": 1.646693408114728,
+        "paired_ratios": [
+          1.8487496127742262,
+          1.8334706630719235,
+          1.5540096143645978,
+          1.793017427888046,
+          1.874108125377161
+        ],
+        "faster_pairs": 5
+      },
+      "proton": {
+        "original_median_seconds": 5.06416,
+        "optimized_median_seconds": 3.27214,
+        "median_ratio": 1.54765994120056,
+        "paired_ratios": [
+          1.561359410508918,
+          1.54765994120056,
+          1.4961881384560818,
+          1.5501865598585838,
+          1.5635015137687773
+        ],
+        "faster_pairs": 5
+      },
+      "pi+": {
+        "original_median_seconds": 7.66426,
+        "optimized_median_seconds": 4.66753,
+        "median_ratio": 1.6420376516058814,
+        "paired_ratios": [
+          1.567549281772533,
+          1.6420376516058814,
+          1.6162814109158707,
+          1.581193041417398,
+          1.57496103159983
+        ],
+        "faster_pairs": 5
+      },
+      "neutron": {
+        "original_median_seconds": 4.69515,
+        "optimized_median_seconds": 3.05862,
+        "median_ratio": 1.5350550248151127,
+        "paired_ratios": [
+          1.4986712874813364,
+          1.5350550248151127,
+          1.520745739556466,
+          1.5556069755629551,
+          1.5404103931719904
+        ],
+        "faster_pairs": 5
+      }
+    }
+  },
+  "exception_blocks": {
+    "upgrade": {
+      "original": {
+        "GeomSolids1001": 26,
+        "GeomNav1002": 66
+      },
+      "optimized": {}
+    },
+    "control": {
+      "original": {},
+      "optimized": {}
+    }
+  }
+}

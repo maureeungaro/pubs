@@ -1,0 +1,26 @@
+{
+  "moller-cone-extension-lead-case": {
+    "original": {
+      "sha256": "c9dfc8a1cc843c22cff112f55b6d238cfb0f2cac6149bc6f1e1a90bbfbd4ab31",
+      "triangles": 17360
+    },
+    "optimized": {
+      "sha256": "6da8aaa2f4ef20cc5e6b25e3c97247044c7c21d6aaec53f5e6897fac4ad9cd11",
+      "triangles": 10000
+    },
+    "bounds_mm": [
+      [
+        -120.51636505126953,
+        -120.53667449951172,
+        -523.16796875
+      ],
+      [
+        120.54833221435547,
+        120.55000305175781,
+        -170.63296508789062
+      ]
+    ],
+    "elevation": 22,
+    "azimuth": 35
+  }
+}

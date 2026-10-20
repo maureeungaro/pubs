@@ -1,0 +1,110 @@
+\FloatBarrier
+\section{FT inner shield and flange}
+
+The fifth beamline study renames innerShieldAndFlange to FTInnerShieldAndFlange and optimizes its
+engineering tessellation. The same rename applies to ten source and generated runtime CAD variations and ten
+GEMC2 SQLite CAD rows. The tungsten-alloy material, density, color, mother, position, passive rotation,
+coordinate frame, and overall bounds remain unchanged. Custom CAD placements must use the new name to match
+the STL filename.
+
+The original has 34,448 triangles, two closed manifold surface components, aggregate genus 17, and no
+detected self-intersections or exact zero-area faces. The small inward-oriented component is an enclosed
+pocket with signed volume -9.663980 mm$^3$. All 474 of its triangles are protected and verified in the saved
+STL at exactly the original coordinates. Only the larger component is decimated, using topology-preserving
+quadric collapse. No holes are filled, components removed, or surfaces reconstructed.
+
+The saved output contains 22,000 triangles (36.14\% fewer) and 1,100,084 bytes instead of 1,722,484. It
+retains both components, aggregate genus, and bounds; no self-intersections or zero-area triangles are
+detected. Bidirectional vertex, edge, and surface sampling measures a maximum difference of 0.0481 mm, below
+the 0.05 mm guard. Every vertex and approximately 200,000 edge/surface samples per direction are checked;
+these sampled maxima are not proven global error bounds. Total signed volume changes by -0.00004391\%. A
+separate component integration gives -0.00004114\% for the main component and no change for the pocket. The
+builder reproduces the optimized STL byte for byte from the archived original.
+
+Table~\ref{tab:inner-shield-meshes} summarizes the mesh inventory.
+
+\begin{table}[htbp]
+\centering
+\caption{Original and optimized FT inner shield and flange.}
+\label{tab:inner-shield-meshes}
+\begin{tabular}{lrr}
+\toprule
+Quantity & Original & Optimized \\
+\midrule
+Triangles & 34,448 & 22,000 \\
+Bytes & 1,722,484 & 1,100,084 \\
+Closed surface components & 2 & 2 \\
+Aggregate genus & 17 & 17 \\
+Protected pocket faces & 474 & 474 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The benchmark isolates this one CAD volume in air with the recorded GEMC3 executable and Geant4 stack,
+FTFP\_BERT without optical processes, zero magnetic field, one thread, default production cuts, and no GUI
+or event output. Both fixtures use the new volume name, identical physical placement attributes, and the
+same alloy definition. Matched 5 GeV LUND primaries start at the target, uniform in solid angle over
+0.25--3.0 degrees and full azimuth. Five alternating-order repetitions use seeds 12345--12349 and 200 events
+per electron, proton, positive-pion, or neutron run. Separate zero-event runs measure startup without
+overlap checking; time since beamOn measures transport. CPU time and peak RSS are retained separately.
+
+Table~\ref{tab:inner-shield-timing} gives median transport wall seconds per 200 events.
+
+\begin{table}[htbp]
+\centering
+\caption{Median transport wall seconds over five repetitions.}
+\label{tab:inner-shield-timing}
+\begin{tabular}{lrrr}
+\toprule
+Particle & Original & Optimized & Original/optimized \\
+\midrule
+e- & 18.565 & 15.048 & 1.234 \\
+proton & 2.790 & 2.426 & 1.150 \\
+pi+ & 3.655 & 3.292 & 1.110 \\
+neutron & 2.504 & 2.425 & 1.033 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Median startup simulation wall time changes from 0.9492 to 0.8435 s; peak loading RSS changes from 175.23 to
+151.28 MiB. Median original/optimized transport wall-time ratios range from 1.033 to 1.234. All 52 processes
+exit normally, and all forty transport runs report the 200 requested events. Results describe this isolated
+workload and are not pooled with earlier beamline or LTCC benchmarks.
+
+Table~\ref{tab:inner-shield-warnings} gives Geant4 exception counts over all 52 processes.
+
+\begin{table}[htbp]
+\centering
+\caption{Geant4 exception counts for the isolated inner-shield samples.}
+\label{tab:inner-shield-warnings}
+\begin{tabular}{lrr}
+\toprule
+Diagnostic & Original & Optimized \\
+\midrule
+GeomSolids1001 & 26 & 0 \\
+GeomNav1002 & 0 & 0 \\
+GeomNav0003 & 0 & 0 \\
+GeomVol1002 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The diagnostic table records the original wrong-orientation import warning and all other Geant4 exceptions
+in the sampled runs. Full default beamline construction completes without a missing mesh, with 4 solid
+warnings and 11 overlap reports, compared with five and ten before this change. The full check reports no
+overlap involving the optimized inner shield; the listed overlap reports concern other volumes. Their
+sampled count can change when CAD loading order and surface tessellation change. All fifteen native
+geometry/material variations and fourteen CAD variations pass the semantic comparison against GEMC2. Matched
+primaries and seeds do not ensure identical stochastic shower histories, and completion does not establish
+detector-response equivalence or complete overlap freedom.
+
+\FloatBarrier
+Figure~\ref{fig:inner-shield-stl} compares the stored triangulations.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/inner_shield_stl_comparison.pdf}
+\caption{Original (left) and optimized (right) FT inner shield and flange STL surfaces.
+Matched cameras and bounds use original STL coordinates; the small enclosed pocket is retained exactly.}
+\label{fig:inner-shield-stl}
+\end{figure}

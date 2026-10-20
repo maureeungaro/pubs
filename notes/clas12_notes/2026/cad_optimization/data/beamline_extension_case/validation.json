@@ -1,0 +1,192 @@
+{
+  "placements": {
+    "cad_rgk_winter2018": {
+      "name": "moller-cone-extension-lead-case",
+      "color": "960096",
+      "position": "0*mm 0*mm 1273.27*mm",
+      "rotation": "0*deg 180*deg 0*deg",
+      "material": "G4_STAINLESS-STEEL"
+    },
+    "cad_rgd_fall2023": {
+      "name": "moller-cone-extension-lead-case",
+      "color": "960096",
+      "position": "0*mm 0*mm 1273.27*mm",
+      "rotation": "0*deg 180*deg 0*deg",
+      "material": "G4_STAINLESS-STEEL"
+    },
+    "cad_rgf_spring2020": {
+      "name": "moller-cone-extension-lead-case",
+      "color": "960096",
+      "position": "0*mm 0*mm 1273.27*mm",
+      "rotation": "0*deg 180*deg 0*deg",
+      "material": "G4_STAINLESS-STEEL"
+    },
+    "cad_rge_spring2024": {
+      "name": "moller-cone-extension-lead-case",
+      "color": "960096",
+      "position": "0*mm 0*mm 1273.27*mm",
+      "rotation": "0*deg 180*deg 0*deg",
+      "material": "G4_STAINLESS-STEEL"
+    }
+  },
+  "affected_runs": [
+    5874,
+    11620,
+    18304,
+    20000
+  ],
+  "SQL_tables_verified": {
+    "geometry": 98542,
+    "materials": 1663,
+    "banks": 215,
+    "hits": 84,
+    "parameters": 1937,
+    "cad": 1966,
+    "mirrors": 99
+  },
+  "SQL_change": "Four CAD names only in GEMC2; four names and STL paths only in GEMC3 (apart from IDs)",
+  "other_meshes": "All original hashes unchanged",
+  "mesh_reproduction": "Byte-for-byte pass",
+  "SQLite_variation": "default",
+  "assembly": {
+    "original": {
+      "neighbors": {
+        "moller-cone-extension-inner": {
+          "triangle_contacts": 0,
+          "neighbor_closed_manifold": true,
+          "neighbor_sha256": "2a84ad71756d5d2dcd2cba42958fb7719fba3c78746d9901007f4e1163bf9637"
+        },
+        "moller-cone-extension-lead-fill": {
+          "triangle_contacts": 10990,
+          "neighbor_closed_manifold": true,
+          "neighbor_sha256": "ea95201f26dfeeeb6799418cff3dfec97def974fcff8b963d0aecff828ffccd2"
+        },
+        "FTFlange": {
+          "triangle_contacts": 583,
+          "neighbor_closed_manifold": true,
+          "neighbor_sha256": "8682f9792b4c060a205c73716d281834b57c3b0107735e207e22fde25aa54c74"
+        }
+      },
+      "Geant4_exceptions": {
+        "GeomVol1002": 9
+      },
+      "overlap_reports": [
+        "Overlap is detected for volume beamline_cad/moller-cone-extension-lead-fill:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/FTFlange:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/moller-cone-extension-lead-case:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/moller-cone-extension-lead-fill:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/FTFlange:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/moller-cone-extension-lead-case:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/moller-cone-extension-lead-fill:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)"
+      ]
+    },
+    "optimized": {
+      "neighbors": {
+        "moller-cone-extension-inner": {
+          "triangle_contacts": 0,
+          "neighbor_closed_manifold": true,
+          "neighbor_sha256": "2a84ad71756d5d2dcd2cba42958fb7719fba3c78746d9901007f4e1163bf9637"
+        },
+        "moller-cone-extension-lead-fill": {
+          "triangle_contacts": 10990,
+          "neighbor_closed_manifold": true,
+          "neighbor_sha256": "ea95201f26dfeeeb6799418cff3dfec97def974fcff8b963d0aecff828ffccd2"
+        },
+        "FTFlange": {
+          "triangle_contacts": 583,
+          "neighbor_closed_manifold": true,
+          "neighbor_sha256": "8682f9792b4c060a205c73716d281834b57c3b0107735e207e22fde25aa54c74"
+        }
+      },
+      "Geant4_exceptions": {
+        "GeomVol1002": 9
+      },
+      "overlap_reports": [
+        "Overlap is detected for volume beamline_cad/moller-cone-extension-lead-fill:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/FTFlange:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/moller-cone-extension-lead-case:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/moller-cone-extension-lead-fill:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/FTFlange:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/moller-cone-extension-lead-case:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/moller-cone-extension-lead-fill:0 (G4TessellatedSolid) with beamline_cad/moller-cone-extension-inner:0 (G4TessellatedSolid)"
+      ]
+    }
+  },
+  "full_construction": {
+    "original_5874": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {
+        "GeomSolids1001": 1,
+        "GeomVol1002": 21
+      },
+      "log": "full-original-5874.log"
+    },
+    "original_11620": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {
+        "GeomSolids1001": 1,
+        "GeomVol1002": 21
+      },
+      "log": "full-original-11620.log"
+    },
+    "original_18304": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {
+        "GeomSolids1001": 1,
+        "GeomVol1002": 21
+      },
+      "log": "full-original-18304.log"
+    },
+    "original_20000": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {
+        "GeomSolids1001": 1,
+        "GeomVol1002": 21
+      },
+      "log": "full-original-20000.log"
+    },
+    "optimized_5874": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {
+        "GeomSolids1001": 1,
+        "GeomVol1002": 21
+      },
+      "log": "full-optimized-5874.log"
+    },
+    "optimized_11620": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {
+        "GeomSolids1001": 1,
+        "GeomVol1002": 21
+      },
+      "log": "full-optimized-11620.log"
+    },
+    "optimized_18304": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {
+        "GeomSolids1001": 1,
+        "GeomVol1002": 21
+      },
+      "log": "full-optimized-18304.log"
+    },
+    "optimized_20000": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {
+        "GeomSolids1001": 1,
+        "GeomVol1002": 21
+      },
+      "log": "full-optimized-20000.log"
+    }
+  },
+  "constructed_runs": 17,
+  "semantic_comparator": {
+    "native_geometry": 15,
+    "materials": 15,
+    "CAD": 14,
+    "result": "pass"
+  }
+}

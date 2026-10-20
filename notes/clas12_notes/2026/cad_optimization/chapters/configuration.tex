@@ -1,0 +1,42 @@
+\FloatBarrier
+
+\section{Simulation and measurement configuration}
+
+All runs use the local gemc/dev module, which reports GEMC 6.2, and Geant4 10.7.4 on macOS arm64. A local CCDB
+SQLite database prevents remote calibration access. Executable and STL SHA-256 hashes, the complete gcard,
+commands, and platform information are retained with the results. References~\cite{gemc,cad} describe GEMC and
+CAD import.
+
+The physics list is STD + FTFP\_BERT, with Optical enabled only for the optical electron workload. Only LTCC is
+present. RUNNO is explicitly 11 with the default geometry variation, enabling six LTCC sectors. The primary
+momentum is 5 GeV/c, the vertex is at the origin, the polar angle spans 15--35 degrees, and the azimuth spans
+the full circle. Both magnets are off; polarity is therefore not applicable. There is no target, no imposed
+beam current, no luminosity normalization, no bunch-time window, and no background pileup. Each event contains
+one primary particle. FTOn/FTOff and shielding configurations are not applicable to this isolated detector
+test.
+
+Initialization runs use N=0. Optical electron runs use 1,000 events; electron, proton, positive-pion, and
+neutron runs without optical processes use 10,000 events each. Each timing workload has five repetitions with
+seeds 12345--12349, rotating the order of the three geometry cases. The nonoptical tests use matched LUND
+files: every geometry receives identical primary tracks for a given seed. The corrected optical study also uses
+matched LUND primaries. Random histories of secondary particles can differ because the geometries and ensuing
+transport differ.
+
+Event output and the GUI are disabled. The benchmark applies identical default production cuts; no obsolete
+frame-specific cut is used. No readout threshold or detector rate is evaluated. GEMC reports process CPU time
+and its events-only CPU time separately. Its events-only timer excludes the first warmup event and scales the
+remaining time to the full event count. The macOS time utility records wall time and maximum resident-set size.
+Medians summarize five runs; observed ranges are provided where useful and are not confidence intervals. The
+machine was not dedicated to the study, so wall time includes scheduling and system-load variation.
+
+A separate CAD-only loading test removes the TEXT detector hierarchy and loads the active STL solids directly
+into the world with standard aluminum, no sensitivities, no field, and N=0. The same executable and physics
+selection are used. This artificial configuration measures loading of the mesh bundle without native LTCC
+mothers, copies, or custom-material definitions; its coincident world placements are not a physical simulation
+and are not overlap-checked.
+
+Construction diagnostics use CHECK\_OVERLAPS=1, N=0, and seed 12345. GEMC performs placement construction
+checks and invokes /geometry/test/run without overriding its sampling resolution. One diagnostic run per case
+counts each G4Exception by code. Geant4 caps overlap reports per volume, and some warnings concern ineffective
+sampling; the number of reports is not the number of all intersecting pairs. Runtime navigation warnings are
+counted separately during event transport. No warning count is interpreted as proof of overlap-free geometry.

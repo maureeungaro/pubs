@@ -1,0 +1,137 @@
+\FloatBarrier
+\section{Inner Moller-cone extension}
+\label{sec:extension-inner}
+
+The thirteenth beamline mesh study renames \texttt{inner-assembly} to
+\texttt{moller-\allowbreak{}cone-\allowbreak{}extension-\allowbreak{}inner} in
+runs 5874, 11620, 18304, and 20000. Both repositories, their CAD placements, and the GEMC2 CAD database use
+the new name. Stainless steel, the passive 180-degree y rotation, and the 1273.27 mm z translation remain
+unchanged. GEMC3 SQLite banks remain under \texttt{default}, indexed by run number. The engineering original
+is archived, and the three installed optimized STLs have identical bytes.
+
+The original has 18,057 triangles, 75 boundary edges in two loops, one connected component, and no detected
+self-intersections or zero-area triangles. The two open rims surround one radial port on the positive local-x
+side: a 35-vertex rim at tube radius 40 mm and a 40-vertex rim at radius 47.625 mm. They share a nominal 6.35
+mm port radius centered at local z = -418.042413330 mm. The wall between these rims is absent. Stitching their
+angularly ordered boundaries adds 75 triangles while retaining every original vertex. The beam passage and
+both radial ports remain open; no hole caps or surface reconstruction are applied.
+
+This repair produces an 18,132-triangle closed reference with one manifold component and genus three. Genus
+describes the closed solid after restoring the missing tunnel wall; the open original does not define a valid
+solid volume. Protected quadric decimation retains all 7,297 sharp-edge and port-adjacent faces at their exact
+coordinates and reduces the result to 12,500 triangles. This is 30.7748\% fewer than the raw source and
+31.0611\% fewer than the repaired reference. Original bounds are retained. The final mesh has no boundary
+edges, non-manifold elements, detected self-intersections, or zero-area triangles. The minimum triangle
+altitude is 0.002261 mm. Rebuilding reproduces the reference and optimized STL bytes exactly.
+Table~\ref{tab:extension-inner-mesh} gives the mesh inventory, and Figure~\ref{fig:extension-inner} compares
+the stored meshes.
+
+Repaired reference volume is 1431693.961982 mm$^3$ and optimized volume is 1431694.095171 mm$^3$, a
++0.000009303\% decimation change. The original open mesh has no valid engineering mass. Maximum bidirectional
+vertex/edge/surface sampling between the repaired reference and optimized STL is 0.015669 mm, below the 0.05
+mm guard; this is a sampled measurement, not a global bound or a distance to the incomplete raw surface.
+Larger reductions distort the geometry and are rejected. Independent containment probes check 25 points along
+the beam passage and six points in and around the repaired port, confirming that the passage and port remain
+empty and adjacent steel remains filled.
+
+Two separate isolated benchmarks use run 5874 with \texttt{default}, matched 5 GeV electron, proton,
+positive-pion, and neutron primaries from the target, uniform in solid angle over 0.8--1.8 degrees and full
+azimuth. Physics is FTFP\_BERT with no field or optical processes, one thread, default production cuts, and no
+GUI or event output. Each benchmark uses five alternating-order repetitions of 200 events per particle with
+seeds 12345--12349. The fixed executable matches recent beamline studies; every seed pair has matching primary
+hashes.
+
+Table~\ref{tab:extension-inner-upgrade} compares the defective raw mesh with the upgraded mesh.
+Table~\ref{tab:extension-inner-control} separately compares the closed, unreduced reference with the optimized
+mesh, preserving the repaired shape and material volume to the reported decimation precision. Timings are
+median Geant4 beamOn wall times excluding initialization; ratios are baseline/optimized, so values above one
+indicate faster tracking. Raw timings include surface and navigation defects and do not establish faster
+correct transport. Only the repaired-reference control measures tessellation changes after the missing wall is
+restored.
+
+Raw-upgrade tracking ratios are 1.138, 1.055, 1.088, 1.043 for electrons, protons, positive pions, and
+neutrons, respectively. Loading process wall time changes from 0.937190 to 0.886479 s; loading CPU time is
+0.85 versus 0.83 s. Startup peak RSS is 141.844 versus 134.578 MiB. Complete process CPU, memory, wall time,
+and seed-paired results are retained independently.
+
+Repaired-reference tracking ratios are 1.261, 1.086, 1.144, 1.095 for electrons, protons, positive pions, and
+neutrons, respectively. Loading process wall time changes from 0.892270 to 0.841108 s; loading CPU time is
+0.82 versus 0.78 s. Startup peak RSS is 141.031 versus 133.953 MiB. Complete process CPU, memory, wall time,
+and seed-paired results are retained independently.
+
+Across the valid raw-input benchmark processes, exception totals are 163 GeomNav1002, 26 GeomSolids1001. All
+optimized runs and both sides of the repaired-reference control have no Geant4 exceptions. These are
+process-level diagnostic counts, not unique physical overlaps or counts of affected events.
+
+A separate six-part 10,000-point assembly check includes the extension, FT flange, FT inner shield, main cone,
+lead shield, and outer assembly. Exception blocks are original: 1 GeomSolids1001, 15 GeomVol1002; reference:
+15 GeomVol1002; optimized: 15 GeomVol1002. The restored wall removes the extension surface-hole warning;
+engineering overlaps remain. Independent surface collisions use the actual CAD transforms, including the FT
+inner shield offset. Collision counts depend on tessellation and are not overlap volumes or clearance proofs.
+
+All four complete affected configurations construct 39 Geant4 volumes including the world. Per-configuration
+exception blocks are original: 2 GeomSolids1001, 21 GeomVol1002; optimized: 1 GeomSolids1001, 20 GeomVol1002.
+All 17 beamline configurations pass volume-count construction checks. All 15 native geometry, 15 material, and
+14 CAD semantic comparisons pass. Direct database checks allow only the four names and STL paths to change;
+every other mesh retains its prior hash. These checks do not establish complete overlap freedom, full CLAS12
+speed gains, or detector-response equivalence.
+
+\begin{table}[htbp]
+\centering
+\caption{Inner extension raw input, repaired reference, and optimized mesh.}
+\label{tab:extension-inner-mesh}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrr}
+\toprule
+Quantity & Raw & Repaired & Optimized \\
+\midrule
+Triangles & 18,057 & 18,132 & 12,500 \\
+Bytes & 902,934 & 906,684 & 625,084 \\
+Boundary edges & 75 & 0 & 0 \\
+Closed components / genus & undefined & 1 / 3 & 1 / 3 \\
+Volume (mm$^3$) & undefined & 1431693.961982 & 1431694.095171 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Raw versus optimized inner extension; five repetitions of 200 events per particle.}
+\label{tab:extension-inner-upgrade}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrrr}
+\toprule
+Particle & Raw (s) & Optimized (s) & Ratio & Paired ratio range \\
+\midrule
+Electron & 26.50810 & 23.28480 & 1.138 & 1.117--1.145 \\
+Proton & 2.90723 & 2.75559 & 1.055 & 1.034--1.058 \\
+Positive pion & 4.34586 & 3.99316 & 1.088 & 1.065--1.113 \\
+Neutron & 2.63253 & 2.52499 & 1.043 & 1.035--1.068 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Repaired versus optimized inner extension; five repetitions of 200 events per particle.}
+\label{tab:extension-inner-control}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrrr}
+\toprule
+Particle & Repaired (s) & Optimized (s) & Ratio & Paired ratio range \\
+\midrule
+Electron & 29.39720 & 23.31290 & 1.261 & 1.214--1.275 \\
+Proton & 3.00190 & 2.76398 & 1.086 & 1.082--1.116 \\
+Positive pion & 4.56824 & 3.99481 & 1.144 & 1.130--1.144 \\
+Neutron & 2.76308 & 2.52386 & 1.095 & 1.091--1.118 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=\linewidth]{figures/extension_inner_stl_comparison.pdf}
+\caption{Original and optimized inner Moller-cone extension meshes with matched bounds and camera. The beam
+passage and both radial ports remain open; the missing wall of the lower port is restored.}
+\label{fig:extension-inner}
+\end{figure}

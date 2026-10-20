@@ -1,0 +1,117 @@
+\FloatBarrier
+
+\section{Reproducibility}
+
+The companion data archive retains metadata and per-run JSON results for each workload, all raw logs and time
+reports, the geometry validation summary, and matched primary-input hashes. The repository benchmark script
+runs offline with the local CCDB database. The retained metadata provides the exact executable hash; use that
+binary and the original revision for exact reproduction. Timing results are specific to this machine and
+workload. The retained dataset is cited in Ref.~\cite{dataset}.
+
+The separate beamline apex dataset retains both original and optimized two-mesh fixtures, all five matched
+primary files per particle, every log and time report, mesh-quality statistics, the builder, benchmark
+script, and executable hashes. It is stored in the companion beamline archive; the executable is not
+redistributed. The beamline benchmark needs no CCDB connection.
+
+The separate downstream and adapter/exit-shield archives retain the corresponding fixtures, matched
+primaries, raw logs, time reports, mesh checks, executable hashes, and reproduction scripts. Each beamline
+workload has its own archive and data directory; the unchanged lead-fill geometry is included in both exit-
+group fixtures. These archives do not redistribute the executables.
+
+The FT adjuster archive additionally retains the original three-piece fixture, the one-solid replacement,
+material reference checks, and the model builder. The reference mass uses sealed imperfect shells and
+overlap subtraction, so it must not be treated as a certified engineering mass.
+
+The inner-shield archive retains the original engineering mesh, the optimized single-mesh fixture, the
+unchanged enclosed-pocket geometry, component volume checks, matched primaries, logs, and timing reports.
+The original stem is retained in the engineering archive while runtime placements and both fixtures use the
+new name.
+
+The bolt archive retains the nine original engineering meshes, volume-matched replacements, unchanged shield
+used for clearance, surface collision and containment checks, high-resolution Geant4 overlap logs, and all
+matched transport inputs and timings. Earlier tracking results remain in the five preceding beamline
+sections.
+
+The outer-flange archive retains the original engineering mesh, the hole-filled reference, exact-rim
+retriangulation, matched primaries, transport and loading measurements, and original/optimized assembly
+fixtures. Only the fixed-executable benchmark is reported; discarded runs with a changing executable are
+excluded. The snapshot hash and hole-removal utility source identify the measured implementation without
+distributing a binary.
+
+The outer-flange archive also includes a separate material-matched control, comparing the hole-filled
+reference with the simplified mesh for 2,000 events per run. The new benchmark option selects the filled
+baseline explicitly; geometry and material records, matched primary hashes, paired seed ratios, and both
+complete fixtures are retained. The earlier drilled-versus-filled results remain independently documented.
+
+The outer-mount archive retains the open engineering mesh, sealed material reference, protected joint
+relief, unchanged mating flange, and full original/optimized assembly fixtures. Clipped triangle bounds and
+VTK checks verify placed clearance independently of Geant4 sampling. Tracking times, matched primaries,
+executable hashes, all raw diagnostic logs, and byte-for-byte reproduction evidence are included.
+
+The FT inner-shield archive retains the damaged engineering input, hole-filled reconstructed reference,
+final protected surface, independent feature probes, and assembly checks with the unchanged cone.
+Engineering and reconstructed-reference transport comparisons have separate matched-primary records, timing
+reports, and diagnostic logs. Original mass is undefined; nominal profile agreement and subsequent
+decimation checks are distinguished.
+
+A supplemental FT inner-shield archive retains the smooth-flange revision, its previous retained-recess
+mesh, and two independent repeated tracking comparisons. Complete flat annulus areas and dense near-face
+containment probes verify recess closure. The original study archive remains unchanged, preserving its
+historical code and measurements.
+
+The Moller-cone archive retains the original open mesh, both closed references, the final cone and unchanged
+FT inner shield, all nine GXML inputs, and full benchmark and validation evidence. Original-input timings
+include source solid and navigation warnings. A separate clean-reference control measures decimation after
+the authorized hole fill and clearance relief.
+
+A second supplemental archive retains the downstream socket revision, the previous three-part assembly, all
+repeated tracking runs, clipped-surface support checks, and full construction logs. Both neighboring meshes
+and all CAD placement rows remain unchanged. Previous study archives retain their original bytes and
+historical overlap measurements.
+
+
+The separate cone-tip archive retains the clean engineering input, optimized tip, unchanged main cone,
+both isolated and assembly fixtures, all repeated timing logs, matched primaries, and the four affected
+complete configurations. Mesh and database checks distinguish the rename and decimation from pre-existing
+assembly defects. The run-5874 benchmark uses the default variation; its executable hash and source
+snapshots are retained without redistributing the executable. All earlier archives remain unchanged.
+
+
+The separate FT-flange archive retains the original and optimized flange, both neighboring meshes,
+all repeated timing logs and primary files, all four complete configurations, and direct mesh/database
+checks. Run 5874 uses the default variation in both isolated fixtures. The small triangle reduction
+shows no meaningful tracking gain, and existing assembly defects remain. Earlier archives are unchanged.
+
+
+The inner-extension archive retains the open source, closed reference, optimized mesh, matched primary
+files, and both complete repeated tracking comparisons. A 75-triangle port-wall repair preserves all
+original vertices. Feature probes and protected-face checks verify retained passages and engineering
+features. Placed assembly diagnostics, all four affected complete configurations, database backups,
+source snapshots, and executable hashes are retained. Existing assembly overlaps remain; raw defective
+input timings and clean repaired-reference results are separate. Earlier archives remain unchanged.
+
+
+The separate lead-fill and lead-case extension archives retain matched five-seed timing inputs, raw process
+reports, both database fixtures, original and optimized meshes, assembly checks, all four complete affected
+configurations, and code/provenance snapshots. Both studies select run 5874 with the default variation.
+Existing assembly overlaps remain. Earlier archives are unchanged.
+
+
+The tungsten add-on archive retains the open source, closed reference, optimized mesh, matched primary
+files, and both complete repeated tracking comparisons. A 68-triangle inclined-port wall repair preserves all
+original vertices. Feature probes and protected-face checks verify retained passages and engineering
+features. Placed assembly diagnostics, all four affected complete configurations, database backups,
+source snapshots, and executable hashes are retained. Existing assembly overlaps remain; raw defective
+input timings and clean repaired-reference results are separate. Earlier archives remain unchanged.
+
+
+The FT/cone clearance archive retains the previous and corrected eight-part assembly, all final matched timing
+inputs and process reports, the excluded cap trial, independent interface checks, all affected complete run
+configurations, and code/provenance snapshots. Archived optimized inputs make the final pass independent of
+later changes to individual builders. Earlier archives are unchanged.
+
+The separate HTCC archive retains the October 19 raw and cured cones, the six zero-event initialization
+fixtures, three run-dependent native/CAD row snapshots, the full default overlap log, and the matched
+raw/cured entry-window fixtures. Topology and STL hashes identify the exact transferred meshes. These checks
+include no timing benchmark or response-equivalence study. The entry-window overlap and non-manifold
+Moller-cone edges remain unresolved. Earlier archives are unchanged.

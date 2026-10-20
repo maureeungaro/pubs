@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-15",
+  "source_sha256": {
+    "beamline_cad_benchmark.py": "dbe17d0781bd5cc35c0f8891774c7d61ddd0c8410e7377a5706273964ab91f22",
+    "build_cad_meshes.py": "57ce775b1c876a4f4d598626af96825179b8cf1014e9779cf57c9698cb1db71b",
+    "check_geometry_gemc.py": "9688d294313f9f0dab2e5e7d3ed205ae0ef5ad81497eda9b975da921c5c13736",
+    "check_inner_extension_candidates.py": "6bb5ba9a4784dfb48c7bca33f5c27844c15e2468b6ba0c2a1a164b82d753d496",
+    "compare_ascii_databases.py": "302e9b5f0957b89d5c08015dd61c11d111d27c1dc16fb673067b53416b3c44d5",
+    "database.py": "a991ac88e321c3cc436c8b7aafbc5854017cbccfcbe68aa8c4682b973c26f699",
+    "moller_extension_inner_mesh.py": "0e4f46b9a7eb3bf71b739bf72f61fb1779c8cd4048e3a52453281147326d21ef",
+    "placed_inner_extension_collisions.py": "14d34c4e8193dd56031210baaf835f08d0acd73765ff5f80cef93ea61ccb046b",
+    "run_inner_extension_benchmarks.py": "f3ace1ccb5dc9a51df02bb511c33d971011d8210120a95611fd93125b1b7f0f0",
+    "validate_inner_extension.py": "5d0707cc217e0b4ec96a327333c821f0da33a752f328e71fc9a28b0051bf72fe",
+    "variations.py": "49483204e59deb34c3a17fabc92d7019c3217e6df7da22d7a2d15d972c7d7d4f"
+  },
+  "earlier_archive_sha256": {
+    "beamline_adjuster_archive.zip": "a55294f577856e2fa7c26aeca6876b890effe612cfd7a03a3bef5523d2ab2cd1",
+    "beamline_apex_archive.zip": "afedc7b309de84337a984943f16f613eaeede80cb21e083112aade691bda2a36",
+    "beamline_bolts_archive.zip": "511157d966e8ea7eec4d415f41c8f337670feece3014b790ad52957303fcf7b0",
+    "beamline_cone_tip_archive.zip": "0a657541b9127a55bdb2ffbd7d9878d0dc0e9ea30abd2b0a58b1d1d3346c9719",
+    "beamline_downstream_archive.zip": "1ad7f9dbf1d2dd9031deb46e879bc6b682d25eb69e509ba9f0aebd1243111857",
+    "beamline_downstream_joints_archive.zip": "850083fc51ed842e2ec4ffba004617dcab7882ec7a1312683bc17577e222189f",
+    "beamline_exit_archive.zip": "1f12909bf3fa8caf0b556c7710a523ddaf83566bb45c85b295a7f97bf9a34afb",
+    "beamline_ft_flange_archive.zip": "b2c28288066b5216439957f6cd3268ba827dd99b93306a7590ee664f4aede506",
+    "beamline_ft_shield_archive.zip": "e92de75f3b2e519831d61399da59eadb7b55f8c71dd709bfe5a5f98ae6f5e70f",
+    "beamline_ft_shield_smooth_archive.zip": "974fb26b23c97f04d37ab0b8d16d6aa1cb50b538389f84333294370cdecde334",
+    "beamline_inner_shield_archive.zip": "cf05eae2a183f6a95b8a514edd15be30f1d143f2cbac367b690a6beab388d2c7",
+    "beamline_moller_cone_archive.zip": "b255ef0f705f46482d84c7a45902448f871ec95e60232a21f66d717ab704309b",
+    "beamline_outer_flange_archive.zip": "31eab1c56d19644cc7d0da2d2dd57a6fd6bbb513478a7e8ae991697224c78e27",
+    "beamline_outer_mount_archive.zip": "6a947558c7b335478d355a057c222a256d229dbde4e7132bc7542134627bb4d3",
+    "study_archive.zip": "cb2dcd8b1f5edaea44153228e9d0c6761db9d1bd7b49c136091ba703b387b306"
+  },
+  "mesh_sha256": {
+    "inner-assembly.stl": "7b81f79279cbc2703989379688e6eefac5439dfaa3bdd5275d13bbe0505099c2",
+    "optimized-reference.stl": "494832695cea48589cbd2a15fab0c028d4c7b37e680758a09f27534240c5fc48",
+    "moller-cone-extension-inner.stl": "2a84ad71756d5d2dcd2cba42958fb7719fba3c78746d9901007f4e1163bf9637"
+  },
+  "executable_sha256": "fc8738df72b63d0cf1f43ddd34339c2a8cef965ec089fb8425fe866d23f9a156"
+}

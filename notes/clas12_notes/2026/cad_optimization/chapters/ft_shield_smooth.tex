@@ -1,0 +1,116 @@
+\FloatBarrier
+\subsection{Smooth flange revision}
+\label{sec:ft-shield-smooth}
+
+The shield/cone interference recorded below is resolved by the subsequent cone revision in
+Section~\ref{sec:moller-cone}.
+
+The smooth-flange FTInnerShield revision fills eight conical recesses, sixteen face chamfers, and two
+stepped counterbores retained in the previous 13,500-triangle version. Both flange faces are complete flat
+annuli. The large central passage, tube chamfers and flange fillets, and both longitudinal tube grooves
+remain. The name, tungsten material, color, and all nine passive placements remain unchanged.
+
+Removing the recess cuts reduces the reconstructed reference to 8,536 triangles. Protected simplification
+gives 6,500 triangles, 51.85\% fewer than the previous revision and 85.27\% fewer than the defective
+44,122-triangle engineering input. File size decreases from 675,084 to 325,084 bytes. All 3,148 groove,
+flat-flange, and corner faces are protected, including all 512 flange-plane facets. Further trials at 6,300
+and 6,200 triangles exceed the shape/quality guard and are not used. The result is one closed manifold
+component of genus one with no detected self-intersections or zero-area facets, and unchanged bounds.
+
+The previous closed volume is 1938412.694702 mm$^3$ and the final volume is 1946864.540816 mm$^3$. Filling
+the recesses and applying the new simplification changes tungsten volume by +0.436019\%. The smooth,
+unreduced reference has volume 1946881.004462 mm$^3$; simplification alone changes it by -0.00084564\%.
+Bidirectional sampling against that reference gives maximum displacement 0.047853 mm, below the 0.05 mm
+guard. These sampled limits apply after the authorized recess closure, rather than across the filled
+cavities. The original engineering mass remains undefined.
+
+Independent surface checks confirm 256 coplanar triangles at each flange face, with areas matching the
+complete 128-sided annuli at local z = -625 and -605 mm. The inner face radii are 45 and 50 mm respectively,
+adjoining the retained fillets; outer radius is 100 mm. Every outer flange surface facet belongs to one flat
+face or the cylindrical rim, with zero recess-wall facets. All 1,134 independent containment probes pass,
+including a dense grid just inside both flange faces, all former bolt and recess centres, tube groove
+floors, the filled tube hole, and the central beam passage. The final STL and smooth reference reproduce
+byte for byte from the archived raw input.
+
+\begin{table}[htbp]
+\centering
+\caption{FT inner-shield smooth-flange revision.}
+\label{tab:ft-shield-smooth-mesh}
+\begin{tabular}{lrr}
+\toprule
+Quantity & Previous & Smooth \\
+\midrule
+Triangles & 13,500 & 6,500 \\
+Bytes & 675,084 & 325,084 \\
+Flange recesses & 26 & 0 \\
+Boundary edges & 0 & 0 \\
+Volume (mm$^3$) & 1938412.695 & 1946864.541 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two separate tracking comparisons use the previous closed 13,500-triangle mesh and the new smooth, unreduced
+reference as baselines respectively. Both use the same fixed GEMC3 executable snapshot, beamline\_W
+material, original placement, and matched 5 GeV target-origin primaries over 0.7--2.7 degrees and full
+azimuth. FTFP\_BERT runs without optics or magnetic field, with one thread, default production cuts, and no
+GUI or event output. Five alternating-order repetitions use seeds 12345--12349 and 200 events per electron,
+proton, positive-pion, and neutron run. Each comparison has 52 processes including startup and isolated
+overlap checks; all 104 complete normally and all eighty transport runs report 200 events, with no Geant4
+exceptions in any fixture.
+
+Previous/smooth median transport ratios are 1.273, 1.152, 1.160, 1.134 for electrons, protons, positive
+pions, and neutrons respectively. These incremental upgrade timings include the added tungsten from filling
+the blind recesses. Reference/smooth medians are 1.055, 1.023, 1.041, 1.030 in the same particle order,
+comparing both cases with fully smooth flange surfaces and the recorded small decimation volume difference.
+A ratio above one denotes faster tracking. Both comparisons are retained separately; neither establishes
+full CLAS12 speedup or detector-response equivalence. Median startup simulation time changes from 0.776447
+to 0.739538 s, with peak startup RSS 135.95 to 124.98 MiB.
+
+\begin{table}[htbp]
+\centering
+\caption{Median transport wall seconds per 200 events: incremental upgrade.}
+\label{tab:ft-shield-smooth-upgrade}
+\begin{tabular}{lrrr}
+\toprule
+Particle & Previous & Smooth & Previous/smooth \\
+\midrule
+e- & 23.96760 & 18.82900 & 1.273 \\
+proton & 2.23387 & 1.93947 & 1.152 \\
+pi+ & 2.97310 & 2.56412 & 1.160 \\
+neutron & 2.18361 & 1.92635 & 1.134 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Median transport wall seconds per 200 events: smooth-reference control.}
+\label{tab:ft-shield-smooth-reference}
+\begin{tabular}{lrrr}
+\toprule
+Particle & Reference & Smooth & Reference/smooth \\
+\midrule
+e- & 20.41750 & 19.34670 & 1.055 \\
+proton & 1.98474 & 1.94027 & 1.023 \\
+pi+ & 2.68023 & 2.57448 & 1.041 \\
+neutron & 1.96960 & 1.91241 & 1.030 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The unchanged main-cone is included in a separate two-volume 10,000-point assembly check. Both previous and
+smooth cases retain five pre-existing shield/cone overlap reports and one solid warning from the cone. Full
+default construction completes without missing meshes, with one solid warning and eight overlap reports in
+other or pre-existing joints. Smooth flange closure does not resolve that separate cone interference. All
+fifteen native geometry/material and fourteen CAD variations continue to pass semantic comparison against
+GEMC2. The earlier study archive is retained unchanged; this revision has a separate archive with its
+previous mesh, smooth reference, final mesh, complete raw benchmarks, and validation evidence.
+
+\FloatBarrier
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/ft_shield_smooth_comparison.pdf}
+\caption{Previous flange with blind recesses (left) and final smooth flange (right), with matched tube
+sections showing both longitudinal grooves and the central bore retained.}
+\label{fig:ft-shield-smooth}
+\end{figure}

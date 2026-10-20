@@ -1,0 +1,49 @@
+{
+  "pairs": {
+    "Beamline_Adapter_1": {
+      "triangle_contacts": 0,
+      "contained_vertices": [
+        0,
+        0
+      ],
+      "minimum_socket_plane_clearance_mm": 0.10001915355041291,
+      "common_z_mm": [
+        4972.15234375,
+        5048.2763671875
+      ],
+      "socket_triangles_checked": 48
+    },
+    "Downstream_Beam_tube_Segment_2": {
+      "triangle_contacts": 0,
+      "contained_vertices": [
+        0,
+        0
+      ],
+      "minimum_socket_plane_clearance_mm": 0.10002207298764176,
+      "common_z_mm": [
+        10310.35546875,
+        10439.171875
+      ],
+      "socket_triangles_checked": 48
+    }
+  },
+  "mesh_hashes": {
+    "Beamline_Adapter_1": "f389898b641878e7eae770a9d92848109bdd2cda2f5e4baf8e2a6f813ef197d1",
+    "Downstream_Beam_tube_Segment_2": "3237c5f07ff6e6f0a93faea892848685591467f6e28179d15bbba6983afa0761",
+    "Downstream_Beam_tube_Segment_1": "cf8d8b809561f532c522d6c8d96bd0e025795386aefb84bb78d90134185e0a15"
+  },
+  "variations": [
+    "ddvcs",
+    "default",
+    "rga_spring2018",
+    "rgb_spring2019",
+    "rgc_fall2022",
+    "rgc_summer2022",
+    "rgd_fall2023",
+    "rge_spring2024",
+    "rgf_spring2020",
+    "rgk_winter2018",
+    "rgl_spring2025"
+  ],
+  "vtk_version": "9.6.2"
+}

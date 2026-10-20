@@ -1,0 +1,8 @@
+{
+  "description": "Original fill STL under the renamed volume and path, all other inputs equal to full optimized fixture",
+  "exceptions": {
+    "GeomSolids1001": 1,
+    "GeomVol1002": 21
+  },
+  "log": "full-rename-control-5874.log"
+}

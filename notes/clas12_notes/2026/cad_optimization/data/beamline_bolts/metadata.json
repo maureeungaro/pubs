@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-13",
+  "platform": "macOS-26.7.1-arm64-arm-64bit",
+  "executable": "/opt/projects/gemc/src/build/bin/gemc",
+  "executable_sha256": "2f4fd84b92dfd14f092f35a1bb6c156001601955be6f81efc40126cd43879b11",
+  "version": "\n\n*******************************************************************\n \u001b[32m\u001b[1mgemc\u001b[0m  version: \u001b[32mdev\u001b[0m\n Called from: \u001b[32m/opt/projects/gemc/src/build/bin\u001b[0m\n Install: \u001b[32m/opt/projects/gemc/src/build/bin\u001b[0m\n Released on: \u001b[32m2026-10-11\u001b[0m\n GEMC Reference: \u001b[32mNucl. Instrum. Meth. A, Volume 959, 163422 (2020)\u001b[0m\n GEMC Homepage: \u001b[32mhttps://gemc.github.io/home\u001b[0m\n Author: \u001b[32mMaurizio Ungaro, ungaro@jlab.org\u001b[0m\n\n*******************************************************************\n\n",
+  "arguments": {
+    "executable": "/opt/projects/gemc/src/build/bin/gemc",
+    "database": "/private/tmp/inner-shield-study/full.sqlite",
+    "originals": "../clas12Tags/geometry_source/beamline/cad",
+    "pair": "bolts",
+    "optimized": "/private/tmp/bolts-study/optimized",
+    "output": "/private/tmp/bolts-study/benchmark-final",
+    "events": 200,
+    "repeats": 5,
+    "timeout": 1800
+  },
+  "card": "experiment: clas12\nrunno: 11\nnthreads: 1\nphys_list: FTFP_BERT\nsql: geometry.sqlite\ngsystem:\n  - name: beamline_cad\n    factory: sqlite\n",
+  "physics": "FTFP_BERT, no optical processes, no magnetic field",
+  "pair": "bolts",
+  "primary_acceptance_deg": [
+    1.3,
+    3.0
+  ],
+  "momentum_GeV": 5,
+  "primary_azimuth_deg": [
+    -180,
+    180
+  ],
+  "mesh_hashes": {
+    "original": {
+      "FTInnerShieldAndFlange_Bolt8.stl": "9b452ec88eb36b0c03cae6b41070a2eaabb147e042a68337d7f8a1d7168a2247",
+      "FTInnerShieldAndFlange_Bolt9.stl": "25e36f3ede40657c06638e09f86b4da292cd20b757eae4897f7ab9ed9dc70cf2",
+      "FTInnerShieldAndFlange_Bolt4.stl": "0ace2425b0f0efcafafe22331f2127d14399fcc0cd73bd94200cefd7d3a1449c",
+      "FTInnerShieldAndFlange_Bolt5.stl": "cdbd6772150ce529e94b71cb2bd4934f452ace2455bd0f8cd0b22c59548232c0",
+      "FTInnerShieldAndFlange_Bolt7.stl": "7814120f683e8bd39a5e1b266bb55ae8763ccd07c5b9bb80c58a4e8fc306221b",
+      "FTInnerShieldAndFlange_Bolt6.stl": "f9c1663e80df118c0c58f88ca9b9c5786dcdf71fe788b8822538e700de399a6b",
+      "FTInnerShieldAndFlange_Bolt2.stl": "391b205d354d6c7e71d446ee9b7d8b3b52f81b3694e134e742d75eca881bb6d8",
+      "FTInnerShieldAndFlange_Bolt3.stl": "5223e3924ee2fb31a7f81a658b6daea9e2ecb977b36edf338f5e0784e3a5b614",
+      "FTInnerShieldAndFlange_Bolt1.stl": "ce332a69411f308d3869d292ccd94b01c63f31ffeead099fb1c74aa55e5ef9b9"
+    },
+    "optimized": {
+      "FTInnerShieldAndFlange_Bolt8.stl": "bbc2031786d6c57e009abaf8b823439d78ca8b0da6a8543c13b9a44aac379708",
+      "FTInnerShieldAndFlange_Bolt9.stl": "b9c6b36c0d9a86f0154209ee4c7fdd1692b87db1c376639bbd89f4519af06252",
+      "FTInnerShieldAndFlange_Bolt4.stl": "9cc71d5e231919f8c3930003765d7a7889735497d52c885b7c795a75f13e571c",
+      "FTInnerShieldAndFlange_Bolt5.stl": "56e0e904524cc8c5896de00cd6675d60b584d327ad96e0228e48a32f7e2f37b5",
+      "FTInnerShieldAndFlange_Bolt7.stl": "4fb9628f3040b7c22dc2a730fd8e97898619a64fc0c4e3a8f11f283d1f1f9fdd",
+      "FTInnerShieldAndFlange_Bolt6.stl": "24da9387e560a0ee2984db93f6c580a6b6a02514dfbb18d42e46fe795cea7071",
+      "FTInnerShieldAndFlange_Bolt2.stl": "a9257ba8d31008e76cacb96ea54009bc46ed3910eec51b2c2e20726a9544fa93",
+      "FTInnerShieldAndFlange_Bolt3.stl": "699adaaf498d5ac98e435c8939a6ae581ce0c461d734d035ff674db95e34d834",
+      "FTInnerShieldAndFlange_Bolt1.stl": "9c7a5e205bd1ad1980db6f957762f3d06e0b571b09bdba1b04ec1045bfea46b3"
+    }
+  }
+}

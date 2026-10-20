@@ -1,0 +1,90 @@
+{
+  "contacts": {
+    "moller-cone-extension-inner / FTInnerShield": 0,
+    "moller-cone-extension-inner / FTFlange": 0,
+    "moller-cone-extension-lead-case / FTFlange": 0,
+    "moller-cone-extension-lead-case / moller-cone-extension-lead-fill": 0,
+    "moller-cone-extension-lead-fill / moller-cone-extension-inner": 0,
+    "moller_cone / moller-cone-extension-inner": 0,
+    "moller_cone_tip / moller_cone": 0,
+    "moller-cone-extension-tungsten-addon / moller_cone": 0
+  },
+  "Geant4_checks": [
+    {
+      "seed": 12345,
+      "overlap_points": 20000,
+      "exceptions": {},
+      "log": "optimized-assembly-12345.log"
+    },
+    {
+      "seed": 12346,
+      "overlap_points": 20000,
+      "exceptions": {},
+      "log": "optimized-assembly-12346.log"
+    },
+    {
+      "seed": 12347,
+      "overlap_points": 20000,
+      "exceptions": {},
+      "log": "optimized-assembly-12347.log"
+    }
+  ],
+  "independent_containment_and_distances": {
+    "moller-cone-extension-inner / FTInnerShield": {
+      "contained_vertices": [
+        0,
+        0
+      ],
+      "minimum_vertex_surface_distance_mm": 0.06204466350448989
+    },
+    "moller-cone-extension-inner / FTFlange": {
+      "contained_vertices": [
+        0,
+        0
+      ],
+      "minimum_vertex_surface_distance_mm": 0.05364990234375
+    },
+    "moller-cone-extension-lead-case / FTFlange": {
+      "contained_vertices": [
+        0,
+        0
+      ],
+      "minimum_vertex_surface_distance_mm": 0.02001953125
+    },
+    "moller-cone-extension-lead-case / moller-cone-extension-lead-fill": {
+      "contained_vertices": [
+        0,
+        0
+      ],
+      "minimum_vertex_surface_distance_mm": 0.01995735366449004
+    },
+    "moller-cone-extension-lead-fill / moller-cone-extension-inner": {
+      "contained_vertices": [
+        0,
+        0
+      ],
+      "minimum_vertex_surface_distance_mm": 0.05350252514304399
+    },
+    "moller_cone / moller-cone-extension-inner": {
+      "contained_vertices": [
+        0,
+        0
+      ],
+      "minimum_vertex_surface_distance_mm": 0.054602514885729474
+    },
+    "moller_cone_tip / moller_cone": {
+      "contained_vertices": [
+        0,
+        0
+      ],
+      "minimum_vertex_surface_distance_mm": 0.052978515625
+    },
+    "moller-cone-extension-tungsten-addon / moller_cone": {
+      "contained_vertices": [
+        0,
+        0
+      ],
+      "minimum_vertex_surface_distance_mm": 0.09419840276601082
+    }
+  }
+}

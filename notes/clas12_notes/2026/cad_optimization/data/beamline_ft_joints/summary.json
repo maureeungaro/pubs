@@ -1,0 +1,80 @@
+{
+  "loading": {
+    "original": {
+      "wall_seconds": 1.2795786660000008,
+      "cpu_seconds": 1.19,
+      "rss_bytes": 189218816,
+      "simulation_wall_seconds": 1.14825
+    },
+    "optimized": {
+      "wall_seconds": 1.27220375,
+      "cpu_seconds": 1.23,
+      "rss_bytes": 188940288,
+      "simulation_wall_seconds": 1.18313
+    }
+  },
+  "e-": {
+    "original": {
+      "wall_seconds": 20.614372249999974,
+      "cpu_seconds": 20.55,
+      "rss_bytes": 190267392,
+      "simulation_wall_seconds": 20.5226,
+      "transport_wall_seconds": 19.3622
+    },
+    "optimized": {
+      "wall_seconds": 23.865214833000003,
+      "cpu_seconds": 23.81,
+      "rss_bytes": 191332352,
+      "simulation_wall_seconds": 23.782,
+      "transport_wall_seconds": 22.5982
+    }
+  },
+  "proton": {
+    "original": {
+      "wall_seconds": 6.540568915999984,
+      "cpu_seconds": 6.47,
+      "rss_bytes": 194478080,
+      "simulation_wall_seconds": 6.43666,
+      "transport_wall_seconds": 5.29483
+    },
+    "optimized": {
+      "wall_seconds": 7.517357666999999,
+      "cpu_seconds": 7.43,
+      "rss_bytes": 195002368,
+      "simulation_wall_seconds": 7.39325,
+      "transport_wall_seconds": 6.19904
+    }
+  },
+  "pi+": {
+    "original": {
+      "wall_seconds": 8.209202500000004,
+      "cpu_seconds": 8.16,
+      "rss_bytes": 194822144,
+      "simulation_wall_seconds": 8.12029,
+      "transport_wall_seconds": 6.94979
+    },
+    "optimized": {
+      "wall_seconds": 9.49908308299996,
+      "cpu_seconds": 9.37,
+      "rss_bytes": 196722688,
+      "simulation_wall_seconds": 9.39371,
+      "transport_wall_seconds": 8.21029
+    }
+  },
+  "neutron": {
+    "original": {
+      "wall_seconds": 6.849556583000037,
+      "cpu_seconds": 6.76,
+      "rss_bytes": 193724416,
+      "simulation_wall_seconds": 6.72437,
+      "transport_wall_seconds": 5.55687
+    },
+    "optimized": {
+      "wall_seconds": 7.560152541999969,
+      "cpu_seconds": 7.4799999999999995,
+      "rss_bytes": 196526080,
+      "simulation_wall_seconds": 7.43367,
+      "transport_wall_seconds": 6.22962
+    }
+  }
+}

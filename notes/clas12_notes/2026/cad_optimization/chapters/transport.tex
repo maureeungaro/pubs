@@ -1,0 +1,115 @@
+\FloatBarrier
+
+\section{Electron and hadronic transport}
+
+Table~\ref{tab:3} gives median events-only CPU time per 1,000 primaries. The nonoptical entries divide the
+measured 10,000-event times by ten. Throughput factors are Original time divided by comparison time: values
+above one indicate faster transport, and values below one indicate slower transport. Figure~\ref{fig:transport}
+presents these ratios and the initialization ratio for direct comparison.
+
+\begin{table}[htbp]
+
+\caption{CPU seconds per 1,000 events and transport throughput factors; zero magnetic field.}
+
+\label{tab:3}
+
+\centering
+
+\small
+
+\setlength{\tabcolsep}{4pt}
+
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}Xrrrrr@{}}
+
+\toprule
+
+Workload & Original & Cones only & Full port & Cone factor & Port factor \\
+
+\midrule
+
+Electron + optical & 26.067 & 26.852 & 45.126 & 0.97 & 0.58 \\
+
+Electron & 4.739 & 4.546 & 3.679 & 1.04 & 1.29 \\
+
+Proton & 1.009 & 0.958 & 1.490 & 1.05 & 0.68 \\
+
+Positive pion & 1.084 & 1.055 & 1.467 & 1.03 & 0.74 \\
+
+Neutron & 0.575 & 0.601 & 0.877 & 0.96 & 0.66 \\
+
+\bottomrule
+
+\end{tabularx}
+
+\end{table}
+
+Optical electron transport: the cone-only substitution has a throughput factor of 0.97; the full port has a
+factor of 0.58. Original per-1,000-event CPU times range from 25.549 to 29.228 s, and full-port times range
+from 39.580 to 56.916 s.
+
+Nonoptical electron transport: the cone-only substitution has a throughput factor of 1.04; the full port has a
+factor of 1.29. Original per-1,000-event CPU times range from 4.207 to 6.261 s, and full-port times range from
+3.476 to 6.536 s.
+
+Proton transport: the cone-only substitution has a throughput factor of 1.05; the full port has a factor of
+0.68. Original per-1,000-event CPU times range from 0.987 to 1.034 s, and full-port times range from 1.477 to
+1.580 s.
+
+Positive-pion transport: the cone-only substitution has a throughput factor of 1.03; the full port has a factor
+of 0.74. Original per-1,000-event CPU times range from 1.060 to 1.170 s, and full-port times range from 1.444
+to 1.546 s.
+
+Neutron transport: the cone-only substitution has a throughput factor of 0.96; the full port has a factor of
+0.66. Original per-1,000-event CPU times range from 0.543 to 0.651 s, and full-port times range from 0.842 to
+0.908 s.
+
+The cone-only comparison isolates the three substituted meshes. The full port additionally changes gas
+containment, hardware coverage, placements, and materials. Optical paths and particle showers can therefore
+differ, and faster loading does not imply faster transport or unchanged response. The measured changes include
+both mesh-navigation cost and changes in physical transport; these data do not identify a unique cause. PMT
+absorption was held fixed and cannot account for the difference between these cases.
+
+Cone-only throughput ratios close to one represent small measured differences within the observed run
+variation; these five repetitions do not establish a statistically significant speedup of the Winston-cone
+substitution. The full-model timing also includes the revised materials and mothers, and does not separately
+measure CPU cost per navigation query.
+
+A separate matched 100-event electron diagnostic at seed 12345 enables tracking verbosity 1 and counts the
+printed trace (Original: 18,271 track headers and 123,928 step rows; Cones only: 17,025 track headers and
+115,895 step rows; Full port: 24,164 track headers and 203,087 step rows). Step rows include the initial row
+for each track; they are not a direct count of navigation queries. These counts characterize the amount of
+transport work in this sample. Verbose-run times are excluded from the timing tables, and this sample does not
+isolate the contribution of each geometry change.
+
+A separate matched 100-event proton diagnostic at seed 12345 enables tracking verbosity 1 and counts the
+printed trace (Original: 6,135 track headers and 50,512 step rows; Cones only: 7,794 track headers and 62,163
+step rows; Full port: 9,566 track headers and 99,568 step rows). Step rows include the initial row for each
+track; they are not a direct count of navigation queries. These counts characterize the amount of transport
+work in this sample. Verbose-run times are excluded from the timing tables, and this sample does not isolate
+the contribution of each geometry change.
+
+The increased CPU time is consistent with more complete transport in the optimized geometry. The original model
+has invalid or rejected facets and repeated stuck tracks requiring corrective navigation pushes; these defects
+may alter material crossings and suppress expected particle histories. In the matched diagnostic samples, the
+optimized model prints 1.64 times as many electron step rows and 1.97 times as many proton step rows. Lower CPU
+time in the defective original model may therefore reflect incorrect or incomplete transport rather than a
+lower cost of equivalent physics. These observations support that interpretation but do not establish
+causation: materials and mothers also change, and this study does not compare energy balance, particle
+survival, or detector response event by event.
+
+\begin{figure}[htbp]
+
+\centering
+
+\includegraphics[width=\textwidth]{figures/transport_comparison.pdf}
+
+\caption{Original/comparison CPU-time ratios for initialization and particle transport. Bars use the ratio of
+five-run medians. Transport uses the isolated default LTCC at RUNNO=11, 5 GeV/c primary momentum, and zero
+magnetic field; only the optical electron workload enables optical processes. No readout threshold or
+luminosity normalization applies. Ratios above one mean faster.}
+
+\label{fig:transport}
+
+\end{figure}

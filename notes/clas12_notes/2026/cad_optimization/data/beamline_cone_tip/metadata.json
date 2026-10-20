@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-15",
+  "platform": "macOS-26.7.1-arm64-arm-64bit",
+  "executable": "/private/tmp/outer-flange-study/bin/gemc",
+  "executable_sha256": "fc8738df72b63d0cf1f43ddd34339c2a8cef965ec089fb8425fe866d23f9a156",
+  "version": "\n\n*******************************************************************\n \u001b[32m\u001b[1mgemc\u001b[0m  version: \u001b[32mdev\u001b[0m\n Called from: \u001b[32m/private/tmp/outer-flange-study/bin\u001b[0m\n Install: \u001b[32m/private/tmp/outer-flange-study/bin\u001b[0m\n Released on: \u001b[32m2026-10-11\u001b[0m\n GEMC Reference: \u001b[32mNucl. Instrum. Meth. A, Volume 959, 163422 (2020)\u001b[0m\n GEMC Homepage: \u001b[32mhttps://gemc.github.io/home\u001b[0m\n Author: \u001b[32mMaurizio Ungaro, ungaro@jlab.org\u001b[0m\n\n*******************************************************************\n\n",
+  "arguments": {
+    "executable": "/private/tmp/outer-flange-study/bin/gemc",
+    "database": "/private/tmp/moller-cone-tip-study/before.sqlite",
+    "originals": "../clas12Tags/geometry_source/beamline/cad",
+    "pair": "cone_tip",
+    "runno": 5874,
+    "filled_reference": null,
+    "baseline_description": null,
+    "optimized": "/private/tmp/moller-cone-tip-study/optimized",
+    "output": "/private/tmp/moller-cone-tip-study/benchmark",
+    "events": 200,
+    "repeats": 5,
+    "timeout": 1800
+  },
+  "card": "experiment: clas12\nrunno: 5874\nnthreads: 1\nphys_list: FTFP_BERT\nsql: geometry.sqlite\ngsystem:\n  - name: beamline_cad\n    factory: sqlite\n",
+  "physics": "FTFP_BERT, no optical processes, no magnetic field",
+  "pair": "cone_tip",
+  "primary_acceptance_deg": [
+    2.5,
+    4.8
+  ],
+  "momentum_GeV": 5,
+  "primary_azimuth_deg": [
+    -180,
+    180
+  ],
+  "mesh_hashes": {
+    "original": {
+      "moller_cone_tip.stl": "2d31b390fbac29c44ca89dd607c641263658c77eb89a5478ed5de928c09fe5a9"
+    },
+    "optimized": {
+      "moller_cone_tip.stl": "67382ae73d760a7f2d8ca8a3c79b53710930540227e45ae9c492ecf59902483f"
+    }
+  }
+}

@@ -1,0 +1,110 @@
+\FloatBarrier
+\section{FT inner shield bolts}
+
+The sixth beamline study renames nut1--nut9 to FTInnerShieldAndFlange\_Bolt1 through
+FTInnerShieldAndFlange\_Bolt9. These engineering meshes are solid copper bolts, despite their former names.
+The approved simplification removes threads and replaces the hexagonal head details with round heads and
+smooth solid shafts. Each surface uses 24 angular sides, an annular shoulder, and closed end caps: 192
+triangles per bolt. No hollow bore is introduced. G4\_Cu, colors, mothers, and passive placements are
+retained across ten applicable CAD variations and ninety GEMC2 SQLite rows; only their names change in the
+placement records.
+
+The shaft axes, head shoulders, and outer ends are measured from each original mesh. The head radius is
+14.2875 mm, within the original hexagonal across-flats envelope. The original tip caps contact the shield
+blind-hole end faces. Shortening each inner tip by 0.15 mm creates an explicit gap; the smooth shaft radius
+is then solved from the original signed solid volume. The seven regular shafts have radius approximately
+8.5741 mm; the two longer shafts, bolts 4 and 8, have radius approximately 8.3681 mm. Their individual
+float32 STL volumes agree with the originals within 0.0001\%. This redistributes copper locally and changes
+external surfaces rather than preserving the engineering threaded profile.
+
+Combined triangles fall from 16,278 to 1,728 (89.38\% fewer), and bytes fall from 814,656 to 87,156.
+Original and optimized total copper volumes are 150623.172389 and 150623.196214 mm$^3$, a change of
+0.00001582\%. All nine outputs are closed, singly connected, manifold genus-zero surfaces with no detected
+self-intersections or zero-area triangles. The archived originals reproduce all nine optimized STLs byte for
+byte.
+
+Table~\ref{tab:bolts-meshes} records the individual smooth-shaft models.
+
+\begin{table}[htbp]
+\centering
+\caption{Original and simplified copper bolt models; volume change is in percent.}
+\label{tab:bolts-meshes}
+\begin{tabular}{lrrrr}
+\toprule
+Bolt & Original faces & New faces & Shaft radius (mm) & Volume change (\%) \\
+\midrule
+1 & 1,690 & 192 & 8.5741 & 0.0000057 \\
+2 & 1,690 & 192 & 8.5741 & 0.0000107 \\
+3 & 1,690 & 192 & 8.5741 & 0.0000037 \\
+4 & 2,224 & 192 & 8.3681 & 0.0000899 \\
+5 & 1,690 & 192 & 8.5741 & 0.0000037 \\
+6 & 1,690 & 192 & 8.5741 & 0.0000057 \\
+7 & 1,690 & 192 & 8.5741 & 0.0000057 \\
+8 & 2,224 & 192 & 8.3681 & 0.0000029 \\
+9 & 1,690 & 192 & 8.5741 & 0.0000057 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The optimized FTInnerShieldAndFlange STL is unchanged. Since shield and bolts share the same placement
+transform, their collision test uses stored STL coordinates. VTK triangle collision finds zero surface
+contacts, and enclosed-point checks in both directions find no bolt vertices inside the shield and no shield
+vertices inside any bolt. Minimum bidirectional vertex-to-surface distances are 0.150002 mm for each bolt.
+These sampled distances are not a certified global clearance bound; the independent surface and containment
+checks address intersection. A ten-volume shield-plus-bolts Geant4 fixture completes without exceptions at
+check\_overlaps=2 and again with a 10,000-point geometry test. The unchanged shield hash is retained with
+the clearance results.
+
+Tracking benchmarks isolate the nine copper bolts in air, excluding the shield from both timed fixtures.
+Both cases use the new names, identical materials and placements, the same recorded GEMC3 executable,
+FTFP\_BERT without optical processes, no magnetic field, one thread, default production cuts, and no GUI or
+event output. Matched 5 GeV LUND primaries start at the target and sample solid angle uniformly from 1.3 to
+3.0 degrees over full azimuth. Five repetitions with alternating fixture order and seeds 12345--12349 use
+200 events per electron, proton, positive-pion, and neutron run. Time since beamOn measures transport;
+separate zero-event runs measure startup. All 52 processes complete normally with all forty event counts
+correct and no recorded Geant4 exceptions in either case.
+
+Table~\ref{tab:bolts-timing} gives median transport wall seconds per 200 events.
+
+\begin{table}[htbp]
+\centering
+\caption{Median transport wall seconds over five repetitions of the nine-bolt workload.}
+\label{tab:bolts-timing}
+\begin{tabular}{lrrr}
+\toprule
+Particle & Original & Optimized & Original/optimized \\
+\midrule
+e- & 0.551724 & 0.457388 & 1.206 \\
+proton & 0.329016 & 0.329104 & 1.000 \\
+pi+ & 0.330425 & 0.283490 & 1.166 \\
+neutron & 0.133233 & 0.111502 & 1.195 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Median startup simulation wall time is 0.659214 s originally and 0.623648 s after simplification. Peak
+startup RSS falls from 129.34 to 115.31 MiB. The transport wall-time ratios are 1.206 for electrons, 1.000
+for protons, 1.166 for positive pions, and 1.195 for neutrons. The proton result shows essentially unchanged
+tracking time. These short workloads and five repetitions do not establish a universal speedup; material
+redistribution changes stochastic shower histories even for matched primaries and seeds. Full CLAS12
+performance and detector-response equivalence are not inferred.
+
+Full default beamline construction completes without missing meshes and with no reported bolt-shield
+overlap. Four remaining solid warnings and ten overlap reports concern other volumes, compared with four and
+eleven immediately before this study. Sampled counts depend on tessellation and loading order, so this
+difference is not claimed as a general overlap repair. All fifteen native geometry/material variations and
+fourteen CAD variations pass the semantic comparator against GEMC2. Earlier apex, downstream,
+adapter/exit-shield, adjuster, and inner-shield tracking measurements remain in their respective sections
+with separate workloads and archives.
+
+\FloatBarrier
+Figure~\ref{fig:bolts-stl} compares a regular and a longer copper bolt.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/bolts_stl_comparison.pdf}
+\caption{Original threaded bolts (left) and smooth solid replacements (right).
+Bolts 1 and 4 represent the regular and longer models; each pair shares bounds and camera settings.
+Coordinates are recentered and permuted to put the bolt shaft on the horizontal axis.}
+\label{fig:bolts-stl}
+\end{figure}

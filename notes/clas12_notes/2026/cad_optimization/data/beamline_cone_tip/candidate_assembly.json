@@ -1,0 +1,32 @@
+{
+  "original": {
+    "triangle_contacts_with_main_cone": 5814,
+    "tip_vertices_inside_main_cone": 3947,
+    "main_cone_vertices_inside_tip": 53,
+    "Geant4_exceptions": {
+      "GeomVol1002": 5
+    },
+    "overlap_reports": [
+      "Overlap is detected for volume beamline_cad/moller_cone_tip:0 (G4TessellatedSolid) with beamline_cad/moller_cone:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller_cone:0 (G4TessellatedSolid) with beamline_cad/moller_cone_tip:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller_cone_tip:0 (G4TessellatedSolid) with beamline_cad/moller_cone:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller_cone:0 (G4TessellatedSolid) with beamline_cad/moller_cone_tip:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller_cone_tip:0 (G4TessellatedSolid) with beamline_cad/moller_cone:0 (G4TessellatedSolid)"
+    ]
+  },
+  "optimized": {
+    "triangle_contacts_with_main_cone": 2924,
+    "tip_vertices_inside_main_cone": 1114,
+    "main_cone_vertices_inside_tip": 56,
+    "Geant4_exceptions": {
+      "GeomVol1002": 5
+    },
+    "overlap_reports": [
+      "Overlap is detected for volume beamline_cad/moller_cone_tip:0 (G4TessellatedSolid) with beamline_cad/moller_cone:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller_cone:0 (G4TessellatedSolid) with beamline_cad/moller_cone_tip:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller_cone_tip:0 (G4TessellatedSolid) with beamline_cad/moller_cone:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller_cone:0 (G4TessellatedSolid) with beamline_cad/moller_cone_tip:0 (G4TessellatedSolid)",
+      "Overlap is detected for volume beamline_cad/moller_cone_tip:0 (G4TessellatedSolid) with beamline_cad/moller_cone:0 (G4TessellatedSolid)"
+    ]
+  }
+}

@@ -1,0 +1,111 @@
+\FloatBarrier
+\section{Adapter and torus exit shield}
+
+The remaining downstream contacts recorded in this historical study are resolved by the subsequent socket
+revision in Section~\ref{sec:downstream-joints}.
+
+The third beamline study covers the adapter and torus exit-shield casing and lead fill. The reducer is
+renamed Beamline\_Adapter\_1 in GEMC3 and GEMC2, including all eleven source CAD variations, generated
+runtime GXML, and eleven run-dependent SQLite CAD rows. Every other database field, material, coordinate
+frame, and placement is retained; custom GXML must use the new adapter name to match the STL filename.
+
+These three meshes are already coarse, closed, manifold, and free of detected self-intersections and
+zero-area triangles. The adapter decreases from 528 to 526 triangles and the casing from 1,392 to 1,384. The
+lead fill remains byte-identical at 384 triangles, with both closed components retained: even the smallest
+trial collapse displaced its surface by more than 1 mm near tight mating clearances. Its exact geometry was
+explicitly retained after reviewing this constraint. The group decreases from 2,304 to 2,294 triangles
+(0.434\%) and from 115,452 to 114,952 bytes.
+
+Table~\ref{tab:exit-meshes} summarizes the mesh inventory.
+
+\begin{table}[htbp]
+\centering
+\caption{Adapter and exit-shield triangle counts.}
+\label{tab:exit-meshes}
+\begin{tabular}{lrr}
+\toprule
+Mesh & Original & Optimized \\
+\midrule
+Adapter & 528 & 526 \\
+Exit casing & 1,392 & 1,384 \\
+Exit lead fill & 384 & 384 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For the casing, 432 faces having at least one vertex within 1 mm of the lead fill are protected. The saved
+output is checked to retain every protected triangle at exactly the original coordinates. All three meshes
+retain their bounds, component counts, and genus; no hole filling or reconstruction is used. The adapter and
+casing have maximum bidirectionally sampled surface differences of 0.4559 and 0.5002 mm, below the 0.51 mm
+sampling guard for this group, and volume changes of +0.000368\% and +0.000188\%. The guard is specific to
+this coarse group and does not establish the apex study's 0.05 mm criterion. Every vertex and approximately
+200,000 edge/surface samples per direction are checked; the sampled maxima are not proven global bounds. The
+builder reproduces all three outputs byte for byte from the archived originals.
+
+The benchmark isolates these three volumes with their unchanged aluminum, stainless-steel, and lead
+materials in air. The recorded GEMC3 executable and Geant4 stack run FTFP\_BERT without optical processes,
+zero magnetic field, one thread, default production cuts, and no GUI or event output. Matched 5 GeV LUND
+primaries start at the target, uniform in solid angle over 0.25--2.6 degrees and full azimuth. Five
+alternating-order repetitions use seeds 12345--12349 and 200 events per electron, proton, positive-pion, or
+neutron run. Separate zero-event runs measure startup without overlap checking; time since beamOn measures
+transport. CPU time and peak RSS are retained separately. Absolute timings are not pooled with either
+earlier beamline study or LTCC.
+
+Table~\ref{tab:exit-timing} gives the separate transport measurements.
+
+\begin{table}[htbp]
+\centering
+\caption{Median transport wall seconds per 200 events over five repetitions.}
+\label{tab:exit-timing}
+\begin{tabular}{lrrr}
+\toprule
+Particle & Original & Optimized & Original/optimized \\
+\midrule
+e- & 10.750 & 10.443 & 1.029 \\
+proton & 3.451 & 3.398 & 1.016 \\
+pi+ & 4.363 & 4.269 & 1.022 \\
+neutron & 3.421 & 3.293 & 1.039 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Median startup simulation wall time changes from 0.8844 to 0.8707 s, and peak loading RSS from 125.23 to
+125.16 MiB. The original/optimized median transport wall-time ratios range from 1.016 to 1.039; individual
+seed-paired ratios span 1.015--1.052. With only ten removed triangles and five repetitions, these timings do
+not establish a substantial performance gain. All 52 processes exit normally, and all forty transport runs
+report the 200 requested events.
+
+Table~\ref{tab:exit-warnings} gives the sampled diagnostic counts.
+
+\begin{table}[htbp]
+\centering
+\caption{Geant4 exception counts over all 52 isolated group processes.}
+\label{tab:exit-warnings}
+\begin{tabular}{lrr}
+\toprule
+Diagnostic & Original & Optimized \\
+\midrule
+GeomSolids1001 & 0 & 0 \\
+GeomNav1002 & 0 & 0 \\
+GeomNav0003 & 0 & 0 \\
+GeomVol1002 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+No Geant4 exceptions are recorded in the isolated loading, transport, or overlap samples for either case.
+This is a limited sample, not proof of complete overlap freedom or detector-response equivalence. Full
+default beamline construction also completes with the renamed adapter and no missing mesh; its seven solid
+warnings and twenty overlap reports are unchanged from the preceding downstream state. All fifteen native
+geometry/material variations and fourteen CAD variations pass the semantic comparison against GEMC2.
+
+\FloatBarrier
+Figure~\ref{fig:exit-stl} compares the stored triangulations.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.84\textwidth]{figures/exit_stl_comparison.pdf}
+\caption{Original (left) and final (right) adapter and torus exit-shield STL surfaces in millimetres.
+Each pair shares camera and bounds; the lead fill is retained exactly.}
+\label{fig:exit-stl}
+\end{figure}

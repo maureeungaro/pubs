@@ -1,0 +1,97 @@
+[
+  {
+    "case": "old",
+    "events": 100,
+    "seed": 12345,
+    "overlaps": 0,
+    "exit_code": 0,
+    "wall_seconds": 5.146391625,
+    "exception_codes": {
+      "GeomSolids1001": 857,
+      "GeomSolids1002": 857,
+      "GeomNav1002": 5
+    },
+    "warning_lines": 1719,
+    "navigation_messages": 5,
+    "completed": true,
+    "command": [
+      "/opt/projects/ceInstall/macosx26-clang21/clas12Tags/dev/bin/gemc",
+      "benchmark.gcard",
+      "-USE_GUI=0",
+      "-N=100",
+      "-RANDOM=12345",
+      "-CHECK_OVERLAPS=0",
+      "-GEO_VERBOSITY=0",
+      "-G4TRACK_VERBOSITY=1"
+    ],
+    "log": "old_n100_seed12345_overlaps0.log",
+    "rss_bytes": 224133120,
+    "tracking_headers": 18271,
+    "step_rows": 123928,
+    "total_cpu_seconds": 4.16844,
+    "event_cpu_seconds": 1.326,
+    "primary_sha256": "14143bca41be79540c604b3b4b9506f70cfd987921a66a6f556ed51521f3d98e"
+  },
+  {
+    "case": "cones_only",
+    "events": 100,
+    "seed": 12345,
+    "overlaps": 0,
+    "exit_code": 0,
+    "wall_seconds": 4.690333542,
+    "exception_codes": {
+      "GeomSolids1001": 857,
+      "GeomSolids1002": 857,
+      "GeomNav1002": 6
+    },
+    "warning_lines": 1720,
+    "navigation_messages": 6,
+    "completed": true,
+    "command": [
+      "/opt/projects/ceInstall/macosx26-clang21/clas12Tags/dev/bin/gemc",
+      "benchmark.gcard",
+      "-USE_GUI=0",
+      "-N=100",
+      "-RANDOM=12345",
+      "-CHECK_OVERLAPS=0",
+      "-GEO_VERBOSITY=0",
+      "-G4TRACK_VERBOSITY=1"
+    ],
+    "log": "cones_only_n100_seed12345_overlaps0.log",
+    "rss_bytes": 221806592,
+    "tracking_headers": 17025,
+    "step_rows": 115895,
+    "total_cpu_seconds": 3.93511,
+    "event_cpu_seconds": 1.16768,
+    "primary_sha256": "14143bca41be79540c604b3b4b9506f70cfd987921a66a6f556ed51521f3d98e"
+  },
+  {
+    "case": "new",
+    "events": 100,
+    "seed": 12345,
+    "overlaps": 0,
+    "exit_code": 0,
+    "wall_seconds": 3.8411687080000014,
+    "exception_codes": {},
+    "warning_lines": 0,
+    "navigation_messages": 0,
+    "completed": true,
+    "command": [
+      "/opt/projects/ceInstall/macosx26-clang21/clas12Tags/dev/bin/gemc",
+      "benchmark.gcard",
+      "-USE_GUI=0",
+      "-N=100",
+      "-RANDOM=12345",
+      "-CHECK_OVERLAPS=0",
+      "-GEO_VERBOSITY=0",
+      "-G4TRACK_VERBOSITY=1"
+    ],
+    "log": "new_n100_seed12345_overlaps0.log",
+    "rss_bytes": 121946112,
+    "tracking_headers": 24164,
+    "step_rows": 203087,
+    "total_cpu_seconds": 3.02635,
+    "event_cpu_seconds": 1.36367,
+    "primary_sha256": "14143bca41be79540c604b3b4b9506f70cfd987921a66a6f556ed51521f3d98e"
+  }
+]

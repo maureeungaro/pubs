@@ -1,0 +1,26 @@
+{
+  "FTInnerShieldAndFlange": {
+    "original": {
+      "sha256": "241ad6089fe618b29bf7213f78681f3cf06df7c5113b5546e9ad3800566d7c6d",
+      "triangles": 34448
+    },
+    "optimized": {
+      "sha256": "9836915d23b4270eb54f49e23ff2dd98d70ba402f821221376f2cbbd648c7f9f",
+      "triangles": 22000
+    },
+    "bounds_mm": [
+      [
+        -100.0,
+        -98.42500305175781,
+        -1477.9000244140625
+      ],
+      [
+        99.99263000488281,
+        99.99888610839844,
+        -996.6300048828125
+      ]
+    ],
+    "elevation": 12,
+    "azimuth": -65
+  }
+}

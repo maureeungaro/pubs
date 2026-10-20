@@ -1,0 +1,18 @@
+{
+  "baseline_commit": "ea3625f",
+  "optimization_commit": "4c7c6af",
+  "excluded_optical_change": "3472ede",
+  "template": "/opt/projects/pubs/notes/clas12_notes/templates/CLAS12_technical_note_template.pages",
+  "main_comparator": "All ten cadTempRemoved meshes restored, with legacy placements/materials",
+  "production_disabled_results": "Supplementary context, not the complete-hardware comparator",
+  "excluded_pilots": [
+    "pilot",
+    "pilot2",
+    "restored_pilot",
+    "restored_pilot2",
+    "restored_pilot3",
+    "restored_optical_interrupted"
+  ],
+  "interrupted_run": "Unrecorded original electron seed 12346 rerun; interrupted log retained",
+  "benchmark_sha256": "0f6a3d7c6e4b1affa5a07ed4c7eae0e7f7bc759c486ddc3a72258a4d0f6c7186"
+}

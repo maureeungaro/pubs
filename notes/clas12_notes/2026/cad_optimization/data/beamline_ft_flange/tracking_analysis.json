@@ -1,0 +1,54 @@
+{
+  "e-": {
+    "original_median_seconds": 2.68847,
+    "optimized_median_seconds": 2.68375,
+    "median_ratio": 1.0017587331159759,
+    "paired_ratios": [
+      1.0006219368678215,
+      1.0053584088958543,
+      1.0042177611688043,
+      0.999770072153548,
+      1.0017587331159759
+    ],
+    "faster_pairs": 4
+  },
+  "proton": {
+    "original_median_seconds": 3.61487,
+    "optimized_median_seconds": 3.61435,
+    "median_ratio": 1.0001438709588168,
+    "paired_ratios": [
+      1.0001438709588168,
+      0.9973610899207196,
+      0.9956763531471615,
+      1.0008619548135804,
+      1.0028546530051758
+    ],
+    "faster_pairs": 3
+  },
+  "pi+": {
+    "original_median_seconds": 3.06986,
+    "optimized_median_seconds": 3.06909,
+    "median_ratio": 1.0002508886999077,
+    "paired_ratios": [
+      0.9993529356368419,
+      1.0032601497631297,
+      1.0006648218729877,
+      1.0002508886999077,
+      1.000877189828912
+    ],
+    "faster_pairs": 4
+  },
+  "neutron": {
+    "original_median_seconds": 1.75223,
+    "optimized_median_seconds": 1.75338,
+    "median_ratio": 0.9993441239206561,
+    "paired_ratios": [
+      0.9993441239206561,
+      1.0001006512133503,
+      1.0050889544564867,
+      1.0048608883899937,
+      0.9985759299950383
+    ],
+    "faster_pairs": 3
+  }
+}

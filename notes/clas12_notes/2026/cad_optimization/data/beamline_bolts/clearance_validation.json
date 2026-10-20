@@ -1,0 +1,69 @@
+{
+  "shield_sha256": "9836915d23b4270eb54f49e23ff2dd98d70ba402f821221376f2cbbd648c7f9f",
+  "bolts": {
+    "FTInnerShieldAndFlange_Bolt1": {
+      "triangle_contacts": 0,
+      "bolt_vertices_inside_shield": 0,
+      "shield_vertices_inside_bolt": 0,
+      "minimum_bidirectional_vertex_to_surface_distance_mm": 0.15000152587890625,
+      "sha256": "9c7a5e205bd1ad1980db6f957762f3d06e0b571b09bdba1b04ec1045bfea46b3"
+    },
+    "FTInnerShieldAndFlange_Bolt2": {
+      "triangle_contacts": 0,
+      "bolt_vertices_inside_shield": 0,
+      "shield_vertices_inside_bolt": 0,
+      "minimum_bidirectional_vertex_to_surface_distance_mm": 0.15000152587890625,
+      "sha256": "a9257ba8d31008e76cacb96ea54009bc46ed3910eec51b2c2e20726a9544fa93"
+    },
+    "FTInnerShieldAndFlange_Bolt3": {
+      "triangle_contacts": 0,
+      "bolt_vertices_inside_shield": 0,
+      "shield_vertices_inside_bolt": 0,
+      "minimum_bidirectional_vertex_to_surface_distance_mm": 0.15000152587890625,
+      "sha256": "699adaaf498d5ac98e435c8939a6ae581ce0c461d734d035ff674db95e34d834"
+    },
+    "FTInnerShieldAndFlange_Bolt4": {
+      "triangle_contacts": 0,
+      "bolt_vertices_inside_shield": 0,
+      "shield_vertices_inside_bolt": 0,
+      "minimum_bidirectional_vertex_to_surface_distance_mm": 0.15000152587890625,
+      "sha256": "9cc71d5e231919f8c3930003765d7a7889735497d52c885b7c795a75f13e571c"
+    },
+    "FTInnerShieldAndFlange_Bolt5": {
+      "triangle_contacts": 0,
+      "bolt_vertices_inside_shield": 0,
+      "shield_vertices_inside_bolt": 0,
+      "minimum_bidirectional_vertex_to_surface_distance_mm": 0.15000152587890625,
+      "sha256": "56e0e904524cc8c5896de00cd6675d60b584d327ad96e0228e48a32f7e2f37b5"
+    },
+    "FTInnerShieldAndFlange_Bolt6": {
+      "triangle_contacts": 0,
+      "bolt_vertices_inside_shield": 0,
+      "shield_vertices_inside_bolt": 0,
+      "minimum_bidirectional_vertex_to_surface_distance_mm": 0.15000152587890625,
+      "sha256": "24da9387e560a0ee2984db93f6c580a6b6a02514dfbb18d42e46fe795cea7071"
+    },
+    "FTInnerShieldAndFlange_Bolt7": {
+      "triangle_contacts": 0,
+      "bolt_vertices_inside_shield": 0,
+      "shield_vertices_inside_bolt": 0,
+      "minimum_bidirectional_vertex_to_surface_distance_mm": 0.15000152587890625,
+      "sha256": "4fb9628f3040b7c22dc2a730fd8e97898619a64fc0c4e3a8f11f283d1f1f9fdd"
+    },
+    "FTInnerShieldAndFlange_Bolt8": {
+      "triangle_contacts": 0,
+      "bolt_vertices_inside_shield": 0,
+      "shield_vertices_inside_bolt": 0,
+      "minimum_bidirectional_vertex_to_surface_distance_mm": 0.15000152587890625,
+      "sha256": "bbc2031786d6c57e009abaf8b823439d78ca8b0da6a8543c13b9a44aac379708"
+    },
+    "FTInnerShieldAndFlange_Bolt9": {
+      "triangle_contacts": 0,
+      "bolt_vertices_inside_shield": 0,
+      "shield_vertices_inside_bolt": 0,
+      "minimum_bidirectional_vertex_to_surface_distance_mm": 0.15000152587890625,
+      "sha256": "b9c6b36c0d9a86f0154209ee4c7fdd1692b87db1c376639bbd89f4519af06252"
+    }
+  },
+  "method": "VTK triangle collision plus enclosed-point checks in both directions; identical CAD transforms permit comparisons in STL coordinates. Distances sample vertices, not a certified global surface clearance."
+}

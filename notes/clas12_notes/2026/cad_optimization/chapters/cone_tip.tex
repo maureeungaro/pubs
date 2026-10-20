@@ -1,0 +1,97 @@
+\FloatBarrier
+\section{Moller cone tip}
+\label{sec:cone-tip}
+
+The eleventh beamline mesh study renames \texttt{cone-tip} to \texttt{moller\_cone\_tip} in all four source,
+runtime, and GEMC3 CAD configurations: runs 5874, 11620, 18304, and 20000. The \texttt{beamline\_W} material,
+passive 180-degree y rotation, and 1273.27 mm z translation remain unchanged. SQLite banks continue to use
+\texttt{default}, indexed by run number. The original is archived; the three installed meshes have identical
+bytes.
+
+The original is a clean closed manifold solid with one component and genus two. Protected quadric decimation
+reduces 13,730 triangles to 5,000 (63.5834\% fewer), and 686,584 bytes to 250,084 (63.5756\% fewer). All 1,936
+faces adjoining edges above five degrees retain their exact triangle coordinates. The original bounds, central
+passage, and other opening are retained; no hole filling or reconstruction is applied. The result has no
+boundary edges, non-manifold elements, detected self-intersections, or zero-area triangles. The current
+builder reproduces the saved STL byte for byte.
+
+Volume changes from 196511.847100 to 196510.892015 mm$^3$, a change of -0.000486019\%. Bidirectional vertex,
+edge, and surface sampling gives a maximum deviation of 0.032396 mm, below the 0.05 mm guard. This is a
+sampled maximum, not a proven global error bound. More aggressive protected trials distort the geometry and
+are rejected. Table~\ref{tab:cone-tip-mesh} gives the retained mesh properties.
+
+\begin{table}[htbp]
+\centering
+\caption{Moller cone tip before and after protected decimation.}
+\label{tab:cone-tip-mesh}
+\begin{tabular}{lrr}
+\toprule
+Quantity & Original & Optimized \\
+\midrule
+Triangles & 13,730 & 5,000 \\
+Bytes & 686,584 & 250,084 \\
+Boundary edges & 0 & 0 \\
+Components / genus & 1 / 2 & 1 / 2 \\
+Volume (mm$^3$) & 196511.847100 & 196510.892015 \\
+Detected intersecting faces & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The isolated benchmark selects the run-5874 CAD row with \texttt{default}; the tip is absent from run 11. The
+benchmark runner now accepts \texttt{--runno} so it can select such components without remapping their run
+keys. Both fixtures use matched 5 GeV electron, proton, positive-pion, and neutron primaries from the target,
+uniform in solid angle over 2.5--4.8 degrees and full azimuth. Physics is FTFP\_BERT with no magnetic field or
+optical processes, one thread, default production cuts, and no GUI or event output. Five alternating-order
+repetitions use 200 events per particle and seeds 12345--12349. The fixed GEMC3 executable and its SHA-256
+match the recent beamline studies; all primary hashes match within seed pairs.
+
+Table~\ref{tab:cone-tip-tracking} reports median Geant4 beamOn wall times, excluding initialization. Ratios
+are original/optimized; values above one mean faster tracking. All five pairs are faster for each particle,
+and all 52 isolated benchmark processes complete without Geant4 exceptions. The sample measures this one mesh;
+it does not establish complete CLAS12 speedup or detector-response equivalence.
+
+\begin{table}[htbp]
+\centering
+\caption{Isolated Moller cone tip tracking; five repetitions of 200 events per particle.}
+\label{tab:cone-tip-tracking}
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{lrrrr}
+\toprule
+Particle & Original (s) & Optimized (s) & Speedup & Paired ratio range \\
+\midrule
+Electron & 17.63610 & 10.63150 & 1.659 & 1.658--1.665 \\
+Proton & 1.84329 & 1.62666 & 1.133 & 1.133--1.211 \\
+Positive pion & 2.40739 & 2.04576 & 1.177 & 1.173--1.236 \\
+Neutron & 1.62514 & 1.40266 & 1.159 & 1.159--1.207 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Median loading process wall time is nearly unchanged, 0.843174 to 0.841411 s, while loading CPU time falls
+from 0.80 to 0.76 s. Engine initialization wall time changes from 0.758880 to 0.727224 s. Startup peak RSS
+falls from 133.125 to 122.813 MiB (7.75\%). Process CPU time, total wall time, memory, seed-paired ratios, and
+raw diagnostics are retained separately from the tracking measurements.
+
+The main-cone/tip assembly already overlaps before decimation. Independent surface collisions are present with
+both engineering originals as well as with the current main cone. A separate 10,000-point Geant4 assembly
+check reports five GeomVol1002 exception blocks both before and after the tip change; sampled penetrations
+reach about 0.372 mm. This optimization preserves the engineering interfaces and does not repair that assembly
+overlap. Collision counts and vertex-containment counts depend on tessellation and must not be interpreted as
+overlap volumes or as evidence of improved clearance.
+
+All four complete affected configurations construct 39 Geant4 volumes including the world. Their two
+GeomSolids1001 warnings remain, and sampled overlap blocks change from 20 to 21 per construction. The renamed
+volume changes construction order and the resulting sampled reports; contacts among unchanged parts remain.
+The clean isolated benchmark therefore does not certify the complete assemblies. All 17 beamline
+configurations pass volume-count construction checks. All 15 native-geometry, 15 material, and 14 CAD semantic
+comparisons pass; direct database checks allow only the four names and STL paths to change. Every other mesh
+retains its prior hash. Figure~\ref{fig:cone-tip} uses matched camera and bounds.
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=\linewidth]{figures/moller_cone_tip_stl_comparison.pdf}
+\caption{Original and optimized Moller cone tip meshes with identical bounds and camera. Openings and
+sharp features are retained while redundant smooth-surface triangles are removed.}
+\label{fig:cone-tip}
+\end{figure}

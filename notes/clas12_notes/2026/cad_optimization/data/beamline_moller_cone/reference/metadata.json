@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-14",
+  "platform": "macOS-26.7.1-arm64-arm-64bit",
+  "executable": "/private/tmp/outer-flange-study/bin/gemc",
+  "executable_sha256": "fc8738df72b63d0cf1f43ddd34339c2a8cef965ec089fb8425fe866d23f9a156",
+  "version": "\n\n*******************************************************************\n \u001b[32m\u001b[1mgemc\u001b[0m  version: \u001b[32mdev\u001b[0m\n Called from: \u001b[32m/private/tmp/outer-flange-study/bin\u001b[0m\n Install: \u001b[32m/private/tmp/outer-flange-study/bin\u001b[0m\n Released on: \u001b[32m2026-10-11\u001b[0m\n GEMC Reference: \u001b[32mNucl. Instrum. Meth. A, Volume 959, 163422 (2020)\u001b[0m\n GEMC Homepage: \u001b[32mhttps://gemc.github.io/home\u001b[0m\n Author: \u001b[32mMaurizio Ungaro, ungaro@jlab.org\u001b[0m\n\n*******************************************************************\n\n",
+  "arguments": {
+    "executable": "/private/tmp/outer-flange-study/bin/gemc",
+    "database": "/private/tmp/moller-cone-study/full.sqlite",
+    "originals": "/opt/projects/gemc/clas12Tags/geometry_source/beamline/cad_original",
+    "pair": "moller_cone",
+    "filled_reference": "/private/tmp/moller-cone-study/clearance-reference.stl",
+    "baseline_description": null,
+    "optimized": "/opt/projects/gemc/clas12-systems/geometry_src/beamline/stls",
+    "output": "/private/tmp/moller-cone-study/benchmark-reference",
+    "events": 200,
+    "repeats": 5,
+    "timeout": 1800
+  },
+  "card": "experiment: clas12\nrunno: 11\nnthreads: 1\nphys_list: FTFP_BERT\nsql: geometry.sqlite\ngsystem:\n  - name: beamline_cad\n    factory: sqlite\n",
+  "physics": "FTFP_BERT, no optical processes, no magnetic field",
+  "pair": "moller_cone",
+  "primary_acceptance_deg": [
+    1.1,
+    2.6
+  ],
+  "momentum_GeV": 5,
+  "primary_azimuth_deg": [
+    -180,
+    180
+  ],
+  "mesh_hashes": {
+    "original": {
+      "moller_cone.stl": "314edd38681941ce495498361db56914af6d7f7f6cff7a4b462f4a6ad85b71c4"
+    },
+    "optimized": {
+      "moller_cone.stl": "6640a8179f48d30242da0fafcc7c4f4c1be97022a73c4d94e0291221dcae96e0"
+    }
+  },
+  "baseline_description": "Hole-filled Moller cone with enlarged counterbore before protected decimation"
+}

@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-12",
+  "platform": "macOS-26.7.1-arm64-arm-64bit",
+  "executable": "/opt/projects/gemc/src/build/bin/gemc",
+  "executable_sha256": "c2a4fc20128f7e6d6670ba5b1819db14094135c959442b41c83fe4ec5607ba39",
+  "version": "\n\n*******************************************************************\n \u001b[32m\u001b[1mgemc\u001b[0m  version: \u001b[32mdev\u001b[0m\n Called from: \u001b[32m/opt/projects/gemc/src/build/bin\u001b[0m\n Install: \u001b[32m/opt/projects/gemc/src/build/bin\u001b[0m\n Released on: \u001b[32m2026-10-11\u001b[0m\n GEMC Reference: \u001b[32mNucl. Instrum. Meth. A, Volume 959, 163422 (2020)\u001b[0m\n GEMC Homepage: \u001b[32mhttps://gemc.github.io/home\u001b[0m\n Author: \u001b[32mMaurizio Ungaro, ungaro@jlab.org\u001b[0m\n\n*******************************************************************\n\n",
+  "arguments": {
+    "executable": "/opt/projects/gemc/src/build/bin/gemc",
+    "database": "/private/tmp/apex-study/beamline.sqlite",
+    "originals": "/opt/projects/gemc/clas12Tags/geometry_source/beamline/cad",
+    "optimized": "/opt/projects/gemc/clas12-systems/geometry_src/beamline/stls",
+    "output": "/private/tmp/apex-study/benchmark",
+    "events": 200,
+    "repeats": 5,
+    "timeout": 1800
+  },
+  "card": "experiment: clas12\nrunno: 11\nnthreads: 1\nphys_list: FTFP_BERT\nsql: geometry.sqlite\ngsystem:\n  - name: beamline_cad\n    factory: sqlite\n",
+  "physics": "FTFP_BERT, no optical processes, no magnetic field",
+  "primary_acceptance_deg": [
+    0.25,
+    3.5
+  ],
+  "momentum_GeV": 5,
+  "mesh_hashes": {
+    "original": {
+      "Apex_Shield_Lead_Fill.stl": "1dd10c58dffe8a5075c6697fdc0e7a356937bb813091cdb39fbd208abba00c85",
+      "Apex_Shield_Hub.stl": "c7472dec10e43fd919cae67fe2db8e255e1ab9e77e337f02598213aaa7b1217c"
+    },
+    "optimized": {
+      "Apex_Shield_Lead_Fill.stl": "792548ee3ede090b4af293352b3648737a82f4ef98cc44462b8f97e01eefe5be",
+      "Apex_Shield_Hub.stl": "12064d5ab2d6d33958cdaae000c741b775f22f7d9645bebb50fc7024839ede5f"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "htccCone": {
+    "raw": {
+      "sha256": "ae3bdcd3d36107d1f2ecf1297e0d4d277e6fa636935d72672bbeedb1c821a8eb",
+      "facets": 18818,
+      "boundary_edges": 144,
+      "non_manifold_edges": 0,
+      "bounds_min_mm": [
+        -854.0131225585938,
+        -853.7899169921875,
+        -1088.89794921875
+      ],
+      "bounds_max_mm": [
+        854.0131225585938,
+        854.0875244140625,
+        -380.00433349609375
+      ]
+    },
+    "cured": {
+      "sha256": "77c799d408aa3a7ebf55ffc807abab745bb23e9bffc4335a9d512c8a53e8bac5",
+      "facets": 6000,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "bounds_min_mm": [
+        -854.681640625,
+        -854.3497924804688,
+        -1089.6358642578125
+      ],
+      "bounds_max_mm": [
+        854.2227783203125,
+        854.1572265625,
+        -379.9878845214844
+      ]
+    },
+    "max_bound_change_mm": 0.7379150390625
+  },
+  "htccMollerCone": {
+    "raw": {
+      "sha256": "6101a733fa5928cfa83f14b83b0d44c92c548ce44e505f5aa6d60c87be4d63d1",
+      "facets": 6232,
+      "boundary_edges": 0,
+      "non_manifold_edges": 45,
+      "bounds_min_mm": [
+        -124.8184814453125,
+        -124.52340698242188,
+        -1530.3487548828125
+      ],
+      "bounds_max_mm": [
+        124.8184814453125,
+        124.53158569335938,
+        -384.9763488769531
+      ]
+    },
+    "cured": {
+      "sha256": "31d95c7c0edf8069bb3cf2ffdac53487789906c9344c8507d55c6acfb620940f",
+      "facets": 5866,
+      "boundary_edges": 0,
+      "non_manifold_edges": 24,
+      "bounds_min_mm": [
+        -124.8184814453125,
+        -124.52340698242188,
+        -1530.3487548828125
+      ],
+      "bounds_max_mm": [
+        124.8184814453125,
+        124.53158569335938,
+        -384.9763488769531
+      ]
+    },
+    "max_bound_change_mm": 0.0
+  },
+  "htccMollerConeExt": {
+    "raw": {
+      "sha256": "56079135a6af608315454b6f6021d663d5f98b7f93a238fa70925bd4eecdf945",
+      "facets": 1748,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "bounds_min_mm": [
+        -140.0929412841797,
+        -140.0929412841797,
+        -1750.9134521484375
+      ],
+      "bounds_max_mm": [
+        140.0929412841797,
+        140.0929412841797,
+        -1518.9200439453125
+      ]
+    },
+    "cured": {
+      "sha256": "c6379b8870f81b9ad2f643d567633ba78be257851d73ad34cfb1da30e1308988",
+      "facets": 1748,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "bounds_min_mm": [
+        -140.0929412841797,
+        -140.0929412841797,
+        -1750.9134521484375
+      ],
+      "bounds_max_mm": [
+        140.0929412841797,
+        140.0929412841797,
+        -1518.9200439453125
+      ]
+    },
+    "max_bound_change_mm": 0.0
+  }
+}

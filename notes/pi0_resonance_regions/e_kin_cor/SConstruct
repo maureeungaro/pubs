@@ -1,0 +1,19 @@
+import sys
+import os
+
+sys.path.insert(0, '../../..')
+
+from scanFiles import scan_files
+
+env = Environment(ENV=os.environ)
+
+cp_imgs  = env.Command('dummy1', [], './copy_images.sh')
+form_tex = env.Command('dummy2', [], 'cat ../header.tex e_kin_corr_standalone.tex > e_kin_corr.tex')
+pdf      = env.PDF(target = 'e_kin_corr.pdf',  source = 'e_kin_corr.tex')
+
+Depends(pdf, form_tex) # this dependency is not working. The result of form_tex is kept in the repo to avoid this problem
+Depends(form_tex, cp_imgs)
+Depends(pdf, cp_imgs)
+
+cleans = scan_files('.', accept=["e_kin_corr*", "*.aux"], reject=[".tex"])
+Clean('e_kin_corr.html', cleans)

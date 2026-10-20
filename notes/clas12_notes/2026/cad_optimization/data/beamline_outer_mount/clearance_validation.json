@@ -1,0 +1,20 @@
+{
+  "triangle_contacts": 0,
+  "contained_vertices": [
+    0,
+    0
+  ],
+  "minimum_vertex_to_surface_distance_mm": 0.08592863473926221,
+  "radial_clearance_bound_mm": 0.03597364819084703,
+  "mount_max_radius_in_flange_z_slab_mm": 95.16407128118128,
+  "flange_inradius_mm": 95.20004492937213,
+  "flange_offset_in_mount_mm": [
+    -0.0,
+    0.0,
+    0.5
+  ],
+  "vtk_version": "9.6.2",
+  "mount_sha256": "99024fec3ad474b38fce01df86cc6eb80356266a7dc18b76f72e4ea8208806f4",
+  "flange_sha256": "36421b77cfe31f9fd8b31f451feba7fee532bde662125500a3624d4e6d8f4777",
+  "method": "Collision and containment in both directions. Clipped triangle vertices bound the convex radial norm in the flange z interval. Minimum surface distance samples mesh vertices."
+}

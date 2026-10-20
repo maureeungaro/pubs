@@ -1,0 +1,182 @@
+{
+  "placements": {
+    "cad_rgk_winter2018": {
+      "name": "FTFlange",
+      "color": "00d2d2",
+      "position": "0*mm 0*mm 1273.27*mm",
+      "rotation": "0*deg 180*deg 0*deg",
+      "material": "G4_STAINLESS-STEEL"
+    },
+    "cad_rgd_fall2023": {
+      "name": "FTFlange",
+      "color": "00d2d2",
+      "position": "0*mm 0*mm 1273.27*mm",
+      "rotation": "0*deg 180*deg 0*deg",
+      "material": "G4_STAINLESS-STEEL"
+    },
+    "cad_rgf_spring2020": {
+      "name": "FTFlange",
+      "color": "00d2d2",
+      "position": "0*mm 0*mm 1273.27*mm",
+      "rotation": "0*deg 180*deg 0*deg",
+      "material": "G4_STAINLESS-STEEL"
+    },
+    "cad_rge_spring2024": {
+      "name": "FTFlange",
+      "color": "00d2d2",
+      "position": "0*mm 0*mm 1273.27*mm",
+      "rotation": "0*deg 180*deg 0*deg",
+      "material": "G4_STAINLESS-STEEL"
+    }
+  },
+  "affected_runs": [
+    5874,
+    11620,
+    18304,
+    20000
+  ],
+  "SQL_tables_verified": {
+    "geometry": 98542,
+    "materials": 1663,
+    "banks": 215,
+    "hits": 84,
+    "parameters": 1937,
+    "cad": 1966,
+    "mirrors": 99
+  },
+  "SQL_change": "Four CAD names only in GEMC2; four names and STL paths only in GEMC3 (apart from IDs)",
+  "other_meshes": "All original hashes unchanged",
+  "mesh_reproduction": "Byte-for-byte pass",
+  "SQLite_variation": "default",
+  "assembly": {
+    "original": {
+      "neighbors": {
+        "inner-assembly": {
+          "triangle_contacts": 449,
+          "neighbor_closed_manifold": false,
+          "neighbor_sha256": "7b81f79279cbc2703989379688e6eefac5439dfaa3bdd5275d13bbe0505099c2"
+        },
+        "outer-assembly": {
+          "triangle_contacts": 600,
+          "neighbor_closed_manifold": true,
+          "neighbor_sha256": "c9dfc8a1cc843c22cff112f55b6d238cfb0f2cac6149bc6f1e1a90bbfbd4ab31"
+        }
+      },
+      "Geant4_exceptions": {
+        "GeomSolids1001": 1,
+        "GeomVol1002": 8
+      },
+      "overlap_reports": [
+        "Overlap is detected for volume beamline_cad/inner-assembly:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/outer-assembly:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/FTFlange:0 (G4TessellatedSolid) with beamline_cad/inner-assembly:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/inner-assembly:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/outer-assembly:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/FTFlange:0 (G4TessellatedSolid) with beamline_cad/inner-assembly:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/inner-assembly:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/outer-assembly:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)"
+      ]
+    },
+    "optimized": {
+      "neighbors": {
+        "inner-assembly": {
+          "triangle_contacts": 449,
+          "neighbor_closed_manifold": false,
+          "neighbor_sha256": "7b81f79279cbc2703989379688e6eefac5439dfaa3bdd5275d13bbe0505099c2"
+        },
+        "outer-assembly": {
+          "triangle_contacts": 583,
+          "neighbor_closed_manifold": true,
+          "neighbor_sha256": "c9dfc8a1cc843c22cff112f55b6d238cfb0f2cac6149bc6f1e1a90bbfbd4ab31"
+        }
+      },
+      "Geant4_exceptions": {
+        "GeomSolids1001": 1,
+        "GeomVol1002": 8
+      },
+      "overlap_reports": [
+        "Overlap is detected for volume beamline_cad/inner-assembly:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/outer-assembly:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/FTFlange:0 (G4TessellatedSolid) with beamline_cad/inner-assembly:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/inner-assembly:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/outer-assembly:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/FTFlange:0 (G4TessellatedSolid) with beamline_cad/inner-assembly:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/inner-assembly:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)",
+        "Overlap is detected for volume beamline_cad/outer-assembly:0 (G4TessellatedSolid) with beamline_cad/FTFlange:0 (G4TessellatedSolid)"
+      ]
+    }
+  },
+  "full_construction": {
+    "original_5874": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {
+        "GeomSolids1001": 2,
+        "GeomVol1002": 21
+      },
+      "log": "full-original-5874.log"
+    },
+    "original_11620": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {
+        "GeomSolids1001": 2,
+        "GeomVol1002": 21
+      },
+      "log": "full-original-11620.log"
+    },
+    "original_18304": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {
+        "GeomSolids1001": 2,
+        "GeomVol1002": 21
+      },
+      "log": "full-original-18304.log"
+    },
+    "original_20000": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {
+        "GeomSolids1001": 2,
+        "GeomVol1002": 21
+      },
+      "log": "full-original-20000.log"
+    },
+    "optimized_5874": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {
+        "GeomSolids1001": 2,
+        "GeomVol1002": 21
+      },
+      "log": "full-optimized-5874.log"
+    },
+    "optimized_11620": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {
+        "GeomSolids1001": 2,
+        "GeomVol1002": 21
+      },
+      "log": "full-optimized-11620.log"
+    },
+    "optimized_18304": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {
+        "GeomSolids1001": 2,
+        "GeomVol1002": 21
+      },
+      "log": "full-optimized-18304.log"
+    },
+    "optimized_20000": {
+      "Geant4_volumes_with_world": 39,
+      "exceptions": {
+        "GeomSolids1001": 2,
+        "GeomVol1002": 21
+      },
+      "log": "full-optimized-20000.log"
+    }
+  },
+  "constructed_runs": 17,
+  "semantic_comparator": {
+    "native_geometry": 15,
+    "materials": 15,
+    "CAD": 14,
+    "result": "pass"
+  }
+}
