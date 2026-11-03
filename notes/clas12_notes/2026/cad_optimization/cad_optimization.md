@@ -2195,7 +2195,1025 @@ loading or tracking benchmarks, so no CPU, wall-time, memory, or transport-speed
 equivalence require separate studies. The HTCC archive retains raw and cured STLs, input fixtures, scripts,
 topology hashes, validation logs, and database-row snapshots.
 
-## 26. Conclusions
+### October 23: engineering Moller cone and collar union
+
+The October 23 repair supersedes the Moller-cone topology limitation of the October 19 transfer. The
+GeomSolids1001 warning is reproduced with the former active STL in GEMC3. It is caused by non-manifold and
+intersecting facets near the collar, rather than by stored STL normal vectors alone. The engineering mesh
+separates at its 45 four-face edges into two individually closed genus-one pieces: a 5,688-facet cone and a
+544-facet collar. The earlier generic curing removed part of a 72.5 mm conical section and generated
+inappropriate planar closures; retaining that defective mesh merely because it has zero boundary edges is
+insufficient.
+
+The replacement starts from the unchanged archived engineering export. Only the collar's 45 shared ring
+vertices move radially inward by 0.0001 mm, resolving the zero-width seam for an exact Boolean union.
+Intersection vertices that coincide after binary-STL rounding are welded at 0.0002 mm; null and duplicate
+faces are removed, winding is made coherent, and faces are ordered deterministically. No Poisson
+reconstruction, engineering-hole filling, or bore cap is applied. Repeated processes reproduce the final STL
+and audit report byte for byte with the recorded software versions.
+
+The final mesh has 3,451 vertices and 6,902 facets in one closed manifold component of genus one. It has zero
+boundary edges, non-manifold edges or vertices, degenerate triangles, or detected intersecting faces. All six
+engineering bounds remain identical. A final-to-engineering surface comparison samples 153,451 points and
+finds a maximum distance of 0.000096786 mm. The reference includes both engineering surfaces, including
+internal contact faces; this is a one-direction sampled comparison, not a global distance proof. The main bore
+remains outside the solid at all 200 tested axial points in direct Geant4 classification.
+
+The union volume before STL rounding is 783,909.77844 cubic millimetres; the stored mesh has 783,909.77434
+cubic millimetres, a rounding/welding change of about -0.000000523%. The two original engineering pieces have
+individually well-defined volumes, but their sum double-counts their contact/intersection region. No physical
+material volume is assigned to the former defective active mesh. The restored section is visible in the exact
+mesh-plane sections below.
+
+The repaired mesh replaces the former 5,866-facet active Moller cone, adding 1,036 facets. The entry cone and
+extension remain byte-identical at 6,000 and 1,748 facets. Total active HTCC CAD facets therefore rise from
+13,614 to 14,650; this is still 45.33% fewer than the 26,798 engineering facets. This update repairs the
+material geometry and winding; no new repeated loading or tracking benchmark was run, and no simulation
+speedup is assigned to it.
+
+All nine repaired native-plus-CAD initializations succeed for runs 11, 3029, and 4763: GEMC3 with Geant4
+11.3.2, and GEMC2 SQLite/CAD and TEXT/CAD with Geant4 10.7.4. Every repaired process has zero GeomSolids
+warnings. The GEMC3 fixtures explicitly select their named survey variations and require all 541 constructed
+rows including the world. Direct Geant4 11.4.3 solid checks accept all 6,902 facets without rejection or solid
+warnings; the unchanged other two meshes also pass. Native comparison matches 537 geometry and eight material
+rows per configuration, and nine CAD placements match in name, material, passive rotation, and survey shift.
+All four active source/runtime mesh trees are synchronized, and engineering originals are unchanged.
+
+The existing contact between htccCone and htccEntryWindow is separate from the Moller repair and remains
+visible in some GEMC2 overlap checks. No sampled overlap warning involving the repaired Moller cone is present
+in these nine logs. Successful construction and sampled checks do not establish full particle-navigation or
+detector-response equivalence.
+
+![HTCC Moller repair](figures/htcc_moller_repair.png)
+
+Exact sections at local y = 0.004092 mm through the archived engineering pieces, previous cured mesh, and
+repaired union. The right panel shows the conical wall lost during curing and restored by the repair. Grey
+internal engineering interfaces disappear in the union; the retained seam adjustment is below this figure's
+resolution. No coordinate rescaling is applied.
+
+data/htcc_moller_repair and htcc_moller_repair_archive.zip retain the repair metrics, source and output
+hashes, software versions, baseline warning, all nine repaired construction logs and cards, surface samples,
+CAD and native comparisons, direct Geant4 checks, original and previous/final meshes, builder, and figure
+renderer. Executables are identified by hash and are not redistributed. The October 19 HTCC archive and all
+earlier study archives remain unchanged.
+
+## 26. Magnets duplicate shielding removal
+
+Upcoming in GEMC2 6.2 and CLAS12 GEMC Systems 0.4, the October 21 magnets cleanup removes nine DSShield meshes
+and apex from the magnets CAD collection because this shielding is owned by the beamline. All three
+configurations are updated in the GEMC2 and GEMC3 sources, runtime collections, and SQLite banks. The retained
+51 magnet meshes, their materials and passive placements, the native solenoid, and all beamline geometry are
+unchanged. Load the beamline alongside magnets to include the shielding.
+
+This is removal of redundant geometry, without retriangulation or surface repair. The magnets collection falls
+from 61 to 51 source meshes, from 148,940 to 132,230 stored triangles (16,710 removed; 11.22%), and from
+7,452,124 to 6,615,784 bytes (836,340 removed; 11.22%). The nine downstream meshes account for 14,272
+triangles and apex for 2,438. Each retained mesh matches its pre-removal bytes in all four source/runtime
+collections.
+
+The benchmark retains the native beamline and solenoid, the complete run-11 beamline CAD bank, and all
+remaining magnets CAD. The original fixture includes the ten obsolete placements; the optimized fixture
+removes them. Both use the same fixed GEMC3 dev executable, released October 19, 2026, Geant4 11.4.3, macOS
+arm64, FTFP_BERT, one thread, and default production cuts. There is no magnetic field, optical physics, GUI,
+event output, target, luminosity normalization, or pileup. The 5 GeV/c electron, proton, positive-pion, and
+neutron primaries start at the origin, uniformly distributed in solid angle from 0.25 to 3.5 degrees over full
+azimuth. Five alternating-order repetitions use 200 events per particle and seeds 12345--12349, with identical
+LUND inputs within each seed pair. All 52 processes complete; every tracking process reports 200 events.
+
+| Removed mesh | Triangles |
+|---|---:|
+| `DSShieldBackAss` | 988 |
+| `DSShieldBackCover` | 1,012 |
+| `DSShieldBackLead` | 1,244 |
+| `DSShieldFlange` | 5,172 |
+| `DSShieldFlangeAttachment` | 1,888 |
+| `DSShieldFrontAss` | 1,056 |
+| `DSShieldFrontCover` | 1,252 |
+| `DSShieldFrontLead` | 988 |
+| `DSShieldInnerAss` | 672 |
+| `apex` | 2,438 |
+
+Median zero-event process wall time changes from 1.98732 to 1.89090 s (1.051 times faster), CPU time from
+1.920 to 1.840 s, and peak RSS from 321.53 to 306.98 MiB (4.52% lower). Tracking times below are median Geant4
+beamOn wall times excluding initialization; speedup is before/after. These short, isolated workloads do not
+establish a full-CLAS12 gain. Removing intersecting material changes transport histories, so timing changes
+cannot be attributed solely to fewer facets or taken as proof of response equivalence.
+
+| Particle | Before (s) | After (s) | Speedup | Paired ratio range |
+|---|---:|---:|---:|---:|
+| Electron | 35.49510 | 34.50800 | 1.029 | 1.002--1.029 |
+| Proton | 10.53440 | 10.34530 | 1.018 | 1.007--1.098 |
+| Positive pion | 14.12550 | 14.32390 | 0.986 | 0.981--1.049 |
+| Neutron | 10.53630 | 10.27570 | 1.025 | 0.957--1.078 |
+
+The matched zero-event construction diagnostics use check_overlaps=2 and seed 12345. Built volume counts,
+including the world, fall from 95 to 85; GeomVol1002 exception blocks fall from 58 to 26. Each fixture still
+reports 26 GeomSolids1001 and 11 GeomSolids1002 blocks per import. Warning counts are sampled diagnostics, not
+counts of all intersecting pairs, and the retained invalid/rejected-facet warnings and assembly contacts
+remain unresolved. All three updated runs pass standalone GEMC3 magnets construction (53 volumes including the
+world) and combined magnets/beamline GEMC2 TEXT/CAD and SQLite/CAD initialization. The GEMC3 semantic
+comparator matches one native solenoid row and 51 CAD rows per configuration; independent checks match the
+effective GEMC2 SQLite CAD rows to the GXML placements and the native TEXT rows to SQLite. All unrelated GEMC2
+CAD rows and beamline meshes are unchanged. A supplemental combined GEMC3 card constructs 85 volumes at runs
+11 and 3029, but only 53 at run 4763: the current GEMC3 lookup omits the beamline banks without that exact run
+key, where GEMC2 selects the earlier run-3029 banks. This existing run-selection limitation is outside the
+mesh-removal change and remains unresolved. The timed run-11 comparison loads both systems and is unaffected.
+Across the forty timed tracking processes, navigation exception blocks total GeomNav1002: 4 before and 2
+after.
+
+The dedicated data/magnets_dedup directory records all measurements, mesh hashes, removed-facet inventory,
+database checks, and validation. magnets_dedup_archive.zip retains the complete before/after fixtures,
+original collected inputs, all raw logs and process reports, matched primary files, source snapshots, and
+reproduction scripts. The executable is identified by hash and is not redistributed. Earlier study archives
+remain unchanged.
+
+## 27. Downstream shielding plate and vacuum jacket
+
+Upcoming in GEMC2 6.2 and CLAS12 GEMC Systems 0.4, DownstreamShieldingPlate and DownstreamVacuumJacket are
+optimized as two separate volumes under their original names. Both retain their stainless steel, passive
+180-degree y rotation, and 1273.27 mm z translation in the default, rga_spring2018, and rga_fall2018
+configurations (runs 11, 3029, and 4763). All source and runtime copies match in GEMC2 and GEMC3; original
+engineering inputs are archived in the owning GEMC2 repository.
+
+The plate fills eight through-holes: six bolt holes of approximately 9.525 mm radius and two smaller holes of
+approximately 2.38125 mm radius. The jacket fills six blind drilled recesses of approximately 6.35 mm entry
+radius. Main circular rims and the hexagonal jacket step are extracted from the original vertices; only the
+flat-face triangulation and fastener features change. No Poisson reconstruction, vertex displacement, or
+joining of the separated parts is applied. The main aperture radii remain 76.35 mm for the plate and 63.5 mm
+for the jacket, with the exact engineering polygon coordinates. The 32.83203125 mm axial gap and both original
+bounds are retained.
+
+The plate falls from 1,380 to 508 triangles (63.19% fewer); the jacket falls from 2,392 to 556 (76.76% fewer).
+Together they fall from 3,772 to 1,064 triangles (71.79% fewer) and from 188,768 to 53,368 bytes. Each result
+is a single closed, consistently oriented manifold component of genus one, with no boundary edges, detected
+self-intersections, or zero-area triangles. Independent polygon-area and thickness calculations match the
+filled STL volumes within the stated builder tolerance of one part per billion. These checks describe the
+stored surfaces, not a certified engineering mass.
+
+Signed plate volume changes from 243534.863634 to 249067.081984 cubic millimetres (+2.271633%); jacket volume
+changes from 4082168.940709 to 4101145.339931 cubic millimetres (+0.464861%). The pair gains 0.566581% signed
+steel volume from the authorized hole filling. This is a deliberate material-model change. The magnets
+collection retains 51 meshes and now contains 129,522 triangles, after the separately documented
+redundant-shielding removal.
+
+Independent VTK containment checks identify all fourteen drilled features from the raw meshes. Forty-eight
+probes that were inside the original holes are inside steel after filling; 1,296 bore probes remain outside
+steel. Another 10,080 envelope probes away from the fastener features match the original geometry, and all 120
+gap probes remain outside both separate volumes. These are sampled checks; exact rim-coordinate preservation
+and analytic volume checks provide additional constraints.
+
+The isolated benchmark loads only these two CAD rows at run 11, before and after optimization, with the same
+fixed GEMC3 dev executable and Geant4 11.4.3 on macOS arm64. Both fixtures use FTFP_BERT, one thread, default
+production cuts, and no field, optical physics, GUI, or event output. Each 5 GeV/c primary starts at the
+origin with polar angle uniform in solid angle from 0.5 to 3.2 degrees and full azimuth. There is no target,
+luminosity normalization, or pileup. Five alternating-order repetitions use 2,000 events per particle and
+seeds 12345--12349; LUND primary hashes match within every seed pair. All fifty timed processes and both
+separate construction diagnostics complete, with all forty tracking processes reporting 2,000 events.
+
+| Volume | Raw triangles | Optimized | Signed volume change |
+|---|---:|---:|---:|
+| `DownstreamShieldingPlate` | 1,380 | 508 | +2.271633% |
+| `DownstreamVacuumJacket` | 2,392 | 556 | +0.464861% |
+
+Median zero-event process wall time is 0.73826 s before and 0.73375 s after; CPU time is 0.710 and 0.700 s,
+and peak RSS is 124.05 and 120.06 MiB. Tracking values are median Geant4 beamOn wall times excluding startup.
+Ratios are before/after: values below one indicate slower tracking. These observations describe the final
+two-volume model; material changes and elimination of rejected source facets prevent interpreting the
+comparison as a pure tessellation-speed measurement. It establishes neither full-CLAS12 performance nor
+response equivalence.
+
+| Particle | Before (s) | After (s) | Speedup | Paired ratio range |
+|---|---:|---:|---:|---:|
+| Electron | 14.25750 | 11.78500 | 1.210 | 1.199--1.223 |
+| Proton | 5.53148 | 5.14433 | 1.075 | 1.061--1.107 |
+| Positive pion | 5.51953 | 5.00997 | 1.102 | 1.089--1.103 |
+| Neutron | 3.94107 | 3.68135 | 1.071 | 1.068--1.117 |
+
+Each isolated raw import reports ten GeomSolids1001 and four GeomSolids1002 warning blocks; each optimized
+import is clean. The optimized timed tracking processes and isolated check_overlaps=2 construction report no
+Geant4 exceptions. All three runs pass standalone GEMC3 magnets construction (53 volumes including the world),
+combined GEMC2 TEXT/CAD and SQLite/CAD initialization, and native/CAD semantic checks with one solenoid row
+and 51 CAD rows. Existing full-magnets assembly and unrelated mesh warnings remain in the retained validation
+logs. The run-4763 GEMC3 beamline-bank limitation documented in the preceding section also remains. Isolated
+construction success does not certify the complete assembly or detector response.
+
+![Downstream plate and jacket](figures/downstream_plate_comparison.png)
+
+Original (left) and optimized (right) stored STL surfaces in millimetres, with common bounds, orthographic
+projection and physical scale within each row. The first row shows the plate entry face, the second the
+drilled jacket face, and the third both separately placed parts at their original spacing. The face panels
+show stored planar facets; assembly panels use complete stored meshes, including triangles rejected by Geant4.
+
+The dedicated data/magnets_plate directory retains the mesh inventory, independent feature checks, all timing
+samples, paired-input provenance, and three-run validation. magnets_plate_archive.zip contains both raw and
+optimized two-volume fixtures, raw logs and process reports, source snapshots, matched primary files, original
+engineering meshes, and reproduction scripts. The fixed executable is identified by hash and is not
+redistributed. Earlier study archives remain unchanged.
+
+## 28. Upstream shielding plate and vacuum jacket
+
+Upcoming in GEMC2 6.2 and CLAS12 GEMC Systems 0.4, UpstreamShieldingPlate and UpstreamVacuumJacket remain
+separate under their original names in all three configurations: default, rga_spring2018, and rga_fall2018
+(runs 11, 3029, and 4763). Stainless steel, passive 180-degree y rotation, and 1273.27 mm z translation are
+unchanged. All four source/runtime collections match byte for byte; original engineering meshes are archived
+in the owning GEMC2 repository.
+
+Eight plate through-holes and six blind jacket bolt recesses are filled. The plate retains its original 76.35
+mm aperture and 175 mm outer polygon rims. The jacket retains its stepped bore (76.2 mm and 73.025 mm radii),
+reentrant outer contour, and rounded outer features. Its 894 non-cap/non-pocket triangles are preserved
+exactly. The drilled entry face is retriangulated against its original 60-vertex outer boundary and 50-vertex
+bore boundary, following actual edge connectivity. No rim displacement, joining, or Poisson reconstruction is
+applied. Both original bounds and the 42.8780517578125 mm axial gap are retained.
+
+The plate falls from 1,380 to 508 triangles; the jacket falls from 2,876 to 1,004. Together they fall from
+4,256 to 1,512 triangles (64.47% fewer). Each optimized mesh is a single closed manifold component of genus
+one, without boundary edges, detected self-intersections, or zero-area triangles. All four upstream/downstream
+optimized meshes reproduce byte for byte with the extended builder. The final magnets collection has 51 meshes
+and 126,778 triangles.
+
+Signed plate volume changes from 243544.153894 to 249076.583284 cubic millimetres (+2.271633%). Jacket volume
+changes from 3649980.788315 to 3669204.137370 cubic millimetres (+0.526670%). The pair gains 0.635819% signed
+steel volume. The plate also passes an independent polygon-area/thickness volume calculation; the jacket
+validation instead checks unchanged outer/bore surfaces and the preserved triangles. Hole filling deliberately
+changes the material model and does not establish detector-response equivalence.
+
+Independent VTK tests identify all fourteen source holes: 48 interior probes switch from empty to steel, 1,296
+bore probes remain empty, and 10,080 envelope probes away from drilled features match the raw surfaces. All
+120 inter-part gap probes remain outside both meshes. These sampled checks supplement exact preservation of
+the retained contour vertices and faces.
+
+The isolated run-11 benchmark loads the same two named CAD rows before and after optimization. It uses the
+same fixed GEMC3 dev executable, Geant4 11.4.3, macOS arm64, FTFP_BERT, one thread, and default production
+cuts. There is no field, optical physics, GUI, event output, target, luminosity normalization, or pileup. Each
+5 GeV/c primary starts at the origin, uniformly in solid angle over 1.0--5.2 degrees and full azimuth. Five
+alternating-order repetitions use 2,000 events per particle and seeds 12345--12349, with identical LUND inputs
+within each pair. All fifty timed processes and both separate construction checks complete without Geant4
+exceptions; each of the forty tracking processes reports 2,000 events.
+
+Median zero-event process wall time is 0.78839 s before and 0.78842 s after; CPU time is 0.720 and 0.710 s,
+and peak RSS is 124.72 and 120.61 MiB. Tracking measurements below are median Geant4 beamOn wall times
+excluding startup; ratios are before/after and values above one indicate faster tracking. These results apply
+to this isolated two-part workload. The authorized hole filling changes physical transport, so the comparison
+does not isolate tessellation cost or establish a full-CLAS12 gain. The benchmark runner verifies its
+executable hash at both start and completion. The installed executable was updated after the benchmark;
+provenance records the later documentation-time hash separately, without assigning it to the timed processes
+or the earlier validation checks.
+
+| Particle | Before (s) | After (s) | Speedup | Paired ratio range |
+|---|---:|---:|---:|---:|
+| Electron | 17.66120 | 14.09530 | 1.253 | 1.230--1.257 |
+| Proton | 6.02561 | 5.51877 | 1.092 | 1.077--1.116 |
+| Positive pion | 5.68061 | 5.07695 | 1.119 | 1.087--1.145 |
+| Neutron | 4.06531 | 3.57569 | 1.137 | 1.108--1.153 |
+
+All three runs pass standalone GEMC3 magnets construction with 53 volumes including the world, combined GEMC2
+TEXT/CAD and SQLite/CAD initialization, and semantic comparisons of one native solenoid row and 51 CAD rows.
+The sampled full-magnets GEMC3 diagnostics retain 16 GeomSolids1001, seven GeomSolids1002, and 23 GeomVol1002
+warning blocks per run, originating outside the clean isolated upstream pair. Assembly validation remains
+incomplete; the previously documented run-4763 beamline-bank selection limitation also remains.
+
+![Upstream meshes](figures/upstream_plate_comparison.png)
+
+Original (left) and optimized (right) upstream STL surfaces, with common bounds and orthographic physical
+scale within each row. Entry-face panels show stored planar facets; the assembly row shows both separate
+complete meshes at their original spacing. Outer jacket recesses and rounded features remain; only drilled
+features and the entry-cap triangulation change.
+
+data/magnets_upstream retains the inventory, shape probes, raw timing results, hashes, and three-run
+validation. magnets_upstream_archive.zip retains both two-volume fixtures, matched primaries, all raw
+logs/time reports, original meshes, final outputs, and builder/validation scripts. The executable is
+identified by hash and is not redistributed. Earlier archives are unchanged.
+
+## 29. DC region-1 back membranes
+
+Upcoming in GEMC2 6.2 and CLAS12 GEMC Systems 0.4, the six dcs1r1back through dcs6r1back Kapton membranes move
+from magnets to the DC system. A new DC cad directory owns one unchanged dcs5r1back STL. The other five named
+placements share its solid. GEMC3 publishes all six passive placements in dc_cad; GEMC2 uses one CAD source in
+dc_cad and five native CopyOf rows in dc_copies. The supplied DC cards and the GEMC3 experiment card load the
+required companions. Native DC geometry and materials remain unchanged.
+
+The six engineering files are not byte-identical: sector coordinates and small tilts are baked into the
+vertices. Proper rigid fits of their twelve corresponding vertices give a maximum error of 0.00007613 mm
+against the shared reference. This is comparable to single-precision STL export rounding. Sector-specific
+translations are retained rather than assuming exact rotations of a single unshifted sector. Original meshes
+are archived separately in the owning GEMC2 source repository.
+
+Each source has twenty triangles, twelve vertices, thirty edges, one closed manifold component, genus zero,
+and no boundary edges. These hexagonal prisms already have the minimum closed triangular surface for their
+twelve retained corners. No geometric decimation or hole filling is applied. Unique stored and built triangles
+fall from 120 to 20 (83.33% fewer), and active STL storage falls from 6,504 to 1,084 bytes. The six physical
+membranes still have 120 placed triangles. Magnets now has 45 STL files with 126,658 triangles; DC owns the
+additional twenty unique triangles.
+
+Sharing the rounded approximately 2.5-micrometre reference film changes total signed Kapton volume from
+23637.244828 to 23756.565606 cubic millimetres (+0.504800%). Float coordinate rounding is significant relative
+to this thickness. This numerical material difference is reported separately from the storage reduction; it
+does not establish detector-response equivalence.
+
+At the user's request, angles are rounded to integers after comparing them with the fitted angles. The largest
+resulting vertex displacement is 0.759079 mm in sector 1; sectors 2 and 3 move by at most 0.634661 mm. The
+comparison loads native DC, both DC and magnets CAD, the solenoid, native beamline, and beamline CAD at run
+11: 139 volumes including the world. Both variants use the same seed and 100,000 Geant4 surface samples per
+tested volume. No overlap involves any of the six membranes in either variant, and both variants report 48
+overlap messages covering the same 23 distinct ordered volume pairs. Existing overlaps elsewhere are retained.
+Surface sampling is not a mathematical proof of clearance.
+
+All three inherited CAD runs (11, 3029, 4763) pass GEMC2 TEXT/CAD, GEMC2 SQLite/CAD, and GEMC3 initialization.
+GEMC3 also constructs its custom DDVCS run, for ten successful checks in total. The semantic comparison
+matches both native DC variations and all four DC CAD banks, along with all three reduced magnets CAD banks.
+Independent database checks verify the GEMC2 five-copy and one-mesh rows, unchanged unrelated native/material
+banks, byte-identical source/runtime meshes in both repositories, and the six unchanged archived originals.
+
+The timing fixture isolates the six membranes at run 11. Before optimization it builds six separate
+tessellated solids; afterward it builds one shared solid with five copies, using the final integer angles. One
+fixed GEMC3 dev executable and Geant4 11.4.3 run FTFP_BERT with default production cuts, one thread, no field,
+no optical physics, no GUI, no event output, and no target or pileup. Each 5 GeV/c electron, proton, positive
+pion, or neutron starts at the origin, uniformly in solid angle from 5 to 45 degrees with full azimuth. Five
+alternating-order repetitions use 2,000 matched LUND primaries per particle and seeds 12345--12349. Startup
+and beamOn tracking are reported separately; forty tracking processes each report 2,000 events. All fifty
+timed processes and two separate construction checks complete without Geant4 exceptions.
+
+Median zero-event process wall time falls from 0.72316 to 0.40457 s (1.787 times faster). Median process CPU
+time changes from 0.660 to 0.360 s and peak RSS from 118.45 to 73.34 MiB. Tracking ratios below are
+before/after; values above one indicate faster tracking. They describe this thin-membrane workload and do not
+establish a full-CLAS12 speedup. The physical surface change from angle rounding and the small material-volume
+difference are included in these timings.
+
+| Particle | Before (s) | After (s) | Speedup | Paired ratio range |
+|---|---:|---:|---:|---:|
+| Electron | 2.18817 | 2.22178 | 0.985 | 0.963--1.002 |
+| Proton | 3.31635 | 3.36257 | 0.986 | 0.972--1.012 |
+| Positive pion | 3.04980 | 3.08063 | 0.990 | 0.970--1.007 |
+| Neutron | 0.91443 | 0.91720 | 0.997 | 0.965--0.999 |
+
+![DC back membranes](figures/dc_back_comparison.png)
+
+World x-y projections of the six original membranes and their shared-mesh copies, with sector numbers
+retained. The right panel shows the maximum vertex displacement caused by the accepted integer-angle
+placement, including the small rigid-fit residual. Lines overlap at the displayed millimetre scale; the bar
+chart exposes the submillimetre changes.
+
+data/dc_back and dc_back_archive.zip retain shape fits, rounded-angle displacements, database checks, both
+dense assembly checks, repeated timing inputs/results, and raw logs. The archive includes the original and
+final fixtures, archived engineering meshes, builder and validation scripts, and executable hash. The
+executable itself is not redistributed. Earlier study archives are unchanged. Rebuild the shared mesh with the
+builder's --round-angles option.
+
+## 30. DC region-1 supports
+
+Upcoming in GEMC2 6.2 and CLAS12 GEMC Systems 0.4, the six dcs1r1support through dcs6r1support aluminum
+support assemblies move from magnets into the DC cad directory. One unchanged dcs1r1support STL supplies all
+six named placements through five copies. Together with the previously relocated back membranes, DC now owns
+two STL files and twelve passive placements. GEMC3 stores them in dc_cad; GEMC2 uses two CAD rows in dc_cad
+and ten native CopyOf rows in dc_copies at each inherited run. Native DC geometry and materials, the membrane
+placements, and all unrelated banks remain unchanged.
+
+All six supports contain 499 vertices and 1,006 triangles. A nearest-vertex rigid registration initialized
+with nominal sector rotations converges to a one-to-one vertex correspondence. Proper rotations, without
+reflection, match the shared reference within 0.00011619 mm; six-decimal fitted angles match the world
+vertices within 0.00011771 mm. These residuals are comparable to the STL coordinate precision. Sector-specific
+translations are retained. Original six files are archived separately in the owning GEMC2 repository.
+
+Each engineering mesh has two closed manifold components, 1,509 edges, no boundary edges, and aggregate genus
+four. Both connected pieces, curved openings, and all engineering facets are retained in the canonical STL.
+Trial decimation distorted opening surfaces by tenths of a millimetre for little additional reduction, so this
+optimization shares the solid rather than modifying its surfaces. MeshLab flags 30 faces in the canonical
+contact region, with numerically varying counts in the other rotated exports; these original contacts are
+retained. Geant4 construction and the isolated tracking runs report no exceptions.
+
+Unique stored and built facets fall from 6,036 to 1,006 (83.33% fewer), and active STL storage falls from
+302,304 to 50,384 bytes. Six physical supports remain, with 6,036 placed triangles. Magnets now has 39 STL
+files and 120,622 triangles. Including both DC groups, the final shared inventory has 121,648 unique
+triangles, compared with 126,778 before the membrane and support deduplication.
+
+Sharing the reference changes total signed aluminum volume by only -0.000001606%. Original names, G4_Al
+material, colors, passive placement, and sector offsets are retained. This is separate from the deliberate
+placement change introduced by angle rounding; detector-response equivalence has not been established.
+
+Following the same overlap gate as the membranes, support angles are rounded to integers. Sectors 3, 4, and 5
+move by at most 2.755827 mm relative to their engineering placements; sector 6 moves by at most 2.189899 mm.
+The fitted and rounded variants load native DC, both DC groups, magnets, solenoid, and native/CAD beamline at
+run 11, with 139 volumes including the world. Both use the same seed and 100,000 Geant4 surface samples per
+tested volume. Neither variant reports a support overlap. Each reports 49 overlap messages covering the same
+22 distinct ordered volume pairs elsewhere, so rounding introduces no sampled overlap pair. Existing assembly
+overlaps remain; sampling is not a proof of clearance.
+
+All three inherited CAD runs (11, 3029, 4763) pass GEMC2 TEXT/CAD, GEMC2 SQLite/CAD, and GEMC3 construction.
+GEMC3 also constructs the custom DC DDVCS run, for ten checks total. Each GEMC3 CAD-only fixture contains
+thirteen volumes including the world. Semantic comparison matches both native DC variations, all four
+twelve-row DC CAD banks, and all three thirty-nine-row magnets CAD banks. Both source/runtime collections and
+the twelve archived engineering originals match by hash. The extended builder reproduces both active STLs, the
+complete placement catalog, and both health reports byte for byte.
+
+The timing fixture isolates six support placements at run 11. The original builds six independent solids; the
+final fixture shares one solid with five copies and the validated integer angles. One fixed GEMC3 dev
+executable and Geant4 11.4.3 run FTFP_BERT with default production cuts, one thread, no field, no optical
+physics, no GUI, no event output, and no target, luminosity normalization, or pileup. Five-GeV/c electrons,
+protons, positive pions, and neutrons start at the origin, uniformly in solid angle from 2 to 15 degrees with
+full azimuth. Five alternating-order repetitions use 2,000 matched LUND primaries per particle and seeds
+12345--12349. All fifty timed processes and both construction checks finish without Geant4 exceptions; each
+tracking process reports 2,000 events.
+
+Median zero-event process wall time falls from 0.73577 to 0.45538 s (1.616 times faster). Median process CPU
+time changes from 0.680 to 0.390 s and peak RSS from 123.64 to 74.98 MiB. Tracking ratios below are
+before/after; values above one indicate faster tracking. They describe this support workload and do not
+establish a full-CLAS12 speedup. The physical placement change from angle rounding and the small
+material-volume difference are included in these timings.
+
+| Particle | Before (s) | After (s) | Speedup | Paired ratio range |
+|---|---:|---:|---:|---:|
+| Electron | 3.29761 | 3.35005 | 0.984 | 0.964--1.058 |
+| Proton | 3.35892 | 3.22980 | 1.040 | 0.988--1.041 |
+| Positive pion | 3.00896 | 3.08031 | 0.977 | 0.956--1.107 |
+| Neutron | 1.07484 | 1.03238 | 1.041 | 0.967--1.139 |
+
+![DC supports](figures/dc_support_comparison.png)
+
+World x-y projections of all six support assemblies before and after sharing one STL. All original facets and
+openings remain; the red overlay uses the final integer angles. The right panel shows maximum vertex
+displacements relative to the engineering placements, including rigid-fit residuals. Both angle variants pass
+the dense sampled overlap gate.
+
+data/dc_support and dc_support_archive.zip retain shape fits, rounded-angle displacements, database checks,
+both dense assembly checks, repeated timing inputs/results, and raw logs. The archive includes the original
+and final fixtures, archived engineering meshes, builder and validation scripts, and executable hash. The
+executable itself is not redistributed. Earlier study archives are unchanged. Rebuild the shared mesh with the
+builder's --round-angles option.
+
+### DC position precision update
+
+All twelve DC CAD positions are now written with three decimal places in millimetres. This adds at most
+0.000674 mm of translation relative to the study fixtures. The regenerated GEMC2 and GEMC3 banks pass semantic
+comparisons and all ten construction checks. A further assembled check with 100,000 surface samples per volume
+finds no new overlap pairs. Facet counts, materials, and rotations are unchanged. Existing timing archives
+retain their measured inputs; the precision follow-up and validation are recorded in
+data/dc_position_precision.
+
+## 31. Vacuum jacket sharing with all holes retained
+
+Upcoming in GEMC2 6.2 and CLAS12 GEMC Systems 0.4, shell1a is renamed vacuumJacket. The twelve archived
+shell[1--6][ab] jackets are not all identical: the a and b families have different outlines and hole patterns.
+The accepted implementation uses six STL sources and six copies for twelve placements. vacuumJacket2a,
+vacuumJacket4a, and vacuumJacket5a copy vacuumJacket; vacuumJacket3b, vacuumJacket4b, and vacuumJacket6b copy
+vacuumJacket1b. All jacket names now use the vacuumJacket prefix. Materials, colors, and passive placements
+are retained. Source and runtime collections are synchronized in both owning repositories.
+
+Copies use exact 60-degree sector rotations and positions written with three decimal places in millimetres.
+These are nominally repeated engineering parts, with different exported tessellations. On every axial plane,
+fitted circular-hole centres, radii, and depths in the copied exports agree with the reference within 0.0001
+mm. Parameters use unsnapped coordinates after nominal-plane grouping; individual exported vertices depart
+from those planes by up to 0.000156 mm. Both directions of sampled polygonal-surface comparison are retained;
+coarse sector-4 tessellations produce differences up to 0.27 mm. Thus the copies preserve the nominal hole
+parameters, while their polygonal approximations follow the canonical STL.
+
+Every hole is kept, including countersinks, buried steps, and the narrow slot. The builder finds boundary
+contours on all distinct axial planes, protects their complete surface triangles, and decimates only the
+remaining border region. The a and b references have 78 and 73 protected axial contours, respectively;
+repeated depth contours are not distinct drilled holes. All 8,143 and 7,353 hole-region triangles remain
+coordinate-exact after binary STL serialization. Bounds are unchanged. The two canonical meshes remain closed,
+manifold, single-component solids with genus 38 and 35 and no detected self-intersecting faces. Each loses
+only four border triangles: 8,388 to 8,384 and 7,560 to 7,556. The large saving comes from sharing, rather
+than aggressive surface decimation.
+
+Four engineering exports remain byte-identical originals. vacuumJacket6a includes an additional disconnected
+100-triangle component, which is retained. Trial copies of vacuumJacket2b, vacuumJacket3a, and vacuumJacket5b
+created new approximately 1.8--2.7 nm contacts with Plate6, Plate6, and Plate3. Focused original/copy pair
+checks confirmed these contacts, so those three copies were rejected and their original STLs restored. No
+compensating translation or contact relief is applied.
+
+Unique jacket facets fall from 93,726 to 47,934, a reduction of 45,792 (48.86%). Twelve physical placements
+remain. Their total placed facets increase from 93,726 to 95,754 because the shared reference is finer than
+the sector-4 exports. Signed steel volume changes from 1,114,226,112.24 to 1,114,222,358.59 cubic millimetres,
+or -0.000336885%. Across the complete magnets collection, 33 STLs containing 74,830 unique facets now supply
+39 CAD placements. Detector-response equivalence has not been established by this isolated geometry and timing
+study.
+
+GEMC3 keeps the copies in magnets_cad. GEMC2 uses 33 SQLITECAD sources and six native CopyOf rows in
+magnets_copies at each inherited run; the supplied SQLite and TEXT cards load that companion bank. All nine
+construction checks pass across runs 11, 3029, and 4763 and both engines, including GEMC2 TEXT/CAD. Native
+solenoid and all three 39-row CAD banks pass semantic comparison. Unrelated native geometry, materials, and DC
+banks remain unchanged. The builder reproduces all six active jacket STLs and all three placement catalogs
+byte for byte.
+
+A dense run-11 assembly check loads native DC, both DC CAD groups, solenoid, magnets, and native/CAD beamline:
+139 volumes including the world. At 100,000 surface samples per tested volume and the same seed, it reports
+the same 22 ordered overlap pairs as before jacket sharing, normalizing shell1a to its new name. There are no
+added or removed sampled pairs. Existing assembly orientation and overlap warnings remain; this is not a claim
+of a warning-free assembly or a mathematical clearance proof.
+
+Timing isolates the twelve jackets at run 11, comparing twelve independent solids with six sources and six
+copies. One fixed GEMC3 dev executable with Geant4 11.4.3 runs FTFP_BERT, default production cuts, one thread,
+no field, no optical physics, no GUI, and no event output. There is no target, luminosity normalization, or
+pileup. Five-GeV/c electrons, protons, positive pions, and neutrons start at the origin, uniformly in solid
+angle from 5 to 70 degrees, with full azimuth. Five alternating-order repetitions use 1,000 matched LUND
+primaries per particle and seeds 12345--12349. All fifty timed processes and two isolated overlap checks
+complete without Geant4 exceptions; each tracking process reports 1,000 events. Sleep prevention is enabled
+for the reported repeat. An earlier complete repeat has inconsistent long internal wall-clock readings and is
+archived separately rather than pooled with these results.
+
+Median zero-event process wall time falls from 1.11389 to 0.94827 s (1.175 times faster). Median process CPU
+time changes from 1.050 to 0.900 s, and peak RSS from 204.47 to 168.58 MiB. The table reports median internal
+transport wall times, their before/after ratio, and the range of paired seed ratios. Ratios above one indicate
+faster tracking. Geometry and stochastic trajectory changes are included; the ratios are not pure facet-count
+scaling and do not establish a full-CLAS12 speedup.
+
+| Particle | Before (s) | After (s) | Speedup | Paired ratio range |
+|---|---:|---:|---:|---:|
+| Electron | 8.57518 | 8.07752 | 1.062 | 1.012--1.062 |
+| Proton | 4.45965 | 3.48069 | 1.281 | 1.196--1.291 |
+| Positive pion | 4.46794 | 3.78943 | 1.179 | 1.155--1.306 |
+| Neutron | 1.94376 | 1.63337 | 1.190 | 1.153--1.355 |
+
+![Vacuum jackets](figures/vacuum_jacket_comparison.png)
+
+The two distinct canonical jackets before and after conservative border simplification. All holes,
+countersinks, and slots remain. The right column overlays a section through one stepped hole; the unchanged
+protected surfaces coincide. The four retained original exports are not shown.
+
+data/magnets_vacuum and magnets_vacuum_archive.zip retain mesh health, hole parameters, surface comparisons,
+original and final inventories, all repeated timings, matched primaries, raw logs, rejected-copy contacts,
+semantic checks, and both dense assembly fixtures. The archive also includes the twelve original engineering
+exports, six final meshes, three catalogs, builder, benchmark, validation code, and executable hash. The
+executable is not redistributed. Earlier study archives remain unchanged. REPRODUCE.md documents the commands
+and fixture paths.
+
+All active jacket placements now use vacuumJacket names: the original shell1a keeps vacuumJacket, and every
+other shellN[a/b] becomes vacuumJacketN[a/b]. For example, shell1b becomes vacuumJacket1b and shell6b becomes
+vacuumJacket6b. The five remaining shell-named STL sources and all copy references are renamed consistently in
+both engines. Archived engineering inputs and previous timing datasets retain their recorded names. The naming
+follow-up verifies identical mesh hashes and database rows after identifier mapping, and all nine construction
+checks and all three native/CAD comparisons pass again. The builder reproduces six meshes, three catalogs, and
+the health report byte for byte. Holes, facets, materials, transforms, and copy relationships are unchanged;
+the measured 48.86% unique-facet reduction, 1.175 startup ratio, and particle-specific tracking results remain
+those above. No additional simulation speedup is attributed to renaming. Mapping and validation are retained
+in data/magnets_vacuum_naming and magnets_vacuum_naming_archive.zip.
+
+## 32. Torus coil sharing with openings retained
+
+Upcoming in GEMC2 6.2 and CLAS12 GEMC Systems 0.4, the six copper torus coils share one unchanged engineering
+mesh. coil1 is renamed coil, while coil2 through coil6 keep their sector suffixes and become five passive
+copies. All openings, rounded corners, thickness, G4_Cu material, and colors are retained. Both source and
+runtime collections are synchronized in the two owning repositories; the six engineering originals are
+archived separately.
+
+Every original has 508 vertices and 1,016 triangles in one closed manifold component, with genus one, no
+boundary edges, and no detected self-intersections. Exact 60-degree sector rotations give a one-to-one vertex
+correspondence with maximum residual 0.000224728 mm, consistent with binary STL coordinate precision. Four
+exports have identical mapped facet connectivity. coil2 and coil3 each use the opposite diagonal on one planar
+side quadrilateral; the builder verifies the same four corners, perimeter, and plane. This changes the
+triangulation rather than the represented surface.
+
+The canonical coil STL is byte-identical to coil1. All 1,016 facets, including every surface around the large
+central opening, remain. The source is already a clean tessellated ring; sharing achieves the reduction
+without further contour simplification or hole filling. The copy placements use integer sector angles and
+millimetre positions with three decimal places. No empirical translation or contact relief is introduced.
+
+Unique stored and built coil facets fall from 6,096 to 1,016, a reduction of 5,080 (83.33%). Active STL
+storage falls from 305,304 to 50,884 bytes. All six physical coils remain, with 6,096 placed facets. Total
+signed copper volume changes from 691,360,208.654 to 691,360,128.713 cubic millimetres (-0.000011563%) because
+the canonical coordinates replace separately rounded exports. The complete magnets collection now has 28 STL
+sources and 69,750 unique facets for 39 CAD placements.
+
+GEMC3 keeps the sources and copies together in magnets_cad. GEMC2 uses 28 CAD sources and 11 native
+magnets_copies rows per inherited run, including the six existing jacket copies. The supplied cards already
+load this companion bank. All nine GEMC3, GEMC2 SQLite/CAD, and GEMC2 TEXT/CAD construction checks pass across
+runs 11, 3029, and 4763. Semantic comparison matches all three native solenoid configurations and the three
+39-row CAD banks. Unrelated native geometry, materials, and DC banks are unchanged. The builder reproduces the
+canonical mesh, health report, and all three placement catalogs byte for byte.
+
+The full run-11 assembly contains native DC, both DC CAD groups, solenoid, magnets, and native/CAD beamline:
+139 volumes including the world. Matched baseline and final fixtures use seed 12345 and 100,000 Geant4 surface
+samples per tested volume. Readout is disabled in these geometry-only fixtures. Existing orientation and
+overlap warnings remain; the baseline reports 22 ordered overlap pairs and the final fixture reports 22. No
+new sampled overlap pair is introduced by sharing the coil. Sampling is not a mathematical clearance proof.
+
+The timing fixture isolates the six coil placements at run 11. The baseline builds six independent solids; the
+optimized fixture builds one solid and reuses it through five copies. One fixed GEMC3 dev executable reports
+geant4-11-03-patch-02 [MT]   (25-April-2025). It uses the serial run manager, FTFP_BERT, default production
+cuts, one execution thread, no field, no optical physics, no GUI, no digitization, and no event output.
+Five-GeV/c electrons, protons, positive pions, and neutrons start at the origin, uniformly in solid angle from
+5 to 70 degrees with full azimuth. There is no target, luminosity normalization, or pileup. Five
+alternating-order repetitions use 2,000 matched LUND primaries per particle and seeds 12345--12349. Fifty
+timed processes and two isolated overlap checks are scheduled. Every successful tracking process reports 2,000
+events; 7 serial processes fail as recorded below. Statistics use only seeds for which both fixtures complete;
+a failed pair is excluded from both timing samples. Sleep prevention remains enabled throughout.
+
+An initial tasking-mode attempt stopped after twenty processes when the optimized 2,000-event electron run at
+seed 12349 raised fatal PART122: Cu62 was already registered in the Geant4 particle table during a
+photonuclear interaction. This is a particle-table error, rather than a reported geometry overlap. Both
+fixtures complete those electron primaries in a serial-mode probe, but the full serial repeat also fails on
+the original proton geometry at seed 12349 with duplicate Co60[58.590] registration. Thus serial execution
+does not resolve the issue, and it affects the reference geometry as well. The scheduled serial processes are
+continued after failures, with the same executable hash. All failures, raw logs, and probe inputs are
+archived. Tasking and serial results are not pooled. These failures prevent an unconditional
+tracking-performance conclusion.
+
+Median zero-event process wall time falls from 0.18605 to 0.13280 s (1.401 times faster). Median process CPU
+time changes from 0.100 to 0.090 s, and peak RSS from 63.17 to 59.25 MiB. Tracking entries below are median
+internal transport wall times; before/after ratios above one indicate faster tracking. The paired range
+retains seed dependence. These isolated coil measurements do not establish a full-CLAS12 speedup or
+detector-response equivalence, and the tiny geometric differences can alter stochastic trajectories. Paired
+startup ratios range from 1.004 to 1.451. Ranges that span one do not establish a consistent gain in this
+sample. The interrupted tasking attempt completed its ten zero-event measurements: median loading wall times
+were 0.68288 and 0.67769 s, essentially unchanged, with peak RSS 121.70 and 117.52 MiB. Performance depends on
+execution mode; the table below uses serial mode throughout.
+
+| Particle | Pairs | Before (s) | After (s) | Ratio | Paired ratio range |
+|---|---:|---:|---:|---:|---:|
+| Electron | 5 | 6.41057 | 5.80693 | 1.104 | 1.043--1.168 |
+| Proton | 4 | 4.97728 | 3.90553 | 1.274 | 1.207--1.451 |
+| Positive pion | 2 | 4.99705 | 3.99851 | 1.250 | 1.211--1.289 |
+| Neutron | 3 | 3.03117 | 2.02905 | 1.494 | 1.303--1.562 |
+
+![Torus coils](figures/coil_comparison.png)
+
+All six engineering coil exports aligned to sector 1, with their full ring profiles and central opening
+retained. The right panel shows maximum matched-vertex residuals under exact nominal sector rotations; the
+largest is 0.225 micrometres. The canonical mesh is unchanged, so an additional before/after surface overlay
+would coincide.
+
+data/magnets_coils and magnets_coils_archive.zip retain engineering mesh analysis, the shared-mesh proof,
+material-volume changes, database comparisons, all nine construction logs, both dense assembly fixtures,
+repeated timing inputs, matched primaries, raw logs, and executable hash. The archive includes the six
+originals, final collected geometry and meshes, catalogs, builder, benchmark, and validation code. The
+executable is not redistributed. Earlier study archives remain unchanged.
+
+## 33. Hub cover sharing with holes retained
+
+Upcoming in GEMC2 6.2 and CLAS12 GEMC Systems 0.4, Plate1 through Plate6 are renamed hubCover1 through
+hubCover6. The plain hubCover1 mesh supplies copies 2, 4, and 5; the holed hubCover3 mesh supplies copy 6.
+Both canonical STLs are byte-identical to their engineering originals. All holes, thicknesses, contours, G4_Al
+material, colors, and six physical placements are retained in both owning repositories and their runtime
+collections.
+
+The four plain exports each contain eight vertices and 12 triangles in one closed manifold component of genus
+zero. The two holed exports each have 75 vertices and 150 triangles, with genus one. All have zero boundary
+edges and no detected self-intersections. Nominal sector rotations match every vertex one to one: the largest
+plain-cover residual is 0.000005540 mm, and the holed pair agrees to numerical roundoff. Three plain exports
+use the alternate diagonal on one planar quadrilateral. The builder verifies identical perimeters, four
+corners, and coplanarity, establishing surface equivalence despite different triangle connectivity.
+
+The two sources already have simple tessellations. Optimization therefore shares solids without further
+decimation or hole filling. Every canonical triangle remains, including the complete hole wall and rim in
+hubCover3. Passive copies use exact integer sector angles and positions with three decimal places in
+millimetres. No contact relief or empirical translation is introduced.
+
+Unique cover facets fall from 348 to 162, saving 186 (53.45%). Active cover STL storage falls from 17,904 to
+8,268 bytes. The six placements still contain 348 placed facets. Total signed aluminum volume is
+7,346,686.175700 cubic millimetres before and after, with a relative change below one part in a trillion from
+numerical roundoff. The complete magnets collection now contains 24 STL sources, 69,564 unique facets, and 39
+CAD placements. GEMC3 keeps sources and copies in magnets_cad; GEMC2 uses 24 CAD sources and 15 native
+magnets_copies rows per inherited run, including the existing jacket and coil copies.
+
+All nine GEMC3, GEMC2 SQLite/CAD, and GEMC2 TEXT/CAD construction checks pass across runs 11, 3029, and 4763.
+Semantic comparison matches all three native solenoid configurations and the three 39-row CAD banks. Unrelated
+native geometry, materials, and DC banks are unchanged at synchronization. The builder reproduces both
+canonical STLs, the health report, and all three catalogs byte for byte. Original engineering exports remain
+archived.
+
+The dense run-11 fixture contains native DC, both DC CAD groups, solenoid, magnets, and native/CAD beamline:
+139 volumes including the world. Readout is disabled. Renaming volumes changes Geant4 construction/check
+ordering and thus assigns surface samples differently among unchanged volumes. The initial comparison records
+four added and four removed ordered contact pairs, all among unchanged non-cover volumes. A controlled
+baseline keeps the six independent original meshes and original poses but uses the final hubCover names. With
+seed 12345 and 100,000 surface samples per tested volume, this baseline and the final shared geometry report
+exactly the same 22 ordered overlap pairs. No new sampled overlap pair is introduced. Existing contacts,
+including covers against the upstream jacket, and orientation warnings remain. Sampling does not establish
+mathematical clearance.
+
+The timing fixture isolates the six cover placements at run 11. The baseline builds six independent solids,
+and the final fixture builds two solids with four copies. A fixed executable reports geant4-11-03-patch-02
+[MT]   (25-April-2025). It uses the serial run manager, FTFP_BERT, default production cuts, and one execution
+thread. Field, optical physics, GUI, readout, and event output are disabled. Five-GeV/c electrons, protons,
+positive pions, and neutrons start at the origin, uniform in solid angle from 1.5 to 5.5 degrees with full
+azimuth, covering these small-radius parts. There is no target, luminosity normalization, or pileup. Five
+repetitions alternate fixture order and use 2,000 identical LUND primaries per particle at seeds 12345--12349.
+Ten zero-event processes, forty tracking processes, and two isolated overlap checks are scheduled. Idle-sleep
+prevention remains enabled throughout. The executable hash is checked at both ends. Inputs are frozen
+independently of concurrent framework builds and experiment database regeneration.
+
+One of the 52 scheduled processes fails. Raw logs, exception codes, and inputs are retained. The original
+proton
+fixture at seed 12345 raises PART122 because Na24 is already registered in the Geant4 particle table. Tracking
+statistics include only pairs where both versions complete all 2,000 events; failures exclude both members of
+that seed pair. These conditional measurements do not establish an unconditional tracking-performance gain.
+
+Median zero-event process wall time changes from 0.13304 to 0.13308 s, a before/after ratio of 1.000. Median
+CPU time changes from 0.090 to 0.090 s, and peak RSS from 58.05 to 57.69 MiB. Paired startup ratios range from
+0.997 to 1.392. Tracking entries below are median internal transport wall times. Ratios above one indicate
+faster execution; paired ranges show seed dependence, and ranges spanning one do not establish a consistent
+gain in this sample. The principal demonstrated benefit is fewer unique solids and facets. These isolated
+measurements do not establish a full-CLAS12 speedup or detector-response equivalence.
+
+| Particle | Pairs | Before (s) | After (s) | Ratio | Paired ratio range |
+|---|---:|---:|---:|---:|---:|
+| Electron | 5 | 4.45213 | 4.47410 | 0.995 | 0.967--1.108 |
+| Proton | 4 | 4.46378 | 4.67747 | 0.954 | 0.904--1.018 |
+| Positive pion | 5 | 4.01745 | 3.93746 | 1.020 | 0.881--1.119 |
+| Neutron | 5 | 2.44995 | 2.73761 | 0.895 | 0.759--1.203 |
+
+![Hub covers](figures/hub_cover_comparison.png)
+
+Original and shared hub-cover footprints coincide in all six sectors (left). The hole rim retained by
+hubCover3 and its hubCover6 copy is unchanged (right); all 150 canonical facets remain. Plain covers 1, 2, 4,
+and 5 retain their original 12-triangle shape.
+
+data/magnets_hub_covers and magnets_hub_covers_archive.zip retain mesh equivalence and topology checks, facet
+and volume metrics, all nine construction logs, semantic comparisons, the controlled and initial dense overlap
+fixtures, repeated timings, matched primaries, raw logs, and the fixed executable hash. The archive includes
+original exports, final collected geometry and meshes, catalogs, builders, benchmark, validation code, and
+figure-generation inputs. The executable is not redistributed; previous study archives remain unchanged.
+
+## 34. Hub shield sharing with holes retained
+
+Upcoming in GEMC2 6.2 and CLAS12 GEMC Systems 0.4, all seven Shield volumes use the hub_shield prefix. Shield2
+becomes hub_shield and supplies hub_shield3 through hub_shield6 through four passive copies. Shield1 and
+Shield7 are distinct end pieces, retained as hub_shield1 and hub_shield7 with byte-identical STLs. The seven
+original exports remain archived. All holes, radial contours, stepped joints, beamline_W material, colors, and
+physical placements remain.
+
+The seven exports are not one identical family. Shield2 through Shield6 each contain 319 vertices and 638
+triangles. Translation by the nominal 304.8 mm pitch gives a one-to-one vertex correspondence with identical
+mapped facet connectivity and maximum residual 0.000195313 mm from STL coordinate rounding. Shield1 and
+Shield7 each contain 239 vertices and 478 triangles, with different end profiles. Their signed volumes are
+1,836,423.892 and 1,828,397.730 cubic millimetres, compared with 1,785,903.279 for Shield2. All seven meshes
+have one closed manifold component, genus one, no boundary edges, and no detected self-intersections. Both
+distinct end profiles must remain.
+
+Directly copying the original Shield2 at three-decimal millimetre positions introduces 48.8281-nanometre
+contacts at the stepped joints: the large absolute STL coordinates round the nominal body length upward. The
+first dense candidate adds six ordered overlap pairs. Recentring the shared source by 1,794.392 mm reduces the
+float32 quantization. The source is placed at world z = 3,067.662 mm; copies advance by exactly 304.8 mm. Far
+axial faces are rounded inward, shortening them by 0.0000593262 mm relative to the original source. Nearest
+rounding of a leading face initially leaves a 0.198-nanometre contact, recorded as two ordered overlap pairs.
+Directed rounding retains that face on the clearance side and removes these contacts. No clearance is
+manufactured by moving complete volumes.
+
+Every radial coordinate and all 638 shared-source triangle connections remain exactly unchanged, including the
+complete bore and both radial steps. No hole is filled and no circular contour is decimated. Both end meshes
+are unchanged. Including axial normalization and independently rounded exports, final world vertices differ
+from the originals by at most 0.000146485 mm. All positions have three decimal places in millimetres, and
+rotations remain the original exact 180-degree passive rotation.
+
+Unique shield facets fall from 4,146 to 1,594, saving 2,552 (61.55%). Active shield STL storage falls from
+207,888 to 79,952 bytes. Seven physical placements still contain 4,146 placed facets. Total signed
+tungsten-alloy volume changes from 12,594,336.584631 to 12,594,336.280296 cubic millimetres (-0.000002416%).
+Magnets now uses 20 STL sources and 67,012 unique facets for 39 CAD placements. GEMC3 keeps every placement in
+magnets_cad; GEMC2 has 20 CAD sources and 19 native magnets_copies rows per inherited run.
+
+All nine GEMC3, GEMC2 SQLite/CAD, and GEMC2 TEXT/CAD construction checks pass for runs 11, 3029, and 4763,
+including explicit resolution of every copy source. Semantic comparison matches the three native solenoid
+configurations and the three 39-row CAD banks. Unrelated native geometry, materials, and DC banks are
+unchanged. The builder reproduces three STLs, the health report, and three placement catalogs byte for byte.
+
+The dense run-11 fixture contains native DC, both DC CAD groups, solenoid, magnets, and native/CAD beamline:
+139 volumes including the world. Readout is disabled. The controlled baseline retains seven independent
+original meshes and original poses but uses the final volume names, keeping the Geant4 check order consistent.
+At seed 12345 and 100,000 surface samples per tested volume, both the baseline and the final geometry report
+exactly the same 22 ordered contact pairs, with no added or removed pair. The isolated seven-shield fixture
+also passes 100,000-sample checks without any contact warning. Existing contacts and orientation warnings
+elsewhere in the assembly remain. Sampling does not constitute a mathematical clearance proof.
+
+The timing fixture isolates seven shield placements at run 11, building seven independent solids before
+optimization and three sources plus four copies afterward. One fixed GEMC3 executable reports
+geant4-11-03-patch-02 [MT]   (25-April-2025). The serial run manager uses one execution thread, FTFP_BERT, and
+default production cuts. Field, optical physics, GUI, readout, and event output are disabled. Five-GeV/c
+electrons, protons, positive pions, and neutrons start at the origin, uniform in solid angle from 0.3 to 1.4
+degrees with full azimuth, covering the small-radius shield chain. There is no target, luminosity
+normalization, or pileup. Five repetitions alternate fixture order and use 2,000 identical LUND primaries per
+particle and seeds 12345--12349. Ten zero-event processes, forty tracking processes, and two isolated overlap
+checks are scheduled. Idle-sleep prevention remains active, and the executable hash is checked at the start
+and end.
+
+38 of the 52 scheduled processes fail; exception counts are PART122=38. Raw logs, failed inputs, and exception
+codes are retained. Tracking statistics include only seed pairs for which both fixtures complete all 2,000
+events. Failures exclude both members of that seed pair, so these measurements are conditional on completion
+and do not establish an unconditional performance gain.
+
+All 38 fatal errors are duplicate-isotope registration failures in the Geant4 particle table: 19 in the
+original geometry and 19 in the optimized geometry. Examples include W183, W187, Fe57, and tantalum isotopes.
+The two successful tracking processes are unmatched; this study therefore supplies no valid tracking-speed
+comparison.
+
+No completed matched tracking pair is available for electrons, protons, positive pions, neutrons; no
+tracking-time ratio can be estimated for those particles. Unmatched successful processes are archived but
+excluded from comparisons.
+
+Median zero-event process wall time changes from 0.18750 to 0.13374 s, a before/after ratio of 1.402. Median
+CPU time changes from 0.100 to 0.090 s, and peak RSS from 61.47 to 59.52 MiB. Paired startup ratios range from
+0.988 to 1.882. Tracking entries below are median internal transport wall times. Ratios above one indicate
+faster execution; paired ranges show seed dependence, and ranges spanning one do not establish a consistent
+gain in this sample. The principal demonstrated benefit is fewer unique solids and facets. These isolated
+measurements do not establish a full-CLAS12 speedup or detector-response equivalence.
+
+| Particle | Pairs | Before (s) | After (s) | Ratio | Paired ratio range |
+|---|---:|---:|---:|---:|---:|
+| Electron | 0 | -- | -- | -- | -- |
+| Proton | 0 | -- | -- | -- | -- |
+| Positive pion | 0 | -- | -- | -- | -- |
+| Neutron | 0 | -- | -- | -- | -- |
+
+![Hub shields](figures/hub_shield_comparison.png)
+
+Longitudinal sections at world y = 0.1 mm compare original exports and shared geometry. All seven placements
+remain, including both distinct end profiles (top). The middle-source bore and stepped radial contours are
+retained exactly (bottom). Nanometre axial changes are below the figure resolution; their measured bounds are
+reported in the text.
+
+data/magnets_hub_shields and magnets_hub_shields_archive.zip retain original mesh analysis, equivalence and
+topology checks, axial normalization, facet and volume metrics, all nine construction logs, semantic
+comparisons, dense overlap fixtures, repeated timings, matched primaries, raw logs, and the fixed executable
+hash. The rejected candidates and their contact warnings are retained too. The archive includes original
+exports, final collected geometry and meshes, catalogs, builder, benchmark, validation code, and figure
+inputs. The executable is not redistributed. Earlier study archives remain unchanged.
+
+## 35. Cold hub optimization with holes retained
+
+Upcoming in GEMC2 6.2 and CLAS12 GEMC Systems 0.4, Hub001 is renamed ColdHub in all three configurations and
+both owning repositories. Every drilled opening, main bore, G4_Al material, color, and passive placement
+remains. The position is written with three decimal places in millimetres; the exact 180-degree rotation is
+unchanged. The original engineering STL is archived separately.
+
+The input has 6,235 vertices and 12,600 facets, with six boundary edges, one non-manifold vertex, seven
+degenerate triangles, and eight detected intersecting faces. Its genus and physical material volume are
+undefined until the open seam is repaired. Two triangular export slivers, with areas 0.000211868 and
+0.000388564 square millimetres, are closed using existing vertices. These slivers are separate from the
+physical drilled openings. Thirteen faces are oriented coherently. Seven collinear T-junctions are
+retriangulated by splitting their opposite edge faces, without moving vertices. The repaired reference has
+12,602 facets in one closed manifold component of genus 34, with no degenerate or intersecting faces.
+
+Conservative edge collapses then remove 27 redundant vertices and 54 facets. Each collapse satisfies the
+manifold link condition, preserves winding, and limits local plane error to 0.0001 mm. The largest actual
+error is 0.000053917 mm. All surviving vertices retain their exact engineering coordinates. The isolated
+original emits 16 GeomSolids1001 and seven GeomSolids1002 construction warnings per process; the optimized
+source emits neither. Completed baseline runs with these nonfatal warnings remain eligible for timing pairs.
+Every opening remains: the final mesh is closed, manifold, and genus 34, with no self-intersections or
+degenerate triangles. Relative to the raw export, facets fall from 12,600 to 12,548, saving 52 (0.41%). STL
+storage falls from 630,084 to 627,484 bytes. This is primarily a geometry repair; the facet reduction is
+modest because the hole and curved profiles are retained. The performance comparison includes both repair and
+simplification; it does not isolate the effect of the facet reduction.
+
+All bounding coordinates are unchanged. Bidirectional surface-distance checks include all vertices plus
+sampled edges and faces: 206,235 points from the original to the final mesh and 206,208 in the reverse
+direction. Maximum sampled deviations are 0.000035946 and 0.000026133 mm, respectively. Sampling does not
+prove a global distance bound. The closed repaired reference has signed volume 34,158,810.76890473 cubic
+millimetres, compared with 34,158,810.76892262 after simplification: a change below 0.000000001%. No physical
+volume is assigned to the original non-watertight export.
+
+All nine GEMC3, GEMC2 SQLite/CAD, and GEMC2 TEXT/CAD construction checks pass for runs 11, 3029, and 4763.
+Semantic comparison matches the three native solenoid configurations and the three 39-row CAD banks. Unrelated
+native geometry, materials, DC banks, and existing copy placements are unchanged. The builder reproduces the
+STL, health report, and three catalogs byte for byte. Magnets still has 20 STL sources and 39 CAD placements,
+now with 66,960 unique facets. GEMC2 uses 20 CAD sources and 19 native copy rows per run.
+
+The dense run-11 fixture contains native DC, both DC CAD groups, solenoid, magnets, and native/CAD beamline:
+139 volumes including the world, with readout disabled. The baseline retains the original mesh and pose but
+uses the final ColdHub name to keep construction and surface-sampling order consistent. At seed 12345 and
+100,000 surface samples per tested volume, both versions report the same 22 ordered contact pairs, with no
+added or removed pair. Existing contacts elsewhere remain; this sampled comparison does not constitute a
+mathematical clearance proof.
+
+The timing fixture isolates one hub at run 11. One fixed GEMC3 executable reports geant4-11-03-patch-02 [MT]
+(25-April-2025). The serial run manager uses one execution thread, FTFP_BERT, and default production cuts.
+Field, optical physics, GUI, readout, and event output are disabled. Five-GeV/c electrons, protons, positive
+pions, and neutrons start at the origin, uniform in solid angle from 0.5 to 3.0 degrees with full azimuth.
+There is no target, luminosity normalization, or pileup. Five repetitions alternate fixture order and use
+2,000 identical LUND primaries per particle and seeds 12345--12349. Ten zero-event processes, forty tracking
+processes, and two isolated overlap checks are scheduled. Idle-sleep prevention remains active, and the
+executable hash is checked at the start and end.
+
+PART122 denotes duplicate-isotope registration in the Geant4 particle table; these failures are retained
+separately from geometry warnings and excluded from timing pairs.
+
+14 of the 52 scheduled processes fail; exception counts are GeomSolids1001=112, GeomSolids1002=49, PART122=14.
+Raw logs, failed inputs, and exception codes, including nonfatal solid warnings, are retained. Tracking
+statistics include only seed pairs for which both fixtures complete all 2,000 events. Failures exclude both
+members of that seed pair, so these measurements are conditional on completion and do not establish an
+unconditional performance gain.
+
+Median zero-event process wall time changes from 0.35595 to 0.30656 s, a before/after ratio of 1.161. Median
+CPU time changes from 0.180 to 0.180 s, and peak RSS from 80.91 to 81.66 MiB. Paired startup ratios range from
+0.785 to 1.242. Tracking entries below are median internal transport wall times. Ratios above one indicate
+faster execution; paired ranges show seed dependence, and ranges spanning one do not establish a consistent
+gain in this sample. The principal demonstrated benefit is a valid closed mesh with every opening retained.
+Repair and facet ordering can alter navigation and stochastic trajectories. These isolated measurements do not
+establish a full-CLAS12 speedup or detector-response equivalence.
+
+| Particle | Pairs | Before (s) | After (s) | Ratio | Paired ratio range |
+|---|---:|---:|---:|---:|---:|
+| Electron | 2 | 109.44350 | 97.52760 | 1.122 | 1.111--1.133 |
+| Proton | 3 | 14.05220 | 13.31090 | 1.056 | 1.056--1.063 |
+| Positive pion | 4 | 17.63475 | 16.40535 | 1.075 | 1.048--1.097 |
+| Neutron | 4 | 11.85130 | 11.43430 | 1.036 | 1.028--1.039 |
+
+![Cold hub](figures/cold_hub_comparison.png)
+
+Engineering Hub001 (left) and optimized ColdHub (right), shown with the same projections. The full aluminum
+hub retains its long bore and side openings (top). The upstream head detail is clipped at world z = 2,945 mm
+to expose the drilled features (bottom). Nanometre surface differences are below the figure resolution.
+
+data/magnets_cold_hub and magnets_cold_hub_archive.zip retain the original mesh analysis, seam repair,
+triangle and topology metrics, collapse history, bidirectional surface samples, all nine construction logs,
+semantic comparisons, dense overlap fixtures, repeated timings, matched primaries, raw logs, and the fixed
+executable hash. The archive includes original exports, final geometry and meshes, catalogs, builder,
+benchmark, validation code, and figure renderer. The executable is not redistributed. Earlier study archives
+remain unchanged.
+
+## 36. Bore-tube profile preservation audit
+
+Upcoming in GEMC2 6.2 and CLAS12 GEMC Systems 0.4, CenterTube becomes BoreCenterTube in all three
+configurations and both owning repositories. BoreShield and WarmBoreTube retain their names. Every original
+profile and hole is retained, as requested after reviewing the simplification options. All three active STLs
+remain byte-identical to their engineering exports. Materials, bounds, volumes, passive placements, and the
+exact 180-degree rotation are unchanged.
+
+These tubes are already one closed, consistently oriented manifold component of genus one each, with zero
+boundary edges, degenerate triangles, or detected intersecting faces. Their vertices all lie on the inner and
+outer end rims. Each ring has strictly positive turns at every corner, so removing a corner changes its
+polygonal profile. For a closed triangulated genus-one surface, Euler's relation and twice-edge triangle
+incidence give F = 2V. The existing meshes already attain this minimum for their required rim vertices.
+Conservative simplification at the previous 0.0001 mm local-plane bound accepts no vertex collapse. Coarser
+outer walls or native circular tubes would change the engineering surfaces and were not selected.
+
+BoreShield retains 178 vertices and 356 facets; BoreCenterTube retains 203 vertices and 406 facets;
+WarmBoreTube retains 184 vertices and 368 facets. The total remains 565 vertices and 1,130 facets: zero facets
+removed and 0% reduction. The full magnets inventory remains 20 STL sources, 66,960 unique facets, and 39 CAD
+placements. GEMC2 uses 20 CAD sources and 19 native copy rows per run.
+
+All nine zero-event construction checks pass: GEMC3, GEMC2 SQLite/CAD, and GEMC2 TEXT/CAD for runs 11, 3029,
+and 4763. The semantic comparison matches all three native solenoid configurations and all three 39-row CAD
+banks. The before/after database checks match all 117 GEMC3 CAD rows and all 60 GEMC2 CAD rows after
+normalizing the renamed volume and mesh path; the 57 GEMC2 copy rows are unchanged. All four active mesh trees
+and all three catalog trees agree. Identical mesh bytes and physical placement rows establish unchanged
+surfaces and clearances; existing assembly overlap warnings remain. No new dense sampling campaign is needed
+to infer geometric identity.
+
+No new loading or particle-transport benchmark was run for this unchanged geometry. This step establishes no
+simulation speedup; a name-only change and zero facet reduction provide no geometric basis for claiming a
+gain. There is no new measured before/after timing ratio, and results from earlier optimization studies are
+not attributed to these tubes.
+
+data/magnets_bore_tubes and magnets_bore_tubes_archive.zip retain mesh hashes, rim-corner and topology
+metrics, database identity checks, the nine construction fixtures and logs, semantic comparisons, original and
+final STLs, catalogs, and the audit program. The archive also retains the conservative simplification probe
+and its empty collapse histories. The validation executable hash is recorded; executables are not
+redistributed. Earlier study archives remain unchanged.
+
+## 37. Consolidating DC and magnets geometry banks
+
+The October 23 consolidation retires the separate dc_copies and magnets_copies geometry banks in GEMC2. The
+ten DC copies are published with native dc; the 19 magnet copies join the renamed native magnets bank. Only
+the former solenoid system/bank is renamed: the physical copper polycone remains named solenoid. All volume
+names, mesh paths, positions, rotations, materials, and copy sources remain. GEMC2 keeps two source STLs in
+dc_cad and 20 in magnets_cad because its native and CAD loaders are distinct factories. Updated standalone and
+combined cards no longer load the retired copy banks.
+
+GEMC3 now loads dc and magnets as single SQLite systems. Each contains its native solids, CAD sources, and
+copy rows. Keeping sources with their copies is required by the current within-system copy dependency lookup;
+the SQLite factory already supports CAD solids. Native DC and its 12 CAD placements total 66 rows, or 72 for
+DDVCS. Magnets has 40 rows: one solenoid, 20 CAD sources, and 19 copies. The old dc_cad and magnets_cad
+companion rows are removed when regenerating GEMC3 databases.
+
+DC survey run keys 3029 and 4763 reuse the unchanged default chambers at run 11, now published alongside their
+CAD sources and copies. This retains the complete DC detector under GEMC3's exact-run selection. The custom
+DDVCS bank retains its six extra shields at run 10000001. GEMC2 continues to inherit its unchanged native DC
+bank from run 11 and publishes the ten copies in both default and DDVCS TEXT geometry. Magnet survey shifts
+retain runs 11, 3029, and 4763, with default SQLite variation keys and named ASCII configurations.
+
+The previous GEMC2 DC copy bank contained two rows for each of its ten named placements. The new generators
+publish each copy once, adjacent to the native rows for the same configuration. This ordering also avoids the
+Perl authoring API's whole-bank deletion when switching back to a previously written detector/variation.
+Repeated generation reproduces the GEMC2 TEXT bytes and database rows; regenerating GEMC3 over old databases
+matches fresh databases and removes obsolete system keys.
+
+The semantic comparator now checks the merged native/copy rows against GEMC2 native tables and independently
+compares all mesh-source and copy placements with the GXML catalogs. All four DC configurations match 64
+native/copy rows, or 70 for DDVCS, two material rows, and 12 CAD placements. Each of the three magnets
+configurations matches 20 native/copy rows, one material row, and 39 CAD placements. The added local magnets
+tungsten-alloy definition matches the existing beamline material and makes the native/copy bank
+self-contained.
+
+Twenty zero-event construction checks pass without Geant4 exceptions, using GEMC3 with Geant4 11.4.3 and GEMC2
+with Geant4 10.7.4. These include GEMC3, GEMC2 SQLite/CAD, and GEMC2 TEXT/CAD for both detectors at runs 11,
+3029, and 4763, plus GEMC3 DC DDVCS and GEMC2 DC DDVCS TEXT/CAD. GEMC3 fixtures disable readout and require 67
+constructed volumes including the world for DC, 73 for DDVCS, and 41 for magnets. GEMC2 copy dependencies
+resolve against the unchanged CAD sources. These checks validate construction and ownership; no new dense
+overlap, particle-transport, or detector-response study is performed.
+
+All stored STL hashes remain identical. DC retains two source meshes with 1,026 unique facets; magnets retains
+20 with 66,960 unique facets. No facets are removed by this consolidation, and no new simulation speedup is
+established. Effective GEMC2 native geometry records match the earlier solenoid/copy/DC banks after
+normalizing system ownership and duplicate rows. Every GEMC2 CAD source row and all unrelated native geometry
+rows remain unchanged. Existing assembly contacts and mesh limitations documented in the earlier studies still
+apply.
+
+data/detector_banks and detector_banks_archive.zip retain the before/after bank checks, mesh inventory and
+hashes, native/material/CAD comparisons, repeated-generation evidence, twenty construction fixtures and logs,
+original database and TEXT references, and updated authoring and validation scripts. The earlier study
+archives retain their historical bank names and remain unchanged. Executables are identified by hash and are
+not redistributed.
+
+## 38. Conclusions
 
 1. For LTCC, against the complete original hardware, the optimized CAD bundle contains 93.9% fewer triangles
 and 93.9% fewer bytes. CAD-only loading CPU time decreases by 92.6%. This is direct evidence that the
@@ -2336,7 +3354,69 @@ Moller cone retains 24 non-manifold edges, and the cured entry cone introduces a
 approximately 0.053 mm with the entry window. These unresolved defects preclude a claim of complete geometry
 validation; no performance or detector-response gain has been measured for this transfer.
 
-## 27. Reproducibility and references
+27. The magnets cleanup removes ten redundant shielding placements from each configuration, reducing
+its inventory by 16,710 triangles (11.22%) while retaining the beamline shielding. Repeated timing
+results and residual geometry warnings are reported separately; all three runs pass both-engine checks.
+
+28. The downstream shielding plate and vacuum jacket retain their original names and separate placements,
+with fourteen fastener features filled and 71.79% fewer triangles. The signed steel volume increases
+by 0.566581%; repeated tracking, clean isolated construction, and remaining assembly limits are reported
+separately. All three runs pass both-engine geometry checks.
+
+29. The separate upstream plate and jacket retain their original names, main openings, rounded outer
+features, and gap with 64.47% fewer triangles. Both-engine checks pass all three runs; measured tracking
+and signed material-volume changes are reported separately from remaining assembly limits.
+
+30. Six DC region-1 back membranes move out of magnets and share one twenty-triangle solid with five copies:
+83.33% fewer unique facets. Integer angles pass the dense overlap comparison; startup, tracking,
+material-volume changes, and the accepted submillimetre displacement are recorded separately.
+
+31. Six aluminum region-1 support assemblies move from magnets into DC and share one unchanged 1,006-triangle STL.
+Unique facets fall by 83.33%, while both pieces and all openings remain. Integer angles pass the dense overlap
+comparison; repeated loading, memory, tracking, and the accepted millimetre-scale placement changes are
+reported separately.
+
+32. Vacuum jacket sharing retains all holes and twelve placements, using six sources and six copies. Unique facets
+fall by 48.86%; two distinct families and four original exports are retained. The dense assembly check finds
+no new overlap pairs; isolated startup is 1.175 times faster. Particle-specific tracking and the small
+steel-volume change are reported separately.
+
+33. Six torus coils share one unchanged STL with every opening retained, reducing unique facets by 83.33%. The
+dense comparison adds no sampled overlap pairs; the isolated startup before/after ratio in serial mode is
+1.401. Particle-specific tracking and the small copper-volume change are reported separately.
+Duplicate-isotope failures in both execution modes and both geometry versions remain unresolved; tracking
+statistics are conditional on completed pairs.
+
+34. Six hub covers retain every hole and share two unchanged source meshes, reducing unique facets from 348 to 162
+(53.45%). A naming-controlled dense comparison adds no sampled overlap pairs. The isolated serial startup
+before/after ratio is 1.000; particle-specific timing and paired ranges are reported separately without a
+full-detector claim.
+
+35. The seven hub shields comprise five matching middle pieces and two different ends. Three source meshes
+preserve every hole and reduce unique facets by 61.55%. Nanometre axial normalization avoids new sampled
+overlap pairs; maximum vertex change is 0.000146485 mm. The isolated serial startup before/after ratio is
+1.402; tracking ranges and completion limitations are reported separately.
+
+36. ColdHub retains every opening while repairing the export seam, winding, and degenerate junctions. The closed
+genus-34 mesh has no intersecting faces; unique facets fall from 12,600 to 12,548 (0.41%). Surface samples
+differ by less than 0.000036 mm, and the dense assembly adds no sampled contact pairs. The serial startup
+ratio is 1.161; transport results and completion limitations are reported separately.
+
+37. The three bore tubes already require all 1,130 facets for their retained rim profiles. CenterTube becomes
+BoreCenterTube; all meshes, holes, physical placements, and clearances remain unchanged. The facet reduction
+is 0%, and no simulation speedup is established.
+
+38. The HTCC Moller repair restores its engineering conical section and resolves the tessellated-solid orientation
+warning in both engines. Its 6,902 facets form one closed genus-one manifold with unchanged bounds and an open
+bore. The nine construction checks report no solid warnings; the separate entry-cone/window contact remains.
+No speedup is claimed.
+
+39. DC and magnets copies now belong to their main detector banks. The physical solenoid name, every STL hash, and
+all existing placements remain. Twenty geometry-only construction checks and native/CAD comparisons pass;
+repeated generation does not duplicate copies. This consolidation removes no facets and establishes no
+speedup.
+
+## 39. Reproducibility and references
 
 The companion data archive retains metadata and per-run JSON results for each workload, all raw logs and time
 reports, the geometry validation summary, and matched primary-input hashes. The repository benchmark script runs

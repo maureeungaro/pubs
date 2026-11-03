@@ -1,0 +1,13 @@
+{
+  "gemc2": {
+    "unrelated_native_material_and_DC_banks_unchanged": true
+  },
+  "gemc3": {
+    "unrelated_native_material_and_DC_banks_unchanged": true
+  },
+  "source_runtime_mesh_hashes_match": true,
+  "archived_originals_unchanged": true,
+  "distinct_exception_meshes_unchanged": true,
+  "CAD_sources_per_run": 33,
+  "native_copies_per_run": 6
+}

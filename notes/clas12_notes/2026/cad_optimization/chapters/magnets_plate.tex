@@ -1,0 +1,97 @@
+\FloatBarrier
+\section{Downstream shielding plate and vacuum jacket}
+\label{sec:magnets-plate}
+
+Upcoming in GEMC2 6.2 and CLAS12 GEMC Systems 0.4, DownstreamShieldingPlate and DownstreamVacuumJacket are
+optimized as two separate volumes under their original names. Both retain their stainless steel, passive
+180-degree y rotation, and 1273.27 mm z translation in the default, rga\_spring2018, and rga\_fall2018
+configurations (runs 11, 3029, and 4763). All source and runtime copies match in GEMC2 and GEMC3; original
+engineering inputs are archived in the owning GEMC2 repository.
+
+The plate fills eight through-holes: six bolt holes of approximately 9.525 mm radius and two smaller holes of
+approximately 2.38125 mm radius. The jacket fills six blind drilled recesses of approximately 6.35 mm entry
+radius. Main circular rims and the hexagonal jacket step are extracted from the original vertices; only the
+flat-face triangulation and fastener features change. No Poisson reconstruction, vertex displacement, or
+joining of the separated parts is applied. The main aperture radii remain 76.35 mm for the plate and 63.5 mm
+for the jacket, with the exact engineering polygon coordinates. The 32.83203125 mm axial gap and both original
+bounds are retained.
+
+The plate falls from 1,380 to 508 triangles (63.19\% fewer); the jacket falls from 2,392 to 556 (76.76\%
+fewer). Together they fall from 3,772 to 1,064 triangles (71.79\% fewer) and from 188,768 to 53,368 bytes.
+Each result is a single closed, consistently oriented manifold component of genus one, with no boundary edges,
+detected self-intersections, or zero-area triangles. Independent polygon-area and thickness calculations match
+the filled STL volumes within the stated builder tolerance of one part per billion. These checks describe the
+stored surfaces, not a certified engineering mass.
+
+Signed plate volume changes from 243534.863634 to 249067.081984 cubic millimetres (+2.271633\%); jacket volume
+changes from 4082168.940709 to 4101145.339931 cubic millimetres (+0.464861\%). The pair gains 0.566581\%
+signed steel volume from the authorized hole filling. This is a deliberate material-model change. The magnets
+collection retains 51 meshes and now contains 129,522 triangles, after the separately documented
+redundant-shielding removal.
+
+Independent VTK containment checks identify all fourteen drilled features from the raw meshes. Forty-eight
+probes that were inside the original holes are inside steel after filling; 1,296 bore probes remain outside
+steel. Another 10,080 envelope probes away from the fastener features match the original geometry, and all 120
+gap probes remain outside both separate volumes. These are sampled checks; exact rim-coordinate preservation
+and analytic volume checks provide additional constraints.
+
+The isolated benchmark loads only these two CAD rows at run 11, before and after optimization, with the same
+fixed GEMC3 dev executable and Geant4 11.4.3 on macOS arm64. Both fixtures use FTFP\_BERT, one thread, default
+production cuts, and no field, optical physics, GUI, or event output. Each 5 GeV/c primary starts at the
+origin with polar angle uniform in solid angle from 0.5 to 3.2 degrees and full azimuth. There is no target,
+luminosity normalization, or pileup. Five alternating-order repetitions use 2,000 events per particle and
+seeds 12345--12349; LUND primary hashes match within every seed pair. All fifty timed processes and both
+separate construction diagnostics complete, with all forty tracking processes reporting 2,000 events.
+
+Table~\ref{tab:magnets-plate-tracking} separates tracking from the startup measurements.
+
+Median zero-event process wall time is 0.73826 s before and 0.73375 s after; CPU time is 0.710 and 0.700 s,
+and peak RSS is 124.05 and 120.06 MiB. Tracking values are median Geant4 beamOn wall times excluding startup.
+Ratios are before/after: values below one indicate slower tracking. These observations describe the final
+two-volume model; material changes and elimination of rejected source facets prevent interpreting the
+comparison as a pure tessellation-speed measurement. It establishes neither full-CLAS12 performance nor
+response equivalence.
+
+\begin{table}[htbp]
+\centering
+\setlength{\tabcolsep}{8pt}
+\caption{Separate downstream plate and jacket tracking; five repetitions of 2,000 events per particle.}
+\label{tab:magnets-plate-tracking}
+\begin{tabular}{lrrrr}
+\toprule
+Particle & Before (s) & After (s) & Speedup & Paired ratio range \\
+\midrule
+Electron & 14.25750 & 11.78500 & 1.210 & 1.199--1.223 \\
+Proton & 5.53148 & 5.14433 & 1.075 & 1.061--1.107 \\
+Positive pion & 5.51953 & 5.00997 & 1.102 & 1.089--1.103 \\
+Neutron & 3.94107 & 3.68135 & 1.071 & 1.068--1.117 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Each isolated raw import reports ten GeomSolids1001 and four GeomSolids1002 warning blocks; each optimized
+import is clean. The optimized timed tracking processes and isolated check\_overlaps=2 construction report no
+Geant4 exceptions. All three runs pass standalone GEMC3 magnets construction (53 volumes including the world),
+combined GEMC2 TEXT/CAD and SQLite/CAD initialization, and native/CAD semantic checks with one solenoid row
+and 51 CAD rows. Existing full-magnets assembly and unrelated mesh warnings remain in the retained validation
+logs. The run-4763 GEMC3 beamline-bank limitation documented in the preceding section also remains. Isolated
+construction success does not certify the complete assembly or detector response.
+
+Figure~\ref{fig:magnets-plate} compares the original and optimized surfaces.
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.98\linewidth,height=0.76\textheight,keepaspectratio]
+{figures/downstream_plate_comparison.pdf}
+\caption{
+Original (left) and optimized (right) stored STL surfaces in millimetres, with common bounds, orthographic
+projection and physical scale within each row. The first row shows the plate entry face, the second the
+drilled jacket face, and the third both separately placed parts at their original spacing. The face panels
+show stored planar facets; assembly panels use complete stored meshes, including triangles rejected by Geant4.}
+\label{fig:magnets-plate}
+\end{figure}
+
+The dedicated data/magnets\_plate directory retains the mesh inventory, independent feature checks, all timing
+samples, paired-input provenance, and three-run validation. magnets\_plate\_archive.zip contains both raw and
+optimized two-volume fixtures, raw logs and process reports, source snapshots, matched primary files, original
+engineering meshes, and reproduction scripts. The fixed executable is identified by hash and is not
+redistributed. Earlier study archives remain unchanged.

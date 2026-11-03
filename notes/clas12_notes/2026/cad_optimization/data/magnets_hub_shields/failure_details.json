@@ -1,0 +1,296 @@
+{
+  "failures_by_geometry": {
+    "original": 19,
+    "optimized": 19
+  },
+  "duplicate_isotopes": {
+    "W185": 1,
+    "W181": 1,
+    "W182": 3,
+    "W181[1744.900]": 2,
+    "Fe54": 1,
+    "Ta180": 1,
+    "Ta179[2792.800]": 4,
+    "W183": 5,
+    "Fe57": 5,
+    "Ta173": 1,
+    "W179": 1,
+    "Ta176": 1,
+    "W187": 5,
+    "Ta180[177.870]": 1,
+    "W177": 1,
+    "Ta181": 1,
+    "Ta177": 1,
+    "Ta179": 1,
+    "W180": 1,
+    "Ta183": 1
+  },
+  "failed_processes": [
+    {
+      "case": "original",
+      "particle": "e-",
+      "seed": 12345,
+      "log": "original_e-_n2000_seed12345_overlaps0.log",
+      "duplicate_isotope": "W185"
+    },
+    {
+      "case": "optimized",
+      "particle": "e-",
+      "seed": 12346,
+      "log": "optimized_e-_n2000_seed12346_overlaps0.log",
+      "duplicate_isotope": "W181"
+    },
+    {
+      "case": "original",
+      "particle": "e-",
+      "seed": 12346,
+      "log": "original_e-_n2000_seed12346_overlaps0.log",
+      "duplicate_isotope": "W182"
+    },
+    {
+      "case": "original",
+      "particle": "e-",
+      "seed": 12347,
+      "log": "original_e-_n2000_seed12347_overlaps0.log",
+      "duplicate_isotope": "W181[1744.900]"
+    },
+    {
+      "case": "optimized",
+      "particle": "e-",
+      "seed": 12347,
+      "log": "optimized_e-_n2000_seed12347_overlaps0.log",
+      "duplicate_isotope": "W181[1744.900]"
+    },
+    {
+      "case": "optimized",
+      "particle": "e-",
+      "seed": 12348,
+      "log": "optimized_e-_n2000_seed12348_overlaps0.log",
+      "duplicate_isotope": "Fe54"
+    },
+    {
+      "case": "original",
+      "particle": "e-",
+      "seed": 12349,
+      "log": "original_e-_n2000_seed12349_overlaps0.log",
+      "duplicate_isotope": "W182"
+    },
+    {
+      "case": "optimized",
+      "particle": "e-",
+      "seed": 12349,
+      "log": "optimized_e-_n2000_seed12349_overlaps0.log",
+      "duplicate_isotope": "W182"
+    },
+    {
+      "case": "original",
+      "particle": "proton",
+      "seed": 12345,
+      "log": "original_proton_n2000_seed12345_overlaps0.log",
+      "duplicate_isotope": "Ta180"
+    },
+    {
+      "case": "optimized",
+      "particle": "proton",
+      "seed": 12345,
+      "log": "optimized_proton_n2000_seed12345_overlaps0.log",
+      "duplicate_isotope": "Ta179[2792.800]"
+    },
+    {
+      "case": "optimized",
+      "particle": "proton",
+      "seed": 12346,
+      "log": "optimized_proton_n2000_seed12346_overlaps0.log",
+      "duplicate_isotope": "W183"
+    },
+    {
+      "case": "original",
+      "particle": "proton",
+      "seed": 12346,
+      "log": "original_proton_n2000_seed12346_overlaps0.log",
+      "duplicate_isotope": "Fe57"
+    },
+    {
+      "case": "original",
+      "particle": "proton",
+      "seed": 12347,
+      "log": "original_proton_n2000_seed12347_overlaps0.log",
+      "duplicate_isotope": "Fe57"
+    },
+    {
+      "case": "optimized",
+      "particle": "proton",
+      "seed": 12347,
+      "log": "optimized_proton_n2000_seed12347_overlaps0.log",
+      "duplicate_isotope": "Ta173"
+    },
+    {
+      "case": "optimized",
+      "particle": "proton",
+      "seed": 12348,
+      "log": "optimized_proton_n2000_seed12348_overlaps0.log",
+      "duplicate_isotope": "W179"
+    },
+    {
+      "case": "original",
+      "particle": "proton",
+      "seed": 12348,
+      "log": "original_proton_n2000_seed12348_overlaps0.log",
+      "duplicate_isotope": "Ta176"
+    },
+    {
+      "case": "original",
+      "particle": "proton",
+      "seed": 12349,
+      "log": "original_proton_n2000_seed12349_overlaps0.log",
+      "duplicate_isotope": "W187"
+    },
+    {
+      "case": "optimized",
+      "particle": "proton",
+      "seed": 12349,
+      "log": "optimized_proton_n2000_seed12349_overlaps0.log",
+      "duplicate_isotope": "W187"
+    },
+    {
+      "case": "original",
+      "particle": "pi+",
+      "seed": 12345,
+      "log": "original_pi+_n2000_seed12345_overlaps0.log",
+      "duplicate_isotope": "Ta180[177.870]"
+    },
+    {
+      "case": "optimized",
+      "particle": "pi+",
+      "seed": 12345,
+      "log": "optimized_pi+_n2000_seed12345_overlaps0.log",
+      "duplicate_isotope": "W183"
+    },
+    {
+      "case": "optimized",
+      "particle": "pi+",
+      "seed": 12346,
+      "log": "optimized_pi+_n2000_seed12346_overlaps0.log",
+      "duplicate_isotope": "W177"
+    },
+    {
+      "case": "original",
+      "particle": "pi+",
+      "seed": 12346,
+      "log": "original_pi+_n2000_seed12346_overlaps0.log",
+      "duplicate_isotope": "Fe57"
+    },
+    {
+      "case": "original",
+      "particle": "pi+",
+      "seed": 12347,
+      "log": "original_pi+_n2000_seed12347_overlaps0.log",
+      "duplicate_isotope": "Ta181"
+    },
+    {
+      "case": "optimized",
+      "particle": "pi+",
+      "seed": 12347,
+      "log": "optimized_pi+_n2000_seed12347_overlaps0.log",
+      "duplicate_isotope": "W187"
+    },
+    {
+      "case": "optimized",
+      "particle": "pi+",
+      "seed": 12348,
+      "log": "optimized_pi+_n2000_seed12348_overlaps0.log",
+      "duplicate_isotope": "Ta179[2792.800]"
+    },
+    {
+      "case": "original",
+      "particle": "pi+",
+      "seed": 12348,
+      "log": "original_pi+_n2000_seed12348_overlaps0.log",
+      "duplicate_isotope": "W183"
+    },
+    {
+      "case": "original",
+      "particle": "pi+",
+      "seed": 12349,
+      "log": "original_pi+_n2000_seed12349_overlaps0.log",
+      "duplicate_isotope": "Fe57"
+    },
+    {
+      "case": "optimized",
+      "particle": "pi+",
+      "seed": 12349,
+      "log": "optimized_pi+_n2000_seed12349_overlaps0.log",
+      "duplicate_isotope": "Ta177"
+    },
+    {
+      "case": "original",
+      "particle": "neutron",
+      "seed": 12345,
+      "log": "original_neutron_n2000_seed12345_overlaps0.log",
+      "duplicate_isotope": "W187"
+    },
+    {
+      "case": "optimized",
+      "particle": "neutron",
+      "seed": 12345,
+      "log": "optimized_neutron_n2000_seed12345_overlaps0.log",
+      "duplicate_isotope": "Fe57"
+    },
+    {
+      "case": "optimized",
+      "particle": "neutron",
+      "seed": 12346,
+      "log": "optimized_neutron_n2000_seed12346_overlaps0.log",
+      "duplicate_isotope": "Ta179[2792.800]"
+    },
+    {
+      "case": "original",
+      "particle": "neutron",
+      "seed": 12346,
+      "log": "original_neutron_n2000_seed12346_overlaps0.log",
+      "duplicate_isotope": "Ta179[2792.800]"
+    },
+    {
+      "case": "original",
+      "particle": "neutron",
+      "seed": 12347,
+      "log": "original_neutron_n2000_seed12347_overlaps0.log",
+      "duplicate_isotope": "Ta179"
+    },
+    {
+      "case": "optimized",
+      "particle": "neutron",
+      "seed": 12347,
+      "log": "optimized_neutron_n2000_seed12347_overlaps0.log",
+      "duplicate_isotope": "W187"
+    },
+    {
+      "case": "optimized",
+      "particle": "neutron",
+      "seed": 12348,
+      "log": "optimized_neutron_n2000_seed12348_overlaps0.log",
+      "duplicate_isotope": "W183"
+    },
+    {
+      "case": "original",
+      "particle": "neutron",
+      "seed": 12348,
+      "log": "original_neutron_n2000_seed12348_overlaps0.log",
+      "duplicate_isotope": "W183"
+    },
+    {
+      "case": "original",
+      "particle": "neutron",
+      "seed": 12349,
+      "log": "original_neutron_n2000_seed12349_overlaps0.log",
+      "duplicate_isotope": "W180"
+    },
+    {
+      "case": "optimized",
+      "particle": "neutron",
+      "seed": 12349,
+      "log": "optimized_neutron_n2000_seed12349_overlaps0.log",
+      "duplicate_isotope": "Ta183"
+    }
+  ]
+}

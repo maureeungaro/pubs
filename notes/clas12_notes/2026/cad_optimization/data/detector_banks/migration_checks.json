@@ -1,0 +1,49 @@
+{
+  "magnets/11": {
+    "unique_native_volumes": 20,
+    "physical_records_unchanged": true
+  },
+  "magnets/3029": {
+    "unique_native_volumes": 20,
+    "physical_records_unchanged": true
+  },
+  "magnets/4763": {
+    "unique_native_volumes": 20,
+    "physical_records_unchanged": true
+  },
+  "dc/11": {
+    "unique_native_volumes": 64,
+    "physical_records_unchanged": true
+  },
+  "dc/3029": {
+    "unique_native_volumes": 64,
+    "physical_records_unchanged": true
+  },
+  "dc/4763": {
+    "unique_native_volumes": 64,
+    "physical_records_unchanged": true
+  },
+  "mesh_hashes_unchanged": true,
+  "unrelated_gemc2_geometry_unchanged": true,
+  "gemc2_cad_source_rows_unchanged": true,
+  "gemc3_dc/11": {
+    "physical_records_unchanged": true,
+    "volumes": 66
+  },
+  "gemc3_dc/10000001": {
+    "physical_records_unchanged": true,
+    "volumes": 72
+  },
+  "gemc3_magnets/11": {
+    "physical_records_unchanged": true,
+    "volumes": 40
+  },
+  "gemc3_magnets/3029": {
+    "physical_records_unchanged": true,
+    "volumes": 40
+  },
+  "gemc3_magnets/4763": {
+    "physical_records_unchanged": true,
+    "volumes": 40
+  }
+}

@@ -1,0 +1,91 @@
+\FloatBarrier
+\section{Magnets duplicate shielding removal}
+\label{sec:magnets-dedup}
+
+Upcoming in GEMC2 6.2 and CLAS12 GEMC Systems 0.4, the October 21 magnets cleanup removes nine
+\texttt{DSShield*} meshes and apex from the magnets CAD collection because this shielding is owned by the
+beamline. All three configurations are updated in the GEMC2 and GEMC3 sources, runtime collections, and SQLite
+banks. The retained 51 magnet meshes, their materials and passive placements, the native solenoid, and all
+beamline geometry are unchanged. Load the beamline alongside magnets to include the shielding.
+
+This is removal of redundant geometry, without retriangulation or surface repair. The magnets collection falls
+from 61 to 51 source meshes, from 148,940 to 132,230 stored triangles (16,710 removed; 11.22\%), and from
+7,452,124 to 6,615,784 bytes (836,340 removed; 11.22\%). The nine downstream meshes account for 14,272
+triangles and apex for 2,438. Each retained mesh matches its pre-removal bytes in all four source/runtime
+collections.
+
+The benchmark retains the native beamline and solenoid, the complete run-11 beamline CAD bank, and all
+remaining magnets CAD. The original fixture includes the ten obsolete placements; the optimized fixture
+removes them. Both use the same fixed GEMC3 dev executable, released October 19, 2026, Geant4 11.4.3, macOS
+arm64, FTFP\_BERT, one thread, and default production cuts. There is no magnetic field, optical physics, GUI,
+event output, target, luminosity normalization, or pileup. The 5 GeV/c electron, proton, positive-pion, and
+neutron primaries start at the origin, uniformly distributed in solid angle from 0.25 to 3.5 degrees over full
+azimuth. Five alternating-order repetitions use 200 events per particle and seeds 12345--12349, with identical
+LUND inputs within each seed pair. All 52 processes complete; every tracking process reports 200 events.
+
+Table~\ref{tab:magnets-dedup-inventory} lists the removed source meshes.
+\begin{table}[htbp]
+\centering
+\caption{Redundant magnets meshes removed from all three configurations.}
+\label{tab:magnets-dedup-inventory}
+\begin{tabular}{lr}
+\toprule
+Removed mesh & Triangles \\
+\midrule
+DSShieldBackAss & 988 \\
+DSShieldBackCover & 1,012 \\
+DSShieldBackLead & 1,244 \\
+DSShieldFlange & 5,172 \\
+DSShieldFlangeAttachment & 1,888 \\
+DSShieldFrontAss & 1,056 \\
+DSShieldFrontCover & 1,252 \\
+DSShieldFrontLead & 988 \\
+DSShieldInnerAss & 672 \\
+apex & 2,438 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Median zero-event process wall time changes from 1.98732 to 1.89090 s (1.051 times faster), CPU time from
+1.920 to 1.840 s, and peak RSS from 321.53 to 306.98 MiB (4.52\% lower). Tracking times below are median
+Geant4 beamOn wall times excluding initialization; speedup is before/after. These short, isolated workloads do
+not establish a full-CLAS12 gain. Removing intersecting material changes transport histories, so timing
+changes cannot be attributed solely to fewer facets or taken as proof of response equivalence.
+
+Table~\ref{tab:magnets-dedup-tracking} reports tracking separately from loading.
+\begin{table}[htbp]
+\centering
+\caption{Magnets and beamline tracking; five repetitions of 200 events per particle.}
+\label{tab:magnets-dedup-tracking}
+\begin{tabular}{lrrrr}
+\toprule
+Particle & Before (s) & After (s) & Speedup & Paired ratio range \\
+\midrule
+Electron & 35.49510 & 34.50800 & 1.029 & 1.002--1.029 \\
+Proton & 10.53440 & 10.34530 & 1.018 & 1.007--1.098 \\
+Positive pion & 14.12550 & 14.32390 & 0.986 & 0.981--1.049 \\
+Neutron & 10.53630 & 10.27570 & 1.025 & 0.957--1.078 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The matched zero-event construction diagnostics use check\_overlaps=2 and seed 12345. Built volume counts,
+including the world, fall from 95 to 85; GeomVol1002 exception blocks fall from 58 to 26. Each fixture still
+reports 26 GeomSolids1001 and 11 GeomSolids1002 blocks per import. Warning counts are sampled diagnostics, not
+counts of all intersecting pairs, and the retained invalid/rejected-facet warnings and assembly contacts
+remain unresolved. All three updated runs pass standalone GEMC3 magnets construction (53 volumes including the
+world) and combined magnets/beamline GEMC2 TEXT/CAD and SQLite/CAD initialization. The GEMC3 semantic
+comparator matches one native solenoid row and 51 CAD rows per configuration; independent checks match the
+effective GEMC2 SQLite CAD rows to the GXML placements and the native TEXT rows to SQLite. All unrelated GEMC2
+CAD rows and beamline meshes are unchanged. A supplemental combined GEMC3 card constructs 85 volumes at runs
+11 and 3029, but only 53 at run 4763: the current GEMC3 lookup omits the beamline banks without that exact run
+key, where GEMC2 selects the earlier run-3029 banks. This existing run-selection limitation is outside the
+mesh-removal change and remains unresolved. The timed run-11 comparison loads both systems and is unaffected.
+Across the forty timed tracking processes, navigation exception blocks total GeomNav1002: 4 before and 2
+after.
+
+The dedicated data/magnets\_dedup directory records all measurements, mesh hashes, removed-facet inventory,
+database checks, and validation. magnets\_dedup\_archive.zip retains the complete before/after fixtures,
+original collected inputs, all raw logs and process reports, matched primary files, source snapshots, and
+reproduction scripts. The executable is identified by hash and is not redistributed. Earlier study archives
+remain unchanged.

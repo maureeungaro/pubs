@@ -2,6 +2,56 @@
 
 \section{Conclusions}
 
+Table~\ref{tab:summary-mesh-reductions} summarizes the final archived mesh reductions relative to the original
+engineering inputs. Counts describe unique stored STL sources rather than repeated physical placements.
+The beamline total excludes the separately listed FT meshes and unchanged transverse alternatives. The
+magnets total includes duplicate shielding removal and transfer of DC components to their own system.
+
+\begin{table}[htbp]
+\centering
+\caption{Final archived reductions in unique stored triangles and STL bytes.}
+\label{tab:summary-mesh-reductions}
+\begin{tabular}{lrr}
+\toprule
+System & Fewer triangles & Fewer bytes \\
+\midrule
+LTCC & 93.9\% & 93.9\% \\
+Studied beamline meshes & 45.2\% & 45.2\% \\
+FT meshes & 67.1\% & 67.1\% \\
+HTCC & 45.3\% & 45.3\% \\
+Full magnets collection & 55.0\% & 55.1\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:summary-performance} reports the available timing and memory comparisons. Only LTCC has a
+complete original-versus-final system timing comparison; the other rows describe isolated components.
+LTCC transport uses CPU time, while the other transport measurements use wall time. Component ranges span
+electrons, protons, positive pions, and neutrons. HTCC has no repeated timing benchmark, and the component
+percentages cannot be assigned to the complete-system mesh totals in Table~\ref{tab:summary-mesh-reductions}.
+
+\begin{table}[htbp]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Archived initialization CPU, startup peak RSS, and transport-time changes, with benchmark scopes
+retained. Transport entries describe CPU time for LTCC and wall time for the other components.}
+\label{tab:summary-performance}
+\begin{tabularx}{\textwidth}{@{}p{3.6cm}rrX@{}}
+\toprule
+Archived benchmark & \shortstack[r]{Initialization\\CPU reduction} &
+\shortstack[r]{Startup memory\\reduction} & Transport time change \\
+\midrule
+Complete LTCC & 63.5\% & 56.8\% &
+22.4\% lower for nonoptical electrons; 35.3--73.1\% higher for other workloads \\
+Beamline apex pair & 15.8\% & 17.4\% & 43.4--50.2\% lower \\
+FT inner shield and flange & 11.1\% & 13.7\% & 3.2--18.9\% lower \\
+Magnet vacuum jackets & 14.3\% & 17.6\% & 5.8--21.9\% lower \\
+\bottomrule
+\end{tabularx}
+\end{table}
+\FloatBarrier
+
 \begin{enumerate}
 
 \item For LTCC, against the complete original hardware, the optimized CAD bundle contains 93.9\% fewer
@@ -149,5 +199,68 @@ All six TEXT/CAD and SQLite/CAD initialization checks and the three native/CAD d
 Moller cone retains 24 non-manifold edges, and the cured entry cone introduces an observed contact of
 approximately 0.053 mm with the entry window. These unresolved defects preclude a claim of complete geometry
 validation; no performance or detector-response gain has been measured for this transfer.
+
+\item The magnets cleanup removes ten redundant shielding placements from each configuration,
+reducing its mesh inventory by 16,710 triangles (11.22\%) while retaining the beamline shielding. Repeated
+four-particle timing results and residual geometry warnings are reported separately; all three runs pass
+both-engine construction checks.
+
+\item The downstream plate and vacuum jacket remain separate under their original names, with fourteen fastener
+features filled and 71.79\% fewer triangles. Signed steel volume increases by 0.566581\%; repeated tracking
+and remaining assembly diagnostics are reported separately. All three runs pass both-engine geometry checks.
+
+\item The upstream plate and jacket remain separate under their original names with fourteen fastener features
+filled and 64.47\% fewer triangles. Main apertures, rounded outer features, and gap are retained; tracking,
+material changes, and residual assembly limits are reported separately. All three runs pass both-engine
+geometry checks.
+
+\item Six DC region-1 back membranes move out of magnets and share one twenty-triangle solid with five copies:
+83.33\% fewer unique facets. Integer angles pass the dense overlap comparison; startup, tracking,
+material-volume changes, and the accepted submillimetre displacement are recorded separately.
+
+\item Six aluminum region-1 support assemblies move from magnets into DC and share one unchanged 1,006-triangle STL.
+Unique facets fall by 83.33\%, while both pieces and all openings remain. Integer angles pass the dense
+overlap comparison; repeated loading, memory, tracking, and the accepted millimetre-scale placement changes
+are reported separately.
+
+\item Vacuum jacket sharing retains all holes and twelve placements, using six sources and six copies. Unique facets
+fall by 48.86\%; two distinct families and four original exports are retained. The dense assembly check finds
+no new overlap pairs; isolated startup is 1.175 times faster. Particle-specific tracking and the small
+steel-volume change are reported separately.
+
+\item Six torus coils share one unchanged STL with every opening retained, reducing unique facets by 83.33\%. The
+dense comparison adds no sampled overlap pairs; the isolated startup before/after ratio in serial mode is
+1.401. Particle-specific tracking and the small copper-volume change are reported separately.
+Duplicate-isotope failures in both execution modes and both geometry versions remain unresolved; tracking
+statistics are conditional on completed pairs.
+
+\item Six hub covers retain every hole and share two unchanged source meshes, reducing unique facets from 348 to 162
+(53.45\%). A naming-controlled dense comparison adds no sampled overlap pairs. The isolated serial startup
+before/after ratio is 1.000; particle-specific timing and paired ranges are reported separately without a
+full-detector claim.
+
+\item The seven hub shields comprise five matching middle pieces and two different ends. Three source meshes
+preserve every hole and reduce unique facets by 61.55\%. Nanometre axial normalization avoids new sampled
+overlap pairs; maximum vertex change is 0.000146485 mm. The isolated serial startup before/after ratio is
+1.402; tracking ranges and completion limitations are reported separately.
+
+\item ColdHub retains every opening while repairing the export seam, winding, and degenerate junctions. The closed
+genus-34 mesh has no intersecting faces; unique facets fall from 12,600 to 12,548 (0.41\%). Surface samples
+differ by less than 0.000036 mm, and the dense assembly adds no sampled contact pairs. The serial startup
+ratio is 1.161; transport results and completion limitations are reported separately.
+
+\item The three bore tubes already require all 1,130 facets for their retained rim profiles. CenterTube becomes
+BoreCenterTube; all meshes, holes, physical placements, and clearances remain unchanged. The facet reduction
+is 0\%, and no simulation speedup is established.
+
+\item The HTCC Moller repair restores its engineering conical section and resolves the tessellated-solid orientation
+warning in both engines. Its 6,902 facets form one closed genus-one manifold with unchanged bounds and an open
+bore. The nine construction checks report no solid warnings; the separate entry-cone/window contact remains.
+No speedup is claimed.
+
+\item DC and magnets copies now belong to their main detector banks. The physical solenoid name, every STL hash, and
+all existing placements remain. Twenty geometry-only construction checks and native/CAD comparisons pass;
+repeated generation does not duplicate copies. This consolidation removes no facets and establishes no
+speedup.
 
 \end{enumerate}

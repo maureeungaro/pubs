@@ -1,0 +1,107 @@
+\FloatBarrier
+\section{Cold hub optimization with holes retained}
+\label{sec:cold-hub}
+
+Upcoming in GEMC2 6.2 and CLAS12 GEMC Systems 0.4, Hub001 is renamed ColdHub in all three configurations and
+both owning repositories. Every drilled opening, main bore, G4\_Al material, color, and passive placement
+remains. The position is written with three decimal places in millimetres; the exact 180-degree rotation is
+unchanged. The original engineering STL is archived separately.
+
+The input has 6,235 vertices and 12,600 facets, with six boundary edges, one non-manifold vertex, seven
+degenerate triangles, and eight detected intersecting faces. Its genus and physical material volume are
+undefined until the open seam is repaired. Two triangular export slivers, with areas 0.000211868 and
+0.000388564 square millimetres, are closed using existing vertices. These slivers are separate from the
+physical drilled openings. Thirteen faces are oriented coherently. Seven collinear T-junctions are
+retriangulated by splitting their opposite edge faces, without moving vertices. The repaired reference has
+12,602 facets in one closed manifold component of genus 34, with no degenerate or intersecting faces.
+
+Conservative edge collapses then remove 27 redundant vertices and 54 facets. Each collapse satisfies the
+manifold link condition, preserves winding, and limits local plane error to 0.0001 mm. The largest actual
+error is 0.000053917 mm. All surviving vertices retain their exact engineering coordinates. The isolated
+original emits 16 GeomSolids1001 and seven GeomSolids1002 construction warnings per process; the optimized
+source emits neither. Completed baseline runs with these nonfatal warnings remain eligible for timing pairs.
+Every opening remains: the final mesh is closed, manifold, and genus 34, with no self-intersections or
+degenerate triangles. Relative to the raw export, facets fall from 12,600 to 12,548, saving 52 (0.41\%). STL
+storage falls from 630,084 to 627,484 bytes. This is primarily a geometry repair; the facet reduction is
+modest because the hole and curved profiles are retained. The performance comparison includes both repair and
+simplification; it does not isolate the effect of the facet reduction.
+
+All bounding coordinates are unchanged. Bidirectional surface-distance checks include all vertices plus
+sampled edges and faces: 206,235 points from the original to the final mesh and 206,208 in the reverse
+direction. Maximum sampled deviations are 0.000035946 and 0.000026133 mm, respectively. Sampling does not
+prove a global distance bound. The closed repaired reference has signed volume 34,158,810.76890473 cubic
+millimetres, compared with 34,158,810.76892262 after simplification: a change below 0.000000001\%. No physical
+volume is assigned to the original non-watertight export.
+
+All nine GEMC3, GEMC2 SQLite/CAD, and GEMC2 TEXT/CAD construction checks pass for runs 11, 3029, and 4763.
+Semantic comparison matches the three native solenoid configurations and the three 39-row CAD banks. Unrelated
+native geometry, materials, DC banks, and existing copy placements are unchanged. The builder reproduces the
+STL, health report, and three catalogs byte for byte. Magnets still has 20 STL sources and 39 CAD placements,
+now with 66,960 unique facets. GEMC2 uses 20 CAD sources and 19 native copy rows per run.
+
+The dense run-11 fixture contains native DC, both DC CAD groups, solenoid, magnets, and native/CAD beamline:
+139 volumes including the world, with readout disabled. The baseline retains the original mesh and pose but
+uses the final ColdHub name to keep construction and surface-sampling order consistent. At seed 12345 and
+100,000 surface samples per tested volume, both versions report the same 22 ordered contact pairs, with no
+added or removed pair. Existing contacts elsewhere remain; this sampled comparison does not constitute a
+mathematical clearance proof.
+
+The timing fixture isolates one hub at run 11. One fixed GEMC3 executable reports geant4-11-03-patch-02 [MT]
+(25-April-2025). The serial run manager uses one execution thread, FTFP\_BERT, and default production cuts.
+Field, optical physics, GUI, readout, and event output are disabled. Five-GeV/c electrons, protons, positive
+pions, and neutrons start at the origin, uniform in solid angle from 0.5 to 3.0 degrees with full azimuth.
+There is no target, luminosity normalization, or pileup. Five repetitions alternate fixture order and use
+2,000 identical LUND primaries per particle and seeds 12345--12349. Ten zero-event processes, forty tracking
+processes, and two isolated overlap checks are scheduled. Idle-sleep prevention remains active, and the
+executable hash is checked at the start and end.
+
+PART122 denotes duplicate-isotope registration in the Geant4 particle table; these failures are retained
+separately from geometry warnings and excluded from timing pairs.
+
+14 of the 52 scheduled processes fail; exception counts are GeomSolids1001=112, GeomSolids1002=49, PART122=14.
+Raw logs, failed inputs, and exception codes, including nonfatal solid warnings, are retained. Tracking
+statistics include only seed pairs for which both fixtures complete all 2,000 events. Failures exclude both
+members of that seed pair, so these measurements are conditional on completion and do not establish an
+unconditional performance gain.
+
+Median zero-event process wall time changes from 0.35595 to 0.30656 s, a before/after ratio of 1.161. Median
+CPU time changes from 0.180 to 0.180 s, and peak RSS from 80.91 to 81.66 MiB. Paired startup ratios range from
+0.785 to 1.242. Tracking entries below are median internal transport wall times. Ratios above one indicate
+faster execution; paired ranges show seed dependence, and ranges spanning one do not establish a consistent
+gain in this sample. The principal demonstrated benefit is a valid closed mesh with every opening retained.
+Repair and facet ordering can alter navigation and stochastic trajectories. These isolated measurements do not
+establish a full-CLAS12 speedup or detector-response equivalence.
+
+\begin{table}[htbp]
+\centering
+\setlength{\tabcolsep}{6pt}
+\caption{Cold-hub tracking; completed pairs of 2,000-event processes only.}
+\label{tab:cold-hub}
+\begin{tabular}{lrrrrr}
+\toprule
+Particle & Pairs & Before (s) & After (s) & Ratio & Paired ratio range \\
+\midrule
+Electron & 2 & 109.44350 & 97.52760 & 1.122 & 1.111--1.133 \\
+Proton & 3 & 14.05220 & 13.31090 & 1.056 & 1.056--1.063 \\
+Positive pion & 4 & 17.63475 & 16.40535 & 1.075 & 1.048--1.097 \\
+Neutron & 4 & 11.85130 & 11.43430 & 1.036 & 1.028--1.039 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figures/cold_hub_comparison.pdf}
+\caption{
+Engineering Hub001 (left) and optimized ColdHub (right), shown with the same projections. The full aluminum
+hub retains its long bore and side openings (top). The upstream head detail is clipped at world z = 2,945 mm
+to expose the drilled features (bottom). Nanometre surface differences are below the figure resolution.}
+\label{fig:cold-hub}
+\end{figure}
+
+data/magnets\_cold\_hub and magnets\_cold\_hub\_archive.zip retain the original mesh analysis, seam repair,
+triangle and topology metrics, collapse history, bidirectional surface samples, all nine construction logs,
+semantic comparisons, dense overlap fixtures, repeated timings, matched primaries, raw logs, and the fixed
+executable hash. The archive includes original exports, final geometry and meshes, catalogs, builder,
+benchmark, validation code, and figure renderer. The executable is not redistributed. Earlier study archives
+remain unchanged.

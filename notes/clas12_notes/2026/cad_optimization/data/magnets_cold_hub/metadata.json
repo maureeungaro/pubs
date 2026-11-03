@@ -1,0 +1,35 @@
+{
+  "executable": "/private/tmp/hubcover-engine-20261022/gemc",
+  "executable_sha256": "7e1602f240de460bdbd38a5e6ac4dc925dea609cb79082277d53de6c9ec48d1b",
+  "platform": "macOS-26.7.1-arm64-arm-64bit",
+  "inventories": {
+    "original": {
+      "Hub001": {
+        "sha256": "5e416560fae19d674de72f83af6379b27325091896df736723aae809ef7db63f",
+        "facets": 12600
+      }
+    },
+    "optimized": {
+      "ColdHub": {
+        "sha256": "59f1127f6a98500a85b2ca40dea1cae6bb29893108c0021619fba22f00cbb32d",
+        "facets": 12548
+      }
+    }
+  },
+  "events": 2000,
+  "repeats": 5,
+  "primary_theta_deg": [
+    0.5,
+    3.0
+  ],
+  "group": "cold_hub",
+  "run_manager": "Serial",
+  "primary_azimuth_deg": [
+    -180,
+    180
+  ],
+  "momentum_GeV": 5,
+  "field": "off",
+  "geant4_version_banner": "geant4-11-03-patch-02 [MT]   (25-April-2025)",
+  "failed_processes": 14
+}

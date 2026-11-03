@@ -1,0 +1,1291 @@
+
+ Parsing check.yaml
+
+*******************************************************************
+ [32m[1mgemc[0m  version: [32mdev[0m
+ Called from: [32m/opt/projects/gemc/g4install/macosx26-clang21-arm64/gemc/dev/bin[0m
+ Install: [32m/opt/jlab_software/macosx26-clang21-arm64/gemc/dev/bin[0m
+ Released on: [32m2026-10-19[0m
+ GEMC Reference: [32mNucl. Instrum. Meth. A, Volume 959, 163422 (2020)[0m
+ GEMC Homepage: [32mhttps://gemc.github.io/home[0m
+ Author: [32mMaurizio Ungaro, ungaro@jlab.org[0m
+
+*******************************************************************
+
+ Saving options to gemc.saved_configuration.yaml
+
+ [ gemc - 1 ] INFO L0: Using 1 threads out of 12 available cores.
+ [ gemc - 2 ] INFO L0: Starting random engine RanluxEngine with seed 12345
+
+**************************************************************
+ Geant4 version Name: geant4-11-04-patch-03 [MT]   (01-October-2026)
+  << in Multi-threaded mode >> 
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+G4PhysListRegistry::GetModularPhysicsList <FTFP_BERT>, as "FTFP_BERT" with extensions ""
+<<< Geant4 Physics List simulation engine: FTFP_BERT
+
+<<< Reference Physics List FTFP_BERT is built
+
+ [ gemc - 3 ] INFO L0: Running /geometry/test/run with 100000 points.
+[33m [ gsystem - 1 ] [1m[33mWarning: [0m[0m[33mAdding ROOT volume using <G4Box 15*m 15*m 15*m G4_AIR> to gvolumesMap.[0m
+Checking overlaps for volume beamline/airPipe2:0 (G4Tubs) ... OK! 
+Checking overlaps for volume dc/sl1_s1:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl1_s2:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl1_s3:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl1_s4:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl1_s5:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl1_s6:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl2_s1:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl2_s2:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl2_s3:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl2_s4:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl2_s5:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl2_s6:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl3_s1:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl3_s2:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl3_s3:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl3_s4:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl3_s5:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl3_s6:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl4_s1:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl4_s2:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl4_s3:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl4_s4:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl4_s5:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl4_s6:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl5_s1:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl5_s2:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl5_s3:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl5_s4:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl5_s5:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl5_s6:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl6_s1:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl6_s2:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl6_s3:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl6_s4:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl6_s5:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/sl6_s6:0 (G4Trap) ... OK! 
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 2.39589e-13
+P0 = (-103.55,0.600939,-1628.71)
+P1 = (-104.5,-4.16334e-13,-1629.36)
+P2 = (-102.599,1.20188,-1628.06)
+Side1 length (P0->P1) = 1.29832
+Side2 length (P1->P2) = 2.59664
+Side3 length (P2->P0) = 1.29832
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 1.35442e-13
+P0 = (-104.455,1.12346,-1628.71)
+P1 = (-104.409,2.24692,-1628.06)
+P2 = (-104.5,-4.16334e-13,-1629.36)
+Side1 length (P0->P1) = 1.29832
+Side2 length (P1->P2) = 2.59664
+Side3 length (P2->P0) = 1.29832
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 0
+P0 = (51.2544,-89.9771,-1628.71)
+P1 = (52.25,-90.4997,-1629.36)
+P2 = (50.2588,-89.4546,-1628.06)
+Side1 length (P0->P1) = 1.29832
+Side2 length (P1->P2) = 2.59664
+Side3 length (P2->P0) = 1.29832
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 3.27402e-13
+P0 = (103.55,-0.600939,-1628.71)
+P1 = (104.5,5.68989e-13,-1629.36)
+P2 = (102.599,-1.20188,-1628.06)
+Side1 length (P0->P1) = 1.29832
+Side2 length (P1->P2) = 2.59664
+Side3 length (P2->P0) = 1.29832
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 1.85079e-13
+P0 = (104.455,-1.12346,-1628.71)
+P1 = (104.409,-2.24692,-1628.06)
+P2 = (104.5,5.68989e-13,-1629.36)
+Side1 length (P0->P1) = 1.29832
+Side2 length (P1->P2) = 2.59664
+Side3 length (P2->P0) = 1.29832
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 0
+P0 = (-51.2544,89.9771,-1628.71)
+P1 = (-52.25,90.4997,-1629.36)
+P2 = (-50.2588,89.4546,-1628.06)
+Side1 length (P0->P1) = 1.29832
+Side2 length (P1->P2) = 2.59664
+Side3 length (P2->P0) = 1.29832
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 0
+P0 = (-51.2544,91.0222,-1628.71)
+P1 = (-50.2588,91.5447,-1628.06)
+P2 = (-52.25,90.4997,-1629.36)
+Side1 length (P0->P1) = 1.29832
+Side2 length (P1->P2) = 2.59664
+Side3 length (P2->P0) = 1.29832
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 2.39589e-13
+P0 = (-103.55,0.600939,-1628.71)
+P1 = (-104.5,-4.16334e-13,-1629.36)
+P2 = (-102.599,1.20188,-1628.06)
+Side1 length (P0->P1) = 1.29832
+Side2 length (P1->P2) = 2.59664
+Side3 length (P2->P0) = 1.29832
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-103.55,0.600939,-1628.71)
+P[1]      = (-104.5,-4.16334e-13,-1629.36)
+P[2]      = (-102.599,1.20188,-1628.06)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 1.35442e-13
+P0 = (-104.455,1.12346,-1628.71)
+P1 = (-104.409,2.24692,-1628.06)
+P2 = (-104.5,-4.16334e-13,-1629.36)
+Side1 length (P0->P1) = 1.29832
+Side2 length (P1->P2) = 2.59664
+Side3 length (P2->P0) = 1.29832
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-104.455,1.12346,-1628.71)
+P[1]      = (-104.409,2.24692,-1628.06)
+P[2]      = (-104.5,-4.16334e-13,-1629.36)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 0
+P0 = (51.2544,-89.9771,-1628.71)
+P1 = (52.25,-90.4997,-1629.36)
+P2 = (50.2588,-89.4546,-1628.06)
+Side1 length (P0->P1) = 1.29832
+Side2 length (P1->P2) = 2.59664
+Side3 length (P2->P0) = 1.29832
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (51.2544,-89.9771,-1628.71)
+P[1]      = (52.25,-90.4997,-1629.36)
+P[2]      = (50.2588,-89.4546,-1628.06)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 3.27402e-13
+P0 = (103.55,-0.600939,-1628.71)
+P1 = (104.5,5.68989e-13,-1629.36)
+P2 = (102.599,-1.20188,-1628.06)
+Side1 length (P0->P1) = 1.29832
+Side2 length (P1->P2) = 2.59664
+Side3 length (P2->P0) = 1.29832
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (103.55,-0.600939,-1628.71)
+P[1]      = (104.5,5.68989e-13,-1629.36)
+P[2]      = (102.599,-1.20188,-1628.06)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 1.85079e-13
+P0 = (104.455,-1.12346,-1628.71)
+P1 = (104.409,-2.24692,-1628.06)
+P2 = (104.5,5.68989e-13,-1629.36)
+Side1 length (P0->P1) = 1.29832
+Side2 length (P1->P2) = 2.59664
+Side3 length (P2->P0) = 1.29832
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (104.455,-1.12346,-1628.71)
+P[1]      = (104.409,-2.24692,-1628.06)
+P[2]      = (104.5,5.68989e-13,-1629.36)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 0
+P0 = (-51.2544,89.9771,-1628.71)
+P1 = (-52.25,90.4997,-1629.36)
+P2 = (-50.2588,89.4546,-1628.06)
+Side1 length (P0->P1) = 1.29832
+Side2 length (P1->P2) = 2.59664
+Side3 length (P2->P0) = 1.29832
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-51.2544,89.9771,-1628.71)
+P[1]      = (-52.25,90.4997,-1629.36)
+P[2]      = (-50.2588,89.4546,-1628.06)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 0
+P0 = (-51.2544,91.0222,-1628.71)
+P1 = (-50.2588,91.5447,-1628.06)
+P2 = (-52.25,90.4997,-1629.36)
+Side1 length (P0->P1) = 1.29832
+Side2 length (P1->P2) = 2.59664
+Side3 length (P2->P0) = 1.29832
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-51.2544,91.0222,-1628.71)
+P[1]      = (-50.2588,91.5447,-1628.06)
+P[2]      = (-52.25,90.4997,-1629.36)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TessellatedSolid::SetSolidClosed()
+Defects in solid:  - some facets have wrong orientation!
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TessellatedSolid::SetSolidClosed()
+Defects in solid:  - there are holes in the surface!
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+Checking overlaps for volume solenoid/solenoid:0 (G4Polycone) ... OK! 
+Checking overlaps for volume beamline/airPipe:0 (G4Polycone) ... OK! 
+Checking overlaps for volume beamline/al_window_vacuum_entrance:0 (G4Tubs) ... OK! 
+Checking overlaps for volume beamline/beam_vacuum:0 (G4Polycone) ... OK! 
+Checking overlaps for volume beamline/vacuumInPipe1:0 (G4Tubs) ... OK! 
+Checking overlaps for volume beamline/vacuumInPipe2:0 (G4Tubs) ... OK! 
+Checking overlaps for volume beamline/vacuumInPipe3:0 (G4Tubs) ... OK! 
+Checking overlaps for volume beamline/vacuumPipe1:0 (G4Tubs) ... OK! 
+Checking overlaps for volume beamline/vacuumPipe2:0 (G4Tubs) ... OK! 
+Checking overlaps for volume beamline/vacuumPipe3:0 (G4Tubs) ... OK! 
+Checking overlaps for volume beamline_cad/Apex_Shield_Hub:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/Apex_Shield_Lead_Fill:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/Beamline_Adapter_1:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/Downstream_Beam_tube_Segment_1:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/Downstream_Beam_tube_Segment_2:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTInnerShield:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt1:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt2:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt3:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt4:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt5:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt6:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt7:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt8:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt9:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTOuterFlange:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/FTOuterMount:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/Torus_Exit_Shield_Casing:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/Torus_Exit_Shield_Lead_Fill:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/ft_adjuster:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume beamline_cad/moller_cone:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume dc/region1_s1:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/region1_s2:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/region1_s3:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/region1_s4:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/region1_s5:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/region1_s6:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/region2_s1:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/region2_s2:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/region2_s3:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/region2_s4:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/region2_s5:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/region2_s6:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/region3_s1:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/region3_s2:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/region3_s3:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/region3_s4:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/region3_s5:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc/region3_s6:0 (G4Trap) ... OK! 
+Checking overlaps for volume dc_cad/dcs1r1back:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume dc_cad/dcs1r1support:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume dc_cad/dcs2r1back:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume dc_cad/dcs2r1support:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume dc_cad/dcs3r1back:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume dc_cad/dcs3r1support:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume dc_cad/dcs4r1back:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume dc_cad/dcs4r1support:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume dc_cad/dcs5r1back:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume dc_cad/dcs5r1support:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume dc_cad/dcs6r1back:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume dc_cad/dcs6r1support:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/BoreShield:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/CenterTube:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/DownstreamShieldingPlate:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/DownstreamVacuumJacket:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/DownstreamVacuumJacket:0 (G4TessellatedSolid) with beamline_cad/Torus_Exit_Shield_Casing:0 (G4TessellatedSolid)
+          overlap at local point (-105.248,60.1349,4915.39) by 82.7441 um  (max of 188 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+Checking overlaps for volume magnets_cad/Hub001:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/Plate1:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/Plate2:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/Plate3:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/Plate4:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/Plate5:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/Plate6:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/Shield1:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/Shield2:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/Shield3:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/Shield4:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/Shield5:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/Shield6:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/Shield7:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/UpstreamShieldingPlate:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid) with magnets_cad/Plate1:0 (G4TessellatedSolid)
+          overlap at local point (101.087,-172.395,-1509.19) by 524.999 um  (max of 1 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+Checking overlaps for volume magnets_cad/WarmBoreTube:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/coil1:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/coil2:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/coil3:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/coil4:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/coil5:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/coil6:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/shell1a:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/shell1b:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/shell2a:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/shell2b:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/shell3a:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/shell3b:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/shell4a:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell4a:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (59.9747,-195.256,-1507.86) by 1.34739 mm  (max of 2 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+Checking overlaps for volume magnets_cad/shell4b:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume magnets_cad/shell5a:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell5a:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (-137.904,-150.113,-1507.86) by 1.3761 mm  (max of 1 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+Checking overlaps for volume magnets_cad/shell5b:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell5b:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (-198.704,-48.6572,-1507.86) by 1.46169 mm  (max of 1 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+Checking overlaps for volume magnets_cad/shell6a:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell6a:0 (G4TessellatedSolid) with beamline/vacuumPipe1:0 (G4Tubs)
+          overlap at local point (-0.288546,0.410758,675.706) by 2.8018 cm  (max of 13 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+Checking overlaps for volume magnets_cad/shell6b:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell6b:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (-140.697,142.777,-1509.27) by 1.52533 mm  (max of 1 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+ [ gdetector - 1 ] INFO L0: Tally summary: 
+ - 6 volumes
+ - 139 geant4 built volumes
+ - 1 sensitive detectors
+
+ [ gdetector - 2 ] INFO L0: Loading new digitization plugin for routine <dc>
+### Adding tracking cuts for neutron  TimeCut(ns)= 10000  KinEnergyCut(MeV)= 0
+G4WT0 > Running geometry overlaps check...
+G4WT0 > Checking overlaps for volume solenoid/solenoid:0 (G4Polycone) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/airPipe:0 (G4Polycone) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/airPipe2:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/al_window_vacuum_entrance:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/beam_vacuum:0 (G4Polycone) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumInPipe3:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumPipe1:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumInPipe1:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumPipe2:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumInPipe2:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumPipe3:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Apex_Shield_Hub:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Apex_Shield_Lead_Fill:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Beamline_Adapter_1:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Downstream_Beam_tube_Segment_1:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Downstream_Beam_tube_Segment_2:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShield:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt1:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt2:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt3:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt4:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt5:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt6:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt7:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt8:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt9:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTOuterFlange:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTOuterMount:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Torus_Exit_Shield_Casing:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume beamline_cad/Torus_Exit_Shield_Casing:0 (G4TessellatedSolid) with magnets_cad/DownstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (-105.522,116.586,-3642.04) by 82.7441 um  (max of 2762 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume beamline_cad/Torus_Exit_Shield_Lead_Fill:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/ft_adjuster:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/moller_cone:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region1_s1:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl1_s1:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl2_s1:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region1_s2:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl1_s2:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl2_s2:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region1_s3:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl1_s3:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl2_s3:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region1_s4:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl1_s4:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl2_s4:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region1_s5:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl1_s5:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl2_s5:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region1_s6:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl1_s6:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl2_s6:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region2_s1:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl3_s1:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl4_s1:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region2_s2:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl3_s2:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl4_s2:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region2_s3:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl3_s3:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl4_s3:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region2_s4:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl3_s4:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl4_s4:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region2_s5:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl3_s5:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl4_s5:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region2_s6:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl3_s6:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl4_s6:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region3_s1:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl5_s1:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl6_s1:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region3_s2:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl5_s2:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl6_s2:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region3_s3:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl5_s3:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl6_s3:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region3_s4:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl5_s4:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl6_s4:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region3_s5:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl5_s5:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl6_s5:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region3_s6:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl5_s6:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl6_s6:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs1r1back:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs1r1support:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs2r1back:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs2r1support:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs3r1back:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs3r1support:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs4r1back:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs4r1support:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs5r1back:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs5r1support:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs6r1back:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs6r1support:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/BoreShield:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/CenterTube:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/DownstreamShieldingPlate:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/DownstreamVacuumJacket:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/DownstreamVacuumJacket:0 (G4TessellatedSolid) with beamline_cad/Torus_Exit_Shield_Casing:0 (G4TessellatedSolid)
+          overlap at local point (-104.956,-118.629,4915.39) by 82.7441 um  (max of 21150 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/Hub001:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/Plate1:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/Plate1:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (130.623,-157.226,-1507.86) by 1.32715 mm  (max of 16735 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/Plate2:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/Plate2:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (-128.16,-158.768,-1507.86) by 1.32715 mm  (max of 16405 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/Plate3:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/Plate3:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (-202.312,17.1179,-1507.86) by 1.32715 mm  (max of 1374 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/Plate4:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/Plate4:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (-122.642,161.337,-1507.86) by 1.32715 mm  (max of 16719 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/Plate5:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/Plate5:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (137.212,158.255,-1507.86) by 1.32715 mm  (max of 16802 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/Plate6:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/Plate6:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (201.241,-39.6802,-1507.86) by 1.32715 mm  (max of 1326 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/Shield1:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/Shield2:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/Shield3:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/Shield4:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/Shield5:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/Shield6:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/Shield7:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/UpstreamShieldingPlate:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid) with magnets_cad/Plate1:0 (G4TessellatedSolid)
+          overlap at local point (112.757,-166.722,-1509.19) by 1.32715 mm  (max of 47 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/WarmBoreTube:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/coil1:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/coil2:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/coil3:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/coil4:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/coil5:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/coil6:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/shell1a:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell1a:0 (G4TessellatedSolid) with magnets_cad/Plate4:0 (G4TessellatedSolid)
+          overlap at local point (-61.2611,194.782,-3204.49) by 2.0719 nm  (max of 22 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/shell1b:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell1b:0 (G4TessellatedSolid) with magnets_cad/Plate5:0 (G4TessellatedSolid)
+          overlap at local point (61.2642,194.78,-1564.48) by 2.07395 nm  (max of 34 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/shell2a:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell2a:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (139.343,145.217,-1507.86) by 4.10419 mm  (max of 56 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/shell2b:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell2b:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (195.442,47.9559,-1507.9) by 4.08395 mm  (max of 48 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/shell3a:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell3a:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (195.449,-48.0118,-1507.86) by 4.08941 mm  (max of 52 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/shell3b:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell3b:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (139.65,-144.591,-1508.48) by 3.61941 mm  (max of 63 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/shell4a:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell4a:0 (G4TessellatedSolid) with magnets_cad/Plate1:0 (G4TessellatedSolid)
+          overlap at local point (61.1474,-194.848,-3244.63) by 1.9968 nm  (max of 23 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/shell4b:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell4b:0 (G4TessellatedSolid) with magnets_cad/Plate2:0 (G4TessellatedSolid)
+          overlap at local point (-61.2413,-194.794,-2065.59) by 2.05884 nm  (max of 21 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/shell5a:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell5a:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (-139.452,-144.933,-1508.86) by 4.01489 mm  (max of 59 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/shell5b:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell5b:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (-195.702,-47.5059,-1508.13) by 3.76754 mm  (max of 56 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/shell6a:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell6a:0 (G4TessellatedSolid) with beamline/vacuumPipe1:0 (G4Tubs)
+          overlap at local point (0.0257316,-0.00876352,675.277) by 2.84928 cm  (max of 1153 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/shell6b:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell6b:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (-139.513,144.828,-1508.89) by 3.89349 mm  (max of 48 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Geometry overlaps check completed !
+G4WT0 > Running geometry overlaps check...
+G4WT0 > Checking overlaps for volume solenoid/solenoid:0 (G4Polycone) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/airPipe:0 (G4Polycone) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/airPipe2:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/al_window_vacuum_entrance:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/beam_vacuum:0 (G4Polycone) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumInPipe3:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumPipe1:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumInPipe1:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumPipe2:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumInPipe2:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline/vacuumPipe3:0 (G4Tubs) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Apex_Shield_Hub:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Apex_Shield_Lead_Fill:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Beamline_Adapter_1:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Downstream_Beam_tube_Segment_1:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Downstream_Beam_tube_Segment_2:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShield:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt1:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt2:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt3:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt4:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt5:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt6:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt7:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt8:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTInnerShieldAndFlange_Bolt9:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTOuterFlange:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/FTOuterMount:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/Torus_Exit_Shield_Casing:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume beamline_cad/Torus_Exit_Shield_Casing:0 (G4TessellatedSolid) with magnets_cad/DownstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (-161.305,-95.3969,-3642.04) by 82.7441 um  (max of 2789 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume beamline_cad/Torus_Exit_Shield_Lead_Fill:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/ft_adjuster:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume beamline_cad/moller_cone:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region1_s1:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl1_s1:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl2_s1:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region1_s2:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl1_s2:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl2_s2:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region1_s3:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl1_s3:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl2_s3:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region1_s4:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl1_s4:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl2_s4:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region1_s5:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl1_s5:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl2_s5:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region1_s6:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl1_s6:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl2_s6:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region2_s1:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl3_s1:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl4_s1:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region2_s2:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl3_s2:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl4_s2:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region2_s3:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl3_s3:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl4_s3:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region2_s4:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl3_s4:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl4_s4:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region2_s5:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl3_s5:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl4_s5:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region2_s6:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl3_s6:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl4_s6:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region3_s1:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl5_s1:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl6_s1:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region3_s2:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl5_s2:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl6_s2:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region3_s3:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl5_s3:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl6_s3:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region3_s4:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl5_s4:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl6_s4:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region3_s5:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl5_s5:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl6_s5:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/region3_s6:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl5_s6:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc/sl6_s6:0 (G4Trap) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs1r1back:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs1r1support:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs2r1back:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs2r1support:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs3r1back:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs3r1support:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs4r1back:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs4r1support:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs5r1back:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs5r1support:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs6r1back:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume dc_cad/dcs6r1support:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/BoreShield:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/CenterTube:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/DownstreamShieldingPlate:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/DownstreamVacuumJacket:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/DownstreamVacuumJacket:0 (G4TessellatedSolid) with beamline_cad/Torus_Exit_Shield_Casing:0 (G4TessellatedSolid)
+          overlap at local point (128.418,-129.186,4915.39) by 82.7441 um  (max of 21280 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/Hub001:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/Plate1:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/Plate1:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (116.84,-168.671,-1507.86) by 1.32715 mm  (max of 16834 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/Plate2:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/Plate2:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (-130.553,-161.951,-1507.86) by 1.32715 mm  (max of 16848 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/Plate3:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/Plate3:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (-205.083,-26.576,-1507.86) by 1.32715 mm  (max of 1353 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/Plate4:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/Plate4:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (-63.2346,195.972,-1507.86) by 1.32715 mm  (max of 16839 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/Plate5:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/Plate5:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (103.61,171.655,-1507.86) by 1.32715 mm  (max of 16778 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/Plate6:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/Plate6:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (199.449,-36.1445,-1507.86) by 1.32715 mm  (max of 1344 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/Shield1:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/Shield2:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/Shield3:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/Shield4:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/Shield5:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/Shield6:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/Shield7:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/UpstreamShieldingPlate:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid) with magnets_cad/Plate1:0 (G4TessellatedSolid)
+          overlap at local point (94.3333,-180.095,-1509.19) by 1.32715 mm  (max of 63 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/WarmBoreTube:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/coil1:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/coil2:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/coil3:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/coil4:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/coil5:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/coil6:0 (G4TessellatedSolid) ... OK! 
+G4WT0 > Checking overlaps for volume magnets_cad/shell1a:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell1a:0 (G4TessellatedSolid) with magnets_cad/Plate4:0 (G4TessellatedSolid)
+          overlap at local point (-61.2053,194.814,-3217.97) by 2.03503 nm  (max of 26 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/shell1b:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell1b:0 (G4TessellatedSolid) with magnets_cad/Plate5:0 (G4TessellatedSolid)
+          overlap at local point (61.2942,194.763,-3481.74) by 2.0938 nm  (max of 29 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/shell2a:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell2a:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (139.282,145.229,-1508.93) by 3.9129 mm  (max of 50 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/shell2b:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell2b:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (195.561,47.7497,-1508.7) by 3.78721 mm  (max of 59 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/shell3a:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell3a:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (195.128,-48.6697,-1507.86) by 3.63986 mm  (max of 46 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/shell3b:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell3b:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (139.053,-145.625,-1508.91) by 3.6859 mm  (max of 76 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/shell4a:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell4a:0 (G4TessellatedSolid) with magnets_cad/Plate1:0 (G4TessellatedSolid)
+          overlap at local point (61.2383,-194.795,-1820.96) by 2.05684 nm  (max of 29 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/shell4b:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell4b:0 (G4TessellatedSolid) with magnets_cad/Plate2:0 (G4TessellatedSolid)
+          overlap at local point (-61.1714,-194.834,-2552.67) by 2.01266 nm  (max of 21 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/shell5a:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell5a:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (-139.334,-145.137,-1508.48) by 4.02005 mm  (max of 57 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/shell5b:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell5b:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (-195.351,-48.1816,-1507.86) by 4.17399 mm  (max of 64 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/shell6a:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell6a:0 (G4TessellatedSolid) with beamline/vacuumPipe1:0 (G4Tubs)
+          overlap at local point (0.0681592,-0.0527896,680.241) by 2.84338 cm  (max of 1219 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Checking overlaps for volume magnets_cad/shell6b:0 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume magnets_cad/shell6b:0 (G4TessellatedSolid) with magnets_cad/UpstreamVacuumJacket:0 (G4TessellatedSolid)
+          overlap at local point (-139.868,145.124,-1507.86) by 3.932 mm  (max of 54 cases)
+NOTE: Reached maximum fixed number -1- of overlaps reports for this volume !
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4WT0 > Geometry overlaps check completed !
+ [ gemc - 4 ] INFO L0: Timing summary: total simulation time 97.4875 seconds.
+ [ gemc - 5 ] INFO L0: Simulation completed, arrivederci! 

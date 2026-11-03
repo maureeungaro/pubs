@@ -1,0 +1,1142 @@
+[
+  {
+    "case": "original",
+    "particle": "e-",
+    "events": 2000,
+    "seed": 12345,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 6.670424875,
+    "cpu_seconds": 6.62,
+    "rss_bytes": 124682240,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12345",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_e-_n2000_seed12345_overlaps0.log",
+    "time_report": "original_e-_n2000_seed12345_overlaps0.time",
+    "primary_sha256": "94404c2a83f70b3886ac5fe501696e81ddfe72aedecc45c63b0643f3b031299a"
+  },
+  {
+    "case": "optimized",
+    "particle": "e-",
+    "events": 2000,
+    "seed": 12346,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 2.486276541999999,
+    "cpu_seconds": 2.04,
+    "rss_bytes": 121470976,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12346",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_e-_n2000_seed12346_overlaps0.log",
+    "time_report": "optimized_e-_n2000_seed12346_overlaps0.time",
+    "primary_sha256": "7adfdfc2528ab70997c4dad499e53bc5815bbfabf388218ab54ca8324e02b005"
+  },
+  {
+    "case": "original",
+    "particle": "e-",
+    "events": 2000,
+    "seed": 12346,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 4.134581334000018,
+    "cpu_seconds": 4.05,
+    "rss_bytes": 123863040,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12346",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_e-_n2000_seed12346_overlaps0.log",
+    "time_report": "original_e-_n2000_seed12346_overlaps0.time",
+    "primary_sha256": "7adfdfc2528ab70997c4dad499e53bc5815bbfabf388218ab54ca8324e02b005"
+  },
+  {
+    "case": "original",
+    "particle": "e-",
+    "events": 2000,
+    "seed": 12347,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 1.3944724579999956,
+    "cpu_seconds": 1.36,
+    "rss_bytes": 123273216,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12347",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_e-_n2000_seed12347_overlaps0.log",
+    "time_report": "original_e-_n2000_seed12347_overlaps0.time",
+    "primary_sha256": "c47376f5570c66b4ce589e509a7e13db5302126cc0650cc50a9dc8cae9d3c47c"
+  },
+  {
+    "case": "optimized",
+    "particle": "e-",
+    "events": 2000,
+    "seed": 12347,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 2.218775916999988,
+    "cpu_seconds": 2.1599999999999997,
+    "rss_bytes": 121503744,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12347",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_e-_n2000_seed12347_overlaps0.log",
+    "time_report": "optimized_e-_n2000_seed12347_overlaps0.time",
+    "primary_sha256": "c47376f5570c66b4ce589e509a7e13db5302126cc0650cc50a9dc8cae9d3c47c"
+  },
+  {
+    "case": "optimized",
+    "particle": "e-",
+    "events": 2000,
+    "seed": 12348,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 39.89445412499998,
+    "cpu_seconds": 39.78,
+    "rss_bytes": 122601472,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12348",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_e-_n2000_seed12348_overlaps0.log",
+    "time_report": "optimized_e-_n2000_seed12348_overlaps0.time",
+    "primary_sha256": "6f3c4fa7f9ba38caf5224cc1abd897886ebcf21c723087e5bdd375672ce0314c"
+  },
+  {
+    "case": "original",
+    "particle": "e-",
+    "events": 2000,
+    "seed": 12349,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 1.4459897909999881,
+    "cpu_seconds": 1.3800000000000001,
+    "rss_bytes": 123518976,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12349",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_e-_n2000_seed12349_overlaps0.log",
+    "time_report": "original_e-_n2000_seed12349_overlaps0.time",
+    "primary_sha256": "842c7e5d129c131afd20e94d1eddd9ff1c9d1274e57ff7bd5f5727309a383609"
+  },
+  {
+    "case": "optimized",
+    "particle": "e-",
+    "events": 2000,
+    "seed": 12349,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 1.497600417000001,
+    "cpu_seconds": 1.4400000000000002,
+    "rss_bytes": 121356288,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12349",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_e-_n2000_seed12349_overlaps0.log",
+    "time_report": "optimized_e-_n2000_seed12349_overlaps0.time",
+    "primary_sha256": "842c7e5d129c131afd20e94d1eddd9ff1c9d1274e57ff7bd5f5727309a383609"
+  },
+  {
+    "case": "original",
+    "particle": "proton",
+    "events": 2000,
+    "seed": 12345,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 1.398096124999995,
+    "cpu_seconds": 1.32,
+    "rss_bytes": 128450560,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12345",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_proton_n2000_seed12345_overlaps0.log",
+    "time_report": "original_proton_n2000_seed12345_overlaps0.time",
+    "primary_sha256": "c7a9672adfb5c946b7fb834e92b5bbbf749ad6c68aa1f738f29b509a46220792"
+  },
+  {
+    "case": "optimized",
+    "particle": "proton",
+    "events": 2000,
+    "seed": 12345,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 1.873041040999965,
+    "cpu_seconds": 1.81,
+    "rss_bytes": 123895808,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12345",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_proton_n2000_seed12345_overlaps0.log",
+    "time_report": "optimized_proton_n2000_seed12345_overlaps0.time",
+    "primary_sha256": "c7a9672adfb5c946b7fb834e92b5bbbf749ad6c68aa1f738f29b509a46220792"
+  },
+  {
+    "case": "optimized",
+    "particle": "proton",
+    "events": 2000,
+    "seed": 12346,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 0.9485534579999921,
+    "cpu_seconds": 0.89,
+    "rss_bytes": 122372096,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12346",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_proton_n2000_seed12346_overlaps0.log",
+    "time_report": "optimized_proton_n2000_seed12346_overlaps0.time",
+    "primary_sha256": "ecabfea56afeba693ee13c29fa66574edb968e4fd2980632d7e4d38af322cd8c"
+  },
+  {
+    "case": "original",
+    "particle": "proton",
+    "events": 2000,
+    "seed": 12346,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 1.7791856659999894,
+    "cpu_seconds": 1.74,
+    "rss_bytes": 126238720,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12346",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_proton_n2000_seed12346_overlaps0.log",
+    "time_report": "original_proton_n2000_seed12346_overlaps0.time",
+    "primary_sha256": "ecabfea56afeba693ee13c29fa66574edb968e4fd2980632d7e4d38af322cd8c"
+  },
+  {
+    "case": "original",
+    "particle": "proton",
+    "events": 2000,
+    "seed": 12347,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 1.2239312920000316,
+    "cpu_seconds": 1.1400000000000001,
+    "rss_bytes": 126320640,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12347",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_proton_n2000_seed12347_overlaps0.log",
+    "time_report": "original_proton_n2000_seed12347_overlaps0.time",
+    "primary_sha256": "8311d30b3ea58562d09e145a8b7faae4f9efbd1c46dd73c5123a2ae6bdb03061"
+  },
+  {
+    "case": "optimized",
+    "particle": "proton",
+    "events": 2000,
+    "seed": 12347,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 1.23134787500004,
+    "cpu_seconds": 1.1500000000000001,
+    "rss_bytes": 123781120,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12347",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_proton_n2000_seed12347_overlaps0.log",
+    "time_report": "optimized_proton_n2000_seed12347_overlaps0.time",
+    "primary_sha256": "8311d30b3ea58562d09e145a8b7faae4f9efbd1c46dd73c5123a2ae6bdb03061"
+  },
+  {
+    "case": "optimized",
+    "particle": "proton",
+    "events": 2000,
+    "seed": 12348,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 1.1654847499999619,
+    "cpu_seconds": 1.11,
+    "rss_bytes": 123207680,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12348",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_proton_n2000_seed12348_overlaps0.log",
+    "time_report": "optimized_proton_n2000_seed12348_overlaps0.time",
+    "primary_sha256": "f6738e75a5dcb81f81f5e4ef2e5ad5301978ac49a47afe480fda412b8d731a0d"
+  },
+  {
+    "case": "original",
+    "particle": "proton",
+    "events": 2000,
+    "seed": 12348,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 1.0073627080000165,
+    "cpu_seconds": 0.97,
+    "rss_bytes": 125730816,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12348",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_proton_n2000_seed12348_overlaps0.log",
+    "time_report": "original_proton_n2000_seed12348_overlaps0.time",
+    "primary_sha256": "f6738e75a5dcb81f81f5e4ef2e5ad5301978ac49a47afe480fda412b8d731a0d"
+  },
+  {
+    "case": "original",
+    "particle": "proton",
+    "events": 2000,
+    "seed": 12349,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 1.1733383330000038,
+    "cpu_seconds": 1.1300000000000001,
+    "rss_bytes": 126238720,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12349",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_proton_n2000_seed12349_overlaps0.log",
+    "time_report": "original_proton_n2000_seed12349_overlaps0.time",
+    "primary_sha256": "0a6d85c2a16d3c73af7c5440200b8f6370e7ec694fef82516433bbb6fff4d828"
+  },
+  {
+    "case": "optimized",
+    "particle": "proton",
+    "events": 2000,
+    "seed": 12349,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 1.1203387499999735,
+    "cpu_seconds": 1.07,
+    "rss_bytes": 123944960,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12349",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_proton_n2000_seed12349_overlaps0.log",
+    "time_report": "optimized_proton_n2000_seed12349_overlaps0.time",
+    "primary_sha256": "0a6d85c2a16d3c73af7c5440200b8f6370e7ec694fef82516433bbb6fff4d828"
+  },
+  {
+    "case": "original",
+    "particle": "pi+",
+    "events": 2000,
+    "seed": 12345,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 2.711146083000017,
+    "cpu_seconds": 2.68,
+    "rss_bytes": 126386176,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12345",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_pi+_n2000_seed12345_overlaps0.log",
+    "time_report": "original_pi+_n2000_seed12345_overlaps0.time",
+    "primary_sha256": "df5026a9520a01223f0e9f33910a5aee50e7440a9cc286de2df6d2a1eb5279c1"
+  },
+  {
+    "case": "optimized",
+    "particle": "pi+",
+    "events": 2000,
+    "seed": 12345,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 1.7704354170000443,
+    "cpu_seconds": 1.7000000000000002,
+    "rss_bytes": 123650048,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12345",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_pi+_n2000_seed12345_overlaps0.log",
+    "time_report": "optimized_pi+_n2000_seed12345_overlaps0.time",
+    "primary_sha256": "df5026a9520a01223f0e9f33910a5aee50e7440a9cc286de2df6d2a1eb5279c1"
+  },
+  {
+    "case": "optimized",
+    "particle": "pi+",
+    "events": 2000,
+    "seed": 12346,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 3.4653143330000375,
+    "cpu_seconds": 3.4299999999999997,
+    "rss_bytes": 124207104,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12346",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_pi+_n2000_seed12346_overlaps0.log",
+    "time_report": "optimized_pi+_n2000_seed12346_overlaps0.time",
+    "primary_sha256": "70363bc7782f38b05ecefcda7dbb632dee9860c0840a19fe4e96f901c8763913"
+  },
+  {
+    "case": "original",
+    "particle": "pi+",
+    "events": 2000,
+    "seed": 12346,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 2.9729273749999834,
+    "cpu_seconds": 2.94,
+    "rss_bytes": 126484480,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12346",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_pi+_n2000_seed12346_overlaps0.log",
+    "time_report": "original_pi+_n2000_seed12346_overlaps0.time",
+    "primary_sha256": "70363bc7782f38b05ecefcda7dbb632dee9860c0840a19fe4e96f901c8763913"
+  },
+  {
+    "case": "original",
+    "particle": "pi+",
+    "events": 2000,
+    "seed": 12347,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 1.178408083000022,
+    "cpu_seconds": 1.1300000000000001,
+    "rss_bytes": 125648896,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12347",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_pi+_n2000_seed12347_overlaps0.log",
+    "time_report": "original_pi+_n2000_seed12347_overlaps0.time",
+    "primary_sha256": "f5cda1608c630b7eb9a4b2697daf2208b7e5431b5753e5fa375364243e1c3a93"
+  },
+  {
+    "case": "optimized",
+    "particle": "pi+",
+    "events": 2000,
+    "seed": 12347,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 1.5490754169999832,
+    "cpu_seconds": 1.47,
+    "rss_bytes": 125370368,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12347",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_pi+_n2000_seed12347_overlaps0.log",
+    "time_report": "optimized_pi+_n2000_seed12347_overlaps0.time",
+    "primary_sha256": "f5cda1608c630b7eb9a4b2697daf2208b7e5431b5753e5fa375364243e1c3a93"
+  },
+  {
+    "case": "optimized",
+    "particle": "pi+",
+    "events": 2000,
+    "seed": 12348,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 0.9028622920000089,
+    "cpu_seconds": 0.8600000000000001,
+    "rss_bytes": 122961920,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12348",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_pi+_n2000_seed12348_overlaps0.log",
+    "time_report": "optimized_pi+_n2000_seed12348_overlaps0.time",
+    "primary_sha256": "d0a0a0023f2179fdac443708bdd682aaf1792ac337684bd4d6d4f4c98e2e29c9"
+  },
+  {
+    "case": "original",
+    "particle": "pi+",
+    "events": 2000,
+    "seed": 12348,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 1.0640401249999627,
+    "cpu_seconds": 1.01,
+    "rss_bytes": 124993536,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12348",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_pi+_n2000_seed12348_overlaps0.log",
+    "time_report": "original_pi+_n2000_seed12348_overlaps0.time",
+    "primary_sha256": "d0a0a0023f2179fdac443708bdd682aaf1792ac337684bd4d6d4f4c98e2e29c9"
+  },
+  {
+    "case": "original",
+    "particle": "pi+",
+    "events": 2000,
+    "seed": 12349,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 2.000422458999992,
+    "cpu_seconds": 1.9300000000000002,
+    "rss_bytes": 126795776,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12349",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_pi+_n2000_seed12349_overlaps0.log",
+    "time_report": "original_pi+_n2000_seed12349_overlaps0.time",
+    "primary_sha256": "aa1d7a69321443494830d193f42ab7da970b645c048a890e425a1ac5de033564"
+  },
+  {
+    "case": "optimized",
+    "particle": "pi+",
+    "events": 2000,
+    "seed": 12349,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 1.1210722499999974,
+    "cpu_seconds": 1.04,
+    "rss_bytes": 124305408,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12349",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_pi+_n2000_seed12349_overlaps0.log",
+    "time_report": "optimized_pi+_n2000_seed12349_overlaps0.time",
+    "primary_sha256": "aa1d7a69321443494830d193f42ab7da970b645c048a890e425a1ac5de033564"
+  },
+  {
+    "case": "original",
+    "particle": "neutron",
+    "events": 2000,
+    "seed": 12345,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 1.1161995409999577,
+    "cpu_seconds": 1.07,
+    "rss_bytes": 126320640,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12345",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_neutron_n2000_seed12345_overlaps0.log",
+    "time_report": "original_neutron_n2000_seed12345_overlaps0.time",
+    "primary_sha256": "5c21776dd444cad59bc8893ed690be8b368be5a8decc2e0676f536a2bccf6fdb"
+  },
+  {
+    "case": "optimized",
+    "particle": "neutron",
+    "events": 2000,
+    "seed": 12345,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 0.8422836660000144,
+    "cpu_seconds": 0.77,
+    "rss_bytes": 122847232,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12345",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_neutron_n2000_seed12345_overlaps0.log",
+    "time_report": "optimized_neutron_n2000_seed12345_overlaps0.time",
+    "primary_sha256": "5c21776dd444cad59bc8893ed690be8b368be5a8decc2e0676f536a2bccf6fdb"
+  },
+  {
+    "case": "optimized",
+    "particle": "neutron",
+    "events": 2000,
+    "seed": 12346,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 1.3788435000000163,
+    "cpu_seconds": 1.3,
+    "rss_bytes": 124469248,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12346",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_neutron_n2000_seed12346_overlaps0.log",
+    "time_report": "optimized_neutron_n2000_seed12346_overlaps0.time",
+    "primary_sha256": "982b6291762cac8606ca0870b26b7ee03c3e1490f65b00a165ad6ef5ae0caa7e"
+  },
+  {
+    "case": "original",
+    "particle": "neutron",
+    "events": 2000,
+    "seed": 12346,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 0.9529567079999879,
+    "cpu_seconds": 0.89,
+    "rss_bytes": 124780544,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12346",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_neutron_n2000_seed12346_overlaps0.log",
+    "time_report": "original_neutron_n2000_seed12346_overlaps0.time",
+    "primary_sha256": "982b6291762cac8606ca0870b26b7ee03c3e1490f65b00a165ad6ef5ae0caa7e"
+  },
+  {
+    "case": "original",
+    "particle": "neutron",
+    "events": 2000,
+    "seed": 12347,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 1.886808166000037,
+    "cpu_seconds": 1.83,
+    "rss_bytes": 126746624,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12347",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_neutron_n2000_seed12347_overlaps0.log",
+    "time_report": "original_neutron_n2000_seed12347_overlaps0.time",
+    "primary_sha256": "3ef5b7a9098f01d0b59467a93984454181ce0ef3ef392ee2f5044e95e62c7c1c"
+  },
+  {
+    "case": "optimized",
+    "particle": "neutron",
+    "events": 2000,
+    "seed": 12347,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 1.5601601669999923,
+    "cpu_seconds": 1.49,
+    "rss_bytes": 124338176,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12347",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_neutron_n2000_seed12347_overlaps0.log",
+    "time_report": "optimized_neutron_n2000_seed12347_overlaps0.time",
+    "primary_sha256": "3ef5b7a9098f01d0b59467a93984454181ce0ef3ef392ee2f5044e95e62c7c1c"
+  },
+  {
+    "case": "optimized",
+    "particle": "neutron",
+    "events": 2000,
+    "seed": 12348,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 0.7920882920000167,
+    "cpu_seconds": 0.71,
+    "rss_bytes": 122634240,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12348",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_neutron_n2000_seed12348_overlaps0.log",
+    "time_report": "optimized_neutron_n2000_seed12348_overlaps0.time",
+    "primary_sha256": "3b0ad20fea0d42d3a8d751ed4047f8b2c44858c8cbf42814e051ed54a70bcdd8"
+  },
+  {
+    "case": "original",
+    "particle": "neutron",
+    "events": 2000,
+    "seed": 12348,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 0.7905628749999778,
+    "cpu_seconds": 0.72,
+    "rss_bytes": 124813312,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12348",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_neutron_n2000_seed12348_overlaps0.log",
+    "time_report": "original_neutron_n2000_seed12348_overlaps0.time",
+    "primary_sha256": "3b0ad20fea0d42d3a8d751ed4047f8b2c44858c8cbf42814e051ed54a70bcdd8"
+  },
+  {
+    "case": "original",
+    "particle": "neutron",
+    "events": 2000,
+    "seed": 12349,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 1.9856712920000064,
+    "cpu_seconds": 1.9300000000000002,
+    "rss_bytes": 126468096,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12349",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_neutron_n2000_seed12349_overlaps0.log",
+    "time_report": "original_neutron_n2000_seed12349_overlaps0.time",
+    "primary_sha256": "4e66437ba790496f4ee4e10bbd06b98596fb28bad23e8743fc5cf22de6119906"
+  },
+  {
+    "case": "optimized",
+    "particle": "neutron",
+    "events": 2000,
+    "seed": 12349,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 1.116783708000014,
+    "cpu_seconds": 1.05,
+    "rss_bytes": 123846656,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12349",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_neutron_n2000_seed12349_overlaps0.log",
+    "time_report": "optimized_neutron_n2000_seed12349_overlaps0.time",
+    "primary_sha256": "4e66437ba790496f4ee4e10bbd06b98596fb28bad23e8743fc5cf22de6119906"
+  }
+]

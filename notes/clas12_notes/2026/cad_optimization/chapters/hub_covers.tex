@@ -1,0 +1,102 @@
+\FloatBarrier
+\section{Hub cover sharing with holes retained}
+\label{sec:hub-covers}
+
+Upcoming in GEMC2 6.2 and CLAS12 GEMC Systems 0.4, Plate1 through Plate6 are renamed hubCover1 through
+hubCover6. The plain hubCover1 mesh supplies copies 2, 4, and 5; the holed hubCover3 mesh supplies copy 6.
+Both canonical STLs are byte-identical to their engineering originals. All holes, thicknesses, contours,
+G4\_Al material, colors, and six physical placements are retained in both owning repositories and their
+runtime collections.
+
+The four plain exports each contain eight vertices and 12 triangles in one closed manifold component of genus
+zero. The two holed exports each have 75 vertices and 150 triangles, with genus one. All have zero boundary
+edges and no detected self-intersections. Nominal sector rotations match every vertex one to one: the largest
+plain-cover residual is 0.000005540 mm, and the holed pair agrees to numerical roundoff. Three plain exports
+use the alternate diagonal on one planar quadrilateral. The builder verifies identical perimeters, four
+corners, and coplanarity, establishing surface equivalence despite different triangle connectivity.
+
+The two sources already have simple tessellations. Optimization therefore shares solids without further
+decimation or hole filling. Every canonical triangle remains, including the complete hole wall and rim in
+hubCover3. Passive copies use exact integer sector angles and positions with three decimal places in
+millimetres. No contact relief or empirical translation is introduced.
+
+Unique cover facets fall from 348 to 162, saving 186 (53.45\%). Active cover STL storage falls from 17,904 to
+8,268 bytes. The six placements still contain 348 placed facets. Total signed aluminum volume is
+7,346,686.175700 cubic millimetres before and after, with a relative change below one part in a trillion from
+numerical roundoff. The complete magnets collection now contains 24 STL sources, 69,564 unique facets, and 39
+CAD placements. GEMC3 keeps sources and copies in magnets\_cad; GEMC2 uses 24 CAD sources and 15 native
+magnets\_copies rows per inherited run, including the existing jacket and coil copies.
+
+All nine GEMC3, GEMC2 SQLite/CAD, and GEMC2 TEXT/CAD construction checks pass across runs 11, 3029, and 4763.
+Semantic comparison matches all three native solenoid configurations and the three 39-row CAD banks. Unrelated
+native geometry, materials, and DC banks are unchanged at synchronization. The builder reproduces both
+canonical STLs, the health report, and all three catalogs byte for byte. Original engineering exports remain
+archived.
+
+The dense run-11 fixture contains native DC, both DC CAD groups, solenoid, magnets, and native/CAD beamline:
+139 volumes including the world. Readout is disabled. Renaming volumes changes Geant4 construction/check
+ordering and thus assigns surface samples differently among unchanged volumes. The initial comparison records
+four added and four removed ordered contact pairs, all among unchanged non-cover volumes. A controlled
+baseline keeps the six independent original meshes and original poses but uses the final hubCover names. With
+seed 12345 and 100,000 surface samples per tested volume, this baseline and the final shared geometry report
+exactly the same 22 ordered overlap pairs. No new sampled overlap pair is introduced. Existing contacts,
+including covers against the upstream jacket, and orientation warnings remain. Sampling does not establish
+mathematical clearance.
+
+The timing fixture isolates the six cover placements at run 11. The baseline builds six independent solids,
+and the final fixture builds two solids with four copies. A fixed executable reports geant4-11-03-patch-02
+[MT]   (25-April-2025). It uses the serial run manager, FTFP\_BERT, default production cuts, and one execution
+thread. Field, optical physics, GUI, readout, and event output are disabled. Five-GeV/c electrons, protons,
+positive pions, and neutrons start at the origin, uniform in solid angle from 1.5 to 5.5 degrees with full
+azimuth, covering these small-radius parts. There is no target, luminosity normalization, or pileup. Five
+repetitions alternate fixture order and use 2,000 identical LUND primaries per particle at seeds 12345--12349.
+Ten zero-event processes, forty tracking processes, and two isolated overlap checks are scheduled. Idle-sleep
+prevention remains enabled throughout. The executable hash is checked at both ends. Inputs are frozen
+independently of concurrent framework builds and experiment database regeneration.
+
+One of the 52 scheduled processes fails. Raw logs, exception codes, and inputs are retained. The original
+proton
+fixture at seed 12345 raises PART122 because Na24 is already registered in the Geant4 particle table. Tracking
+statistics include only pairs where both versions complete all 2,000 events; failures exclude both members of
+that seed pair. These conditional measurements do not establish an unconditional tracking-performance gain.
+
+Median zero-event process wall time changes from 0.13304 to 0.13308 s, a before/after ratio of 1.000. Median
+CPU time changes from 0.090 to 0.090 s, and peak RSS from 58.05 to 57.69 MiB. Paired startup ratios range from
+0.997 to 1.392. Tracking entries below are median internal transport wall times. Ratios above one indicate
+faster execution; paired ranges show seed dependence, and ranges spanning one do not establish a consistent
+gain in this sample. The principal demonstrated benefit is fewer unique solids and facets. These isolated
+measurements do not establish a full-CLAS12 speedup or detector-response equivalence.
+
+\begin{table}[htbp]
+\centering
+\setlength{\tabcolsep}{6pt}
+\caption{Hub-cover tracking; completed pairs of 2,000-event processes only.}
+\label{tab:hub-covers}
+\begin{tabular}{lrrrrr}
+\toprule
+Particle & Pairs & Before (s) & After (s) & Ratio & Paired ratio range \\
+\midrule
+Electron & 5 & 4.45213 & 4.47410 & 0.995 & 0.967--1.108 \\
+Proton & 4 & 4.46378 & 4.67747 & 0.954 & 0.904--1.018 \\
+Positive pion & 5 & 4.01745 & 3.93746 & 1.020 & 0.881--1.119 \\
+Neutron & 5 & 2.44995 & 2.73761 & 0.895 & 0.759--1.203 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figures/hub_cover_comparison.pdf}
+\caption{
+Original and shared hub-cover footprints coincide in all six sectors (left). The hole rim retained by
+hubCover3 and its hubCover6 copy is unchanged (right); all 150 canonical facets remain. Plain covers 1, 2, 4,
+and 5 retain their original 12-triangle shape.}
+\label{fig:hub-covers}
+\end{figure}
+
+data/magnets\_hub\_covers and magnets\_hub\_covers\_archive.zip retain mesh equivalence and topology checks,
+facet and volume metrics, all nine construction logs, semantic comparisons, the controlled and initial dense
+overlap fixtures, repeated timings, matched primaries, raw logs, and the fixed executable hash. The archive
+includes original exports, final collected geometry and meshes, catalogs, builders, benchmark, validation
+code, and figure-generation inputs. The executable is not redistributed; previous study archives remain
+unchanged.

@@ -1,0 +1,52 @@
+{
+  "executable": "/opt/jlab_software/macosx26-clang21-arm64/gemc/dev/bin/gemc",
+  "executable_sha256": "145f4ac55c4aff04aa7538baef1c5cbe904305fadd0b069fbf3e2b650ebbce87",
+  "platform": "macOS-26.7.1-arm64-arm-64bit",
+  "inventories": {
+    "original": {
+      "dcs1r1support": {
+        "sha256": "c53ff39ba7dddd5b09a4d4f0cac9d03537834a93ef3697176daa3fd4e094dc52",
+        "facets": 1006
+      },
+      "dcs2r1support": {
+        "sha256": "dfaeaadeb0db4570dd2a36d4880f87399170d86f1d5a2c50d2c882919c98b2b8",
+        "facets": 1006
+      },
+      "dcs3r1support": {
+        "sha256": "711d4ded68c2a4fbcd44534f50e78c288d048e54fec916cba116da5ce6223aa4",
+        "facets": 1006
+      },
+      "dcs4r1support": {
+        "sha256": "3e386390d05d19fcffb7509b6413507cb47c518af1346634517b5f6e61fae715",
+        "facets": 1006
+      },
+      "dcs5r1support": {
+        "sha256": "45f54633acb92f1a2714e015bf28c12f80f2e9a5c36c7c7b58db36bbc214ce4d",
+        "facets": 1006
+      },
+      "dcs6r1support": {
+        "sha256": "fdde3e291467771eb59b2e9771748c2851d372b47cd4d01391ac01d57be12d03",
+        "facets": 1006
+      }
+    },
+    "optimized": {
+      "dcs1r1support": {
+        "sha256": "c53ff39ba7dddd5b09a4d4f0cac9d03537834a93ef3697176daa3fd4e094dc52",
+        "facets": 1006
+      }
+    }
+  },
+  "events": 2000,
+  "repeats": 5,
+  "primary_theta_deg": [
+    2,
+    15
+  ],
+  "group": "support",
+  "primary_azimuth_deg": [
+    -180,
+    180
+  ],
+  "momentum_GeV": 5,
+  "field": "off"
+}

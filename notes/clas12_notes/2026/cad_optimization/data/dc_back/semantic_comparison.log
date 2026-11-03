@@ -1,0 +1,93 @@
+INFO: [DB] ---> open 11 | default | Wed Oct 21 11:49:30 EDT 2026 | sqlite:////opt/projects/gemc/clas12Tags/geometry_source/coatjava/etc/data/sqlite/ccdb.sqlite
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.sqlite.SQLiteJDBCLoader in an unnamed module (file:/opt/projects/gemc/clas12-systems/geometry_src/coatjava/lib/clas/coat-libs-14.2.1-SNAPSHOT.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+INFO: [DB LOAD] ---> loading : /geometry/dc/dc
+INFO: [DB LOAD] ---> loading : /geometry/dc/region
+INFO: [DB LOAD] ---> loading : /geometry/dc/superlayer
+INFO: [DB LOAD] ---> loading : /geometry/dc/layer
+INFO: [DB LOAD] ---> loading : /geometry/dc/alignment
+INFO: [DB LOAD] ---> loading : /geometry/dc/ministagger
+INFO: [DB LOAD] ---> loading : /geometry/dc/endplatesbow
+INFO: [DB LOAD] ---> loading : /geometry/dc/feedthroughs
+INFO: DC Geometry Factory configured with:
+	 ministagger: NOTONREFWIRE
+	 feedthroughs: OFF
+	 endplates bow: false
+INFO: [DB] ---> open 11 | default | Wed Oct 21 11:49:31 EDT 2026 | sqlite:////opt/projects/gemc/clas12Tags/geometry_source/coatjava/etc/data/sqlite/ccdb.sqlite
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.sqlite.SQLiteJDBCLoader in an unnamed module (file:/opt/projects/gemc/clas12-systems/geometry_src/coatjava/lib/clas/coat-libs-14.2.1-SNAPSHOT.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+INFO: [DB LOAD] ---> loading : /geometry/dc/dc
+INFO: [DB LOAD] ---> loading : /geometry/dc/region
+INFO: [DB LOAD] ---> loading : /geometry/dc/superlayer
+INFO: [DB LOAD] ---> loading : /geometry/dc/layer
+INFO: [DB LOAD] ---> loading : /geometry/dc/alignment
+INFO: [DB LOAD] ---> loading : /geometry/dc/ministagger
+INFO: [DB LOAD] ---> loading : /geometry/dc/endplatesbow
+INFO: [DB LOAD] ---> loading : /geometry/dc/feedthroughs
+INFO: DC Geometry Factory configured with:
+	 ministagger: NOTONREFWIRE
+	 feedthroughs: OFF
+	 endplates bow: false
+
+  ❖ Variation switched to: ddvcs
+
+  ❖ Variation switched to: rga_spring2018
+  ❖ Variation switched to: rga_fall2018
+  ❖ Variation switched to: ddvcs
+
+  ❖  GConfiguration for experiment <[1mclas12[0m>,  system <[1mdc[0m> : 
+	▪︎ Factory: ascii          
+    	↦ Geometry File: dc__geometry_ddvcs.txt
+    	↦ Materials File: dc__materials_ddvcs.txt
+    	↦ Mirrors File: dc__mirrors_ddvcs.txt
+	▪︎ Variation / Run:
+	    Variation                     Run
+	    ------------------------ --------
+	    default                        11
+	    ddvcs                    10000001
+	▪︎ Number of volumes: 114
+	▪︎ Number of materials: 4
+
+
+
+  ❖ Variation switched to: rga_spring2018
+  ❖ Variation switched to: rga_spring2018
+  ❖ Variation switched to: rga_fall2018
+  ❖ Variation switched to: rga_fall2018
+
+  ❖  GConfiguration for experiment <[1mclas12[0m>,  system <[1msolenoid[0m> : 
+	▪︎ Factory: ascii          
+    	↦ Geometry File: solenoid__geometry_rga_fall2018.txt
+    	↦ Materials File: solenoid__materials_rga_fall2018.txt
+    	↦ Mirrors File: solenoid__mirrors_rga_fall2018.txt
+	▪︎ Variation / Run:
+	    Variation                     Run
+	    ------------------------ --------
+	    default                        11
+	    rga_spring2018               3029
+	    rga_fall2018                 4763
+	▪︎ Number of volumes: 3
+
+Comparing systems: dc, magnets
+Generated ASCII workdir: /private/tmp/dc-back-final-comparison-20261021
+clas12Tags experiments/clas12 reference: /opt/projects/gemc/clas12Tags/experiments/clas12
+dc/ddvcs: ok (60 geometry rows)
+dc/default: ok (54 geometry rows)
+dc/ddvcs: ok (2 materials rows)
+dc/default: ok (2 materials rows)
+dc/cad_ddvcs: ok (6 CAD rows)
+dc/cad_default: ok (6 CAD rows)
+dc/cad_rga_fall2018: ok (6 CAD rows)
+dc/cad_rga_spring2018: ok (6 CAD rows)
+magnets/default: ok (1 geometry rows)
+magnets/rga_fall2018: ok (1 geometry rows)
+magnets/rga_spring2018: ok (1 geometry rows)
+magnets/cad_default: ok (45 CAD rows)
+magnets/cad_rga_fall2018: ok (45 CAD rows)
+magnets/cad_rga_spring2018: ok (45 CAD rows)

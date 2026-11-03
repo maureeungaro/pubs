@@ -1,0 +1,32 @@
+[
+  {
+    "case": "original",
+    "particle": "proton",
+    "events": 2000,
+    "seed": 12345,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 4.625348250000002,
+    "cpu_seconds": 4.57,
+    "rss_bytes": 125255680,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12345",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_proton_n2000_seed12345_overlaps0.log",
+    "time_report": "original_proton_n2000_seed12345_overlaps0.time",
+    "primary_sha256": "de1179a7242da6d3dc204fde76ee60eeff968d53b3596bdc4ca39aae8fce0fe1"
+  }
+]

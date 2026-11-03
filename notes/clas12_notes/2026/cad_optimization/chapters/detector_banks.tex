@@ -1,0 +1,55 @@
+\FloatBarrier
+\section{Consolidating DC and magnets geometry banks}
+\label{sec:detector-banks}
+
+The October 23 consolidation retires the separate dc\_copies and magnets\_copies geometry banks in GEMC2. The
+ten DC copies are published with native dc; the 19 magnet copies join the renamed native magnets bank. Only
+the former solenoid system/bank is renamed: the physical copper polycone remains named solenoid. All volume
+names, mesh paths, positions, rotations, materials, and copy sources remain. GEMC2 keeps two source STLs in
+dc\_cad and 20 in magnets\_cad because its native and CAD loaders are distinct factories. Updated standalone
+and combined cards no longer load the retired copy banks.
+
+GEMC3 now loads dc and magnets as single SQLite systems. Each contains its native solids, CAD sources, and
+copy rows. Keeping sources with their copies is required by the current within-system copy dependency lookup;
+the SQLite factory already supports CAD solids. Native DC and its 12 CAD placements total 66 rows, or 72 for
+DDVCS. Magnets has 40 rows: one solenoid, 20 CAD sources, and 19 copies. The old dc\_cad and magnets\_cad
+companion rows are removed when regenerating GEMC3 databases.
+
+DC survey run keys 3029 and 4763 reuse the unchanged default chambers at run 11, now published alongside their
+CAD sources and copies. This retains the complete DC detector under GEMC3's exact-run selection. The custom
+DDVCS bank retains its six extra shields at run 10000001. GEMC2 continues to inherit its unchanged native DC
+bank from run 11 and publishes the ten copies in both default and DDVCS TEXT geometry. Magnet survey shifts
+retain runs 11, 3029, and 4763, with default SQLite variation keys and named ASCII configurations.
+
+The previous GEMC2 DC copy bank contained two rows for each of its ten named placements. The new generators
+publish each copy once, adjacent to the native rows for the same configuration. This ordering also avoids the
+Perl authoring API's whole-bank deletion when switching back to a previously written detector/variation.
+Repeated generation reproduces the GEMC2 TEXT bytes and database rows; regenerating GEMC3 over old databases
+matches fresh databases and removes obsolete system keys.
+
+The semantic comparator now checks the merged native/copy rows against GEMC2 native tables and independently
+compares all mesh-source and copy placements with the GXML catalogs. All four DC configurations match 64
+native/copy rows, or 70 for DDVCS, two material rows, and 12 CAD placements. Each of the three magnets
+configurations matches 20 native/copy rows, one material row, and 39 CAD placements. The added local magnets
+tungsten-alloy definition matches the existing beamline material and makes the native/copy bank
+self-contained.
+
+Twenty zero-event construction checks pass without Geant4 exceptions, using GEMC3 with Geant4 11.4.3 and GEMC2
+with Geant4 10.7.4. These include GEMC3, GEMC2 SQLite/CAD, and GEMC2 TEXT/CAD for both detectors at runs 11,
+3029, and 4763, plus GEMC3 DC DDVCS and GEMC2 DC DDVCS TEXT/CAD. GEMC3 fixtures disable readout and require 67
+constructed volumes including the world for DC, 73 for DDVCS, and 41 for magnets. GEMC2 copy dependencies
+resolve against the unchanged CAD sources. These checks validate construction and ownership; no new dense
+overlap, particle-transport, or detector-response study is performed.
+
+All stored STL hashes remain identical. DC retains two source meshes with 1,026 unique facets; magnets retains
+20 with 66,960 unique facets. No facets are removed by this consolidation, and no new simulation speedup is
+established. Effective GEMC2 native geometry records match the earlier solenoid/copy/DC banks after
+normalizing system ownership and duplicate rows. Every GEMC2 CAD source row and all unrelated native geometry
+rows remain unchanged. Existing assembly contacts and mesh limitations documented in the earlier studies still
+apply.
+
+data/detector\_banks and detector\_banks\_archive.zip retain the before/after bank checks, mesh inventory and
+hashes, native/material/CAD comparisons, repeated-generation evidence, twenty construction fixtures and logs,
+original database and TEXT references, and updated authoring and validation scripts. The earlier study
+archives retain their historical bank names and remain unchanged. Executables are identified by hash and are
+not redistributed.

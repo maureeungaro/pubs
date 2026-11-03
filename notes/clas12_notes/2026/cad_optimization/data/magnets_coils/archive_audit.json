@@ -1,0 +1,9 @@
+{
+  "archive_sha256": "aa195a35777aed86295ea8f6bb7acbffc9d6c9ea1297149f43b65f003b8c9f43",
+  "members": 475,
+  "CRC_checks_passed": true,
+  "shared_mesh_and_catalog_hashes_match": true,
+  "serial_scheduled_processes": 52,
+  "serial_failed_processes": 7,
+  "conditional_statistics": true
+}

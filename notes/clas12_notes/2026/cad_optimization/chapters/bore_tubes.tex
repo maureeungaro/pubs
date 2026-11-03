@@ -1,0 +1,41 @@
+\FloatBarrier
+\section{Bore-tube profile preservation audit}
+\label{sec:bore-tubes}
+
+Upcoming in GEMC2 6.2 and CLAS12 GEMC Systems 0.4, CenterTube becomes BoreCenterTube in all three
+configurations and both owning repositories. BoreShield and WarmBoreTube retain their names. Every original
+profile and hole is retained, as requested after reviewing the simplification options. All three active STLs
+remain byte-identical to their engineering exports. Materials, bounds, volumes, passive placements, and the
+exact 180-degree rotation are unchanged.
+
+These tubes are already one closed, consistently oriented manifold component of genus one each, with zero
+boundary edges, degenerate triangles, or detected intersecting faces. Their vertices all lie on the inner and
+outer end rims. Each ring has strictly positive turns at every corner, so removing a corner changes its
+polygonal profile. For a closed triangulated genus-one surface, Euler's relation and twice-edge triangle
+incidence give F = 2V. The existing meshes already attain this minimum for their required rim vertices.
+Conservative simplification at the previous 0.0001 mm local-plane bound accepts no vertex collapse. Coarser
+outer walls or native circular tubes would change the engineering surfaces and were not selected.
+
+BoreShield retains 178 vertices and 356 facets; BoreCenterTube retains 203 vertices and 406 facets;
+WarmBoreTube retains 184 vertices and 368 facets. The total remains 565 vertices and 1,130 facets: zero facets
+removed and 0\% reduction. The full magnets inventory remains 20 STL sources, 66,960 unique facets, and 39 CAD
+placements. GEMC2 uses 20 CAD sources and 19 native copy rows per run.
+
+All nine zero-event construction checks pass: GEMC3, GEMC2 SQLite/CAD, and GEMC2 TEXT/CAD for runs 11, 3029,
+and 4763. The semantic comparison matches all three native solenoid configurations and all three 39-row CAD
+banks. The before/after database checks match all 117 GEMC3 CAD rows and all 60 GEMC2 CAD rows after
+normalizing the renamed volume and mesh path; the 57 GEMC2 copy rows are unchanged. All four active mesh trees
+and all three catalog trees agree. Identical mesh bytes and physical placement rows establish unchanged
+surfaces and clearances; existing assembly overlap warnings remain. No new dense sampling campaign is needed
+to infer geometric identity.
+
+No new loading or particle-transport benchmark was run for this unchanged geometry. This step establishes no
+simulation speedup; a name-only change and zero facet reduction provide no geometric basis for claiming a
+gain. There is no new measured before/after timing ratio, and results from earlier optimization studies are
+not attributed to these tubes.
+
+data/magnets\_bore\_tubes and magnets\_bore\_tubes\_archive.zip retain mesh hashes, rim-corner and topology
+metrics, database identity checks, the nine construction fixtures and logs, semantic comparisons, original and
+final STLs, catalogs, and the audit program. The archive also retains the conservative simplification probe
+and its empty collapse histories. The validation executable hash is recorded; executables are not
+redistributed. Earlier study archives remain unchanged.

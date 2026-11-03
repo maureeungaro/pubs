@@ -3,6 +3,9 @@
 \section{HTCC CAD cone transfer and validation}
 \label{sec:htcc}
 
+The following transfer results describe the October 19 mesh versions. The October 23 revision below resolves
+the Moller-cone orientation warning while preserving its engineering bore and bounds.
+
 The October 19 HTCC update transfers three cured GEMC3 meshes into the GEMC2 clas12Tags repository. These are
 the HTCC entry cone, Moller cone, and Moller-cone extension; they are separate from the beamline Moller-cone
 studies above. The active source and runtime copies match the GEMC3 assets byte for byte, and the unmodified
@@ -64,3 +67,70 @@ loading or tracking benchmarks, so no CPU, wall-time, memory, or transport-speed
 49.20\% triangle reduction. Photon yield, material budget, detector response, and particle navigation
 equivalence require separate studies. The HTCC archive retains raw and cured STLs, input fixtures, scripts,
 topology hashes, validation logs, and database-row snapshots.
+
+\subsection{October 23: engineering Moller cone and collar union}
+\label{sec:htcc-moller-repair}
+
+The October 23 repair supersedes the Moller-cone topology limitation of the October 19 transfer. The
+GeomSolids1001 warning is reproduced with the former active STL in GEMC3. It is caused by non-manifold and
+intersecting facets near the collar, rather than by stored STL normal vectors alone. The engineering mesh
+separates at its 45 four-face edges into two individually closed genus-one pieces: a 5,688-facet cone and a
+544-facet collar. The earlier generic curing removed part of a 72.5 mm conical section and generated
+inappropriate planar closures; retaining that defective mesh merely because it has zero boundary edges is
+insufficient.
+
+The replacement starts from the unchanged archived engineering export. Only the collar's 45 shared ring
+vertices move radially inward by 0.0001 mm, resolving the zero-width seam for an exact Boolean union.
+Intersection vertices that coincide after binary-STL rounding are welded at 0.0002 mm; null and duplicate
+faces are removed, winding is made coherent, and faces are ordered deterministically. No Poisson
+reconstruction, engineering-hole filling, or bore cap is applied. Repeated processes reproduce the final STL
+and audit report byte for byte with the recorded software versions.
+
+The final mesh has 3,451 vertices and 6,902 facets in one closed manifold component of genus one. It has zero
+boundary edges, non-manifold edges or vertices, degenerate triangles, or detected intersecting faces. All six
+engineering bounds remain identical. A final-to-engineering surface comparison samples 153,451 points and
+finds a maximum distance of 0.000096786 mm. The reference includes both engineering surfaces, including
+internal contact faces; this is a one-direction sampled comparison, not a global distance proof. The main bore
+remains outside the solid at all 200 tested axial points in direct Geant4 classification.
+
+The union volume before STL rounding is 783,909.77844 cubic millimetres; the stored mesh has 783,909.77434
+cubic millimetres, a rounding/welding change of about -0.000000523\%. The two original engineering pieces have
+individually well-defined volumes, but their sum double-counts their contact/intersection region. No physical
+material volume is assigned to the former defective active mesh. The restored section is visible in the exact
+mesh-plane sections below.
+
+The repaired mesh replaces the former 5,866-facet active Moller cone, adding 1,036 facets. The entry cone and
+extension remain byte-identical at 6,000 and 1,748 facets. Total active HTCC CAD facets therefore rise from
+13,614 to 14,650; this is still 45.33\% fewer than the 26,798 engineering facets. This update repairs the
+material geometry and winding; no new repeated loading or tracking benchmark was run, and no simulation
+speedup is assigned to it.
+
+All nine repaired native-plus-CAD initializations succeed for runs 11, 3029, and 4763: GEMC3 with Geant4
+11.3.2, and GEMC2 SQLite/CAD and TEXT/CAD with Geant4 10.7.4. Every repaired process has zero GeomSolids
+warnings. The GEMC3 fixtures explicitly select their named survey variations and require all 541 constructed
+rows including the world. Direct Geant4 11.4.3 solid checks accept all 6,902 facets without rejection or solid
+warnings; the unchanged other two meshes also pass. Native comparison matches 537 geometry and eight material
+rows per configuration, and nine CAD placements match in name, material, passive rotation, and survey shift.
+All four active source/runtime mesh trees are synchronized, and engineering originals are unchanged.
+
+The existing contact between htccCone and htccEntryWindow is separate from the Moller repair and remains
+visible in some GEMC2 overlap checks. No sampled overlap warning involving the repaired Moller cone is present
+in these nine logs. Successful construction and sampled checks do not establish full particle-navigation or
+detector-response equivalence.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figures/htcc_moller_repair.pdf}
+\caption{
+Exact sections at local y = 0.004092 mm through the archived engineering pieces, previous cured mesh, and
+repaired union. The right panel shows the conical wall lost during curing and restored by the repair. Grey
+internal engineering interfaces disappear in the union; the retained seam adjustment is below this figure's
+resolution. No coordinate rescaling is applied.}
+\label{fig:htcc-moller-repair}
+\end{figure}
+
+data/htcc\_moller\_repair and htcc\_moller\_repair\_archive.zip retain the repair metrics, source and output
+hashes, software versions, baseline warning, all nine repaired construction logs and cards, surface samples,
+CAD and native comparisons, direct Geant4 checks, original and previous/final meshes, builder, and figure
+renderer. Executables are identified by hash and are not redistributed. The October 19 HTCC archive and all
+earlier study archives remain unchanged.

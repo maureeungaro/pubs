@@ -1,0 +1,86 @@
+{
+  "serial": [
+    {
+      "case": "original",
+      "particle": "proton",
+      "seed": 12349,
+      "exception_codes": {
+        "PART122": 1
+      },
+      "log": "original_proton_n2000_seed12349_overlaps0.log",
+      "duplicate_particle": "Co60[58.590]"
+    },
+    {
+      "case": "optimized",
+      "particle": "pi+",
+      "seed": 12347,
+      "exception_codes": {
+        "PART122": 1
+      },
+      "log": "optimized_pi+_n2000_seed12347_overlaps0.log",
+      "duplicate_particle": "Co60"
+    },
+    {
+      "case": "original",
+      "particle": "pi+",
+      "seed": 12348,
+      "exception_codes": {
+        "PART122": 1
+      },
+      "log": "original_pi+_n2000_seed12348_overlaps0.log",
+      "duplicate_particle": "Co60"
+    },
+    {
+      "case": "optimized",
+      "particle": "pi+",
+      "seed": 12349,
+      "exception_codes": {
+        "PART122": 1
+      },
+      "log": "optimized_pi+_n2000_seed12349_overlaps0.log",
+      "duplicate_particle": "Co58"
+    },
+    {
+      "case": "original",
+      "particle": "neutron",
+      "seed": 12345,
+      "exception_codes": {
+        "PART122": 1
+      },
+      "log": "original_neutron_n2000_seed12345_overlaps0.log",
+      "duplicate_particle": "V49"
+    },
+    {
+      "case": "optimized",
+      "particle": "neutron",
+      "seed": 12345,
+      "exception_codes": {
+        "PART122": 1
+      },
+      "log": "optimized_neutron_n2000_seed12345_overlaps0.log",
+      "duplicate_particle": "Fe57"
+    },
+    {
+      "case": "original",
+      "particle": "neutron",
+      "seed": 12347,
+      "exception_codes": {
+        "PART122": 1
+      },
+      "log": "original_neutron_n2000_seed12347_overlaps0.log",
+      "duplicate_particle": "Co60[58.590]"
+    }
+  ],
+  "tasking": [
+    {
+      "case": "optimized",
+      "particle": "e-",
+      "seed": 12349,
+      "exception_codes": {
+        "PART122": 1
+      },
+      "log": "optimized_e-_n2000_seed12349_overlaps0.log",
+      "duplicate_particle": "Cu62"
+    }
+  ]
+}

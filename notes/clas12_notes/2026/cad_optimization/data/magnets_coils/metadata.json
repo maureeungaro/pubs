@@ -1,0 +1,57 @@
+{
+  "executable": "/opt/jlab_software/macosx26-clang21-arm64/gemc/dev/bin/gemc",
+  "executable_sha256": "138017f558b34b112e951218c69479776f7bf6fa4442050887ce53536f8c01a7",
+  "platform": "macOS-26.7.1-arm64-arm-64bit",
+  "inventories": {
+    "original": {
+      "coil1": {
+        "sha256": "05113d836511de7e02537fedb41f48bc94e342d76e504a01a2491754f2e02bbe",
+        "facets": 1016
+      },
+      "coil2": {
+        "sha256": "97f416102034a0cc9de07c8b16c50fb0799b4a92bfc3ce469bde4c3aad408b8a",
+        "facets": 1016
+      },
+      "coil3": {
+        "sha256": "3f7c2cb4e4e5c8f4b768bfe38cc81696b03ce27a6d9dfae8a1ad547299040873",
+        "facets": 1016
+      },
+      "coil4": {
+        "sha256": "f763ef2eb0ed910cd7bf8b76cc35ab0c792a5567766d1a45cdec43c552d47f92",
+        "facets": 1016
+      },
+      "coil5": {
+        "sha256": "cb6c079236603d7f17012a7e0188eafefe4671c9ee322b7eec25b9a756e1c101",
+        "facets": 1016
+      },
+      "coil6": {
+        "sha256": "e4bbd7e32e2b0a7b75106ea9690398741c35802020b07b1ff9edf0bd6a8d2e8b",
+        "facets": 1016
+      }
+    },
+    "optimized": {
+      "coil": {
+        "sha256": "05113d836511de7e02537fedb41f48bc94e342d76e504a01a2491754f2e02bbe",
+        "facets": 1016
+      }
+    }
+  },
+  "events": 2000,
+  "repeats": 5,
+  "primary_theta_deg": [
+    5,
+    70
+  ],
+  "group": "coil",
+  "run_manager": "Serial",
+  "primary_azimuth_deg": [
+    -180,
+    180
+  ],
+  "momentum_GeV": 5,
+  "field": "off",
+  "geant4_version_banner": "geant4-11-03-patch-02 [MT]   (25-April-2025)",
+  "failed_processes": 7,
+  "continued_after_failure": true,
+  "summary_policy": "Only completed matched seed pairs"
+}

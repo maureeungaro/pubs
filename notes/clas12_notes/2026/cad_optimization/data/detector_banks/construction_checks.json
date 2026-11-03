@@ -1,0 +1,142 @@
+[
+  {
+    "system": "dc",
+    "run": 11,
+    "engine": "gemc3",
+    "exit_code": 0,
+    "exceptions": []
+  },
+  {
+    "system": "dc",
+    "run": 11,
+    "engine": "gemc2-sqlite",
+    "exit_code": 0,
+    "exceptions": []
+  },
+  {
+    "system": "dc",
+    "run": 11,
+    "engine": "gemc2-text",
+    "exit_code": 0,
+    "exceptions": []
+  },
+  {
+    "system": "dc",
+    "run": 3029,
+    "engine": "gemc3",
+    "exit_code": 0,
+    "exceptions": []
+  },
+  {
+    "system": "dc",
+    "run": 3029,
+    "engine": "gemc2-sqlite",
+    "exit_code": 0,
+    "exceptions": []
+  },
+  {
+    "system": "dc",
+    "run": 3029,
+    "engine": "gemc2-text",
+    "exit_code": 0,
+    "exceptions": []
+  },
+  {
+    "system": "dc",
+    "run": 4763,
+    "engine": "gemc3",
+    "exit_code": 0,
+    "exceptions": []
+  },
+  {
+    "system": "dc",
+    "run": 4763,
+    "engine": "gemc2-sqlite",
+    "exit_code": 0,
+    "exceptions": []
+  },
+  {
+    "system": "dc",
+    "run": 4763,
+    "engine": "gemc2-text",
+    "exit_code": 0,
+    "exceptions": []
+  },
+  {
+    "system": "magnets",
+    "run": 11,
+    "engine": "gemc3",
+    "exit_code": 0,
+    "exceptions": []
+  },
+  {
+    "system": "magnets",
+    "run": 11,
+    "engine": "gemc2-sqlite",
+    "exit_code": 0,
+    "exceptions": []
+  },
+  {
+    "system": "magnets",
+    "run": 11,
+    "engine": "gemc2-text",
+    "exit_code": 0,
+    "exceptions": []
+  },
+  {
+    "system": "magnets",
+    "run": 3029,
+    "engine": "gemc3",
+    "exit_code": 0,
+    "exceptions": []
+  },
+  {
+    "system": "magnets",
+    "run": 3029,
+    "engine": "gemc2-sqlite",
+    "exit_code": 0,
+    "exceptions": []
+  },
+  {
+    "system": "magnets",
+    "run": 3029,
+    "engine": "gemc2-text",
+    "exit_code": 0,
+    "exceptions": []
+  },
+  {
+    "system": "magnets",
+    "run": 4763,
+    "engine": "gemc3",
+    "exit_code": 0,
+    "exceptions": []
+  },
+  {
+    "system": "magnets",
+    "run": 4763,
+    "engine": "gemc2-sqlite",
+    "exit_code": 0,
+    "exceptions": []
+  },
+  {
+    "system": "magnets",
+    "run": 4763,
+    "engine": "gemc2-text",
+    "exit_code": 0,
+    "exceptions": []
+  },
+  {
+    "system": "dc",
+    "run": 10000001,
+    "engine": "gemc3",
+    "exit_code": 0,
+    "exceptions": []
+  },
+  {
+    "system": "dc",
+    "run": 11,
+    "engine": "gemc2-ddvcs-text",
+    "exit_code": 0,
+    "exceptions": []
+  }
+]

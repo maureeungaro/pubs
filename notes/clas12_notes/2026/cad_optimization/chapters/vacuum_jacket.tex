@@ -1,0 +1,115 @@
+\FloatBarrier
+\section{Vacuum jacket sharing with all holes retained}
+\label{sec:vacuum-jacket}
+
+Upcoming in GEMC2 6.2 and CLAS12 GEMC Systems 0.4, shell1a is renamed vacuumJacket. The twelve archived
+shell[1--6][ab] jackets are not all identical: the a and b families have different outlines and hole patterns.
+The accepted implementation uses six STL sources and six copies for twelve placements. vacuumJacket2a,
+vacuumJacket4a, and vacuumJacket5a copy vacuumJacket; vacuumJacket3b, vacuumJacket4b, and vacuumJacket6b copy
+vacuumJacket1b. All jacket names now use the vacuumJacket prefix. Materials, colors, and passive placements
+are retained. Source and runtime collections are synchronized in both owning repositories.
+
+Copies use exact 60-degree sector rotations and positions written with three decimal places in millimetres.
+These are nominally repeated engineering parts, with different exported tessellations. On every axial plane,
+fitted circular-hole centres, radii, and depths in the copied exports agree with the reference within 0.0001
+mm. Parameters use unsnapped coordinates after nominal-plane grouping; individual exported vertices depart
+from those planes by up to 0.000156 mm. Both directions of sampled polygonal-surface comparison are retained;
+coarse sector-4 tessellations produce differences up to 0.27 mm. Thus the copies preserve the nominal hole
+parameters, while their polygonal approximations follow the canonical STL.
+
+Every hole is kept, including countersinks, buried steps, and the narrow slot. The builder finds boundary
+contours on all distinct axial planes, protects their complete surface triangles, and decimates only the
+remaining border region. The a and b references have 78 and 73 protected axial contours, respectively;
+repeated depth contours are not distinct drilled holes. All 8,143 and 7,353 hole-region triangles remain
+coordinate-exact after binary STL serialization. Bounds are unchanged. The two canonical meshes remain closed,
+manifold, single-component solids with genus 38 and 35 and no detected self-intersecting faces. Each loses
+only four border triangles: 8,388 to 8,384 and 7,560 to 7,556. The large saving comes from sharing, rather
+than aggressive surface decimation.
+
+Four engineering exports remain byte-identical originals. vacuumJacket6a includes an additional disconnected
+100-triangle component, which is retained. Trial copies of vacuumJacket2b, vacuumJacket3a, and vacuumJacket5b
+created new approximately 1.8--2.7 nm contacts with Plate6, Plate6, and Plate3. Focused original/copy pair
+checks confirmed these contacts, so those three copies were rejected and their original STLs restored. No
+compensating translation or contact relief is applied.
+
+Unique jacket facets fall from 93,726 to 47,934, a reduction of 45,792 (48.86\%). Twelve physical placements
+remain. Their total placed facets increase from 93,726 to 95,754 because the shared reference is finer than
+the sector-4 exports. Signed steel volume changes from 1,114,226,112.24 to 1,114,222,358.59 cubic millimetres,
+or -0.000336885\%. Across the complete magnets collection, 33 STLs containing 74,830 unique facets now supply
+39 CAD placements. Detector-response equivalence has not been established by this isolated geometry and timing
+study.
+
+GEMC3 keeps the copies in magnets\_cad. GEMC2 uses 33 SQLITECAD sources and six native CopyOf rows in
+magnets\_copies at each inherited run; the supplied SQLite and TEXT cards load that companion bank. All nine
+construction checks pass across runs 11, 3029, and 4763 and both engines, including GEMC2 TEXT/CAD. Native
+solenoid and all three 39-row CAD banks pass semantic comparison. Unrelated native geometry, materials, and DC
+banks remain unchanged. The builder reproduces all six active jacket STLs and all three placement catalogs
+byte for byte.
+
+A dense run-11 assembly check loads native DC, both DC CAD groups, solenoid, magnets, and native/CAD beamline:
+139 volumes including the world. At 100,000 surface samples per tested volume and the same seed, it reports
+the same 22 ordered overlap pairs as before jacket sharing, normalizing shell1a to its new name. There are no
+added or removed sampled pairs. Existing assembly orientation and overlap warnings remain; this is not a claim
+of a warning-free assembly or a mathematical clearance proof.
+
+Timing isolates the twelve jackets at run 11, comparing twelve independent solids with six sources and six
+copies. One fixed GEMC3 dev executable with Geant4 11.4.3 runs FTFP\_BERT, default production cuts, one
+thread, no field, no optical physics, no GUI, and no event output. There is no target, luminosity
+normalization, or pileup. Five-GeV/c electrons, protons, positive pions, and neutrons start at the origin,
+uniformly in solid angle from 5 to 70 degrees, with full azimuth. Five alternating-order repetitions use 1,000
+matched LUND primaries per particle and seeds 12345--12349. All fifty timed processes and two isolated overlap
+checks complete without Geant4 exceptions; each tracking process reports 1,000 events. Sleep prevention is
+enabled for the reported repeat. An earlier complete repeat has inconsistent long internal wall-clock readings
+and is archived separately rather than pooled with these results.
+
+Median zero-event process wall time falls from 1.11389 to 0.94827 s (1.175 times faster). Median process CPU
+time changes from 1.050 to 0.900 s, and peak RSS from 204.47 to 168.58 MiB. The table reports median internal
+transport wall times, their before/after ratio, and the range of paired seed ratios. Ratios above one indicate
+faster tracking. Geometry and stochastic trajectory changes are included; the ratios are not pure facet-count
+scaling and do not establish a full-CLAS12 speedup.
+
+\begin{table}[htbp]
+\centering
+\setlength{\tabcolsep}{8pt}
+\caption{Vacuum jacket tracking; five repetitions of 1,000 events per particle.}
+\label{tab:vacuum-jacket}
+\begin{tabular}{lrrrr}
+\toprule
+Particle & Before (s) & After (s) & Speedup & Paired ratio range \\
+\midrule
+Electron & 8.57518 & 8.07752 & 1.062 & 1.012--1.062 \\
+Proton & 4.45965 & 3.48069 & 1.281 & 1.196--1.291 \\
+Positive pion & 4.46794 & 3.78943 & 1.179 & 1.155--1.306 \\
+Neutron & 1.94376 & 1.63337 & 1.190 & 1.153--1.355 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figures/vacuum_jacket_comparison.pdf}
+\caption{
+The two distinct canonical jackets before and after conservative border simplification. All holes,
+countersinks, and slots remain. The right column overlays a section through one stepped hole; the unchanged
+protected surfaces coincide. The four retained original exports are not shown.}
+\label{fig:vacuum-jacket}
+\end{figure}
+
+data/magnets\_vacuum and magnets\_vacuum\_archive.zip retain mesh health, hole parameters, surface
+comparisons, original and final inventories, all repeated timings, matched primaries, raw logs, rejected-copy
+contacts, semantic checks, and both dense assembly fixtures. The archive also includes the twelve original
+engineering exports, six final meshes, three catalogs, builder, benchmark, validation code, and executable
+hash. The executable is not redistributed. Earlier study archives remain unchanged. REPRODUCE.md documents the
+commands and fixture paths.
+
+\paragraph{Jacket naming update.}
+All active jacket placements now use vacuumJacket names: the original shell1a keeps vacuumJacket, and every
+other shellN[a/b] becomes vacuumJacketN[a/b]. For example, shell1b becomes vacuumJacket1b and shell6b becomes
+vacuumJacket6b. The five remaining shell-named STL sources and all copy references are renamed consistently in
+both engines. Archived engineering inputs and previous timing datasets retain their recorded names. The naming
+follow-up verifies identical mesh hashes and database rows after identifier mapping, and all nine construction
+checks and all three native/CAD comparisons pass again. The builder reproduces six meshes, three catalogs, and
+the health report byte for byte. Holes, facets, materials, transforms, and copy relationships are unchanged;
+the measured 48.86\% unique-facet reduction, 1.175 startup ratio, and particle-specific tracking results
+remain those above. No additional simulation speedup is attributed to renaming. Mapping and validation are
+retained in data/magnets\_vacuum\_naming and magnets\_vacuum\_naming\_archive.zip.

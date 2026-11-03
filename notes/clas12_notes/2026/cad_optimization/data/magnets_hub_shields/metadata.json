@@ -1,0 +1,67 @@
+{
+  "executable": "/private/tmp/hubcover-engine-20261022/gemc",
+  "executable_sha256": "7e1602f240de460bdbd38a5e6ac4dc925dea609cb79082277d53de6c9ec48d1b",
+  "platform": "macOS-26.7.1-arm64-arm-64bit",
+  "inventories": {
+    "original": {
+      "Shield1": {
+        "sha256": "0d0211eb5efd83e5189574680d447b0e59045cd6f730dfa85ffd1507f77b7a3a",
+        "facets": 478
+      },
+      "Shield2": {
+        "sha256": "9efb0f8068b14ed9b158cdea3b9052df17055453d2eff0b2eac6e1eeafea2a96",
+        "facets": 638
+      },
+      "Shield3": {
+        "sha256": "2f4b9d2408d57237cdc841a609c82863a37ee044a12604a5b8edc7ad5edbea1a",
+        "facets": 638
+      },
+      "Shield4": {
+        "sha256": "b8d64c79238a50f1b5589099ec156b0831018825650df5847bed13c2bf78196b",
+        "facets": 638
+      },
+      "Shield5": {
+        "sha256": "183db9422d8d5477d1686d0527851ffab083e15a4fce53d3d39f4e36d376af95",
+        "facets": 638
+      },
+      "Shield6": {
+        "sha256": "16b2201c113c7e96543fe02bff5b3bdcfe1bbcb42c6a1f25ac451d785d72940a",
+        "facets": 638
+      },
+      "Shield7": {
+        "sha256": "339fd0364f87c9d1bbc6368cceca379940e1f0ea440554f37243034404269355",
+        "facets": 478
+      }
+    },
+    "optimized": {
+      "hub_shield1": {
+        "sha256": "0d0211eb5efd83e5189574680d447b0e59045cd6f730dfa85ffd1507f77b7a3a",
+        "facets": 478
+      },
+      "hub_shield": {
+        "sha256": "7ccdb0848f5bf1248560acc6a2737818306b082065e46e7308391dd34cced8c1",
+        "facets": 638
+      },
+      "hub_shield7": {
+        "sha256": "339fd0364f87c9d1bbc6368cceca379940e1f0ea440554f37243034404269355",
+        "facets": 478
+      }
+    }
+  },
+  "events": 2000,
+  "repeats": 5,
+  "primary_theta_deg": [
+    0.3,
+    1.4
+  ],
+  "group": "hub_shield",
+  "run_manager": "Serial",
+  "primary_azimuth_deg": [
+    -180,
+    180
+  ],
+  "momentum_GeV": 5,
+  "field": "off",
+  "geant4_version_banner": "geant4-11-03-patch-02 [MT]   (25-April-2025)",
+  "failed_processes": 38
+}

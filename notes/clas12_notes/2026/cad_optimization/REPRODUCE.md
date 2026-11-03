@@ -38,7 +38,8 @@ those changes. The cone-only case isolates the substituted Winston-cone meshes.
 
 Timing medians use runs with normal process exit and a timing footer. The cone-only optical and
 nonoptical electron samples each contain one GeomNav0003 event-abort request; a timing footer does
-not guarantee complete transport of every event. These timings describe the defective configuration. A controller interruption left one unrecorded run; that run
+not guarantee complete transport of every event. These timings describe the defective configuration. A
+controller interruption left one unrecorded run; that run
 was repeated and the interrupted log retained. Timings are machine- and workload-specific. The
 one-event SQLite smoke tests verify all six run-dependent configurations; the geometry comparison
 summary records the corresponding TEXT/SQLite row counts.
@@ -497,7 +498,8 @@ After loading the GEMC2 module, run with a Python environment containing PyMeshL
 source /opt/homebrew/opt/modules/init/zsh
 module use /opt/projects/ceInstall/modules
 module load gemc/dev
-export CCDB_CONNECTION=sqlite:///opt/projects/gemc/clas12Tags/geometry_source/coatjava/etc/data/sqlite/ccdb.sqlite
+export CCDB_CONNECTION=\
+sqlite:///opt/projects/gemc/clas12Tags/geometry_source/coatjava/etc/data/sqlite/ccdb.sqlite
 /Users/ungaro/venv/pygemc/bin/python code/inspect_htcc_meshes.py
 /Users/ungaro/venv/pygemc/bin/python code/validate_htcc_stls.py
 /Users/ungaro/venv/pygemc/bin/python code/check_htcc_entry_overlap.py
@@ -519,3 +521,265 @@ the cured entry cone's approximately 0.053 mm contact; the matched raw-cone fixt
 Retain that warning and the Moller cone's remaining 24 non-manifold edges as unresolved limitations.
 Executable and dependency hashes captured when documenting the study are identified separately from the
 original validation logs; an exact validation-time executable hash was not recorded by the original driver.
+
+## Magnets duplicate shielding removal
+
+The October 21 study uses the same run-11 beamline and magnets fixtures before and after removing
+the nine DSShield placements and apex. Extract magnets_dedup_archive.zip into a writable directory.
+Use the fixed GEMC3 executable identified by metadata.json; the executable is not redistributed.
+Run one benchmark at a time, with no other simulation or build jobs:
+
+```shell
+python3 code/magnets_cad_benchmark.py --executable /path/to/fixed/gemc \
+  --originals originals --output /private/tmp/magnets-dedup-repeat --events 200 --repeats 5
+```
+
+The original collected database and all selected meshes are archived under originals/. The runner
+creates both fixtures, removes only the ten selected magnets rows in the optimized case, and retains
+the beamline and solenoid. It generates matched 5 GeV/c primaries at 0.25--3.5 degrees and full azimuth.
+Both fixtures use run 11, FTFP_BERT, one thread, and no field, GUI, or event output. Report medians of
+five alternating-order repetitions and keep startup, beamOn tracking, and overlap diagnostics separate.
+All raw logs, process reports, primary files, metadata, and all-run validation are archived.
+
+## Separate downstream shielding plate and vacuum jacket
+
+Extract magnets_plate_archive.zip into a writable directory. Run with the mesh-enabled pygemc Python
+environment, using the archived raw input folder:
+
+```shell
+/Users/ungaro/venv/pygemc/bin/python code/build_cad_meshes.py \
+  --source originals/magnets/stls --output /private/tmp/magnets-plate-rebuild
+python3 code/magnets_cad_benchmark.py --study plate --executable /path/to/fixed/gemc \
+  --originals originals --optimized /private/tmp/magnets-plate-rebuild \
+  --output /private/tmp/magnets-plate-repeat --events 2000 --repeats 5
+```
+
+Both fixtures contain two separate CAD rows with their original names, material, and passive placement.
+Only their mesh surfaces change. Match the executable hash from metadata.json and run one benchmark
+at a time. The local validation script uses the owning GEMC2/GEMC3 repositories and local CCDB data;
+its archived cards and logs document all three runs. No binary is redistributed.
+
+## Separate upstream shielding plate and vacuum jacket
+
+Extract magnets_upstream_archive.zip into a writable directory. Use the mesh-enabled pygemc Python
+environment and the fixed executable hash recorded in metadata.json:
+
+```shell
+/Users/ungaro/venv/pygemc/bin/python code/build_cad_meshes.py --pair upstream \
+  --source originals/magnets/stls --output /private/tmp/magnets-upstream-rebuild
+python3 code/magnets_cad_benchmark.py --study upstream_plate --executable /path/to/fixed/gemc \
+  --originals originals --optimized /private/tmp/magnets-upstream-rebuild \
+  --output /private/tmp/magnets-upstream-repeat --events 2000 --repeats 5
+```
+
+Both fixtures retain two rows with the original names, material, and passive placement. Primaries
+span 1.0--5.2 degrees at 5 GeV/c and full azimuth. Keep startup, tracking, and construction diagnostics
+separate. The builder preserves the actual reentrant jacket contour and all non-cap/non-pocket faces.
+
+## DC region-1 back membranes
+
+Extract dc_back_archive.zip into a writable directory and use the recorded executable hash.
+
+```shell
+/Users/ungaro/venv/pygemc/bin/python code/build_cad_meshes.py \
+  --source originals/magnets/stls --output /private/tmp/dc-back-repeat --round-angles
+python3 code/dc_cad_benchmark.py --executable /path/to/fixed/gemc --originals originals \
+  --optimized collected --output /private/tmp/dc-back-repeat-benchmark --events 2000 --repeats 5
+```
+
+The collected directory retains the final experiment database and shared DC mesh. Both timing fixtures
+contain six placements. The dense overlap fixtures include native DC, magnets, and beamline. Before running
+them, create
+rounding/fitted/{dc,beamline,magnets} and rounding/rounded/{dc,beamline,magnets} as symlinks to the
+corresponding ../../collected/ directories. Then run each check.yaml with -n=0 -seed=12345
+-check_overlaps=100000. Existing unrelated overlaps remain in both variants.
+
+## DC region-1 supports
+
+Extract dc_support_archive.zip into a writable directory and use the recorded executable hash.
+
+```shell
+/Users/ungaro/venv/pygemc/bin/python code/build_cad_meshes.py \
+  --source originals/magnets/stls --output /private/tmp/dc-support-repeat --group support --round-angles
+python3 code/dc_cad_benchmark.py --group support --executable /path/to/fixed/gemc --originals originals \
+  --optimized collected --output /private/tmp/dc-support-repeat-benchmark --events 2000 --repeats 5
+```
+
+The collected directory retains the final experiment database and shared DC mesh. Both timing fixtures
+contain six placements. The dense overlap fixtures include native DC, magnets, and beamline. Before running
+them, create
+rounding/fitted/{dc,beamline,magnets} and rounding/rounded/{dc,beamline,magnets} as symlinks to the
+corresponding ../../collected/ directories. Then run each check.yaml with -n=0 -seed=12345
+-check_overlaps=100000. Existing unrelated overlaps remain in both variants.
+
+## Vacuum jackets with all holes retained
+
+Extract magnets_vacuum_archive.zip into a writable directory. Use the executable hash in metadata.json.
+
+```shell
+/Users/ungaro/venv/pygemc/bin/python code/build_vacuum_jackets.py \
+  --source originals/magnets/stls --catalogs originals/catalog --output /private/tmp/jacket-repeat
+caffeinate -i -t 900
+python3 code/dc_cad_benchmark.py --group vacuum_jacket --executable /path/to/fixed/gemc \
+  --originals originals --optimized collected --output /private/tmp/jacket-repeat-benchmark \
+  --events 1000 --repeats 5
+```
+
+Run sleep prevention in a separate terminal. Each timing fixture is self-contained and holds twelve placements.
+The benchmark archive contains the final repeat; earlier_repeat records the preceding complete repeat with
+inconsistent internal wall-clock readings. Do not pool those measurements. All inputs and logs are retained.
+
+For the final dense check, create validation/assembly/{dc,magnets,beamline} as symlinks to the corresponding
+../../collected directories. For the baseline dense check, create baseline_assembly/{dc,beamline} as symlinks
+to ../collected/{dc,beamline}, and baseline_assembly/magnets as a symlink to ../baseline_magnets. In each fixture,
+run check.yaml with -n=0 -seed=12345 -check_overlaps=100000. Existing unrelated warnings remain. The GEMC2
+construction cards record absolute source paths; adjust them to an installation of the matching GEMC2 sources.
+
+The archived code/compare_jacket_hole_parameters.py and code/compare_shell_surfaces.py read
+evidence/shell_analysis.json and write comparison reports into the current directory. Run them with the
+mesh-enabled Python environment. code/verify_jacket_features_final.py verifies every protected triangle
+against originals/magnets/stls and writes optimized/feature_checks.json. These three archived helpers use
+paths relative to their archive location; the construction scripts retain their recorded installation paths.
+
+## Jacket naming follow-up
+
+All active shell placements and source STLs now use vacuumJacket names with sector/side suffixes, retaining
+the original vacuumJacket base name. Existing study archives preserve their measured inputs.
+data/magnets_vacuum_naming/ and magnets_vacuum_naming_archive.zip record the mapping and validation; this
+changes neither geometry nor the measured performance.
+
+## Torus coils
+
+Extract magnets_coils_archive.zip into a writable directory and use the recorded executable hash.
+
+```shell
+/Users/ungaro/venv/pygemc/bin/python code/build_coils.py --source originals/magnets/stls \
+  --catalogs originals/catalog --output /private/tmp/coils-repeat
+python3 code/dc_cad_benchmark.py --group coil --executable /path/to/fixed/gemc \
+  --originals originals --optimized collected --output /private/tmp/coils-repeat-benchmark \
+  --events 2000 --repeats 5 --run-manager Serial --keep-going
+```
+
+Run caffeinate -i -t 1200 in a separate terminal to prevent idle sleep during timing. For dense checks,
+link validation/{baseline,optimized}/{dc,beamline} to the corresponding ../../collected directories.
+Link validation/baseline/magnets to ../../originals/magnets and validation/optimized/magnets to
+../../collected/magnets. Run each check.yaml with -n=0 -seed=12345 -check_overlaps=100000. Readout is
+disabled in those fixtures; all 139 volumes and the existing unrelated geometry warnings remain.
+GEMC2 construction cards retain their original installation paths and require matching source/runtime trees.
+
+## Hub covers
+
+Extract magnets_hub_covers_archive.zip into a writable directory and use the recorded executable hash.
+
+```shell
+/Users/ungaro/venv/pygemc/bin/python code/build_hub_covers.py --source originals/magnets/stls \
+  --catalogs originals/catalog --output /private/tmp/hub-covers-repeat
+python3 code/dc_cad_benchmark.py --group hub_cover --executable /path/to/fixed/gemc \
+  --originals originals --optimized collected --output /private/tmp/hub-covers-repeat-benchmark \
+  --events 2000 --repeats 5 --run-manager Serial --keep-going
+```
+
+Keep build_coils.py beside build_hub_covers.py: it supplies the triangle-boundary helper.
+Run caffeinate -i -t 1800 separately during timing. For dense checks, link
+validation/{baseline_named,optimized}/{dc,beamline} to the corresponding ../../collected directories.
+Link validation/baseline_named/magnets to ../../originals/magnets and validation/optimized/magnets to
+../../collected/magnets. Run check.yaml in each directory with -n=0 -seed=12345 -check_overlaps=100000.
+The controlled baseline retains original Plate STL paths and poses while using hubCover volume names.
+The earlier baseline fixture preserves original names too; its sampling order differs. All 139 volumes,
+existing contacts, and geometry warnings are retained. Readout is disabled for these geometry-only fixtures.
+GEMC2 validation cards retain installation paths and require matching source/runtime trees.
+
+## Hub shields
+
+Extract magnets_hub_shields_archive.zip into a writable directory and use the recorded executable hash.
+
+```shell
+/Users/ungaro/venv/pygemc/bin/python code/build_hub_shields.py --source originals/magnets/stls \
+  --catalogs originals/catalog --output /private/tmp/hub-shields-repeat
+python3 code/dc_cad_benchmark.py --group hub_shield --executable /path/to/fixed/gemc \
+  --originals originals --optimized collected --output /private/tmp/hub-shields-repeat-benchmark \
+  --events 2000 --repeats 5 --run-manager Serial --keep-going
+```
+
+Run caffeinate -i -t 1800 separately during timing. For dense checks, link
+validation/{baseline_named,optimized}/{dc,beamline} to the corresponding ../../collected directories.
+Link validation/baseline_named/magnets to ../../originals/magnets and validation/optimized/magnets to
+../../collected/magnets. Run check.yaml in each directory with -n=0 -seed=12345 -check_overlaps=100000.
+The controlled baseline retains original Shield STL paths and poses while using final hub_shield names.
+The rejected candidate logs retain their contacts; their meshes are in rejected_sources/. All 139 volumes,
+existing contacts, and geometry warnings are retained. Readout is disabled for these geometry-only fixtures.
+GEMC2 validation cards retain installation paths and require matching source/runtime trees.
+
+## Cold hub
+
+Extract magnets_cold_hub_archive.zip into a writable directory and use the recorded executable hash.
+
+```shell
+/Users/ungaro/venv/pygemc/bin/python code/build_cold_hub.py --source originals/magnets/stls \
+  --catalogs originals/catalog --output /private/tmp/cold-hub-repeat
+python3 code/dc_cad_benchmark.py --group cold_hub --executable /path/to/fixed/gemc \
+  --originals originals --optimized collected --output /private/tmp/cold-hub-repeat-benchmark \
+  --events 2000 --repeats 5 --run-manager Serial --keep-going
+```
+
+Run caffeinate -i -t 1800 separately during timing. For dense checks, link
+validation/{baseline_named,optimized}/{dc,beamline} to the corresponding ../../collected directories.
+Link validation/baseline_named/magnets to ../../originals/magnets and validation/optimized/magnets to
+../../collected/magnets. Run check.yaml in each directory with -n=0 -seed=12345 -check_overlaps=100000.
+The controlled baseline retains the original Hub001 STL path and pose while using the ColdHub volume name.
+All 139 volumes, existing contacts, and geometry warnings are retained.
+Readout is disabled for these geometry-only fixtures.
+GEMC2 validation cards retain installation paths and require matching source/runtime trees.
+
+To reproduce the comparison figure with the mesh-enabled Python environment:
+
+```shell
+/Users/ungaro/venv/pygemc/bin/python code/render_cold_hub.py \
+  --original originals/magnets/stls/Hub001.stl --optimized collected/magnets/stls/ColdHub.stl \
+  --output /private/tmp/cold-hub-repeat-figures
+```
+
+## Bore tubes
+
+Extract magnets_bore_tubes_archive.zip into a writable directory. The audit requires NumPy and PyMeshLab.
+
+```shell
+/Users/ungaro/venv/pygemc/bin/python code/audit_bore_tubes.py \
+  --originals originals/magnets/stls --active collected/magnets/stls --output /tmp/bore-tube-audit.json
+```
+
+The audit verifies identical bytes, coherent winding, nondegenerate triangles, closed manifold topology,
+genus one, all required rim corners, and zero detected self-intersections. No new timing study was run.
+Construction cards retain installation paths and require matching source/runtime trees.
+
+## HTCC Moller repair
+
+Extract htcc_moller_repair_archive.zip into a writable directory. Use the recorded PyMeshLab version.
+
+```shell
+<mesh-python>/python3 code/build_cad_meshes.py --mesh htccMollerCone \
+  --source engineering --output /tmp/htcc-moller-repeat
+```
+
+Compare the generated STL and health report with collected/. The builder imports repair_moller_cone.py
+from its own directory. Construction cards require their recorded local installations, database, and
+source/runtime mesh trees; GEMC3 fixtures disable readout and explicitly select each survey variation.
+The direct solid probe builds with the matching Geant4 geometry, graphics-representation, global, and CLHEP
+libraries; its C++ source is in code/check_htcc_stl.cc. No tracking benchmark is included in this repair.
+
+## Detector bank consolidation
+
+The owning generators are geometry_src/{dc,magnets}/{dc,magnets}.py in clas12-systems and
+geometry_source/{dc,magnets}/{dc,magnets}.pl in clas12Tags. Use the local CCDB SQLite connection.
+GEMC2 generators update its owning database and TEXT files; refresh runtime TEXT copies afterward.
+
+```shell
+<configured-python>/python3 geometry_src/dc/dc.py -f sqlite -sql /tmp/consolidated.sqlite
+<configured-python>/python3 geometry_src/magnets/magnets.py -f sqlite -sql /tmp/consolidated.sqlite
+<configured-python>/python3 scripts/compare_ascii_databases.py dc magnets
+```
+
+GEMC3 cards load only dc and magnets. GEMC2 cards load dc plus dc_cad and magnets plus magnets_cad.
+The retained fixtures disable readout and require the recorded engine and source/runtime trees.
+Earlier archived benchmarks retain their original system names; the DC/magnets benchmark accepts
+the consolidated optimized banks as well as historical companion-bank datasets.

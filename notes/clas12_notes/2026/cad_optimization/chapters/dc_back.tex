@@ -1,0 +1,90 @@
+\FloatBarrier
+\section{DC region-1 back membranes}
+\label{sec:dc-back}
+
+Upcoming in GEMC2 6.2 and CLAS12 GEMC Systems 0.4, the six dcs1r1back through dcs6r1back Kapton membranes move
+from magnets to the DC system. A new DC cad directory owns one unchanged dcs5r1back STL. The other five named
+placements share its solid. GEMC3 publishes all six passive placements in dc\_cad; GEMC2 uses one CAD source
+in dc\_cad and five native CopyOf rows in dc\_copies. The supplied DC cards and the GEMC3 experiment card load
+the required companions. Native DC geometry and materials remain unchanged.
+
+The six engineering files are not byte-identical: sector coordinates and small tilts are baked into the
+vertices. Proper rigid fits of their twelve corresponding vertices give a maximum error of 0.00007613 mm
+against the shared reference. This is comparable to single-precision STL export rounding. Sector-specific
+translations are retained rather than assuming exact rotations of a single unshifted sector. Original meshes
+are archived separately in the owning GEMC2 source repository.
+
+Each source has twenty triangles, twelve vertices, thirty edges, one closed manifold component, genus zero,
+and no boundary edges. These hexagonal prisms already have the minimum closed triangular surface for their
+twelve retained corners. No geometric decimation or hole filling is applied. Unique stored and built triangles
+fall from 120 to 20 (83.33\% fewer), and active STL storage falls from 6,504 to 1,084 bytes. The six physical
+membranes still have 120 placed triangles. Magnets now has 45 STL files with 126,658 triangles; DC owns the
+additional twenty unique triangles.
+
+Sharing the rounded approximately 2.5-micrometre reference film changes total signed Kapton volume from
+23637.244828 to 23756.565606 cubic millimetres (+0.504800\%). Float coordinate rounding is significant
+relative to this thickness. This numerical material difference is reported separately from the storage
+reduction; it does not establish detector-response equivalence.
+
+At the user's request, angles are rounded to integers after comparing them with the fitted angles. The largest
+resulting vertex displacement is 0.759079 mm in sector 1; sectors 2 and 3 move by at most 0.634661 mm. The
+comparison loads native DC, both DC and magnets CAD, the solenoid, native beamline, and beamline CAD at run
+11: 139 volumes including the world. Both variants use the same seed and 100,000 Geant4 surface samples per
+tested volume. No overlap involves any of the six membranes in either variant, and both variants report 48
+overlap messages covering the same 23 distinct ordered volume pairs. Existing overlaps elsewhere are retained.
+Surface sampling is not a mathematical proof of clearance.
+
+All three inherited CAD runs (11, 3029, 4763) pass GEMC2 TEXT/CAD, GEMC2 SQLite/CAD, and GEMC3 initialization.
+GEMC3 also constructs its custom DDVCS run, for ten successful checks in total. The semantic comparison
+matches both native DC variations and all four DC CAD banks, along with all three reduced magnets CAD banks.
+Independent database checks verify the GEMC2 five-copy and one-mesh rows, unchanged unrelated native/material
+banks, byte-identical source/runtime meshes in both repositories, and the six unchanged archived originals.
+
+The timing fixture isolates the six membranes at run 11. Before optimization it builds six separate
+tessellated solids; afterward it builds one shared solid with five copies, using the final integer angles. One
+fixed GEMC3 dev executable and Geant4 11.4.3 run FTFP\_BERT with default production cuts, one thread, no
+field, no optical physics, no GUI, no event output, and no target or pileup. Each 5 GeV/c electron, proton,
+positive pion, or neutron starts at the origin, uniformly in solid angle from 5 to 45 degrees with full
+azimuth. Five alternating-order repetitions use 2,000 matched LUND primaries per particle and seeds
+12345--12349. Startup and beamOn tracking are reported separately; forty tracking processes each report 2,000
+events. All fifty timed processes and two separate construction checks complete without Geant4 exceptions.
+
+Median zero-event process wall time falls from 0.72316 to 0.40457 s (1.787 times faster). Median process CPU
+time changes from 0.660 to 0.360 s and peak RSS from 118.45 to 73.34 MiB. Tracking ratios below are
+before/after; values above one indicate faster tracking. They describe this thin-membrane workload and do not
+establish a full-CLAS12 speedup. The physical surface change from angle rounding and the small material-volume
+difference are included in these timings.
+
+\begin{table}[htbp]
+\centering
+\setlength{\tabcolsep}{8pt}
+\caption{DC membrane tracking; five repetitions of 2,000 events per particle.}
+\label{tab:dc-back}
+\begin{tabular}{lrrrr}
+\toprule
+Particle & Before (s) & After (s) & Speedup & Paired ratio range \\
+\midrule
+Electron & 2.18817 & 2.22178 & 0.985 & 0.963--1.002 \\
+Proton & 3.31635 & 3.36257 & 0.986 & 0.972--1.012 \\
+Positive pion & 3.04980 & 3.08063 & 0.990 & 0.970--1.007 \\
+Neutron & 0.91443 & 0.91720 & 0.997 & 0.965--0.999 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figures/dc_back_comparison.pdf}
+\caption{
+World x-y projections of the six original membranes and their shared-mesh copies, with sector numbers
+retained. The right panel shows the maximum vertex displacement caused by the accepted integer-angle
+placement, including the small rigid-fit residual. Lines overlap at the displayed millimetre scale; the bar
+chart exposes the submillimetre changes.}
+\label{fig:dc-back}
+\end{figure}
+
+data/dc\_back and dc\_back\_archive.zip retain shape fits, rounded-angle displacements, database checks, both
+dense assembly checks, repeated timing inputs/results, and raw logs. The archive includes the original and
+final fixtures, archived engineering meshes, builder and validation scripts, and executable hash. The
+executable itself is not redistributed. Earlier study archives are unchanged. Rebuild the shared mesh with the
+builder's --round-angles option.

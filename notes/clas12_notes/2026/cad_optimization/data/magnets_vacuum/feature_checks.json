@@ -1,0 +1,22 @@
+{
+  "a": {
+    "protected_axial_contours": 78,
+    "unchanged_hole_triangles": 8143,
+    "all_hole_surfaces_exact": true,
+    "genus": 38
+  },
+  "b": {
+    "protected_axial_contours": 73,
+    "unchanged_hole_triangles": 7353,
+    "all_hole_surfaces_exact": true,
+    "genus": 35
+  },
+  "original_unique_facets": 93726,
+  "optimized_unique_facets": 47934,
+  "original_placed_facets": 93726,
+  "optimized_placed_facets": 95754,
+  "original_volume_mm3": 1114226112.2436137,
+  "optimized_volume_mm3": 1114222358.588157,
+  "volume_change_percent": -0.00033688453496827364,
+  "shell6a_exact_including_extra_component": true
+}

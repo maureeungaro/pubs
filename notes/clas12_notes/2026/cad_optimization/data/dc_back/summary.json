@@ -1,0 +1,70 @@
+{
+  "loading": {
+    "original": {
+      "wall_seconds": 0.723156792,
+      "cpu_seconds": 0.66,
+      "rss_bytes": 124207104
+    },
+    "optimized": {
+      "wall_seconds": 0.4045707500000001,
+      "cpu_seconds": 0.36,
+      "rss_bytes": 76906496
+    }
+  },
+  "e-": {
+    "original": {
+      "wall_seconds": 2.9218154169999995,
+      "cpu_seconds": 2.86,
+      "rss_bytes": 126205952,
+      "transport_wall_seconds": 2.18817
+    },
+    "optimized": {
+      "wall_seconds": 2.6520645000000016,
+      "cpu_seconds": 2.61,
+      "rss_bytes": 78905344,
+      "transport_wall_seconds": 2.22178
+    }
+  },
+  "proton": {
+    "original": {
+      "wall_seconds": 4.0618016669999975,
+      "cpu_seconds": 3.98,
+      "rss_bytes": 131448832,
+      "transport_wall_seconds": 3.31635
+    },
+    "optimized": {
+      "wall_seconds": 3.7831738330000064,
+      "cpu_seconds": 3.74,
+      "rss_bytes": 83755008,
+      "transport_wall_seconds": 3.36257
+    }
+  },
+  "pi+": {
+    "original": {
+      "wall_seconds": 3.800633375000004,
+      "cpu_seconds": 3.73,
+      "rss_bytes": 131219456,
+      "transport_wall_seconds": 3.0498
+    },
+    "optimized": {
+      "wall_seconds": 3.5214155000000034,
+      "cpu_seconds": 3.46,
+      "rss_bytes": 83918848,
+      "transport_wall_seconds": 3.08063
+    }
+  },
+  "neutron": {
+    "original": {
+      "wall_seconds": 1.6535357919999996,
+      "cpu_seconds": 1.58,
+      "rss_bytes": 131186688,
+      "transport_wall_seconds": 0.914433
+    },
+    "optimized": {
+      "wall_seconds": 1.3401015830000063,
+      "cpu_seconds": 1.3,
+      "rss_bytes": 83771392,
+      "transport_wall_seconds": 0.917201
+    }
+  }
+}

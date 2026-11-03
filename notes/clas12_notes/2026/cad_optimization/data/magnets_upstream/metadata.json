@@ -1,0 +1,59 @@
+{
+  "executable": "/opt/jlab_software/macosx26-clang21-arm64/gemc/dev/bin/gemc",
+  "executable_sha256": "17282b7bb9c179d5ae1689adefffa607881c3ffa627cb32876d8555bbf7a0fd8",
+  "platform": "macOS-26.7.1-arm64-arm-64bit",
+  "originals": "/private/tmp/magnets-upstream-input-20261021",
+  "source_database_sha256": "402d985714eae4ad5c2ef93bac32e18e8032531a9009a49e687ba0de61ed489f",
+  "study": "upstream_plate",
+  "removed": [],
+  "changed_meshes": [
+    "UpstreamShieldingPlate",
+    "UpstreamVacuumJacket"
+  ],
+  "events": 2000,
+  "repeats": 5,
+  "runno": 11,
+  "systems": [
+    "magnets_cad"
+  ],
+  "momentum_GeV": 5,
+  "primary_theta_deg": [
+    1.0,
+    5.2
+  ],
+  "primary_azimuth_deg": [
+    -180,
+    180
+  ],
+  "field": "off",
+  "inventories": {
+    "original": {
+      "magnets_cad/UpstreamShieldingPlate": {
+        "sha256": "45b5303255fbfdd4b1f6df5c2d086930cb5e12c1466cb581c328df004824ae9c",
+        "triangles": 1380,
+        "bytes": 69084,
+        "path": "magnets/stls/UpstreamShieldingPlate.stl"
+      },
+      "magnets_cad/UpstreamVacuumJacket": {
+        "sha256": "af1bdbe5b7de5104c8d9fbc64f255f771bb0dac8d290e94aeaa07a33d7d4544e",
+        "triangles": 2876,
+        "bytes": 143884,
+        "path": "magnets/stls/UpstreamVacuumJacket.stl"
+      }
+    },
+    "optimized": {
+      "magnets_cad/UpstreamShieldingPlate": {
+        "sha256": "7e5d5dfe22fefbf287908d9d9d754b6a1b020ec4d2178ee669c4fc80617137d4",
+        "triangles": 508,
+        "bytes": 25484,
+        "path": "magnets/stls/UpstreamShieldingPlate.stl"
+      },
+      "magnets_cad/UpstreamVacuumJacket": {
+        "sha256": "1eba1baefdb84272fd40a7a79265f26910aff76e43424e4c4b8c5ed4752d2544",
+        "triangles": 1004,
+        "bytes": 50284,
+        "path": "magnets/stls/UpstreamVacuumJacket.stl"
+      }
+    }
+  }
+}

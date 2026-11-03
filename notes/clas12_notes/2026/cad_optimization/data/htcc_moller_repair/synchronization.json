@@ -1,0 +1,30 @@
+{
+  "before": {
+    "/opt/projects/gemc/clas12-systems/geometry_src/htcc/stls/htccCone.stl": "77c799d408aa3a7ebf55ffc807abab745bb23e9bffc4335a9d512c8a53e8bac5",
+    "/opt/projects/gemc/clas12-systems/geometry_src/htcc/stls/htccMollerCone.stl": "31d95c7c0edf8069bb3cf2ffdac53487789906c9344c8507d55c6acfb620940f",
+    "/opt/projects/gemc/clas12-systems/geometry_src/htcc/stls/htccMollerConeExt.stl": "c6379b8870f81b9ad2f643d567633ba78be257851d73ad34cfb1da30e1308988",
+    "/opt/projects/gemc/clas12-systems/experiments/htcc/stls/htccCone.stl": "77c799d408aa3a7ebf55ffc807abab745bb23e9bffc4335a9d512c8a53e8bac5",
+    "/opt/projects/gemc/clas12-systems/experiments/htcc/stls/htccMollerCone.stl": "31d95c7c0edf8069bb3cf2ffdac53487789906c9344c8507d55c6acfb620940f",
+    "/opt/projects/gemc/clas12-systems/experiments/htcc/stls/htccMollerConeExt.stl": "c6379b8870f81b9ad2f643d567633ba78be257851d73ad34cfb1da30e1308988",
+    "/opt/projects/gemc/clas12Tags/geometry_source/htcc/cad/htccCone.stl": "77c799d408aa3a7ebf55ffc807abab745bb23e9bffc4335a9d512c8a53e8bac5",
+    "/opt/projects/gemc/clas12Tags/geometry_source/htcc/cad/htccMollerCone.stl": "31d95c7c0edf8069bb3cf2ffdac53487789906c9344c8507d55c6acfb620940f",
+    "/opt/projects/gemc/clas12Tags/geometry_source/htcc/cad/htccMollerConeExt.stl": "c6379b8870f81b9ad2f643d567633ba78be257851d73ad34cfb1da30e1308988",
+    "/opt/projects/gemc/clas12Tags/experiments/clas12/htcc/cad/htccCone.stl": "77c799d408aa3a7ebf55ffc807abab745bb23e9bffc4335a9d512c8a53e8bac5",
+    "/opt/projects/gemc/clas12Tags/experiments/clas12/htcc/cad/htccMollerCone.stl": "31d95c7c0edf8069bb3cf2ffdac53487789906c9344c8507d55c6acfb620940f",
+    "/opt/projects/gemc/clas12Tags/experiments/clas12/htcc/cad/htccMollerConeExt.stl": "c6379b8870f81b9ad2f643d567633ba78be257851d73ad34cfb1da30e1308988"
+  },
+  "after_sha256": "90a8d4f0d04342b4054e3304896d8c38536742b17c1790da9bf2becb7674de60",
+  "roots": [
+    "/opt/projects/gemc/clas12-systems/geometry_src/htcc/stls",
+    "/opt/projects/gemc/clas12-systems/experiments/htcc/stls",
+    "/opt/projects/gemc/clas12Tags/geometry_source/htcc/cad",
+    "/opt/projects/gemc/clas12Tags/experiments/clas12/htcc/cad"
+  ],
+  "other_two_meshes_unchanged": true,
+  "engineering_originals_unchanged": {
+    "htccMollerConeExt.stl": "56079135a6af608315454b6f6021d663d5f98b7f93a238fa70925bd4eecdf945",
+    "htccMollerCone.stl": "6101a733fa5928cfa83f14b83b0d44c92c548ce44e505f5aa6d60c87be4d63d1",
+    "htccCone.stl": "ae3bdcd3d36107d1f2ecf1297e0d4d277e6fa636935d72672bbeedb1c821a8eb"
+  },
+  "placements_materials_catalogs_databases_changed": false
+}

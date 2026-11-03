@@ -1,0 +1,13 @@
+{
+  "archive_sha256": "ab58628f33b4c95071bdb8f031d8deb0a2d093534436b025657e31f8cbb0b77f",
+  "archive_bytes": 17007202,
+  "members": 612,
+  "CRC_checks_passed": true,
+  "unique_member_names": true,
+  "optimized_mesh_and_catalog_hashes_match": true,
+  "baseline_magnets_STLs": 39,
+  "complete_repeats": {
+    "benchmark": 52,
+    "earlier_repeat": 52
+  }
+}

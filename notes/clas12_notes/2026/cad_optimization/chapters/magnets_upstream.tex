@@ -1,0 +1,92 @@
+\FloatBarrier
+\section{Upstream shielding plate and vacuum jacket}
+\label{sec:magnets-upstream}
+
+Upcoming in GEMC2 6.2 and CLAS12 GEMC Systems 0.4, UpstreamShieldingPlate and UpstreamVacuumJacket remain
+separate under their original names in all three configurations: default, rga\_spring2018, and rga\_fall2018
+(runs 11, 3029, and 4763). Stainless steel, passive 180-degree y rotation, and 1273.27 mm z translation are
+unchanged. All four source/runtime collections match byte for byte; original engineering meshes are archived
+in the owning GEMC2 repository.
+
+Eight plate through-holes and six blind jacket bolt recesses are filled. The plate retains its original 76.35
+mm aperture and 175 mm outer polygon rims. The jacket retains its stepped bore (76.2 mm and 73.025 mm radii),
+reentrant outer contour, and rounded outer features. Its 894 non-cap/non-pocket triangles are preserved
+exactly. The drilled entry face is retriangulated against its original 60-vertex outer boundary and 50-vertex
+bore boundary, following actual edge connectivity. No rim displacement, joining, or Poisson reconstruction is
+applied. Both original bounds and the 42.8780517578125 mm axial gap are retained.
+
+The plate falls from 1,380 to 508 triangles; the jacket falls from 2,876 to 1,004. Together they fall from
+4,256 to 1,512 triangles (64.47\% fewer). Each optimized mesh is a single closed manifold component of genus
+one, without boundary edges, detected self-intersections, or zero-area triangles. All four upstream/downstream
+optimized meshes reproduce byte for byte with the extended builder. The final magnets collection has 51 meshes
+and 126,778 triangles.
+
+Signed plate volume changes from 243544.153894 to 249076.583284 cubic millimetres (+2.271633\%). Jacket volume
+changes from 3649980.788315 to 3669204.137370 cubic millimetres (+0.526670\%). The pair gains 0.635819\%
+signed steel volume. The plate also passes an independent polygon-area/thickness volume calculation; the
+jacket validation instead checks unchanged outer/bore surfaces and the preserved triangles. Hole filling
+deliberately changes the material model and does not establish detector-response equivalence.
+
+Independent VTK tests identify all fourteen source holes: 48 interior probes switch from empty to steel, 1,296
+bore probes remain empty, and 10,080 envelope probes away from drilled features match the raw surfaces. All
+120 inter-part gap probes remain outside both meshes. These sampled checks supplement exact preservation of
+the retained contour vertices and faces.
+
+The isolated run-11 benchmark loads the same two named CAD rows before and after optimization. It uses the
+same fixed GEMC3 dev executable, Geant4 11.4.3, macOS arm64, FTFP\_BERT, one thread, and default production
+cuts. There is no field, optical physics, GUI, event output, target, luminosity normalization, or pileup. Each
+5 GeV/c primary starts at the origin, uniformly in solid angle over 1.0--5.2 degrees and full azimuth. Five
+alternating-order repetitions use 2,000 events per particle and seeds 12345--12349, with identical LUND inputs
+within each pair. All fifty timed processes and both separate construction checks complete without Geant4
+exceptions; each of the forty tracking processes reports 2,000 events.
+
+Median zero-event process wall time is 0.78839 s before and 0.78842 s after; CPU time is 0.720 and 0.710 s,
+and peak RSS is 124.72 and 120.61 MiB. Tracking measurements below are median Geant4 beamOn wall times
+excluding startup; ratios are before/after and values above one indicate faster tracking. These results apply
+to this isolated two-part workload. The authorized hole filling changes physical transport, so the comparison
+does not isolate tessellation cost or establish a full-CLAS12 gain. The benchmark runner verifies its
+executable hash at both start and completion. The installed executable was updated after the benchmark;
+provenance records the later documentation-time hash separately, without assigning it to the timed processes
+or the earlier validation checks.
+
+Table~\ref{tab:magnets-upstream} reports tracking separately from startup.
+\begin{table}[htbp]
+\centering
+\setlength{\tabcolsep}{8pt}
+\caption{Upstream pair tracking; five repetitions of 2,000 events per particle.}
+\label{tab:magnets-upstream}
+\begin{tabular}{lrrrr}
+\toprule
+Particle & Before (s) & After (s) & Speedup & Paired ratio range \\
+\midrule
+Electron & 17.66120 & 14.09530 & 1.253 & 1.230--1.257 \\
+Proton & 6.02561 & 5.51877 & 1.092 & 1.077--1.116 \\
+Positive pion & 5.68061 & 5.07695 & 1.119 & 1.087--1.145 \\
+Neutron & 4.06531 & 3.57569 & 1.137 & 1.108--1.153 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All three runs pass standalone GEMC3 magnets construction with 53 volumes including the world, combined GEMC2
+TEXT/CAD and SQLite/CAD initialization, and semantic comparisons of one native solenoid row and 51 CAD rows.
+The sampled full-magnets GEMC3 diagnostics retain 16 GeomSolids1001, seven GeomSolids1002, and 23 GeomVol1002
+warning blocks per run, originating outside the clean isolated upstream pair. Assembly validation remains
+incomplete; the previously documented run-4763 beamline-bank selection limitation also remains.
+
+Figure~\ref{fig:magnets-upstream} compares the retained and optimized surfaces.
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.98\linewidth,height=0.76\textheight,keepaspectratio]
+{figures/upstream_plate_comparison.pdf}
+\caption{
+Original (left) and optimized (right) upstream STL surfaces, with common bounds and orthographic physical
+scale within each row. Entry-face panels show stored planar facets; the assembly row shows both separate
+complete meshes at their original spacing. Outer jacket recesses and rounded features remain; only drilled
+features and the entry-cap triangulation change.}
+\label{fig:magnets-upstream}
+\end{figure}
+
+data/magnets\_upstream retains the inventory, shape probes, raw timing results, hashes, and three-run
+validation. magnets\_upstream\_archive.zip retains both two-volume fixtures, matched primaries, all raw
+logs/time reports, original meshes, final outputs, and builder/validation scripts. The executable is
+identified by hash and is not redistributed. Earlier archives are unchanged.

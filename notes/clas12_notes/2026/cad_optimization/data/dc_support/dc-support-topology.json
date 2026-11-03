@@ -1,0 +1,194 @@
+{
+  "dcs5r1support": {
+    "topology": {
+      "boundary_edges": 0,
+      "connected_components_number": 2,
+      "edges_number": 1509,
+      "faces_number": 1006,
+      "genus": 4,
+      "incident_faces_on_non_two_manifold_edges": 0,
+      "incident_faces_on_non_two_manifold_vertices": 0,
+      "is_mesh_two_manifold": true,
+      "non_two_manifold_edges": 0,
+      "non_two_manifold_vertices": 0,
+      "number_holes": 0,
+      "unreferenced_vertices": 0,
+      "vertices_number": 499
+    },
+    "self_intersecting_faces": 10,
+    "volume_mm3": 2462705.9832544057,
+    "bounds_mm": [
+      [
+        -526.078857421875,
+        109.60070037841797,
+        -2028.5875244140625
+      ],
+      [
+        -41.07526779174805,
+        646.4349975585938,
+        -1435.2926025390625
+      ]
+    ],
+    "sha256": "45f54633acb92f1a2714e015bf28c12f80f2e9a5c36c7c7b58db36bbc214ce4d"
+  },
+  "dcs2r1support": {
+    "topology": {
+      "boundary_edges": 0,
+      "connected_components_number": 2,
+      "edges_number": 1509,
+      "faces_number": 1006,
+      "genus": 4,
+      "incident_faces_on_non_two_manifold_edges": 0,
+      "incident_faces_on_non_two_manifold_vertices": 0,
+      "is_mesh_two_manifold": true,
+      "non_two_manifold_edges": 0,
+      "non_two_manifold_vertices": 0,
+      "number_holes": 0,
+      "unreferenced_vertices": 0,
+      "vertices_number": 499
+    },
+    "self_intersecting_faces": 0,
+    "volume_mm3": 2462705.1534981113,
+    "bounds_mm": [
+      [
+        40.68409729003906,
+        -646.1318359375,
+        -2028.619384765625
+      ],
+      [
+        525.9039306640625,
+        -108.92317199707031,
+        -1435.8839111328125
+      ]
+    ],
+    "sha256": "dfaeaadeb0db4570dd2a36d4880f87399170d86f1d5a2c50d2c882919c98b2b8"
+  },
+  "dcs3r1support": {
+    "topology": {
+      "boundary_edges": 0,
+      "connected_components_number": 2,
+      "edges_number": 1509,
+      "faces_number": 1006,
+      "genus": 4,
+      "incident_faces_on_non_two_manifold_edges": 0,
+      "incident_faces_on_non_two_manifold_vertices": 0,
+      "is_mesh_two_manifold": true,
+      "non_two_manifold_edges": 0,
+      "non_two_manifold_vertices": 0,
+      "number_holes": 0,
+      "unreferenced_vertices": 0,
+      "vertices_number": 499
+    },
+    "self_intersecting_faces": 22,
+    "volume_mm3": 2462705.6451898217,
+    "bounds_mm": [
+      [
+        -526.0884399414062,
+        -646.4286499023438,
+        -2028.5875244140625
+      ],
+      [
+        -41.24951934814453,
+        -109.50751495361328,
+        -1435.2926025390625
+      ]
+    ],
+    "sha256": "711d4ded68c2a4fbcd44534f50e78c288d048e54fec916cba116da5ce6223aa4"
+  },
+  "dcs4r1support": {
+    "topology": {
+      "boundary_edges": 0,
+      "connected_components_number": 2,
+      "edges_number": 1509,
+      "faces_number": 1006,
+      "genus": 4,
+      "incident_faces_on_non_two_manifold_edges": 0,
+      "incident_faces_on_non_two_manifold_vertices": 0,
+      "is_mesh_two_manifold": true,
+      "non_two_manifold_edges": 0,
+      "non_two_manifold_vertices": 0,
+      "number_holes": 0,
+      "unreferenced_vertices": 0,
+      "vertices_number": 499
+    },
+    "self_intersecting_faces": 32,
+    "volume_mm3": 2462705.5953097395,
+    "bounds_mm": [
+      [
+        -596.7438354492188,
+        -264.7677001953125,
+        -2028.5875244140625
+      ],
+      [
+        -148.58445739746094,
+        264.7769775390625,
+        -1435.2926025390625
+      ]
+    ],
+    "sha256": "3e386390d05d19fcffb7509b6413507cb47c518af1346634517b5f6e61fae715"
+  },
+  "dcs6r1support": {
+    "topology": {
+      "boundary_edges": 0,
+      "connected_components_number": 2,
+      "edges_number": 1509,
+      "faces_number": 1006,
+      "genus": 4,
+      "incident_faces_on_non_two_manifold_edges": 0,
+      "incident_faces_on_non_two_manifold_vertices": 0,
+      "is_mesh_two_manifold": true,
+      "non_two_manifold_edges": 0,
+      "non_two_manifold_vertices": 0,
+      "number_holes": 0,
+      "unreferenced_vertices": 0,
+      "vertices_number": 499
+    },
+    "self_intersecting_faces": 16,
+    "volume_mm3": 2462704.1810043133,
+    "bounds_mm": [
+      [
+        40.54545211791992,
+        108.28804016113281,
+        -2028.81689453125
+      ],
+      [
+        525.8966064453125,
+        646.096435546875,
+        -1436.2774658203125
+      ]
+    ],
+    "sha256": "fdde3e291467771eb59b2e9771748c2851d372b47cd4d01391ac01d57be12d03"
+  },
+  "dcs1r1support": {
+    "topology": {
+      "boundary_edges": 0,
+      "connected_components_number": 2,
+      "edges_number": 1509,
+      "faces_number": 1006,
+      "genus": 4,
+      "incident_faces_on_non_two_manifold_edges": 0,
+      "incident_faces_on_non_two_manifold_vertices": 0,
+      "is_mesh_two_manifold": true,
+      "non_two_manifold_edges": 0,
+      "non_two_manifold_vertices": 0,
+      "number_holes": 0,
+      "unreferenced_vertices": 0,
+      "vertices_number": 499
+    },
+    "self_intersecting_faces": 30,
+    "volume_mm3": 2462705.264196148,
+    "bounds_mm": [
+      [
+        147.80210876464844,
+        -264.7769775390625,
+        -2028.619384765625
+      ],
+      [
+        596.393798828125,
+        264.7677001953125,
+        -1435.8839111328125
+      ]
+    ],
+    "sha256": "c53ff39ba7dddd5b09a4d4f0cac9d03537834a93ef3697176daa3fd4e094dc52"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "gemc2": {
+    "unrelated_native_and_material_banks_unchanged": true,
+    "only_authorized_CAD_banks_changed": true
+  },
+  "gemc3": {
+    "unrelated_native_and_material_banks_unchanged": true,
+    "only_authorized_CAD_banks_changed": true
+  },
+  "canonical_sha256": "fe1253841d33ea594a199fd77b4739146ce62f7183b4e7b9d3fbd65245cbce56",
+  "source_runtime_collections_match": true
+}

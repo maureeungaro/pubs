@@ -1,0 +1,170 @@
+[
+  {
+    "name": "shell1a",
+    "source_to_reference": {
+      "samples": 37672,
+      "max_mm": 2.2737367544323206e-13,
+      "p99_mm": 8.526512829121202e-14
+    },
+    "reference_to_source": {
+      "samples": 37672,
+      "max_mm": 2.2737367544323206e-13,
+      "p99_mm": 8.526512829121202e-14
+    },
+    "bounds_difference_mm": 0.0
+  },
+  {
+    "name": "shell1b",
+    "source_to_reference": {
+      "samples": 33952,
+      "max_mm": 4.547473508864641e-13,
+      "p99_mm": 7.815970093361102e-14
+    },
+    "reference_to_source": {
+      "samples": 33952,
+      "max_mm": 4.547473508864641e-13,
+      "p99_mm": 7.815970093361102e-14
+    },
+    "bounds_difference_mm": 0.0
+  },
+  {
+    "name": "shell2a",
+    "source_to_reference": {
+      "samples": 37690,
+      "max_mm": 0.12832476181546884,
+      "p99_mm": 0.00010810150783929141
+    },
+    "reference_to_source": {
+      "samples": 37672,
+      "max_mm": 0.10714113062238899,
+      "p99_mm": 0.00010776632257532981
+    },
+    "bounds_difference_mm": 0.00012424932953081225
+  },
+  {
+    "name": "shell2b",
+    "source_to_reference": {
+      "samples": 33943,
+      "max_mm": 0.11631648646252411,
+      "p99_mm": 0.00010828241309047714
+    },
+    "reference_to_source": {
+      "samples": 33952,
+      "max_mm": 0.11855807290249575,
+      "p99_mm": 0.00010732270497339624
+    },
+    "bounds_difference_mm": 0.00010470535335116438
+  },
+  {
+    "name": "shell3a",
+    "source_to_reference": {
+      "samples": 37672,
+      "max_mm": 0.12834633312432106,
+      "p99_mm": 0.00010941458482863919
+    },
+    "reference_to_source": {
+      "samples": 37672,
+      "max_mm": 0.12827829732155022,
+      "p99_mm": 0.00011059466185817882
+    },
+    "bounds_difference_mm": 0.000126506542073912
+  },
+  {
+    "name": "shell3b",
+    "source_to_reference": {
+      "samples": 33934,
+      "max_mm": 0.1163632897868839,
+      "p99_mm": 0.00010771610232040985
+    },
+    "reference_to_source": {
+      "samples": 33952,
+      "max_mm": 0.11860042747037623,
+      "p99_mm": 0.00010982802516367374
+    },
+    "bounds_difference_mm": 0.00012424933090926515
+  },
+  {
+    "name": "shell4a",
+    "source_to_reference": {
+      "samples": 32362,
+      "max_mm": 0.24763443592407594,
+      "p99_mm": 0.2091297814917802
+    },
+    "reference_to_source": {
+      "samples": 37672,
+      "max_mm": 0.2582184956063319,
+      "p99_mm": 0.20412002386343453
+    },
+    "bounds_difference_mm": 5.186961971048731e-13
+  },
+  {
+    "name": "shell4b",
+    "source_to_reference": {
+      "samples": 29992,
+      "max_mm": 0.2695254404044922,
+      "p99_mm": 0.22076819716294296
+    },
+    "reference_to_source": {
+      "samples": 33952,
+      "max_mm": 0.26227250607971386,
+      "p99_mm": 0.1951707117859529
+    },
+    "bounds_difference_mm": 5.186961971048731e-13
+  },
+  {
+    "name": "shell5a",
+    "source_to_reference": {
+      "samples": 37681,
+      "max_mm": 0.12832476181575084,
+      "p99_mm": 0.00010865376145591395
+    },
+    "reference_to_source": {
+      "samples": 37672,
+      "max_mm": 0.1282846706844699,
+      "p99_mm": 0.00010893264883840695
+    },
+    "bounds_difference_mm": 0.0001242493279107748
+  },
+  {
+    "name": "shell5b",
+    "source_to_reference": {
+      "samples": 33934,
+      "max_mm": 0.11635831211269555,
+      "p99_mm": 0.0001090193028712117
+    },
+    "reference_to_source": {
+      "samples": 33952,
+      "max_mm": 0.11859196475897855,
+      "p99_mm": 0.00010775638787823242
+    },
+    "bounds_difference_mm": 0.00010470535485751498
+  },
+  {
+    "name": "shell6a",
+    "source_to_reference": {
+      "samples": 37690,
+      "max_mm": 0.14916011703660464,
+      "p99_mm": 0.03052525755227272
+    },
+    "reference_to_source": {
+      "samples": 37672,
+      "max_mm": 0.1491483960921943,
+      "p99_mm": 0.030462983662544865
+    },
+    "bounds_difference_mm": 0.000126506542073912
+  },
+  {
+    "name": "shell6b",
+    "source_to_reference": {
+      "samples": 33943,
+      "max_mm": 0.11633006825128145,
+      "p99_mm": 0.00010771258769419453
+    },
+    "reference_to_source": {
+      "samples": 33952,
+      "max_mm": 0.11856481233526978,
+      "p99_mm": 0.0001090742851974746
+    },
+    "bounds_difference_mm": 0.00012424932953081225
+  }
+]

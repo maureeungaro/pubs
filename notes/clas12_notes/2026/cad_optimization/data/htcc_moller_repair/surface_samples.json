@@ -1,0 +1,13 @@
+{
+  "points": 153451,
+  "max_final_to_engineering_surface_mm": 9.678569730715425e-05,
+  "percentiles_mm": [
+    0.0,
+    1.679434367236366e-06,
+    2.3179383107059202e-05,
+    9.678569730715425e-05
+  ],
+  "sampling_seed": 12345,
+  "direction": "Final union exterior to either archived engineering surface, including internal contact faces",
+  "global_bound_proven": false
+}

@@ -1,0 +1,31 @@
+
+
+  ❖ Variation switched to: rga_spring2018
+  ❖ Variation switched to: rga_spring2018
+  ❖ Variation switched to: rga_fall2018
+  ❖ Variation switched to: rga_fall2018
+
+  ❖  GConfiguration for experiment <[1mclas12[0m>,  system <[1mhtcc[0m> : 
+	▪︎ Factory: ascii          
+    	↦ Geometry File: htcc__geometry_rga_fall2018.txt
+    	↦ Materials File: htcc__materials_rga_fall2018.txt
+    	↦ Mirrors File: htcc__mirrors_rga_fall2018.txt
+	▪︎ Variation / Run:
+	    Variation                     Run
+	    ------------------------ --------
+	    default                        11
+	    rga_spring2018               3029
+	    rga_fall2018                 4763
+	▪︎ Number of volumes: 1611
+	▪︎ Number of materials: 24
+	▪︎ Number of mirrors: 3
+
+Comparing systems: htcc
+Generated ASCII workdir: /private/tmp/htcc-repair-validation-20261023/comparison
+clas12Tags experiments/clas12 reference: /opt/projects/gemc/clas12Tags/experiments/clas12
+htcc/default: ok (537 geometry rows)
+htcc/rga_fall2018: ok (537 geometry rows)
+htcc/rga_spring2018: ok (537 geometry rows)
+htcc/default: ok (8 materials rows)
+htcc/rga_fall2018: ok (8 materials rows)
+htcc/rga_spring2018: ok (8 materials rows)

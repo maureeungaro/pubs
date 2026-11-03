@@ -1,0 +1,74 @@
+[
+  {
+    "name": "shell1a",
+    "reference": "shell1a",
+    "source_contours": 76,
+    "reference_contours": 76,
+    "maximum_parameter_distance_mm": 0.0,
+    "max_axial_plane_residual_mm": 0.0,
+    "max_circle_fit_residual_mm": 0.00018648201332993608
+  },
+  {
+    "name": "shell1b",
+    "reference": "shell1b",
+    "source_contours": 70,
+    "reference_contours": 70,
+    "maximum_parameter_distance_mm": 0.0,
+    "max_axial_plane_residual_mm": 0.0,
+    "max_circle_fit_residual_mm": 0.00015683644672037644
+  },
+  {
+    "name": "shell2a",
+    "reference": "shell1a",
+    "source_contours": 76,
+    "reference_contours": 76,
+    "maximum_parameter_distance_mm": 9.846683667708554e-05,
+    "max_axial_plane_residual_mm": 0.0001558714066973721,
+    "max_circle_fit_residual_mm": 0.00015946496434082746
+  },
+  {
+    "name": "shell3b",
+    "reference": "shell1b",
+    "source_contours": 70,
+    "reference_contours": 70,
+    "maximum_parameter_distance_mm": 5.7944302667760374e-05,
+    "max_axial_plane_residual_mm": 0.00015587140806161415,
+    "max_circle_fit_residual_mm": 0.0001614927381261566
+  },
+  {
+    "name": "shell4a",
+    "reference": "shell1a",
+    "source_contours": 76,
+    "reference_contours": 76,
+    "maximum_parameter_distance_mm": 5.928462096661411e-05,
+    "max_axial_plane_residual_mm": 5.186961971048731e-13,
+    "max_circle_fit_residual_mm": 0.00016239205321788575
+  },
+  {
+    "name": "shell4b",
+    "reference": "shell1b",
+    "source_contours": 70,
+    "reference_contours": 70,
+    "maximum_parameter_distance_mm": 5.469723434010792e-05,
+    "max_axial_plane_residual_mm": 5.186961971048731e-13,
+    "max_circle_fit_residual_mm": 0.0001679204581002125
+  },
+  {
+    "name": "shell5a",
+    "reference": "shell1a",
+    "source_contours": 76,
+    "reference_contours": 76,
+    "maximum_parameter_distance_mm": 9.846683679904126e-05,
+    "max_axial_plane_residual_mm": 0.00015587140510575637,
+    "max_circle_fit_residual_mm": 0.00015946496434082746
+  },
+  {
+    "name": "shell6b",
+    "reference": "shell1b",
+    "source_contours": 70,
+    "reference_contours": 70,
+    "maximum_parameter_distance_mm": 5.7944381413442584e-05,
+    "max_axial_plane_residual_mm": 0.0001558714066973721,
+    "max_circle_fit_residual_mm": 0.0001614926371154013
+  }
+]

@@ -1,0 +1,178 @@
+{
+  "unchanged_meshes_identical": 49,
+  "optimized_meshes": [
+    "DownstreamShieldingPlate",
+    "DownstreamVacuumJacket"
+  ],
+  "gemc2_cad_rows_removed": 0,
+  "beamline_meshes_unchanged": true,
+  "initializations": [
+    {
+      "run": 11,
+      "engine": "gemc3",
+      "exit_code": 0,
+      "exception_codes": {
+        "GeomSolids1001": 16,
+        "GeomSolids1002": 7,
+        "GeomVol1002": 23
+      },
+      "command": [
+        "/opt/projects/gemc/g4install/macosx26-clang21-arm64/gemc/dev/bin/gemc",
+        "check.yaml",
+        "-n=0",
+        "-check_overlaps=2",
+        "-seed=12345"
+      ]
+    },
+    {
+      "run": 11,
+      "engine": "gemc2-sqlite",
+      "exit_code": 0,
+      "exception_codes": {
+        "GeomSolids1001": 7,
+        "GeomSolids1002": 7
+      },
+      "command": [
+        "/opt/projects/gemc/clas12Tags/source/gemc",
+        "check.gcard",
+        "-USE_GUI=0",
+        "-N=0",
+        "-CHECK_OVERLAPS=0"
+      ]
+    },
+    {
+      "run": 11,
+      "engine": "gemc2-text",
+      "exit_code": 0,
+      "exception_codes": {
+        "GeomSolids1001": 7,
+        "GeomSolids1002": 7
+      },
+      "command": [
+        "/opt/projects/gemc/clas12Tags/source/gemc",
+        "check.gcard",
+        "-USE_GUI=0",
+        "-N=0",
+        "-CHECK_OVERLAPS=0"
+      ]
+    },
+    {
+      "run": 3029,
+      "engine": "gemc3",
+      "exit_code": 0,
+      "exception_codes": {
+        "GeomSolids1001": 16,
+        "GeomSolids1002": 7,
+        "GeomVol1002": 23
+      },
+      "command": [
+        "/opt/projects/gemc/g4install/macosx26-clang21-arm64/gemc/dev/bin/gemc",
+        "check.yaml",
+        "-n=0",
+        "-check_overlaps=2",
+        "-seed=12345"
+      ]
+    },
+    {
+      "run": 3029,
+      "engine": "gemc2-sqlite",
+      "exit_code": 0,
+      "exception_codes": {
+        "GeomSolids1001": 7,
+        "GeomSolids1002": 7
+      },
+      "command": [
+        "/opt/projects/gemc/clas12Tags/source/gemc",
+        "check.gcard",
+        "-USE_GUI=0",
+        "-N=0",
+        "-CHECK_OVERLAPS=0"
+      ]
+    },
+    {
+      "run": 3029,
+      "engine": "gemc2-text",
+      "exit_code": 0,
+      "exception_codes": {
+        "GeomSolids1001": 7,
+        "GeomSolids1002": 7
+      },
+      "command": [
+        "/opt/projects/gemc/clas12Tags/source/gemc",
+        "check.gcard",
+        "-USE_GUI=0",
+        "-N=0",
+        "-CHECK_OVERLAPS=0"
+      ]
+    },
+    {
+      "run": 4763,
+      "engine": "gemc3",
+      "exit_code": 0,
+      "exception_codes": {
+        "GeomSolids1001": 16,
+        "GeomSolids1002": 7,
+        "GeomVol1002": 23
+      },
+      "command": [
+        "/opt/projects/gemc/g4install/macosx26-clang21-arm64/gemc/dev/bin/gemc",
+        "check.yaml",
+        "-n=0",
+        "-check_overlaps=2",
+        "-seed=12345"
+      ]
+    },
+    {
+      "run": 4763,
+      "engine": "gemc2-sqlite",
+      "exit_code": 0,
+      "exception_codes": {
+        "GeomSolids1001": 7,
+        "GeomSolids1002": 7
+      },
+      "command": [
+        "/opt/projects/gemc/clas12Tags/source/gemc",
+        "check.gcard",
+        "-USE_GUI=0",
+        "-N=0",
+        "-CHECK_OVERLAPS=0"
+      ]
+    },
+    {
+      "run": 4763,
+      "engine": "gemc2-text",
+      "exit_code": 0,
+      "exception_codes": {
+        "GeomSolids1001": 7,
+        "GeomSolids1002": 7
+      },
+      "command": [
+        "/opt/projects/gemc/clas12Tags/source/gemc",
+        "check.gcard",
+        "-USE_GUI=0",
+        "-N=0",
+        "-CHECK_OVERLAPS=0"
+      ]
+    }
+  ],
+  "database_checks": [
+    {
+      "run": 11,
+      "variation": "default",
+      "cad_rows": 51,
+      "native_rows": 1
+    },
+    {
+      "run": 3029,
+      "variation": "rga_spring2018",
+      "cad_rows": 51,
+      "native_rows": 1
+    },
+    {
+      "run": 4763,
+      "variation": "rga_fall2018",
+      "cad_rows": 51,
+      "native_rows": 1
+    }
+  ]
+}

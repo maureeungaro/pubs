@@ -1,6 +1,26 @@
 \FloatBarrier
 
-\section{Scope and geometry changes}
+\section{Introduction}
+
+Several CLAS12 volumes are imported from the engineering models into our simulation framework GEMC~\cite{gemc}.
+The corresponding STEP files~\cite{step} are converted to STL~\cite{stl} using the FreeCAD~\cite{freecad}.
+This conversion is performed manually, trying to minimize the number of triangles while preserving
+the accuracy of the geometry.
+
+The result if this conversion, in most cases, shows defects in the tessellation, caused usually by sharp
+edges, holes (for example bolt/nuts that are present in the model), and an unecessary high number of triangles.
+
+In a few cases the engineer group helped smooth out the original STEP model, for example removing the holes
+and simplifying the geometry. However even with these improvementrs,
+the STL conversion was still affected by the same issues.
+
+The Codex agent GPT-6.1-Sol high was explored to provide an optimization of the tesselation.
+The following guidance was provided:
+
+-
+
+The optimized files were run in the simulation with the original volumes.
+The overlaps
 
 The question is how much the optimized LTCC CAD implementation changes loading cost, memory use,
 particle-transport cost, and geometry diagnostics. This is a software and geometry study, not a background-rate

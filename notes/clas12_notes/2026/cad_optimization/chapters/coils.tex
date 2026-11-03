@@ -1,0 +1,105 @@
+\FloatBarrier
+\section{Torus coil sharing with openings retained}
+\label{sec:coils}
+
+Upcoming in GEMC2 6.2 and CLAS12 GEMC Systems 0.4, the six copper torus coils share one unchanged engineering
+mesh. coil1 is renamed coil, while coil2 through coil6 keep their sector suffixes and become five passive
+copies. All openings, rounded corners, thickness, G4\_Cu material, and colors are retained. Both source and
+runtime collections are synchronized in the two owning repositories; the six engineering originals are
+archived separately.
+
+Every original has 508 vertices and 1,016 triangles in one closed manifold component, with genus one, no
+boundary edges, and no detected self-intersections. Exact 60-degree sector rotations give a one-to-one vertex
+correspondence with maximum residual 0.000224728 mm, consistent with binary STL coordinate precision. Four
+exports have identical mapped facet connectivity. coil2 and coil3 each use the opposite diagonal on one planar
+side quadrilateral; the builder verifies the same four corners, perimeter, and plane. This changes the
+triangulation rather than the represented surface.
+
+The canonical coil STL is byte-identical to coil1. All 1,016 facets, including every surface around the large
+central opening, remain. The source is already a clean tessellated ring; sharing achieves the reduction
+without further contour simplification or hole filling. The copy placements use integer sector angles and
+millimetre positions with three decimal places. No empirical translation or contact relief is introduced.
+
+Unique stored and built coil facets fall from 6,096 to 1,016, a reduction of 5,080 (83.33\%). Active STL
+storage falls from 305,304 to 50,884 bytes. All six physical coils remain, with 6,096 placed facets. Total
+signed copper volume changes from 691,360,208.654 to 691,360,128.713 cubic millimetres (-0.000011563\%)
+because the canonical coordinates replace separately rounded exports. The complete magnets collection now has
+28 STL sources and 69,750 unique facets for 39 CAD placements.
+
+GEMC3 keeps the sources and copies together in magnets\_cad. GEMC2 uses 28 CAD sources and 11 native
+magnets\_copies rows per inherited run, including the six existing jacket copies. The supplied cards already
+load this companion bank. All nine GEMC3, GEMC2 SQLite/CAD, and GEMC2 TEXT/CAD construction checks pass across
+runs 11, 3029, and 4763. Semantic comparison matches all three native solenoid configurations and the three
+39-row CAD banks. Unrelated native geometry, materials, and DC banks are unchanged. The builder reproduces the
+canonical mesh, health report, and all three placement catalogs byte for byte.
+
+The full run-11 assembly contains native DC, both DC CAD groups, solenoid, magnets, and native/CAD beamline:
+139 volumes including the world. Matched baseline and final fixtures use seed 12345 and 100,000 Geant4 surface
+samples per tested volume. Readout is disabled in these geometry-only fixtures. Existing orientation and
+overlap warnings remain; the baseline reports 22 ordered overlap pairs and the final fixture reports 22. No
+new sampled overlap pair is introduced by sharing the coil. Sampling is not a mathematical clearance proof.
+
+The timing fixture isolates the six coil placements at run 11. The baseline builds six independent solids; the
+optimized fixture builds one solid and reuses it through five copies. One fixed GEMC3 dev executable reports
+geant4-11-03-patch-02 [MT]   (25-April-2025). It uses the serial run manager, FTFP\_BERT, default production
+cuts, one execution thread, no field, no optical physics, no GUI, no digitization, and no event output.
+Five-GeV/c electrons, protons, positive pions, and neutrons start at the origin, uniformly in solid angle from
+5 to 70 degrees with full azimuth. There is no target, luminosity normalization, or pileup. Five
+alternating-order repetitions use 2,000 matched LUND primaries per particle and seeds 12345--12349. Fifty
+timed processes and two isolated overlap checks are scheduled. Every successful tracking process reports 2,000
+events; 7 serial processes fail as recorded below. Statistics use only seeds for which both fixtures complete;
+a failed pair is excluded from both timing samples. Sleep prevention remains enabled throughout.
+
+An initial tasking-mode attempt stopped after twenty processes when the optimized 2,000-event electron run at
+seed 12349 raised fatal PART122: Cu62 was already registered in the Geant4 particle table during a
+photonuclear interaction. This is a particle-table error, rather than a reported geometry overlap. Both
+fixtures complete those electron primaries in a serial-mode probe, but the full serial repeat also fails on
+the original proton geometry at seed 12349 with duplicate Co60[58.590] registration. Thus serial execution
+does not resolve the issue, and it affects the reference geometry as well. The scheduled serial processes are
+continued after failures, with the same executable hash. All failures, raw logs, and probe inputs are
+archived. Tasking and serial results are not pooled. These failures prevent an unconditional
+tracking-performance conclusion.
+
+Median zero-event process wall time falls from 0.18605 to 0.13280 s (1.401 times faster). Median process CPU
+time changes from 0.100 to 0.090 s, and peak RSS from 63.17 to 59.25 MiB. Tracking entries below are median
+internal transport wall times; before/after ratios above one indicate faster tracking. The paired range
+retains seed dependence. These isolated coil measurements do not establish a full-CLAS12 speedup or
+detector-response equivalence, and the tiny geometric differences can alter stochastic trajectories. Paired
+startup ratios range from 1.004 to 1.451. Ranges that span one do not establish a consistent gain in this
+sample. The interrupted tasking attempt completed its ten zero-event measurements: median loading wall times
+were 0.68288 and 0.67769 s, essentially unchanged, with peak RSS 121.70 and 117.52 MiB. Performance depends on
+execution mode; the table below uses serial mode throughout.
+
+\begin{table}[htbp]
+\centering
+\setlength{\tabcolsep}{6pt}
+\caption{Torus coil tracking; completed pairs of 2,000-event processes only.}
+\label{tab:coils}
+\begin{tabular}{lrrrrr}
+\toprule
+Particle & Pairs & Before (s) & After (s) & Ratio & Paired ratio range \\
+\midrule
+Electron & 5 & 6.41057 & 5.80693 & 1.104 & 1.043--1.168 \\
+Proton & 4 & 4.97728 & 3.90553 & 1.274 & 1.207--1.451 \\
+Positive pion & 2 & 4.99705 & 3.99851 & 1.250 & 1.211--1.289 \\
+Neutron & 3 & 3.03117 & 2.02905 & 1.494 & 1.303--1.562 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figures/coil_comparison.pdf}
+\caption{
+All six engineering coil exports aligned to sector 1, with their full ring profiles and central opening
+retained. The right panel shows maximum matched-vertex residuals under exact nominal sector rotations; the
+largest is 0.225 micrometres. The canonical mesh is unchanged, so an additional before/after surface overlay
+would coincide.}
+\label{fig:coils}
+\end{figure}
+
+data/magnets\_coils and magnets\_coils\_archive.zip retain engineering mesh analysis, the shared-mesh proof,
+material-volume changes, database comparisons, all nine construction logs, both dense assembly fixtures,
+repeated timing inputs, matched primaries, raw logs, and executable hash. The archive includes the six
+originals, final collected geometry and meshes, catalogs, builder, benchmark, and validation code. The
+executable is not redistributed. Earlier study archives remain unchanged.

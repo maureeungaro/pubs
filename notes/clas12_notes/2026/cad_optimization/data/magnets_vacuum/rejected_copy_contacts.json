@@ -1,0 +1,105 @@
+[
+  {
+    "shell": "shell2b",
+    "plate": "Plate6",
+    "case": "original",
+    "exit_code": 0,
+    "overlap_reported": false,
+    "pairs": []
+  },
+  {
+    "shell": "shell2b",
+    "plate": "Plate6",
+    "case": "optimized",
+    "exit_code": 0,
+    "overlap_reported": true,
+    "pairs": [
+      [
+        "magnets_cad/Plate6:0",
+        "magnets_cad/shell2b:0"
+      ],
+      [
+        "magnets_cad/shell2b:0",
+        "magnets_cad/Plate6:0"
+      ],
+      [
+        "magnets_cad/Plate6:0",
+        "magnets_cad/shell2b:0"
+      ],
+      [
+        "magnets_cad/shell2b:0",
+        "magnets_cad/Plate6:0"
+      ]
+    ]
+  },
+  {
+    "shell": "shell3a",
+    "plate": "Plate6",
+    "case": "original",
+    "exit_code": 0,
+    "overlap_reported": false,
+    "pairs": []
+  },
+  {
+    "shell": "shell3a",
+    "plate": "Plate6",
+    "case": "optimized",
+    "exit_code": 0,
+    "overlap_reported": true,
+    "pairs": [
+      [
+        "magnets_cad/shell3a:0",
+        "magnets_cad/Plate6:0"
+      ],
+      [
+        "magnets_cad/Plate6:0",
+        "magnets_cad/shell3a:0"
+      ],
+      [
+        "magnets_cad/shell3a:0",
+        "magnets_cad/Plate6:0"
+      ],
+      [
+        "magnets_cad/Plate6:0",
+        "magnets_cad/shell3a:0"
+      ],
+      [
+        "magnets_cad/shell3a:0",
+        "magnets_cad/Plate6:0"
+      ]
+    ]
+  },
+  {
+    "shell": "shell5b",
+    "plate": "Plate3",
+    "case": "original",
+    "exit_code": 0,
+    "overlap_reported": false,
+    "pairs": []
+  },
+  {
+    "shell": "shell5b",
+    "plate": "Plate3",
+    "case": "optimized",
+    "exit_code": 0,
+    "overlap_reported": true,
+    "pairs": [
+      [
+        "magnets_cad/Plate3:0",
+        "magnets_cad/shell5b:0"
+      ],
+      [
+        "magnets_cad/shell5b:0",
+        "magnets_cad/Plate3:0"
+      ],
+      [
+        "magnets_cad/Plate3:0",
+        "magnets_cad/shell5b:0"
+      ],
+      [
+        "magnets_cad/shell5b:0",
+        "magnets_cad/Plate3:0"
+      ]
+    ]
+  }
+]

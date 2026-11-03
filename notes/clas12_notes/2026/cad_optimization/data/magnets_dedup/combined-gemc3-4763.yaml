@@ -1,0 +1,14 @@
+experiment: clas12
+runno: 4763
+nthreads: 1
+phys_list: FTFP_BERT
+sql: /opt/projects/gemc/clas12-systems/experiments/gemc.sqlite
+gsystem:
+  - name: beamline
+    factory: sqlite
+  - name: beamline_cad
+    factory: sqlite
+  - name: solenoid
+    factory: sqlite
+  - name: magnets_cad
+    factory: sqlite

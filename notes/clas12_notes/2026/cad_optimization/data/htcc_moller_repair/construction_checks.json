@@ -1,0 +1,94 @@
+[
+  {
+    "run": 11,
+    "engine": "gemc3-before",
+    "exit_code": 0,
+    "solid_exceptions": [
+      "GeomSolids1001"
+    ],
+    "all_exceptions": [
+      "GeomSolids1001"
+    ],
+    "moller_mesh_sha256": "31d95c7c0edf8069bb3cf2ffdac53487789906c9344c8507d55c6acfb620940f"
+  },
+  {
+    "run": 11,
+    "engine": "gemc3",
+    "exit_code": 0,
+    "solid_exceptions": [],
+    "all_exceptions": [],
+    "moller_mesh_sha256": "90a8d4f0d04342b4054e3304896d8c38536742b17c1790da9bf2becb7674de60"
+  },
+  {
+    "run": 11,
+    "engine": "gemc2-sqlite",
+    "exit_code": 0,
+    "solid_exceptions": [],
+    "all_exceptions": [
+      "GeomVol1002"
+    ],
+    "moller_mesh_sha256": "90a8d4f0d04342b4054e3304896d8c38536742b17c1790da9bf2becb7674de60"
+  },
+  {
+    "run": 11,
+    "engine": "gemc2-text",
+    "exit_code": 0,
+    "solid_exceptions": [],
+    "all_exceptions": [
+      "GeomVol1002"
+    ],
+    "moller_mesh_sha256": "90a8d4f0d04342b4054e3304896d8c38536742b17c1790da9bf2becb7674de60"
+  },
+  {
+    "run": 3029,
+    "engine": "gemc3",
+    "exit_code": 0,
+    "solid_exceptions": [],
+    "all_exceptions": [],
+    "moller_mesh_sha256": "90a8d4f0d04342b4054e3304896d8c38536742b17c1790da9bf2becb7674de60"
+  },
+  {
+    "run": 3029,
+    "engine": "gemc2-sqlite",
+    "exit_code": 0,
+    "solid_exceptions": [],
+    "all_exceptions": [
+      "GeomVol1002"
+    ],
+    "moller_mesh_sha256": "90a8d4f0d04342b4054e3304896d8c38536742b17c1790da9bf2becb7674de60"
+  },
+  {
+    "run": 3029,
+    "engine": "gemc2-text",
+    "exit_code": 0,
+    "solid_exceptions": [],
+    "all_exceptions": [],
+    "moller_mesh_sha256": "90a8d4f0d04342b4054e3304896d8c38536742b17c1790da9bf2becb7674de60"
+  },
+  {
+    "run": 4763,
+    "engine": "gemc3",
+    "exit_code": 0,
+    "solid_exceptions": [],
+    "all_exceptions": [],
+    "moller_mesh_sha256": "90a8d4f0d04342b4054e3304896d8c38536742b17c1790da9bf2becb7674de60"
+  },
+  {
+    "run": 4763,
+    "engine": "gemc2-sqlite",
+    "exit_code": 0,
+    "solid_exceptions": [],
+    "all_exceptions": [
+      "GeomVol1002"
+    ],
+    "moller_mesh_sha256": "90a8d4f0d04342b4054e3304896d8c38536742b17c1790da9bf2becb7674de60"
+  },
+  {
+    "run": 4763,
+    "engine": "gemc2-text",
+    "exit_code": 0,
+    "solid_exceptions": [],
+    "all_exceptions": [],
+    "moller_mesh_sha256": "90a8d4f0d04342b4054e3304896d8c38536742b17c1790da9bf2becb7674de60"
+  }
+]

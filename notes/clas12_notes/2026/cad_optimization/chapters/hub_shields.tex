@@ -1,0 +1,118 @@
+\FloatBarrier
+\section{Hub shield sharing with holes retained}
+\label{sec:hub-shields}
+
+Upcoming in GEMC2 6.2 and CLAS12 GEMC Systems 0.4, all seven Shield volumes use the hub\_shield prefix.
+Shield2 becomes hub\_shield and supplies hub\_shield3 through hub\_shield6 through four passive copies.
+Shield1 and Shield7 are distinct end pieces, retained as hub\_shield1 and hub\_shield7 with byte-identical
+STLs. The seven original exports remain archived. All holes, radial contours, stepped joints, beamline\_W
+material, colors, and physical placements remain.
+
+The seven exports are not one identical family. Shield2 through Shield6 each contain 319 vertices and 638
+triangles. Translation by the nominal 304.8 mm pitch gives a one-to-one vertex correspondence with identical
+mapped facet connectivity and maximum residual 0.000195313 mm from STL coordinate rounding. Shield1 and
+Shield7 each contain 239 vertices and 478 triangles, with different end profiles. Their signed volumes are
+1,836,423.892 and 1,828,397.730 cubic millimetres, compared with 1,785,903.279 for Shield2. All seven meshes
+have one closed manifold component, genus one, no boundary edges, and no detected self-intersections. Both
+distinct end profiles must remain.
+
+Directly copying the original Shield2 at three-decimal millimetre positions introduces 48.8281-nanometre
+contacts at the stepped joints: the large absolute STL coordinates round the nominal body length upward. The
+first dense candidate adds six ordered overlap pairs. Recentring the shared source by 1,794.392 mm reduces the
+float32 quantization. The source is placed at world z = 3,067.662 mm; copies advance by exactly 304.8 mm. Far
+axial faces are rounded inward, shortening them by 0.0000593262 mm relative to the original source. Nearest
+rounding of a leading face initially leaves a 0.198-nanometre contact, recorded as two ordered overlap pairs.
+Directed rounding retains that face on the clearance side and removes these contacts. No clearance is
+manufactured by moving complete volumes.
+
+Every radial coordinate and all 638 shared-source triangle connections remain exactly unchanged, including the
+complete bore and both radial steps. No hole is filled and no circular contour is decimated. Both end meshes
+are unchanged. Including axial normalization and independently rounded exports, final world vertices differ
+from the originals by at most 0.000146485 mm. All positions have three decimal places in millimetres, and
+rotations remain the original exact 180-degree passive rotation.
+
+Unique shield facets fall from 4,146 to 1,594, saving 2,552 (61.55\%). Active shield STL storage falls from
+207,888 to 79,952 bytes. Seven physical placements still contain 4,146 placed facets. Total signed
+tungsten-alloy volume changes from 12,594,336.584631 to 12,594,336.280296 cubic millimetres (-0.000002416\%).
+Magnets now uses 20 STL sources and 67,012 unique facets for 39 CAD placements. GEMC3 keeps every placement in
+magnets\_cad; GEMC2 has 20 CAD sources and 19 native magnets\_copies rows per inherited run.
+
+All nine GEMC3, GEMC2 SQLite/CAD, and GEMC2 TEXT/CAD construction checks pass for runs 11, 3029, and 4763,
+including explicit resolution of every copy source. Semantic comparison matches the three native solenoid
+configurations and the three 39-row CAD banks. Unrelated native geometry, materials, and DC banks are
+unchanged. The builder reproduces three STLs, the health report, and three placement catalogs byte for byte.
+
+The dense run-11 fixture contains native DC, both DC CAD groups, solenoid, magnets, and native/CAD beamline:
+139 volumes including the world. Readout is disabled. The controlled baseline retains seven independent
+original meshes and original poses but uses the final volume names, keeping the Geant4 check order consistent.
+At seed 12345 and 100,000 surface samples per tested volume, both the baseline and the final geometry report
+exactly the same 22 ordered contact pairs, with no added or removed pair. The isolated seven-shield fixture
+also passes 100,000-sample checks without any contact warning. Existing contacts and orientation warnings
+elsewhere in the assembly remain. Sampling does not constitute a mathematical clearance proof.
+
+The timing fixture isolates seven shield placements at run 11, building seven independent solids before
+optimization and three sources plus four copies afterward. One fixed GEMC3 executable reports
+geant4-11-03-patch-02 [MT]   (25-April-2025). The serial run manager uses one execution thread, FTFP\_BERT,
+and default production cuts. Field, optical physics, GUI, readout, and event output are disabled. Five-GeV/c
+electrons, protons, positive pions, and neutrons start at the origin, uniform in solid angle from 0.3 to 1.4
+degrees with full azimuth, covering the small-radius shield chain. There is no target, luminosity
+normalization, or pileup. Five repetitions alternate fixture order and use 2,000 identical LUND primaries per
+particle and seeds 12345--12349. Ten zero-event processes, forty tracking processes, and two isolated overlap
+checks are scheduled. Idle-sleep prevention remains active, and the executable hash is checked at the start
+and end.
+
+38 of the 52 scheduled processes fail; exception counts are PART122=38. Raw logs, failed inputs, and exception
+codes are retained. Tracking statistics include only seed pairs for which both fixtures complete all 2,000
+events. Failures exclude both members of that seed pair, so these measurements are conditional on completion
+and do not establish an unconditional performance gain.
+
+All 38 fatal errors are duplicate-isotope registration failures in the Geant4 particle table: 19 in the
+original geometry and 19 in the optimized geometry. Examples include W183, W187, Fe57, and tantalum isotopes.
+The two successful tracking processes are unmatched; this study therefore supplies no valid tracking-speed
+comparison.
+
+No completed matched tracking pair is available for electrons, protons, positive pions, neutrons; no
+tracking-time ratio can be estimated for those particles. Unmatched successful processes are archived but
+excluded from comparisons.
+
+Median zero-event process wall time changes from 0.18750 to 0.13374 s, a before/after ratio of 1.402. Median
+CPU time changes from 0.100 to 0.090 s, and peak RSS from 61.47 to 59.52 MiB. Paired startup ratios range from
+0.988 to 1.882. Tracking entries below are median internal transport wall times. Ratios above one indicate
+faster execution; paired ranges show seed dependence, and ranges spanning one do not establish a consistent
+gain in this sample. The principal demonstrated benefit is fewer unique solids and facets. These isolated
+measurements do not establish a full-CLAS12 speedup or detector-response equivalence.
+
+\begin{table}[htbp]
+\centering
+\setlength{\tabcolsep}{6pt}
+\caption{Hub-shield tracking; completed pairs of 2,000-event processes only.}
+\label{tab:hub-shields}
+\begin{tabular}{lrrrrr}
+\toprule
+Particle & Pairs & Before (s) & After (s) & Ratio & Paired ratio range \\
+\midrule
+Electron & 0 & -- & -- & -- & -- \\
+Proton & 0 & -- & -- & -- & -- \\
+Positive pion & 0 & -- & -- & -- & -- \\
+Neutron & 0 & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figures/hub_shield_comparison.pdf}
+\caption{
+Longitudinal sections at world y = 0.1 mm compare original exports and shared geometry. All seven placements
+remain, including both distinct end profiles (top). The middle-source bore and stepped radial contours are
+retained exactly (bottom). Nanometre axial changes are below the figure resolution; their measured bounds are
+reported in the text.}
+\label{fig:hub-shields}
+\end{figure}
+
+data/magnets\_hub\_shields and magnets\_hub\_shields\_archive.zip retain original mesh analysis, equivalence
+and topology checks, axial normalization, facet and volume metrics, all nine construction logs, semantic
+comparisons, dense overlap fixtures, repeated timings, matched primaries, raw logs, and the fixed executable
+hash. The rejected candidates and their contact warnings are retained too. The archive includes original
+exports, final collected geometry and meshes, catalogs, builder, benchmark, validation code, and figure
+inputs. The executable is not redistributed. Earlier study archives remain unchanged.

@@ -1,0 +1,104 @@
+\FloatBarrier
+\section{DC region-1 supports}
+\label{sec:dc-support}
+
+Upcoming in GEMC2 6.2 and CLAS12 GEMC Systems 0.4, the six dcs1r1support through dcs6r1support aluminum
+support assemblies move from magnets into the DC cad directory. One unchanged dcs1r1support STL supplies all
+six named placements through five copies. Together with the previously relocated back membranes, DC now owns
+two STL files and twelve passive placements. GEMC3 stores them in dc\_cad; GEMC2 uses two CAD rows in dc\_cad
+and ten native CopyOf rows in dc\_copies at each inherited run. Native DC geometry and materials, the membrane
+placements, and all unrelated banks remain unchanged.
+
+All six supports contain 499 vertices and 1,006 triangles. A nearest-vertex rigid registration initialized
+with nominal sector rotations converges to a one-to-one vertex correspondence. Proper rotations, without
+reflection, match the shared reference within 0.00011619 mm; six-decimal fitted angles match the world
+vertices within 0.00011771 mm. These residuals are comparable to the STL coordinate precision. Sector-specific
+translations are retained. Original six files are archived separately in the owning GEMC2 repository.
+
+Each engineering mesh has two closed manifold components, 1,509 edges, no boundary edges, and aggregate genus
+four. Both connected pieces, curved openings, and all engineering facets are retained in the canonical STL.
+Trial decimation distorted opening surfaces by tenths of a millimetre for little additional reduction, so this
+optimization shares the solid rather than modifying its surfaces. MeshLab flags 30 faces in the canonical
+contact region, with numerically varying counts in the other rotated exports; these original contacts are
+retained. Geant4 construction and the isolated tracking runs report no exceptions.
+
+Unique stored and built facets fall from 6,036 to 1,006 (83.33\% fewer), and active STL storage falls from
+302,304 to 50,384 bytes. Six physical supports remain, with 6,036 placed triangles. Magnets now has 39 STL
+files and 120,622 triangles. Including both DC groups, the final shared inventory has 121,648 unique
+triangles, compared with 126,778 before the membrane and support deduplication.
+
+Sharing the reference changes total signed aluminum volume by only -0.000001606\%. Original names, G4\_Al
+material, colors, passive placement, and sector offsets are retained. This is separate from the deliberate
+placement change introduced by angle rounding; detector-response equivalence has not been established.
+
+Following the same overlap gate as the membranes, support angles are rounded to integers. Sectors 3, 4, and 5
+move by at most 2.755827 mm relative to their engineering placements; sector 6 moves by at most 2.189899 mm.
+The fitted and rounded variants load native DC, both DC groups, magnets, solenoid, and native/CAD beamline at
+run 11, with 139 volumes including the world. Both use the same seed and 100,000 Geant4 surface samples per
+tested volume. Neither variant reports a support overlap. Each reports 49 overlap messages covering the same
+22 distinct ordered volume pairs elsewhere, so rounding introduces no sampled overlap pair. Existing assembly
+overlaps remain; sampling is not a proof of clearance.
+
+All three inherited CAD runs (11, 3029, 4763) pass GEMC2 TEXT/CAD, GEMC2 SQLite/CAD, and GEMC3 construction.
+GEMC3 also constructs the custom DC DDVCS run, for ten checks total. Each GEMC3 CAD-only fixture contains
+thirteen volumes including the world. Semantic comparison matches both native DC variations, all four
+twelve-row DC CAD banks, and all three thirty-nine-row magnets CAD banks. Both source/runtime collections and
+the twelve archived engineering originals match by hash. The extended builder reproduces both active STLs, the
+complete placement catalog, and both health reports byte for byte.
+
+The timing fixture isolates six support placements at run 11. The original builds six independent solids; the
+final fixture shares one solid with five copies and the validated integer angles. One fixed GEMC3 dev
+executable and Geant4 11.4.3 run FTFP\_BERT with default production cuts, one thread, no field, no optical
+physics, no GUI, no event output, and no target, luminosity normalization, or pileup. Five-GeV/c electrons,
+protons, positive pions, and neutrons start at the origin, uniformly in solid angle from 2 to 15 degrees with
+full azimuth. Five alternating-order repetitions use 2,000 matched LUND primaries per particle and seeds
+12345--12349. All fifty timed processes and both construction checks finish without Geant4 exceptions; each
+tracking process reports 2,000 events.
+
+Median zero-event process wall time falls from 0.73577 to 0.45538 s (1.616 times faster). Median process CPU
+time changes from 0.680 to 0.390 s and peak RSS from 123.64 to 74.98 MiB. Tracking ratios below are
+before/after; values above one indicate faster tracking. They describe this support workload and do not
+establish a full-CLAS12 speedup. The physical placement change from angle rounding and the small
+material-volume difference are included in these timings.
+
+\begin{table}[htbp]
+\centering
+\setlength{\tabcolsep}{8pt}
+\caption{DC support tracking; five repetitions of 2,000 events per particle.}
+\label{tab:dc-support}
+\begin{tabular}{lrrrr}
+\toprule
+Particle & Before (s) & After (s) & Speedup & Paired ratio range \\
+\midrule
+Electron & 3.29761 & 3.35005 & 0.984 & 0.964--1.058 \\
+Proton & 3.35892 & 3.22980 & 1.040 & 0.988--1.041 \\
+Positive pion & 3.00896 & 3.08031 & 0.977 & 0.956--1.107 \\
+Neutron & 1.07484 & 1.03238 & 1.041 & 0.967--1.139 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figures/dc_support_comparison.pdf}
+\caption{
+World x-y projections of all six support assemblies before and after sharing one STL. All original facets and
+openings remain; the red overlay uses the final integer angles. The right panel shows maximum vertex
+displacements relative to the engineering placements, including rigid-fit residuals. Both angle variants pass
+the dense sampled overlap gate.}
+\label{fig:dc-support}
+\end{figure}
+
+data/dc\_support and dc\_support\_archive.zip retain shape fits, rounded-angle displacements, database checks,
+both dense assembly checks, repeated timing inputs/results, and raw logs. The archive includes the original
+and final fixtures, archived engineering meshes, builder and validation scripts, and executable hash. The
+executable itself is not redistributed. Earlier study archives are unchanged. Rebuild the shared mesh with the
+builder's --round-angles option.
+
+\paragraph{Position precision update.}
+All twelve DC CAD positions are now written with three decimal places in millimetres. This adds at most
+0.000674 mm of translation relative to the study fixtures. The regenerated GEMC2 and GEMC3 banks pass semantic
+comparisons and all ten construction checks. A further assembled check with 100,000 surface samples per volume
+finds no new overlap pairs. Facet counts, materials, and rotations are unchanged. Existing timing archives
+retain their measured inputs; the precision follow-up and validation are recorded in
+data/dc\_position\_precision.

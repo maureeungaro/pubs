@@ -1,0 +1,20 @@
+[
+  {
+    "variation": "default",
+    "run": 11,
+    "cad_rows": 3,
+    "placements_materials_passive_match": true
+  },
+  {
+    "variation": "rga_spring2018",
+    "run": 3029,
+    "cad_rows": 3,
+    "placements_materials_passive_match": true
+  },
+  {
+    "variation": "rga_fall2018",
+    "run": 4763,
+    "cad_rows": 3,
+    "placements_materials_passive_match": true
+  }
+]

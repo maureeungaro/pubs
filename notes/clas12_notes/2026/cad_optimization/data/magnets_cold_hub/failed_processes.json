@@ -1,0 +1,436 @@
+[
+  {
+    "case": "original",
+    "particle": "e-",
+    "events": 2000,
+    "seed": 12345,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 124.0031565,
+    "cpu_seconds": 110.03,
+    "rss_bytes": 145670144,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "GeomSolids1001": 16,
+      "GeomSolids1002": 7,
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12345",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_e-_n2000_seed12345_overlaps0.log",
+    "time_report": "original_e-_n2000_seed12345_overlaps0.time",
+    "primary_sha256": "3fca8656d8a54816e74d5d3398b61d14a84f0aaf1cdf0b4bd7c96d13abcb8c41"
+  },
+  {
+    "case": "optimized",
+    "particle": "e-",
+    "events": 2000,
+    "seed": 12345,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 96.34918758300002,
+    "cpu_seconds": 95.77,
+    "rss_bytes": 145670144,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12345",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_e-_n2000_seed12345_overlaps0.log",
+    "time_report": "optimized_e-_n2000_seed12345_overlaps0.time",
+    "primary_sha256": "3fca8656d8a54816e74d5d3398b61d14a84f0aaf1cdf0b4bd7c96d13abcb8c41"
+  },
+  {
+    "case": "original",
+    "particle": "e-",
+    "events": 2000,
+    "seed": 12347,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 98.58860033299999,
+    "cpu_seconds": 98.25,
+    "rss_bytes": 144883712,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "GeomSolids1001": 16,
+      "GeomSolids1002": 7,
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12347",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_e-_n2000_seed12347_overlaps0.log",
+    "time_report": "original_e-_n2000_seed12347_overlaps0.time",
+    "primary_sha256": "5b038bc39b0e6282317206beb87f58353e7145cc996324cdca94fb1a0e78ee0a"
+  },
+  {
+    "case": "optimized",
+    "particle": "e-",
+    "events": 2000,
+    "seed": 12347,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 89.28783791699993,
+    "cpu_seconds": 88.78,
+    "rss_bytes": 144392192,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12347",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_e-_n2000_seed12347_overlaps0.log",
+    "time_report": "optimized_e-_n2000_seed12347_overlaps0.time",
+    "primary_sha256": "5b038bc39b0e6282317206beb87f58353e7145cc996324cdca94fb1a0e78ee0a"
+  },
+  {
+    "case": "optimized",
+    "particle": "e-",
+    "events": 2000,
+    "seed": 12348,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 36.514918750000106,
+    "cpu_seconds": 35.99,
+    "rss_bytes": 144359424,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12348",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_e-_n2000_seed12348_overlaps0.log",
+    "time_report": "optimized_e-_n2000_seed12348_overlaps0.time",
+    "primary_sha256": "bab86c664d61d4888cd39bf883df4ff530f45c106d17859fcbaa0ea3c22df99b"
+  },
+  {
+    "case": "original",
+    "particle": "e-",
+    "events": 2000,
+    "seed": 12348,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 39.941783792000024,
+    "cpu_seconds": 39.84,
+    "rss_bytes": 144834560,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "GeomSolids1001": 16,
+      "GeomSolids1002": 7,
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12348",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_e-_n2000_seed12348_overlaps0.log",
+    "time_report": "original_e-_n2000_seed12348_overlaps0.time",
+    "primary_sha256": "bab86c664d61d4888cd39bf883df4ff530f45c106d17859fcbaa0ea3c22df99b"
+  },
+  {
+    "case": "original",
+    "particle": "proton",
+    "events": 2000,
+    "seed": 12345,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 4.031237707999935,
+    "cpu_seconds": 3.94,
+    "rss_bytes": 145833984,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "GeomSolids1001": 16,
+      "GeomSolids1002": 7,
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12345",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_proton_n2000_seed12345_overlaps0.log",
+    "time_report": "original_proton_n2000_seed12345_overlaps0.time",
+    "primary_sha256": "d20c96cb56a5320a158b11784e3b33ae3ed766e3b642a32794695d1b72144164"
+  },
+  {
+    "case": "optimized",
+    "particle": "proton",
+    "events": 2000,
+    "seed": 12345,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 3.8148859579999908,
+    "cpu_seconds": 3.77,
+    "rss_bytes": 145506304,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12345",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_proton_n2000_seed12345_overlaps0.log",
+    "time_report": "optimized_proton_n2000_seed12345_overlaps0.time",
+    "primary_sha256": "d20c96cb56a5320a158b11784e3b33ae3ed766e3b642a32794695d1b72144164"
+  },
+  {
+    "case": "optimized",
+    "particle": "proton",
+    "events": 2000,
+    "seed": 12348,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 2.3270715840000094,
+    "cpu_seconds": 2.27,
+    "rss_bytes": 145326080,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12348",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_proton_n2000_seed12348_overlaps0.log",
+    "time_report": "optimized_proton_n2000_seed12348_overlaps0.time",
+    "primary_sha256": "4a95ca189c0e2cc0317e79500eaee0ca430b602695a0061bb0bd3d5af9d16a4f"
+  },
+  {
+    "case": "original",
+    "particle": "proton",
+    "events": 2000,
+    "seed": 12348,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 2.375282416999994,
+    "cpu_seconds": 2.3200000000000003,
+    "rss_bytes": 145424384,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "GeomSolids1001": 16,
+      "GeomSolids1002": 7,
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12348",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_proton_n2000_seed12348_overlaps0.log",
+    "time_report": "original_proton_n2000_seed12348_overlaps0.time",
+    "primary_sha256": "4a95ca189c0e2cc0317e79500eaee0ca430b602695a0061bb0bd3d5af9d16a4f"
+  },
+  {
+    "case": "original",
+    "particle": "pi+",
+    "events": 2000,
+    "seed": 12345,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 3.584562541999958,
+    "cpu_seconds": 3.51,
+    "rss_bytes": 147259392,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "GeomSolids1001": 16,
+      "GeomSolids1002": 7,
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12345",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_pi+_n2000_seed12345_overlaps0.log",
+    "time_report": "original_pi+_n2000_seed12345_overlaps0.time",
+    "primary_sha256": "e0629ef06eb8074ef8a94e4786eb72487c0e9cf169def611a8139685321607c9"
+  },
+  {
+    "case": "optimized",
+    "particle": "pi+",
+    "events": 2000,
+    "seed": 12345,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 3.407300458000009,
+    "cpu_seconds": 3.35,
+    "rss_bytes": 147095552,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12345",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_pi+_n2000_seed12345_overlaps0.log",
+    "time_report": "optimized_pi+_n2000_seed12345_overlaps0.time",
+    "primary_sha256": "e0629ef06eb8074ef8a94e4786eb72487c0e9cf169def611a8139685321607c9"
+  },
+  {
+    "case": "optimized",
+    "particle": "neutron",
+    "events": 2000,
+    "seed": 12346,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 2.0512868749999598,
+    "cpu_seconds": 1.99,
+    "rss_bytes": 145080320,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12346",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "optimized_neutron_n2000_seed12346_overlaps0.log",
+    "time_report": "optimized_neutron_n2000_seed12346_overlaps0.time",
+    "primary_sha256": "53e413c73041fa083f128d992640e65742e171dcd080c7a7e267abade73327d0"
+  },
+  {
+    "case": "original",
+    "particle": "neutron",
+    "events": 2000,
+    "seed": 12346,
+    "overlaps": 0,
+    "exit_code": -6,
+    "wall_seconds": 2.071244041,
+    "cpu_seconds": 2.0,
+    "rss_bytes": 145965056,
+    "simulation_wall_seconds": null,
+    "transport_wall_seconds": null,
+    "reported_events": 0,
+    "exception_codes": {
+      "GeomSolids1001": 16,
+      "GeomSolids1002": 7,
+      "PART122": 1
+    },
+    "completed": false,
+    "command": [
+      "/private/tmp/hubcover-engine-20261022/gemc",
+      "benchmark.yaml",
+      "-n=2000",
+      "-seed=12346",
+      "-check_overlaps=0",
+      "-log_every=1000000",
+      "-gparticlefile=[{format: lund, filename: beam.lund}]"
+    ],
+    "log": "original_neutron_n2000_seed12346_overlaps0.log",
+    "time_report": "original_neutron_n2000_seed12346_overlaps0.time",
+    "primary_sha256": "53e413c73041fa083f128d992640e65742e171dcd080c7a7e267abade73327d0"
+  }
+]

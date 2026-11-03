@@ -1,0 +1,980 @@
+{
+  "executable": "/opt/jlab_software/macosx26-clang21-arm64/gemc/dev/bin/gemc",
+  "executable_sha256": "17282b7bb9c179d5ae1689adefffa607881c3ffa627cb32876d8555bbf7a0fd8",
+  "platform": "macOS-26.7.1-arm64-arm-64bit",
+  "originals": "/private/tmp/magnets-dedup-input-20261021",
+  "source_database_sha256": "c18880b26da364ebddb175071bddd3cadc3031f7eadcdb992003db8f87003169",
+  "removed": [
+    "DSShieldBackAss",
+    "DSShieldBackCover",
+    "DSShieldBackLead",
+    "DSShieldFlange",
+    "DSShieldFlangeAttachment",
+    "DSShieldFrontAss",
+    "DSShieldFrontCover",
+    "DSShieldFrontLead",
+    "DSShieldInnerAss",
+    "apex"
+  ],
+  "events": 200,
+  "repeats": 5,
+  "runno": 11,
+  "systems": [
+    "beamline",
+    "beamline_cad",
+    "solenoid",
+    "magnets_cad"
+  ],
+  "momentum_GeV": 5,
+  "primary_theta_deg": [
+    0.25,
+    3.5
+  ],
+  "primary_azimuth_deg": [
+    -180,
+    180
+  ],
+  "field": "off",
+  "inventories": {
+    "original": {
+      "beamline_cad/FTInnerShieldAndFlange": {
+        "sha256": "9836915d23b4270eb54f49e23ff2dd98d70ba402f821221376f2cbbd648c7f9f",
+        "triangles": 22000,
+        "bytes": 1100084,
+        "path": "beamline/stls/FTInnerShieldAndFlange.stl"
+      },
+      "beamline_cad/FTOuterFlange": {
+        "sha256": "36421b77cfe31f9fd8b31f451feba7fee532bde662125500a3624d4e6d8f4777",
+        "triangles": 836,
+        "bytes": 41884,
+        "path": "beamline/stls/FTOuterFlange.stl"
+      },
+      "beamline_cad/FTOuterMount": {
+        "sha256": "99024fec3ad474b38fce01df86cc6eb80356266a7dc18b76f72e4ea8208806f4",
+        "triangles": 2740,
+        "bytes": 137084,
+        "path": "beamline/stls/FTOuterMount.stl"
+      },
+      "beamline_cad/FTInnerShieldAndFlange_Bolt1": {
+        "sha256": "9c7a5e205bd1ad1980db6f957762f3d06e0b571b09bdba1b04ec1045bfea46b3",
+        "triangles": 192,
+        "bytes": 9684,
+        "path": "beamline/stls/FTInnerShieldAndFlange_Bolt1.stl"
+      },
+      "beamline_cad/FTInnerShieldAndFlange_Bolt2": {
+        "sha256": "a9257ba8d31008e76cacb96ea54009bc46ed3910eec51b2c2e20726a9544fa93",
+        "triangles": 192,
+        "bytes": 9684,
+        "path": "beamline/stls/FTInnerShieldAndFlange_Bolt2.stl"
+      },
+      "beamline_cad/FTInnerShieldAndFlange_Bolt3": {
+        "sha256": "699adaaf498d5ac98e435c8939a6ae581ce0c461d734d035ff674db95e34d834",
+        "triangles": 192,
+        "bytes": 9684,
+        "path": "beamline/stls/FTInnerShieldAndFlange_Bolt3.stl"
+      },
+      "beamline_cad/FTInnerShieldAndFlange_Bolt4": {
+        "sha256": "9cc71d5e231919f8c3930003765d7a7889735497d52c885b7c795a75f13e571c",
+        "triangles": 192,
+        "bytes": 9684,
+        "path": "beamline/stls/FTInnerShieldAndFlange_Bolt4.stl"
+      },
+      "beamline_cad/FTInnerShieldAndFlange_Bolt5": {
+        "sha256": "56e0e904524cc8c5896de00cd6675d60b584d327ad96e0228e48a32f7e2f37b5",
+        "triangles": 192,
+        "bytes": 9684,
+        "path": "beamline/stls/FTInnerShieldAndFlange_Bolt5.stl"
+      },
+      "beamline_cad/FTInnerShieldAndFlange_Bolt6": {
+        "sha256": "24da9387e560a0ee2984db93f6c580a6b6a02514dfbb18d42e46fe795cea7071",
+        "triangles": 192,
+        "bytes": 9684,
+        "path": "beamline/stls/FTInnerShieldAndFlange_Bolt6.stl"
+      },
+      "beamline_cad/FTInnerShieldAndFlange_Bolt7": {
+        "sha256": "4fb9628f3040b7c22dc2a730fd8e97898619a64fc0c4e3a8f11f283d1f1f9fdd",
+        "triangles": 192,
+        "bytes": 9684,
+        "path": "beamline/stls/FTInnerShieldAndFlange_Bolt7.stl"
+      },
+      "beamline_cad/FTInnerShieldAndFlange_Bolt8": {
+        "sha256": "bbc2031786d6c57e009abaf8b823439d78ca8b0da6a8543c13b9a44aac379708",
+        "triangles": 192,
+        "bytes": 9684,
+        "path": "beamline/stls/FTInnerShieldAndFlange_Bolt8.stl"
+      },
+      "beamline_cad/FTInnerShieldAndFlange_Bolt9": {
+        "sha256": "b9c6b36c0d9a86f0154209ee4c7fdd1692b87db1c376639bbd89f4519af06252",
+        "triangles": 192,
+        "bytes": 9684,
+        "path": "beamline/stls/FTInnerShieldAndFlange_Bolt9.stl"
+      },
+      "beamline_cad/FTInnerShield": {
+        "sha256": "0d770b71801eb4c9167c57d325314eb3ac11995431335532fe8828906b48a82a",
+        "triangles": 6500,
+        "bytes": 325084,
+        "path": "beamline/stls/FTInnerShield.stl"
+      },
+      "beamline_cad/moller_cone": {
+        "sha256": "665beab488b533b5d92d788918048162d3a7831d1dbb8da1672b5f675d91a203",
+        "triangles": 8546,
+        "bytes": 427384,
+        "path": "beamline/stls/moller_cone.stl"
+      },
+      "beamline_cad/ft_adjuster": {
+        "sha256": "fbe8429ddddd5548ba82501944f27f3ee0954080557ef7b32efd303f05f2be25",
+        "triangles": 48,
+        "bytes": 2484,
+        "path": "beamline/stls/ft_adjuster.stl"
+      },
+      "beamline_cad/Apex_Shield_Lead_Fill": {
+        "sha256": "792548ee3ede090b4af293352b3648737a82f4ef98cc44462b8f97e01eefe5be",
+        "triangles": 1440,
+        "bytes": 72084,
+        "path": "beamline/stls/Apex_Shield_Lead_Fill.stl"
+      },
+      "beamline_cad/Apex_Shield_Hub": {
+        "sha256": "12064d5ab2d6d33958cdaae000c741b775f22f7d9645bebb50fc7024839ede5f",
+        "triangles": 20000,
+        "bytes": 1000084,
+        "path": "beamline/stls/Apex_Shield_Hub.stl"
+      },
+      "beamline_cad/Torus_Exit_Shield_Lead_Fill": {
+        "sha256": "580e9d1eaa0bf3b22e7d4600b9bc05fa90f9efa08f1562075aad644cf232dc23",
+        "triangles": 384,
+        "bytes": 19284,
+        "path": "beamline/stls/Torus_Exit_Shield_Lead_Fill.stl"
+      },
+      "beamline_cad/Torus_Exit_Shield_Casing": {
+        "sha256": "313fe517ebf31f9f90ba4e7fa556165b42ad154254088936f8eb44083a0b0bcf",
+        "triangles": 1384,
+        "bytes": 69284,
+        "path": "beamline/stls/Torus_Exit_Shield_Casing.stl"
+      },
+      "beamline_cad/Downstream_Beam_tube_Segment_1": {
+        "sha256": "cf8d8b809561f532c522d6c8d96bd0e025795386aefb84bb78d90134185e0a15",
+        "triangles": 5096,
+        "bytes": 254884,
+        "path": "beamline/stls/Downstream_Beam_tube_Segment_1.stl"
+      },
+      "beamline_cad/Downstream_Beam_tube_Segment_2": {
+        "sha256": "3237c5f07ff6e6f0a93faea892848685591467f6e28179d15bbba6983afa0761",
+        "triangles": 600,
+        "bytes": 30084,
+        "path": "beamline/stls/Downstream_Beam_tube_Segment_2.stl"
+      },
+      "beamline_cad/Beamline_Adapter_1": {
+        "sha256": "f389898b641878e7eae770a9d92848109bdd2cda2f5e4baf8e2a6f813ef197d1",
+        "triangles": 526,
+        "bytes": 26384,
+        "path": "beamline/stls/Beamline_Adapter_1.stl"
+      },
+      "magnets_cad/BoreShield": {
+        "sha256": "523f0c380337cfb1d7283d7436fbc3ba8bc5559e98de6db8cca9a969a9f2c1ad",
+        "triangles": 356,
+        "bytes": 17884,
+        "path": "magnets/stls/BoreShield.stl"
+      },
+      "magnets_cad/CenterTube": {
+        "sha256": "7404fcfdbee19d9e1296968787f377a3e257b1d289e6ddc9b2dafdb31d43371d",
+        "triangles": 406,
+        "bytes": 20384,
+        "path": "magnets/stls/CenterTube.stl"
+      },
+      "magnets_cad/DownstreamShieldingPlate": {
+        "sha256": "74bdd1d9524c2201121a77affb2df26d7c8901a97f12bb89f0aa824835aae29a",
+        "triangles": 1380,
+        "bytes": 69084,
+        "path": "magnets/stls/DownstreamShieldingPlate.stl"
+      },
+      "magnets_cad/DownstreamVacuumJacket": {
+        "sha256": "d369db3e8f3a5bf79897e890d8106440db0138e7f1bb61bd449846a4cfcbd849",
+        "triangles": 2392,
+        "bytes": 119684,
+        "path": "magnets/stls/DownstreamVacuumJacket.stl"
+      },
+      "magnets_cad/Hub001": {
+        "sha256": "5e416560fae19d674de72f83af6379b27325091896df736723aae809ef7db63f",
+        "triangles": 12600,
+        "bytes": 630084,
+        "path": "magnets/stls/Hub001.stl"
+      },
+      "magnets_cad/Plate1": {
+        "sha256": "71f4343e1e59508a036463ff75ee5f033488a5d6c1bb3fbe8529e6952934e12d",
+        "triangles": 12,
+        "bytes": 684,
+        "path": "magnets/stls/Plate1.stl"
+      },
+      "magnets_cad/Plate2": {
+        "sha256": "de84f840aa6710c435a51ae15be0abb310d66ad20dd54c03e63af156566edb50",
+        "triangles": 12,
+        "bytes": 684,
+        "path": "magnets/stls/Plate2.stl"
+      },
+      "magnets_cad/Plate3": {
+        "sha256": "e09e6837f2d47fd9576474be26f76a2ed61444c58670309e555a33d3c246c056",
+        "triangles": 150,
+        "bytes": 7584,
+        "path": "magnets/stls/Plate3.stl"
+      },
+      "magnets_cad/Plate4": {
+        "sha256": "c080f128cc136f3db336ca5adcf9b7148c9dbb7a77b497f7182b773513a518ae",
+        "triangles": 12,
+        "bytes": 684,
+        "path": "magnets/stls/Plate4.stl"
+      },
+      "magnets_cad/Plate5": {
+        "sha256": "33cc7284a30f524678fb20031346a0e3077a8b3b9c94b0c2b3383574148228ff",
+        "triangles": 12,
+        "bytes": 684,
+        "path": "magnets/stls/Plate5.stl"
+      },
+      "magnets_cad/Plate6": {
+        "sha256": "588361234a5607b39af64e4785af8f5e6eeb5444219f24963a500ce51a661d74",
+        "triangles": 150,
+        "bytes": 7584,
+        "path": "magnets/stls/Plate6.stl"
+      },
+      "magnets_cad/Shield1": {
+        "sha256": "0d0211eb5efd83e5189574680d447b0e59045cd6f730dfa85ffd1507f77b7a3a",
+        "triangles": 478,
+        "bytes": 23984,
+        "path": "magnets/stls/Shield1.stl"
+      },
+      "magnets_cad/Shield2": {
+        "sha256": "9efb0f8068b14ed9b158cdea3b9052df17055453d2eff0b2eac6e1eeafea2a96",
+        "triangles": 638,
+        "bytes": 31984,
+        "path": "magnets/stls/Shield2.stl"
+      },
+      "magnets_cad/Shield3": {
+        "sha256": "2f4b9d2408d57237cdc841a609c82863a37ee044a12604a5b8edc7ad5edbea1a",
+        "triangles": 638,
+        "bytes": 31984,
+        "path": "magnets/stls/Shield3.stl"
+      },
+      "magnets_cad/Shield4": {
+        "sha256": "b8d64c79238a50f1b5589099ec156b0831018825650df5847bed13c2bf78196b",
+        "triangles": 638,
+        "bytes": 31984,
+        "path": "magnets/stls/Shield4.stl"
+      },
+      "magnets_cad/Shield5": {
+        "sha256": "183db9422d8d5477d1686d0527851ffab083e15a4fce53d3d39f4e36d376af95",
+        "triangles": 638,
+        "bytes": 31984,
+        "path": "magnets/stls/Shield5.stl"
+      },
+      "magnets_cad/Shield6": {
+        "sha256": "16b2201c113c7e96543fe02bff5b3bdcfe1bbcb42c6a1f25ac451d785d72940a",
+        "triangles": 638,
+        "bytes": 31984,
+        "path": "magnets/stls/Shield6.stl"
+      },
+      "magnets_cad/Shield7": {
+        "sha256": "339fd0364f87c9d1bbc6368cceca379940e1f0ea440554f37243034404269355",
+        "triangles": 478,
+        "bytes": 23984,
+        "path": "magnets/stls/Shield7.stl"
+      },
+      "magnets_cad/UpstreamShieldingPlate": {
+        "sha256": "45b5303255fbfdd4b1f6df5c2d086930cb5e12c1466cb581c328df004824ae9c",
+        "triangles": 1380,
+        "bytes": 69084,
+        "path": "magnets/stls/UpstreamShieldingPlate.stl"
+      },
+      "magnets_cad/UpstreamVacuumJacket": {
+        "sha256": "af1bdbe5b7de5104c8d9fbc64f255f771bb0dac8d290e94aeaa07a33d7d4544e",
+        "triangles": 2876,
+        "bytes": 143884,
+        "path": "magnets/stls/UpstreamVacuumJacket.stl"
+      },
+      "magnets_cad/WarmBoreTube": {
+        "sha256": "60a3fb221953d0dd3be812bb10e1caf2544187fc3f457bdf0f4f698287199d0f",
+        "triangles": 368,
+        "bytes": 18484,
+        "path": "magnets/stls/WarmBoreTube.stl"
+      },
+      "magnets_cad/coil1": {
+        "sha256": "05113d836511de7e02537fedb41f48bc94e342d76e504a01a2491754f2e02bbe",
+        "triangles": 1016,
+        "bytes": 50884,
+        "path": "magnets/stls/coil1.stl"
+      },
+      "magnets_cad/coil2": {
+        "sha256": "97f416102034a0cc9de07c8b16c50fb0799b4a92bfc3ce469bde4c3aad408b8a",
+        "triangles": 1016,
+        "bytes": 50884,
+        "path": "magnets/stls/coil2.stl"
+      },
+      "magnets_cad/coil3": {
+        "sha256": "3f7c2cb4e4e5c8f4b768bfe38cc81696b03ce27a6d9dfae8a1ad547299040873",
+        "triangles": 1016,
+        "bytes": 50884,
+        "path": "magnets/stls/coil3.stl"
+      },
+      "magnets_cad/coil4": {
+        "sha256": "f763ef2eb0ed910cd7bf8b76cc35ab0c792a5567766d1a45cdec43c552d47f92",
+        "triangles": 1016,
+        "bytes": 50884,
+        "path": "magnets/stls/coil4.stl"
+      },
+      "magnets_cad/coil5": {
+        "sha256": "cb6c079236603d7f17012a7e0188eafefe4671c9ee322b7eec25b9a756e1c101",
+        "triangles": 1016,
+        "bytes": 50884,
+        "path": "magnets/stls/coil5.stl"
+      },
+      "magnets_cad/coil6": {
+        "sha256": "e4bbd7e32e2b0a7b75106ea9690398741c35802020b07b1ff9edf0bd6a8d2e8b",
+        "triangles": 1016,
+        "bytes": 50884,
+        "path": "magnets/stls/coil6.stl"
+      },
+      "magnets_cad/shell1a": {
+        "sha256": "0b71de638c17eaa8eeacb55065b82b2288efc101b27eb53072883a4d88cb19b7",
+        "triangles": 8388,
+        "bytes": 419484,
+        "path": "magnets/stls/shell1a.stl"
+      },
+      "magnets_cad/shell1b": {
+        "sha256": "25e8aaf20adb5e8a5eb037c7816c6dc13a0fc18b514f8e0922a855b08e3eccdf",
+        "triangles": 7560,
+        "bytes": 378084,
+        "path": "magnets/stls/shell1b.stl"
+      },
+      "magnets_cad/shell2a": {
+        "sha256": "61e90794b2a056382c5905d2b5c2d24b4d270665ee1528ac8290dd4ab929d5e0",
+        "triangles": 8392,
+        "bytes": 419684,
+        "path": "magnets/stls/shell2a.stl"
+      },
+      "magnets_cad/shell2b": {
+        "sha256": "438ff48dead610a1c6cdb146ac6e86250efd6c9c066413e269a484814fe52719",
+        "triangles": 7558,
+        "bytes": 377984,
+        "path": "magnets/stls/shell2b.stl"
+      },
+      "magnets_cad/shell3a": {
+        "sha256": "069d79fa9e9a2a42b796eac2e1a6620e0010d6f1b60aff633df8adb71cae1034",
+        "triangles": 8388,
+        "bytes": 419484,
+        "path": "magnets/stls/shell3a.stl"
+      },
+      "magnets_cad/shell3b": {
+        "sha256": "6de4aae29ed2ea6169e82a784d2694f9fd2f5043ede13113c6d61d82827ff13a",
+        "triangles": 7556,
+        "bytes": 377884,
+        "path": "magnets/stls/shell3b.stl"
+      },
+      "magnets_cad/shell4a": {
+        "sha256": "e1a23736994bdbfdee59193f219ea9089c7541be8944dd331c4177b94fcb75e4",
+        "triangles": 7208,
+        "bytes": 360484,
+        "path": "magnets/stls/shell4a.stl"
+      },
+      "magnets_cad/shell4b": {
+        "sha256": "baddbe47fbf02aa812dab133d3bdf49eacbeff7ac1c46902327e4a17922d3e5e",
+        "triangles": 6680,
+        "bytes": 334084,
+        "path": "magnets/stls/shell4b.stl"
+      },
+      "magnets_cad/shell5a": {
+        "sha256": "c3e5491fdbef32f208bcba579e0c35ae9436461bc1a8fc394243f81d751d9a84",
+        "triangles": 8390,
+        "bytes": 419584,
+        "path": "magnets/stls/shell5a.stl"
+      },
+      "magnets_cad/shell5b": {
+        "sha256": "58b57cfa7c4dabd8fc791c5638e7b2779f07bc792203517b6feca6cb9d0d631d",
+        "triangles": 7556,
+        "bytes": 377884,
+        "path": "magnets/stls/shell5b.stl"
+      },
+      "magnets_cad/shell6a": {
+        "sha256": "7e5b46f2332c621c85c094701a0db834cd1342c5c65c967804935d300176bc34",
+        "triangles": 8492,
+        "bytes": 424684,
+        "path": "magnets/stls/shell6a.stl"
+      },
+      "magnets_cad/shell6b": {
+        "sha256": "0ff779c6f477d88d680d85bce794d854d1e94ad4af30712479c4e2f3b691708b",
+        "triangles": 7558,
+        "bytes": 377984,
+        "path": "magnets/stls/shell6b.stl"
+      },
+      "magnets_cad/dcs1r1support": {
+        "sha256": "c53ff39ba7dddd5b09a4d4f0cac9d03537834a93ef3697176daa3fd4e094dc52",
+        "triangles": 1006,
+        "bytes": 50384,
+        "path": "magnets/stls/dcs1r1support.stl"
+      },
+      "magnets_cad/dcs2r1support": {
+        "sha256": "dfaeaadeb0db4570dd2a36d4880f87399170d86f1d5a2c50d2c882919c98b2b8",
+        "triangles": 1006,
+        "bytes": 50384,
+        "path": "magnets/stls/dcs2r1support.stl"
+      },
+      "magnets_cad/dcs3r1support": {
+        "sha256": "711d4ded68c2a4fbcd44534f50e78c288d048e54fec916cba116da5ce6223aa4",
+        "triangles": 1006,
+        "bytes": 50384,
+        "path": "magnets/stls/dcs3r1support.stl"
+      },
+      "magnets_cad/dcs4r1support": {
+        "sha256": "3e386390d05d19fcffb7509b6413507cb47c518af1346634517b5f6e61fae715",
+        "triangles": 1006,
+        "bytes": 50384,
+        "path": "magnets/stls/dcs4r1support.stl"
+      },
+      "magnets_cad/dcs5r1support": {
+        "sha256": "45f54633acb92f1a2714e015bf28c12f80f2e9a5c36c7c7b58db36bbc214ce4d",
+        "triangles": 1006,
+        "bytes": 50384,
+        "path": "magnets/stls/dcs5r1support.stl"
+      },
+      "magnets_cad/dcs6r1support": {
+        "sha256": "fdde3e291467771eb59b2e9771748c2851d372b47cd4d01391ac01d57be12d03",
+        "triangles": 1006,
+        "bytes": 50384,
+        "path": "magnets/stls/dcs6r1support.stl"
+      },
+      "magnets_cad/dcs1r1back": {
+        "sha256": "8f2cb9fbd465bf2ab34405ada82aeaea7b34838948a5e8eb57ac48f51935df89",
+        "triangles": 20,
+        "bytes": 1084,
+        "path": "magnets/stls/dcs1r1back.stl"
+      },
+      "magnets_cad/dcs2r1back": {
+        "sha256": "0cca213bd0f594cc2bb8b2a9c7bf28b8e4b9de91ca774dd688d4bccc68d3c178",
+        "triangles": 20,
+        "bytes": 1084,
+        "path": "magnets/stls/dcs2r1back.stl"
+      },
+      "magnets_cad/dcs3r1back": {
+        "sha256": "4ce14e24ff51a2d88c0e92f8b6cf53b95ed07f2c566c94bc7bf9ede4fbd5c774",
+        "triangles": 20,
+        "bytes": 1084,
+        "path": "magnets/stls/dcs3r1back.stl"
+      },
+      "magnets_cad/dcs4r1back": {
+        "sha256": "7699995580094b4d76758eabcc7db9dd0da5a4dcacc5e3e70bf0d23f3bc51e02",
+        "triangles": 20,
+        "bytes": 1084,
+        "path": "magnets/stls/dcs4r1back.stl"
+      },
+      "magnets_cad/dcs5r1back": {
+        "sha256": "fe1253841d33ea594a199fd77b4739146ce62f7183b4e7b9d3fbd65245cbce56",
+        "triangles": 20,
+        "bytes": 1084,
+        "path": "magnets/stls/dcs5r1back.stl"
+      },
+      "magnets_cad/dcs6r1back": {
+        "sha256": "6939df2c76c207efb7ece4d9471e0a4ce1aadeacc717652217a25d91d78c010e",
+        "triangles": 20,
+        "bytes": 1084,
+        "path": "magnets/stls/dcs6r1back.stl"
+      },
+      "magnets_cad/DSShieldFrontLead": {
+        "sha256": "e7b85cf2ee344f8dc9d7603c6f84f244adef9ae16706523956ae114ce6bf0248",
+        "triangles": 988,
+        "bytes": 49484,
+        "path": "magnets/stls/DSShieldFrontLead.stl"
+      },
+      "magnets_cad/DSShieldBackLead": {
+        "sha256": "e795dcbc30efa01c4163a7031088d54fdc20135ecdd69fddf817a94f707ca3bf",
+        "triangles": 1244,
+        "bytes": 62284,
+        "path": "magnets/stls/DSShieldBackLead.stl"
+      },
+      "magnets_cad/DSShieldInnerAss": {
+        "sha256": "8252591bee0e247cf5456c6314a4c11d0ba09366726a836bf63b0223ae8bf876",
+        "triangles": 672,
+        "bytes": 33684,
+        "path": "magnets/stls/DSShieldInnerAss.stl"
+      },
+      "magnets_cad/DSShieldBackAss": {
+        "sha256": "a0effa1c2dbaaf4ccb31facf1d17071814a5d363359475159a0369868f902e1b",
+        "triangles": 988,
+        "bytes": 49484,
+        "path": "magnets/stls/DSShieldBackAss.stl"
+      },
+      "magnets_cad/DSShieldFrontAss": {
+        "sha256": "07eb6023ec5b1bf1af9ead37fe7e952205f76a8ae50efc3217b7d84d66492b09",
+        "triangles": 1056,
+        "bytes": 52884,
+        "path": "magnets/stls/DSShieldFrontAss.stl"
+      },
+      "magnets_cad/DSShieldBackCover": {
+        "sha256": "e821060110c93ee8ec58468f43d0b230c45245a84316b74a3ba9775db2868104",
+        "triangles": 1012,
+        "bytes": 50684,
+        "path": "magnets/stls/DSShieldBackCover.stl"
+      },
+      "magnets_cad/DSShieldFrontCover": {
+        "sha256": "1d123b0bb2fbeff6396ada5901391e3fe79cc38bc32a25ccb344056b574b135e",
+        "triangles": 1252,
+        "bytes": 62684,
+        "path": "magnets/stls/DSShieldFrontCover.stl"
+      },
+      "magnets_cad/DSShieldFlangeAttachment": {
+        "sha256": "f39218bf9722c7e5bd18528d56170f2934c216dfcd7696d30121ca68f3bc2905",
+        "triangles": 1888,
+        "bytes": 94484,
+        "path": "magnets/stls/DSShieldFlangeAttachment.stl"
+      },
+      "magnets_cad/DSShieldFlange": {
+        "sha256": "193fbb4b626be63a2097403811c2588c471adde02be581191ffb2d6d301b1f77",
+        "triangles": 5172,
+        "bytes": 258684,
+        "path": "magnets/stls/DSShieldFlange.stl"
+      },
+      "magnets_cad/apex": {
+        "sha256": "fc5b1c39d71402eff332b7623beaa41228b21683b900a233933223e030884786",
+        "triangles": 2438,
+        "bytes": 121984,
+        "path": "magnets/stls/apex.stl"
+      }
+    },
+    "optimized": {
+      "beamline_cad/FTInnerShieldAndFlange": {
+        "sha256": "9836915d23b4270eb54f49e23ff2dd98d70ba402f821221376f2cbbd648c7f9f",
+        "triangles": 22000,
+        "bytes": 1100084,
+        "path": "beamline/stls/FTInnerShieldAndFlange.stl"
+      },
+      "beamline_cad/FTOuterFlange": {
+        "sha256": "36421b77cfe31f9fd8b31f451feba7fee532bde662125500a3624d4e6d8f4777",
+        "triangles": 836,
+        "bytes": 41884,
+        "path": "beamline/stls/FTOuterFlange.stl"
+      },
+      "beamline_cad/FTOuterMount": {
+        "sha256": "99024fec3ad474b38fce01df86cc6eb80356266a7dc18b76f72e4ea8208806f4",
+        "triangles": 2740,
+        "bytes": 137084,
+        "path": "beamline/stls/FTOuterMount.stl"
+      },
+      "beamline_cad/FTInnerShieldAndFlange_Bolt1": {
+        "sha256": "9c7a5e205bd1ad1980db6f957762f3d06e0b571b09bdba1b04ec1045bfea46b3",
+        "triangles": 192,
+        "bytes": 9684,
+        "path": "beamline/stls/FTInnerShieldAndFlange_Bolt1.stl"
+      },
+      "beamline_cad/FTInnerShieldAndFlange_Bolt2": {
+        "sha256": "a9257ba8d31008e76cacb96ea54009bc46ed3910eec51b2c2e20726a9544fa93",
+        "triangles": 192,
+        "bytes": 9684,
+        "path": "beamline/stls/FTInnerShieldAndFlange_Bolt2.stl"
+      },
+      "beamline_cad/FTInnerShieldAndFlange_Bolt3": {
+        "sha256": "699adaaf498d5ac98e435c8939a6ae581ce0c461d734d035ff674db95e34d834",
+        "triangles": 192,
+        "bytes": 9684,
+        "path": "beamline/stls/FTInnerShieldAndFlange_Bolt3.stl"
+      },
+      "beamline_cad/FTInnerShieldAndFlange_Bolt4": {
+        "sha256": "9cc71d5e231919f8c3930003765d7a7889735497d52c885b7c795a75f13e571c",
+        "triangles": 192,
+        "bytes": 9684,
+        "path": "beamline/stls/FTInnerShieldAndFlange_Bolt4.stl"
+      },
+      "beamline_cad/FTInnerShieldAndFlange_Bolt5": {
+        "sha256": "56e0e904524cc8c5896de00cd6675d60b584d327ad96e0228e48a32f7e2f37b5",
+        "triangles": 192,
+        "bytes": 9684,
+        "path": "beamline/stls/FTInnerShieldAndFlange_Bolt5.stl"
+      },
+      "beamline_cad/FTInnerShieldAndFlange_Bolt6": {
+        "sha256": "24da9387e560a0ee2984db93f6c580a6b6a02514dfbb18d42e46fe795cea7071",
+        "triangles": 192,
+        "bytes": 9684,
+        "path": "beamline/stls/FTInnerShieldAndFlange_Bolt6.stl"
+      },
+      "beamline_cad/FTInnerShieldAndFlange_Bolt7": {
+        "sha256": "4fb9628f3040b7c22dc2a730fd8e97898619a64fc0c4e3a8f11f283d1f1f9fdd",
+        "triangles": 192,
+        "bytes": 9684,
+        "path": "beamline/stls/FTInnerShieldAndFlange_Bolt7.stl"
+      },
+      "beamline_cad/FTInnerShieldAndFlange_Bolt8": {
+        "sha256": "bbc2031786d6c57e009abaf8b823439d78ca8b0da6a8543c13b9a44aac379708",
+        "triangles": 192,
+        "bytes": 9684,
+        "path": "beamline/stls/FTInnerShieldAndFlange_Bolt8.stl"
+      },
+      "beamline_cad/FTInnerShieldAndFlange_Bolt9": {
+        "sha256": "b9c6b36c0d9a86f0154209ee4c7fdd1692b87db1c376639bbd89f4519af06252",
+        "triangles": 192,
+        "bytes": 9684,
+        "path": "beamline/stls/FTInnerShieldAndFlange_Bolt9.stl"
+      },
+      "beamline_cad/FTInnerShield": {
+        "sha256": "0d770b71801eb4c9167c57d325314eb3ac11995431335532fe8828906b48a82a",
+        "triangles": 6500,
+        "bytes": 325084,
+        "path": "beamline/stls/FTInnerShield.stl"
+      },
+      "beamline_cad/moller_cone": {
+        "sha256": "665beab488b533b5d92d788918048162d3a7831d1dbb8da1672b5f675d91a203",
+        "triangles": 8546,
+        "bytes": 427384,
+        "path": "beamline/stls/moller_cone.stl"
+      },
+      "beamline_cad/ft_adjuster": {
+        "sha256": "fbe8429ddddd5548ba82501944f27f3ee0954080557ef7b32efd303f05f2be25",
+        "triangles": 48,
+        "bytes": 2484,
+        "path": "beamline/stls/ft_adjuster.stl"
+      },
+      "beamline_cad/Apex_Shield_Lead_Fill": {
+        "sha256": "792548ee3ede090b4af293352b3648737a82f4ef98cc44462b8f97e01eefe5be",
+        "triangles": 1440,
+        "bytes": 72084,
+        "path": "beamline/stls/Apex_Shield_Lead_Fill.stl"
+      },
+      "beamline_cad/Apex_Shield_Hub": {
+        "sha256": "12064d5ab2d6d33958cdaae000c741b775f22f7d9645bebb50fc7024839ede5f",
+        "triangles": 20000,
+        "bytes": 1000084,
+        "path": "beamline/stls/Apex_Shield_Hub.stl"
+      },
+      "beamline_cad/Torus_Exit_Shield_Lead_Fill": {
+        "sha256": "580e9d1eaa0bf3b22e7d4600b9bc05fa90f9efa08f1562075aad644cf232dc23",
+        "triangles": 384,
+        "bytes": 19284,
+        "path": "beamline/stls/Torus_Exit_Shield_Lead_Fill.stl"
+      },
+      "beamline_cad/Torus_Exit_Shield_Casing": {
+        "sha256": "313fe517ebf31f9f90ba4e7fa556165b42ad154254088936f8eb44083a0b0bcf",
+        "triangles": 1384,
+        "bytes": 69284,
+        "path": "beamline/stls/Torus_Exit_Shield_Casing.stl"
+      },
+      "beamline_cad/Downstream_Beam_tube_Segment_1": {
+        "sha256": "cf8d8b809561f532c522d6c8d96bd0e025795386aefb84bb78d90134185e0a15",
+        "triangles": 5096,
+        "bytes": 254884,
+        "path": "beamline/stls/Downstream_Beam_tube_Segment_1.stl"
+      },
+      "beamline_cad/Downstream_Beam_tube_Segment_2": {
+        "sha256": "3237c5f07ff6e6f0a93faea892848685591467f6e28179d15bbba6983afa0761",
+        "triangles": 600,
+        "bytes": 30084,
+        "path": "beamline/stls/Downstream_Beam_tube_Segment_2.stl"
+      },
+      "beamline_cad/Beamline_Adapter_1": {
+        "sha256": "f389898b641878e7eae770a9d92848109bdd2cda2f5e4baf8e2a6f813ef197d1",
+        "triangles": 526,
+        "bytes": 26384,
+        "path": "beamline/stls/Beamline_Adapter_1.stl"
+      },
+      "magnets_cad/BoreShield": {
+        "sha256": "523f0c380337cfb1d7283d7436fbc3ba8bc5559e98de6db8cca9a969a9f2c1ad",
+        "triangles": 356,
+        "bytes": 17884,
+        "path": "magnets/stls/BoreShield.stl"
+      },
+      "magnets_cad/CenterTube": {
+        "sha256": "7404fcfdbee19d9e1296968787f377a3e257b1d289e6ddc9b2dafdb31d43371d",
+        "triangles": 406,
+        "bytes": 20384,
+        "path": "magnets/stls/CenterTube.stl"
+      },
+      "magnets_cad/DownstreamShieldingPlate": {
+        "sha256": "74bdd1d9524c2201121a77affb2df26d7c8901a97f12bb89f0aa824835aae29a",
+        "triangles": 1380,
+        "bytes": 69084,
+        "path": "magnets/stls/DownstreamShieldingPlate.stl"
+      },
+      "magnets_cad/DownstreamVacuumJacket": {
+        "sha256": "d369db3e8f3a5bf79897e890d8106440db0138e7f1bb61bd449846a4cfcbd849",
+        "triangles": 2392,
+        "bytes": 119684,
+        "path": "magnets/stls/DownstreamVacuumJacket.stl"
+      },
+      "magnets_cad/Hub001": {
+        "sha256": "5e416560fae19d674de72f83af6379b27325091896df736723aae809ef7db63f",
+        "triangles": 12600,
+        "bytes": 630084,
+        "path": "magnets/stls/Hub001.stl"
+      },
+      "magnets_cad/Plate1": {
+        "sha256": "71f4343e1e59508a036463ff75ee5f033488a5d6c1bb3fbe8529e6952934e12d",
+        "triangles": 12,
+        "bytes": 684,
+        "path": "magnets/stls/Plate1.stl"
+      },
+      "magnets_cad/Plate2": {
+        "sha256": "de84f840aa6710c435a51ae15be0abb310d66ad20dd54c03e63af156566edb50",
+        "triangles": 12,
+        "bytes": 684,
+        "path": "magnets/stls/Plate2.stl"
+      },
+      "magnets_cad/Plate3": {
+        "sha256": "e09e6837f2d47fd9576474be26f76a2ed61444c58670309e555a33d3c246c056",
+        "triangles": 150,
+        "bytes": 7584,
+        "path": "magnets/stls/Plate3.stl"
+      },
+      "magnets_cad/Plate4": {
+        "sha256": "c080f128cc136f3db336ca5adcf9b7148c9dbb7a77b497f7182b773513a518ae",
+        "triangles": 12,
+        "bytes": 684,
+        "path": "magnets/stls/Plate4.stl"
+      },
+      "magnets_cad/Plate5": {
+        "sha256": "33cc7284a30f524678fb20031346a0e3077a8b3b9c94b0c2b3383574148228ff",
+        "triangles": 12,
+        "bytes": 684,
+        "path": "magnets/stls/Plate5.stl"
+      },
+      "magnets_cad/Plate6": {
+        "sha256": "588361234a5607b39af64e4785af8f5e6eeb5444219f24963a500ce51a661d74",
+        "triangles": 150,
+        "bytes": 7584,
+        "path": "magnets/stls/Plate6.stl"
+      },
+      "magnets_cad/Shield1": {
+        "sha256": "0d0211eb5efd83e5189574680d447b0e59045cd6f730dfa85ffd1507f77b7a3a",
+        "triangles": 478,
+        "bytes": 23984,
+        "path": "magnets/stls/Shield1.stl"
+      },
+      "magnets_cad/Shield2": {
+        "sha256": "9efb0f8068b14ed9b158cdea3b9052df17055453d2eff0b2eac6e1eeafea2a96",
+        "triangles": 638,
+        "bytes": 31984,
+        "path": "magnets/stls/Shield2.stl"
+      },
+      "magnets_cad/Shield3": {
+        "sha256": "2f4b9d2408d57237cdc841a609c82863a37ee044a12604a5b8edc7ad5edbea1a",
+        "triangles": 638,
+        "bytes": 31984,
+        "path": "magnets/stls/Shield3.stl"
+      },
+      "magnets_cad/Shield4": {
+        "sha256": "b8d64c79238a50f1b5589099ec156b0831018825650df5847bed13c2bf78196b",
+        "triangles": 638,
+        "bytes": 31984,
+        "path": "magnets/stls/Shield4.stl"
+      },
+      "magnets_cad/Shield5": {
+        "sha256": "183db9422d8d5477d1686d0527851ffab083e15a4fce53d3d39f4e36d376af95",
+        "triangles": 638,
+        "bytes": 31984,
+        "path": "magnets/stls/Shield5.stl"
+      },
+      "magnets_cad/Shield6": {
+        "sha256": "16b2201c113c7e96543fe02bff5b3bdcfe1bbcb42c6a1f25ac451d785d72940a",
+        "triangles": 638,
+        "bytes": 31984,
+        "path": "magnets/stls/Shield6.stl"
+      },
+      "magnets_cad/Shield7": {
+        "sha256": "339fd0364f87c9d1bbc6368cceca379940e1f0ea440554f37243034404269355",
+        "triangles": 478,
+        "bytes": 23984,
+        "path": "magnets/stls/Shield7.stl"
+      },
+      "magnets_cad/UpstreamShieldingPlate": {
+        "sha256": "45b5303255fbfdd4b1f6df5c2d086930cb5e12c1466cb581c328df004824ae9c",
+        "triangles": 1380,
+        "bytes": 69084,
+        "path": "magnets/stls/UpstreamShieldingPlate.stl"
+      },
+      "magnets_cad/UpstreamVacuumJacket": {
+        "sha256": "af1bdbe5b7de5104c8d9fbc64f255f771bb0dac8d290e94aeaa07a33d7d4544e",
+        "triangles": 2876,
+        "bytes": 143884,
+        "path": "magnets/stls/UpstreamVacuumJacket.stl"
+      },
+      "magnets_cad/WarmBoreTube": {
+        "sha256": "60a3fb221953d0dd3be812bb10e1caf2544187fc3f457bdf0f4f698287199d0f",
+        "triangles": 368,
+        "bytes": 18484,
+        "path": "magnets/stls/WarmBoreTube.stl"
+      },
+      "magnets_cad/coil1": {
+        "sha256": "05113d836511de7e02537fedb41f48bc94e342d76e504a01a2491754f2e02bbe",
+        "triangles": 1016,
+        "bytes": 50884,
+        "path": "magnets/stls/coil1.stl"
+      },
+      "magnets_cad/coil2": {
+        "sha256": "97f416102034a0cc9de07c8b16c50fb0799b4a92bfc3ce469bde4c3aad408b8a",
+        "triangles": 1016,
+        "bytes": 50884,
+        "path": "magnets/stls/coil2.stl"
+      },
+      "magnets_cad/coil3": {
+        "sha256": "3f7c2cb4e4e5c8f4b768bfe38cc81696b03ce27a6d9dfae8a1ad547299040873",
+        "triangles": 1016,
+        "bytes": 50884,
+        "path": "magnets/stls/coil3.stl"
+      },
+      "magnets_cad/coil4": {
+        "sha256": "f763ef2eb0ed910cd7bf8b76cc35ab0c792a5567766d1a45cdec43c552d47f92",
+        "triangles": 1016,
+        "bytes": 50884,
+        "path": "magnets/stls/coil4.stl"
+      },
+      "magnets_cad/coil5": {
+        "sha256": "cb6c079236603d7f17012a7e0188eafefe4671c9ee322b7eec25b9a756e1c101",
+        "triangles": 1016,
+        "bytes": 50884,
+        "path": "magnets/stls/coil5.stl"
+      },
+      "magnets_cad/coil6": {
+        "sha256": "e4bbd7e32e2b0a7b75106ea9690398741c35802020b07b1ff9edf0bd6a8d2e8b",
+        "triangles": 1016,
+        "bytes": 50884,
+        "path": "magnets/stls/coil6.stl"
+      },
+      "magnets_cad/shell1a": {
+        "sha256": "0b71de638c17eaa8eeacb55065b82b2288efc101b27eb53072883a4d88cb19b7",
+        "triangles": 8388,
+        "bytes": 419484,
+        "path": "magnets/stls/shell1a.stl"
+      },
+      "magnets_cad/shell1b": {
+        "sha256": "25e8aaf20adb5e8a5eb037c7816c6dc13a0fc18b514f8e0922a855b08e3eccdf",
+        "triangles": 7560,
+        "bytes": 378084,
+        "path": "magnets/stls/shell1b.stl"
+      },
+      "magnets_cad/shell2a": {
+        "sha256": "61e90794b2a056382c5905d2b5c2d24b4d270665ee1528ac8290dd4ab929d5e0",
+        "triangles": 8392,
+        "bytes": 419684,
+        "path": "magnets/stls/shell2a.stl"
+      },
+      "magnets_cad/shell2b": {
+        "sha256": "438ff48dead610a1c6cdb146ac6e86250efd6c9c066413e269a484814fe52719",
+        "triangles": 7558,
+        "bytes": 377984,
+        "path": "magnets/stls/shell2b.stl"
+      },
+      "magnets_cad/shell3a": {
+        "sha256": "069d79fa9e9a2a42b796eac2e1a6620e0010d6f1b60aff633df8adb71cae1034",
+        "triangles": 8388,
+        "bytes": 419484,
+        "path": "magnets/stls/shell3a.stl"
+      },
+      "magnets_cad/shell3b": {
+        "sha256": "6de4aae29ed2ea6169e82a784d2694f9fd2f5043ede13113c6d61d82827ff13a",
+        "triangles": 7556,
+        "bytes": 377884,
+        "path": "magnets/stls/shell3b.stl"
+      },
+      "magnets_cad/shell4a": {
+        "sha256": "e1a23736994bdbfdee59193f219ea9089c7541be8944dd331c4177b94fcb75e4",
+        "triangles": 7208,
+        "bytes": 360484,
+        "path": "magnets/stls/shell4a.stl"
+      },
+      "magnets_cad/shell4b": {
+        "sha256": "baddbe47fbf02aa812dab133d3bdf49eacbeff7ac1c46902327e4a17922d3e5e",
+        "triangles": 6680,
+        "bytes": 334084,
+        "path": "magnets/stls/shell4b.stl"
+      },
+      "magnets_cad/shell5a": {
+        "sha256": "c3e5491fdbef32f208bcba579e0c35ae9436461bc1a8fc394243f81d751d9a84",
+        "triangles": 8390,
+        "bytes": 419584,
+        "path": "magnets/stls/shell5a.stl"
+      },
+      "magnets_cad/shell5b": {
+        "sha256": "58b57cfa7c4dabd8fc791c5638e7b2779f07bc792203517b6feca6cb9d0d631d",
+        "triangles": 7556,
+        "bytes": 377884,
+        "path": "magnets/stls/shell5b.stl"
+      },
+      "magnets_cad/shell6a": {
+        "sha256": "7e5b46f2332c621c85c094701a0db834cd1342c5c65c967804935d300176bc34",
+        "triangles": 8492,
+        "bytes": 424684,
+        "path": "magnets/stls/shell6a.stl"
+      },
+      "magnets_cad/shell6b": {
+        "sha256": "0ff779c6f477d88d680d85bce794d854d1e94ad4af30712479c4e2f3b691708b",
+        "triangles": 7558,
+        "bytes": 377984,
+        "path": "magnets/stls/shell6b.stl"
+      },
+      "magnets_cad/dcs1r1support": {
+        "sha256": "c53ff39ba7dddd5b09a4d4f0cac9d03537834a93ef3697176daa3fd4e094dc52",
+        "triangles": 1006,
+        "bytes": 50384,
+        "path": "magnets/stls/dcs1r1support.stl"
+      },
+      "magnets_cad/dcs2r1support": {
+        "sha256": "dfaeaadeb0db4570dd2a36d4880f87399170d86f1d5a2c50d2c882919c98b2b8",
+        "triangles": 1006,
+        "bytes": 50384,
+        "path": "magnets/stls/dcs2r1support.stl"
+      },
+      "magnets_cad/dcs3r1support": {
+        "sha256": "711d4ded68c2a4fbcd44534f50e78c288d048e54fec916cba116da5ce6223aa4",
+        "triangles": 1006,
+        "bytes": 50384,
+        "path": "magnets/stls/dcs3r1support.stl"
+      },
+      "magnets_cad/dcs4r1support": {
+        "sha256": "3e386390d05d19fcffb7509b6413507cb47c518af1346634517b5f6e61fae715",
+        "triangles": 1006,
+        "bytes": 50384,
+        "path": "magnets/stls/dcs4r1support.stl"
+      },
+      "magnets_cad/dcs5r1support": {
+        "sha256": "45f54633acb92f1a2714e015bf28c12f80f2e9a5c36c7c7b58db36bbc214ce4d",
+        "triangles": 1006,
+        "bytes": 50384,
+        "path": "magnets/stls/dcs5r1support.stl"
+      },
+      "magnets_cad/dcs6r1support": {
+        "sha256": "fdde3e291467771eb59b2e9771748c2851d372b47cd4d01391ac01d57be12d03",
+        "triangles": 1006,
+        "bytes": 50384,
+        "path": "magnets/stls/dcs6r1support.stl"
+      },
+      "magnets_cad/dcs1r1back": {
+        "sha256": "8f2cb9fbd465bf2ab34405ada82aeaea7b34838948a5e8eb57ac48f51935df89",
+        "triangles": 20,
+        "bytes": 1084,
+        "path": "magnets/stls/dcs1r1back.stl"
+      },
+      "magnets_cad/dcs2r1back": {
+        "sha256": "0cca213bd0f594cc2bb8b2a9c7bf28b8e4b9de91ca774dd688d4bccc68d3c178",
+        "triangles": 20,
+        "bytes": 1084,
+        "path": "magnets/stls/dcs2r1back.stl"
+      },
+      "magnets_cad/dcs3r1back": {
+        "sha256": "4ce14e24ff51a2d88c0e92f8b6cf53b95ed07f2c566c94bc7bf9ede4fbd5c774",
+        "triangles": 20,
+        "bytes": 1084,
+        "path": "magnets/stls/dcs3r1back.stl"
+      },
+      "magnets_cad/dcs4r1back": {
+        "sha256": "7699995580094b4d76758eabcc7db9dd0da5a4dcacc5e3e70bf0d23f3bc51e02",
+        "triangles": 20,
+        "bytes": 1084,
+        "path": "magnets/stls/dcs4r1back.stl"
+      },
+      "magnets_cad/dcs5r1back": {
+        "sha256": "fe1253841d33ea594a199fd77b4739146ce62f7183b4e7b9d3fbd65245cbce56",
+        "triangles": 20,
+        "bytes": 1084,
+        "path": "magnets/stls/dcs5r1back.stl"
+      },
+      "magnets_cad/dcs6r1back": {
+        "sha256": "6939df2c76c207efb7ece4d9471e0a4ce1aadeacc717652217a25d91d78c010e",
+        "triangles": 20,
+        "bytes": 1084,
+        "path": "magnets/stls/dcs6r1back.stl"
+      }
+    }
+  }
+}

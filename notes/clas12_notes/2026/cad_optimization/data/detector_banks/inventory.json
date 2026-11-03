@@ -1,0 +1,12 @@
+{
+  "dc": {
+    "source_stls": 2,
+    "unique_facets": 1026,
+    "facet_reduction": 0
+  },
+  "magnets": {
+    "source_stls": 20,
+    "unique_facets": 66960,
+    "facet_reduction": 0
+  }
+}

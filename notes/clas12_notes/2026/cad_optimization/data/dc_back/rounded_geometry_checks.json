@@ -1,0 +1,26 @@
+[
+  {
+    "name": "dcs1r1back",
+    "max_rounded_world_error_mm": 0.7590784078187817
+  },
+  {
+    "name": "dcs2r1back",
+    "max_rounded_world_error_mm": 0.6346600443774766
+  },
+  {
+    "name": "dcs3r1back",
+    "max_rounded_world_error_mm": 0.6346501556292439
+  },
+  {
+    "name": "dcs4r1back",
+    "max_rounded_world_error_mm": 6.875797014777896e-05
+  },
+  {
+    "name": "dcs5r1back",
+    "max_rounded_world_error_mm": 2.2737367544323206e-13
+  },
+  {
+    "name": "dcs6r1back",
+    "max_rounded_world_error_mm": 6.875796959446261e-05
+  }
+]

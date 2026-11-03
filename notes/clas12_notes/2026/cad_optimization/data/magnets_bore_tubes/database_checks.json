@@ -1,0 +1,21 @@
+{
+  "gemc3_cad": {
+    "rows": 117,
+    "identical_after_name_path_normalization": true
+  },
+  "gemc2_cad": {
+    "rows": 60,
+    "identical_after_name_path_normalization": true
+  },
+  "gemc2_copies": {
+    "rows": 57,
+    "identical_after_name_path_normalization": true
+  },
+  "mesh_bytes_identical_in_all_four_roots": true,
+  "catalogs_identical_after_rename": true,
+  "geometry_change": false,
+  "facet_reduction": 0,
+  "tracking_benchmark_run": false,
+  "measured_speedup": null,
+  "interpretation": "No geometry-induced speedup is established."
+}

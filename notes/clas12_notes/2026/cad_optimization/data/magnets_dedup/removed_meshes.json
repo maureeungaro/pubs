@@ -1,0 +1,52 @@
+{
+  "DSShieldBackAss": {
+    "triangles": 988,
+    "bytes": 49484,
+    "sha256": "a0effa1c2dbaaf4ccb31facf1d17071814a5d363359475159a0369868f902e1b"
+  },
+  "DSShieldBackCover": {
+    "triangles": 1012,
+    "bytes": 50684,
+    "sha256": "e821060110c93ee8ec58468f43d0b230c45245a84316b74a3ba9775db2868104"
+  },
+  "DSShieldBackLead": {
+    "triangles": 1244,
+    "bytes": 62284,
+    "sha256": "e795dcbc30efa01c4163a7031088d54fdc20135ecdd69fddf817a94f707ca3bf"
+  },
+  "DSShieldFlange": {
+    "triangles": 5172,
+    "bytes": 258684,
+    "sha256": "193fbb4b626be63a2097403811c2588c471adde02be581191ffb2d6d301b1f77"
+  },
+  "DSShieldFlangeAttachment": {
+    "triangles": 1888,
+    "bytes": 94484,
+    "sha256": "f39218bf9722c7e5bd18528d56170f2934c216dfcd7696d30121ca68f3bc2905"
+  },
+  "DSShieldFrontAss": {
+    "triangles": 1056,
+    "bytes": 52884,
+    "sha256": "07eb6023ec5b1bf1af9ead37fe7e952205f76a8ae50efc3217b7d84d66492b09"
+  },
+  "DSShieldFrontCover": {
+    "triangles": 1252,
+    "bytes": 62684,
+    "sha256": "1d123b0bb2fbeff6396ada5901391e3fe79cc38bc32a25ccb344056b574b135e"
+  },
+  "DSShieldFrontLead": {
+    "triangles": 988,
+    "bytes": 49484,
+    "sha256": "e7b85cf2ee344f8dc9d7603c6f84f244adef9ae16706523956ae114ce6bf0248"
+  },
+  "DSShieldInnerAss": {
+    "triangles": 672,
+    "bytes": 33684,
+    "sha256": "8252591bee0e247cf5456c6314a4c11d0ba09366726a836bf63b0223ae8bf876"
+  },
+  "apex": {
+    "triangles": 2438,
+    "bytes": 121984,
+    "sha256": "fc5b1c39d71402eff332b7623beaa41228b21683b900a233933223e030884786"
+  }
+}

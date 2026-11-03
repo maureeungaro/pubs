@@ -1,0 +1,62 @@
+[
+  {
+    "name": "dcs1r1back",
+    "position": "1.130*mm -0.644*mm 1274.299*mm",
+    "translation_change_mm": 0.0006418485225213335
+  },
+  {
+    "name": "dcs2r1back",
+    "position": "0.801*mm 0.653*mm 1273.863*mm",
+    "translation_change_mm": 0.0005631382343330753
+  },
+  {
+    "name": "dcs3r1back",
+    "position": "-0.165*mm 1.020*mm 1273.863*mm",
+    "translation_change_mm": 0.000673543958977292
+  },
+  {
+    "name": "dcs4r1back",
+    "position": "0.000*mm 0.000*mm 1273.270*mm",
+    "translation_change_mm": 4.40828990701398e-05
+  },
+  {
+    "name": "dcs5r1back",
+    "position": "0.000*mm 0.000*mm 1273.270*mm",
+    "translation_change_mm": 0.0
+  },
+  {
+    "name": "dcs6r1back",
+    "position": "0.000*mm 0.000*mm 1273.270*mm",
+    "translation_change_mm": 4.408289941975627e-05
+  },
+  {
+    "name": "dcs1r1support",
+    "position": "0.000*mm 0.000*mm 1273.270*mm",
+    "translation_change_mm": 0.0
+  },
+  {
+    "name": "dcs2r1support",
+    "position": "0.000*mm 0.000*mm 1273.270*mm",
+    "translation_change_mm": 7.110952502176683e-06
+  },
+  {
+    "name": "dcs3r1support",
+    "position": "1.341*mm -2.322*mm 1272.463*mm",
+    "translation_change_mm": 0.0006252595344574116
+  },
+  {
+    "name": "dcs4r1support",
+    "position": "2.682*mm 0.000*mm 1272.463*mm",
+    "translation_change_mm": 0.0005548872639494884
+  },
+  {
+    "name": "dcs5r1support",
+    "position": "1.341*mm 2.322*mm 1272.463*mm",
+    "translation_change_mm": 0.0006201589893435292
+  },
+  {
+    "name": "dcs6r1support",
+    "position": "1.065*mm -1.845*mm 1273.914*mm",
+    "translation_change_mm": 0.00023196113205938105
+  }
+]

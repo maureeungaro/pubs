@@ -1,0 +1,35 @@
+{
+  "loading": {
+    "completed_pairs": 5,
+    "original": {
+      "wall_seconds": 0.18750070800000007,
+      "cpu_seconds": 0.09999999999999999,
+      "rss_bytes": 64454656
+    },
+    "optimized": {
+      "wall_seconds": 0.13373875000000002,
+      "cpu_seconds": 0.09,
+      "rss_bytes": 62406656
+    }
+  },
+  "e-": {
+    "completed_pairs": 0,
+    "original": {},
+    "optimized": {}
+  },
+  "proton": {
+    "completed_pairs": 0,
+    "original": {},
+    "optimized": {}
+  },
+  "pi+": {
+    "completed_pairs": 0,
+    "original": {},
+    "optimized": {}
+  },
+  "neutron": {
+    "completed_pairs": 0,
+    "original": {},
+    "optimized": {}
+  }
+}

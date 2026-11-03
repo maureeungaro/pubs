@@ -1,9 +1,10 @@
 # CAD optimization technical note
 
 Author: Maurizio Ungaro, Jefferson Lab. LTCC measurements: October 1, 2026; beamline: October 12--16.
-Note updated October 20, 2026.
+Note updated October 21, 2026.
 
-The note covers LTCC, the October 12--16 beamline CAD studies, and the October 19 HTCC transfer.
+The note covers LTCC, the October 12--16 beamline CAD studies, the October 19 HTCC transfer, and the
+October 21 removal of duplicate magnets shielding.
 Beamline measurements use GEMC3 and separate matched-primary workloads; engine timings are not pooled.
 
 The LaTeX project follows the `simgrid_osg_portal` note structure and the CLAS12 house style.
@@ -193,3 +194,99 @@ TEXT/CAD and SQLite/CAD initialization checks, and matching native/CAD rows in t
 retains 24 non-manifold edges, and the cured entry cone has an unresolved 0.053 mm entry-window contact. No
 loading or transport-speed gain is measured. The chapter is in chapters/htcc.tex; data/htcc/ and
 htcc_archive.zip retain the supporting evidence.
+
+## Magnets duplicate shielding removal
+
+Section 26 records removal of nine DSShield meshes and apex from all three magnets configurations in GEMC2 and
+GEMC3: 61 to 51 meshes and 148,940 to 132,230 triangles (11.22% fewer). The beamline retains the shielding.
+Repeated loading and four-particle tracking results, remaining geometry warnings, and all-run validation are
+reported separately. data/magnets_dedup/ and magnets_dedup_archive.zip retain the complete evidence.
+
+## Downstream shielding plate and vacuum jacket
+
+Section 27 optimizes the two original volumes separately: 1,380 to 508 plate triangles and 2,392 to 556 jacket
+triangles (71.79% fewer together), with fourteen fastener features filled. Main rims, apertures, bounds, and
+the gap are retained. The signed volume increase, repeated final-model tracking results, clean isolated
+construction, and residual assembly warnings are explicit. data/magnets_plate/ and magnets_plate_archive.zip
+retain all evidence.
+
+## Upstream shielding plate and vacuum jacket
+
+Section 28 keeps the original two upstream names and placements, fills fourteen fastener features, and reduces
+4,256 triangles to 1,512 (64.47%). The outer rounded jacket features, stepped bore, bounds, and gap are
+retained. Independent probes, material changes, repeated tracking results, and residual diagnostics are
+explicit. data/magnets_upstream/ and magnets_upstream_archive.zip retain the evidence.
+
+## DC region-1 back membranes
+
+Section 29 moves the six membranes to DC and replaces six STL builds with one shared solid and five copies.
+Unique facets fall from 120 to 20 (83.33%). Integer angles pass the dense assembly overlap comparison. The
+note reports submillimetre displacements, signed Kapton-volume changes, repeated startup/tracking
+measurements, and remaining assembly warnings. data/dc_back/ and dc_back_archive.zip retain the evidence.
+
+## DC region-1 supports
+
+Section 30 moves the six aluminum support assemblies to DC, with one unchanged STL and five copies. Unique
+facets fall from 6,036 to 1,006 (83.33%). Integer angles pass dense overlap checks. The note reports the small
+signed-volume change, accepted millimetre-scale displacements, repeated startup and tracking measurements, and
+remaining assembly warnings. data/dc_support/ and dc_support_archive.zip retain the evidence.
+
+## Vacuum jackets with all holes retained
+
+Section 31 renames shell1a to vacuumJacket and shares compatible jackets while retaining two different
+families, all holes, and four original exports needed for distinct details or plate contacts. Six sources
+supply twelve placements, with 48.86% fewer unique facets. The note records repeated timing, material changes,
+and no added sampled assembly overlaps. Evidence is retained in data/magnets_vacuum/ and
+magnets_vacuum_archive.zip.
+
+## Jacket naming follow-up
+
+All active shell placements and source STLs now use vacuumJacket names with sector/side suffixes, retaining
+the original vacuumJacket base name. Existing study archives preserve their measured inputs.
+data/magnets_vacuum_naming/ and magnets_vacuum_naming_archive.zip record the mapping and validation; this
+changes neither geometry nor the measured performance.
+
+## Torus coils
+
+Section 32 shares one unchanged copper coil across six sectors, with all openings retained and 83.33% fewer
+unique facets. Repeated timing, the dense overlap comparison, and both-engine validation are retained in
+data/magnets_coils/ and magnets_coils_archive.zip. Duplicate-isotope failures also affect the original
+geometry; tracking statistics include only completed pairs.
+
+## Hub covers
+
+Section 33 shares two unchanged hub-cover STLs across six sectors, retaining every hole and reducing unique
+facets by 53.45%. Repeated timing and memory measurements, both-engine construction checks, and the
+naming-controlled dense overlap comparison are retained in data/magnets_hub_covers/ and
+magnets_hub_covers_archive.zip.
+
+## Hub shields
+
+Section 34 shares the five matching middle hub shields while retaining the two different ends and every hole
+and reducing unique facets by 61.55%. Repeated timing and memory measurements, both-engine construction
+checks, and the naming-controlled dense overlap comparison are retained in data/magnets_hub_shields/ and
+magnets_hub_shields_archive.zip.
+
+## Cold hub
+
+Section 35 repairs the cold hub while retaining every opening and reducing unique facets by 0.41%. Repeated
+timing and memory measurements, both-engine construction checks, and the naming-controlled dense overlap
+comparison are retained in data/magnets_cold_hub/ and magnets_cold_hub_archive.zip.
+
+## Bore tubes
+
+Section 36 records the bore-tube audit and BoreCenterTube rename. All 1,130 facets remain to preserve the
+original profiles and holes; no speedup is claimed. Evidence is in data/magnets_bore_tubes/ and
+magnets_bore_tubes_archive.zip.
+
+## HTCC Moller repair
+
+The October 23 revision of Section 25 resolves the Moller-cone orientation warning in both engines, restores a
+conical section lost during curing, and retains its bore and bounds. Evidence is in data/htcc_moller_repair/
+and htcc_moller_repair_archive.zip; the prior entry-cone/window contact remains.
+
+## Detector bank consolidation
+
+Section 37 consolidates DC and magnets copy placements into their main banks, retaining the physical solenoid
+name and all meshes. Twenty construction checks and repeated-generation evidence are retained in
+data/detector_banks/ and detector_banks_archive.zip. No new speedup is claimed.

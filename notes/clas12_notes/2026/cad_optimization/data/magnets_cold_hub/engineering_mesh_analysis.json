@@ -1,0 +1,42 @@
+{
+  "vertices": 6235,
+  "facets": 12600,
+  "topology": {
+    "boundary_edges": 6,
+    "connected_components_number": 1,
+    "edges_number": 18903,
+    "faces_number": 12600,
+    "genus": -1,
+    "incident_faces_on_non_two_manifold_edges": 0,
+    "incident_faces_on_non_two_manifold_vertices": 4,
+    "is_mesh_two_manifold": false,
+    "non_two_manifold_edges": 0,
+    "non_two_manifold_vertices": 1,
+    "number_holes": -1,
+    "unreferenced_vertices": 0,
+    "vertices_number": 6235
+  },
+  "self_intersecting_faces": 8,
+  "geometry": {
+    "avg_edge_inc_faux_length": 93.55436992810327,
+    "avg_edge_length": 93.55436992810327,
+    "surface_area": 2816649.0,
+    "total_edge_inc_faux_length": 1768458.254750936,
+    "total_edge_length": 1768458.254750936
+  },
+  "min": [
+    -120.0,
+    -116.86849975585938,
+    -3541.81591796875
+  ],
+  "max": [
+    120.0,
+    116.86849975585938,
+    -1593.7159423828125
+  ],
+  "unique_axis_levels": [
+    2126,
+    1928,
+    1018
+  ]
+}
